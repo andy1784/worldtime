@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "worldtime",
+  "compatibility_date": "2025-09-27",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": "world time Kimi_Agent_Deployment_v3"
+  },
+  "compatibility_flags": [
+    "nodejs_compat"
+  ]
+}
