@@ -1,0 +1,9 @@
+{
+  "name": "worldtime-online",
+  "version": "1.0.0",
+  "description": "World Time Online - Current Local Time in Cities Worldwide",
+  "private": true,
+  "scripts": {
+    "start": "npx serve ."
+  }
+}
