@@ -1,0 +1,27 @@
+# World Time Sync - robots.txt
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+Disallow: 
+
+# Specific crawl delays for better server performance
+Crawl-delay: 1
+
+# Sitemaps (uncomment if you have a sitemap)
+# Sitemap: https://worldtimessync.com/sitemap.xml
+
+# Google specific rules
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Bing specific rules
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Block bad bots (optional - uncomment if needed)
+# User-agent: AhrefsBot
+# User-agent: SemrushBot
+# Disallow: /
