@@ -47,7 +47,12 @@
     
     <!-- Preconnect to external resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Performance optimizations -->
+    <link rel="prefetch" href="./assets/index-Dd7au40z.js" as="script" />
+    <link rel="prefetch" href="./assets/index-ufePLcBr.css" as="style" />
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -74,7 +79,9 @@
     
     <!-- PWA Manifest -->
     <link rel="manifest" href="./manifest.json" />
-    <script type="module" crossorigin src="./assets/index-Dd7au40z.js"></script>
+    
+    <!-- Scripts with defer for non-critical loading -->
+    <script type="module" crossorigin defer src="./assets/index-Dd7au40z.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-ufePLcBr.css">
   </head>
   <body>
