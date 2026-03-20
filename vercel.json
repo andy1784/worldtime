@@ -10,6 +10,29 @@
       }
     },
     {
+      "src": "/google[a-f0-9]+\\.html$",
+      "dest": "/$0"
+    },
+    {
+      "src": "/robots.txt",
+      "dest": "/robots.txt"
+    },
+    {
+      "src": "/manifest.json",
+      "dest": "/manifest.json"
+    },
+    {
+      "src": "/favicon.svg",
+      "dest": "/favicon.svg"
+    },
+    {
+      "src": "/sitemap.xml",
+      "dest": "/sitemap.xml"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html"
     }
