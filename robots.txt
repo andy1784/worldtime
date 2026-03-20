@@ -1,27 +1,73 @@
 # World Time Sync - robots.txt
-# Allow all search engines to crawl the site
+# https://worldtimessync.com/
+# Last updated: 2026-03-20
 
+# Allow all search engines to crawl the site
 User-agent: *
 Allow: /
-Disallow: 
+Allow: /sitemap.xml
+Allow: /manifest.json
+Allow: /robots.txt
+Allow: /favicon.svg
 
-# Specific crawl delays for better server performance
-Crawl-delay: 1
+# No crawl delay for major search engines
+Crawl-delay: 0
 
 # Sitemap location
 Sitemap: https://worldtimessync.com/sitemap.xml
 
-# Google specific rules
+# Google specific rules - prioritize indexing
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 0
 
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Mobile
+Allow: /
+
 # Bing specific rules
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 0
+
+# Yandex
+User-agent: Yandex
+Allow: /
 Crawl-delay: 1
 
-# Block bad bots (optional - uncomment if needed)
-# User-agent: AhrefsBot
-# User-agent: SemrushBot
-# Disallow: /
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 0
+
+# Baidu
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 1
+
+# Facebook crawler
+User-agent: facebookexternalhit
+Allow: /
+
+# Twitter crawler
+User-agent: Twitterbot
+Allow: /
+
+# LinkedIn crawler
+User-agent: LinkedInBot
+Allow: /
+
+# Block known bad bots that waste bandwidth
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
