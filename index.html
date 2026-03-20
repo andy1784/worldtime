@@ -24,7 +24,7 @@
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://worldtime.online/" />
+    <meta property="og:url" content="https://worldtimessync.com/" />
     <meta property="og:title" content="World Time Online - Current Local Time in Cities Worldwide" />
     <meta property="og:description" content="Check the current local time in 400+ cities worldwide. Real-time clock with timezone information." />
     <meta property="og:image" content="/og-image.png" />
@@ -32,27 +32,45 @@
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://worldtime.online/" />
+    <meta property="twitter:url" content="https://worldtimessync.com/" />
     <meta property="twitter:title" content="World Time Online - Current Local Time in Cities Worldwide" />
     <meta property="twitter:description" content="Check the current local time in 400+ cities worldwide. Real-time clock with timezone information." />
     <meta property="twitter:image" content="/og-image.png" />
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://worldtime.online/" />
+    <link rel="canonical" href="https://worldtimessync.com/" />
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="alternate icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     
-    <!-- Preconnect to external resources -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Critical CSS - Inlined for faster FCP/LCP -->
+    <style>
+      /* Critical above-the-fold styles */
+      *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+      html{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}
+      body{background-color:#000;color:#fff;min-height:100vh;overflow-x:hidden}
+      #root{min-height:100vh;display:flex;flex-direction:column}
+      /* Loading skeleton styles */
+      .loading-skeleton{animation:pulse 2s cubic-bezier(0.4,0,0.6,1) infinite}
+      @keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+      /* Initial loading state */
+      .app-loading{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;gap:1rem}
+      .app-loading-spinner{width:40px;height:40px;border:3px solid rgba(255,255,255,0.1);border-top-color:#fff;border-radius:50%;animation:spin 1s linear infinite}
+      @keyframes spin{to{transform:rotate(360deg)}}
+      .app-loading-text{color:rgba(255,255,255,0.6);font-size:0.875rem}
+      /* Skip link for accessibility */
+      .skip-link{position:absolute;top:-40px;left:0;background:#000;color:#fff;padding:8px 16px;z-index:100;text-decoration:none;border:2px solid #fff}
+      .skip-link:focus{top:0}
+    </style>
     
-    <!-- Performance optimizations -->
-    <link rel="prefetch" href="./assets/index-Dd7au40z.js" as="script" />
-    <link rel="prefetch" href="./assets/index-ufePLcBr.css" as="style" />
+    <!-- Preload critical resources -->
+    <link rel="preload" href="./assets/index-ufePLcBr.css" as="style" />
+    <link rel="preload" href="./assets/index-Dd7au40z.js" as="script" crossorigin />
+    
+    <!-- Load CSS with high priority -->
+    <link rel="stylesheet" href="./assets/index-ufePLcBr.css" />
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -60,9 +78,11 @@
       "@context": "https://schema.org",
       "@type": "WebApplication",
       "name": "World Time Online",
+      "url": "https://worldtimessync.com/",
       "description": "Real-time world clock showing current local time in cities worldwide",
       "applicationCategory": "UtilityApplication",
       "operatingSystem": "Any",
+      "inLanguage": "en",
       "offers": {
         "@type": "Offer",
         "price": "0",
@@ -79,12 +99,22 @@
     
     <!-- PWA Manifest -->
     <link rel="manifest" href="./manifest.json" />
-    
-    <!-- Scripts with defer for non-critical loading -->
-    <script type="module" crossorigin defer src="./assets/index-Dd7au40z.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-ufePLcBr.css">
   </head>
   <body>
-    <div id="root"></div>
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <div id="root" role="application" aria-label="World Time Online Application">
+      <!-- Initial loading state for better perceived performance -->
+      <div class="app-loading" aria-busy="true" aria-live="polite">
+        <div class="app-loading-spinner" role="status" aria-label="Loading application"></div>
+        <p class="app-loading-text">Loading World Time...</p>
+      </div>
+    </div>
+    
+    <main id="main-content" aria-hidden="true"></main>
+    
+    <!-- Load JS at the end with async for non-blocking -->
+    <script type="module" src="./assets/index-Dd7au40z.js" async></script>
   </body>
 </html>

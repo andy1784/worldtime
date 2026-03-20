@@ -8,8 +8,8 @@ Disallow:
 # Specific crawl delays for better server performance
 Crawl-delay: 1
 
-# Sitemaps (uncomment if you have a sitemap)
-# Sitemap: https://worldtimessync.com/sitemap.xml
+# Sitemap location
+Sitemap: https://worldtimessync.com/sitemap.xml
 
 # Google specific rules
 User-agent: Googlebot
