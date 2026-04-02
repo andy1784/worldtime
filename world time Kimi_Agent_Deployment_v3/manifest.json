@@ -1,7 +1,7 @@
 {
   "name": "World Time Online",
   "short_name": "WorldTime",
-  "description": "Check current local time in cities around the world",
+  "description": "Check current local time in cities around the world - Real-time world clock with 400+ cities",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
@@ -30,5 +30,38 @@
     "scope": "./",
     "type": "module",
     "update_via_cache": "imports"
+  },
+  "screenshots": [
+    {
+      "src": "/screenshot-wide.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/screenshot-narrow.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "View Current Time",
+      "short_name": "Current Time",
+      "description": "View current local time",
+      "url": "/",
+      "icons": [{ "src": "/icon-192x192.png", "sizes": "192x192" }]
+    }
+  ],
+  "share_target": {
+    "action": "/share",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
   }
 }
