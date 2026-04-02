@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     
+    <!-- Performance: Preload critical resources -->
+    <link rel="modulepreload" href="./assets/index-Dd7au40z.js" />
+    <link rel="preload" href="./assets/index-ufePLcBr.css" as="style" />
+    <link rel="preload" href="./favicon.svg" as="image" />
+    
+    <!-- DNS Prefetch for external resources -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
     <!-- Primary Meta Tags -->
     <title>World Time Online - Current Local Time in Cities Worldwide</title>
     <meta name="title" content="World Time Online - Current Local Time in Cities Worldwide" />
@@ -45,10 +58,6 @@
     <link rel="alternate icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     
-    <!-- Preconnect to external resources -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
@@ -74,10 +83,39 @@
     
     <!-- PWA Manifest -->
     <link rel="manifest" href="./manifest.json" />
+    
+    <!-- Critical CSS inline for faster FCP -->
+    <style>
+      /* Critical above-the-fold styles */
+      *{box-sizing:border-box;margin:0;padding:0}
+      html{line-height:1.5;font-family:system-ui,-apple-system,sans-serif}
+      body{background-color:#000;color:#fff;min-height:100vh}
+      #root{min-height:100vh}
+      .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
+      @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+    </style>
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" crossorigin href="./assets/index-ufePLcBr.css" />
+    
+    <!-- Defer non-critical JavaScript -->
     <script type="module" crossorigin src="./assets/index-Dd7au40z.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-ufePLcBr.css">
+    
+    <!-- Service Worker Registration -->
+    <script>
+      if('serviceWorker' in navigator){
+        window.addEventListener('load',()=>{
+          navigator.serviceWorker.register('./sw.js',{scope:'./'})
+            .then(reg=>console.log('SW registered:',reg.scope))
+            .catch(err=>console.log('SW registration failed:',err));
+        });
+      }
+    </script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root" role="application" aria-label="World Time Online Application"></div>
+    
+    <!-- Preconnect hint for API calls -->
+    <link rel="preconnect" href="https://worldtimeapi.org" crossorigin />
   </body>
 </html>
