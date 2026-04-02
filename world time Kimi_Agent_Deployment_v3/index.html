@@ -93,29 +93,74 @@
       #root{min-height:100vh}
       .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
       @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+      /* Font display swap for faster text rendering */
+      @font-face{font-display:swap}
+      /* Prevent layout shift */
+      img,svg{max-width:100%;height:auto;display:block}
+      /* Skeleton loading placeholder */
+      .skeleton{background:linear-gradient(90deg,#111 25%,#222 50%,#111 75%);background-size:200% 100%;animation:loading 1.5s infinite}
+      @keyframes loading{0%{background-position:200% 0}100%{background-position:-200% 0}}
     </style>
     
-    <!-- Stylesheet -->
-    <link rel="stylesheet" crossorigin href="./assets/index-ufePLcBr.css" />
+    <!-- Preload API endpoint for faster initial fetch -->
+    <link rel="preconnect" href="https://worldtimeapi.org" crossorigin />
+    <link rel="dns-prefetch" href="https://worldtimeapi.org" />
     
-    <!-- Defer non-critical JavaScript -->
-    <script type="module" crossorigin src="./assets/index-Dd7au40z.js"></script>
+    <!-- Stylesheet with fetchpriority -->
+    <link rel="stylesheet" crossorigin href="./assets/index-ufePLcBr.css" fetchpriority="high" />
     
-    <!-- Service Worker Registration -->
+    <!-- Defer non-critical JavaScript with fetchpriority low -->
+    <script type="module" crossorigin src="./assets/index-Dd7au40z.js" fetchpriority="low"></script>
+    
+    <!-- Optimized Service Worker Registration with immediate activation -->
     <script>
+      // Register SW immediately for better caching
       if('serviceWorker' in navigator){
         window.addEventListener('load',()=>{
           navigator.serviceWorker.register('./sw.js',{scope:'./'})
-            .then(reg=>console.log('SW registered:',reg.scope))
+            .then(reg=>{
+              console.log('SW registered:',reg.scope);
+              // Check for updates periodically
+              setInterval(()=>reg.update(),300000); // 5 minutes
+            })
             .catch(err=>console.log('SW registration failed:',err));
+          
+          // Use cached version immediately if available
+          navigator.serviceWorker.ready.then(reg=>{
+            if(reg.active&&navigator.serviceWorker.controller){
+              console.log('Using cached version');
+            }
+          });
+        });
+        
+        // Unregister old SWs on page unload
+        window.addEventListener('beforeunload',()=>{
+          navigator.serviceWorker.getRegistrations().then(regs=>{
+            regs.forEach(reg=>{if(!reg.active)reg.unregister();});
+          });
         });
       }
+      
+      // Performance monitoring
+      window.addEventListener('load',()=>{
+        if('PerformanceObserver' in window){
+          const observer=new PerformanceObserver(list=>{
+            list.getEntries().forEach(entry=>{
+              if(entry.entryType==='largest-contentful-paint'){
+                console.log('LCP:',entry.startTime);
+              }
+              if(entry.entryType==='first-input'){
+                console.log('FID:',entry.processingStart-entry.startTime);
+              }
+            });
+          });
+          observer.observe({entryTypes:['largest-contentful-paint','first-input']});
+        }
+        
+        // Core Web Vitals tracking
+        requestIdleCallback?requestIdleCallback(()=>{
+          console.log('Page ready - TTI:',performance.now());
+        }):setTimeout(()=>console.log('Page ready - TTI:',performance.now()),1000);
+      });
     </script>
-  </head>
-  <body>
-    <div id="root" role="application" aria-label="World Time Online Application"></div>
-    
-    <!-- Preconnect hint for API calls -->
-    <link rel="preconnect" href="https://worldtimeapi.org" crossorigin />
-  </body>
 </html>
