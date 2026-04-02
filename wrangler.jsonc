@@ -7,8 +7,6 @@
   },
   "assets": {
     "directory": "world time Kimi_Agent_Deployment_v3",
-    "browser_TTL": 31536000,
-    "serve_single_page_app": true,
     "html_handling": "auto-trailing-slash",
     "not_found_handling": "single-page-application"
   },
@@ -23,6 +21,7 @@
     }
   ],
   "cache": {
+    "enabled": true,
     "rules": [
       {
         "match": "^/assets/.*\\.(js|css)$",
@@ -43,35 +42,5 @@
       }
     ]
   },
-  "headers": [
-    {
-      "match": "^/assets/.*\\.(js|css)$",
-      "set": {
-        "Cache-Control": "public, max-age=31536000, immutable",
-        "Access-Control-Allow-Origin": "*"
-      }
-    },
-    {
-      "match": "^/index\\.html$",
-      "set": {
-        "Cache-Control": "public, max-age=0, must-revalidate"
-      }
-    },
-    {
-      "match": "^/sw\\.js$",
-      "set": {
-        "Cache-Control": "no-cache, no-store, must-revalidate",
-        "Service-Worker-Allowed": "/"
-      }
-    },
-    {
-      "match": "^/manifest\\.json$",
-      "set": {
-        "Cache-Control": "public, max-age=86400",
-        "Content-Type": "application/manifest+json"
-      }
-    }
-  ],
-  "minify": true,
-  "compress": true
+  "minify": true
 }
