@@ -6,9 +6,18 @@
     "enabled": true
   },
   "assets": {
-    "directory": "world time Kimi_Agent_Deployment_v3"
+    "directory": "world time Kimi_Agent_Deployment_v3",
+    "browser_TTL": 31536000,
+    "serve_single_page_app": true
   },
   "compatibility_flags": [
     "nodejs_compat"
+  ],
+  "rules": [
+    {
+      "type": "ESModule",
+      "globs": ["**/*.js"],
+      "fallthrough": true
+    }
   ]
 }
