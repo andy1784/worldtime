@@ -1,0 +1,16 @@
+# robots.txt for worldtimessync.com
+User-agent: *
+Allow: /
+
+# Allow all pages for AdSense crawling
+Allow: /about.html
+Allow: /contact.html
+Allow: /privacy-policy.html
+Allow: /terms-of-service.html
+Allow: /sitemap.xml
+
+# Sitemap location
+Sitemap: https://worldtimessync.com/sitemap.xml
+
+# Crawl-delay (optional, polite crawling)
+Crawl-delay: 1
