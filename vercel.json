@@ -30,6 +30,18 @@
       "dest": "/sitemap.xml"
     },
     {
+      "src": "/ads.txt",
+      "dest": "/ads.txt"
+    },
+    {
+      "src": "/privacy.html",
+      "dest": "/privacy.html"
+    },
+    {
+      "src": "/about.html",
+      "dest": "/about.html"
+    },
+    {
       "handle": "filesystem"
     },
     {
@@ -103,7 +115,7 @@
       ]
     },
     {
-      "source": "/(robots.txt|sitemap.xml|manifest.json|favicon.svg)",
+      "source": "/(robots.txt|sitemap.xml|manifest.json|favicon.svg|ads.txt)",
       "headers": [
         {
           "key": "Cache-Control",
