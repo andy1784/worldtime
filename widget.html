@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    
+    <title>Free World Clock Widget for Your Website | World Time Sync</title>
+    <meta name="title" content="Free World Clock Widget for Your Website">
+    <meta name="description" content="Add a beautiful, free world clock widget to your website. One line of code. Supports 682 cities, dark/light themes, multiple sizes. No attribution required.">
+    <meta name="keywords" content="world clock widget, free clock widget, website clock, timezone widget, embed clock, javascript clock widget">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://worldtimessync.com/widget.html">
+    <meta property="og:title" content="Free World Clock Widget for Your Website">
+    <meta property="og:description" content="Add a beautiful world clock to your site with one line of code. Free, no signup, 682 cities.">
+    
+    <link rel="canonical" href="https://worldtimessync.com/widget.html">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/assets/index-ufePLcBr.css">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LBX0CDYSSV');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>
+    
+    <style>
+        .widget-landing { min-height:100vh; background:#000; color:#fff; font-family:system-ui,-apple-system,sans-serif; }
+        .wl-header { text-align:center; padding:60px 20px 40px; max-width:800px; margin:0 auto; }
+        .wl-header h1 { font-size:2.4em; margin-bottom:16px; background:linear-gradient(135deg,#fff 0%,#94a3b8 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+        .wl-header p { color:rgba(255,255,255,0.6); font-size:1.1em; line-height:1.6; }
+        .wl-main { max-width:900px; margin:0 auto; padding:0 20px 60px; }
+        
+        .wl-section { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:16px; padding:28px; margin-bottom:24px; }
+        .wl-section h2 { font-size:1.3em; margin-bottom:16px; display:flex; align-items:center; gap:10px; }
+        .wl-section h2 .num { background:rgba(255,255,255,0.1); width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; }
+        
+        /* Preview area */
+        .wl-preview { background:rgba(0,0,0,0.3); border-radius:12px; padding:30px; text-align:center; margin-bottom:20px; }
+        .wl-preview-label { font-size:12px; color:rgba(255,255,255,0.4); margin-bottom:12px; text-transform:uppercase; letter-spacing:1px; }
+        
+        /* Config form */
+        .wl-config { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; margin-bottom:20px; }
+        .wl-field label { display:block; font-size:13px; color:rgba(255,255,255,0.6); margin-bottom:6px; }
+        .wl-field select, .wl-field input { width:100%; height:40px; padding:0 12px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.15); border-radius:8px; color:#fff; font-size:14px; outline:none; }
+        .wl-field select:focus, .wl-field input:focus { border-color:rgba(255,255,255,0.4); }
+        .wl-field select option { background:#1a1a1a; }
+        
+        /* Code output */
+        .wl-code { position:relative; }
+        .wl-code pre { background:rgba(0,0,0,0.4); border-radius:10px; padding:16px; overflow-x:auto; font-size:13px; line-height:1.5; color:#e2e8f0; font-family:'SF Mono',Consolas,monospace; white-space:pre-wrap; word-break:break-all; }
+        .wl-code .copy-btn { position:absolute; top:10px; right:10px; padding:6px 14px; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.15); border-radius:6px; color:#fff; font-size:12px; cursor:pointer; transition:all 0.15s; }
+        .wl-code .copy-btn:hover { background:rgba(255,255,255,0.2); }
+        .wl-code .copy-btn.copied { background:rgba(34,197,94,0.3); border-color:rgba(34,197,94,0.5); }
+        
+        /* Features */
+        .wl-features { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:16px; }
+        .wl-feature { padding:16px; background:rgba(255,255,255,0.03); border-radius:10px; border:1px solid rgba(255,255,255,0.08); }
+        .wl-feature .icon { font-size:1.5em; margin-bottom:8px; }
+        .wl-feature h3 { font-size:14px; font-weight:600; margin-bottom:4px; }
+        .wl-feature p { font-size:13px; color:rgba(255,255,255,0.5); line-height:1.5; }
+        
+        /* Tabs for themes */
+        .wl-tabs { display:flex; gap:4px; margin-bottom:16px; }
+        .wl-tab { padding:8px 16px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; color:rgba(255,255,255,0.6); font-size:13px; cursor:pointer; transition:all 0.15s; }
+        .wl-tab.active { background:rgba(255,255,255,0.15); color:#fff; border-color:rgba(255,255,255,0.3); }
+        
+        @media(max-width:768px) {
+            .wl-header h1 { font-size:1.8em; }
+            .wl-section { padding:20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="widget-landing">
+        <header class="wl-header">
+            <h1>Free World Clock Widget</h1>
+            <p>Add a beautiful, real-time clock to your website showing the time in any city worldwide. One line of code. Free forever.</p>
+        </header>
+        
+        <main class="wl-main">
+            <!-- Step 1: Configure -->
+            <section class="wl-section">
+                <h2><span class="num">1</span> Configure Your Widget</h2>
+                <div class="wl-config">
+                    <div class="wl-field">
+                        <label>Timezone</label>
+                        <select id="configTz">
+                            <option value="America/New_York">New York (Eastern)</option>
+                            <option value="America/Chicago">Chicago (Central)</option>
+                            <option value="America/Denver">Denver (Mountain)</option>
+                            <option value="America/Los_Angeles">Los Angeles (Pacific)</option>
+                            <option value="Europe/London">London (GMT)</option>
+                            <option value="Europe/Paris">Paris (CET)</option>
+                            <option value="Europe/Berlin">Berlin (CET)</option>
+                            <option value="Asia/Tokyo">Tokyo (JST)</option>
+                            <option value="Asia/Shanghai">Shanghai (CST)</option>
+                            <option value="Asia/Singapore">Singapore (SGT)</option>
+                            <option value="Asia/Dubai">Dubai (GST)</option>
+                            <option value="Asia/Kolkata">Mumbai (IST)</option>
+                            <option value="Australia/Sydney">Sydney (AEST)</option>
+                            <option value="Pacific/Auckland">Auckland (NZST)</option>
+                            <option value="America/Sao_Paulo">São Paulo (BRT)</option>
+                        </select>
+                    </div>
+                    <div class="wl-field">
+                        <label>Theme</label>
+                        <select id="configTheme">
+                            <option value="dark">Dark</option>
+                            <option value="light">Light</option>
+                        </select>
+                    </div>
+                    <div class="wl-field">
+                        <label>Size</label>
+                        <select id="configSize">
+                            <option value="small">Small (220×120)</option>
+                            <option value="medium" selected>Medium (300×160)</option>
+                            <option value="large">Large (420×220)</option>
+                        </select>
+                    </div>
+                    <div class="wl-field">
+                        <label>Show Date</label>
+                        <select id="configDate">
+                            <option value="true" selected>Yes</option>
+                            <option value="false">No</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Preview -->
+                <div class="wl-preview">
+                    <div class="wl-preview-label">Live Preview</div>
+                    <iframe id="widgetPreview" src="/widget-embed.html?tz=America/New_York&theme=dark&size=medium&date=1" style="width:300px;height:160px;border:none;border-radius:12px;overflow:hidden;" frameborder="0" scrolling="no" title="Widget Preview"></iframe>
+                </div>
+            </section>
+            
+            <!-- Step 2: Copy Code -->
+            <section class="wl-section">
+                <h2><span class="num">2</span> Copy the Code</h2>
+                <p style="color:rgba(255,255,255,0.5);font-size:14px;margin-bottom:16px;">Paste this into your HTML where you want the clock to appear:</p>
+                <div class="wl-code">
+                    <button class="copy-btn" onclick="copyCode()">Copy</button>
+                    <pre id="codeOutput"></pre>
+                </div>
+            </section>
+            
+            <!-- Features -->
+            <section class="wl-section">
+                <h2>Features</h2>
+                <div class="wl-features">
+                    <div class="wl-feature">
+                        <div class="icon">&#9200;</div>
+                        <h3>Real-Time Updates</h3>
+                        <p>Clock updates every second. No page refresh needed.</p>
+                    </div>
+                    <div class="wl-feature">
+                        <div class="icon">&#127760;</div>
+                        <h3>682 Cities</h3>
+                        <p>Every timezone from New York to Tokyo to Sydney.</p>
+                    </div>
+                    <div class="wl-feature">
+                        <div class="icon">&#127912;</div>
+                        <h3>Customizable</h3>
+                        <p>Dark or light theme. Three sizes. Optional date display.</p>
+                    </div>
+                    <div class="wl-feature">
+                        <div class="icon">&#9889;</div>
+                        <h3>Lightweight</h3>
+                        <p>Under 5KB. Async loading. No jQuery needed.</p>
+                    </div>
+                    <div class="wl-feature">
+                        <div class="icon">&#128274;</div>
+                        <h3>Secure</h3>
+                        <p>Runs in a sandboxed iframe. No data collection. No cookies.</p>
+                    </div>
+                    <div class="wl-feature">
+                        <div class="icon">&#128142;</div>
+                        <h3>Free Forever</h3>
+                        <p>No premium tier. No usage limits. No signup required.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Links -->
+            <div style="text-align:center;padding:20px;">
+                <p style="color:rgba(255,255,255,0.4);font-size:14px;margin-bottom:12px;">World Time Sync — Free tools for global teams</p>
+                <a href="/" style="color:#60a5fa;text-decoration:none;margin:0 8px;font-size:14px;">World Clock</a>
+                <a href="/meeting-planner.html" style="color:#60a5fa;text-decoration:none;margin:0 8px;font-size:14px;">Meeting Planner</a>
+                <a href="/time/" style="color:#60a5fa;text-decoration:none;margin:0 8px;font-size:14px;">City Pages</a>
+                <a href="/about.html" style="color:#60a5fa;text-decoration:none;margin:0 8px;font-size:14px;">About</a>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Load widget.js for the preview -->
+    <script src="/widget.js" data-timezone="America/New_York" data-theme="dark" data-size="medium"></script>
+    
+    <script>
+    (function() {
+        var tzSelect = document.getElementById('configTz');
+        var themeSelect = document.getElementById('configTheme');
+        var sizeSelect = document.getElementById('configSize');
+        var dateSelect = document.getElementById('configDate');
+        var preview = document.getElementById('widgetPreview');
+        var codeOutput = document.getElementById('codeOutput');
+        
+        var sizeDims = { small: '220,120', medium: '300,160', large: '420,220' };
+        
+        function update() {
+            // Update preview
+            var tz = tzSelect.value;
+            var theme = themeSelect.value;
+            var size = sizeSelect.value;
+            var date = dateSelect.value;
+            var dims = sizeDims[size].split(',');
+            
+            var params = 'tz=' + encodeURIComponent(tz) + '&theme=' + theme + '&size=' + size + '&date=' + date;
+            preview.src = '/widget-embed.html?' + params;
+            preview.style.width = dims[0] + 'px';
+            preview.style.height = dims[1] + 'px';
+            
+            // Update code
+            var code = '<!-- World Time Sync Widget -->
+<div id="wts-widget"></div>
+<script src="https://worldtimessync.com/widget.js"' +
+    ' data-timezone="' + tz + '"' +
+    ' data-theme="' + theme + '"' +
+    ' data-size="' + size + '"' +
+    ' data-show-date="' + date + '">
+<\/script>';
+            codeOutput.textContent = code;
+        }
+        
+        tzSelect.addEventListener('change', update);
+        themeSelect.addEventListener('change', update);
+        sizeSelect.addEventListener('change', update);
+        dateSelect.addEventListener('change', update);
+        
+        // Initial
+        update();
+    })();
+    
+    function copyCode() {
+        var code = document.getElementById('codeOutput').textContent;
+        navigator.clipboard.writeText(code).then(function() {
+            var btn = document.querySelector('.copy-btn');
+            btn.textContent = 'Copied!';
+            btn.classList.add('copied');
+            setTimeout(function() {
+                btn.textContent = 'Copy';
+                btn.classList.remove('copied');
+            }, 2000);
+        });
+    }
+    </script>
+</body>
+</html>
