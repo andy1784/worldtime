@@ -50,8 +50,40 @@
       "dest": "/$0"
     },
     {
-      "src": "/(robots.txt|sitemap.xml|manifest.json|favicon.svg|ads.txt|privacy.html|about.html)",
-      "dest": "/$1"
+      "src": "/robots.txt",
+      "dest": "/robots.txt"
+    },
+    {
+      "src": "/manifest.json",
+      "dest": "/manifest.json"
+    },
+    {
+      "src": "/favicon.svg",
+      "dest": "/favicon.svg"
+    },
+    {
+      "src": "/sitemap.xml",
+      "dest": "/sitemap.xml"
+    },
+    {
+      "src": "/ads.txt",
+      "dest": "/ads.txt"
+    },
+    {
+      "src": "/privacy.html",
+      "dest": "/privacy.html"
+    },
+    {
+      "src": "/about.html",
+      "dest": "/about.html"
+    },
+    {
+      "src": "/contact.html",
+      "dest": "/contact.html"
+    },
+    {
+      "src": "/terms.html",
+      "dest": "/terms.html"
     },
     {
       "src": "/(.*)",
