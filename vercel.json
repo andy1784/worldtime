@@ -8,6 +8,10 @@
       "dest": "/time/$1"
     },
     {
+      "src": "/meeting-planner.html",
+      "dest": "/meeting-planner.html"
+    },
+    {
       "src": "/assets/(.*)",
       "headers": {
         "Cache-Control": "public, max-age=31536000, immutable"
