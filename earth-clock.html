@@ -1,0 +1,871 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    
+    <title>This World Clock Will Blow Your Mind | World Time Sync</title>
+    <meta name="title" content="This World Clock Will Blow Your Mind">
+    <meta name="description" content="Watch the world tick in real-time. See day and night sweep across the globe, cities lighting up, and discover what happens every 60 seconds on Earth.">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://worldtimessync.com/earth-clock.html">
+    <meta property="og:title" content="This World Clock Will Blow Your Mind">
+    <meta property="og:description" content="Watch the world tick in real-time. Day and night sweep across the globe. What happens every 60 seconds on Earth?">
+    <meta property="og:image" content="https://worldtimessync.com/og-earth.png">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="This World Clock Will Blow Your Mind">
+    <meta name="twitter:description" content="Watch the world tick in real-time. Day and night sweep across the globe.">
+    
+    <link rel="canonical" href="https://worldtimessync.com/earth-clock.html">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LBX0CDYSSV');
+    </script>
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background: #000;
+            color: #fff;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 20px;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 50%, rgba(15, 23, 42, 1) 0%, rgba(0, 0, 0, 1) 70%);
+            z-index: 0;
+        }
+        
+        .stars {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #fff;
+            border-radius: 50%;
+            animation: twinkle var(--duration) ease-in-out infinite;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 1; }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+        }
+        
+        .hero-label {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .hero h1 {
+            font-size: clamp(2rem, 6vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .hero h1 .gradient {
+            background: linear-gradient(135deg, #fff 0%, #60a5fa 50%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: rgba(255,255,255,0.6);
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .scroll-hint {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            text-align: center;
+            opacity: 0;
+        }
+        
+        .scroll-hint .mouse {
+            width: 24px;
+            height: 38px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 12px;
+            margin: 0 auto 8px;
+            position: relative;
+        }
+        
+        .scroll-hint .mouse::after {
+            content: '';
+            width: 4px;
+            height: 8px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 2px;
+            position: absolute;
+            top: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: scroll-dot 2s ease-in-out infinite;
+        }
+        
+        @keyframes scroll-dot {
+            0% { opacity: 1; transform: translateX(-50%) translateY(0); }
+            100% { opacity: 0; transform: translateX(-50%) translateY(12px); }
+        }
+        
+        .scroll-hint span {
+            font-size: 11px;
+            color: rgba(255,255,255,0.3);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        /* Earth Section */
+        .earth-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+            position: relative;
+        }
+        
+        .earth-container {
+            position: relative;
+            width: min(500px, 80vw);
+            height: min(500px, 80vw);
+            opacity: 0;
+            transform: scale(0.8);
+        }
+        
+        .earth {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 50%, #000 100%);
+            box-shadow: 
+                0 0 60px rgba(96, 165, 250, 0.15),
+                0 0 120px rgba(96, 165, 250, 0.1),
+                inset 0 0 60px rgba(0, 0, 0, 0.5);
+        }
+        
+        .earth-surface {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            position: absolute;
+            background: 
+                radial-gradient(circle at 30% 30%, rgba(34, 197, 94, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 70% 40%, rgba(34, 197, 94, 0.1) 0%, transparent 35%),
+                radial-gradient(circle at 50% 60%, rgba(34, 197, 94, 0.12) 0%, transparent 30%),
+                radial-gradient(circle at 25% 70%, rgba(34, 197, 94, 0.08) 0%, transparent 25%);
+        }
+        
+        .earth-grid {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            position: absolute;
+            border: 1px solid rgba(96, 165, 250, 0.15);
+        }
+        
+        .earth-rotator {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            position: absolute;
+        }
+        
+        .earth-city-dot {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #facc15;
+            box-shadow: 0 0 8px rgba(250, 204, 21, 0.6);
+        }
+        
+        .earth-city-dot.night {
+            background: #818cf8;
+            box-shadow: 0 0 8px rgba(129, 140, 248, 0.6);
+        }
+        
+        .day-night-line {
+            position: absolute;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, rgba(250, 204, 21, 0.5), transparent);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .earth-glow {
+            position: absolute;
+            inset: -20%;
+            border-radius: 50%;
+            background: radial-gradient(circle, transparent 45%, rgba(96, 165, 250, 0.05) 60%, transparent 70%);
+            animation: pulse-glow 4s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        
+        .sun {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #facc15, #f59e0b);
+            box-shadow: 0 0 40px rgba(250, 204, 21, 0.5), 0 0 80px rgba(250, 204, 21, 0.3);
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 5;
+        }
+        
+        .time-label {
+            margin-top: 30px;
+            font-size: 14px;
+            color: rgba(255,255,255,0.5);
+            text-align: center;
+            opacity: 0;
+        }
+        
+        .time-label .utc {
+            font-family: 'SF Mono', Consolas, monospace;
+            font-size: 18px;
+            color: #facc15;
+            margin-top: 4px;
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            padding: 80px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 1.6em;
+            margin-bottom: 50px;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        
+        .stat-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 28px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .stat-card .icon { font-size: 2em; margin-bottom: 12px; }
+        .stat-card .number { font-size: 2.4em; font-weight: 800; margin-bottom: 8px; }
+        .stat-card .label { font-size: 14px; color: rgba(255,255,255,0.5); }
+        .stat-card .counter { color: #facc15; }
+        
+        /* Cities Ticker */
+        .ticker-section {
+            padding: 60px 20px;
+            overflow: hidden;
+            background: rgba(255,255,255,0.02);
+        }
+        
+        .ticker-title {
+            text-align: center;
+            font-size: 1.4em;
+            margin-bottom: 30px;
+            opacity: 0;
+        }
+        
+        .ticker-wrap {
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+        }
+        
+        .ticker-wrap::before,
+        .ticker-wrap::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100px;
+            z-index: 2;
+            pointer-events: none;
+        }
+        
+        .ticker-wrap::before {
+            left: 0;
+            background: linear-gradient(to right, #000, transparent);
+        }
+        
+        .ticker-wrap::after {
+            right: 0;
+            background: linear-gradient(to left, #000, transparent);
+        }
+        
+        .ticker {
+            display: inline-flex;
+            animation: ticker-scroll 60s linear infinite;
+        }
+        
+        .ticker-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            margin: 0 6px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            font-size: 13px;
+            white-space: nowrap;
+        }
+        
+        .ticker-item .time {
+            font-family: 'SF Mono', Consolas, monospace;
+            font-weight: 600;
+            color: #facc15;
+        }
+        
+        .ticker-item .city { color: rgba(255,255,255,0.7); }
+        .ticker-item .tz { color: rgba(255,255,255,0.3); font-size: 11px; }
+        
+        @keyframes ticker-scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        /* Share Section */
+        .share-section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .share-title {
+            font-size: 1.8em;
+            margin-bottom: 16px;
+            opacity: 0;
+        }
+        
+        .share-subtitle {
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 30px;
+            opacity: 0;
+        }
+        
+        .share-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0;
+        }
+        
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .share-btn.twitter { background: #1da1f2; color: #fff; }
+        .share-btn.twitter:hover { background: #0d8ddb; }
+        .share-btn.facebook { background: #4267b2; color: #fff; }
+        .share-btn.facebook:hover { background: #365899; }
+        .share-btn.linkedin { background: #0077b5; color: #fff; }
+        .share-btn.linkedin:hover { background: #006399; }
+        .share-btn.copy { background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.15); }
+        .share-btn.copy:hover { background: rgba(255,255,255,0.15); }
+        .share-btn.copy.copied { background: rgba(34, 197, 94, 0.3); border-color: rgba(34, 197, 94, 0.5); }
+        
+        /* Tools CTA */
+        .tools-cta {
+            padding: 80px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .tools-title {
+            text-align: center;
+            font-size: 1.6em;
+            margin-bottom: 40px;
+            opacity: 0;
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .tool-card {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 20px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 14px;
+            text-decoration: none;
+            color: #fff;
+            transition: all 0.2s;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .tool-card:hover {
+            background: rgba(255,255,255,0.06);
+            border-color: rgba(255,255,255,0.2);
+        }
+        
+        .tool-card .icon { font-size: 1.8em; }
+        .tool-card .info h3 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+        .tool-card .info p { font-size: 13px; color: rgba(255,255,255,0.5); }
+        
+        /* Footer */
+        .viral-footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+        
+        .viral-footer p { color: rgba(255,255,255,0.3); font-size: 13px; }
+        .viral-footer a { color: rgba(255,255,255,0.5); text-decoration: none; margin: 0 8px; }
+        .viral-footer a:hover { color: #fff; }
+        
+        /* Animations */
+        .fade-up { opacity: 0; transform: translateY(30px); }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .section-title { font-size: 1.3em; }
+            .stat-card .number { font-size: 1.8em; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero -->
+    <section class="hero" id="hero">
+        <div class="hero-bg"></div>
+        <div class="stars" id="stars"></div>
+        <div class="hero-content">
+            <div class="hero-label" id="heroLabel">A World Time Experience</div>
+            <h1 id="heroTitle">Watch the World<br><span class="gradient">Tick in Real-Time</span></h1>
+            <p id="heroText">Every second, the sun rises somewhere and sets somewhere else. 7.8 billion people living in 24 time zones. This is Earth's clock.</p>
+        </div>
+        <div class="scroll-hint" id="scrollHint">
+            <div class="mouse"></div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+    
+    <!-- Earth Section -->
+    <section class="earth-section" id="earthSection">
+        <div class="earth-container" id="earthContainer">
+            <div class="earth-glow"></div>
+            <div class="earth" id="earth">
+                <div class="earth-surface"></div>
+                <div class="earth-grid"></div>
+                <div class="earth-rotator" id="earthRotator"></div>
+                <div class="day-night-line" id="dayNightLine"></div>
+            </div>
+            <div class="sun" id="sun"></div>
+        </div>
+        <div class="time-label" id="earthTimeLabel">
+            Current Universal Time
+            <div class="utc" id="utcTime">--:--:-- UTC</div>
+        </div>
+    </section>
+    
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <h2 class="section-title fade-up">What Happens Every 60 Seconds</h2>
+        <div class="stats-grid">
+            <div class="stat-card fade-up">
+                <div class="icon">&#128101;</div>
+                <div class="number counter" data-target="43">0</div>
+                <div class="label">People are born every minute</div>
+            </div>
+            <div class="stat-card fade-up">
+                <div class="icon">&#127752;</div>
+                <div class="number counter" data-target="1440">0</div>
+                <div class="label">New websites created every minute</div>
+            </div>
+            <div class="stat-card fade-up">
+                <div class="icon">&#9200;</div>
+                <div class="number counter"><span class="counter" data-target="1440">0</span>x</div>
+                <div class="label">Time zones exist on Earth</div>
+            </div>
+            <div class="stat-card fade-up">
+                <div class="icon">&#127760;</div>
+                <div class="number">682</div>
+                <div class="label">Cities we track worldwide</div>
+            </div>
+            <div class="stat-card fade-up">
+                <div class="icon">&#128267;</div>
+                <div class="number">24</div>
+                <div class="label">Time zones across the globe</div>
+            </div>
+            <div class="stat-card fade-up">
+                <div class="icon">&#9728;</div>
+                <div class="number">1</div>
+                <div class="label">Planet we all share</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Cities Ticker -->
+    <section class="ticker-section">
+        <h2 class="ticker-title">Live Around the World</h2>
+        <div class="ticker-wrap">
+            <div class="ticker" id="ticker"></div>
+        </div>
+    </section>
+    
+    <!-- Share Section -->
+    <section class="share-section">
+        <h2 class="share-title fade-up">Share This Experience</h2>
+        <p class="share-subtitle fade-up">If this blew your mind, share it with someone in another time zone</p>
+        <div class="share-buttons fade-up">
+            <a class="share-btn twitter" id="shareTwitter" target="_blank" rel="noopener">
+                &#120146; Twitter
+            </a>
+            <a class="share-btn facebook" id="shareFacebook" target="_blank" rel="noopener">
+                &#62001; Facebook
+            </a>
+            <a class="share-btn linkedin" id="shareLinkedin" target="_blank" rel="noopener">
+                &#62217; LinkedIn
+            </a>
+            <button class="share-btn copy" id="shareCopy">
+                &#128203; Copy Link
+            </button>
+        </div>
+    </section>
+    
+    <!-- Tools CTA -->
+    <section class="tools-cta">
+        <h2 class="tools-title fade-up">Explore More Tools</h2>
+        <div class="tools-grid">
+            <a href="/meeting-planner.html" class="tool-card fade-up">
+                <div class="icon">&#9200;</div>
+                <div class="info">
+                    <h3>Meeting Planner</h3>
+                    <p>Find the best time across time zones for your global team</p>
+                </div>
+            </a>
+            <a href="/widget.html" class="tool-card fade-up">
+                <div class="icon">&#128267;</div>
+                <div class="info">
+                    <h3>World Clock Widget</h3>
+                    <p>Add a free clock to your website with one line of code</p>
+                </div>
+            </a>
+            <a href="/time/" class="tool-card fade-up">
+                <div class="icon">&#127760;</div>
+                <div class="info">
+                    <h3>City Time Pages</h3>
+                    <p>Check current time in 682 cities worldwide</p>
+                </div>
+            </a>
+            <a href="/" class="tool-card fade-up">
+                <div class="icon">&#128197;</div>
+                <div class="info">
+                    <h3>World Clock & Converter</h3>
+                    <p>Full world clock with timezone converter</p>
+                </div>
+            </a>
+        </div>
+    </section>
+    
+    <footer class="viral-footer">
+        <p>World Time Sync &mdash; Free tools for global teams</p>
+        <p style="margin-top:8px;"><a href="/">Home</a><a href="/time/">City Pages</a><a href="/meeting-planner.html">Meeting Planner</a><a href="/widget.html">Widget</a><a href="/about.html">About</a></p>
+    </footer>
+    
+    <script>
+    (function() {
+        // ===== STARS =====
+        const starsEl = document.getElementById('stars');
+        for (let i = 0; i < 150; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.setProperty('--duration', (1 + Math.random() * 3) + 's');
+            star.style.animationDelay = Math.random() * 2 + 's';
+            star.style.opacity = 0.1 + Math.random() * 0.5;
+            starsEl.appendChild(star);
+        }
+        
+        // ===== EARTH CITIES =====
+        const earthCities = [
+            { name: 'New York', lat: 40.7, lng: -74 },
+            { name: 'Los Angeles', lat: 34, lng: -118 },
+            { name: 'London', lat: 51.5, lng: -0.1 },
+            { name: 'Paris', lat: 48.9, lng: 2.3 },
+            { name: 'Tokyo', lat: 35.7, lng: 139.7 },
+            { name: 'Dubai', lat: 25.2, lng: 55.3 },
+            { name: 'Singapore', lat: 1.3, lng: 103.8 },
+            { name: 'Sydney', lat: -33.9, lng: 151.2 },
+            { name: 'São Paulo', lat: -23.5, lng: -46.6 },
+            { name: 'Mumbai', lat: 19, lng: 72.9 },
+            { name: 'Shanghai', lat: 31.2, lng: 121.5 },
+            { name: 'Moscow', lat: 55.8, lng: 37.6 },
+            { name: 'Cairo', lat: 30, lng: 31.2 },
+            { name: 'Hong Kong', lat: 22.3, lng: 114.2 },
+            { name: 'Seoul', lat: 37.6, lng: 127 },
+            { name: 'Berlin', lat: 52.5, lng: 13.4 },
+            { name: 'Mexico City', lat: 19.4, lng: -99.1 },
+            { name: 'Istanbul', lat: 41, lng: 29 },
+            { name: 'Lagos', lat: 6.5, lng: 3.4 },
+            { name: 'Buenos Aires', lat: -34.6, lng: -58.4 },
+            { name: 'Bangkok', lat: 13.8, lng: 100.5 },
+            { name: 'Jakarta', lat: -6.2, lng: 106.8 },
+            { name: 'Nairobi', lat: -1.3, lng: 36.8 },
+            { name: 'Lima', lat: -12, lng: -77 },
+        ];
+        
+        const earthRotator = document.getElementById('earthRotator');
+        earthCities.forEach(city => {
+            const dot = document.createElement('div');
+            dot.className = 'earth-city-dot';
+            // Convert lat/lng to x/y on circle
+            const x = ((city.lng + 180) / 360) * 100;
+            const y = ((90 - city.lng) / 180) * 100;
+            dot.style.left = x + '%';
+            dot.style.top = y + '%';
+            dot.dataset.lng = city.lng;
+            dot.title = city.name;
+            earthRotator.appendChild(dot);
+        });
+        
+        // ===== TICKER =====
+        const tickerCities = [
+            { name: 'New York', tz: 'America/New_York', flag: '🇺🇸' },
+            { name: 'London', tz: 'Europe/London', flag: '🇬🇧' },
+            { name: 'Tokyo', tz: 'Asia/Tokyo', flag: '🇯🇵' },
+            { name: 'Dubai', tz: 'Asia/Dubai', flag: '🇦🇪' },
+            { name: 'Singapore', tz: 'Asia/Singapore', flag: '🇸🇬' },
+            { name: 'Sydney', tz: 'Australia/Sydney', flag: '🇦🇺' },
+            { name: 'Paris', tz: 'Europe/Paris', flag: '🇫🇷' },
+            { name: 'Mumbai', tz: 'Asia/Kolkata', flag: '🇮🇳' },
+            { name: 'Shanghai', tz: 'Asia/Shanghai', flag: '🇨🇳' },
+            { name: 'São Paulo', tz: 'America/Sao_Paulo', flag: '🇧🇷' },
+            { name: 'Moscow', tz: 'Europe/Moscow', flag: '🇷🇺' },
+            { name: 'Hong Kong', tz: 'Asia/Hong_Kong', flag: '🇭🇰' },
+            { name: 'Seoul', tz: 'Asia/Seoul', flag: '🇰🇷' },
+            { name: 'Mexico City', tz: 'America/Mexico_City', flag: '🇲🇽' },
+            { name: 'Cairo', tz: 'Africa/Cairo', flag: '🇪🇬' },
+            { name: 'Berlin', tz: 'Europe/Berlin', flag: '🇩🇪' },
+        ];
+        
+        const tickerEl = document.getElementById('ticker');
+        function renderTicker() {
+            let html = '';
+            [...tickerCities, ...tickerCities].forEach(city => {
+                const time = new Intl.DateTimeFormat('en-US', {
+                    timeZone: city.tz, hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false
+                }).format(new Date());
+                html += '<div class="ticker-item"><span>' + city.flag + '</span><span class="city">' + city.name + '</span><span class="time">' + time + '</span></div>';
+            });
+            tickerEl.innerHTML = html;
+            tickerEl.style.animationDuration = (tickerCities.length * 3) + 's';
+        }
+        renderTicker();
+        setInterval(renderTicker, 5000);
+        
+        // ===== EARTH ROTATION & SUN =====
+        function updateEarth() {
+            const now = new Date();
+            const utcHours = now.getUTCHours() + now.getUTCMinutes() / 60;
+            
+            // Sun position (0-100%)
+            const sunX = ((utcHours / 24) * 100);
+            const sun = document.getElementById('sun');
+            sun.style.left = (sunX - 2) + '%';
+            
+            // Day/night terminator
+            const terminator = document.getElementById('dayNightLine');
+            terminator.style.left = (sunX) + '%';
+            
+            // Update UTC time
+            const utcStr = new Intl.DateTimeFormat('en-US', {
+                timeZone: 'UTC', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false
+            }).format(now);
+            document.getElementById('utcTime').textContent = utcStr + ' UTC';
+            
+            // Update city dots (day/night)
+            document.querySelectorAll('.earth-city-dot').forEach(dot => {
+                const lng = parseFloat(dot.dataset.lng);
+                const cityUTC = utcHours + (lng / 15);
+                const normalized = ((cityUTC % 24) + 24) % 24;
+                const isDay = normalized >= 6 && normalized < 18;
+                dot.className = 'earth-city-dot' + (isDay ? '' : ' night');
+            });
+        }
+        updateEarth();
+        setInterval(updateEarth, 1000);
+        
+        // ===== SCROLL ANIMATIONS =====
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    entry.target.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+        
+        // Hero animations
+        setTimeout(() => {
+            document.getElementById('heroLabel').style.opacity = '1';
+            document.getElementById('heroLabel').style.transform = 'translateY(0)';
+            document.getElementById('heroLabel').style.transition = 'all 0.8s ease-out';
+        }, 300);
+        setTimeout(() => {
+            document.getElementById('heroTitle').style.opacity = '1';
+            document.getElementById('heroTitle').style.transform = 'translateY(0)';
+            document.getElementById('heroTitle').style.transition = 'all 0.8s ease-out';
+        }, 600);
+        setTimeout(() => {
+            document.getElementById('heroText').style.opacity = '1';
+            document.getElementById('heroText').style.transform = 'translateY(0)';
+            document.getElementById('heroText').style.transition = 'all 0.8s ease-out';
+        }, 900);
+        setTimeout(() => {
+            document.getElementById('scrollHint').style.opacity = '1';
+            document.getElementById('scrollHint').style.transition = 'opacity 1s ease-out';
+        }, 1500);
+        
+        // Earth animation
+        setTimeout(() => {
+            document.getElementById('earthContainer').style.opacity = '1';
+            document.getElementById('earthContainer').style.transform = 'scale(1)';
+            document.getElementById('earthContainer').style.transition = 'all 1s ease-out';
+        }, 200);
+        setTimeout(() => {
+            document.getElementById('earthTimeLabel').style.opacity = '1';
+            document.getElementById('earthTimeLabel').style.transition = 'opacity 0.8s ease-out';
+        }, 800);
+        
+        // ===== NUMBER COUNTERS =====
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll('.counter');
+                    counters.forEach(counter => {
+                        const target = parseInt(counter.dataset.target);
+                        const duration = 2000;
+                        const start = performance.now();
+                        function update(now) {
+                            const elapsed = now - start;
+                            const progress = Math.min(elapsed / duration, 1);
+                            const eased = 1 - Math.pow(1 - progress, 3);
+                            counter.textContent = Math.floor(eased * target).toLocaleString();
+                            if (progress < 1) requestAnimationFrame(update);
+                        }
+                        requestAnimationFrame(update);
+                    });
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+        
+        document.querySelectorAll('.stat-card').forEach(card => counterObserver.observe(card));
+        
+        // ===== SHARE BUTTONS =====
+        const shareUrl = encodeURIComponent('https://worldtimessync.com/earth-clock.html');
+        const shareText = encodeURIComponent('This World Clock blew my mind 🌍 Watch the world tick in real-time');
+        
+        document.getElementById('shareTwitter').href = 'https://twitter.com/intent/tweet?text=' + shareText + '&url=' + shareUrl;
+        document.getElementById('shareFacebook').href = 'https://www.facebook.com/sharer/sharer.php?u=' + shareUrl;
+        document.getElementById('shareLinkedin').href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + shareUrl;
+        
+        document.getElementById('shareCopy').addEventListener('click', function() {
+            navigator.clipboard.writeText('https://worldtimessync.com/earth-clock.html').then(() => {
+                this.classList.add('copied');
+                this.textContent = '✓ Copied!';
+                setTimeout(() => {
+                    this.classList.remove('copied');
+                    this.textContent = '📋 Copy Link';
+                }, 2000);
+            });
+        });
+    })();
+    </script>
+</body>
+</html>

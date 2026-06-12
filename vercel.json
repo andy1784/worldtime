@@ -16,6 +16,10 @@
       "dest": "/widget-embed.html"
     },
     {
+      "src": "/earth-clock.html",
+      "dest": "/earth-clock.html"
+    },
+    {
       "src": "/time/(.*)",
       "dest": "/time/$1"
     },
