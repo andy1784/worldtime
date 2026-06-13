@@ -1,6 +1,6 @@
 # World Time Sync - robots.txt
 # https://worldtimessync.com/
-# Last updated: 2026-03-20
+# Last updated: 2026-06-13
 
 # Allow all search engines to crawl the site
 User-agent: *
