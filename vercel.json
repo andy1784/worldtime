@@ -20,6 +20,14 @@
       "dest": "/earth-clock.html"
     },
     {
+      "src": "/wordpress.html",
+      "dest": "/wordpress.html"
+    },
+    {
+      "src": "/wp-plugin/(.*)",
+      "dest": "/wp-plugin/$1"
+    },
+    {
       "src": "/time/(.*)",
       "dest": "/time/$1"
     },
