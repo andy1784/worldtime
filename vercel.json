@@ -24,6 +24,10 @@
       "dest": "/wordpress.html"
     },
     {
+      "src": "/blog/(.*)",
+      "dest": "/blog/$1"
+    },
+    {
       "src": "/wp-plugin/(.*)",
       "dest": "/wp-plugin/$1"
     },

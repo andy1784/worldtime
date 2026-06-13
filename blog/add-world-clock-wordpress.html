@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    
+    <title>How to Add a World Clock to WordPress (2026 Guide) | World Time Sync</title>
+    <meta name="title" content="How to Add a World Clock to WordPress (2026 Guide)">
+    <meta name="description" content="Learn how to add a world clock to your WordPress site in 5 minutes. Free plugin with 682 cities, dark/light themes, and no API key required. Step-by-step guide with screenshots.">
+    <meta name="keywords" content="wordpress world clock, wordpress clock plugin, add clock to wordpress, wordpress timezone widget, world clock wordpress, wordpress time plugin">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://worldtimessync.com/blog/add-world-clock-wordpress.html">
+    <meta property="og:title" content="How to Add a World Clock to WordPress (2026 Guide)">
+    <meta property="og:description" content="Step-by-step guide to adding a beautiful world clock to your WordPress site. Free plugin, 682 cities, no coding required.">
+    <meta property="og:image" content="https://worldtimessync.com/og-wordpress-guide.png">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to Add a World Clock to WordPress (2026 Guide)">
+    <meta name="twitter:description" content="Step-by-step guide to adding a beautiful world clock to your WordPress site. Free plugin, 682 cities.">
+    
+    <link rel="canonical" href="https://worldtimessync.com/blog/add-world-clock-wordpress.html">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/assets/index-ufePLcBr.css">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LBX0CDYSSV');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>
+    
+    <style>
+        .blog-landing { min-height:100vh; background:#000; color:#fff; font-family:system-ui,-apple-system,sans-serif; }
+        
+        .blog-header { text-align:center; padding:60px 20px 30px; max-width:800px; margin:0 auto; }
+        .blog-header .breadcrumb { font-size:13px; color:rgba(255,255,255,0.4); margin-bottom:20px; }
+        .blog-header .breadcrumb a { color:rgba(255,255,255,0.5); text-decoration:none; }
+        .blog-header .breadcrumb a:hover { color:#fff; }
+        .blog-header h1 { font-size:clamp(1.8rem,4vw,2.8em); font-weight:800; line-height:1.15; margin-bottom:16px; }
+        .blog-header .meta { font-size:14px; color:rgba(255,255,255,0.4); margin-bottom:20px; }
+        .blog-header .meta span { margin:0 8px; }
+        .blog-header .excerpt { font-size:1.1em; color:rgba(255,255,255,0.6); line-height:1.6; }
+        
+        .blog-content { max-width:720px; margin:0 auto; padding:20px 20px 60px; }
+        .blog-content h2 { font-size:1.5em; font-weight:700; margin:40px 0 16px; }
+        .blog-content h3 { font-size:1.2em; font-weight:600; margin:28px 0 12px; }
+        .blog-content p { font-size:1.05em; line-height:1.7; color:rgba(255,255,255,0.75); margin-bottom:16px; }
+        .blog-content ul, .blog-content ol { margin:16px 0 16px 24px; color:rgba(255,255,255,0.75); }
+        .blog-content li { margin-bottom:8px; line-height:1.6; }
+        .blog-content strong { color:#fff; }
+        .blog-content a { color:#60a5fa; text-decoration:none; }
+        .blog-content a:hover { text-decoration:underline; }
+        .blog-content code { background:rgba(255,255,255,0.1); padding:2px 8px; border-radius:4px; font-size:0.9em; font-family:'SF Mono',Consolas,monospace; }
+        .blog-content pre { background:rgba(0,0,0,0.4); border-radius:10px; padding:16px; overflow-x:auto; margin:16px 0; font-size:14px; line-height:1.5; }
+        .blog-content pre code { background:none; padding:0; }
+        .blog-content blockquote { border-left:3px solid #60a5fa; padding-left:20px; margin:20px 0; color:rgba(255,255,255,0.6); font-style:italic; }
+        .blog-content hr { border:none; border-top:1px solid rgba(255,255,255,0.1); margin:40px 0; }
+        
+        .blog-toc { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:20px 24px; margin:30px 0; }
+        .blog-toc h3 { font-size:14px; text-transform:uppercase; letter-spacing:1px; color:rgba(255,255,255,0.4); margin-bottom:12px; }
+        .blog-toc ol { margin:0; padding:0 0 0 20px; }
+        .blog-toc li { margin-bottom:6px; }
+        .blog-toc a { color:rgba(255,255,255,0.6); text-decoration:none; font-size:14px; }
+        .blog-toc a:hover { color:#60a5fa; }
+        
+        .wp-step { display:flex; gap:16px; margin-bottom:24px; align-items:flex-start; }
+        .wp-step .step-num { width:36px; height:36px; background:rgba(96,165,250,0.15); border:1px solid rgba(96,165,250,0.3); border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px; flex-shrink:0; color:#60a5fa; }
+        .wp-step .step-content h3 { font-size:16px; font-weight:600; margin-bottom:4px; }
+        .wp-step .step-content p { font-size:14px; color:rgba(255,255,255,0.6); margin:0; }
+        
+        .wp-preview { text-align:center; padding:24px; background:rgba(0,0,0,0.3); border-radius:12px; margin:20px 0; border:1px solid rgba(255,255,255,0.08); }
+        .wp-preview-label { font-size:11px; text-transform:uppercase; letter-spacing:1px; color:rgba(255,255,255,0.3); margin-bottom:12px; }
+        
+        .cta-box { background:linear-gradient(135deg,rgba(96,165,250,0.1),rgba(167,139,250,0.1)); border:1px solid rgba(96,165,250,0.2); border-radius:16px; padding:28px; text-align:center; margin:40px 0; }
+        .cta-box h3 { font-size:1.3em; margin-bottom:8px; }
+        .cta-box p { color:rgba(255,255,255,0.6); margin-bottom:16px; }
+        .cta-box .cta-btn { display:inline-flex; align-items:center; gap:8px; padding:12px 28px; background:#2271b1; color:#fff; text-decoration:none; border-radius:10px; font-weight:600; font-size:16px; transition:all 0.2s; }
+        .cta-box .cta-btn:hover { background:#135e96; }
+        
+        .comparison-table { width:100%; border-collapse:collapse; margin:20px 0; }
+        .comparison-table th { text-align:left; padding:12px; background:rgba(255,255,255,0.05); font-size:13px; text-transform:uppercase; letter-spacing:1px; color:rgba(255,255,255,0.5); }
+        .comparison-table td { padding:12px; border-bottom:1px solid rgba(255,255,255,0.05); font-size:14px; }
+        .comparison-table tr:hover td { background:rgba(255,255,255,0.02); }
+        .comparison-table .check { color:#4ade80; }
+        .comparison-table .cross { color:#f87171; }
+        
+        .blog-footer { text-align:center; padding:40px 20px; border-top:1px solid rgba(255,255,255,0.08); }
+        .blog-footer a { color:rgba(255,255,255,0.5); text-decoration:none; margin:0 8px; font-size:14px; }
+        .blog-footer a:hover { color:#fff; }
+        
+        .share-bar { display:flex; gap:8px; justify-content:center; padding:20px 0; }
+        .share-bar a { display:inline-flex; align-items:center; gap:6px; padding:8px 16px; border-radius:8px; font-size:13px; font-weight:500; text-decoration:none; color:#fff; transition:all 0.15s; }
+        .share-bar a.twitter { background:#1da1f2; }
+        .share-bar a.twitter:hover { background:#0d8ddb; }
+        .share-bar a.linkedin { background:#0077b5; }
+        .share-bar a.linkedin:hover { background:#006399; }
+        .share-bar a.copy { background:rgba(255,255,255,0.1); }
+        .share-bar a.copy:hover { background:rgba(255,255,255,0.15); }
+        .share-bar a.copy.copied { background:rgba(34,197,94,0.3); }
+        
+        @media(max-width:768px) {
+            .blog-header h1 { font-size:1.6em; }
+            .blog-content { font-size:0.95em; }
+            .comparison-table { font-size:12px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="blog-landing">
+        <header class="blog-header">
+            <div class="breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; WordPress World Clock</div>
+            <h1>How to Add a World Clock to WordPress (2026 Guide)</h1>
+            <div class="meta">
+                <span>📅 June 13, 2026</span>
+                <span>·</span>
+                <span>⏱ 8 min read</span>
+                <span>·</span>
+                <span>🏷 WordPress, Tutorial</span>
+            </div>
+            <p class="excerpt">Learn how to add a beautiful, real-time world clock to your WordPress site in under 5 minutes. No coding required. Free plugin with 682 cities, dark/light themes, and automatic timezone detection.</p>
+        </header>
+        
+        <main class="blog-content">
+            <!-- Table of Contents -->
+            <div class="blog-toc">
+                <h3>In This Guide</h3>
+                <ol>
+                    <li><a href="#why">Why Add a World Clock to Your WordPress Site?</a></li>
+                    <li><a href="#options">3 Ways to Add a World Clock (Compared)</a></li>
+                    <li><a href="#plugin">Method 1: The Easy Way (Free Plugin)</a></li>
+                    <li><a href="#shortcode">Method 2: Shortcode (For Developers)</a></li>
+                    <li><a href="#embed">Method 3: Embed Code (Any Site)</a></li>
+                    <li><a href="#customize">Customizing Your Clock</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ol>
+            </div>
+            
+            <!-- Why -->
+            <h2 id="why">Why Add a World Clock to Your WordPress Site?</h2>
+            
+            <p>If your business works with clients, customers, or team members across different time zones, a world clock is one of the most useful widgets you can add to your site. Here's why:</p>
+            
+            <ul>
+                <li><strong>Build trust with global visitors.</strong> When someone from Tokyo visits your site and sees their local time displayed, it signals that you understand their world.</li>
+                <li><strong>Reduce "what time is it there?" inquiries.</strong> A visible clock answers the most common question international visitors have.</li>
+                <li><strong>Showcase your global reach.</strong> If you serve customers worldwide, a world clock reinforces that you're a global business.</li>
+                <li><strong>Help remote teams coordinate.</strong> If you have a team page, showing multiple time zones helps everyone stay synchronized.</li>
+                <li><strong>Improve time on page.</strong> A live, ticking clock gives visitors a reason to stay on your page longer -- and Google notices engagement signals.</li>
+            </ul>
+            
+            <p>The best part? It takes less than 5 minutes to set up, and it's completely free.</p>
+            
+            <hr>
+            
+            <!-- Options -->
+            <h2 id="options">3 Ways to Add a World Clock (Compared)</h2>
+            
+            <p>There are three main approaches. Here's a quick comparison:</p>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Method</th>
+                        <th>Difficulty</th>
+                        <th>Best For</th>
+                        <th>Customizable</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>WordPress Plugin</strong></td>
+                        <td>⭐ Easy</td>
+                        <td>Most users</td>
+                        <td class="check">✓ Yes</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Shortcode</strong></td>
+                        <td>⭐⭐ Medium</td>
+                        <td>Developers</td>
+                        <td class="check">✓ Yes</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Embed Code</strong></td>
+                        <td>⭐ Easy</td>
+                        <td>Any CMS/site</td>
+                        <td class="check">✓ Yes</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <p>We'll cover all three methods below. Start with whichever one fits your setup.</p>
+            
+            <hr>
+            
+            <!-- Method 1: Plugin -->
+            <h2 id="plugin">Method 1: The Easy Way (Free WordPress Plugin)</h2>
+            
+            <p>This is the fastest and most flexible method. Our free WordPress plugin gives you a world clock with 682 cities, dark/light themes, three sizes, and a native Gutenberg block.</p>
+            
+            <h3>Step 1: Download the Plugin</h3>
+            <p>Download the ZIP file from our <a href="/wordpress.html">WordPress plugin page</a>. The file is only 9KB.</p>
+            
+            <h3>Step 2: Install in WordPress</h3>
+            <ol>
+                <li>Log in to your WordPress admin dashboard</li>
+                <li>Go to <strong>Plugins → Add New</strong></li>
+                <li>Click <strong>Upload Plugin</strong> at the top</li>
+                <li>Select the ZIP file and click <strong>Install Now</strong></li>
+                <li>Click <strong>Activate Plugin</strong></li>
+            </ol>
+            
+            <h3>Step 3: Add the Clock</h3>
+            <p>You have three options:</p>
+            
+            <p><strong>Option A: Shortcode (any page or post)</strong></p>
+            <pre><code>[world_time_clock timezone="America/New_York"]</code></pre>
+            
+            <p><strong>Option B: Widget (sidebar or footer)</strong></p>
+            <ol>
+                <li>Go to <strong>Appearance → Widgets</strong></li>
+                <li>Click <strong>+</strong> to add a new block</li>
+                <li>Search for <strong>"World Time Clock"</strong></li>
+                <li>Configure timezone, theme, and size in the block settings</li>
+            </ol>
+            
+            <p><strong>Option C: Gutenberg Block (block editor)</strong></p>
+            <ol>
+                <li>Edit any post or page</li>
+                <li>Click <strong>+</strong> to add a new block</li>
+                <li>Search for <strong>"World Time Clock"</strong></li>
+                <li>Use the sidebar panel to configure your clock</li>
+            </ol>
+            
+            <div class="wp-preview">
+                <div class="wp-preview-label">Live Preview</div>
+                <iframe src="/widget-embed.html?tz=America/New_York&theme=dark&size=medium&date=1" 
+                        style="width:300px;height:160px;border:none;border-radius:12px;overflow:hidden;" 
+                        frameborder="0" scrolling="no" title="World Clock Preview"></iframe>
+            </div>
+            
+            <div class="cta-box">
+                <h3>Download the Free Plugin</h3>
+                <p>682 cities. Dark &amp; light themes. No API key. No signup.</p>
+                <a href="/wordpress.html" class="cta-btn">→ Get the Plugin</a>
+            </div>
+            
+            <hr>
+            
+            <!-- Method 2: Shortcode -->
+            <h2 id="shortcode">Method 2: Shortcode (For Developers)</h2>
+            
+            <p>If you prefer to add the clock directly in your theme template or want more control, use the shortcode. This works even without the plugin if you add the following code to your theme's <code>functions.php</code>:</p>
+            
+            <pre><code>// Add World Time Clock shortcode
+function wts_world_clock_shortcode($atts) {
+    $atts = shortcode_atts(array(
+        'timezone' => 'America/New_York',
+        'theme' => 'dark',
+        'size' => 'medium',
+        'show_date' => 'true',
+    ), $atts, 'world_time_clock');
+    
+    $sizes = array(
+        'small' => array('width' => 220, 'height' => 120),
+        'medium' => array('width' => 300, 'height' => 160),
+        'large' => array('width' => 420, 'height' => 220),
+    );
+    
+    $dims = isset($sizes[$atts['size']]) ? $sizes[$atts['size']] : $sizes['medium'];
+    $params = http_build_query(array(
+        'tz' => $atts['timezone'],
+        'theme' => $atts['theme'],
+        'size' => $atts['size'],
+        'date' => $atts['show_date'] === 'false' ? '0' : '1',
+    ));
+    
+    $url = 'https://worldtimessync.com/widget-embed.html?' . $params;
+    
+    return '&lt;iframe src="' . esc_url($url) . '" ' .
+           'width="' . $dims['width'] . '" ' .
+           'height="' . $dims['height'] . '" ' .
+           'frameborder="0" scrolling="no" ' .
+           'style="border:none;border-radius:12px;overflow:hidden;" ' .
+           'title="World Time Clock" loading="lazy"&gt;&lt;/iframe&gt;';
+}
+add_shortcode('world_time_clock', 'wts_world_clock_shortcode');</code></pre>
+            
+            <p>Then use it anywhere:</p>
+            <pre><code>// In a post or page
+[world_time_clock timezone="Europe/London" theme="light" size="large"]
+
+// In a PHP template
+&lt;?php echo do_shortcode('[world_time_clock timezone="Asia/Tokyo"]'); ?&gt;</code></pre>
+            
+            <hr>
+            
+            <!-- Method 3: Embed -->
+            <h2 id="embed">Method 3: Embed Code (Any Website)</h2>
+            
+            <p>Not on WordPress? No problem. You can embed the world clock on any website -- Wix, Squarespace, Shopify, Webflow, or plain HTML. Just paste this code:</p>
+            
+            <pre><code>&lt;!-- World Time Sync Widget --&gt;
+&lt;div id="wts-widget"&gt;&lt;/div&gt;
+&lt;script src="https://worldtimessync.com/widget.js" 
+        data-timezone="America/New_York" 
+        data-theme="dark" 
+        data-size="medium"&gt;
+&lt;/script&gt;</code></pre>
+            
+            <p>That's it. The script automatically creates the clock widget and inserts it into your page.</p>
+            
+            <h3>Available Options</h3>
+            <ul>
+                <li><code>data-timezone</code> -- Any IANA timezone (e.g., <code>Europe/London</code>, <code>Asia/Tokyo</code>)</li>
+                <li><code>data-theme</code> -- <code>dark</code> or <code>light</code></li>
+                <li><code>data-size</code> -- <code>small</code>, <code>medium</code>, or <code>large</code></li>
+                <li><code>data-show-date</code> -- <code>true</code> or <code>false</code></li>
+            </ul>
+            
+            <hr>
+            
+            <!-- Customize -->
+            <h2 id="customize">Customizing Your Clock</h2>
+            
+            <h3>Choosing a Timezone</h3>
+            <p>The clock supports any of <strong>682 cities</strong> worldwide. Here are some popular choices:</p>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>City</th>
+                        <th>Timezone Value</th>
+                        <th>UTC Offset</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>New York</td><td><code>America/New_York</code></td><td>UTC-5 / UTC-4 (DST)</td></tr>
+                    <tr><td>Los Angeles</td><td><code>America/Los_Angeles</code></td><td>UTC-8 / UTC-7 (DST)</td></tr>
+                    <tr><td>London</td><td><code>Europe/London</code></td><td>UTC+0 / UTC+1 (DST)</td></tr>
+                    <tr><td>Paris</td><td><code>Europe/Paris</code></td><td>UTC+1 / UTC+2 (DST)</td></tr>
+                    <tr><td>Dubai</td><td><code>Asia/Dubai</code></td><td>UTC+4</td></tr>
+                    <tr><td>Mumbai</td><td><code>Asia/Kolkata</code></td><td>UTC+5:30</td></tr>
+                    <tr><td>Singapore</td><td><code>Asia/Singapore</code></td><td>UTC+8</td></tr>
+                    <tr><td>Shanghai</td><td><code>Asia/Shanghai</code></td><td>UTC+8</td></tr>
+                    <tr><td>Tokyo</td><td><code>Asia/Tokyo</code></td><td>UTC+9</td></tr>
+                    <tr><td>Sydney</td><td><code>Australia/Sydney</code></td><td>UTC+10 / UTC+11 (DST)</td></tr>
+                </tbody>
+            </table>
+            
+            <h3>Choosing a Theme</h3>
+            <p><strong>Dark theme</strong> works best on dark backgrounds and looks modern and sleek. <strong>Light theme</strong> is better for light-colored sites and offers higher contrast.</p>
+            
+            <h3>Choosing a Size</h3>
+            <ul>
+                <li><strong>Small (220×120)</strong> -- Perfect for sidebars, footers, and compact layouts</li>
+                <li><strong>Medium (300×160)</strong> -- The default. Great for content areas and hero sections</li>
+                <li><strong>Large (420×220)</strong> -- Best for feature sections and landing pages</li>
+            </ul>
+            
+            <hr>
+            
+            <!-- FAQ -->
+            <h2 id="faq">Frequently Asked Questions</h2>
+            
+            <h3>Is the WordPress plugin really free?</h3>
+            <p>Yes. No premium tier, no API key, no signup, no hidden costs. It's free forever.</p>
+            
+            <h3>How many cities are supported?</h3>
+            <p>682 cities across all time zones worldwide. From New York to Tokyo to Sydney and everywhere in between.</p>
+            
+            <h3>Does it automatically handle Daylight Saving Time?</h3>
+            <p>Yes. The clock uses the browser's built-in timezone database, so DST transitions are handled automatically.</p>
+            
+            <h3>Will it slow down my site?</h3>
+            <p>No. The clock loads in a lightweight iframe (under 5KB) and uses lazy loading. It won't affect your PageSpeed score.</p>
+            
+            <h3>Can I show multiple clocks at once?</h3>
+            <p>Yes. Just add multiple shortcodes or widgets with different timezones. For example, show New York, London, and Tokyo side by side.</p>
+            
+            <h3>Does it work with page builders like Elementor?</h3>
+            <p>Yes. Use the shortcode <code>[world_time_clock]</code> in any Elementor text widget, or use the Gutenberg block in the WordPress block editor.</p>
+            
+            <h3>Can I customize the colors?</h3>
+            <p>The plugin offers dark and light themes out of the box. For custom colors, use the embed code method with inline styles on the iframe wrapper.</p>
+            
+            <hr>
+            
+            <!-- CTA -->
+            <div class="cta-box">
+                <h3>Ready to Add a World Clock?</h3>
+                <p>Download the free WordPress plugin and have it running in under 5 minutes.</p>
+                <a href="/wordpress.html" class="cta-btn">→ Download Free Plugin</a>
+            </div>
+            
+            <!-- Share -->
+            <div class="share-bar">
+                <a href="https://twitter.com/intent/tweet?text=How+to+Add+a+World+Clock+to+WordPress+%282026+Guide%29&url=https://worldtimessync.com/blog/add-world-clock-wordpress.html" target="_blank" rel="noopener" class="twitter">𝕏 Share on X</a>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://worldtimessync.com/blog/add-world-clock-wordpress.html" target="_blank" rel="noopener" class="linkedin">Share on LinkedIn</a>
+                <a href="#" class="copy" id="copyLink">📋 Copy Link</a>
+            </div>
+        </main>
+        
+        <footer class="blog-footer">
+            <p style="color:rgba(255,255,255,0.3);font-size:13px;margin-bottom:12px;">World Time Sync — Free tools for global teams</p>
+            <a href="/">World Clock</a>
+            <a href="/meeting-planner.html">Meeting Planner</a>
+            <a href="/widget.html">Widget</a>
+            <a href="/wordpress.html">WordPress Plugin</a>
+            <a href="/earth-clock.html">Earth Clock</a>
+            <a href="/time/">City Pages</a>
+            <a href="/about.html">About</a>
+        </footer>
+    </div>
+    
+    <script>
+    document.getElementById('copyLink').addEventListener('click', function(e) {
+        e.preventDefault();
+        navigator.clipboard.writeText('https://worldtimessync.com/blog/add-world-clock-wordpress.html').then(() => {
+            this.classList.add('copied');
+            this.textContent = '✓ Copied!';
+            setTimeout(() => {
+                this.classList.remove('copied');
+                this.textContent = '📋 Copy Link';
+            }, 2000);
+        });
+    });
+    </script>
+</body>
+</html>
