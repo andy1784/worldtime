@@ -84,10 +84,6 @@
     {
       "src": "/terms.html",
       "dest": "/terms.html"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
     }
   ],
   "headers": [
