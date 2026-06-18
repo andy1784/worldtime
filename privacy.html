@@ -49,7 +49,14 @@
         }
     </style>
 <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk" />
-</head>
+
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cdn.vercel-insights.com">
+  </head>
 <body>
     <div class="container">
         <h1>Privacy Policy</h1>
@@ -116,5 +123,15 @@
             following the posting of revised Privacy Policy means that you accept and agree to the changes.
         </p>
     </div>
-</body>
+
+    <!-- Deferred analytics (loaded after page is interactive) -->
+    <script>
+    window.addEventListener('load',function(){
+      var ga=document.createElement('script');ga.async=true;ga.src='https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV';document.head.appendChild(ga);
+      var ga2=document.createElement('script');ga2.textContent='window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-LBX0CDYSSV");';document.head.appendChild(ga2);
+      var ads=document.createElement('script');ads.async=true;ads.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529';ads.crossOrigin='anonymous';document.head.appendChild(ads);
+      var vi=document.createElement('script');vi.defer=true;vi.src='https://cdn.vercel-insights.com/v1/script.js';document.head.appendChild(vi);
+    });
+    </script>
+  </body>
 </html>

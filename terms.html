@@ -6,7 +6,6 @@
     <title>Terms of Service — World Time Sync</title>
     <meta name="description" content="Terms of Service for World Time Sync. Read our terms and conditions for using the free online world clock and time zone converter." />
     <meta name="keywords" content="terms of service, world time sync terms, usage terms, time zone website terms" />
-    <meta name="author" content="World Time Sync" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://worldtimessync.com/terms.html" />
 
@@ -105,7 +104,14 @@
         }
     </style>
 <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk" />
-</head>
+
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cdn.vercel-insights.com">
+  </head>
 <body>
     <div class="container">
         <h1>Terms of Service</h1>
@@ -206,15 +212,15 @@
         </p>
     </div>
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>
+    
+    <!-- Deferred analytics (loaded after page is interactive) -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-LBX0CDYSSV');
+    window.addEventListener('load',function(){
+      var ga=document.createElement('script');ga.async=true;ga.src='https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV';document.head.appendChild(ga);
+      var ga2=document.createElement('script');ga2.textContent='window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-LBX0CDYSSV");';document.head.appendChild(ga2);
+      var ads=document.createElement('script');ads.async=true;ads.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529';ads.crossOrigin='anonymous';document.head.appendChild(ads);
+      var vi=document.createElement('script');vi.defer=true;vi.src='https://cdn.vercel-insights.com/v1/script.js';document.head.appendChild(vi);
+    });
     </script>
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>
-</body>
+  </body>
 </html>

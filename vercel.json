@@ -20,6 +20,10 @@
       "dest": "/earth-clock.html"
     },
     {
+      "src": "/earth-clock-video.html",
+      "dest": "/earth-clock-video.html"
+    },
+    {
       "src": "/wordpress.html",
       "dest": "/wordpress.html"
     },
@@ -41,6 +45,18 @@
     },
     {
       "src": "/assets/(.*)",
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, immutable"
+      }
+    },
+    {
+      "src": "/og-image.png",
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, immutable"
+      }
+    },
+    {
+      "src": "/og-earth.png",
       "headers": {
         "Cache-Control": "public, max-age=31536000, immutable"
       }
@@ -121,7 +137,7 @@
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=3600"
+          "value": "public, max-age=31536000, immutable"
         },
         {
           "key": "Content-Type",
@@ -181,7 +197,7 @@
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=86400"
+          "value": "public, max-age=604800"
         }
       ]
     },

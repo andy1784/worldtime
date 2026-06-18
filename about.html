@@ -4,16 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     
     <title>About World Time Sync — Our Story, Mission & Team</title>
     <meta name="title" content="About World Time Sync — Our Story, Mission & Team" />
     <meta name="description" content="Learn about World Time Sync — who we are, why we built the most comprehensive free world clock, and our mission to make time zone coordination effortless for everyone." />
     <meta name="keywords" content="about world time sync, world clock team, time zone tool mission, who made world time sync" />
-    <meta name="author" content="World Time Sync" />
     <meta name="robots" content="index, follow" />
-    <meta name="language" content="English" />
-    
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://worldtimessync.com/about.html" />
     <meta property="og:title" content="About World Time Sync — Our Story & Mission" />
@@ -28,15 +24,6 @@
     <link rel="canonical" href="https://worldtimessync.com/about.html" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="stylesheet" href="/assets/index-ufePLcBr.css" />
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-LBX0CDYSSV');
-    </script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>
     
     <script type="application/ld+json">
     {
@@ -211,7 +198,14 @@
         }
         .footer-links a:hover { color: #fff; }
     </style>
-</head>
+
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cdn.vercel-insights.com">
+  </head>
 <body>
     <div class="container">
         <h1>About World Time Sync</h1>
@@ -363,5 +357,15 @@
             <a href="/contact.html">Contact</a>
         </div>
     </div>
-</body>
+
+    <!-- Deferred analytics (loaded after page is interactive) -->
+    <script>
+    window.addEventListener('load',function(){
+      var ga=document.createElement('script');ga.async=true;ga.src='https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV';document.head.appendChild(ga);
+      var ga2=document.createElement('script');ga2.textContent='window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-LBX0CDYSSV");';document.head.appendChild(ga2);
+      var ads=document.createElement('script');ads.async=true;ads.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529';ads.crossOrigin='anonymous';document.head.appendChild(ads);
+      var vi=document.createElement('script');vi.defer=true;vi.src='https://cdn.vercel-insights.com/v1/script.js';document.head.appendChild(vi);
+    });
+    </script>
+  </body>
 </html>
