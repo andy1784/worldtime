@@ -2,6 +2,8 @@
   "version": 2,
   "buildCommand": null,
   "outputDirectory": ".",
+  "cleanUrls": true,
+  "trailingSlash": false,
   "routes": [
     {
       "src": "/widget.js",
@@ -13,35 +15,19 @@
     },
     {
       "src": "/widget-embed.html",
-      "dest": "/widget-embed.html"
-    },
-    {
-      "src": "/earth-clock.html",
-      "dest": "/earth-clock.html"
-    },
-    {
-      "src": "/earth-clock-video.html",
-      "dest": "/earth-clock-video.html"
-    },
-    {
-      "src": "/wordpress.html",
-      "dest": "/wordpress.html"
+      "headers": {
+        "Cache-Control": "public, max-age=300",
+        "X-Frame-Options": "ALLOWALL",
+        "Content-Security-Policy": "frame-ancestors *"
+      }
     },
     {
       "src": "/blog/(.*)",
       "dest": "/blog/$1"
     },
     {
-      "src": "/wp-plugin/(.*)",
-      "dest": "/wp-plugin/$1"
-    },
-    {
       "src": "/time/(.*)",
       "dest": "/time/$1"
-    },
-    {
-      "src": "/meeting-planner.html",
-      "dest": "/meeting-planner.html"
     },
     {
       "src": "/assets/(.*)",
@@ -50,56 +36,10 @@
       }
     },
     {
-      "src": "/og-image.png",
+      "src": "/(robots.txt|sitemap.xml|favicon.svg|ads.txt)",
       "headers": {
-        "Cache-Control": "public, max-age=31536000, immutable"
+        "Cache-Control": "public, max-age=604800"
       }
-    },
-    {
-      "src": "/og-earth.png",
-      "headers": {
-        "Cache-Control": "public, max-age=31536000, immutable"
-      }
-    },
-    {
-      "src": "/google[a-f0-9]+\\.html$",
-      "dest": "/$0"
-    },
-    {
-      "src": "/robots.txt",
-      "dest": "/robots.txt"
-    },
-    {
-      "src": "/manifest.json",
-      "dest": "/manifest.json"
-    },
-    {
-      "src": "/favicon.svg",
-      "dest": "/favicon.svg"
-    },
-    {
-      "src": "/sitemap.xml",
-      "dest": "/sitemap.xml"
-    },
-    {
-      "src": "/ads.txt",
-      "dest": "/ads.txt"
-    },
-    {
-      "src": "/privacy.html",
-      "dest": "/privacy.html"
-    },
-    {
-      "src": "/about.html",
-      "dest": "/about.html"
-    },
-    {
-      "src": "/contact.html",
-      "dest": "/contact.html"
-    },
-    {
-      "src": "/terms.html",
-      "dest": "/terms.html"
     }
   ],
   "headers": [
@@ -150,54 +90,20 @@
       ]
     },
     {
-      "source": "/widget-embed.html",
+      "source": "/",
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=300"
-        },
-        {
-          "key": "X-Frame-Options",
-          "value": "ALLOWALL"
-        },
-        {
-          "key": "Content-Security-Policy",
-          "value": "frame-ancestors *"
+          "value": "public, max-age=0, must-revalidate"
         }
       ]
     },
     {
-      "source": "/assets/(.*)\\.js",
+      "source": "/index.html",
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        },
-        {
-          "key": "Content-Type",
-          "value": "application/javascript; charset=utf-8"
-        }
-      ]
-    },
-    {
-      "source": "/assets/(.*)\\.css",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        },
-        {
-          "key": "Content-Type",
-          "value": "text/css; charset=utf-8"
-        }
-      ]
-    },
-    {
-      "source": "/(robots.txt|sitemap.xml|manifest.json|favicon.svg|ads.txt)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=604800"
+          "value": "public, max-age=0, must-revalidate"
         }
       ]
     },
@@ -206,7 +112,7 @@
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=3600, s-maxage=86400"
+          "value": "public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400"
         }
       ]
     }

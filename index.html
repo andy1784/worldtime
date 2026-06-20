@@ -547,6 +547,35 @@
             <li><a href="/time/sukkur.html">Sukkur, Pakistan (PKT)</a></li>
             <li><a href="/time/karachi.html">Karachi, Pakistan (PKT)</a></li>
           </ul>
+
+          <h2>Time Zone Converter and Calculator</h2>
+          <p>Our time zone converter helps you calculate time differences between cities, plan international meetings, and coordinate work across different regions. Understand UTC offsets, daylight saving time (DST) transitions, and local time in any city. The converter supports all major time zones including EST, CST, MST, PST, GMT, CET, IST, JST, and more.</p>
+
+          <h2>Features of World Time Online</h2>
+          <p>Our world clock offers: real-time updates for 700+ cities, accurate time zone converter, daylight saving time support, mobile-friendly responsive design, no registration required, fast and lightweight application, and support for all major cities across North America, South America, Europe, Asia, Africa, and Oceania.</p>
+
+          <h2>Understanding Time Zones</h2>
+          <p>Time zones are regions of Earth that observe uniform standard time for legal, commercial, and social purposes. The world is divided into 24 time zones based on UTC (Coordinated Universal Time), also known as GMT (Greenwich Mean Time). Daylight Saving Time (DST) is observed in many countries to make better use of daylight hours during warmer months.</p>
+
+          <h2>Frequently Asked Questions</h2>
+
+          <h3>What time is it in New York right now?</h3>
+          <p>New York is in the Eastern Time Zone (ET). During standard time, New York uses EST (UTC-5). During daylight saving time (March-November), New York uses EDT (UTC-4). Use our live world clock to see the exact current time in New York.</p>
+
+          <h3>What time is it in London right now?</h3>
+          <p>London is in the GMT/BST time zone. During winter, London uses Greenwich Mean Time (GMT/UTC+0). During summer (late March to late October), London uses British Summer Time (BST/UTC+1).</p>
+
+          <h3>What is the time difference between New York and London?</h3>
+          <p>The time difference between New York and London is typically 5 hours, with London being ahead. However, this can vary by 1 hour during DST transitions since the US and UK change clocks on different dates.</p>
+
+          <h3>What time is it in Tokyo, Japan?</h3>
+          <p>Tokyo uses Japan Standard Time (JST), which is UTC+9. Japan does not observe daylight saving time, so Tokyo maintains the same UTC offset year-round.</p>
+
+          <h3>How do time zones work?</h3>
+          <p>Time zones are regions that observe the same standard time. The world is divided into 24 time zones, each roughly 15 degrees of longitude wide. UTC (Coordinated Universal Time) is the primary time standard.</p>
+
+          <h3>What is Daylight Saving Time (DST)?</h3>
+          <p>Daylight Saving Time (DST) is the practice of advancing clocks by one hour during warmer months so that darkness falls at a later clock time. Not all countries observe DST. In the US, DST runs from the second Sunday in March to the first Sunday in November.</p>
         </noscript>
         
         <h2>Time Zone Converter and Calculator</h2>
@@ -612,11 +641,8 @@
     <!-- Load JS at the end with async for non-blocking -->
     <script type="module" src="./assets/index-Dd7au40z.js" async></script>
     <script>
-      // Hide SEO content when JS loads (SPA takes over)
-      document.addEventListener('DOMContentLoaded', function() {
-        var seo = document.getElementById('seo-content');
-        if (seo) seo.style.display = 'none';
-      });
+      // DO NOT hide SEO content — Googlebot executes JS and needs to see the content.
+      // The SPA renders inside #root, SEO content stays visible underneath.
       
       // Defer non-critical scripts until after page load
       window.addEventListener('load', function() {
