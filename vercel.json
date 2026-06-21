@@ -22,6 +22,10 @@
       }
     },
     {
+      "src": "/country/(.*)",
+      "dest": "/country/$1"
+    },
+    {
       "src": "/blog/(.*)",
       "dest": "/blog/$1"
     },
