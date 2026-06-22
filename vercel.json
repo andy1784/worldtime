@@ -44,6 +44,18 @@
       "headers": {
         "Cache-Control": "public, max-age=604800"
       }
+    },
+    {
+      "src": "/live.html",
+      "headers": {
+        "Cache-Control": "public, max-age=300"
+      }
+    },
+    {
+      "src": "/every-second.html",
+      "headers": {
+        "Cache-Control": "public, max-age=3600"
+      }
     }
   ],
   "headers": [

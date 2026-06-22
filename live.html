@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    
+    <title>Live World Clock — Real-Time Clock for 700+ Cities | World Time Sync</title>
+    <meta name="title" content="Live World Clock — Real-Time Clock for 700+ Cities">
+    <meta name="description" content="Watch live clocks for 700+ cities around the world. Real-time digital clocks, day/night indicator, and time zone info. Share this with your team!">
+    <meta name="keywords" content="live world clock, real-time clock, world time now, digital clock, city time, timezone live">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://worldtimessync.com/live.html">
+    <meta property="og:title" content="Live World Clock — Real-Time Clock for 700+ Cities">
+    <meta property="og:description" content="Watch live clocks for 700+ cities. Real-time digital clocks with day/night indicators.">
+    <meta property="og:image" content="https://worldtimessync.com/og-image.png">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Live World Clock — Real-Time Clock for 700+ Cities">
+    <meta name="twitter:description" content="Watch live clocks for 700+ cities around the world.">
+    
+    <link rel="canonical" href="https://worldtimessync.com/live.html">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Live World Clock — Real-Time Clock for 700+ Cities",
+      "description": "Watch live clocks for 700+ cities around the world in real-time.",
+      "url": "https://worldtimessync.com/live.html"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://worldtimessync.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Live World Clock", "item": "https://worldtimessync.com/live.html"}
+      ]
+    }
+    </script>
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background: #0a0a0f;
+            color: #fff;
+            font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        /* Animated background grid */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: 
+                linear-gradient(rgba(96,165,250,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(96,165,250,0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        /* Glow effect */
+        body::after {
+            content: '';
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 20%, rgba(96,165,250,0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(167,139,250,0.06) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+            animation: glowPulse 8s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glowPulse {
+            0% { opacity: 0.5; transform: scale(1); }
+            100% { opacity: 1; transform: scale(1.05); }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 40px 0 30px;
+        }
+        
+        .header h1 {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 700;
+            background: linear-gradient(135deg, #60a5fa, #a78bfa, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+        
+        .header p {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.95rem;
+        }
+        
+        /* Live indicator */
+        .live-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(239,68,68,0.1);
+            border: 1px solid rgba(239,68,68,0.3);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #ef4444;
+            margin-bottom: 20px;
+        }
+        
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            background: #ef4444;
+            border-radius: 50%;
+            animation: blink 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+        
+        /* Featured clocks */
+        .featured {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+        
+        .clock-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .clock-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .clock-card:hover {
+            border-color: rgba(255,255,255,0.15);
+            transform: translateY(-2px);
+        }
+        
+        .clock-card:hover::before {
+            opacity: 1;
+        }
+        
+        .clock-card.day {
+            --accent: #fbbf24;
+        }
+        
+        .clock-card.night {
+            --accent: #60a5fa;
+        }
+        
+        .clock-card.dawn {
+            --accent: #f472b6;
+        }
+        
+        .clock-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        
+        .city-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+        }
+        
+        .city-flag {
+            font-size: 1.2rem;
+        }
+        
+        .time-display {
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            font-weight: 700;
+            letter-spacing: -1px;
+            color: var(--accent);
+            font-variant-numeric: tabular-nums;
+            line-height: 1.1;
+            margin-bottom: 4px;
+        }
+        
+        .time-display .seconds {
+            font-size: 0.5em;
+            opacity: 0.5;
+            font-weight: 400;
+        }
+        
+        .date-display {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 8px;
+        }
+        
+        .tz-info {
+            display: flex;
+            gap: 12px;
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.3);
+        }
+        
+        .tz-info span {
+            background: rgba(255,255,255,0.05);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+        
+        .day-night-icon {
+            font-size: 1rem;
+        }
+        
+        /* Stats bar */
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 20px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 12px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #60a5fa;
+        }
+        
+        .stat-label {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* City grid */
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: rgba(255,255,255,0.8);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .city-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 8px;
+            margin-bottom: 40px;
+        }
+        
+        .city-link {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 14px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 8px;
+            text-decoration: none;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.85rem;
+            transition: all 0.2s;
+        }
+        
+        .city-link:hover {
+            background: rgba(96,165,250,0.1);
+            border-color: rgba(96,165,250,0.3);
+            color: #fff;
+        }
+        
+        .city-link .name {
+            font-weight: 500;
+        }
+        
+        .city-link .time {
+            font-variant-numeric: tabular-nums;
+            color: rgba(255,255,255,0.4);
+            font-size: 0.8rem;
+        }
+        
+        /* Share section */
+        .share-section {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, rgba(96,165,250,0.05), rgba(167,139,250,0.05));
+            border: 1px solid rgba(96,165,250,0.1);
+            border-radius: 16px;
+            margin-bottom: 40px;
+        }
+        
+        .share-section h2 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+        
+        .share-section p {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .share-btn.twitter {
+            background: #1da1f2;
+            color: #fff;
+        }
+        
+        .share-btn.twitter:hover {
+            background: #0d8ddb;
+        }
+        
+        .share-btn.copy {
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+        }
+        
+        .share-btn.copy:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .footer a {
+            color: rgba(255,255,255,0.4);
+            text-decoration: none;
+            margin: 0 8px;
+            font-size: 0.8rem;
+        }
+        
+        .footer a:hover {
+            color: #fff;
+        }
+        
+        @media (max-width: 600px) {
+            .featured { grid-template-columns: 1fr; }
+            .stats-bar { gap: 20px; }
+            .city-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="live-indicator">
+                <span class="live-dot"></span>
+                LIVE
+            </div>
+            <h1>World Clock</h1>
+            <p>Real-time clocks for cities around the world</p>
+        </header>
+        
+        <!-- Featured clocks -->
+        <div class="featured" id="featured">
+            <!-- Populated by JS -->
+        </div>
+        
+        <!-- Stats -->
+        <div class="stats-bar">
+            <div class="stat">
+                <div class="stat-value" id="stat-cities">682</div>
+                <div class="stat-label">Cities</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="stat-timezones">200+</div>
+                <div class="stat-label">Time Zones</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="stat-countries">195</div>
+                <div class="stat-label">Countries</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="stat-live">●</div>
+                <div class="stat-label">Live</div>
+            </div>
+        </div>
+        
+        <!-- Quick city list -->
+        <h2 class="section-title">🌍 Quick Access</h2>
+        <div class="city-grid" id="cityGrid">
+            <!-- Populated by JS -->
+        </div>
+        
+        <!-- Share -->
+        <div class="share-section">
+            <h2>Share with your team</h2>
+            <p>Send this link to quickly check time anywhere in the world</p>
+            <div class="share-buttons">
+                <a class="share-btn twitter" href="https://twitter.com/intent/tweet?text=Check%20the%20time%20anywhere%20in%20the%20world%20with%20this%20live%20clock%20👇&url=https://worldtimessync.com/live.html" target="_blank" rel="noopener">
+                    𝕏 Share on X
+                </a>
+                <button class="share-btn copy" onclick="copyLink()">
+                    📋 Copy Link
+                </button>
+            </div>
+        </div>
+        
+        <footer class="footer">
+            <a href="/">World Clock</a>
+            <a href="/meeting-planner.html">Meeting Planner</a>
+            <a href="/earth-clock.html">Earth Clock</a>
+            <a href="/about.html">About</a>
+            <a href="/privacy.html">Privacy</a>
+            <a href="/terms.html">Terms</a>
+        </footer>
+    </div>
+    
+    <script>
+    // Featured cities with their timezones
+    const featuredCities = [
+        { name: 'New York', tz: 'America/New_York', flag: '🇺🇸' },
+        { name: 'London', tz: 'Europe/London', flag: '🇬🇧' },
+        { name: 'Tokyo', tz: 'Asia/Tokyo', flag: '🇯🇵' },
+        { name: 'Dubai', tz: 'Asia/Dubai', flag: '🇦🇪' },
+        { name: 'Sydney', tz: 'Australia/Sydney', flag: '🇦🇺' },
+        { name: 'Paris', tz: 'Europe/Paris', flag: '🇫🇷' },
+    ];
+    
+    // Quick access cities
+    const quickCities = [
+        { name: 'New York', tz: 'America/New_York', path: '/time/new-york.html' },
+        { name: 'London', tz: 'Europe/London', path: '/time/london.html' },
+        { name: 'Tokyo', tz: 'Asia/Tokyo', path: '/time/tokyo.html' },
+        { name: 'Dubai', tz: 'Asia/Dubai', path: '/time/dubai.html' },
+        { name: 'Sydney', tz: 'Australia/Sydney', path: '/time/sydney.html' },
+        { name: 'Paris', tz: 'Europe/Paris', path: '/time/paris.html' },
+        { name: 'Berlin', tz: 'Europe/Berlin', path: '/time/berlin.html' },
+        { name: 'Mumbai', tz: 'Asia/Kolkata', path: '/time/mumbai.html' },
+        { name: 'Beijing', tz: 'Asia/Shanghai', path: '/time/beijing.html' },
+        { name: 'São Paulo', tz: 'America/Sao_Paulo', path: '/time/sao-paulo.html' },
+        { name: 'Los Angeles', tz: 'America/Los_Angeles', path: '/time/los-angeles.html' },
+        { name: 'Singapore', tz: 'Asia/Singapore', path: '/time/singapore.html' },
+        { name: 'Hong Kong', tz: 'Asia/Hong_Kong', path: '/time/hong-kong.html' },
+        { name: 'Moscow', tz: 'Europe/Moscow', path: '/time/moscow.html' },
+        { name: 'Seoul', tz: 'Asia/Seoul', path: '/time/seoul.html' },
+        { name: 'Toronto', tz: 'America/Toronto', path: '/time/toronto.html' },
+        { name: 'Mexico City', tz: 'America/Mexico_City', path: '/time/mexico-city.html' },
+        { name: 'Cairo', tz: 'Africa/Cairo', path: '/time/cairo.html' },
+        { name: 'Bangkok', tz: 'Asia/Bangkok', path: '/time/bangkok.html' },
+        { name: 'Istanbul', tz: 'Europe/Istanbul', path: '/time/istanbul.html' },
+        { name: 'Lagos', tz: 'Africa/Lagos', path: '/time/lagos.html' },
+        { name: 'Buenos Aires', tz: 'America/Argentina/Buenos_Aires', path: '/time/buenos-aires.html' },
+        { name: 'Jakarta', tz: 'Asia/Jakarta', path: '/time/jakarta.html' },
+        { name: 'Shanghai', tz: 'Asia/Shanghai', path: '/time/shanghai.html' },
+    ];
+    
+    function getTimeData(tz) {
+        const now = new Date();
+        const timeStr = new Intl.DateTimeFormat('en-US', {
+            timeZone: tz,
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false
+        }).format(now);
+        
+        const dateStr = new Intl.DateTimeFormat('en-US', {
+            timeZone: tz,
+            weekday: 'short',
+            month: 'short',
+            day: 'numeric'
+        }).format(now);
+        
+        const hour = parseInt(new Intl.DateTimeFormat('en-US', {
+            timeZone: tz,
+            hour: 'numeric',
+            hour12: false
+        }).format(now));
+        
+        const offset = new Intl.DateTimeFormat('en-US', {
+            timeZone: tz,
+            timeZoneName: 'shortOffset'
+        }).formatToParts(now).find(p => p.type === 'timeZoneName').value;
+        
+        const abbr = new Intl.DateTimeFormat('en-US', {
+            timeZone: tz,
+            timeZoneName: 'short'
+        }).formatToParts(now).find(p => p.type === 'timeZoneName').value;
+        
+        let period = 'day';
+        let icon = '☀️';
+        if (hour >= 6 && hour < 8) { period = 'dawn'; icon = '🌅'; }
+        else if (hour >= 8 && hour < 18) { period = 'day'; icon = '☀️'; }
+        else if (hour >= 18 && hour < 20) { period = 'dawn'; icon = '🌇'; }
+        else { period = 'night'; icon = '🌙'; }
+        
+        return { timeStr, dateStr, offset, abbr, period, icon, hour };
+    }
+    
+    function updateClocks() {
+        const featured = document.getElementById('featured');
+        featured.innerHTML = featuredCities.map(city => {
+            const data = getTimeData(city.tz);
+            const [h, m, s] = data.timeStr.split(':');
+            return `
+                <div class="clock-card ${data.period}">
+                    <div class="clock-header">
+                        <span class="city-name">${city.flag} ${city.name}</span>
+                        <span class="day-night-icon">${data.icon}</span>
+                    </div>
+                    <div class="time-display">
+                        ${h}:${m}<span class="seconds">:${s}</span>
+                    </div>
+                    <div class="date-display">${data.dateStr}</div>
+                    <div class="tz-info">
+                        <span>${data.abbr}</span>
+                        <span>${data.offset}</span>
+                    </div>
+                </div>
+            `;
+        }).join('');
+        
+        // Update quick city times
+        document.querySelectorAll('.city-link').forEach(link => {
+            const tz = link.dataset.tz;
+            if (tz) {
+                const data = getTimeData(tz);
+                const timeEl = link.querySelector('.time');
+                if (timeEl) timeEl.textContent = data.timeStr;
+            }
+        });
+    }
+    
+    function initCityGrid() {
+        const grid = document.getElementById('cityGrid');
+        grid.innerHTML = quickCities.map(city => {
+            const data = getTimeData(city.tz);
+            return `
+                <a href="${city.path}" class="city-link" data-tz="${city.tz}">
+                    <span class="name">${city.name}</span>
+                    <span class="time">${data.timeStr}</span>
+                </a>
+            `;
+        }).join('');
+    }
+    
+    function copyLink() {
+        navigator.clipboard.writeText('https://worldtimessync.com/live.html').then(() => {
+            const btn = document.querySelector('.share-btn.copy');
+            btn.textContent = '✅ Copied!';
+            setTimeout(() => btn.textContent = '📋 Copy Link', 2000);
+        });
+    }
+    
+    // Init
+    initCityGrid();
+    updateClocks();
+    setInterval(updateClocks, 1000);
+    </script>
+    
+    <!-- Deferred analytics -->
+    <script>
+    window.addEventListener('load', function() {
+        var ga = document.createElement('script');
+        ga.async = true;
+        ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV';
+        document.head.appendChild(ga);
+        var ga2 = document.createElement('script');
+        ga2.textContent = 'window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-LBX0CDYSSV");';
+        document.head.appendChild(ga2);
+        var ads = document.createElement('script');
+        ads.async = true;
+        ads.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529';
+        ads.crossOrigin = 'anonymous';
+        document.head.appendChild(ads);
+    });
+    </script>
+</body>
+</html>

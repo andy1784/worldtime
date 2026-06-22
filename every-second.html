@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    
+    <title>Every Second on Earth — Fascinating World Time Facts | World Time Sync</title>
+    <meta name="title" content="Every Second on Earth — Fascinating World Time Facts">
+    <meta name="description" content="What happens every second on Earth? Watch time zones shift, cities light up, and discover mind-blowing facts about world time. Share this!">
+    <meta name="keywords" content="world time facts, time zone facts, earth clock, every second, world clock facts, time trivia">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://worldtimessync.com/every-second.html">
+    <meta property="og:title" content="Every Second on Earth — Fascinating World Time Facts">
+    <meta property="og:description" content="What happens every second on Earth? Watch time zones shift and cities light up.">
+    <meta property="og:image" content="https://worldtimessync.com/og-image.png">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Every Second on Earth — World Time Facts">
+    
+    <link rel="canonical" href="https://worldtimessync.com/every-second.html">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Every Second on Earth — Fascinating World Time Facts",
+      "description": "What happens every second on Earth? Watch time zones shift, cities light up, and discover mind-blowing facts about world time.",
+      "url": "https://worldtimessync.com/every-second.html"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://worldtimessync.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Every Second on Earth", "item": "https://worldtimessync.com/every-second.html"}
+      ]
+    }
+    </script>
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background: #000;
+            color: #fff;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        /* Animated starfield */
+        .stars {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #fff;
+            border-radius: 50%;
+            animation: twinkle var(--duration) ease-in-out infinite;
+            opacity: 0;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; }
+            50% { opacity: var(--max-opacity); }
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 60px 0 40px;
+        }
+        
+        .hero h1 {
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            color: rgba(255,255,255,0.5);
+            font-size: 1.1rem;
+        }
+        
+        /* Live counter */
+        .counter-section {
+            text-align: center;
+            padding: 40px 0;
+        }
+        
+        .counter-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: rgba(255,255,255,0.3);
+            margin-bottom: 16px;
+        }
+        
+        .counter {
+            font-size: clamp(3rem, 10vw, 6rem);
+            font-weight: 800;
+            font-variant-numeric: tabular-nums;
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+        }
+        
+        .counter-sub {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.4);
+            margin-top: 8px;
+        }
+        
+        /* Facts grid */
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+            margin: 40px 0;
+        }
+        
+        .fact-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .fact-card:hover {
+            border-color: rgba(96,165,250,0.3);
+            transform: translateY(-2px);
+        }
+        
+        .fact-icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+        
+        .fact-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #60a5fa;
+            margin-bottom: 4px;
+        }
+        
+        .fact-label {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+        }
+        
+        /* Timeline */
+        .timeline-section {
+            margin: 60px 0;
+        }
+        
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 30px;
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            padding: 20px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #60a5fa, #a78bfa, #f472b6);
+            opacity: 0.3;
+        }
+        
+        .timeline-item {
+            text-align: center;
+            position: relative;
+            flex: 1;
+        }
+        
+        .timeline-dot {
+            width: 12px;
+            height: 12px;
+            background: #60a5fa;
+            border-radius: 50%;
+            margin: 0 auto 12px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .timeline-time {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 4px;
+        }
+        
+        .timeline-city {
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .timeline-status {
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.3);
+        }
+        
+        /* Fun facts */
+        .fun-facts {
+            margin: 60px 0;
+        }
+        
+        .fun-fact {
+            background: rgba(255,255,255,0.02);
+            border-left: 3px solid #60a5fa;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .fun-fact h3 {
+            font-size: 1rem;
+            margin-bottom: 4px;
+            color: #fff;
+        }
+        
+        .fun-fact p {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.6;
+        }
+        
+        /* Share */
+        .share-section {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, rgba(96,165,250,0.05), rgba(167,139,250,0.05));
+            border: 1px solid rgba(96,165,250,0.1);
+            border-radius: 16px;
+            margin: 40px 0;
+        }
+        
+        .share-section h2 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+        
+        .share-section p {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: #1da1f2;
+            color: #fff;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        
+        .share-btn:hover {
+            background: #0d8ddb;
+            transform: translateY(-1px);
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .footer a {
+            color: rgba(255,255,255,0.4);
+            text-decoration: none;
+            margin: 0 8px;
+            font-size: 0.8rem;
+        }
+        
+        .footer a:hover { color: #fff; }
+        
+        @media (max-width: 600px) {
+            .timeline { flex-direction: column; gap: 20px; }
+            .timeline::before { display: none; }
+            .facts-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+    
+    <div class="container">
+        <header class="hero">
+            <h1>Every Second on Earth</h1>
+            <p>What happens around the world right now</p>
+        </header>
+        
+        <!-- Live counter -->
+        <div class="counter-section">
+            <div class="counter-label">Seconds since you opened this page</div>
+            <div class="counter" id="counter">0</div>
+            <div class="counter-sub">In that time, the Earth has rotated ~0.46 km at the equator</div>
+        </div>
+        
+        <!-- Facts grid -->
+        <div class="facts-grid">
+            <div class="fact-card">
+                <div class="fact-icon">🌍</div>
+                <div class="fact-number" id="fact-tz">38</div>
+                <div class="fact-label">Active time zones right now</div>
+            </div>
+            <div class="fact-card">
+                <div class="fact-icon">🏙️</div>
+                <div class="fact-number">682</div>
+                <div class="fact-label">Cities tracked on World Time Sync</div>
+            </div>
+            <div class="fact-card">
+                <div class="fact-icon">☀️</div>
+                <div class="fact-number" id="fact-day">--</div>
+                <div class="fact-label">Cities currently in daylight</div>
+            </div>
+            <div class="fact-card">
+                <div class="fact-icon">🌙</div>
+                <div class="fact-number" id="fact-night">--</div>
+                <div class="fact-label">Cities currently at night</div>
+            </div>
+        </div>
+        
+        <!-- World timeline -->
+        <div class="timeline-section">
+            <h2 class="section-title">🌐 Right Now Around the World</h2>
+            <div class="timeline" id="timeline">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+        
+        <!-- Fun facts -->
+        <div class="fun-facts">
+            <h2 class="section-title">🤯 Mind-Blowing Time Facts</h2>
+            
+            <div class="fun-fact">
+                <h3>The sun never sets on the British Empire... or does it?</h3>
+                <p>At its peak, the British Empire spanned all 24 time zones. Today, France holds the record with 12 time zones thanks to overseas territories.</p>
+            </div>
+            
+            <div class="fun-fact">
+                <h3>China has one time zone (and it's weird)</h3>
+                <p>Geographically spanning 5 time zones, China uses only one: Beijing Time (UTC+8). In western Xinjiang, the sun doesn't rise until 10 AM in winter.</p>
+            </div>
+            
+            <div class="fun-fact">
+                <h3>Nepal is 45 minutes off</h3>
+                <p>Nepal uses UTC+5:45 — the only country with a 45-minute offset. It was chosen to assert independence from India's UTC+5:30.</p>
+            </div>
+            
+            <div class="fun-fact">
+                <h3>The Date Line is crooked</h3>
+                <p>The International Date Line zigzags around Kiribati and Samoa. In 2011, Samoa skipped an entire day to move to the other side.</p>
+            </div>
+            
+            <div class="fun-fact">
+                <h3>Spain lives in the wrong time zone</h3>
+                <p>Spain should be in GMT (like Portugal), but Franco moved it to CET in 1940 to align with Germany. Spaniards eat dinner at 10 PM because of this.</p>
+            </div>
+            
+            <div class="fun-fact">
+                <h3>UTC is a compromise</h3>
+                <p>English speakers wanted "CUT", French wanted "TUC". UTC satisfies neither — which is exactly why it was chosen.</p>
+            </div>
+        </div>
+        
+        <!-- Share -->
+        <div class="share-section">
+            <h2>Share these facts</h2>
+            <p>Mind-blowing time zone facts your friends don't know</p>
+            <a class="share-btn" href="https://twitter.com/intent/tweet?text=Mind-blowing%20facts%20about%20time%20zones%20around%20the%20world%20🌍⏰&url=https://worldtimessync.com/every-second.html" target="_blank" rel="noopener">
+                𝕏 Share on X
+            </a>
+        </div>
+        
+        <footer class="footer">
+            <a href="/">World Clock</a>
+            <a href="/live.html">Live Clocks</a>
+            <a href="/earth-clock.html">Earth Clock</a>
+            <a href="/meeting-planner.html">Meeting Planner</a>
+            <a href="/about.html">About</a>
+            <a href="/privacy.html">Privacy</a>
+        </footer>
+    </div>
+    
+    <script>
+    // Create starfield
+    const starsContainer = document.getElementById('stars');
+    for (let i = 0; i < 100; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        star.style.left = Math.random() * 100 + '%';
+        star.style.top = Math.random() * 100 + '%';
+        star.style.setProperty('--duration', (2 + Math.random() * 4) + 's');
+        star.style.setProperty('--max-opacity', (0.3 + Math.random() * 0.7));
+        star.style.animationDelay = Math.random() * 4 + 's';
+        starsContainer.appendChild(star);
+    }
+    
+    // Counter
+    let seconds = 0;
+    setInterval(() => {
+        seconds++;
+        document.getElementById('counter').textContent = seconds.toLocaleString();
+    }, 1000);
+    
+    // Timeline cities
+    const timelineCities = [
+        { name: 'Auckland', tz: 'Pacific/Auckland', emoji: '🇳🇿' },
+        { name: 'Tokyo', tz: 'Asia/Tokyo', emoji: '🇯🇵' },
+        { name: 'Dubai', tz: 'Asia/Dubai', emoji: '🇦🇪' },
+        { name: 'Moscow', tz: 'Europe/Moscow', emoji: '🇷🇺' },
+        { name: 'London', tz: 'Europe/London', emoji: '🇬🇧' },
+        { name: 'New York', tz: 'America/New_York', emoji: '🇺🇸' },
+        { name: 'LA', tz: 'America/Los_Angeles', emoji: '🇺🇸' },
+        { name: 'Hawaii', tz: 'Pacific/Honolulu', emoji: '🇺🇸' },
+    ];
+    
+    function updateTimeline() {
+        const now = new Date();
+        let dayCount = 0;
+        let nightCount = 0;
+        
+        const timeline = document.getElementById('timeline');
+        timeline.innerHTML = timelineCities.map(city => {
+            const hour = parseInt(new Intl.DateTimeFormat('en-US', {
+                timeZone: city.tz, hour: 'numeric', hour12: false
+            }).format(now));
+            
+            const timeStr = new Intl.DateTimeFormat('en-US', {
+                timeZone: city.tz, hour: '2-digit', minute: '2-digit', hour12: false
+            }).format(now);
+            
+            let status = 'Day';
+            if (hour >= 6 && hour < 8) status = 'Dawn';
+            else if (hour >= 8 && hour < 18) status = 'Day';
+            else if (hour >= 18 && hour < 20) status = 'Dusk';
+            else { status = 'Night'; nightCount++; }
+            
+            if (status === 'Day' || status === 'Dawn') dayCount++;
+            if (status === 'Dusk') dayCount++;
+            
+            return `
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-time">${timeStr}</div>
+                    <div class="timeline-city">${city.emoji} ${city.name}</div>
+                    <div class="timeline-status">${status}</div>
+                </div>
+            `;
+        }).join('');
+        
+        // Update stats (approximate based on 682 cities)
+        const approxDay = Math.round(682 * dayCount / timelineCities.length);
+        const approxNight = 682 - approxDay;
+        document.getElementById('fact-day').textContent = approxDay;
+        document.getElementById('fact-night').textContent = approxNight;
+    }
+    
+    updateTimeline();
+    setInterval(updateTimeline, 60000);
+    
+    // Deferred analytics
+    window.addEventListener('load', function() {
+        var ga = document.createElement('script');
+        ga.async = true;
+        ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV';
+        document.head.appendChild(ga);
+        var ga2 = document.createElement('script');
+        ga2.textContent = 'window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-LBX0CDYSSV");';
+        document.head.appendChild(ga2);
+        var ads = document.createElement('script');
+        ads.async = true;
+        ads.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529';
+        ads.crossOrigin = 'anonymous';
+        document.head.appendChild(ads);
+    });
+    </script>
+</body>
+</html>
