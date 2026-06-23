@@ -4674,4 +4674,236 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+
+  <!-- Italy -->
+  <url>
+    <loc>https://worldtimessync.com/country/italy.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Spain -->
+  <url>
+    <loc>https://worldtimessync.com/country/spain.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Poland -->
+  <url>
+    <loc>https://worldtimessync.com/country/poland.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Netherlands -->
+  <url>
+    <loc>https://worldtimessync.com/country/netherlands.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Belgium -->
+  <url>
+    <loc>https://worldtimessync.com/country/belgium.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Switzerland -->
+  <url>
+    <loc>https://worldtimessync.com/country/switzerland.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Austria -->
+  <url>
+    <loc>https://worldtimessync.com/country/austria.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Sweden -->
+  <url>
+    <loc>https://worldtimessync.com/country/sweden.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Norway -->
+  <url>
+    <loc>https://worldtimessync.com/country/norway.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Denmark -->
+  <url>
+    <loc>https://worldtimessync.com/country/denmark.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Finland -->
+  <url>
+    <loc>https://worldtimessync.com/country/finland.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Portugal -->
+  <url>
+    <loc>https://worldtimessync.com/country/portugal.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Czech Republic -->
+  <url>
+    <loc>https://worldtimessync.com/country/czech-republic.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Romania -->
+  <url>
+    <loc>https://worldtimessync.com/country/romania.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Hungary -->
+  <url>
+    <loc>https://worldtimessync.com/country/hungary.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Greece -->
+  <url>
+    <loc>https://worldtimessync.com/country/greece.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Thailand -->
+  <url>
+    <loc>https://worldtimessync.com/country/thailand.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Philippines -->
+  <url>
+    <loc>https://worldtimessync.com/country/philippines.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Vietnam -->
+  <url>
+    <loc>https://worldtimessync.com/country/vietnam.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Bangladesh -->
+  <url>
+    <loc>https://worldtimessync.com/country/bangladesh.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Taiwan -->
+  <url>
+    <loc>https://worldtimessync.com/country/taiwan.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Saudi Arabia -->
+  <url>
+    <loc>https://worldtimessync.com/country/saudi-arabia.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Israel -->
+  <url>
+    <loc>https://worldtimessync.com/country/israel.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Iran -->
+  <url>
+    <loc>https://worldtimessync.com/country/iran.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Egypt -->
+  <url>
+    <loc>https://worldtimessync.com/country/egypt.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Nigeria -->
+  <url>
+    <loc>https://worldtimessync.com/country/nigeria.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Kenya -->
+  <url>
+    <loc>https://worldtimessync.com/country/kenya.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Morocco -->
+  <url>
+    <loc>https://worldtimessync.com/country/morocco.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Argentina -->
+  <url>
+    <loc>https://worldtimessync.com/country/argentina.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Colombia -->
+  <url>
+    <loc>https://worldtimessync.com/country/colombia.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Peru -->
+  <url>
+    <loc>https://worldtimessync.com/country/peru.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Chile -->
+  <url>
+    <loc>https://worldtimessync.com/country/chile.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- New Zealand -->
+  <url>
+    <loc>https://worldtimessync.com/country/new-zealand.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
