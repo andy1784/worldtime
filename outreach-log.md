@@ -7,6 +7,14 @@
 - **Expected responses:** 3-5 (30-40% response rate typical)
 - **Expected backlinks:** 5-10 quality links
 
+## Email Configuration (Updated 2026-06-24)
+- **From address:** `support@worldtimessync.com` (display name: "World Time Sync")
+- **Reply-To:** `support@worldtimessync.com`
+- **SMTP:** Gmail (smtp.gmail.com:465) with App Password
+- **Note:** `support@worldtimessync.com` cannot receive emails (no DNS/email hosting access)
+- **Receiving:** Contact form on website routes to `andyua32@gmail.com`
+- **Future:** Set up Google Workspace or ImprovMX when DNS access is available
+
 ## Target Sites & Contact Info
 
 | # | Site | Email | Niche | DA Est. | Status |
