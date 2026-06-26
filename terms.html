@@ -35,7 +35,7 @@
         a:hover{text-decoration:underline}
         .updated{color:#666;font-size:0.85rem;margin-bottom:24px}
     </style>
-<script src="https://analytics.ahrefs.com/analytics.js" data-key="hB1VYWuwb1i/f1d8re7P2A" async></script>
+
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -102,5 +102,15 @@
         if (seo) seo.style.display = 'none';
       });
     </script>
-</body>
+
+    <script>
+      window.addEventListener('load',function(){
+        var ahrefs=document.createElement('script');
+        ahrefs.async=true;
+        ahrefs.src='https://analytics.ahrefs.com/analytics.js';
+        ahrefs.setAttribute('data-key','hB1VYWuwb1i/f1d8re7P2A');
+        document.head.appendChild(ahrefs);
+      });
+    </script>
+  </body>
 </html>

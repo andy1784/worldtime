@@ -89,6 +89,8 @@
       .nojs-city-list a{color:#60a5fa;font-size:0.85rem}
       @media(max-width:768px){.nojs-city-list{columns:2}.city-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}}
       @media(max-width:480px){.nojs-city-list{columns:1}}
+      /* CLS fix: reserve space for live clock */
+      .live-clock-wrapper{min-height:120px}
     </style>
     
     <!-- Preload critical resources -->
@@ -290,7 +292,8 @@
     <link rel="preconnect" href="https://www.googletagmanager.com">
     <link rel="preconnect" href="https://pagead2.googlesyndication.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://analytics.ahrefs.com">
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
     <link rel="dns-prefetch" href="https://cdn.vercel-insights.com">
