@@ -51,7 +51,16 @@
         .seo-footer p{margin-top:8px;font-size:0.75rem;color:#777}
         a{color:#667eea}
         @media(max-width:600px){.container{padding:12px}.live-time{font-size:1.8rem}}
-    </style>
+    
+        
+        .related-cities{background:#fff;padding:clamp(16px,4vw,20px);border-radius:8px;margin:16px 0;box-shadow:0 1px 3px rgba(0,0,0,0.1)}
+        .related-cities h2{margin-top:0;margin-bottom:8px}
+        .related-cities ul{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px}
+        .related-cities li{padding:4px 0}
+        .related-cities a{color:#667eea;text-decoration:none;font-weight:500}
+        .related-cities a:hover{text-decoration:underline}
+        .tz-offset{color:#888;font-size:0.85rem}
+        @media(max-width:600px){.related-cities ul{grid-template-columns:1fr}}</style>
     <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "WebPage", "name": "What Time Is It in Punta Del Este?", "description": "Current local time in Punta Del Este with timezone info and DST details.", "url": "https://worldtimessync.com/time/punta-del-este"}
     </script>
@@ -107,6 +116,22 @@
                 <p>Use our free <a href="/">time zone converter</a> to convert between Punta Del Este time and your local time.</p>
             </section>
         </div>
+            <section class="related-cities" aria-label="Related cities">
+                <h2>Popular Cities in the Same Time Zone</h2>
+                <ul>
+                    <li><a href="/time/montevideo">Montevideo</a></li>
+                    <li><a href="/time/salto">Salto</a></li>
+                </ul>
+                <h2>Nearby Time Zones</h2>
+                <ul>
+                    <li><a href="/time/ancud">Ancud</a> <span class="tz-offset">(-1h)</span></li>
+                    <li><a href="/time/arica">Arica</a> <span class="tz-offset">(-1h)</span></li>
+                    <li><a href="/time/atlanta">Atlanta</a> <span class="tz-offset">(-1h)</span></li>
+                    <li><a href="/time/baltimore">Baltimore</a> <span class="tz-offset">(-1h)</span></li>
+                    <li><a href="/time/barquisimeto">Barquisimeto</a> <span class="tz-offset">(-1h)</span></li>
+                    <li><a href="/time/boa-vista">Boa Vista</a> <span class="tz-offset">(-1h)</span></li>
+                </ul>
+            </section>        
         <footer class="seo-footer">
             <nav aria-label="Footer navigation">
                 <a href="/privacy.html">Privacy Policy</a>
