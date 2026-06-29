@@ -60,7 +60,18 @@
         .related-cities a{color:#667eea;text-decoration:none;font-weight:500}
         .related-cities a:hover{text-decoration:underline}
         .tz-offset{color:#888;font-size:0.85rem}
-        @media(max-width:600px){.related-cities ul{grid-template-columns:1fr}}</style>
+        @media(max-width:600px){.related-cities ul{grid-template-columns:1fr}}
+        .sunrise-block{background:#fff;padding:clamp(16px,4vw,20px);border-radius:8px;margin:16px 0;box-shadow:0 1px 3px rgba(0,0,0,0.1)}
+        .sunrise-block h2{margin-top:0;margin-bottom:12px;font-size:1.1rem}
+        .sunrise-data{display:flex;gap:20px;flex-wrap:wrap}
+        .sun-item{display:flex;flex-direction:column;align-items:center;min-width:80px}
+        .sun-icon{font-size:1.5rem;margin-bottom:4px}
+        .sun-label{font-size:0.7rem;color:#888;text-transform:uppercase;letter-spacing:0.5px}
+        .sun-time{font-size:1.2rem;font-weight:600;color:#333;font-variant-numeric:tabular-nums}
+        .sun-note{font-size:0.75rem;color:#999}
+        .sunrise-loading{color:#999;font-size:0.85rem}
+        @media(max-width:600px){.sunrise-data{gap:12px}.sun-item{min-width:60px}.sun-time{font-size:1rem}}
+</style>
     <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "WebPage", "name": "What Time Is It in Florian Polis?", "description": "Current local time in Florian Polis with timezone info and DST details.", "url": "https://worldtimessync.com/time/florian-polis"}
     </script>
@@ -177,7 +188,81 @@
             </nav>
             <p>&copy; 2026 World Time Sync. All rights reserved.</p>
         </footer>
-    </main>
+    
+        <section class="sunrise-block" aria-label="Sunrise and Sunset">
+            <h2>☀️ Sunrise &amp; Sunset</h2>
+            <div class="sunrise-data" id="sunriseData">
+                <span class="sunrise-loading">Calculating...</span>
+            </div>
+        </section>
+        <script>
+        (function(){
+            var lat = -23.5;
+            var tz = "America/Sao_Paulo";
+            function calcSun(d) {
+                var start = new Date(d.getFullYear(), 0, 0);
+                var diff = d - start;
+                var dayOfYear = Math.floor(diff / 86400000);
+                var P = Math.asin(0.39795 * Math.cos(0.98563 * (dayOfYear - 173) * Math.PI / 180));
+                var decl = 0.39795 * Math.sin(0.98563 * (dayOfYear - 81) * Math.PI / 180);
+                var latR = lat * Math.PI / 180;
+                var cosH = (Math.cos(90.833 * Math.PI / 180) - Math.sin(decl) * Math.sin(latR)) / (Math.cos(decl) * Math.cos(latR));
+                if (cosH > 1) return {rise: null, set: null, polarNight: true};
+                if (cosH < -1) return {rise: null, set: null, polarDay: true};
+                var H = Math.acos(cosH) * 180 / Math.PI;
+                var noonMin = 720 - 4 * (getLon()) - getEqt(dayOfYear);
+                var riseMin = noonMin - H * 4;
+                var setMin = noonMin + H * 4;
+                return {rise: riseMin, set: setMin, polarNight: false, polarDay: false};
+            }
+            function getLon() {
+                try {
+                    var now = new Date();
+                    var utcStr = now.toLocaleString("en-US", {timeZone: "UTC"});
+                    var tzStr = now.toLocaleString("en-US", {timeZone: tz});
+                    var diff = (new Date(tzStr) - new Date(utcStr)) / 3600000;
+                    return diff * 15;
+                } catch(e) { return 0; }
+            }
+            function getEqt(d) {
+                var b = (360 / 365) * (d - 81) * Math.PI / 180;
+                return 9.87 * Math.sin(2 * b) - 7.53 * Math.cos(b) - 1.5 * Math.sin(b);
+            }
+            function fmtMin(mins) {
+                if (mins == null) return "--:--";
+                var h = Math.floor(mins / 60) % 24;
+                var m = Math.round(mins % 60);
+                if (h < 0) h += 24;
+                return (h < 10 ? "0" : "") + h + ":" + (m < 10 ? "0" : "") + m;
+            }
+            function update() {
+                var now = new Date();
+                var result = calcSun(now);
+                var el = document.getElementById("sunriseData");
+                if (!el) return;
+                if (result.polarNight) {
+                    el.innerHTML = '<div class="sun-item"><span class="sun-label">Sun does not rise</span><span class="sun-note">Polar night</span></div>';
+                    return;
+                }
+                if (result.polarDay) {
+                    el.innerHTML = '<div class="sun-item"><span class="sun-label">Sun does not set</span><span class="sun-note">Midnight sun</span></div>';
+                    return;
+                }
+                var riseStr = fmtMin(result.rise);
+                var setStr = fmtMin(result.set);
+                var dayLen = result.set - result.rise;
+                var dlH = Math.floor(dayLen / 60);
+                var dlM = Math.round(dayLen % 60);
+                var dlStr = dlH + "h " + dlM + "m";
+                el.innerHTML = '<div class="sun-item"><span class="sun-icon">🌅</span><span class="sun-label">Sunrise</span><span class="sun-time">' + riseStr + '</span></div>' +
+                    '<div class="sun-item"><span class="sun-icon">🌇</span><span class="sun-label">Sunset</span><span class="sun-time">' + setStr + '</span></div>' +
+                    '<div class="sun-item"><span class="sun-icon">☀️</span><span class="sun-label">Daylight</span><span class="sun-time">' + dlStr + '</span></div>';
+            }
+            update();
+            setInterval(update, 60000);
+        })();
+        </script>
+</main>
         <script>(function(){var tz="America/Sao_Paulo";var el=document.getElementById("live-time");function update(){try{var now=new Date();var timeStr=new Intl.DateTimeFormat("en-US",{timeZone:tz,hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:true,weekday:"long",year:"numeric",month:"long",day:"numeric"}).format(now);el.textContent=timeStr}catch(e){el.textContent="Time zone not supported"}}update();setInterval(update,1000)})();</script>
     <script>window.addEventListener('load',function(){
         // Defer ahrefs analytics
