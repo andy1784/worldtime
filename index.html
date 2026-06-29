@@ -58,6 +58,7 @@
     <!-- Preload critical resources -->
     <link rel="preload" href="./assets/index-ufePLcBr.css" as="style" />
     <link rel="preload" href="./assets/index-Dd7au40z.js" as="script" crossorigin />
+    <link rel="preload" href="./og-image.png" as="image" />
     
     <!-- Load CSS with high priority -->
     <link rel="stylesheet" href="./assets/index-ufePLcBr.css" />
@@ -280,19 +281,11 @@
       <a href="/de/">Deutsch</a>
       <a href="/ja/">日本語</a>
     </div>
-        <!-- Skip link for accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
     
-    <div id="root" role="application" aria-label="World Time Online Application">
-      <!-- Initial loading state for better perceived performance -->
-      <div class="app-loading" aria-busy="true" aria-live="polite">
-        <div class="app-loading-spinner" role="status" aria-label="Loading application"></div>
-        <p class="app-loading-text">Loading World Time...</p>
-      </div>
-    </div>
-    
     <main id="main-content">
-      <!-- SEO Content - VISIBLE to search engines and no-JS users -->
+      <!-- SEO Content - VISIBLE to search engines and no-JS users.
+           Placed BEFORE #root SPA so LCP happens from static HTML, not JS render -->
       <div class="seo-content" id="seo-content">
         <nav class="breadcrumb">
           <a href="/">Home</a> &gt; World Clock
@@ -311,8 +304,7 @@
           <!-- Populated by JS for JS users, static list for SEO -->
         </div>
         
-        <noscript>
-          <ul class="nojs-city-list">
+        <noscript><ul class="nojs-city-list">
             <li><a href="/time/new-york.html">New York, USA (EST/EDT)</a></li>
             <li><a href="/time/london.html">London, UK (GMT/BST)</a></li>
             <li><a href="/time/tokyo.html">Tokyo, Japan (JST)</a></li>
@@ -773,7 +765,15 @@
         <p style="color:#666;font-size:0.75rem;margin-top:0.5rem">&copy; 2026 World Time Sync. All rights reserved.</p>
       </footer>
     </main>
-    
+
+    <!-- SPA root — placed AFTER SEO content so static HTML is what Google measures for LCP -->
+    <div id="root" role="application" aria-label="World Time Online Application">
+      <div class="app-loading" aria-busy="true" aria-live="polite">
+        <div class="app-loading-spinner" role="status" aria-label="Loading application"></div>
+        <p class="app-loading-text">Loading World Time...</p>
+      </div>
+    </div>
+
     <!-- Load JS at the end with async for non-blocking -->
     <script type="module" src="./assets/index-Dd7au40z.js" async></script>
     <script>
