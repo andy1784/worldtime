@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="theme-color" content="#667eea">
     <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk">
     <title>DST 2026 Countdown — Daylight Saving Time Clock Changes | World Time Sync</title>
+<link rel="stylesheet" href="/assets/dst-countdown.min.css">
+
     <meta name="title" content="DST 2026 Countdown — Daylight Saving Time Clock Changes | World Time Sync">
     <meta name="description" content="Countdown to the next Daylight Saving Time change in 2026. See when clocks spring forward and fall back in the US, Europe, and other regions.">
     <meta name="keywords" content="DST countdown 2026, daylight saving time, clocks change 2026, spring forward fall back, DST time change countdown">
@@ -36,51 +39,7 @@
     <script type="application/ld+json">
     {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "When do clocks change in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "In the US, clocks spring forward on March 8, 2026 (2:00 AM → 3:00 AM) and fall back on November 1, 2026 (2:00 AM → 1:00 AM). In Europe, clocks spring forward on March 29, 2026 and fall back on October 25, 2026."}}, {"@type": "Question", "name": "What does 'spring forward, fall back' mean?", "acceptedAnswer": {"@type": "Answer", "text": "In spring, clocks move forward by 1 hour (losing an hour of sleep). In autumn, clocks move back by 1 hour (gaining an hour). The phrase helps remember the direction."}}, {"@type": "Question", "name": "Which countries observe daylight saving time?", "acceptedAnswer": {"@type": "Answer", "text": "Most of North America and Europe observe DST. Most of Asia, Africa, and South America do not. Some countries like Iceland, Turkey, and Russia have permanently abolished DST."}}]}
     </script>
-    <style>
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;background:#0a0a1a;color:#fff;min-height:100vh}
-        .skip-link{position:absolute;top:-40px;left:0;background:#667eea;color:#fff;padding:8px 16px;z-index:100;text-decoration:none}
-        .skip-link:focus{top:0}
-        .dst-container{max-width:900px;margin:0 auto;padding:24px 16px}
-        .dst-header{text-align:center;margin-bottom:32px}
-        .dst-header h1{font-size:clamp(1.4rem,4vw,2rem);margin-bottom:6px}
-        .dst-header p{color:rgba(255,255,255,0.6);font-size:0.9rem}
-        .countdown-main{
-            background:linear-gradient(135deg,rgba(102,126,234,0.15),rgba(118,75,162,0.15));
-            border:1px solid rgba(102,126,234,0.3);border-radius:16px;padding:32px 24px;
-            text-align:center;margin-bottom:24px
-        }
-        .countdown-label{font-size:0.8rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
-        .countdown-event{font-size:1.3rem;font-weight:600;color:#fff;margin-bottom:16px}
-        .countdown-timer{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
-        .countdown-unit{
-            background:rgba(0,0,0,0.3);border-radius:12px;padding:16px 20px;min-width:80px;
-            border:1px solid rgba(255,255,255,0.05)
-        }
-        .countdown-unit .num{font-size:2.5rem;font-weight:700;color:#60a5fa;font-variant-numeric:tabular-nums;line-height:1.2}
-        .countdown-unit .lbl{font-size:0.7rem;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-top:4px}
-        .dst-table{width:100%;border-collapse:collapse;margin:16px 0}
-        .dst-table th{background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.6);padding:10px 12px;text-align:left;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.5px;border-bottom:1px solid rgba(255,255,255,0.1)}
-        .dst-table td{padding:10px 12px;border-bottom:1px solid rgba(255,255,255,0.05);font-size:0.9rem}
-        .dst-table tr:hover td{background:rgba(255,255,255,0.02)}
-        .dst-table .region{font-weight:500}
-        .dst-table .date{color:#60a5fa}
-        .dst-table .status{font-size:0.75rem;padding:3px 8px;border-radius:4px;display:inline-block}
-        .status.past{background:rgba(150,150,150,0.2);color:#999}
-        .status.upcoming{background:rgba(74,222,128,0.2);color:#4ade80}
-        .status.next{background:rgba(251,191,36,0.2);color:#fbbf24;font-weight:600}
-        .dst-section{margin-bottom:24px}
-        .dst-section h2{font-size:1.1rem;margin-bottom:8px;color:#e0e0e0}
-        .dst-section p{color:rgba(255,255,255,0.6);font-size:0.85rem;line-height:1.6}
-        .dst-footer{text-align:center;padding:20px;color:rgba(255,255,255,0.4);font-size:0.8rem}
-        .dst-footer a{color:#60a5fa;text-decoration:none;margin:0 6px}
-        @media(max-width:600px){
-            .countdown-timer{gap:8px}
-            .countdown-unit{min-width:60px;padding:12px 14px}
-            .countdown-unit .num{font-size:1.8rem}
-        }
-    </style>
-</head>
+    </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <div id="root" role="application" aria-label="World Time Online Application">

@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="theme-color" content="#667eea">
     <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk">
     <title>Interactive World Time Map — Live Day & Night Clock | World Time Sync</title>
+<link rel="stylesheet" href="/assets/world-time-map.min.css">
+
     <meta name="title" content="Interactive World Time Map — Live Day & Night Clock | World Time Sync">
     <meta name="description" content="Explore an interactive world map showing current time zones, day and night regions, and live local time for 600+ cities. Click any city to see the current time.">
     <meta name="keywords" content="world time map, interactive time zone map, day and night map, world clock map, time zones map, live world clock">
@@ -37,66 +40,7 @@
     <script type="application/ld+json">
     {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How does the world time map work?", "acceptedAnswer": {"@type": "Answer", "text": "The map shows the current day and night regions across the globe based on the sun's position. Cities are marked with dots that show the current local time. Click any city dot to see detailed time information."}}, {"@type": "Question", "name": "How many cities are shown on the map?", "acceptedAnswer": {"@type": "Answer", "text": "Over 600 major cities worldwide are displayed on the interactive map, covering all time zones."}}, {"@type": "Question", "name": "Does the map update in real time?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, the day/night overlay and city times update every second to reflect the current time globally."}}]}
     </script>
-    <style>
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;background:#0a0a1a;color:#fff;min-height:100vh}
-        .skip-link{position:absolute;top:-40px;left:0;background:#667eea;color:#fff;padding:8px 16px;z-index:100;text-decoration:none;border-radius:0 0 4px 0}
-        .skip-link:focus{top:0}
-        .map-header{text-align:center;padding:24px 16px 12px}
-        .map-header h1{font-size:clamp(1.4rem,4vw,2rem);margin-bottom:6px}
-        .map-header p{color:rgba(255,255,255,0.6);font-size:0.9rem;max-width:600px;margin:0 auto}
-        .map-container{position:relative;width:100%;max-width:1400px;margin:0 auto;padding:0 16px}
-        .map-wrapper{position:relative;width:100%;background:#0d1117;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.08)}
-        .map-canvas{width:100%;display:block;cursor:crosshair}
-        .map-tooltip{
-            position:fixed;pointer-events:none;background:rgba(20,20,40,0.95);border:1px solid rgba(255,255,255,0.2);
-            border-radius:8px;padding:10px 14px;font-size:0.85rem;z-index:1000;display:none;
-            backdrop-filter:blur(8px);box-shadow:0 4px 20px rgba(0,0,0,0.5);min-width:160px
-        }
-        .map-tooltip .tt-name{font-weight:600;color:#fff;margin-bottom:2px}
-        .map-tooltip .tt-time{color:#60a5fa;font-size:1.1rem;font-weight:700;font-variant-numeric:tabular-nums}
-        .map-tooltip .tt-tz{color:rgba(255,255,255,0.4);font-size:0.7rem;margin-top:2px}
-        .map-tooltip .tt-click{color:rgba(255,255,255,0.3);font-size:0.65rem;margin-top:4px;font-style:italic}
-        .map-legend{
-            display:flex;flex-wrap:wrap;gap:12px;justify-content:center;padding:12px 16px;
-            background:rgba(255,255,255,0.02);border-top:1px solid rgba(255,255,255,0.05);
-            font-size:0.75rem;color:rgba(255,255,255,0.5)
-        }
-        .map-legend span{display:flex;align-items:center;gap:4px}
-        .legend-dot{width:10px;height:10px;border-radius:50%;display:inline-block}
-        .map-search{
-            max-width:400px;margin:12px auto 0;position:relative
-        }
-        .map-search input{
-            width:100%;padding:10px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.15);
-            background:rgba(255,255,255,0.05);color:#fff;font-size:14px;
-        }
-        .map-search input::placeholder{color:rgba(255,255,255,0.3)}
-        .map-search input:focus{outline:none;border-color:#60a5fa}
-        .map-search-results{
-            position:absolute;top:100%;left:0;right:0;background:rgba(20,20,40,0.98);
-            border:1px solid rgba(255,255,255,0.15);border-radius:0 0 8px 8px;max-height:200px;
-            overflow-y:auto;z-index:100;display:none
-        }
-        .map-search-results.active{display:block}
-        .map-search-results .sr-item{padding:8px 14px;cursor:pointer;font-size:0.85rem;border-bottom:1px solid rgba(255,255,255,0.05)}
-        .map-search-results .sr-item:hover{background:rgba(255,255,255,0.08)}
-        .map-search-results .sr-item .sr-name{color:#fff}
-        .map-search-results .sr-item .sr-tz{color:rgba(255,255,255,0.4);font-size:0.7rem}
-        .map-footer{text-align:center;padding:20px;color:rgba(255,255,255,0.4);font-size:0.8rem}
-        .map-footer a{color:#60a5fa;text-decoration:none;margin:0 6px}
-        .map-footer a:hover{text-decoration:underline}
-        .map-stats{
-            display:flex;flex-wrap:wrap;gap:16px;justify-content:center;padding:8px 16px 16px;
-            font-size:0.75rem;color:rgba(255,255,255,0.4)
-        }
-        .map-stats span{background:rgba(255,255,255,0.03);padding:4px 10px;border-radius:12px}
-        @media(max-width:600px){
-            .map-header h1{font-size:1.2rem}
-            .map-legend{font-size:0.65rem;gap:8px}
-        }
-    </style>
-</head>
+    </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <div id="root" role="application" aria-label="World Time Online Application">

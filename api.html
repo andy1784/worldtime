@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="theme-color" content="#667eea">
     <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk">
     <title>World Time API — Free REST API for Time Zones & Current Time | World Time Sync</title>
+<link rel="stylesheet" href="/assets/api.min.css">
+
     <meta name="title" content="World Time API — Free REST API for Time Zones & Current Time | World Time Sync">
     <meta name="description" content="Free REST API to get current time for any timezone, convert between time zones, list all time zones, and get UTC offsets. No API key required.">
     <meta name="keywords" content="world time api, timezone api, current time api, free time api, time zone converter api, utc offset api, developer timezones">
@@ -33,50 +36,7 @@
     <script type="application/ld+json">
     {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://worldtimessync.com/"}, {"@type": "ListItem", "position": 2, "name": "API Documentation", "item": "https://worldtimessync.com/api.html"}]}
     </script>
-    <style>
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;background:#0a0a1a;color:#fff;min-height:100vh}
-        .skip-link{position:absolute;top:-40px;left:0;background:#667eea;color:#fff;padding:8px 16px;z-index:100;text-decoration:none}
-        .skip-link:focus{top:0}
-        .api-container{max-width:860px;margin:0 auto;padding:24px 16px}
-        .api-header{text-align:center;margin-bottom:32px}
-        .api-header h1{font-size:clamp(1.5rem,4vw,2.2rem);margin-bottom:6px}
-        .api-header p{color:rgba(255,255,255,0.6);font-size:0.9rem}
-        .api-badge{display:inline-block;background:rgba(74,222,128,0.15);color:#4ade80;padding:4px 12px;border-radius:16px;font-size:0.75rem;font-weight:600;margin-bottom:12px}
-        .api-toc{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:16px 20px;margin-bottom:24px}
-        .api-toc h3{font-size:0.85rem;color:rgba(255,255,255,0.5);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.5px}
-        .api-toc a{display:block;color:#60a5fa;text-decoration:none;font-size:0.85rem;padding:3px 0}
-        .api-toc a:hover{text-decoration:underline}
-        .api-endpoint{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:20px;margin-bottom:16px}
-        .endpoint-head{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
-        .http-method{padding:3px 10px;border-radius:6px;font-size:0.7rem;font-weight:700;letter-spacing:0.5px}
-        .http-get{background:rgba(96,165,250,0.2);color:#60a5fa}
-        .endpoint-path{font-family:'SF Mono',Monaco,Consolas,monospace;font-size:0.9rem;color:#e0e0e0}
-        .endpoint-desc{color:rgba(255,255,255,0.6);font-size:0.85rem;margin-bottom:12px}
-        .code-block{background:#0d1117;border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:14px 16px;margin:10px 0;overflow-x:auto;font-family:'SF Mono',Monaco,Consolas,monospace;font-size:0.8rem;line-height:1.6;color:#c9d1d9;position:relative}
-        .copy-btn{position:absolute;top:8px;right:8px;background:rgba(255,255,255,0.1);border:none;border-radius:4px;color:rgba(255,255,255,0.6);padding:4px 8px;font-size:0.7rem;cursor:pointer}
-        .copy-btn:hover{background:rgba(255,255,255,0.2);color:#fff}
-        .param-table{width:100%;border-collapse:collapse;margin:10px 0;font-size:0.8rem}
-        .param-table th{background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.5);padding:8px 10px;text-align:left;font-size:0.7rem;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,0.1)}
-        .param-table td{padding:8px 10px;border-bottom:1px solid rgba(255,255,255,0.05);color:#b0b0b0}
-        .try-box{background:rgba(102,126,234,0.08);border:1px solid rgba(102,126,234,0.2);border-radius:12px;padding:16px;margin:12px 0}
-        .try-box label{display:block;font-size:0.75rem;color:rgba(255,255,255,0.5);margin-bottom:4px}
-        .try-box input{width:100%;padding:8px 12px;border-radius:6px;border:1px solid rgba(255,255,255,0.15);background:rgba(0,0,0,0.3);color:#fff;font-family:monospace;font-size:0.85rem;margin-bottom:8px}
-        .try-box input:focus{outline:none;border-color:#60a5fa}
-        .try-box .btn-try{padding:8px 16px;border-radius:6px;border:none;background:#667eea;color:#fff;font-weight:600;cursor:pointer;font-size:0.8rem}
-        .try-box .btn-try:hover{background:#5a6fd6}
-        .try-result{margin-top:10px;background:#0d1117;border-radius:6px;padding:10px 14px;font-family:monospace;font-size:0.75rem;color:#7ee787;white-space:pre-wrap;word-break:break-all;max-height:200px;overflow-y:auto}
-        .rate-info{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
-        .rate-item{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:10px 14px;font-size:0.75rem;color:rgba(255,255,255,0.6)}
-        .rate-item strong{color:#fff}
-        .api-footer{text-align:center;padding:20px;color:rgba(255,255,255,0.4);font-size:0.8rem}
-        .api-footer a{color:#60a5fa;text-decoration:none;margin:0 6px}
-        @media(max-width:600px){
-            .endpoint-head{flex-direction:column;align-items:flex-start}
-            .code-block{font-size:0.7rem}
-        }
-    </style>
-</head>
+    </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <div id="root" role="application" aria-label="World Time Online Application">

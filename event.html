@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="theme-color" content="#667eea">
     <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk">
     <title>Event Time Announcer — Share Event Time Across Time Zones | World Time Sync</title>
+<link rel="stylesheet" href="/assets/event.min.css">
+
     <meta name="title" content="Event Time Announcer — Share Event Time Across Time Zones | World Time Sync">
     <meta name="description" content="Create an event and share its time across multiple time zones. Generate a link that shows participants the correct local time for their city.">
     <meta name="keywords" content="event time announcer, share event time, event time zones, meeting time link, event planner time zones, time zone event">
@@ -37,89 +40,7 @@
     <script type="application/ld+json">
     {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is an Event Time Announcer?", "acceptedAnswer": {"@type": "Answer", "text": "It's a tool that lets you create an event at a specific time and date, then generates a shareable link showing the event time in multiple time zones. Recipients see the time in their local zone."}}, {"@type": "Question", "name": "How do I share the event time?", "acceptedAnswer": {"@type": "Answer", "text": "After setting the event time and cities, click 'Generate Link'. Copy the URL and share it with participants. They'll see the event time converted to each selected city's local time."}}, {"@type": "Question", "name": "Does it handle daylight saving time?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, the tool uses the IANA time zone database and automatically accounts for DST rules in each selected city."}}]}
     </script>
-    <style>
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;background:#0a0a1a;color:#fff;min-height:100vh}
-        .skip-link{position:absolute;top:-40px;left:0;background:#667eea;color:#fff;padding:8px 16px;z-index:100;text-decoration:none;border-radius:0 0 4px 0}
-        .skip-link:focus{top:0}
-        .event-container{max-width:800px;margin:0 auto;padding:24px 16px}
-        .event-header{text-align:center;margin-bottom:28px}
-        .event-header h1{font-size:clamp(1.4rem,4vw,2rem);margin-bottom:6px}
-        .event-header p{color:rgba(255,255,255,0.6);font-size:0.9rem}
-        .event-form{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:24px;margin-bottom:20px}
-        .event-form label{display:block;color:rgba(255,255,255,0.7);font-size:0.8rem;margin:12px 0 4px}
-        .event-form label:first-child{margin-top:0}
-        .event-form input,.event-form select,.event-form textarea{
-            width:100%;padding:10px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.15);
-            background:rgba(0,0,0,0.3);color:#fff;font-size:14px;box-sizing:border-box;font-family:inherit
-        }
-        .event-form input:focus,.event-form select:focus,.event-form textarea:focus{outline:none;border-color:#60a5fa}
-        .event-form textarea{resize:vertical;min-height:60px}
-        .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-        .form-row label{margin-top:0}
-        .city-select-wrap{margin-top:8px}
-        .city-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
-        .city-chip{
-            display:inline-flex;align-items:center;gap:6px;padding:4px 10px;background:rgba(96,165,250,0.15);
-            border:1px solid rgba(96,165,250,0.3);border-radius:16px;font-size:0.75rem;color:#60a5fa
-        }
-        .city-chip .remove{cursor:pointer;opacity:0.6;font-size:1rem;line-height:1}
-        .city-chip .remove:hover{opacity:1}
-        .city-search-wrap{position:relative;margin-top:8px}
-        .city-search-wrap input{margin:0}
-        .city-search-results{
-            position:absolute;top:100%;left:0;right:0;background:rgba(20,20,40,0.98);
-            border:1px solid rgba(255,255,255,0.15);border-radius:0 0 8px 8px;max-height:200px;
-            overflow-y:auto;z-index:100;display:none
-        }
-        .city-search-results.active{display:block}
-        .city-search-results .sr-item{padding:8px 14px;cursor:pointer;font-size:0.85rem;border-bottom:1px solid rgba(255,255,255,0.05)}
-        .city-search-results .sr-item:hover{background:rgba(255,255,255,0.08)}
-        .btn-generate{
-            width:100%;padding:14px;border-radius:8px;border:none;font-size:16px;font-weight:600;
-            cursor:pointer;background:#667eea;color:#fff;margin-top:16px;transition:background 0.2s
-        }
-        .btn-generate:hover{background:#5a6fd6}
-        .btn-generate:disabled{opacity:0.5;cursor:not-allowed}
-        .result-section{display:none;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:24px;margin-bottom:20px}
-        .result-section.active{display:block}
-        .result-section h2{font-size:1.2rem;margin-bottom:4px;color:#fff}
-        .result-section .event-desc{color:rgba(255,255,255,0.5);font-size:0.85rem;margin-bottom:16px}
-        .time-table{width:100%;border-collapse:collapse;margin:12px 0}
-        .time-table th{background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.6);padding:10px 12px;text-align:left;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.5px;border-bottom:1px solid rgba(255,255,255,0.1)}
-        .time-table td{padding:10px 12px;border-bottom:1px solid rgba(255,255,255,0.05);font-size:0.9rem}
-        .time-table tr:hover td{background:rgba(255,255,255,0.02)}
-        .time-table .city-name{color:#fff;font-weight:500}
-        .time-table .local-time{color:#60a5fa;font-weight:600;font-variant-numeric:tabular-nums}
-        .time-table .utc-offset{color:rgba(255,255,255,0.4);font-size:0.75rem}
-        .time-table .day-indicator{font-size:0.7rem;padding:2px 6px;border-radius:4px;display:inline-block}
-        .day-indicator.day{background:rgba(251,191,36,0.2);color:#fbbf24}
-        .day-indicator.night{background:rgba(96,165,250,0.2);color:#60a5fa}
-        .share-link{
-            display:flex;gap:8px;margin-top:16px
-        }
-        .share-link input{flex:1;background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:10px 12px;color:#fff;font-size:13px;font-family:monospace}
-        .share-link button{padding:10px 16px;border-radius:8px;border:none;background:#4ade80;color:#000;font-weight:600;cursor:pointer;white-space:nowrap;font-size:13px}
-        .share-link button:hover{background:#22c55e}
-        .share-link .copied{background:#22c55e;color:#fff}
-        .add-to-cal{
-            display:flex;gap:8px;margin-top:12px;flex-wrap:wrap
-        }
-        .add-to-cal a{
-            padding:8px 14px;border-radius:8px;font-size:0.8rem;text-decoration:none;font-weight:500;
-            border:1px solid rgba(255,255,255,0.2);color:#ccc;transition:all 0.2s
-        }
-        .add-to-cal a:hover{background:rgba(255,255,255,0.08);color:#fff}
-        .event-footer{text-align:center;padding:20px;color:rgba(255,255,255,0.4);font-size:0.8rem}
-        .event-footer a{color:#60a5fa;text-decoration:none;margin:0 6px}
-        .event-footer a:hover{text-decoration:underline}
-        @media(max-width:600px){
-            .form-row{grid-template-columns:1fr}
-            .time-table{font-size:0.8rem}
-            .time-table th,.time-table td{padding:8px 6px}
-        }
-    </style>
-</head>
+    </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <div id="root" role="application" aria-label="World Time Online Application">
