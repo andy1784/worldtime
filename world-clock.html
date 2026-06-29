@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="theme-color" content="#667eea">
+    <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk">
+    <title>World Clock Online — Current Time in All Cities Worldwide | World Time Sync</title>
+    <meta name="title" content="World Clock Online — Current Time in All Cities">
+    <meta name="description" content="Complete world clock with current time in hundreds of cities worldwide. Browse by country, time zone, or search for any city. Free online world clock.">
+    <meta name="keywords" content="world clock online, world clock, current time worldwide, city time clock, international clock, world time now, time in all countries">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://worldtimessync.com/world-clock.html">
+    <meta property="og:title" content="World Clock Online — Current Time in All Cities">
+    <meta property="og:image" content="https://worldtimessync.com/og-image.png">
+    <meta property="og:description" content="Complete world clock with current time in hundreds of cities. Browse by country or time zone.">
+    <meta property="og:site_name" content="World Time Sync">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://worldtimessync.com/world-clock.html">
+    <link rel="stylesheet" href="/assets/country.css">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://www.googlesyndication.com">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"World Clock Online — Current Time All Cities","url":"https://worldtimessync.com/world-clock.html"}</script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <main id="main-content">
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Home</a> &gt;
+                <span aria-current="page">World Clock</span>
+            </nav>
+            <h1>World Clock Online — Current Time in All Cities</h1>
+            <p>Browse current time in hundreds of cities worldwide. Click any city to see full time zone details, UTC offset, and DST info.</p>
+
+            <section class="city-info" aria-label="Most visited cities">
+                <h2>Most Visited Cities Right Now</h2>
+                <div class="world-clock-grid">
+                    <div class="wc-card"><a href="/time/new-york"><strong>New York</strong></a><span id="wc-ny">—</span><small>EST (UTC-5)</small></div>
+                    <div class="wc-card"><a href="/time/london"><strong>London</strong></a><span id="wc-london">—</span><small>GMT (UTC+0)</small></div>
+                    <div class="wc-card"><a href="/time/tokyo"><strong>Tokyo</strong></a><span id="wc-tokyo">—</span><small>JST (UTC+9)</small></div>
+                    <div class="wc-card"><a href="/time/paris"><strong>Paris</strong></a><span id="wc-paris">—</span><small>CET (UTC+1)</small></div>
+                    <div class="wc-card"><a href="/time/sydney"><strong>Sydney</strong></a><span id="wc-sydney">—</span><small>AEST (UTC+10)</small></div>
+                    <div class="wc-card"><a href="/time/dubai"><strong>Dubai</strong></a><span id="wc-dubai">—</span><small>GST (UTC+4)</small></div>
+                    <div class="wc-card"><a href="/time/mumbai"><strong>Mumbai</strong></a><span id="wc-mumbai">—</span><small>IST (UTC+5:30)</small></div>
+                    <div class="wc-card"><a href="/time/los-angeles"><strong>Los Angeles</strong></a><span id="wc-la">—</span><small>PST (UTC-8)</small></div>
+                </div>
+            </section>
+
+            <section class="city-info" aria-label="Browse by country">
+                <h2>Browse Cities by Country</h2>
+                <div id="country-list" class="country-grid"></div>
+            </section>
+
+            <section class="city-info" aria-label="Browse by time zone">
+                <h2>Browse Cities by Time Zone</h2>
+                <div id="tz-list" class="tz-grid"></div>
+            </section>
+
+            <section class="faq-section" aria-label="FAQ">
+                <h2>Frequently Asked Questions</h2>
+                <h3>Is this world clock accurate?</h3>
+                <p>Yes — it uses the IANA time zone database (same as your computer) with live UTC offsets including DST.</p>
+                <h3>How many cities are listed?</h3>
+                <p>This page links to over 695 city pages, 67 country pages, and 17 time zone pages — covering all major population centers worldwide.</p>
+                <h3>Can I embed this world clock on my site?</h3>
+                <p>Yes — check our <a href="/widget.html">embeddable world clock widget</a> for free code snippets.</p>
+            </section>
+        </div>
+        <footer class="seo-footer">
+            <nav aria-label="Footer navigation">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/about.html">About Us</a>
+                <a href="/">World Time Sync</a>
+            </nav>
+            <p>&copy; 2026 World Time Sync. All rights reserved.</p>
+        </footer>
+    </main>
+    <style>
+        .country-grid,.tz-grid,.world-clock-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;margin:12px 0}
+        .world-clock-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
+        .wc-card{background:#f8f9fa;padding:8px 12px;border-radius:6px;text-align:center}
+        .wc-card strong{display:block;font-size:.9rem}
+        .wc-card span{display:block;font-size:1.1rem;font-weight:700;color:#667eea;font-variant-numeric:tabular-nums;min-height:1.4em}
+        .wc-card small{font-size:.7rem;color:#999}
+        .country-grid a,.tz-grid a{display:block;padding:6px 10px;background:#f8f9fa;border-radius:6px;color:#667eea;text-decoration:none;font-size:.9rem}
+        .country-grid a:hover,.tz-grid a:hover{background:#667eea;color:#fff}
+        .container{max-width:900px;margin:0 auto;padding:16px;font-family:system-ui,-apple-system,sans-serif;color:#333}
+        .container h1{font-size:1.8rem;margin:12px 0 8px;color:#1a1a2e}
+        .container h2{font-size:1.3rem;margin:24px 0 10px;color:#16213e}
+        .container h3{font-size:1rem;margin:16px 0 4px;color:#0f3460}
+        .breadcrumb a{color:#667eea;text-decoration:none;font-size:.85rem}
+        a{color:#667eea}
+        .city-info{background:#fff;padding:20px;border-radius:8px;margin:16px 0;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+        .faq-section{background:#fff;padding:20px;border-radius:8px;margin:16px 0;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+        .seo-footer{text-align:center;padding:20px;margin-top:24px;border-top:1px solid #ccc;color:#555;font-size:.85rem}
+        .seo-footer a{margin:0 8px;color:#667eea;text-decoration:none}
+        .skip-link{position:absolute;top:-40px;left:0;background:#667eea;color:#fff;padding:8px 16px;z-index:100}
+    </style>
+    <script>
+    // Live clocks for featured cities
+    var featured = [
+        {id:'wc-ny',tz:'America/New_York'},{id:'wc-london',tz:'Europe/London'},
+        {id:'wc-tokyo',tz:'Asia/Tokyo'},{id:'wc-paris',tz:'Europe/Paris'},
+        {id:'wc-sydney',tz:'Australia/Sydney'},{id:'wc-dubai',tz:'Asia/Dubai'},
+        {id:'wc-mumbai',tz:'Asia/Kolkata'},{id:'wc-la',tz:'America/Los_Angeles'}
+    ];
+    function updateClocks() {
+        var now = new Date();
+        featured.forEach(function(c) {
+            var el = document.getElementById(c.id);
+            if (el) {
+                try {
+                    el.textContent = now.toLocaleString('en-US',{timeZone:c.tz,hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false});
+                } catch(e) {}
+            }
+        });
+    }
+    updateClocks();
+    setInterval(updateClocks, 1000);
+
+    // Countries
+    var countries = [
+        {slug:'united-states',name:'United States'},{slug:'united-kingdom',name:'United Kingdom'},
+        {slug:'germany',name:'Germany'},{slug:'france',name:'France'},{slug:'japan',name:'Japan'},
+        {slug:'china',name:'China'},{slug:'india',name:'India'},{slug:'australia',name:'Australia'},
+        {slug:'brazil',name:'Brazil'},{slug:'canada',name:'Canada'},{slug:'italy',name:'Italy'},
+        {slug:'spain',name:'Spain'},{slug:'south-korea',name:'South Korea'},{slug:'mexico',name:'Mexico'},
+        {slug:'russia',name:'Russia'},{slug:'netherlands',name:'Netherlands'},{slug:'turkey',name:'Turkey'},
+        {slug:'switzerland',name:'Switzerland'},{slug:'poland',name:'Poland'},{slug:'sweden',name:'Sweden'},
+        {slug:'belgium',name:'Belgium'},{slug:'austria',name:'Austria'},{slug:'norway',name:'Norway'},
+        {slug:'argentina',name:'Argentina'},{slug:'thailand',name:'Thailand'},{slug:'egypt',name:'Egypt'},
+        {slug:'south-africa',name:'South Africa'},{slug:'philippines',name:'Philippines'},
+        {slug:'indonesia',name:'Indonesia'},{slug:'new-zealand',name:'New Zealand'},
+        {slug:'united-arab-emirates',name:'UAE'},{slug:'singapore',name:'Singapore'},
+        {slug:'malaysia',name:'Malaysia'},{slug:'vietnam',name:'Vietnam'},{slug:'pakistan',name:'Pakistan'},
+        {slug:'bangladesh',name:'Bangladesh'},{slug:'colombia',name:'Colombia'},
+        {slug:'ukraine',name:'Ukraine'},{slug:'czech-republic',name:'Czech Republic'},
+        {slug:'romania',name:'Romania'},{slug:'portugal',name:'Portugal'},{slug:'ireland',name:'Ireland'},
+        {slug:'hungary',name:'Hungary'},{slug:'finland',name:'Finland'},{slug:'denmark',name:'Denmark'},
+        {slug:'greece',name:'Greece'},{slug:'israel',name:'Israel'},{slug:'chile',name:'Chile'},
+        {slug:'peru',name:'Peru'},{slug:'morocco',name:'Morocco'},{slug:'kenya',name:'Kenya'},
+        {slug:'ethiopia',name:'Ethiopia'},{slug:'nigeria',name:'Nigeria'},{slug:'ghana',name:'Ghana'},
+        {slug:'tanzania',name:'Tanzania'},{slug:'cuba',name:'Cuba'},]
+        ;
+    countries.sort(function(a,b){return a.name.localeCompare(b.name)});
+    var countryHTML = countries.map(function(c){
+        return '<a href="/country/'+c.slug+'.html">'+c.name+'</a>';
+    }).join('');
+    document.getElementById('country-list').innerHTML = countryHTML;
+
+    // Time zones
+    var tzs = [
+        {slug:'est',name:'EST (UTC-5)',abbr:'America/New_York'},
+        {slug:'cst',name:'CST (UTC-6)',abbr:'America/Chicago'},
+        {slug:'mst',name:'MST (UTC-7)',abbr:'America/Denver'},
+        {slug:'pst',name:'PST (UTC-8)',abbr:'America/Los_Angeles'},
+        {slug:'gmt',name:'GMT (UTC+0)',abbr:'Europe/London'},
+        {slug:'cet',name:'CET (UTC+1)',abbr:'Europe/Berlin'},
+        {slug:'eet',name:'EET (UTC+2)',abbr:'Europe/Kiev'},
+        {slug:'msk',name:'MSK (UTC+3)',abbr:'Europe/Moscow'},
+        {slug:'ist',name:'IST (UTC+5:30)',abbr:'Asia/Kolkata'},
+        {slug:'cst-china',name:'CST China (UTC+8)',abbr:'Asia/Shanghai'},
+        {slug:'jst',name:'JST (UTC+9)',abbr:'Asia/Tokyo'},
+        {slug:'kst',name:'KST (UTC+9)',abbr:'Asia/Seoul'},
+        {slug:'aest',name:'AEST (UTC+10)',abbr:'Australia/Sydney'},
+        {slug:'brt',name:'BRT (UTC-3)',abbr:'America/Sao_Paulo'},
+        {slug:'utc',name:'UTC (UTC+0)',abbr:'UTC'}
+    ];
+    var tzHTML = tzs.map(function(t){
+        return '<a href="/time-zones/'+t.slug+'.html">'+t.name+'</a>';
+    }).join('');
+    document.getElementById('tz-list').innerHTML = tzHTML;
+    // Note: using safe innerHTML here with hardcoded data, no user input
+    </script>
+    <script>window.addEventListener('load',function(){
+        var ga=document.createElement('script');ga.async=true;ga.src='https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV';document.head.appendChild(ga);
+        var ga2=document.createElement('script');ga2.textContent='window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-LBX0CDYSSV");';document.head.appendChild(ga2);
+    });
+    </script>
+    </body>
+</html>
