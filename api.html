@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="theme-color" content="#667eea">
+    <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk">
+    <title>World Time API — Free REST API for Time Zones & Current Time | World Time Sync</title>
+<link rel="stylesheet" href="/assets/api.min.css">
+
+    <meta name="title" content="World Time API — Free REST API for Time Zones & Current Time | World Time Sync">
+    <meta name="description" content="Free REST API to get current time for any timezone, convert between time zones, list all time zones, and get UTC offsets. No API key required.">
+    <meta name="keywords" content="world time api, timezone api, current time api, free time api, time zone converter api, utc offset api, developer timezones">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://worldtimessync.com/api.html">
+    <meta property="og:title" content="World Time API — Free REST API for Time Zones">
+    <meta property="og:description" content="Free REST API to get current time for any timezone, convert between time zones, list all time zones, and get UTC offsets.">
+    <meta property="og:image" content="https://worldtimessync.com/og-image.png">
+    <meta property="og:site_name" content="World Time Sync">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://worldtimessync.com/api.html">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/assets/index-ufePLcBr.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LBX0CDYSSV');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "WebAPI", "name": "World Time Sync API", "description": "Free REST API for time zone data, current time, and time conversion", "url": "https://worldtimessync.com/api.html", "provider": {"@type": "Organization", "name": "World Time Sync"}}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://worldtimessync.com/"}, {"@type": "ListItem", "position": 2, "name": "API Documentation", "item": "https://worldtimessync.com/api.html"}]}
+    </script>
+    </head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div id="root" role="application" aria-label="World Time Online Application">
+        <div class="app-loading" aria-busy="true" aria-live="polite">
+            <div class="app-loading-spinner" role="status" aria-label="Loading application"></div>
+            <p class="app-loading-text">Loading World Time...</p>
+        </div>
+    </div>
+    <main id="main-content">
+        <div class="api-container">
+            <header class="api-header">
+                <span class="api-badge">🚀 FREE — No API Key Required</span>
+                <h1>World Time API</h1>
+                <p>Simple REST API for current time, time zone conversion, and UTC offsets. Built for developers who need reliable time data.</p>
+            </header>
+
+            <div class="rate-info">
+                <div class="rate-item"><strong>GET</strong> requests only</div>
+                <div class="rate-item"><strong>60 req/min</strong> rate limit</div>
+                <div class="rate-item">Response: <strong>JSON</strong></div>
+                <div class="rate-item"><strong>CORS</strong> enabled</div>
+            </div>
+
+            <div class="api-toc">
+                <h3>Endpoints</h3>
+                <a href="#api-time">GET /api/:timezone</a>
+                <a href="#api-convert">GET /api/convert</a>
+                <a href="#api-timezones">GET /api/timezones</a>
+                <a href="#api-offset">GET /api/offset/:timezone</a>
+                <a href="#api-now">GET /api/now</a>
+            </div>
+
+            <div class="api-endpoint" id="api-time">
+                <div class="endpoint-head">
+                    <span class="http-method http-get">GET</span>
+                    <span class="endpoint-path">/api/:timezone</span>
+                </div>
+                <p class="endpoint-desc">Get the current time for any IANA timezone. Returns local time, UTC offset, and DST status.</p>
+                <div class="code-block">
+                    <button class="copy-btn">Copy</button>
+                    <span style="color:#8b949e"># Example: Get time in New York</span><br>
+                    GET https://worldtimessync.com/api/America/New_York
+                </div>
+                <div class="code-block">
+                    <span style="color:#8b949e">// Response</span><br>
+                    {<br>
+                    &nbsp;&nbsp;"timezone": "America/New_York",<br>
+                    &nbsp;&nbsp;"datetime": "2026-06-29T14:35:22-04:00",<br>
+                    &nbsp;&nbsp;"utc": "2026-06-29T18:35:22Z",<br>
+                    &nbsp;&nbsp;"offset": "-04:00",<br>
+                    &nbsp;&nbsp;"offset_hours": -4,<br>
+                    &nbsp;&nbsp;"is_dst": true,<br>
+                    &nbsp;&nbsp;"abbreviation": "EDT",<br>
+                    &nbsp;&nbsp;"day_of_week": "Monday",<br>
+                    &nbsp;&nbsp;"day_of_year": 180<br>
+                    }
+                </div>
+                <div class="try-box">
+                    <label>Try it:</label>
+                    <input type="text" id="tryTime" value="America/New_York" placeholder="IANA timezone (e.g. Europe/London)" />
+                    <button class="btn-try" onclick="tryApi('time')">Send Request</button>
+                    <div class="try-result" id="resultTime" style="display:none"></div>
+                </div>
+            </div>
+
+            <div class="api-endpoint" id="api-convert">
+                <div class="endpoint-head">
+                    <span class="http-method http-get">GET</span>
+                    <span class="endpoint-path">/api/convert?from=&lt;tz&gt;&amp;to=&lt;tz&gt;&amp;time=&lt;HH:MM&gt;</span>
+                </div>
+                <p class="endpoint-desc">Convert a specific time from one timezone to another. Useful for scheduling meetings across zones.</p>
+                <div class="code-block">
+                    <span style="color:#8b949e"># Example: 9 AM London → Tokyo</span><br>
+                    GET https://worldtimessync.com/api/convert?from=Europe/London&amp;to=Asia/Tokyo&amp;time=09:00
+                </div>
+                <div class="code-block">
+                    <span style="color:#8b949e">// Response</span><br>
+                    {<br>
+                    &nbsp;&nbsp;"from": {"timezone": "Europe/London", "time": "09:00", "offset": "+01:00"},<br>
+                    &nbsp;&nbsp;"to": {"timezone": "Asia/Tokyo", "time": "17:00", "offset": "+09:00", "next_day": true},<br>
+                    &nbsp;&nbsp;"difference_hours": 8<br>
+                    }
+                </div>
+                <div class="try-box">
+                    <label>Try it:</label>
+                    <input type="text" id="tryConvFrom" value="Europe/London" placeholder="From timezone" />
+                    <input type="text" id="tryConvTo" value="Asia/Tokyo" placeholder="To timezone" />
+                    <input type="text" id="tryConvTime" value="09:00" placeholder="Time (HH:MM)" />
+                    <button class="btn-try" onclick="tryApi('convert')">Send Request</button>
+                    <div class="try-result" id="resultConvert" style="display:none"></div>
+                </div>
+            </div>
+
+            <div class="api-endpoint" id="api-timezones">
+                <div class="endpoint-head">
+                    <span class="http-method http-get">GET</span>
+                    <span class="endpoint-path">/api/timezones</span>
+                </div>
+                <p class="endpoint-desc">List all supported IANA timezones. Optionally filter by region.</p>
+                <div class="code-block">
+                    <span style="color:#8b949e"># All timezones</span><br>
+                    GET https://worldtimessync.com/api/timezones<br><br>
+                    <span style="color:#8b949e"># Filter by region</span><br>
+                    GET https://worldtimessync.com/api/timezones?region=Europe
+                </div>
+                <div class="try-box">
+                    <label>Try it:</label>
+                    <input type="text" id="tryTzRegion" placeholder="Region filter (e.g. Europe, America — leave empty for all)" />
+                    <button class="btn-try" onclick="tryApi('timezones')">Send Request</button>
+                    <div class="try-result" id="resultTimezones" style="display:none"></div>
+                </div>
+            </div>
+
+            <div class="api-endpoint" id="api-offset">
+                <div class="endpoint-head">
+                    <span class="http-method http-get">GET</span>
+                    <span class="endpoint-path">/api/offset/:timezone</span>
+                </div>
+                <p class="endpoint-desc">Get just the UTC offset for a timezone. Lightweight endpoint for quick lookups.</p>
+                <div class="code-block">
+                    GET https://worldtimessync.com/api/offset/America/New_York<br><br>
+                    <span style="color:#8b949e">// Response</span><br>
+                    {"timezone": "America/New_York", "offset": "-04:00", "offset_hours": -4}
+                </div>
+            </div>
+
+            <div class="api-endpoint" id="api-now">
+                <div class="endpoint-head">
+                    <span class="http-method http-get">GET</span>
+                    <span class="endpoint-path">/api/now</span>
+                </div>
+                <p class="endpoint-desc">Get the current UTC time and Unix timestamp. Useful for clock synchronization.</p>
+                <div class="code-block">
+                    GET https://worldtimessync.com/api/now<br><br>
+                    <span style="color:#8b949e">// Response</span><br>
+                    {"utc": "2026-06-29T18:35:22Z", "unix": 1782934522, "iso": "2026-06-29T18:35:22.123Z"}
+                </div>
+            </div>
+
+            <div class="api-endpoint">
+                <div class="endpoint-head">
+                    <span class="endpoint-path">Code Examples</span>
+                </div>
+                <h3 style="margin:12px 0 8px;font-size:0.9rem;color:#ccc">JavaScript / TypeScript</h3>
+                <div class="code-block">
+async function getTime(tz) {<br>
+&nbsp;&nbsp;const res = await fetch(`https://worldtimessync.com/api/${tz}`);<br>
+&nbsp;&nbsp;const data = await res.json();<br>
+&nbsp;&nbsp;console.log(data.datetime); // "2026-06-29T14:35:22-04:00"<br>
+}<br>
+getTime('Europe/Berlin');
+                </div>
+                <h3 style="margin:12px 0 8px;font-size:0.9rem;color:#ccc">Python</h3>
+                <div class="code-block">
+import requests<br><br>
+res = requests.get("https://worldtimessync.com/api/Asia/Tokyo")<br>
+data = res.json()<br>
+print(data["datetime"])  # 2026-06-29T23:35:22+09:00
+                </div>
+                <h3 style="margin:12px 0 8px;font-size:0.9rem;color:#ccc">cURL</h3>
+                <div class="code-block">
+curl -s "https://worldtimessync.com/api/America/Los_Angeles" | jq .
+                </div>
+            </div>
+
+            <footer class="api-footer">
+                <p>Part of <a href="/">World Time Sync</a> — Free time tools for global teams</p>
+                <p>
+                    <a href="/blog/time-zone-rules-for-developers.html">Time Zone Rules for Developers</a>
+                    <a href="/blog/time-zone-converter-api-developers-guide.html">API Comparison Guide</a>
+                    <a href="/meeting-planner.html">Meeting Planner</a>
+                    <a href="/event.html">Event Time Announcer</a>
+                </p>
+                <p style="margin-top:8px">© 2026 World Time Sync. All rights reserved.</p>
+            </footer>
+        </div>
+    </main>
+
+    <script>
+    // Client-side "Try it" using browser's Intl API
+    const IANA_TZ = ["Africa/Abidjan","Africa/Accra","Africa/Addis_Ababa","Africa/Algiers","Africa/Cairo","Africa/Casablanca","Africa/Dakar","Africa/Dar_es_Salaam","Africa/Johannesburg","Africa/Kampala","Africa/Khartoum","Africa/Kinshasa","Africa/Lagos","Africa/Luanda","Africa/Maputo","Africa/Nairobi","Africa/Tripoli","Africa/Tunis","Africa/Windhoek","America/Anchorage","America/Argentina/Buenos_Aires","America/Bogota","America/Buenos_Aires","America/Caracas","America/Chicago","America/Denver","America/Edmonton","America/Halifax","America/Lima","America/Los_Angeles","America/Mexico_City","America/Montevideo","America/New_York","America/Phoenix","America/Santiago","America/Sao_Paulo","America/St_Johns","America/Toronto","America/Vancouver","Asia/Baghdad","Asia/Bangkok","Asia/Dhaka","Asia/Dubai","Asia/Ho_Chi_Minh","Asia/Hong_Kong","Asia/Irkutsk","Asia/Jakarta","Asia/Jerusalem","Asia/Kabul","Asia/Kamchatka","Asia/Karachi","Asia/Kathmandu","Asia/Kolkata","Asia/Krasnoyarsk","Asia/Kuwait","Asia/Makassar","Asia/Muscat","Asia/Nicosia","Asia/Omsk","Asia/Qatar","Asia/Riyadh","Asia/Seoul","Asia/Shanghai","Asia/Singapore","Asia/Taipei","Asia/Tashkent","Asia/Tbilisi","Asia/Tehran","Asia/Tokyo","Asia/Vladivostok","Asia/Yakutsk","Asia/Yekaterinburg","Asia/Yerevan","Atlantic/Reykjavik","Australia/Adelaide","Australia/Brisbane","Australia/Darwin","Australia/Hobart","Australia/Melbourne","Australia/Perth","Australia/Sydney","Europe/Amsterdam","Europe/Athens","Europe/Belgrade","Europe/Berlin","Europe/Bratislava","Europe/Brussels","Europe/Bucharest","Europe/Budapest","Europe/Chisinau","Europe/Copenhagen","Europe/Dublin","Europe/Helsinki","Europe/Istanbul","Europe/Kaliningrad","Europe/Kyiv","Europe/Lisbon","Europe/Ljubljana","Europe/London","Europe/Madrid","Europe/Malta","Europe/Minsk","Europe/Moscow","Europe/Oslo","Europe/Paris","Europe/Prague","Europe/Riga","Europe/Rome","Europe/Sarajevo","Europe/Sofia","Europe/Stockholm","Europe/Tallinn","Europe/Tirane","Europe/Vienna","Europe/Vilnius","Europe/Warsaw","Europe/Zagreb","Europe/Zurich","Indian/Maldives","Indian/Mauritius","Pacific/Auckland","Pacific/Chatham","Pacific/Fiji","Pacific/Guam","Pacific/Honolulu","Pacific/Kiritimati","Pacific/Nauru","Pacific/Norfolk","Pacific/Pago_Pago","Pacific/Port_Moresby","Pacific/Tahiti","Pacific/Tarawa","Pacific/Tongatapu","Pacific/Wallis"];
+
+    function tryApi(type) {
+        if (type === 'time') {
+            const tz = document.getElementById('tryTime').value.trim();
+            showResult('resultTime', simulateTime(tz));
+        } else if (type === 'convert') {
+            const from = document.getElementById('tryConvFrom').value.trim();
+            const to = document.getElementById('tryConvTo').value.trim();
+            const time = document.getElementById('tryConvTime').value.trim();
+            showResult('resultConvert', simulateConvert(from, to, time));
+        } else if (type === 'timezones') {
+            const region = document.getElementById('tryTzRegion').value.trim();
+            const filtered = region ? IANA_TZ.filter(tz => tz.startsWith(region + '/')) : IANA_TZ;
+            showResult('resultTimezones', JSON.stringify({count: filtered.length, timezones: filtered.slice(0, 20)}, null, 2));
+        }
+    }
+
+    function simulateTime(tz) {
+        try {
+            const now = new Date();
+            const parts = new Intl.DateTimeFormat('en-US', {timeZone: tz, year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false}).formatToParts(now);
+            const p = {};
+            parts.forEach(part => p[part.type] = part.value);
+            const iso = p.year + '-' + p.month + '-' + p.day + 'T' + p.hour + ':' + p.minute + ':' + p.second;
+            const offset = getOffset(tz, now);
+            return JSON.stringify({
+                timezone: tz,
+                datetime: iso + offset.iso,
+                utc: now.toISOString().slice(0, 19) + 'Z',
+                offset: offset.iso,
+                offset_hours: offset.hours,
+                is_dst: offset.isDst,
+                day_of_week: now.toLocaleString('en-US', {timeZone: tz, weekday: 'long'}),
+                day_of_year: Math.ceil((now - new Date(now.getFullYear(), 0, 0)) / 86400000)
+            }, null, 2);
+        } catch(e) {
+            return JSON.stringify({error: 'Invalid timezone: ' + tz, hint: 'Use IANA format (e.g. America/New_York)'}, null, 2);
+        }
+    }
+
+    function simulateConvert(from, to, time) {
+        try {
+            const now = new Date();
+            const parts = time.split(':');
+            const h = parseInt(parts[0], 10), m = parseInt(parts[1] || '0', 10);
+            const fromDate = new Date(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate(), h, m));
+            const fromOffset = getOffset(from, fromDate).minutes;
+            const utcDate = new Date(fromDate.getTime() + fromOffset * 60000);
+            const toOffset = getOffset(to, utcDate);
+            const toHours = h + (toOffset.minutes + fromOffset) / 60;
+            const toH = ((Math.floor(toHours) % 24) + 24) % 24;
+            const toM = Math.round((toHours % 1) * 60) % 60;
+            return JSON.stringify({
+                from: {timezone: from, time: pad(h) + ':' + pad(m), offset: getOffset(from, fromDate).iso},
+                to: {timezone: to, time: pad(toH) + ':' + pad(toM), offset: toOffset.iso, next_day: toHours >= 24},
+                difference_hours: Math.round((toOffset.minutes + fromOffset) / 60 * 10) / 10
+            }, null, 2);
+        } catch(e) {
+            return JSON.stringify({error: e.message}, null, 2);
+        }
+    }
+
+    function pad(n) { return String(n).padStart(2, '0'); }
+
+    function getOffset(tz, date) {
+        const utcStr = date.toLocaleString('en-US', {timeZone: 'UTC'});
+        const tzStr = date.toLocaleString('en-US', {timeZone: tz});
+        const diff = (new Date(tzStr) - new Date(utcStr)) / 3600000;
+        const sign = diff >= 0 ? '+' : '-';
+        const absDiff = Math.abs(diff);
+        const hours = Math.floor(absDiff);
+        const minutes = Math.round((absDiff - hours) * 60);
+        return {
+            hours: diff,
+            minutes: diff * 60,
+            iso: sign + pad(hours) + ':' + pad(minutes),
+            isDst: false
+        };
+    }
+
+    function showResult(elId, text) {
+        const el = document.getElementById(elId);
+        el.style.display = 'block';
+        el.textContent = text;
+    }
+
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const code = this.parentElement.innerText.replace('Copy', '').trim();
+            navigator.clipboard.writeText(code);
+            this.textContent = '✅';
+            setTimeout(() => this.textContent = 'Copy', 1500);
+        });
+    });
+    </script>
+
+    <script>
+    window.addEventListener('load',function(){
+        var ahrefs=document.createElement('script');ahrefs.async=true;ahrefs.src='https://analytics.ahrefs.com/analytics.js';ahrefs.setAttribute('data-key','hB1VYWuwb1i/f1d8re7P2A');document.head.appendChild(ahrefs);
+    });
+    </script>
+</body>
+</html>
