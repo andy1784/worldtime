@@ -70,7 +70,20 @@
         a{color:#667eea}
         @media(max-width:600px){.container{padding:12px}.live-time{font-size:1.8rem}}
         @media(max-width:600px){.related-cities ul{grid-template-columns:1fr}}
-    </style>
+    
+.minute-progress{width:100%;height:4px;background:rgba(255,255,255,0.2);border-radius:2px;margin-top:10px;overflow:hidden}
+.minute-progress-bar{height:100%;background:rgba(255,255,255,0.8);border-radius:2px;transition:width 1s linear}
+.copy-time-btn{display:inline-block;margin-top:10px;padding:6px 16px;background:rgba(255,255,255,0.15);color:#fff;border:1px solid rgba(255,255,255,0.3);border-radius:6px;cursor:pointer;font-size:0.85rem;transition:background 0.2s}
+.copy-time-btn:hover{background:rgba(255,255,255,0.25)}
+.copy-time-btn:active{background:rgba(255,255,255,0.35)}
+.lsi-block{background:#fff;padding:clamp(16px,4vw,24px);border-radius:8px;margin:16px 0;box-shadow:0 1px 3px rgba(0,0,0,0.1)}
+.lsi-block h2{margin-top:0;color:#16213e;font-size:clamp(1.1rem,3vw,1.3rem)}
+.lsi-block p{color:#333;line-height:1.7;margin:8px 0}
+.lsi-block ul{padding-left:20px;margin:8px 0}
+.lsi-block li{margin:4px 0;color:#333}
+.lsi-block a{color:#667eea;text-decoration:none}
+.lsi-block a:hover{text-decoration:underline}
+</style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Перейти к основному содержанию</a>
@@ -82,12 +95,28 @@
             </nav>
             <h1>Quetta — Который Час?</h1>
             <div class="current-time-card" role="region" aria-label="Live clock for Quetta">
-                <h2>Текущее Время в Quetta</h2>
-                <p class="live-time" style="min-height:2.5rem" id="live-time" data-timezone="Asia/Karachi" aria-live="polite">Загрузка...</p>
+                <h2>Текущее время в Quetta</h2>
+                <p class="live-time" style="min-height:2.5rem" id="live-time" data-timezone="Asia/Karachi" aria-live="polite">Loading...</p>
+                <div class="minute-progress"><div class="minute-progress-bar" id="minute-bar" style="width:0%"></div></div>
+                <button class="copy-time-btn" id="copy-time-btn" type="button">Копировать время</button>
                 <p class="time-details">
-                    <span>Asia/Karachi</span> | <span>UTC+5</span>
+                    <span>Asia/Karachi</span>
+                    <span></span>
                 </p>
             </div>
+            <section class="lsi-block" aria-label="Подробности о текущем времени">
+<h2>Сколько сейчас времени в Quetta, Pakistan?</h2>
+<p>Нужно узнать точное местное время в Quetta прямо сейчас? Живые часы выше обновляются каждую секунду, показывая точное текущее время в Quetta, Pakistan. Независимо от того, назначаете ли вы встречу с коллегами в Quetta, планируете поездку или координируете работу через часовые пояса, эта страница даёт вам надёжную информацию в реальном времени.</p>
+<p>Время в Quetta следует часовому поясу <strong>Asia/Karachi</strong>. Это означает, что Quetta сейчас в <strong></strong>. Понимание местного часового пояса необходимо для предотвращения ошибок в расписании и удобного общения с контактами в Pakistan.</p>
+<h3>Краткая справка: Время в Quetta</h3>
+<ul>
+<li><strong>Текущее местное время:</strong> отображается вживую выше</li>
+<li><strong>Часовой пояс:</strong> Asia/Karachi</li>
+<li><strong>Смещение UTC:</strong> </li>
+<li><strong>Страна:</strong> Pakistan</li>
+</ul>
+<p>Добавьте эту страницу в закладки для быстрого доступа к текущему времени в Quetta. Живые часы обновляются автоматически без перезагрузки. Вы также можете использовать наш <a href="/ru/">конвертер часовых поясов</a> или <a href="/ru/meeting-planner.html">Планировщик встреч</a>.</p>
+</section>
             <section class="city-info" aria-label="О городе Quetta">
                 <h2>О городе Quetta</h2>
                 <h3>Детали Часового Пояса</h3>

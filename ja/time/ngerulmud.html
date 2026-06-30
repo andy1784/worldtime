@@ -70,7 +70,20 @@
         a{color:#667eea}
         @media(max-width:600px){.container{padding:12px}.live-time{font-size:1.8rem}}
         @media(max-width:600px){.related-cities ul{grid-template-columns:1fr}}
-    </style>
+    
+.minute-progress{width:100%;height:4px;background:rgba(255,255,255,0.2);border-radius:2px;margin-top:10px;overflow:hidden}
+.minute-progress-bar{height:100%;background:rgba(255,255,255,0.8);border-radius:2px;transition:width 1s linear}
+.copy-time-btn{display:inline-block;margin-top:10px;padding:6px 16px;background:rgba(255,255,255,0.15);color:#fff;border:1px solid rgba(255,255,255,0.3);border-radius:6px;cursor:pointer;font-size:0.85rem;transition:background 0.2s}
+.copy-time-btn:hover{background:rgba(255,255,255,0.25)}
+.copy-time-btn:active{background:rgba(255,255,255,0.35)}
+.lsi-block{background:#fff;padding:clamp(16px,4vw,24px);border-radius:8px;margin:16px 0;box-shadow:0 1px 3px rgba(0,0,0,0.1)}
+.lsi-block h2{margin-top:0;color:#16213e;font-size:clamp(1.1rem,3vw,1.3rem)}
+.lsi-block p{color:#333;line-height:1.7;margin:8px 0}
+.lsi-block ul{padding-left:20px;margin:8px 0}
+.lsi-block li{margin:4px 0;color:#333}
+.lsi-block a{color:#667eea;text-decoration:none}
+.lsi-block a:hover{text-decoration:underline}
+</style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">メインコンテンツにスキップ</a>
@@ -82,12 +95,28 @@
             </nav>
             <h1>Ngerulmud — 今何時ですか?</h1>
             <div class="current-time-card" role="region" aria-label="Live clock for Ngerulmud">
-                <h2>現在時刻 — Ngerulmud</h2>
-                <p class="live-time" style="min-height:2.5rem" id="live-time" data-timezone="Pacific/Palau" aria-live="polite">読み込み中...</p>
+                <h2>Ngerulmudの現在時刻</h2>
+                <p class="live-time" style="min-height:2.5rem" id="live-time" data-timezone="Pacific/Palau" aria-live="polite">Loading...</p>
+                <div class="minute-progress"><div class="minute-progress-bar" id="minute-bar" style="width:0%"></div></div>
+                <button class="copy-time-btn" id="copy-time-btn" type="button">時刻をコピー</button>
                 <p class="time-details">
-                    <span>Pacific/Palau</span> | <span>UTC+0</span>
+                    <span>Pacific/Palau</span>
+                    <span></span>
                 </p>
             </div>
+            <section class="lsi-block" aria-label="現在の時刻詳細">
+<h2>Ngerulmud（Palau）の現在の時刻は？</h2>
+<p>Ngerulmudの正確な現地時間を今すぐ知る必要がありますか？上のライブクロックは毎秒更新され、Ngerulmud、Palauの正確な現在の時刻を表示します。Ngerulmudの同僚との会議のスケジュール、旅行の計画、タイムゾーンをまたぐ調整など、このページは信頼できるリアルタイム情報を提供します。</p>
+<p>Ngerulmudの時刻は<strong>Pacific/Palau</strong>タイムゾーンに従います。Ngerulmudは現在<strong></strong>です。現地のタイムゾーンを理解することは、スケジュールのミスを防ぎ、Palauの連絡先との円滑なコミュニケーションを確保するために不可欠です。</p>
+<h3>クイックリファレンス：Ngerulmudの時刻</h3>
+<ul>
+<li><strong>現在の現地時間：</strong>上にライブ表示</li>
+<li><strong>タイムゾーン：</strong>Pacific/Palau</li>
+<li><strong>UTCオフセット：</strong></li>
+<li><strong>国：</strong>Palau</li>
+</ul>
+<p>このページをブックマークして、Ngerulmudの現在の時刻に素早くアクセスできます。ライブクロックは自動更新されます。<a href="/ja/">タイムゾーン変換ツール</a>や<a href="/ja/meeting-planner.html">ミーティングプランナー</a>もご利用ください。</p>
+</section>
             <section class="city-info" aria-label="について Ngerulmud">
                 <h2>について Ngerulmud</h2>
                 <h3>タイムゾーン詳細</h3>

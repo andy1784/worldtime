@@ -70,7 +70,20 @@
         a{color:#667eea}
         @media(max-width:600px){.container{padding:12px}.live-time{font-size:1.8rem}}
         @media(max-width:600px){.related-cities ul{grid-template-columns:1fr}}
-    </style>
+    
+.minute-progress{width:100%;height:4px;background:rgba(255,255,255,0.2);border-radius:2px;margin-top:10px;overflow:hidden}
+.minute-progress-bar{height:100%;background:rgba(255,255,255,0.8);border-radius:2px;transition:width 1s linear}
+.copy-time-btn{display:inline-block;margin-top:10px;padding:6px 16px;background:rgba(255,255,255,0.15);color:#fff;border:1px solid rgba(255,255,255,0.3);border-radius:6px;cursor:pointer;font-size:0.85rem;transition:background 0.2s}
+.copy-time-btn:hover{background:rgba(255,255,255,0.25)}
+.copy-time-btn:active{background:rgba(255,255,255,0.35)}
+.lsi-block{background:#fff;padding:clamp(16px,4vw,24px);border-radius:8px;margin:16px 0;box-shadow:0 1px 3px rgba(0,0,0,0.1)}
+.lsi-block h2{margin-top:0;color:#16213e;font-size:clamp(1.1rem,3vw,1.3rem)}
+.lsi-block p{color:#333;line-height:1.7;margin:8px 0}
+.lsi-block ul{padding-left:20px;margin:8px 0}
+.lsi-block li{margin:4px 0;color:#333}
+.lsi-block a{color:#667eea;text-decoration:none}
+.lsi-block a:hover{text-decoration:underline}
+</style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
@@ -82,12 +95,28 @@
             </nav>
             <h1>Heidelberg — Qué Hora Es?</h1>
             <div class="current-time-card" role="region" aria-label="Live clock for Heidelberg">
-                <h2>Hora Actual en Heidelberg</h2>
-                <p class="live-time" style="min-height:2.5rem" id="live-time" data-timezone="Europe/Berlin" aria-live="polite">Cargando...</p>
+                <h2>Hora actual en Heidelberg</h2>
+                <p class="live-time" style="min-height:2.5rem" id="live-time" data-timezone="Europe/Berlin" aria-live="polite">Loading...</p>
+                <div class="minute-progress"><div class="minute-progress-bar" id="minute-bar" style="width:0%"></div></div>
+                <button class="copy-time-btn" id="copy-time-btn" type="button">Copiar hora</button>
                 <p class="time-details">
-                    <span>Europe/Berlin</span> | <span>UTC+1</span>
+                    <span>Europe/Berlin</span>
+                    <span></span>
                 </p>
             </div>
+            <section class="lsi-block" aria-label="Detalles de la hora actual">
+<h2>¿Qué hora es ahora en Heidelberg, Hungary?</h2>
+<p>¿Necesitas saber la hora local exacta en Heidelberg ahora mismo? El reloj en vivo arriba se actualiza cada segundo, mostrándote la hora precisa actual en Heidelberg, Hungary. Ya sea que estés programando una reunión con colegas en Heidelberg, planificando un viaje o coordinando entre zonas horarias, esta página te da información en tiempo real en la que puedes confiar.</p>
+<p>La hora en Heidelberg sigue la zona horaria <strong>Europe/Berlin</strong>. Heidelberg está actualmente en <strong></strong>. Comprender la zona horaria local es esencial para evitar errores de programación y asegurar una comunicación fluida con contactos en Hungary.</p>
+<h3>Referencia rápida: Hora en Heidelberg</h3>
+<ul>
+<li><strong>Hora local actual:</strong> mostrada en vivo arriba</li>
+<li><strong>Zona horaria:</strong> Europe/Berlin</li>
+<li><strong>Desplazamiento UTC:</strong> </li>
+<li><strong>País:</strong> Hungary</li>
+</ul>
+<p>Guarda esta página para acceder rápidamente a la hora actual en Heidelberg. El reloj en vivo nunca necesita actualizarse manualmente. También puedes usar nuestro <a href="/es/">convertidor de zonas horarias</a> o el <a href="/es/meeting-planner.html">Planificador de Reuniones</a>.</p>
+</section>
             <section class="city-info" aria-label="Acerca de Heidelberg">
                 <h2>Acerca de Heidelberg</h2>
                 <h3>Detalles de la Zona Horaria</h3>
