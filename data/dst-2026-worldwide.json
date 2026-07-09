@@ -1,0 +1,658 @@
+[
+  {
+    "country": "United States",
+    "region": "Most states",
+    "spring_forward": {
+      "date": "2026-03-08",
+      "time_local": "02:00"
+    },
+    "fall_back": {
+      "date": "2026-11-01",
+      "time_local": "02:00"
+    },
+    "notes": "Arizona (except Navajo) & Hawaii do not observe DST",
+    "timezone_summer": "EDT/CDT/MDT/PDT",
+    "timezone_winter": "EST/CST/MST/PST",
+    "utc_offset_summer": "-4/-5/-6/-7",
+    "utc_offset_winter": "-5/-6/-7/-8"
+  },
+  {
+    "country": "Canada",
+    "region": "Most provinces",
+    "spring_forward": {
+      "date": "2026-03-08",
+      "time_local": "02:00"
+    },
+    "fall_back": {
+      "date": "2026-11-01",
+      "time_local": "02:00"
+    },
+    "notes": "Saskatchewan (most) stays on CST year-round",
+    "timezone_summer": "EDT/CDT/MDT/PDT",
+    "timezone_winter": "EST/CST/MST/PST",
+    "utc_offset_summer": "-4/-5/-6/-7",
+    "utc_offset_winter": "-5/-6/-7/-8"
+  },
+  {
+    "country": "Mexico",
+    "region": "Most states",
+    "spring_forward": {
+      "date": "2026-04-05",
+      "time_local": "02:00"
+    },
+    "fall_back": {
+      "date": "2026-10-25",
+      "time_local": "02:00"
+    },
+    "notes": "Sonora, Quintana Roo, Baja California Sur do not observe DST",
+    "timezone_summer": "CDT/MDT/PDT",
+    "timezone_winter": "CST/MST/PST",
+    "utc_offset_summer": "-5/-6/-7",
+    "utc_offset_winter": "-6/-7/-8"
+  },
+  {
+    "country": "United Kingdom",
+    "region": "All",
+    "spring_forward": {
+      "date": "2026-03-29",
+      "time_local": "01:00"
+    },
+    "fall_back": {
+      "date": "2026-10-25",
+      "time_local": "02:00"
+    },
+    "notes": "GMT -> BST",
+    "timezone_summer": "BST",
+    "timezone_winter": "GMT",
+    "utc_offset_summer": "+1",
+    "utc_offset_winter": "+0"
+  },
+  {
+    "country": "Ireland",
+    "region": "All",
+    "spring_forward": {
+      "date": "2026-03-29",
+      "time_local": "01:00"
+    },
+    "fall_back": {
+      "date": "2026-10-25",
+      "time_local": "02:00"
+    },
+    "notes": "GMT -> IST",
+    "timezone_summer": "IST",
+    "timezone_winter": "GMT",
+    "utc_offset_summer": "+1",
+    "utc_offset_winter": "+0"
+  },
+  {
+    "country": "European Union",
+    "region": "All member states",
+    "spring_forward": {
+      "date": "2026-03-29",
+      "time_local": "01:00"
+    },
+    "fall_back": {
+      "date": "2026-10-25",
+      "time_local": "02:00"
+    },
+    "notes": "CET -> CEST / EET -> EEST",
+    "timezone_summer": "CEST/EEST",
+    "timezone_winter": "CET/EET",
+    "utc_offset_summer": "+2/+3",
+    "utc_offset_winter": "+1/+2"
+  },
+  {
+    "country": "Australia",
+    "region": "NSW, VIC, SA, TAS, ACT",
+    "spring_forward": {
+      "date": "2026-10-04",
+      "time_local": "02:00"
+    },
+    "fall_back": {
+      "date": "2026-04-05",
+      "time_local": "03:00"
+    },
+    "notes": "Southern hemisphere: spring forward in Oct, fall back in Apr",
+    "timezone_summer": "AEDT/ACDT",
+    "timezone_winter": "AEST/ACST",
+    "utc_offset_summer": "+11/+10:30",
+    "utc_offset_winter": "+10/+9:30"
+  },
+  {
+    "country": "Australia",
+    "region": "QLD, NT, WA",
+    "spring_forward": null,
+    "fall_back": null,
+    "notes": "Do not observe DST",
+    "timezone_summer": "AEST/ACST/AWST",
+    "timezone_winter": "AEST/ACST/AWST",
+    "utc_offset_summer": "+10/+9:30/+8",
+    "utc_offset_winter": "+10/+9:30/+8"
+  },
+  {
+    "country": "New Zealand",
+    "region": "All",
+    "spring_forward": {
+      "date": "2026-09-27",
+      "time_local": "02:00"
+    },
+    "fall_back": {
+      "date": "2026-04-05",
+      "time_local": "03:00"
+    },
+    "notes": "Southern hemisphere",
+    "timezone_summer": "NZDT",
+    "timezone_winter": "NZST",
+    "utc_offset_summer": "+13",
+    "utc_offset_winter": "+12"
+  },
+  {
+    "country": "Chile",
+    "region": "Continental",
+    "spring_forward": {
+      "date": "2026-09-06",
+      "time_local": "00:00"
+    },
+    "fall_back": {
+      "date": "2026-04-04",
+      "time_local": "00:00"
+    },
+    "notes": "Southern hemisphere",
+    "timezone_summer": "CLST",
+    "timezone_winter": "CLT",
+    "utc_offset_summer": "-3",
+    "utc_offset_winter": "-4"
+  },
+  {
+    "country": "Paraguay",
+    "region": "All",
+    "spring_forward": {
+      "date": "2026-10-04",
+      "time_local": "00:00"
+    },
+    "fall_back": {
+      "date": "2026-03-28",
+      "time_local": "00:00"
+    },
+    "notes": "Southern hemisphere",
+    "timezone_summer": "PYST",
+    "timezone_winter": "PYT",
+    "utc_offset_summer": "-3",
+    "utc_offset_winter": "-4"
+  },
+  {
+    "country": "Brazil",
+    "region": "Most states",
+    "spring_forward": null,
+    "fall_back": null,
+    "notes": "Abolished DST in 2019",
+    "timezone_summer": "BRT",
+    "timezone_winter": "BRT",
+    "utc_offset_summer": "-3",
+    "utc_offset_winter": "-3"
+  },
+  {
+    "country": "Argentina",
+    "region": "All",
+    "spring_forward": null,
+    "fall_back": null,
+    "notes": "Abolished DST in 2009",
+    "timezone_summer": "ART",
+    "timezone_winter": "ART",
+    "utc_offset_summer": "-3",
+    "utc_offset_winter": "-3"
+  },
+  {
+    "country": "South Africa",
+    "region": "All",
+    "spring_forward": null,
+    "fall_back": null,
+    "notes": "Does not observe DST",
+    "timezone_summer": "SAST",
+    "timezone_winter": "SAST",
+    "utc_offset_summer": "+2",
+    "utc_offset_winter": "+2"
+  },
+  {
+    "country": "Egypt",
+    "region": "All",
+    "spring_forward": {
+      "date": "2026-04-24",
+      "time_local": "00:00"
+    },
+    "fall_back": {
+      "date": "2026-10-30",
+      "time_local": "00:00"
+    },
+    "notes": "Reinstated DST in 2023",
+    "timezone_summer": "EEST",
+    "timezone_winter": "EET",
+    "utc_offset_summer": "+3",
+    "utc_offset_winter": "+2"
+  },
+  {
+    "country": "Israel",
+    "region": "All",
+    "spring_forward": {
+      "date": "2026-03-27",
+      "time_local": "02:00"
+    },
+    "fall_back": {
+      "date": "2026-10-25",
+      "time_local": "02:00"
+    },
+    "notes": "IDT/IST",
+    "timezone_summer": "IDT",
+    "timezone_winter": "IST",
+    "utc_offset_summer": "+3",
+    "utc_offset_winter": "+2"
+  },
+  {
+    "country": "Lebanon",
+    "region": "All",
+    "spring_forward": {
+      "date": "2026-03-28",
+      "time_local": "00:00"
+    },
+    "fall_back": {
+      "date": "2026-10-24",
+      "time_local": "00:00"
+    },
+    "notes": "EEST/EET",
+    "timezone_summer": "EEST",
+    "timezone_winter": "EET",
+    "utc_offset_summer": "+3",
+    "utc_offset_winter": "+2"
+  },
+  {
+    "country": "Jordan",
+    "region": "All",
+    "spring_forward": {
+      "date": "2026-02-26",
+      "time_local": "00:00"
+    },
+    "fall_back": {
+      "date": "2026-10-30",
+      "time_local": "01:00"
+    },
+    "notes": "EEST/EET",
+    "timezone_summer": "EEST",
+    "timezone_winter": "EET",
+    "utc_offset_summer": "+3",
+    "utc_offset_winter": "+2"
+  },
+  {
+    "country": "Syria",
+    "region": "All",
+    "spring_forward": {
+      "date": "2026-03-27",
+      "time_local": "00:00"
+    },
+    "fall_back": {
+      "date": "2026-10-30",
+      "time_local": "00:00"
+    },
+    "notes": "EEST/EET",
+    "timezone_summer": "EEST",
+    "timezone_winter": "EET",
+    "utc_offset_summer": "+3",
+    "utc_offset_winter": "+2"
+  },
+  {
+    "country": "Iran",
+    "region": "All",
+    "spring_forward": {
+      "date": "2026-03-20",
+      "time_local": "00:00"
+    },
+    "fall_back": {
+      "date": "2026-09-21",
+      "time_local": "00:00"
+    },
+    "notes": "IRDT/IRST (Nowruz-based)",
+    "timezone_summer": "IRDT",
+    "timezone_winter": "IRST",
+    "utc_offset_summer": "+4:30",
+    "utc_offset_winter": "+3:30"
+  },
+  {
+    "country": "Afghanistan",
+    "region": "All",
+    "spring_forward": null,
+    "fall_back": null,
+    "notes": "No DST",
+    "timezone_summer": "AFT",
+    "timezone_winter": "AFT",
+    "utc_offset_summer": "+4:30",
+    "utc_offset_winter": "+4:30"
+  },
+  {
+    "country": "India",
+    "region": "All",
+    "spring_forward": null,
+    "fall_back": null,
+    "notes": "No DST (IST year-round)",
+    "timezone_summer": "IST",
+    "timezone_winter": "IST",
+    "utc_offset_summer": "+5:30",
+    "utc_offset_winter": "+5:30"
+  },
+  {
+    "country": "China",
+    "region": "All",
+    "spring_forward": null,
+    "fall_back": null,
+    "notes": "No DST (CST year-round)",
+    "timezone_summer": "CST",
+    "timezone_winter": "CST",
+    "utc_offset_summer": "+8",
+    "utc_offset_winter": "+8"
+  },
+  {
+    "country": "Japan",
+    "region": "All",
+    "spring_forward": null,
+    "fall_back": null,
+    "notes": "No DST (JST year-round)",
+    "timezone_summer": "JST",
+    "timezone_winter": "JST",
+    "utc_offset_summer": "+9",
+    "utc_offset_winter": "+9"
+  },
+  {
+    "country": "South Korea",
+    "region": "All",
+    "spring_forward": null,
+    "fall_back": null,
+    "notes": "No DST (KST year-round)",
+    "timezone_summer": "KST",
+    "timezone_winter": "KST",
+    "utc_offset_summer": "+9",
+    "utc_offset_winter": "+9"
+  },
+  {
+    "country": "Singapore",
+    "region": "All",
+    "spring_forward": null,
+    "fall_back": null,
+    "notes": "No DST (SGT year-round)",
+    "timezone_summer": "SGT",
+    "timezone_winter": "SGT",
+    "utc_offset_summer": "+8",
+    "utc_offset_winter": "+8"
+  },
+  {
+    "country": "Hong Kong",
+    "region": "All",
+    "spring_forward": null,
+    "fall_back": null,
+    "notes": "No DST (HKT year-round)",
+    "timezone_summer": "HKT",
+    "timezone_winter": "HKT",
+    "utc_offset_summer": "+8",
+    "utc_offset_winter": "+8"
+  },
+  {
+    "country": "Taiwan",
+    "region": "All",
+    "spring_forward": null,
+    "fall_back": null,
+    "notes": "No DST (CST year-round)",
+    "timezone_summer": "CST",
+    "timezone_winter": "CST",
+    "utc_offset_summer": "+8",
+    "utc_offset_winter": "+8"
+  },
+  {
+    "country": "Philippines",
+    "region": "All",
+    "spring_forward": null,
+    "fall_back": null,
+    "notes": "No DST (PHT year-round)",
+    "timezone_summer": "PHT",
+    "timezone_winter": "PHT",
+    "utc_offset_summer": "+8",
+    "utc_offset_winter": "+8"
+  },
+  {
+    "country": "Indonesia",
+    "region": "All",
+    "spring_forward": null,
+    "fall_back": null,
+    "notes": "No DST (WIB/WITA/WIT year-round)",
+    "timezone_summer": "WIB/WITA/WIT",
+    "timezone_winter": "WIB/WITA/WIT",
+    "utc_offset_summer": "+7/+8/+9",
+    "utc_offset_winter": "+7/+8/+9"
+  },
+  {
+    "country": "Thailand",
+    "region": "All",
+    "spring_forward": null,
+    "fall_back": null,
+    "notes": "No DST (ICT year-round)",
+    "timezone_summer": "ICT",
+    "timezone_winter": "ICT",
+    "utc_offset_summer": "+7",
+    "utc_offset_winter": "+7"
+  },
+  {
+    "country": "Vietnam",
+    "region": "All",
+    "spring_forward": null,
+    "fall_back": null,
+    "notes": "No DST (ICT year-round)",
+    "timezone_summer": "ICT",
+    "timezone_winter": "ICT",
+    "utc_offset_summer": "+7",
+    "utc_offset_winter": "+7"
+  },
+  {
+    "country": "Malaysia",
+    "region": "All",
+    "spring_forward": null,
+    "fall_back": null,
+    "notes": "No DST (MYT year-round)",
+    "timezone_summer": "MYT",
+    "timezone_winter": "MYT",
+    "utc_offset_summer": "+8",
+    "utc_offset_winter": "+8"
+  },
+  {
+    "country": "Russia",
+    "region": "All",
+    "spring_forward": null,
+    "fall_back": null,
+    "notes": "Abolished DST 2014, permanent winter time",
+    "timezone_summer": "MSK+0..+11",
+    "timezone_winter": "MSK+0..+11",
+    "utc_offset_summer": "+2 to +12",
+    "utc_offset_winter": "+2 to +12"
+  },
+  {
+    "country": "Turkey",
+    "region": "All",
+    "spring_forward": null,
+    "fall_back": null,
+    "notes": "Abolished DST 2016, permanent UTC+3",
+    "timezone_summer": "TRT",
+    "timezone_winter": "TRT",
+    "utc_offset_summer": "+3",
+    "utc_offset_winter": "+3"
+  },
+  {
+    "country": "Ukraine",
+    "region": "All",
+    "spring_forward": {
+      "date": "2026-03-29",
+      "time_local": "03:00"
+    },
+    "fall_back": {
+      "date": "2026-10-25",
+      "time_local": "04:00"
+    },
+    "notes": "EET -> EEST",
+    "timezone_summer": "EEST",
+    "timezone_winter": "EET",
+    "utc_offset_summer": "+3",
+    "utc_offset_winter": "+2"
+  },
+  {
+    "country": "Belarus",
+    "region": "All",
+    "spring_forward": null,
+    "fall_back": null,
+    "notes": "No DST since 2011",
+    "timezone_summer": "MSK",
+    "timezone_winter": "MSK",
+    "utc_offset_summer": "+3",
+    "utc_offset_winter": "+3"
+  },
+  {
+    "country": "Moldova",
+    "region": "All",
+    "spring_forward": {
+      "date": "2026-03-29",
+      "time_local": "02:00"
+    },
+    "fall_back": {
+      "date": "2026-10-25",
+      "time_local": "03:00"
+    },
+    "notes": "EET -> EEST",
+    "timezone_summer": "EEST",
+    "timezone_winter": "EET",
+    "utc_offset_summer": "+3",
+    "utc_offset_winter": "+2"
+  },
+  {
+    "country": "Norway",
+    "region": "All",
+    "spring_forward": {
+      "date": "2026-03-29",
+      "time_local": "02:00"
+    },
+    "fall_back": {
+      "date": "2026-10-25",
+      "time_local": "03:00"
+    },
+    "notes": "CET -> CEST",
+    "timezone_summer": "CEST",
+    "timezone_winter": "CET",
+    "utc_offset_summer": "+2",
+    "utc_offset_winter": "+1"
+  },
+  {
+    "country": "Switzerland",
+    "region": "All",
+    "spring_forward": {
+      "date": "2026-03-29",
+      "time_local": "02:00"
+    },
+    "fall_back": {
+      "date": "2026-10-25",
+      "time_local": "03:00"
+    },
+    "notes": "CET -> CEST",
+    "timezone_summer": "CEST",
+    "timezone_winter": "CET",
+    "utc_offset_summer": "+2",
+    "utc_offset_winter": "+1"
+  },
+  {
+    "country": "Serbia",
+    "region": "All",
+    "spring_forward": {
+      "date": "2026-03-29",
+      "time_local": "02:00"
+    },
+    "fall_back": {
+      "date": "2026-10-25",
+      "time_local": "03:00"
+    },
+    "notes": "CET -> CEST",
+    "timezone_summer": "CEST",
+    "timezone_winter": "CET",
+    "utc_offset_summer": "+2",
+    "utc_offset_winter": "+1"
+  },
+  {
+    "country": "Morocco",
+    "region": "All",
+    "spring_forward": {
+      "date": "2026-03-08",
+      "time_local": "02:00"
+    },
+    "fall_back": {
+      "date": "2026-11-01",
+      "time_local": "03:00"
+    },
+    "notes": "Ramadan exception may apply",
+    "timezone_summer": "+1",
+    "timezone_winter": "+0",
+    "utc_offset_summer": "+1",
+    "utc_offset_winter": "+0"
+  },
+  {
+    "country": "Namibia",
+    "region": "All",
+    "spring_forward": {
+      "date": "2026-09-06",
+      "time_local": "02:00"
+    },
+    "fall_back": {
+      "date": "2026-04-05",
+      "time_local": "02:00"
+    },
+    "notes": "Southern hemisphere",
+    "timezone_summer": "WAST",
+    "timezone_winter": "WAT",
+    "utc_offset_summer": "+2",
+    "utc_offset_winter": "+1"
+  },
+  {
+    "country": "Fiji",
+    "region": "All",
+    "spring_forward": {
+      "date": "2026-11-01",
+      "time_local": "02:00"
+    },
+    "fall_back": {
+      "date": "2026-01-18",
+      "time_local": "03:00"
+    },
+    "notes": "Southern hemisphere",
+    "timezone_summer": "FJST",
+    "timezone_winter": "FJT",
+    "utc_offset_summer": "+13",
+    "utc_offset_winter": "+12"
+  },
+  {
+    "country": "Samoa",
+    "region": "All",
+    "spring_forward": {
+      "date": "2026-09-27",
+      "time_local": "03:00"
+    },
+    "fall_back": {
+      "date": "2026-04-05",
+      "time_local": "04:00"
+    },
+    "notes": "Southern hemisphere",
+    "timezone_summer": "WSDT",
+    "timezone_winter": "WST",
+    "utc_offset_summer": "+14",
+    "utc_offset_winter": "+13"
+  },
+  {
+    "country": "Tonga",
+    "region": "All",
+    "spring_forward": null,
+    "fall_back": null,
+    "notes": "No DST (UTC+13 year-round)",
+    "timezone_summer": "TOT",
+    "timezone_winter": "TOT",
+    "utc_offset_summer": "+13",
+    "utc_offset_winter": "+13"
+  }
+]

@@ -1,0 +1,127 @@
+country,continent,timezone,utc_offset,dst_status
+Japan,Asia,JST,+9,Never observed DST
+China,Asia,CST,+8,"Single time zone, never DST"
+India,Asia,IST,+5:30,Never observed DST
+Singapore,Asia,SGT,+8,"Equatorial, no seasonal variation"
+Hong Kong,Asia,HKT,+8,Never observed DST
+Taiwan,Asia,CST,+8,Never observed DST
+South Korea,Asia,KST,+9,"Tried DST 1987-88, abandoned"
+North Korea,Asia,KST,+9,Never observed DST
+Mongolia,Asia,ULAT,+8,Abolished DST 2017
+Philippines,Asia,PHT,+8,"Brief DST 1990, 2006"
+Indonesia,Asia,WIB/WITA/WIT,+7/+8/+9,"Equatorial, no DST"
+Thailand,Asia,ICT,+7,Never observed DST
+Vietnam,Asia,ICT,+7,Never observed DST
+Malaysia,Asia,MYT,+8,"Equatorial, no DST"
+Brunei,Asia,BNT,+8,"Equatorial, no DST"
+Laos,Asia,ICT,+7,Never observed DST
+Cambodia,Asia,ICT,+7,Never observed DST
+Myanmar,Asia,MMT,+6:30,"Half-hour zone, no DST"
+Bangladesh,Asia,BST,+6,"Tried DST 2009, abandoned"
+Sri Lanka,Asia,IST,+5:30,Never observed DST
+Nepal,Asia,NPT,+5:45,"Quarter-hour zone, no DST"
+Pakistan,Asia,PKT,+5,"Tried DST 2002, 2008-09"
+Afghanistan,Asia,AFT,+4:30,Never observed DST
+Russia,Europe/Asia,MSK+0..+11,+2 to +12,"Abolished DST 2014, permanent winter time"
+Belarus,Europe,MSK,+3,No DST since 2011
+Turkey,Europe/Asia,TRT,+3,"Abolished DST 2016, permanent UTC+3"
+Iceland,Europe,GMT,+0,"High latitude, no DST"
+Armenia,Asia,AMT,+4,Abolished DST 2012
+Azerbaijan,Asia,AZT,+4,Abolished DST 2016
+Georgia,Asia,GET,+4,Abolished DST 2005
+Kazakhstan,Asia,ALMT/AQTT,+5/+6,Abolished DST 2005
+Kyrgyzstan,Asia,KGT,+6,No DST
+Tajikistan,Asia,TJT,+5,No DST
+Turkmenistan,Asia,TMT,+5,No DST
+Uzbekistan,Asia,UZT,+5,Abolished DST 1991
+Saudi Arabia,Asia,AST,+3,Never observed DST
+UAE,Asia,GST,+4,Never observed DST
+Qatar,Asia,AST,+3,Never observed DST
+Bahrain,Asia,AST,+3,Never observed DST
+Kuwait,Asia,AST,+3,Never observed DST
+Oman,Asia,GST,+4,Never observed DST
+Yemen,Asia,AST,+3,Never observed DST
+South Africa,Africa,SAST,+2,Abolished DST 1944
+Botswana,Africa,CAT,+2,No DST
+Zimbabwe,Africa,CAT,+2,No DST
+Zambia,Africa,CAT,+2,No DST
+Malawi,Africa,CAT,+2,No DST
+Mozambique,Africa,CAT,+2,No DST
+Angola,Africa,WAT,+1,No DST
+Nigeria,Africa,WAT,+1,No DST
+Ghana,Africa,GMT,+0,No DST
+Ivory Coast,Africa,GMT,+0,No DST
+Senegal,Africa,GMT,+0,No DST
+Mali,Africa,GMT,+0,No DST
+Burkina Faso,Africa,GMT,+0,No DST
+Niger,Africa,WAT,+1,No DST
+Chad,Africa,WAT,+1,No DST
+Central African Republic,Africa,WAT,+1,No DST
+DR Congo,Africa,WAT/CAT,+1/+2,No DST
+Congo,Africa,WAT,+1,No DST
+Gabon,Africa,WAT,+1,No DST
+Equatorial Guinea,Africa,WAT,+1,No DST
+Cameroon,Africa,WAT,+1,No DST
+Benin,Africa,WAT,+1,No DST
+Togo,Africa,GMT,+0,No DST
+Sierra Leone,Africa,GMT,+0,No DST
+Liberia,Africa,GMT,+0,No DST
+Guinea,Africa,GMT,+0,No DST
+Guinea-Bissau,Africa,GMT,+0,No DST
+Gambia,Africa,GMT,+0,No DST
+Cape Verde,Africa,CVT,-1,No DST
+Sao Tome and Principe,Africa,GMT,+0,No DST
+Ethiopia,Africa,EAT,+3,No DST
+Eritrea,Africa,EAT,+3,No DST
+Djibouti,Africa,EAT,+3,No DST
+Somalia,Africa,EAT,+3,No DST
+Kenya,Africa,EAT,+3,No DST
+Uganda,Africa,EAT,+3,No DST
+Tanzania,Africa,EAT,+3,No DST
+Rwanda,Africa,CAT,+2,No DST
+Burundi,Africa,CAT,+2,No DST
+South Sudan,Africa,CAT,+2,No DST
+Sudan,Africa,CAT,+2,No DST
+Egypt,Africa,EET/EEST,+2/+3,Does observe DST
+Libya,Africa,EET,+2,No DST since 2013
+Tunisia,Africa,CET,+1,Abolished DST 2008
+Algeria,Africa,CET,+1,No DST since 1981
+Morocco,Africa,GMT/UTC+1,+0/+1,Observes DST except Ramadan
+Mauritania,Africa,GMT,+0,No DST
+Western Sahara,Africa,GMT,+0,No DST
+Argentina,South America,ART,-3,Abolished DST 2009
+Brazil,South America,BRT/AMT/FNT/AMT,-2/-3/-4/-5,Abolished DST 2019
+Bolivia,South America,BOT,-4,No DST
+Peru,South America,PET,-5,No DST
+Colombia,South America,COT,-5,No DST
+Ecuador,South America,ECT/GALT,-5/-6,No DST (Galapagos -6)
+Venezuela,South America,VET,-4,No DST
+Guyana,South America,GYT,-4,No DST
+Suriname,South America,SRT,-3,No DST
+French Guiana,South America,GFT,-3,No DST
+Belize,North America,CST,-6,No DST
+Costa Rica,North America,CST,-6,No DST
+El Salvador,North America,CST,-6,No DST
+Guatemala,North America,CST,-6,No DST
+Honduras,North America,CST,-6,No DST
+Nicaragua,North America,CST,-6,No DST
+Panama,North America,EST,-5,No DST
+Jamaica,North America,EST,-5,No DST
+Dominican Republic,North America,AST,-4,No DST
+Trinidad and Tobago,North America,AST,-4,No DST
+Barbados,North America,AST,-4,No DST
+Grenada,North America,AST,-4,No DST
+Saint Lucia,North America,AST,-4,No DST
+Saint Vincent,North America,AST,-4,No DST
+Antigua and Barbuda,North America,AST,-4,No DST
+Saint Kitts and Nevis,North America,AST,-4,No DST
+Dominica,North America,AST,-4,No DST
+Papua New Guinea,Oceania,PGT,+10,No DST
+Solomon Islands,Oceania,SBT,+11,No DST
+Cook Islands,Oceania,CKT,-10,No DST
+Kiribati,Oceania,GILT/PHOT/LINT,+12/+13/+14,No DST
+Marshall Islands,Oceania,MHT,+12,No DST
+Micronesia,Oceania,CHUT/PONT,+10/+11,No DST
+Nauru,Oceania,NRT,+12,No DST
+Palau,Oceania,PWT,+9,No DST
+Tuvalu,Oceania,TVT,+12,No DST

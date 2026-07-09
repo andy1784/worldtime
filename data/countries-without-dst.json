@@ -1,0 +1,884 @@
+[
+  {
+    "country": "Japan",
+    "continent": "Asia",
+    "timezone": "JST",
+    "utc_offset": "+9",
+    "dst_status": "Never observed DST"
+  },
+  {
+    "country": "China",
+    "continent": "Asia",
+    "timezone": "CST",
+    "utc_offset": "+8",
+    "dst_status": "Single time zone, never DST"
+  },
+  {
+    "country": "India",
+    "continent": "Asia",
+    "timezone": "IST",
+    "utc_offset": "+5:30",
+    "dst_status": "Never observed DST"
+  },
+  {
+    "country": "Singapore",
+    "continent": "Asia",
+    "timezone": "SGT",
+    "utc_offset": "+8",
+    "dst_status": "Equatorial, no seasonal variation"
+  },
+  {
+    "country": "Hong Kong",
+    "continent": "Asia",
+    "timezone": "HKT",
+    "utc_offset": "+8",
+    "dst_status": "Never observed DST"
+  },
+  {
+    "country": "Taiwan",
+    "continent": "Asia",
+    "timezone": "CST",
+    "utc_offset": "+8",
+    "dst_status": "Never observed DST"
+  },
+  {
+    "country": "South Korea",
+    "continent": "Asia",
+    "timezone": "KST",
+    "utc_offset": "+9",
+    "dst_status": "Tried DST 1987-88, abandoned"
+  },
+  {
+    "country": "North Korea",
+    "continent": "Asia",
+    "timezone": "KST",
+    "utc_offset": "+9",
+    "dst_status": "Never observed DST"
+  },
+  {
+    "country": "Mongolia",
+    "continent": "Asia",
+    "timezone": "ULAT",
+    "utc_offset": "+8",
+    "dst_status": "Abolished DST 2017"
+  },
+  {
+    "country": "Philippines",
+    "continent": "Asia",
+    "timezone": "PHT",
+    "utc_offset": "+8",
+    "dst_status": "Brief DST 1990, 2006"
+  },
+  {
+    "country": "Indonesia",
+    "continent": "Asia",
+    "timezone": "WIB/WITA/WIT",
+    "utc_offset": "+7/+8/+9",
+    "dst_status": "Equatorial, no DST"
+  },
+  {
+    "country": "Thailand",
+    "continent": "Asia",
+    "timezone": "ICT",
+    "utc_offset": "+7",
+    "dst_status": "Never observed DST"
+  },
+  {
+    "country": "Vietnam",
+    "continent": "Asia",
+    "timezone": "ICT",
+    "utc_offset": "+7",
+    "dst_status": "Never observed DST"
+  },
+  {
+    "country": "Malaysia",
+    "continent": "Asia",
+    "timezone": "MYT",
+    "utc_offset": "+8",
+    "dst_status": "Equatorial, no DST"
+  },
+  {
+    "country": "Brunei",
+    "continent": "Asia",
+    "timezone": "BNT",
+    "utc_offset": "+8",
+    "dst_status": "Equatorial, no DST"
+  },
+  {
+    "country": "Laos",
+    "continent": "Asia",
+    "timezone": "ICT",
+    "utc_offset": "+7",
+    "dst_status": "Never observed DST"
+  },
+  {
+    "country": "Cambodia",
+    "continent": "Asia",
+    "timezone": "ICT",
+    "utc_offset": "+7",
+    "dst_status": "Never observed DST"
+  },
+  {
+    "country": "Myanmar",
+    "continent": "Asia",
+    "timezone": "MMT",
+    "utc_offset": "+6:30",
+    "dst_status": "Half-hour zone, no DST"
+  },
+  {
+    "country": "Bangladesh",
+    "continent": "Asia",
+    "timezone": "BST",
+    "utc_offset": "+6",
+    "dst_status": "Tried DST 2009, abandoned"
+  },
+  {
+    "country": "Sri Lanka",
+    "continent": "Asia",
+    "timezone": "IST",
+    "utc_offset": "+5:30",
+    "dst_status": "Never observed DST"
+  },
+  {
+    "country": "Nepal",
+    "continent": "Asia",
+    "timezone": "NPT",
+    "utc_offset": "+5:45",
+    "dst_status": "Quarter-hour zone, no DST"
+  },
+  {
+    "country": "Pakistan",
+    "continent": "Asia",
+    "timezone": "PKT",
+    "utc_offset": "+5",
+    "dst_status": "Tried DST 2002, 2008-09"
+  },
+  {
+    "country": "Afghanistan",
+    "continent": "Asia",
+    "timezone": "AFT",
+    "utc_offset": "+4:30",
+    "dst_status": "Never observed DST"
+  },
+  {
+    "country": "Russia",
+    "continent": "Europe/Asia",
+    "timezone": "MSK+0..+11",
+    "utc_offset": "+2 to +12",
+    "dst_status": "Abolished DST 2014, permanent winter time"
+  },
+  {
+    "country": "Belarus",
+    "continent": "Europe",
+    "timezone": "MSK",
+    "utc_offset": "+3",
+    "dst_status": "No DST since 2011"
+  },
+  {
+    "country": "Turkey",
+    "continent": "Europe/Asia",
+    "timezone": "TRT",
+    "utc_offset": "+3",
+    "dst_status": "Abolished DST 2016, permanent UTC+3"
+  },
+  {
+    "country": "Iceland",
+    "continent": "Europe",
+    "timezone": "GMT",
+    "utc_offset": "+0",
+    "dst_status": "High latitude, no DST"
+  },
+  {
+    "country": "Armenia",
+    "continent": "Asia",
+    "timezone": "AMT",
+    "utc_offset": "+4",
+    "dst_status": "Abolished DST 2012"
+  },
+  {
+    "country": "Azerbaijan",
+    "continent": "Asia",
+    "timezone": "AZT",
+    "utc_offset": "+4",
+    "dst_status": "Abolished DST 2016"
+  },
+  {
+    "country": "Georgia",
+    "continent": "Asia",
+    "timezone": "GET",
+    "utc_offset": "+4",
+    "dst_status": "Abolished DST 2005"
+  },
+  {
+    "country": "Kazakhstan",
+    "continent": "Asia",
+    "timezone": "ALMT/AQTT",
+    "utc_offset": "+5/+6",
+    "dst_status": "Abolished DST 2005"
+  },
+  {
+    "country": "Kyrgyzstan",
+    "continent": "Asia",
+    "timezone": "KGT",
+    "utc_offset": "+6",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Tajikistan",
+    "continent": "Asia",
+    "timezone": "TJT",
+    "utc_offset": "+5",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Turkmenistan",
+    "continent": "Asia",
+    "timezone": "TMT",
+    "utc_offset": "+5",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Uzbekistan",
+    "continent": "Asia",
+    "timezone": "UZT",
+    "utc_offset": "+5",
+    "dst_status": "Abolished DST 1991"
+  },
+  {
+    "country": "Saudi Arabia",
+    "continent": "Asia",
+    "timezone": "AST",
+    "utc_offset": "+3",
+    "dst_status": "Never observed DST"
+  },
+  {
+    "country": "UAE",
+    "continent": "Asia",
+    "timezone": "GST",
+    "utc_offset": "+4",
+    "dst_status": "Never observed DST"
+  },
+  {
+    "country": "Qatar",
+    "continent": "Asia",
+    "timezone": "AST",
+    "utc_offset": "+3",
+    "dst_status": "Never observed DST"
+  },
+  {
+    "country": "Bahrain",
+    "continent": "Asia",
+    "timezone": "AST",
+    "utc_offset": "+3",
+    "dst_status": "Never observed DST"
+  },
+  {
+    "country": "Kuwait",
+    "continent": "Asia",
+    "timezone": "AST",
+    "utc_offset": "+3",
+    "dst_status": "Never observed DST"
+  },
+  {
+    "country": "Oman",
+    "continent": "Asia",
+    "timezone": "GST",
+    "utc_offset": "+4",
+    "dst_status": "Never observed DST"
+  },
+  {
+    "country": "Yemen",
+    "continent": "Asia",
+    "timezone": "AST",
+    "utc_offset": "+3",
+    "dst_status": "Never observed DST"
+  },
+  {
+    "country": "South Africa",
+    "continent": "Africa",
+    "timezone": "SAST",
+    "utc_offset": "+2",
+    "dst_status": "Abolished DST 1944"
+  },
+  {
+    "country": "Botswana",
+    "continent": "Africa",
+    "timezone": "CAT",
+    "utc_offset": "+2",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Zimbabwe",
+    "continent": "Africa",
+    "timezone": "CAT",
+    "utc_offset": "+2",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Zambia",
+    "continent": "Africa",
+    "timezone": "CAT",
+    "utc_offset": "+2",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Malawi",
+    "continent": "Africa",
+    "timezone": "CAT",
+    "utc_offset": "+2",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Mozambique",
+    "continent": "Africa",
+    "timezone": "CAT",
+    "utc_offset": "+2",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Angola",
+    "continent": "Africa",
+    "timezone": "WAT",
+    "utc_offset": "+1",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Nigeria",
+    "continent": "Africa",
+    "timezone": "WAT",
+    "utc_offset": "+1",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Ghana",
+    "continent": "Africa",
+    "timezone": "GMT",
+    "utc_offset": "+0",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Ivory Coast",
+    "continent": "Africa",
+    "timezone": "GMT",
+    "utc_offset": "+0",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Senegal",
+    "continent": "Africa",
+    "timezone": "GMT",
+    "utc_offset": "+0",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Mali",
+    "continent": "Africa",
+    "timezone": "GMT",
+    "utc_offset": "+0",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Burkina Faso",
+    "continent": "Africa",
+    "timezone": "GMT",
+    "utc_offset": "+0",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Niger",
+    "continent": "Africa",
+    "timezone": "WAT",
+    "utc_offset": "+1",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Chad",
+    "continent": "Africa",
+    "timezone": "WAT",
+    "utc_offset": "+1",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Central African Republic",
+    "continent": "Africa",
+    "timezone": "WAT",
+    "utc_offset": "+1",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "DR Congo",
+    "continent": "Africa",
+    "timezone": "WAT/CAT",
+    "utc_offset": "+1/+2",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Congo",
+    "continent": "Africa",
+    "timezone": "WAT",
+    "utc_offset": "+1",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Gabon",
+    "continent": "Africa",
+    "timezone": "WAT",
+    "utc_offset": "+1",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Equatorial Guinea",
+    "continent": "Africa",
+    "timezone": "WAT",
+    "utc_offset": "+1",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Cameroon",
+    "continent": "Africa",
+    "timezone": "WAT",
+    "utc_offset": "+1",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Benin",
+    "continent": "Africa",
+    "timezone": "WAT",
+    "utc_offset": "+1",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Togo",
+    "continent": "Africa",
+    "timezone": "GMT",
+    "utc_offset": "+0",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Sierra Leone",
+    "continent": "Africa",
+    "timezone": "GMT",
+    "utc_offset": "+0",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Liberia",
+    "continent": "Africa",
+    "timezone": "GMT",
+    "utc_offset": "+0",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Guinea",
+    "continent": "Africa",
+    "timezone": "GMT",
+    "utc_offset": "+0",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Guinea-Bissau",
+    "continent": "Africa",
+    "timezone": "GMT",
+    "utc_offset": "+0",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Gambia",
+    "continent": "Africa",
+    "timezone": "GMT",
+    "utc_offset": "+0",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Cape Verde",
+    "continent": "Africa",
+    "timezone": "CVT",
+    "utc_offset": "-1",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Sao Tome and Principe",
+    "continent": "Africa",
+    "timezone": "GMT",
+    "utc_offset": "+0",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Ethiopia",
+    "continent": "Africa",
+    "timezone": "EAT",
+    "utc_offset": "+3",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Eritrea",
+    "continent": "Africa",
+    "timezone": "EAT",
+    "utc_offset": "+3",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Djibouti",
+    "continent": "Africa",
+    "timezone": "EAT",
+    "utc_offset": "+3",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Somalia",
+    "continent": "Africa",
+    "timezone": "EAT",
+    "utc_offset": "+3",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Kenya",
+    "continent": "Africa",
+    "timezone": "EAT",
+    "utc_offset": "+3",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Uganda",
+    "continent": "Africa",
+    "timezone": "EAT",
+    "utc_offset": "+3",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Tanzania",
+    "continent": "Africa",
+    "timezone": "EAT",
+    "utc_offset": "+3",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Rwanda",
+    "continent": "Africa",
+    "timezone": "CAT",
+    "utc_offset": "+2",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Burundi",
+    "continent": "Africa",
+    "timezone": "CAT",
+    "utc_offset": "+2",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "South Sudan",
+    "continent": "Africa",
+    "timezone": "CAT",
+    "utc_offset": "+2",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Sudan",
+    "continent": "Africa",
+    "timezone": "CAT",
+    "utc_offset": "+2",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Egypt",
+    "continent": "Africa",
+    "timezone": "EET/EEST",
+    "utc_offset": "+2/+3",
+    "dst_status": "Does observe DST"
+  },
+  {
+    "country": "Libya",
+    "continent": "Africa",
+    "timezone": "EET",
+    "utc_offset": "+2",
+    "dst_status": "No DST since 2013"
+  },
+  {
+    "country": "Tunisia",
+    "continent": "Africa",
+    "timezone": "CET",
+    "utc_offset": "+1",
+    "dst_status": "Abolished DST 2008"
+  },
+  {
+    "country": "Algeria",
+    "continent": "Africa",
+    "timezone": "CET",
+    "utc_offset": "+1",
+    "dst_status": "No DST since 1981"
+  },
+  {
+    "country": "Morocco",
+    "continent": "Africa",
+    "timezone": "GMT/UTC+1",
+    "utc_offset": "+0/+1",
+    "dst_status": "Observes DST except Ramadan"
+  },
+  {
+    "country": "Mauritania",
+    "continent": "Africa",
+    "timezone": "GMT",
+    "utc_offset": "+0",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Western Sahara",
+    "continent": "Africa",
+    "timezone": "GMT",
+    "utc_offset": "+0",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Argentina",
+    "continent": "South America",
+    "timezone": "ART",
+    "utc_offset": "-3",
+    "dst_status": "Abolished DST 2009"
+  },
+  {
+    "country": "Brazil",
+    "continent": "South America",
+    "timezone": "BRT/AMT/FNT/AMT",
+    "utc_offset": "-2/-3/-4/-5",
+    "dst_status": "Abolished DST 2019"
+  },
+  {
+    "country": "Bolivia",
+    "continent": "South America",
+    "timezone": "BOT",
+    "utc_offset": "-4",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Peru",
+    "continent": "South America",
+    "timezone": "PET",
+    "utc_offset": "-5",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Colombia",
+    "continent": "South America",
+    "timezone": "COT",
+    "utc_offset": "-5",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Ecuador",
+    "continent": "South America",
+    "timezone": "ECT/GALT",
+    "utc_offset": "-5/-6",
+    "dst_status": "No DST (Galapagos -6)"
+  },
+  {
+    "country": "Venezuela",
+    "continent": "South America",
+    "timezone": "VET",
+    "utc_offset": "-4",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Guyana",
+    "continent": "South America",
+    "timezone": "GYT",
+    "utc_offset": "-4",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Suriname",
+    "continent": "South America",
+    "timezone": "SRT",
+    "utc_offset": "-3",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "French Guiana",
+    "continent": "South America",
+    "timezone": "GFT",
+    "utc_offset": "-3",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Belize",
+    "continent": "North America",
+    "timezone": "CST",
+    "utc_offset": "-6",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Costa Rica",
+    "continent": "North America",
+    "timezone": "CST",
+    "utc_offset": "-6",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "El Salvador",
+    "continent": "North America",
+    "timezone": "CST",
+    "utc_offset": "-6",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Guatemala",
+    "continent": "North America",
+    "timezone": "CST",
+    "utc_offset": "-6",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Honduras",
+    "continent": "North America",
+    "timezone": "CST",
+    "utc_offset": "-6",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Nicaragua",
+    "continent": "North America",
+    "timezone": "CST",
+    "utc_offset": "-6",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Panama",
+    "continent": "North America",
+    "timezone": "EST",
+    "utc_offset": "-5",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Jamaica",
+    "continent": "North America",
+    "timezone": "EST",
+    "utc_offset": "-5",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Dominican Republic",
+    "continent": "North America",
+    "timezone": "AST",
+    "utc_offset": "-4",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Trinidad and Tobago",
+    "continent": "North America",
+    "timezone": "AST",
+    "utc_offset": "-4",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Barbados",
+    "continent": "North America",
+    "timezone": "AST",
+    "utc_offset": "-4",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Grenada",
+    "continent": "North America",
+    "timezone": "AST",
+    "utc_offset": "-4",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Saint Lucia",
+    "continent": "North America",
+    "timezone": "AST",
+    "utc_offset": "-4",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Saint Vincent",
+    "continent": "North America",
+    "timezone": "AST",
+    "utc_offset": "-4",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Antigua and Barbuda",
+    "continent": "North America",
+    "timezone": "AST",
+    "utc_offset": "-4",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Saint Kitts and Nevis",
+    "continent": "North America",
+    "timezone": "AST",
+    "utc_offset": "-4",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Dominica",
+    "continent": "North America",
+    "timezone": "AST",
+    "utc_offset": "-4",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Papua New Guinea",
+    "continent": "Oceania",
+    "timezone": "PGT",
+    "utc_offset": "+10",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Solomon Islands",
+    "continent": "Oceania",
+    "timezone": "SBT",
+    "utc_offset": "+11",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Cook Islands",
+    "continent": "Oceania",
+    "timezone": "CKT",
+    "utc_offset": "-10",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Kiribati",
+    "continent": "Oceania",
+    "timezone": "GILT/PHOT/LINT",
+    "utc_offset": "+12/+13/+14",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Marshall Islands",
+    "continent": "Oceania",
+    "timezone": "MHT",
+    "utc_offset": "+12",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Micronesia",
+    "continent": "Oceania",
+    "timezone": "CHUT/PONT",
+    "utc_offset": "+10/+11",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Nauru",
+    "continent": "Oceania",
+    "timezone": "NRT",
+    "utc_offset": "+12",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Palau",
+    "continent": "Oceania",
+    "timezone": "PWT",
+    "utc_offset": "+9",
+    "dst_status": "No DST"
+  },
+  {
+    "country": "Tuvalu",
+    "continent": "Oceania",
+    "timezone": "TVT",
+    "utc_offset": "+12",
+    "dst_status": "No DST"
+  }
+]

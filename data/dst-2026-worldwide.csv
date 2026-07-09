@@ -1,0 +1,47 @@
+country,region,spring_forward_date,spring_forward_time_local,fall_back_date,fall_back_time_local,notes,tz_summer_abbr,tz_winter_abbr,utc_offset_summer,utc_offset_winter
+United States,Most states,2026-03-08,02:00,2026-11-01,02:00,Arizona (except Navajo) & Hawaii do not observe DST,EDT/CDT/MDT/PDT,EST/CST/MST/PST,-4/-5/-6/-7,-5/-6/-7/-8
+Canada,Most provinces,2026-03-08,02:00,2026-11-01,02:00,Saskatchewan (most) stays on CST year-round,EDT/CDT/MDT/PDT,EST/CST/MST/PST,-4/-5/-6/-7,-5/-6/-7/-8
+Mexico,Most states,2026-04-05,02:00,2026-10-25,02:00,"Sonora, Quintana Roo, Baja California Sur do not observe DST",CDT/MDT/PDT,CST/MST/PST,-5/-6/-7,-6/-7/-8
+United Kingdom,All,2026-03-29,01:00,2026-10-25,02:00,GMT -> BST,BST,GMT,+1,+0
+Ireland,All,2026-03-29,01:00,2026-10-25,02:00,GMT -> IST,IST,GMT,+1,+0
+European Union,All member states,2026-03-29,01:00,2026-10-25,02:00,CET -> CEST / EET -> EEST,CEST/EEST,CET/EET,+2/+3,+1/+2
+Australia,"NSW, VIC, SA, TAS, ACT",2026-10-04,02:00,2026-04-05,03:00,"Southern hemisphere: spring forward in Oct, fall back in Apr",AEDT/ACDT,AEST/ACST,+11/+10:30,+10/+9:30
+Australia,"QLD, NT, WA",,,,,Do not observe DST,AEST/ACST/AWST,AEST/ACST/AWST,+10/+9:30/+8,+10/+9:30/+8
+New Zealand,All,2026-09-27,02:00,2026-04-05,03:00,Southern hemisphere,NZDT,NZST,+13,+12
+Chile,Continental,2026-09-06,00:00,2026-04-04,00:00,Southern hemisphere,CLST,CLT,-3,-4
+Paraguay,All,2026-10-04,00:00,2026-03-28,00:00,Southern hemisphere,PYST,PYT,-3,-4
+Brazil,Most states,,,,,Abolished DST in 2019,BRT,BRT,-3,-3
+Argentina,All,,,,,Abolished DST in 2009,ART,ART,-3,-3
+South Africa,All,,,,,Does not observe DST,SAST,SAST,+2,+2
+Egypt,All,2026-04-24,00:00,2026-10-30,00:00,Reinstated DST in 2023,EEST,EET,+3,+2
+Israel,All,2026-03-27,02:00,2026-10-25,02:00,IDT/IST,IDT,IST,+3,+2
+Lebanon,All,2026-03-28,00:00,2026-10-24,00:00,EEST/EET,EEST,EET,+3,+2
+Jordan,All,2026-02-26,00:00,2026-10-30,01:00,EEST/EET,EEST,EET,+3,+2
+Syria,All,2026-03-27,00:00,2026-10-30,00:00,EEST/EET,EEST,EET,+3,+2
+Iran,All,2026-03-20,00:00,2026-09-21,00:00,IRDT/IRST (Nowruz-based),IRDT,IRST,+4:30,+3:30
+Afghanistan,All,,,,,No DST,AFT,AFT,+4:30,+4:30
+India,All,,,,,No DST (IST year-round),IST,IST,+5:30,+5:30
+China,All,,,,,No DST (CST year-round),CST,CST,+8,+8
+Japan,All,,,,,No DST (JST year-round),JST,JST,+9,+9
+South Korea,All,,,,,No DST (KST year-round),KST,KST,+9,+9
+Singapore,All,,,,,No DST (SGT year-round),SGT,SGT,+8,+8
+Hong Kong,All,,,,,No DST (HKT year-round),HKT,HKT,+8,+8
+Taiwan,All,,,,,No DST (CST year-round),CST,CST,+8,+8
+Philippines,All,,,,,No DST (PHT year-round),PHT,PHT,+8,+8
+Indonesia,All,,,,,No DST (WIB/WITA/WIT year-round),WIB/WITA/WIT,WIB/WITA/WIT,+7/+8/+9,+7/+8/+9
+Thailand,All,,,,,No DST (ICT year-round),ICT,ICT,+7,+7
+Vietnam,All,,,,,No DST (ICT year-round),ICT,ICT,+7,+7
+Malaysia,All,,,,,No DST (MYT year-round),MYT,MYT,+8,+8
+Russia,All,,,,,"Abolished DST 2014, permanent winter time",MSK+0..+11,MSK+0..+11,+2 to +12,+2 to +12
+Turkey,All,,,,,"Abolished DST 2016, permanent UTC+3",TRT,TRT,+3,+3
+Ukraine,All,2026-03-29,03:00,2026-10-25,04:00,EET -> EEST,EEST,EET,+3,+2
+Belarus,All,,,,,No DST since 2011,MSK,MSK,+3,+3
+Moldova,All,2026-03-29,02:00,2026-10-25,03:00,EET -> EEST,EEST,EET,+3,+2
+Norway,All,2026-03-29,02:00,2026-10-25,03:00,CET -> CEST,CEST,CET,+2,+1
+Switzerland,All,2026-03-29,02:00,2026-10-25,03:00,CET -> CEST,CEST,CET,+2,+1
+Serbia,All,2026-03-29,02:00,2026-10-25,03:00,CET -> CEST,CEST,CET,+2,+1
+Morocco,All,2026-03-08,02:00,2026-11-01,03:00,Ramadan exception may apply,+1,+0,+1,+0
+Namibia,All,2026-09-06,02:00,2026-04-05,02:00,Southern hemisphere,WAST,WAT,+2,+1
+Fiji,All,2026-11-01,02:00,2026-01-18,03:00,Southern hemisphere,FJST,FJT,+13,+12
+Samoa,All,2026-09-27,03:00,2026-04-05,04:00,Southern hemisphere,WSDT,WST,+14,+13
+Tonga,All,,,,,No DST (UTC+13 year-round),TOT,TOT,+13,+13

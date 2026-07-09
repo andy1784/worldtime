@@ -1,0 +1,8 @@
+team_type,cities,optimal_utc_start,optimal_utc_end,overlap_hours,rotation_recommended
+US-EU,"San Francisco, New York, London, Berlin",14:00,18:00,4,No
+US-APAC,"New York, Singapore, Tokyo",22:00,00:00,2,Yes
+EU-APAC,"London, Berlin, Singapore, Tokyo",06:00,09:00,3,Yes
+US-EU-APAC,"San Francisco, New York, London, Dubai, Singapore, Tokyo",15:00,16:00,1,Yes
+Americas,"Los Angeles, Mexico City, New York, Sao Paulo, Buenos Aires",15:00,19:00,4,No
+EMEA,"London, Berlin, Johannesburg, Dubai, Moscow",08:00,12:00,4,No
+APAC,"Singapore, Tokyo, Sydney, Mumbai, Shanghai",08:00,12:00,4,No

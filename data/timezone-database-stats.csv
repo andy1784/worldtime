@@ -1,0 +1,17 @@
+metric,value
+total_time_zones,38
+total_utc_offsets,27
+countries_with_dst,70
+countries_without_dst,165
+half_hour_zones,NPT; IST; AFT; IRST; NFT; MART; CHAST; ACST; ACDT
+quarter_hour_zones,NPT; CHAST
+most_time_zones_country,France (13 including territories)
+least_time_zones_country,"China (1 official, 5 geographical)"
+largest_utc_span,UTC-12 to UTC+14 (26 hours)
+dst_transitions_per_year,~400 globally
+countries_abolished_dst_recently,Brazil (2019); Turkey (2016); Russia (2014); Argentina (2009); Mongolia (2017); Morocco (2018 - partial)
+countries_reinstated_dst,Egypt (2023); Morocco (annual except Ramadan)
+southern_hemisphere_dst_countries,Australia (partial); New Zealand; Chile; Paraguay; Fiji; Samoa; Namibia
+permanent_dst_countries,Belarus; Iceland; Russia; Turkey; Argentina; Armenia; Azerbaijan; Georgia; Kazakhstan; Kyrgyzstan; Tajikistan; Turkmenistan; Uzbekistan
+data_source,"IANA tz database 2024a, government publications"
+last_updated,2026-07-09
