@@ -31,7 +31,7 @@
     },
     {
       "src": "/(es|zh|ru|it|de|ja|fr|uk)/blog/(.*)",
-      "dest": "/$1/blog/$2"
+      "dest": "/$1/blog/$2.html"
     },
     {
       "src": "/time/(.*)",
