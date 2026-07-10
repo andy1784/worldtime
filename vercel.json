@@ -30,6 +30,10 @@
       "dest": "/blog/$1"
     },
     {
+      "src": "/(es|zh|ru|it|de|ja|fr|uk)/blog/(.*)",
+      "dest": "/$1/blog/$2"
+    },
+    {
       "src": "/time/(.*)",
       "dest": "/time/$1"
     },
