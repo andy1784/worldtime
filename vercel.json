@@ -31,7 +31,8 @@
     },
     {
       "src": "/(es|zh|ru|it|de|ja|fr|uk)/blog/(.*)",
-      "dest": "/$1/blog/$2.html"
+      "status": 301,
+      "headers": { "Location": "/blog/$1-$2" }
     },
     {
       "src": "/time/(.*)",

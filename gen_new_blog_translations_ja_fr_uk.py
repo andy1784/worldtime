@@ -416,13 +416,13 @@ def build_head(lang, title, meta_desc, keywords, slug):
     <meta name="robots" content="index, follow">
     <meta name="author" content="World Time Sync">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://worldtimessync.com/{lang}/blog/{slug}">
+    <meta property="og:url" content="https://worldtimessync.com/blog/{lang}-{slug}">
     <meta property="og:title" content="{title} | World Time Sync">
     <meta property="og:description" content="{meta_desc}">
     <meta property="og:image" content="https://worldtimessync.com/og-image.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{title} | World Time Sync">
-    <link rel="canonical" href="https://worldtimessync.com/{lang}/blog/{slug}">
+    <link rel="canonical" href="https://worldtimessync.com/blog/{lang}-{slug}">
     <link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/blog/{slug}">
     <link rel="alternate" hreflang="en" href="https://worldtimessync.com/blog/{slug}">
     <link rel="alternate" hreflang="es" href="https://worldtimessync.com/es/blog/{slug}">
@@ -446,10 +446,10 @@ def build_head(lang, title, meta_desc, keywords, slug):
     </script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>
     <script type="application/ld+json">
-    {{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "{title} | World Time Sync", "description": "{meta_desc}", "author": {{"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}}, "publisher": {{"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}}, "datePublished": "2026-07-10", "dateModified": "2026-07-10", "mainEntityOfPage": {{"@type": "WebPage", "@id": "https://worldtimessync.com/{lang}/blog/{slug}"}}, "image": "https://worldtimessync.com/og-image.png", "inLanguage": "{lang}"}}
+    {{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "{title} | World Time Sync", "description": "{meta_desc}", "author": {{"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}}, "publisher": {{"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}}, "datePublished": "2026-07-10", "dateModified": "2026-07-10", "mainEntityOfPage": {{"@type": "WebPage", "@id": "https://worldtimessync.com/blog/{lang}-{slug}"}}, "image": "https://worldtimessync.com/og-image.png", "inLanguage": "{lang}"}}
     </script>
     <script type="application/ld+json">
-    {{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{{"@type": "ListItem", "position": 1, "name": "{home}", "item": "https://worldtimessync.com/"}}, {{"@type": "ListItem", "position": 2, "name": "{blog}", "item": "https://worldtimessync.com/#blog"}}, {{"@type": "ListItem", "position": 3, "name": "{title}", "item": "https://worldtimessync.com/{lang}/blog/{slug}"}}]}}
+    {{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{{"@type": "ListItem", "position": 1, "name": "{home}", "item": "https://worldtimessync.com/"}}, {{"@type": "ListItem", "position": 2, "name": "{blog}", "item": "https://worldtimessync.com/#blog"}}, {{"@type": "ListItem", "position": 3, "name": "{title}", "item": "https://worldtimessync.com/blog/{lang}-{slug}"}}]}}
     </script>
 </head>
 <body>
@@ -500,7 +500,7 @@ for slug, langs in T.items():
         </article>'''.format(lang=lang, home=home, blog=blog, h1=h1, date=META_DATE[lang], read=META_READ[lang], kw=keywords, content=content)
         head = build_head(lang, title, meta_desc, keywords, slug_html)
         full = head + article + TAIL
-        fp = BLOG_DIR / lang / slug_html
+        fp = BLOG_DIR / (lang + '-' + slug_html)
         fp.parent.mkdir(parents=True, exist_ok=True)
         with open(fp, 'w', encoding='utf-8') as fh:
             fh.write(full); fh.flush(); os.fsync(fh.fileno())

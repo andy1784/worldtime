@@ -193,18 +193,18 @@ def build_head(title, meta_desc, keywords, slug):
     <meta name="robots" content="index, follow">
     <meta name="author" content="World Time Sync">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://worldtimessync.com/ru/blog/{slug}">
+    <meta property="og:url" content="https://worldtimessync.com/blog/ru-{slug}">
     <meta property="og:title" content="{title} | World Time Sync">
     <meta property="og:description" content="{meta_desc}">
     <meta property="og:image" content="https://worldtimessync.com/og-image.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{title} | World Time Sync">
-    <link rel="canonical" href="https://worldtimessync.com/ru/blog/{slug}">
+    <link rel="canonical" href="https://worldtimessync.com/blog/ru-{slug}">
     <link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/blog/{slug}">
     <link rel="alternate" hreflang="en" href="https://worldtimessync.com/blog/{slug}">
     <link rel="alternate" hreflang="es" href="https://worldtimessync.com/es/blog/{slug}">
     <link rel="alternate" hreflang="zh" href="https://worldtimessync.com/zh/blog/{slug}">
-    <link rel="alternate" hreflang="ru" href="https://worldtimessync.com/ru/blog/{slug}">
+    <link rel="alternate" hreflang="ru" href="https://worldtimessync.com/blog/ru-{slug}">
     <link rel="alternate" hreflang="it" href="https://worldtimessync.com/it/blog/{slug}">
     <link rel="alternate" hreflang="de" href="https://worldtimessync.com/de/blog/{slug}">
     <link rel="alternate" hreflang="ja" href="https://worldtimessync.com/ja/blog/{slug}">
@@ -223,10 +223,10 @@ def build_head(title, meta_desc, keywords, slug):
     </script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>
     <script type="application/ld+json">
-    {{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "{title} | World Time Sync", "description": "{meta_desc}", "author": {{"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}}, "publisher": {{"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}}, "datePublished": "2026-07-10", "dateModified": "2026-07-10", "mainEntityOfPage": {{"@type": "WebPage", "@id": "https://worldtimessync.com/ru/blog/{slug}"}}, "image": "https://worldtimessync.com/og-image.png", "inLanguage": "ru"}}
+    {{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "{title} | World Time Sync", "description": "{meta_desc}", "author": {{"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}}, "publisher": {{"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}}, "datePublished": "2026-07-10", "dateModified": "2026-07-10", "mainEntityOfPage": {{"@type": "WebPage", "@id": "https://worldtimessync.com/blog/ru-{slug}"}}, "image": "https://worldtimessync.com/og-image.png", "inLanguage": "ru"}}
     </script>
     <script type="application/ld+json">
-    {{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://worldtimessync.com/"}}, {{"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://worldtimessync.com/#blog"}}, {{"@type": "ListItem", "position": 3, "name": "{title}", "item": "https://worldtimessync.com/ru/blog/{slug}"}}]}}
+    {{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://worldtimessync.com/"}}, {{"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://worldtimessync.com/#blog"}}, {{"@type": "ListItem", "position": 3, "name": "{title}", "item": "https://worldtimessync.com/blog/ru-{slug}"}}]}}
     </script>
 </head>
 <body>
@@ -267,7 +267,7 @@ for slug, p in POSTS.items():
     head = build_head(p['title'], p['meta_desc'], p['keywords'], slug_html)
     article = ARTICLE_TEMPLATE.format(h1=p['h1'], content=p['content'])
     full = head + article + TAIL
-    fp = BLOG_DIR / 'ru' / slug_html
+    fp = BLOG_DIR / ('ru-' + slug_html)
     fp.parent.mkdir(parents=True, exist_ok=True)
     with open(fp, 'w', encoding='utf-8') as fh:
         fh.write(full); fh.flush(); os.fsync(fh.fileno())
