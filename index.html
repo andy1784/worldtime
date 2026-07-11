@@ -72,7 +72,10 @@ Placed BEFORE #root SPA so LCP happens from static HTML, not JS render --><div c
       // DO NOT hide SEO content — Googlebot executes JS and needs to see the content.
       // The SPA renders inside #root, SEO content stays visible underneath.
       (function () {
-        function loadThirdParties() {
+        // AdSense + GA load on window.load (NOT idle): ad slots are injected by the
+        // SPA right after, so the scripts must be ready early to reserve layout space
+        // and keep CLS at zero. They are async, so they don't block parsing.
+        function loadCriticalParties() {
           // Google Analytics (gtag)
           var ga = document.createElement('script');
           ga.async = true;
@@ -88,14 +91,15 @@ Placed BEFORE #root SPA so LCP happens from static HTML, not JS render --><div c
           ads.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529';
           ads.crossOrigin = 'anonymous';
           document.head.appendChild(ads);
+        }
 
-          // Vercel Web Analytics
+        // Vercel + Ahrefs don't touch layout — load them during idle to spare TBT/INP.
+        function loadIdleParties() {
           var vi = document.createElement('script');
           vi.defer = true;
           vi.src = 'https://cdn.vercel-insights.com/v1/script.js';
           document.head.appendChild(vi);
 
-          // Ahrefs Analytics
           var ah = document.createElement('script');
           ah.async = true;
           ah.src = 'https://analytics.ahrefs.com/analytics.js';
@@ -103,13 +107,13 @@ Placed BEFORE #root SPA so LCP happens from static HTML, not JS render --><div c
           document.head.appendChild(ah);
         }
 
-        // Prefer idle callback; fall back to a timeout so scripts still load if idle never fires.
-        var ric = window.requestIdleCallback || function (cb) { return setTimeout(cb, 1500); };
         if (document.readyState === 'complete') {
-          ric(loadThirdParties);
+          loadCriticalParties();
         } else {
-          window.addEventListener('load', function () { ric(loadThirdParties); });
+          window.addEventListener('load', loadCriticalParties);
         }
+        var ric = window.requestIdleCallback || function (cb) { return setTimeout(cb, 2000); };
+        ric(loadIdleParties);
       })();
     </script>
 </body></html>
