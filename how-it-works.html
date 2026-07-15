@@ -1,0 +1,70 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" /><meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk" /><title>How World Time Sync Works — Live Clocks, Converters & DST Explained</title><meta name="description" content="Learn how World Time Sync calculates live local times for 700+ cities, handles daylight saving time automatically, and converts between any two time zones in real time." /><meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" /><meta name="theme-color" content="#000000" /><meta property="og:type" content="website" /><meta property="og:url" content="https://worldtimessync.com/how-it-works.html" /><meta property="og:title" content="How World Time Sync Works" /><meta property="og:description" content="Live clocks, timezone conversion, and automatic DST handling for 700+ cities — explained simply." /><meta property="og:image" content="https://worldtimessync.com/og-image.png" /><meta property="og:site_name" content="World Time Sync" /><meta name="twitter:card" content="summary_large_image" /><link rel="canonical" href="https://worldtimessync.com/how-it-works.html" /><link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/how-it-works.html" /><link rel="alternate" hreflang="en" href="https://worldtimessync.com/how-it-works.html" /><link rel="alternate" hreflang="es" href="https://worldtimessync.com/es/how-it-works.html" /><link rel="alternate" hreflang="zh" href="https://worldtimessync.com/zh/how-it-works.html" /><link rel="alternate" hreflang="ru" href="https://worldtimessync.com/ru/how-it-works.html" /><link rel="alternate" hreflang="it" href="https://worldtimessync.com/it/how-it-works.html" /><link rel="alternate" hreflang="de" href="https://worldtimessync.com/de/how-it-works.html" /><link rel="alternate" hreflang="ja" href="https://worldtimessync.com/ja/how-it-works.html" /><link rel="alternate" hreflang="fr" href="https://worldtimessync.com/fr/how-it-works.html" /><link rel="alternate" hreflang="uk" href="https://worldtimessync.com/uk/how-it-works.html" /><style>
+      *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+      html{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6}
+      body{background-color:#000;color:#fff;min-height:100vh}
+      .lang-bar{position:fixed;top:0;right:0;z-index:9999;display:flex;align-items:center;gap:2px;padding:6px 12px;background:rgba(0,0,0,0.85);backdrop-filter:blur(8px);border-radius:0 0 0 10px;font-size:0.8rem}
+      .lang-bar .lang-globe{margin-right:4px;font-size:0.9rem}
+      .lang-bar a{color:#888;text-decoration:none;padding:3px 7px;border-radius:4px;transition:all 0.15s}
+      .lang-bar a:hover{color:#fff;background:rgba(255,255,255,0.1)}
+      .lang-bar a.active{color:#60a5fa;font-weight:600}
+      .container{max-width:820px;margin:0 auto;padding:5rem 1.5rem 3rem}
+      .breadcrumb{margin-bottom:1.5rem;color:#888;font-size:0.85rem}
+      .breadcrumb a{color:#60a5fa;text-decoration:none}
+      h1{font-size:2.2rem;margin-bottom:0.75rem;color:#fff}
+      .subtitle{color:#aaa;font-size:1.05rem;margin-bottom:2.5rem}
+      h2{font-size:1.4rem;margin:2rem 0 0.75rem;color:#e0e0e0}
+      p{margin-bottom:1rem;color:#ccc}
+      ul{margin:0 0 1rem 1.4rem;color:#ccc}
+      li{margin-bottom:0.5rem}
+      a.inline{color:#60a5fa;text-decoration:none}
+      a.inline:hover{text-decoration:underline}
+      .card{background:#0a0a0a;border:1px solid #222;border-radius:10px;padding:1.5rem;margin:1.5rem 0}
+      .card h2{margin-top:0}
+      code{background:#111;padding:2px 6px;border-radius:4px;font-size:0.9em;color:#93c5fd}
+      footer{border-top:1px solid #222;margin-top:3rem;padding-top:2rem;color:#666;font-size:0.85rem;text-align:center}
+      footer a{color:#60a5fa;text-decoration:none}
+      @media(max-width:600px){.container{padding-top:4rem}}
+    </style></head><body><div class="lang-bar" role="navigation" aria-label="Language selection"><span class="lang-globe">🌐</span><a href="/" >English</a><a href="/es/">Español</a><a href="/zh/">中文</a><a href="/ru/">Русский</a><a href="/it/">Italiano</a><a href="/de/">Deutsch</a><a href="/ja/">日本語</a><a href="/fr/">Français</a><a href="/uk/">Українська</a></div>
+<main class="container">
+  <nav class="breadcrumb"><a href="/">Home</a> &gt; How It Works</nav>
+  <h1>How World Time Sync Works</h1>
+  <p class="subtitle">A plain-English look at how we show you the correct local time for 700+ cities, handle daylight saving time automatically, and convert between any two zones — all in your browser, in real time.</p>
+
+  <div class="card">
+    <h2>1. Where the time comes from</h2>
+    <p>Every clock on this site is calculated on <strong>your own device</strong>, not on our servers. We use the International Atomic Time standard delivered through <strong>UTC (Coordinated Universal Time)</strong> and your operating system's clock. That means the displayed time is always as accurate as the device you're holding — no round-trips to a slow server, no "last updated 5 minutes ago" lag.</p>
+  </div>
+
+  <div class="card">
+    <h2>2. Time zones and offsets</h2>
+    <p>Each city is mapped to a time zone with a known UTC offset — for example, London is <code>UTC+0</code> in winter and <code>UTC+1</code> in summer, while New York is <code>UTC−5</code> / <code>UTC−4</code>. We apply the offset to the current UTC moment to produce the local time you see. When you open a <a class="inline" href="/time/london.html">city page</a>, the page already knows its zone, so the clock is correct the instant it loads.</p>
+  </div>
+
+  <div class="card">
+    <h2>3. Daylight Saving Time, handled for you</h2>
+    <p>Daylight Saving Time (DST) is the headache of modern scheduling. We store the DST rules for every supported zone, including the exact start and end dates for each year. When a region switches (say, the U.S. in March or the E.U. in late March), the offset updates automatically — you never have to remember whether it's <code>EST</code> or <code>EDT</code> this week.</p>
+  </div>
+
+  <div class="card">
+    <h2>4. Converting between two cities</h2>
+    <p>Our <a class="inline" href="/meeting-planner.html">meeting planner</a> and timezone converters work by taking the UTC moment for City A, then re-applying City B's offset. Because both sides are anchored to the same UTC reference, the conversion is always consistent — even across the International Date Line, where one city might already be "tomorrow."</p>
+  </div>
+
+  <div class="card">
+    <h2>5. Your privacy by design</h2>
+    <p>We don't ask you to log in and we don't build profiles. Time calculation happens locally in your browser; we only use anonymous analytics and (with your consent, via standard ad cookies) show contextual ads to keep the service free. Read the details in our <a class="inline" href="/privacy.html">Privacy Policy</a>.</p>
+  </div>
+
+  <h2>Quick answers</h2>
+  <ul>
+    <li><strong>Is it really live?</strong> Yes — the clock ticks every second from your device's own time.</li>
+    <li><strong>What if my phone clock is wrong?</strong> The site inherits your device time, so fix the device clock and the page follows.</li>
+    <li><strong>Does it work offline?</strong> Once loaded, the clock keeps running without a connection; only analytics and ads need the network.</li>
+    <li><strong>How many cities?</strong> Over 700, across every populated continent and major time zone.</li>
+  </ul>
+
+  <footer>
+    <p>© 2026 World Time Sync · <a href="/">World Clock</a> · <a href="/blog/">Blog</a> · <a href="/privacy.html">Privacy Policy</a> · <a href="/contact.html">Contact</a></p>
+  </footer>
+</main>
+</body></html>
