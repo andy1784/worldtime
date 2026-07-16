@@ -15,6 +15,7 @@ Crawl-delay: 0
 
 # Sitemap location
 Sitemap: https://worldtimessync.com/sitemap.xml
+Sitemap: https://worldtimessync.com/image-sitemap.xml
 
 # Google specific rules - prioritize indexing
 User-agent: Googlebot

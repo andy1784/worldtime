@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://worldtimessync.com/</loc>
+    <image:image>
+      <image:loc>https://worldtimessync.com/og-image.png</image:loc>
+      <image:title>World Time Sync - World Clock &amp; Time Zone Converter</image:title>
+      <image:caption>Check current time in any city and convert between time zones instantly.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://worldtimessync.com/blog/</loc>
+    <image:image>
+      <image:loc>https://worldtimessync.com/og-image.png</image:loc>
+      <image:title>World Time Sync Blog - Time Zone Guides</image:title>
+      <image:caption>Practical guides on time zones, DST, and scheduling across the globe.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://worldtimessync.com/how-it-works.html</loc>
+    <image:image>
+      <image:loc>https://worldtimessync.com/og-image.png</image:loc>
+      <image:title>How World Time Sync Works</image:title>
+      <image:caption>Learn how time zones, DST, and conversion work.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://worldtimessync.com/meeting-planner.html</loc>
+    <image:image>
+      <image:loc>https://worldtimessync.com/og-image.png</image:loc>
+      <image:title>Meeting Planner</image:title>
+      <image:caption>Find the best time for a meeting across multiple time zones.</image:caption>
+    </image:image>
+  </url>
+</urlset>
