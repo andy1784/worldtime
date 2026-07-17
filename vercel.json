@@ -6,6 +6,18 @@
   "trailingSlash": false,
   "routes": [
     {
+      "src": "/(.*\\.(py|sh))$",
+      "status": 404
+    },
+    {
+      "src": "/(SEARCH_ENGINE_CHECKLIST|outreach-log)\\.md$",
+      "status": 404
+    },
+    {
+      "src": "/(blog_hreflang_backup_.*)$",
+      "status": 404
+    },
+    {
       "src": "/widget.js",
       "dest": "/widget.js"
     },
