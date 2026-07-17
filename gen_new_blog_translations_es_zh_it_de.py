@@ -550,14 +550,14 @@ def build_head(lang, title, meta_desc, keywords, slug):
     <link rel="canonical" href="https://worldtimessync.com/blog/{lang}-{slug}">
     <link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/blog/{slug}">
     <link rel="alternate" hreflang="en" href="https://worldtimessync.com/blog/{slug}">
-    <link rel="alternate" hreflang="es" href="https://worldtimessync.com/es/blog/{slug}">
-    <link rel="alternate" hreflang="zh" href="https://worldtimessync.com/zh/blog/{slug}">
-    <link rel="alternate" hreflang="ru" href="https://worldtimessync.com/ru/blog/{slug}">
-    <link rel="alternate" hreflang="it" href="https://worldtimessync.com/it/blog/{slug}">
-    <link rel="alternate" hreflang="de" href="https://worldtimessync.com/de/blog/{slug}">
-    <link rel="alternate" hreflang="ja" href="https://worldtimessync.com/ja/blog/{slug}">
-    <link rel="alternate" hreflang="fr" href="https://worldtimessync.com/fr/blog/{slug}">
-    <link rel="alternate" hreflang="uk" href="https://worldtimessync.com/uk/blog/{slug}">
+    <link rel="alternate" hreflang="es" href="https://worldtimessync.com/blog/{slug}-es">
+    <link rel="alternate" hreflang="zh" href="https://worldtimessync.com/blog/{slug}-zh">
+    <link rel="alternate" hreflang="ru" href="https://worldtimessync.com/blog/{slug}-ru">
+    <link rel="alternate" hreflang="it" href="https://worldtimessync.com/blog/{slug}-it">
+    <link rel="alternate" hreflang="de" href="https://worldtimessync.com/blog/{slug}-de">
+    <link rel="alternate" hreflang="ja" href="https://worldtimessync.com/blog/{slug}-ja">
+    <link rel="alternate" hreflang="fr" href="https://worldtimessync.com/blog/{slug}-fr">
+    <link rel="alternate" hreflang="uk" href="https://worldtimessync.com/blog/{slug}-uk">
     <link rel="preload" href="/assets/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/assets/blog.css"></noscript>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
