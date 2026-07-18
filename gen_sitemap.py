@@ -28,18 +28,30 @@ FOLDER_TO_HREFLANG = {
 }
 
 # Static root pages that exist as <page>.html (English) with localized <lang>/<page>.html
+# (H) excludes widget.html and widget-embed.html — these are embeddable technical
+# endpoints, not indexable content pages.
 ROOT_PAGES = [
     "index.html", "about.html", "contact.html", "privacy.html", "terms.html",
     "api.html", "earth-clock.html", "earth-clock-video.html", "every-second.html",
     "live.html", "meeting-planner.html", "remote-team-solutions.html",
     "time-difference.html", "gmt-vs-utc.html", "dst-2026-worldwide.html",
     "dst-countdown.html", "world-clock.html", "world-time-map.html",
-    "widget.html", "widget-embed.html", "wordpress.html", "how-it-works.html",
-    "event.html",
+    "wordpress.html", "how-it-works.html", "event.html",
 ]
 
-SKIP_DIRS = {"assets", "data", "i18n", "wp-plugin", "blog_hreflang_backup_20260717_083736",
-             "__pycache__", ".git", "node_modules"}
+SKIP_DIRS = {"assets", "data", "i18n", "wp-plugin", "__pycache__", ".git", "node_modules", "tools"}
+# bump dirs that are now ignored by Vercel (won't be deployed); do not list in sitemap
+STUB_TITLE = "Redirecting…"  # title of redirect-stub pages (meta refresh, noindex)
+
+
+def is_stub(p):
+    """True if file is a noindex meta-refresh stub (canonical pointing at /country/ etc.)."""
+    try:
+        with open(p, encoding="utf-8", errors="ignore") as fh:
+            head = fh.read(1500)
+    except OSError:
+        return False
+    return STUB_TITLE in head or 'http-equiv="refresh" content="0; url=https://worldtimessync.com/country/"' in head
 
 
 def mtime_iso(path):
@@ -47,12 +59,29 @@ def mtime_iso(path):
     return datetime.fromtimestamp(ts, tz=timezone.utc).strftime("%Y-%m-%d")
 
 
+def strip_html(rel):
+    """Convert 'time/london.html' -> 'time/london'; keep 'index.html' handled separately."""
+    if rel == "index.html":
+        return None  # handled at call site
+    if rel.endswith("/index.html"):
+        return rel[: -len("/index.html")]
+    if rel.endswith(".html"):
+        return rel[: -len(".html")]
+    return rel
+
+
 def url_for(rel_path):
-    """rel_path like 'time/london.html' or 'de/time/london.html' -> full url"""
+    """Return canonical-style URL (no .html extension per cleanUrls:true).
+
+    rel_path like 'time/london.html' -> 'https://worldtimessync.com/time/london'
+    rel_path == 'index.html' -> 'https://worldtimessync.com/  '
+    rel_path like '<lang>/index.html' -> 'https://worldtimessync.com/<lang>'
+    rel_path like 'country/ukraine.html' -> 'https://worldtimessync.com/country/ukraine'
+    """
     rel = rel_path.replace(os.sep, "/")
     if rel == "index.html":
         return SITE + "/"
-    return SITE + "/" + rel
+    return SITE + "/" + strip_html(rel)
 
 
 def collect_groups():
@@ -77,11 +106,36 @@ def collect_groups():
         for fn in os.listdir(time_dir):
             if not fn.endswith(".html"):
                 continue
+            p = os.path.join(time_dir, fn)
+            if is_stub(p):
+                continue
             base = "time/" + fn
             g = {"en": base, "type": "city"}
             for lang in FOLDER_TO_HREFLANG:
                 lp = os.path.join(ROOT, lang, "time", fn)
-                g[lang] = lang + "/time/" + fn if os.path.exists(lp) else None
+                if os.path.exists(lp) and not is_stub(lp):
+                    g[lang] = lang + "/time/" + fn
+                else:
+                    g[lang] = None
+            groups[base] = g
+
+    # 2b) Country hubs: country/<slug>.html + <lang>/country/<slug>.html (real pages only, skip stubs)
+    country_dir = os.path.join(ROOT, "country")
+    if os.path.isdir(country_dir):
+        for fn in os.listdir(country_dir):
+            if not fn.endswith(".html"):
+                continue
+            p = os.path.join(country_dir, fn)
+            if is_stub(p):
+                continue
+            base = "country/" + fn
+            g = {"en": base, "type": "country"}
+            for lang in FOLDER_TO_HREFLANG:
+                lp = os.path.join(ROOT, lang, "country", fn)
+                if os.path.exists(lp) and not is_stub(lp):
+                    g[lang] = lang + "/country/" + fn
+                else:
+                    g[lang] = None
             groups[base] = g
 
     # 3) Blog posts: blog/<slug>.html + blog/<slug>-<lang>.html
@@ -102,10 +156,16 @@ def collect_groups():
                 # base = strip -lang
                 base_slug = stem[: -(len(matched) + 1)]
                 key = "blog/" + base_slug + ".html"
+                p = os.path.join(blog_dir, fn)
+                if is_stub(p):
+                    continue
                 groups.setdefault(key, {"en": None, "type": "blog"})
                 groups[key][matched] = "blog/" + fn
             else:
                 key = "blog/" + fn
+                p = os.path.join(blog_dir, fn)
+                if is_stub(p):
+                    continue
                 g = groups.setdefault(key, {"en": "blog/" + fn, "type": "blog"})
                 if g.get("en") is None:
                     g["en"] = "blog/" + fn
@@ -146,8 +206,10 @@ def priority_for(g):
         return "0.9"
     if t == "city":
         return "0.8"
-    if t == "blog":
+    if t == "country":
         return "0.7"
+    if t == "blog":
+        return "0.6"
     return "0.5"
 
 
@@ -155,6 +217,8 @@ def changefreq_for(g):
     t = g.get("type")
     if t == "city":
         return "daily"
+    if t == "country":
+        return "weekly"
     if t == "page":
         return "monthly"
     return "monthly"
