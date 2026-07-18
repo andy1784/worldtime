@@ -34,23 +34,8 @@ echo "=== Translation pass done. New files this run: $ADDED_TOTAL ==="
 if [ "$ADDED_TOTAL" -gt 0 ]; then
   echo "--- rebuilding indexes + sitemap ---"
   python3 blog/make_blog_index_i18n.py 2>&1 | tail -2
-  python3 - <<'PY'
-import io, re, glob
-p='sitemap.xml'
-d=io.open(p,encoding='utf-8').read()
-added=0
-for f in glob.glob('blog/*.html'):
-    base=os.path.basename(f)
-    m=re.search(r'-(ru|es|zh|ja|fr|de|uk)\.html$', base)
-    if not m: continue
-    url=f'https://worldtimessync.com/blog/{base}'
-    if f'<loc>{url}</loc>' in d: continue
-    block=f'  <url>\n    <loc>{url}</loc>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>\n'
-    d=d.replace('</urlset>', block+'</urlset>',1)
-    added+=1
-io.open(p,'w',encoding='utf-8').write(d)
-print("sitemap added:",added)
-PY
+  # Rebuild sitemap cleanly with full hreflang groups (overrides any raw appends)
+  python3 gen_sitemap.py 2>&1 | tail -2
   git add -A
   git commit -q -m "Cron: localization batch $(date +%Y-%m-%d) — +$ADDED_TOTAL language files"
   git push origin main
