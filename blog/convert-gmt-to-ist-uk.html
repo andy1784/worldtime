@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="theme-color" content="#667eea">
+    <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk">
+    <title>Перетворити GMT на IST: Посібник з різниці в часі та конвертації (2026)</title>
+    <meta name="title" content="Перетворити GMT на IST: Посібник з різниці в часі та конвертації (2026)">
+    <meta name="description" content="Дізнайтеся, як перевести середній час за Гринвічем (GMT) на індійський стандартний час (IST, UTC+5:30) за допомогою нашого покрокового посібника. Включає в себе обробку півгодинного зміщення, примітки DST та формулу конверсії.">
+    <meta name="keywords" content="перевести GMT в IST, різниця GMT в IST, час Гринвіча в Індія, перетворювач GMT IST">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="World Time Sync">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://worldtimessync.com/blog/convert-gmt-to-ist-uk.html">
+    <meta property="og:title" content="Перетворити GMT на IST: Посібник з різниці в часі та конвертації (2026)">
+    <meta property="og:description" content="Дізнайтеся, як перевести середній час за Гринвічем (GMT) на індійський стандартний час (IST, UTC+5:30) за допомогою нашого покрокового посібника. Включає в себе обробку півгодинного зміщення, примітки DST та формулу конверсії.">
+    <meta property="og:image" content="https://worldtimessync.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Перетворити GMT на IST: Посібник з різниці в часі та конвертації (2026)">
+    <link rel="canonical" href="https://worldtimessync.com/blog/convert-gmt-to-ist-uk.html">
+    <link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/blog/convert-gmt-to-ist.html">
+    <link rel="alternate" hreflang="en" href="https://worldtimessync.com/blog/convert-gmt-to-ist.html">
+    <link rel="alternate" hreflang="ru" href="https://worldtimessync.com/ru/blog/convert-gmt-to-ist.html">
+    <link rel="alternate" hreflang="es" href="https://worldtimessync.com/es/blog/convert-gmt-to-ist.html">
+    <link rel="alternate" hreflang="zh" href="https://worldtimessync.com/zh/blog/convert-gmt-to-ist.html">
+    <link rel="alternate" hreflang="ja" href="https://worldtimessync.com/ja/blog/convert-gmt-to-ist.html">
+    <link rel="alternate" hreflang="fr" href="https://worldtimessync.com/fr/blog/convert-gmt-to-ist.html">
+    <link rel="alternate" hreflang="de" href="https://worldtimessync.com/de/blog/convert-gmt-to-ist.html">
+    <link rel="alternate" hreflang="uk" href="https://worldtimessync.com/uk/blog/convert-gmt-to-ist.html">
+    <link rel="preload" href="/assets/blog.css" as="style">
+<noscript><link rel="stylesheet" href="/assets/blog.css"></noscript>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/assets/index-ufePLcBr.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LBX0CDYSSV');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "BlogPosting", "headline": "\u041f\u0435\u0440\u0435\u0442\u0432\u043e\u0440\u0438\u0442\u0438 GMT \u043d\u0430 IST: \u041f\u043e\u0441\u0456\u0431\u043d\u0438\u043a \u0437 \u0440\u0456\u0437\u043d\u0438\u0446\u0456 \u0432 \u0447\u0430\u0441\u0456 \u0442\u0430 \u043a\u043e\u043d\u0432\u0435\u0440\u0442\u0430\u0446\u0456\u0457 (2026)", "description": "\u0414\u0456\u0437\u043d\u0430\u0439\u0442\u0435\u0441\u044f, \u044f\u043a \u043f\u0435\u0440\u0435\u0432\u0435\u0441\u0442\u0438 \u0441\u0435\u0440\u0435\u0434\u043d\u0456\u0439 \u0447\u0430\u0441 \u0437\u0430 \u0413\u0440\u0438\u043d\u0432\u0456\u0447\u0435\u043c (GMT) \u043d\u0430 \u0456\u043d\u0434\u0456\u0439\u0441\u044c\u043a\u0438\u0439 \u0441\u0442\u0430\u043d\u0434\u0430\u0440\u0442\u043d\u0438\u0439 \u0447\u0430\u0441 (IST, UTC+5:30) \u0437\u0430 \u0434\u043e\u043f\u043e\u043c\u043e\u0433\u043e\u044e \u043d\u0430\u0448\u043e\u0433\u043e \u043f\u043e\u043a\u0440\u043e\u043a\u043e\u0432\u043e\u0433\u043e \u043f\u043e\u0441\u0456\u0431\u043d\u0438\u043a\u0430. \u0412\u043a\u043b\u044e\u0447\u0430\u0454 \u0432 \u0441\u0435\u0431\u0435 \u043e\u0431\u0440\u043e\u0431\u043a\u0443 \u043f\u0456\u0432\u0433\u043e\u0434\u0438\u043d\u043d\u043e\u0433\u043e \u0437\u043c\u0456\u0449\u0435\u043d\u043d\u044f, \u043f\u0440\u0438\u043c\u0456\u0442\u043a\u0438 DST \u0442\u0430 \u0444\u043e\u0440\u043c\u0443\u043b\u0443 \u043a\u043e\u043d\u0432\u0435\u0440\u0441\u0456\u0457.", "author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}, "publisher": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}, "datePublished": "2026-07-08", "dateModified": "2026-07-08", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/blog/convert-gmt-to-ist-uk.html"}, "image": "https://worldtimessync.com/og-image.png"}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://worldtimessync.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://worldtimessync.com/#blog"}, {"@type": "ListItem", "position": 3, "name": "\u041f\u0435\u0440\u0435\u0442\u0432\u043e\u0440\u0438\u0442\u0438 Gmt \u043d\u0430 Ist", "item": "https://worldtimessync.com/blog/convert-gmt-to-ist-uk.html"}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Яка різниця у часі між GMT та IST?", "acceptedAnswer": {"@type": "Answer", "text": "5 годин 30 хвилин взимку у Великобританії, 4 години 30 хвилин влітку."}}, {"@type": "Question", "name": "Чому півгодини?", "acceptedAnswer": {"@type": "Answer", "text": "Індія навмисно використовує UTC+5:30 і тримає його цілий рік."}}, {"@type": "Question", "name": "Якщо зараз 9 ранку за Гринвічем, скільки часу в Індії?", "acceptedAnswer": {"@type": "Answer", "text": "14:30 IST (зима) або 13:30 IST (літо BST)."}}, {"@type": "Question", "name": "Чи дотримується Індія літнього часу?", "acceptedAnswer": {"@type": "Answer", "text": "№ IST - це UTC+5:30 протягом усього року."}}, {"@type": "Question", "name": "Як конвертувати IST у GMT?", "acceptedAnswer": {"@type": "Answer", "text": "Відніміть 5 год 30 хв взимку або 4 год 30 хв влітку у Великобританії."}}]}
+    </script>
+
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div id="root" role="application" aria-label="World Time Online Application">
+        <div class="app-loading" aria-busy="true" aria-live="polite">
+            <div class="app-loading-spinner" role="status" aria-label="Loading application"></div>
+            <p class="app-loading-text">Loading World Time...</p>
+        </div>
+    </div>
+    <main id="main-content">
+        <article class="blog-wrap">
+            <nav class="blog-breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Home</a> › <a href="/#blog">Blog</a> › <span aria-current="page">Перетворити Gmt на Ist</span>
+            </nav>
+            <h1>Перевести GMT в IST: Середній час за Гринвічем у Час Індії</h1>
+            <div class="blog-meta">📅 July 16, 2026 &nbsp;·&nbsp; ⏱ 6 min read &nbsp;·&nbsp; 🏷 time zones</div>
+
+<p><em>Повний текст статті доступний англійською мовою нижче.</em></p>
+<div class="blog-meta">📅 June 30, 2026 &nbsp;·&nbsp; ⏱ 6 min read &nbsp;·&nbsp; 🏷 Time Zones, Conversion, Guide</div>
+<p>Converting Greenwich Mean Time (GMT) to Indian Standard Time (IST) is a daily need for anyone bridging Europe/Africa and India. The one thing to remember: India runs on a half-hour offset, UTC+5:30, and never changes it. That half hour is what catches people out.</p>
+
+<h2>Time Zone Overview</h2>
+<h3>Greenwich Mean Time (GMT)</h3>
+<p>GMT is UTC+0 in winter. The UK switches to BST (UTC+1) in summer, so the reference point shifts.</p>
+<h3>Indian Standard Time (IST)</h3>
+<p>IST is UTC+5:30 all year. India does not observe daylight saving time, so the offset is fixed.</p>
+
+<h2>Time Difference</h2>
+<p><strong>UK winter (GMT):</strong> India is 5 hours 30 minutes ahead of GMT.</p>
+<p><strong>UK summer (BST):</strong> India is 4 hours 30 minutes ahead of London.</p>
+
+<h2>Conversion Formula</h2>
+<p><strong>IST = GMT + 5 hours 30 minutes (winter) / GMT + 4 hours 30 minutes (UK summer)</strong></p>
+
+<h2>Conversion Examples</h2>
+<p><strong>Winter:</strong> 9:00 GMT → 14:30 IST</p>
+<p><strong>Summer:</strong> 9:00 BST → 13:30 IST</p>
+<p>Watch the half hour. 12:00 GMT is 17:30 IST, not 17:00.</p>
+
+<h2>Quick Reference Table (GMT → IST)</h2>
+<table><thead><tr><th>GMT (London winter)</th><th>IST</th><th>BST (London summer)</th><th>IST</th></tr></thead><tbody>
+<tr><td>6:00 AM</td><td>11:30 AM</td><td>6:00 AM</td><td>10:30 AM</td></tr>
+<tr><td>9:00 AM</td><td>2:30 PM</td><td>9:00 AM</td><td>1:30 PM</td></tr>
+<tr><td>12:00 PM</td><td>5:30 PM</td><td>12:00 PM</td><td>4:30 PM</td></tr>
+<tr><td>3:00 PM</td><td>8:30 PM</td><td>3:00 PM</td><td>7:30 PM</td></tr>
+<tr><td>6:00 PM</td><td>11:30 PM</td><td>6:00 PM</td><td>10:30 PM</td></tr>
+<tr><td>9:00 PM</td><td>2:30 AM (next day)</td><td>9:00 PM</td><td>1:30 AM (next day)</td></tr>
+</tbody></table>
+
+<div class="converter-widget">
+    <h2>Time Zone Converter</h2>
+    <div class="converter-row"><label for="from-time">Time in London:</label><input type="time" id="from-time" value="09:00"></div>
+    <div class="converter-row"><label for="dst">London on:</label>
+      <select id="dst"><option value="330">GMT (winter) IST +5h30m</option><option value="270" selected>BST (summer) IST +4h30m</option></select></div>
+    <div class="converter-row"><label for="to-time">Time in India:</label><input type="time" id="to-time" readonly></div>
+</div>
+<div class="faq-section"><div class="faq-item"><h3>Яка різниця у часі між GMT та IST?</h3><p>5 годин 30 хвилин взимку у Великобританії, 4 години 30 хвилин влітку.</p></div><div class="faq-item"><h3>Чому півгодини?</h3><p>Індія навмисно використовує UTC+5:30 і тримає його цілий рік.</p></div><div class="faq-item"><h3>Якщо зараз 9 ранку за Гринвічем, скільки часу в Індії?</h3><p>14:30 IST (зима) або 13:30 IST (літо BST).</p></div><div class="faq-item"><h3>Чи дотримується Індія літнього часу?</h3><p>№ IST - це UTC+5:30 протягом усього року.</p></div><div class="faq-item"><h3>Як конвертувати IST у GMT?</h3><p>Відніміть 5 год 30 хв взимку або 4 год 30 хв влітку у Великобританії.</p></div></div>
+
+        <footer class="blog-footer">
+            <a href="/privacy.html">Privacy</a>
+            <a href="/about.html">About</a>
+            <a href="/contact.html">Contact</a>
+            <a href="/terms.html">Terms</a>
+            <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p>
+        </footer>
+    </main>
+
+    <script type="module" src="/assets/index-Dd7au40z.js" async></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var seo = document.querySelector('.blog-wrap');
+        if (seo) seo.style.display = 'none';
+      });
+    </script>
+    <script>
+      window.addEventListener('load',function(){
+        var ahrefs=document.createElement('script');
+        ahrefs.async=true;
+        ahrefs.src='https://analytics.ahrefs.com/analytics.js';
+        ahrefs.setAttribute('data-key','hB1VYWuwb1i/f1d8re7P2A');
+        document.head.appendChild(ahrefs);
+      });
+    </script>
+  </body>
+</html>
