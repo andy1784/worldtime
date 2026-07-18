@@ -31,6 +31,39 @@ pointing to the listing root instead of their own country article. That is a
 canonical cannibalization bug distinct from audit items #2/#8 and is left for
 the next batch.
 
+→ 2026-07-18 update: re-checked — these 495 pages are actually `<meta http-equiv="refresh">`
+**redirect stubs** with `noindex, follow` + `<title>Redirecting…</title>` pointing
+to `/country/`. They are intentional consolidation pages (only 67 EN/ES country
+hubs are fully translated; the other ~855 lang-country files are stubs that
+keep URL consistency and redirect users to the country listing). The canonical
+on `noindex` stubs is ignored by Google, so this is **not a real bug** — only
+the 67 EN + 67 ES real country hubs have proper hreflang (committed).
+
+### TODO: blog hreflang block on 106 pages (2026-07-18 GSC Coverage finding)
+Translation generator `gen_new_blog_translations_*.py` statically emits an
+hreflang link for all 8 languages on every blog post (e.g. `hreflang="ru"` on
+`blog/<slug>-zh.html`), regardless of whether a `blog/<slug>-<lang>.html`
+actually exists. This produces **483 broken (404-bound) hreflang links across
+106 files** because:
+
+1. The hreflang URL is `worldtimessync.com/<lang>/blog/<slug>.html`.
+2. Vercel 301-redirects that to `/blog/<slug>-<lang>.html`
+   (see `vercel.json` route added in commit 28c426df / SEO-F).
+3. If `blog/<slug>-<lang>.html` doesn't exist (post is only translated to some
+   languages), the URL ultimately 404s.
+
+Fix: rewrite the translation generator so the hreflang block only lists
+languages for which the target file exists. Alternative: post-process with a
+tool such as `add_hreflang_only_existing.py` that prunes the hreflang block
+based on filesystem presence of `blog/<slug>-<lang>.html` for each lang.
+
+### TODO: corrupt localized title/description on fr/uk toulouse page
+Resolved 2026-07-18 (commit a12f1136) — `Touloutilise-t-il` / `Touloвикористовує`
+replaced with `Toulouse` on `fr/time/toulouse.html` + `uk/time/toulouse.html`.
+Other pages from the same translation generator batch should be scanned for
+similar garbage (e.g. `/blog/...-fr.html` had `futilise-t-ilau` substring — see
+commit history). Worth running `rg -i 'utilise-t-il|використовує' blog/ fr/ uk/`.
+
 ## Verified deploy config (post-artifact audit fixes committed 2026-07-17)
 - `vercel.json` — widget-embed served with `X-Frame-Options: ALLOWALL` /
   per-page CSP `frame-ancestors *`; HSTS `includeSubDomains; preload`;
