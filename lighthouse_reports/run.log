@@ -1,0 +1,27 @@
+=== Lighthouse: https://worldtimessync.com/ ===
+saved lighthouse_reports/worldtimessync.com_.json
+=== Lighthouse: https://worldtimessync.com/time/paris.html ===
+saved lighthouse_reports/worldtimessync.com_time_paris.html.json
+=== SUMMARY ===
+
+## worldtimessync.com_.json
+  performance: 68
+  accessibility: 78
+  best-practices: 92
+  seo: 100
+  LCP: 1.6 s
+  FCP: 1.6 s
+  TBT: 3,840 ms
+  CLS: 0.004
+  SpeedIndex: 3.5 s
+
+## worldtimessync.com_time_paris.html.json
+  performance: 57
+  accessibility: 96
+  best-practices: 77
+  seo: 100
+  LCP: 2.3 s
+  FCP: 2.3 s
+  TBT: 760 ms
+  CLS: 0.235
+  SpeedIndex: 9.0 s
