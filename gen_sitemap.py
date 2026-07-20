@@ -36,6 +36,7 @@ ROOT_PAGES = [
     "live.html", "meeting-planner.html", "remote-team-solutions.html",
     "time-difference.html", "gmt-vs-utc.html", "dst-2026-worldwide.html",
     "dst-countdown.html", "world-clock.html", "world-time-map.html",
+    "sunrise-sunset.html",
     "wordpress.html", "how-it-works.html", "event.html",
 ]
 
