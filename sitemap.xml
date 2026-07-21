@@ -12056,11 +12056,12 @@
   </url>
   <url>
     <loc>https://worldtimessync.com/blog/world-clock-for-remote-teams</loc>
-    <lastmod>2026-07-17</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/blog/world-clock-for-remote-teams" />
     <xhtml:link rel="alternate" hreflang="en" href="https://worldtimessync.com/blog/world-clock-for-remote-teams" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://worldtimessync.com/blog/world-clock-for-remote-teams-zh" />
   </url>
   <url>
     <loc>https://worldtimessync.com/blog/how-to-schedule-meetings-across-time-zones</loc>
@@ -12282,11 +12283,12 @@
   </url>
   <url>
     <loc>https://worldtimessync.com/blog/why-spain-is-in-the-wrong-time-zone</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/blog/why-spain-is-in-the-wrong-time-zone" />
     <xhtml:link rel="alternate" hreflang="en" href="https://worldtimessync.com/blog/why-spain-is-in-the-wrong-time-zone" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://worldtimessync.com/blog/why-spain-is-in-the-wrong-time-zone-zh" />
   </url>
   <url>
     <loc>https://worldtimessync.com/blog/utc-everything-guide</loc>
@@ -12930,6 +12932,15 @@
     <xhtml:link rel="alternate" hreflang="zh" href="https://worldtimessync.com/blog/time-zones-that-disappeared-zh" />
   </url>
   <url>
+    <loc>https://worldtimessync.com/blog/why-i-use-city-names-not-utc</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/blog/why-i-use-city-names-not-utc" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://worldtimessync.com/blog/why-i-use-city-names-not-utc" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://worldtimessync.com/blog/why-i-use-city-names-not-utc-zh" />
+  </url>
+  <url>
     <loc>https://worldtimessync.com/blog/most-time-zones-in-the-world</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
@@ -13222,6 +13233,15 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://worldtimessync.com/blog/deutschland-falsche-zeit-nachbarn-de" />
   </url>
   <url>
+    <loc>https://worldtimessync.com/blog/world-clock-desk-setup-it-zh</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/blog/world-clock-desk-setup-it-zh" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://worldtimessync.com/blog/world-clock-desk-setup-it-zh" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://worldtimessync.com/blog/world-clock-desk-setup-it-zh" />
+  </url>
+  <url>
     <loc>https://worldtimessync.com/blog/military-time-format-explained</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
@@ -13348,6 +13368,15 @@
     <xhtml:link rel="alternate" hreflang="zh" href="https://worldtimessync.com/blog/time-difference-singapore-london-zh" />
   </url>
   <url>
+    <loc>https://worldtimessync.com/blog/working-across-time-zones-mental-health</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/blog/working-across-time-zones-mental-health" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://worldtimessync.com/blog/working-across-time-zones-mental-health" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://worldtimessync.com/blog/working-across-time-zones-mental-health-zh" />
+  </url>
+  <url>
     <loc>https://worldtimessync.com/blog/international-date-line-explained</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
@@ -13385,19 +13414,30 @@
   </url>
   <url>
     <loc>https://worldtimessync.com/blog/why-nepal-utc-plus-5-45</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/blog/why-nepal-utc-plus-5-45" />
     <xhtml:link rel="alternate" hreflang="en" href="https://worldtimessync.com/blog/why-nepal-utc-plus-5-45" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://worldtimessync.com/blog/why-nepal-utc-plus-5-45-zh" />
+  </url>
+  <url>
+    <loc>https://worldtimessync.com/blog/why-no-single-world-time</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/blog/why-no-single-world-time" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://worldtimessync.com/blog/why-no-single-world-time" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://worldtimessync.com/blog/why-no-single-world-time-zh" />
   </url>
   <url>
     <loc>https://worldtimessync.com/blog/why-noon-is-not-at-12</loc>
-    <lastmod>2026-07-17</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/blog/why-noon-is-not-at-12" />
     <xhtml:link rel="alternate" hreflang="en" href="https://worldtimessync.com/blog/why-noon-is-not-at-12" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://worldtimessync.com/blog/why-noon-is-not-at-12-zh" />
   </url>
   <url>
     <loc>https://worldtimessync.com/blog/sunrise-sunset-times-explained</loc>
@@ -13407,22 +13447,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/blog/sunrise-sunset-times-explained" />
     <xhtml:link rel="alternate" hreflang="en" href="https://worldtimessync.com/blog/sunrise-sunset-times-explained" />
     <xhtml:link rel="alternate" hreflang="zh" href="https://worldtimessync.com/blog/sunrise-sunset-times-explained-zh" />
-  </url>
-  <url>
-    <loc>https://worldtimessync.com/blog/why-i-use-city-names-not-utc</loc>
-    <lastmod>2026-07-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/blog/why-i-use-city-names-not-utc" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://worldtimessync.com/blog/why-i-use-city-names-not-utc" />
-  </url>
-  <url>
-    <loc>https://worldtimessync.com/blog/working-across-time-zones-mental-health</loc>
-    <lastmod>2026-07-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/blog/working-across-time-zones-mental-health" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://worldtimessync.com/blog/working-across-time-zones-mental-health" />
   </url>
   <url>
     <loc>https://worldtimessync.com/blog/espana-hora-verano-madrid-es</loc>
@@ -13441,13 +13465,5 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/blog/time-zone-apps-compared-2026" />
     <xhtml:link rel="alternate" hreflang="en" href="https://worldtimessync.com/blog/time-zone-apps-compared-2026" />
     <xhtml:link rel="alternate" hreflang="zh" href="https://worldtimessync.com/blog/time-zone-apps-compared-2026-zh" />
-  </url>
-  <url>
-    <loc>https://worldtimessync.com/blog/why-no-single-world-time</loc>
-    <lastmod>2026-07-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/blog/why-no-single-world-time" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://worldtimessync.com/blog/why-no-single-world-time" />
   </url>
 </urlset>
