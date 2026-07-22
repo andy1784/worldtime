@@ -18,7 +18,7 @@ os.makedirs('/home/kaliuser/worldtime/blog', exist_ok=True)
 
 DATE = '2026-07-08'
 
-LANGS = ['en', 'ru', 'es', 'zh', 'ja', 'fr', 'de', 'uk', 'it']
+LANGS = ['en', 'ru', 'es', 'zh', 'ja', 'fr', 'de', 'uk']
 
 ANALYTICS_HEAD = '''    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>
     <script>

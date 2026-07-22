@@ -49,7 +49,7 @@ NOTICE = {
  'fr':'<p><em>Le texte complet de l\'article est disponible en anglais ci-dessous.</em></p>',
  'de':'<p><em>Der vollständige Artikeltext ist unten auf Englisch verfügbar.</em></p>',
  'uk':'<p><em>Повний текст статті доступний англійською мовою нижче.</em></p>',
- 'it':'<p><em>Il testo completo dell\'articolo è disponibile in inglese di seguito.</em></p>',
+ 'it':'<p><em>Il testo completo dell'articolo è disponibile in inglese di seguito.</em></p>',
 }
 
 def get_all_en_slugs():
