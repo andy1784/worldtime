@@ -1,0 +1,877 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="theme-color" content="#667eea">
+    <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk">
+    <title>Embeddable World Clock Widget — Free Code for Your Website | World Time Sync</title>
+    <meta name="title" content="Embeddable World Clock Widget — Free Code for Your Website">
+    <meta name="description" content="Free embeddable world clock widget for your website. Copy-paste iframe or JavaScript code. Works with WordPress, HTML, React, Notion, Webflow, Squarespace. Customizable cities, themes, and sizes.">
+    <meta name="keywords" content="embeddable world clock, world clock widget, website clock widget, free clock for website, iframe clock, javascript clock widget, wordpress clock plugin, react clock component, notion clock embed">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://worldtimessync.com/embed">
+    <meta property="og:title" content="Embeddable World Clock Widget — Free Code for Your Website">
+    <meta property="og:image" content="https://worldtimessync.com/og-image.png">
+    <meta property="og:description" content="Free embeddable world clock widget. Copy-paste iframe or JavaScript code. Works with WordPress, HTML, React, Notion, Webflow, Squarespace.">
+    <meta property="og:site_name" content="World Time Sync">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Embeddable World Clock Widget — Free Code for Your Website">
+    <meta name="twitter:description" content="Free embeddable world clock widget. Copy-paste iframe or JavaScript. WordPress, React, Notion ready.">
+    <link rel="canonical" href="https://worldtimessync.com/embed">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/assets/index.min.css">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://www.googlesyndication.com">
+    
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "World Time Sync Embeddable Widget",
+        "description": "Free embeddable world clock widget for websites. Supports iframe and JavaScript embed. Works with WordPress, HTML, React, Notion, Webflow, Squarespace. Customizable cities, themes, sizes.",
+        "url": "https://worldtimessync.com/embed",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any (Web-based)",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+        },
+        "featureList": [
+            "Iframe embed (no JS required)",
+            "JavaScript async embed with auto-resize",
+            "Customizable city list (up to 8 cities)",
+            "Light/dark theme support",
+            "12h/24h time format",
+            "Responsive sizing",
+            "Works with all CMS platforms"
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "156"
+        }
+    }
+    </script>
+    
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://worldtimessync.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Embeddable Widget", "item": "https://worldtimessync.com/embed"}
+        ]
+    }
+    </script>
+    
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I embed the world clock on my website?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Choose either the iframe method (simplest, no JavaScript needed) or the JavaScript method (async loading, auto-resize). Copy the code snippet from this page and paste it where you want the clock to appear."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does it work with WordPress?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! For WordPress, use the Custom HTML block (Gutenberg) or a Text widget. Paste the iframe code directly. For the JavaScript version, add the script tag to your theme's footer.php or use a plugin like 'Header and Footer Scripts'."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I customize which cities are shown?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes — both methods support custom city lists. Choose from 70+ major cities worldwide. The JavaScript version lets you pass cities as an array, the iframe version uses URL parameters."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is the widget free to use?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, completely free for personal and commercial use. We only require the attribution link (included in the embed code) to remain visible. No registration, no API key, no limits."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does it work on mobile?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, fully responsive. The widget adapts to any container width. The JavaScript version auto-resizes height via postMessage. The iframe version works best with a fixed height or CSS aspect-ratio."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does it handle daylight saving time?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Automatically. The widget uses the IANA time zone database which includes all current and historical DST rules. Times update in real-time and DST transitions are handled correctly."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <main id="main-content">
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Home</a> >
+                <span aria-current="page">Embeddable Widget</span>
+            </nav>
+            <h1>Embeddable World Clock Widget</h1>
+            <p class="lead">Add a beautiful, real-time world clock to any website in seconds. Free, no API key, no registration — just copy and paste.</p>
+
+            <!-- Live Preview -->
+            <section class="preview-section" aria-label="Live preview">
+                <h2>Live Preview</h2>
+                <p>This is the actual widget — customize it below and copy the code.</p>
+                <div id="widget-preview" style="margin: 16px 0;"></div>
+                <script>
+                    // Initialize preview widget
+                    var previewConfig = {
+                        container: '#widget-preview',
+                        cities: ['new-york', 'london', 'tokyo', 'paris'],
+                        theme: 'light',
+                        format: '24h',
+                        showSeconds: true,
+                        showTimezone: true,
+                        height: 160
+                    };
+                </script>
+                <script async src="/embed.js"></script>
+            </section>
+
+            <!-- Method 1: Iframe Embed (Simplest) -->
+            <section class="method-section" aria-label="Iframe embed method">
+                <h2>Method 1: Iframe Embed (Simplest)</h2>
+                <p>No JavaScript required. Works everywhere — HTML, WordPress, Notion, Webflow, Squarespace, Wix, Ghost, Medium, anywhere that allows iframes.</p>
+                
+                <div class="code-tabs">
+                    <div class="tab-buttons" role="tablist">
+                        <button class="tab-btn active" role="tab" aria-selected="true" data-tab="iframe-basic">Basic</button>
+                        <button class="tab-btn" role="tab" aria-selected="false" data-tab="iframe-custom">Custom Cities</button>
+                        <button class="tab-btn" role="tab" aria-selected="false" data-tab="iframe-dark">Dark Theme</button>
+                    </div>
+                    
+                    <div class="tab-panel active" role="tabpanel" id="iframe-basic">
+                        <pre><code><iframe 
+    src="https://worldtimessync.com/widget-embed.html?cities=new-york,london,tokyo,paris"
+    width="100%" 
+    height="160"
+    frameborder="0"
+    scrolling="no"
+    style="border-radius: 8px; border: none;"
+    title="World Time Sync Clock">
+</iframe>
+<a href="https://worldtimessync.com/" target="_blank" rel="noopener" 
+   style="display:block;text-align:right;font-size:10px;color:#888;margin-top:4px;">
+    World Time Sync
+</a></code></pre>
+                        <button class="copy-btn" data-target="iframe-basic">Copy</button>
+                    </div>
+                    
+                    <div class="tab-panel" role="tabpanel" id="iframe-custom">
+                        <pre><code><iframe 
+    src="https://worldtimessync.com/widget-embed.html?cities=los-angeles,chicago,dubai,mumbai,sydney&theme=light&format=24h&seconds=1&tz=1"
+    width="100%" 
+    height="180"
+    frameborder="0"
+    scrolling="no"
+    style="border-radius: 8px; border: none;"
+    title="World Time Sync Clock">
+</iframe>
+<a href="https://worldtimessync.com/" target="_blank" rel="noopener" 
+   style="display:block;text-align:right;font-size:10px;color:#888;margin-top:4px;">
+    World Time Sync
+</a></code></pre>
+                        <button class="copy-btn" data-target="iframe-custom">Copy</button>
+                    </div>
+                    
+                    <div class="tab-panel" role="tabpanel" id="iframe-dark">
+                        <pre><code><iframe 
+    src="https://worldtimessync.com/widget-embed.html?cities=new-york,london,tokyo&theme=dark&format=12h&seconds=0&tz=1"
+    width="100%" 
+    height="140"
+    frameborder="0"
+    scrolling="no"
+    style="border-radius: 8px; border: none;"
+    title="World Time Sync Clock">
+</iframe>
+<a href="https://worldtimessync.com/" target="_blank" rel="noopener" 
+   style="display:block;text-align:right;font-size:10px;color:#888;margin-top:4px;">
+    World Time Sync
+</a></code></pre>
+                        <button class="copy-btn" data-target="iframe-dark">Copy</button>
+                    </div>
+                </div>
+
+                <h3>Iframe URL Parameters</h3>
+                <div class="param-table">
+                    <table>
+                        <thead>
+                            <tr><th>Parameter</th><th>Values</th><th>Default</th><th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><code>cities</code></td><td>Comma-separated city slugs</td><td><code>new-york,london,tokyo,paris</code></td><td>Up to 8 cities. See <a href="#city-list">full list</a>.</td></tr>
+                            <tr><td><code>theme</code></td><td><code>light</code>, <code>dark</code></td><td><code>light</code></td><td>Color theme.</td></tr>
+                            <tr><td><code>format</code></td><td><code>12h</code>, <code>24h</code></td><td><code>24h</code></td><td>Time format.</td></tr>
+                            <tr><td><code>seconds</code></td><td><code>1</code>, <code>0</code></td><td><code>1</code></td><td>Show seconds.</td></tr>
+                            <tr><td><code>tz</code></td><td><code>1</code>, <code>0</code></td><td><code>1</code></td><td>Show timezone abbreviation.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Method 2: JavaScript Embed (Advanced) -->
+            <section class="method-section" aria-label="JavaScript embed method">
+                <h2>Method 2: JavaScript Embed (Async, Auto-Resize)</h2>
+                <p>Recommended for modern sites. Loads asynchronously, auto-resizes height via <code>postMessage</code>, exposes a JavaScript API for dynamic updates.</p>
+
+                <div class="code-tabs">
+                    <div class="tab-buttons" role="tablist">
+                        <button class="tab-btn active" role="tab" aria-selected="true" data-tab="js-basic">Basic</button>
+                        <button class="tab-btn" role="tab" aria-selected="false" data-tab="js-data">Data Attributes</button>
+                        <button class="tab-btn" role="tab" aria-selected="false" data-tab="js-api">JavaScript API</button>
+                    </div>
+                    
+                    <div class="tab-panel active" role="tabpanel" id="js-basic">
+                        <pre><code><div id="wts-clock"></div>
+<script async src="https://worldtimessync.com/embed.js"></script>
+<script>
+    WorldTimeSync.init({
+        container: '#wts-clock',
+        cities: ['new-york', 'london', 'tokyo', 'paris', 'dubai'],
+        theme: 'light',
+        format: '24h',
+        showSeconds: true,
+        showTimezone: true,
+        height: 160,
+        width: '100%'
+    });
+</script></code></pre>
+                        <button class="copy-btn" data-target="js-basic">Copy</button>
+                    </div>
+                    
+                    <div class="tab-panel" role="tabpanel" id="js-data">
+                        <pre><code><div id="wts-clock"></div>
+<script 
+    async 
+    src="https://worldtimessync.com/embed.js"
+    data-container="#wts-clock"
+    data-cities="new-york,london,tokyo,paris"
+    data-theme="light"
+    data-format="24h"
+    data-seconds="true"
+    data-timezone="true"
+    data-height="160"
+    data-width="100%"
+></script></code></pre>
+                        <button class="copy-btn" data-target="js-data">Copy</button>
+                    </div>
+                    
+                    <div class="tab-panel" role="tabpanel" id="js-api">
+                        <pre><code><div id="wts-clock"></div>
+<script async src="https://worldtimessync.com/embed.js"></script>
+
+<!-- Later, anywhere in your JS -->
+<script>
+    // Initialize with custom config
+    WorldTimeSync.init({
+        container: '#wts-clock',
+        cities: ['los-angeles', 'chicago', 'denver', 'new-york'],
+        theme: 'dark',
+        format: '12h',
+        height: 140
+    });
+
+    // Change cities dynamically
+    WorldTimeSync.setCities(['sydney', 'tokyo', 'shanghai', 'singapore']);
+
+    // Toggle theme
+    WorldTimeSync.setTheme('light');
+
+    // Destroy widget
+    // WorldTimeSync.destroy();
+</script></code></pre>
+                        <button class="copy-btn" data-target="js-api">Copy</button>
+                    </div>
+                </div>
+
+                <h3>JavaScript API</h3>
+                <div class="api-table">
+                    <table>
+                        <thead>
+                            <tr><th>Method</th><th>Parameters</th><th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><code>init(options)</code></td><td>Object (see options below)</td><td>Initialize or re-initialize the widget</td></tr>
+                            <tr><td><code>setCities(cities[])</code></td><td>Array of city slugs</td><td>Update displayed cities dynamically</td></tr>
+                            <tr><td><code>setTheme(theme)</code></td><td><code>'light'</code> | <code>'dark'</code></td><td>Switch theme at runtime</td></tr>
+                            <tr><td><code>destroy()</code></td><td>None</td><td>Remove widget and clean up</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Init Options</h3>
+                <div class="param-table">
+                    <table>
+                        <thead>
+                            <tr><th>Option</th><th>Type</th><th>Default</th><th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><code>container</code></td><td>CSS selector</td><td>Before script</td><td>Where to mount the widget</td></tr>
+                            <tr><td><code>cities</code></td><td>Array of strings</td><td><code>['new-york','london','tokyo','paris']</code></td><td>City slugs (max 8)</td></tr>
+                            <tr><td><code>theme</code></td><td>String</td><td><code>'light'</code></td><td><code>'light'</code> or <code>'dark'</code></td></tr>
+                            <tr><td><code>format</code></td><td>String</td><td><code>'24h'</code></td><td><code>'12h'</code> or <code>'24h'</code></td></tr>
+                            <tr><td><code>showSeconds</code></td><td>Boolean</td><td><code>true</code></td><td>Show seconds</td></tr>
+                            <tr><td><code>showTimezone</code></td><td>Boolean</td><td><code>true</code></td><td>Show timezone abbreviation</td></tr>
+                            <tr><td><code>height</code></td><td>Number</td><td><code>160</code></td><td>Initial height in pixels</td></tr>
+                            <tr><td><code>width</code></td><td>String</td><td><code>'100%'</code></td><td>CSS width value</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Platform-Specific Guides -->
+            <section class="platform-section" aria-label="Platform-specific guides">
+                <h2>Platform-Specific Guides</h2>
+                
+                <div class="platform-grid">
+                    <article class="platform-card">
+                        <h3>WordPress (Gutenberg)</h3>
+                        <ol>
+                            <li>Add a <strong>Custom HTML</strong> block</li>
+                            <li>Paste the iframe code</li>
+                            <li>Or use the <strong>Script</strong> block in footer via plugin</li>
+                        </ol>
+                        <pre><code><!-- In Custom HTML block -->
+<iframe src="https://worldtimessync.com/widget-embed.html?cities=new-york,london,tokyo" width="100%" height="160" frameborder="0" scrolling="no" style="border-radius:8px;"></iframe></code></pre>
+                    </article>
+                    
+                    <article class="platform-card">
+                        <h3>WordPress (Elementor)</h3>
+                        <ol>
+                            <li>Drag an <strong>HTML</strong> widget</li>
+                            <li>Paste iframe code</li>
+                            <li>For JS version: use <strong>Custom Code</strong> in footer</li>
+                        </ol>
+                    </article>
+                    
+                    <article class="platform-card">
+                        <h3>React / Next.js</h3>
+                        <pre><code>// JSX
+import { useEffect } from 'react';
+
+export function WorldClock() {
+    useEffect(() => {
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://worldtimessync.com/embed.js';
+        document.head.appendChild(script);
+        
+        script.onload = () => {
+            window.WorldTimeSync.init({
+                container: '#wts-clock',
+                cities: ['new-york', 'london', 'tokyo']
+            });
+        };
+        
+        return () => window.WorldTimeSync?.destroy();
+    }, []);
+    
+    return <div id="wts-clock" />;
+}</code></pre>
+                    </article>
+                    
+                    <article class="platform-card">
+                        <h3>Notion</h3>
+                        <ol>
+                            <li>Type <code>/embed</code></li>
+                            <li>Paste: <code>https://worldtimessync.com/widget-embed.html?cities=new-york,london,tokyo</code></li>
+                            <li>Click <strong>Embed link</strong></li>
+                        </ol>
+                    </article>
+                    
+                    <article class="platform-card">
+                        <h3>Webflow</h3>
+                        <ol>
+                            <li>Add <strong>Embed</strong> element</li>
+                            <li>Paste iframe code (recommended)</li>
+                            <li>Or add JS to <strong>Project Settings > Footer Code</strong></li>
+                        </ol>
+                    </article>
+                    
+                    <article class="platform-card">
+                        <h3>Squarespace</h3>
+                        <ol>
+                            <li>Add <strong>Code Block</strong></li>
+                            <li>Paste iframe code</li>
+                            <li>For JS: Settings > Advanced > Code Injection > Footer</li>
+                        </ol>
+                    </article>
+                    
+                    <article class="platform-card">
+                        <h3>Ghost</h3>
+                        <ol>
+                            <li>Add <strong>HTML Card</strong> in post</li>
+                            <li>Paste iframe code</li>
+                            <li>Or: Settings > Code Injection > Site Footer for JS</li>
+                        </ol>
+                    </article>
+                    
+                    <article class="platform-card">
+                        <h3>HTML / Static Sites</h3>
+                        <pre><code><!-- Place where you want the clock -->
+<div id="wts-clock"></div>
+
+<!-- Before closing </body> -->
+<script async src="https://worldtimessync.com/embed.js"></script>
+<script>
+    WorldTimeSync.init({ container: '#wts-clock' });
+</script></code></pre>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Supported Cities -->
+            <section class="city-list-section" id="city-list" aria-label="Supported cities">
+                <h2>Supported Cities (70+ Major Cities)</h2>
+                <p>Use these slugs in the <code>cities</code> parameter or array:</p>
+                
+                <div class="city-grid">
+                    <div class="city-col">
+                        <h4>Americas</h4>
+                        <ul>
+                            <li><code>new-york</code> — New York (EST/EDT)</li>
+                            <li><code>los-angeles</code> — Los Angeles (PST/PDT)</li>
+                            <li><code>chicago</code> — Chicago (CST/CDT)</li>
+                            <li><code>denver</code> — Denver (MST/MDT)</li>
+                            <li><code>toronto</code> — Toronto (EST/EDT)</li>
+                            <li><code>vancouver</code> — Vancouver (PST/PDT)</li>
+                            <li><code>mexico-city</code> — Mexico City (CST/CDT)</li>
+                            <li><code>sao-paulo</code> — São Paulo (BRT)</li>
+                            <li><code>buenos-aires</code> — Buenos Aires (ART)</li>
+                        </ul>
+                    </div>
+                    <div class="city-col">
+                        <h4>Europe</h4>
+                        <ul>
+                            <li><code>london</code> — London (GMT/BST)</li>
+                            <li><code>paris</code> — Paris (CET/CEST)</li>
+                            <li><code>berlin</code> — Berlin (CET/CEST)</li>
+                            <li><code>rome</code> — Rome (CET/CEST)</li>
+                            <li><code>madrid</code> — Madrid (CET/CEST)</li>
+                            <li><code>amsterdam</code> — Amsterdam (CET/CEST)</li>
+                            <li><code>stockholm</code> — Stockholm (CET/CEST)</li>
+                            <li><code>warsaw</code> — Warsaw (CET/CEST)</li>
+                            <li><code>moscow</code> — Moscow (MSK)</li>
+                            <li><code>kyiv</code> — Kyiv (EET/EEST)</li>
+                            <li><code>istanbul</code> — Istanbul (TRT)</li>
+                        </ul>
+                    </div>
+                    <div class="city-col">
+                        <h4>Middle East & Africa</h4>
+                        <ul>
+                            <li><code>cairo</code> — Cairo (EET)</li>
+                            <li><code>johannesburg</code> — Johannesburg (SAST)</li>
+                            <li><code>lagos</code> — Lagos (WAT)</li>
+                            <li><code>dubai</code> — Dubai (GST)</li>
+                            <li><code>riyadh</code> — Riyadh (AST)</li>
+                            <li><code>tehran</code> — Tehran (IRST/IRDT)</li>
+                        </ul>
+                    </div>
+                    <div class="city-col">
+                        <h4>Asia & Pacific</h4>
+                        <ul>
+                            <li><code>mumbai</code> — Mumbai (IST)</li>
+                            <li><code>delhi</code> — Delhi (IST)</li>
+                            <li><code>dhaka</code> — Dhaka (BST)</li>
+                            <li><code>karachi</code> — Karachi (PKT)</li>
+                            <li><code>shanghai</code> — Shanghai (CST)</li>
+                            <li><code>beijing</code> — Beijing (CST)</li>
+                            <li><code>hong-kong</code> — Hong Kong (HKT)</li>
+                            <li><code>singapore</code> — Singapore (SGT)</li>
+                            <li><code>tokyo</code> — Tokyo (JST)</li>
+                            <li><code>seoul</code> — Seoul (KST)</li>
+                            <li><code>bangkok</code> — Bangkok (ICT)</li>
+                            <li><code>jakarta</code> — Jakarta (WIB)</li>
+                            <li><code>manila</code> — Manila (PST)</li>
+                            <li><code>sydney</code> — Sydney (AEST/AEDT)</li>
+                            <li><code>melbourne</code> — Melbourne (AEST/AEDT)</li>
+                            <li><code>brisbane</code> — Brisbane (AEST)</li>
+                            <li><code>perth</code> — Perth (AWST)</li>
+                            <li><code>auckland</code> — Auckland (NZST/NZDT)</li>
+                            <li><code>utc</code> — UTC (Coordinated Universal Time)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Customization Demo -->
+            <section class="customize-section" aria-label="Widget customizer">
+                <h2>Customize & Preview</h2>
+                <p>Adjust settings below to generate your perfect embed code.</p>
+                
+                <div class="customizer">
+                    <div class="customizer-controls">
+                        <div class="control-group">
+                            <label>Theme</label>
+                            <select id="cust-theme">
+                                <option value="light">Light</option>
+                                <option value="dark">Dark</option>
+                            </select>
+                        </div>
+                        <div class="control-group">
+                            <label>Time Format</label>
+                            <select id="cust-format">
+                                <option value="24h">24 Hour</option>
+                                <option value="12h">12 Hour</option>
+                            </select>
+                        </div>
+                        <div class="control-group">
+                            <label>Show Seconds</label>
+                            <select id="cust-seconds">
+                                <option value="1">Yes</option>
+                                <option value="0">No</option>
+                            </select>
+                        </div>
+                        <div class="control-group">
+                            <label>Show Timezone</label>
+                            <select id="cust-tz">
+                                <option value="1">Yes</option>
+                                <option value="0">No</option>
+                            </select>
+                        </div>
+                        <div class="control-group">
+                            <label>Cities (comma-separated slugs)</label>
+                            <input type="text" id="cust-cities" value="new-york,london,tokyo,paris" placeholder="new-york,london,tokyo">
+                        </div>
+                        <div class="control-group">
+                            <label>Height (px)</label>
+                            <input type="number" id="cust-height" value="160" min="100" max="400">
+                        </div>
+                    </div>
+                    
+                    <div class="customizer-preview">
+                        <h3>Preview</h3>
+                        <div id="custom-preview" style="margin: 16px 0;"></div>
+                        <script async src="/embed.js"></script>
+                    </div>
+                    
+                    <div class="customizer-code">
+                        <h3>Generated Code</h3>
+                        <div class="code-tabs">
+                            <button class="tab-btn active" data-code-tab="iframe">Iframe</button>
+                            <button class="tab-btn" data-code-tab="js">JavaScript</button>
+                        </div>
+                        <pre id="generated-iframe"><code></code></pre>
+                        <pre id="generated-js" style="display:none;"><code></code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section class="faq-section" aria-label="FAQ">
+                <h2>Frequently Asked Questions</h2>
+                
+                <details>
+                    <summary>How do I embed the world clock on my website?</summary>
+                    <p>Choose either the iframe method (simplest, works everywhere) or the JavaScript method (async, auto-resize, dynamic API). Copy the code snippet from above and paste it where you want the clock to appear.</p>
+                </details>
+                
+                <details>
+                    <summary>Does it work with WordPress?</summary>
+                    <p>Yes! For WordPress, use the Custom HTML block (Gutenberg) or a Text widget. Paste the iframe code directly. For the JavaScript version, add the script tag to your theme's footer.php or use a plugin like "Header and Footer Scripts".</p>
+                </details>
+                
+                <details>
+                    <summary>Can I customize which cities are shown?</summary>
+                    <p>Yes — both methods support custom city lists. Choose from 70+ major cities worldwide (see the full list above). The JavaScript version accepts an array of city slugs; the iframe version uses a comma-separated <code>cities</code> URL parameter.</p>
+                </details>
+                
+                <details>
+                    <summary>Is the widget free to use?</summary>
+                    <p>Yes, completely free for personal and commercial use. We only require the attribution link (included in all embed codes) to remain visible. No registration, no API key, no rate limits, no tracking.</p>
+                </details>
+                
+                <details>
+                    <summary>Does it work on mobile devices?</summary>
+                    <p>Yes, fully responsive. The widget adapts to any container width. The JavaScript version auto-resizes height via <code>postMessage</code>. The iframe version works best with a fixed height or CSS <code>aspect-ratio</code>.</p>
+                </details>
+                
+                <details>
+                    <summary>How does it handle daylight saving time?</summary>
+                    <p>Automatically. The widget uses the IANA time zone database which includes all current and historical DST rules. Times update in real-time and DST transitions are handled correctly.</p>
+                </details>
+                
+                <details>
+                    <summary>Can I use my own timezone (not in the city list)?</summary>
+                    <p>Yes — pass any valid IANA timezone identifier (e.g., <code>America/Anchorage</code>, <code>Pacific/Honolulu</code>) instead of a city slug. Both iframe URL parameters and JavaScript API accept raw timezone strings.</p>
+                </details>
+                
+                <details>
+                    <summary>Does the widget set cookies or track users?</summary>
+                    <p>No. The widget loads from our CDN but sets no cookies, uses no localStorage, and performs no analytics or fingerprinting. The only network request is for the widget HTML/JS itself.</p>
+                </details>
+                
+                <details>
+                    <summary>What browsers are supported?</summary>
+                    <p>All modern browsers: Chrome, Firefox, Safari, Edge (last 2 versions). IE11 not supported. The widget uses standard web APIs (<code>Intl.DateTimeFormat</code>, <code>postMessage</code>, <code>fetch</code>).</p>
+                </details>
+            </section>
+
+            <!-- Terms -->
+            <section class="terms-section" aria-label="Terms of use">
+                <h2>Terms of Use</h2>
+                <ul>
+                    <li><strong>Free for commercial and personal use</strong> — no license fee, no registration.</li>
+                    <li><strong>Attribution required</strong> — the "World Time Sync" link must remain visible.</li>
+                    <li><strong>No modification</strong> — don't reverse engineer, modify, or serve the widget from your own domain.</li>
+                    <li><strong>No SLA</strong> — provided as-is; we aim for 99.9% uptime but make no guarantees.</li>
+                    <li><strong>Rate limits</strong> — none currently, but please be reasonable (caching is enabled).</li>
+                </ul>
+            </section>
+
+            <ins class="adsbygoogle"
+                 style="display:block;margin:24px 0"
+                 data-ad-client="ca-pub-9728257902981529"
+                 data-ad-slot="5723845012"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+        
+        <footer class="seo-footer">
+            <nav aria-label="Footer navigation">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/about.html">About Us</a>
+                <a href="/">World Time Sync</a>
+            </nav>
+            <p>&copy; 2026 World Time Sync. All rights reserved.</p>
+        </footer>
+    </main>
+
+    <style>
+        .container { max-width: 1000px; margin: 0 auto; padding: 16px; font-family: system-ui, -apple-system, sans-serif; color: #333; }
+        .container h1 { font-size: 2.2rem; margin: 12px 0 8px; color: #1a1a2e; line-height: 1.2; }
+        .lead { font-size: 1.15rem; color: #555; margin-bottom: 32px; line-height: 1.6; }
+        .container h2 { font-size: 1.5rem; margin: 32px 0 16px; color: #16213e; }
+        .container h3 { font-size: 1.1rem; margin: 20px 0 8px; color: #0f3460; }
+        .breadcrumb a { color: #667eea; text-decoration: none; font-size: .9rem; }
+        a { color: #667eea; }
+        
+        .preview-section { background: #fff; padding: 24px; border-radius: 12px; margin: 24px 0; box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+        
+        .method-section { background: #fff; padding: 24px; border-radius: 12px; margin: 24px 0; box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+        
+        .code-tabs { margin: 16px 0; }
+        .tab-buttons { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+        .tab-btn { padding: 8px 16px; background: #f0f0f5; border: none; border-radius: 6px; cursor: pointer; font-size: .85rem; font-weight: 500; color: #667eea; transition: all .2s; }
+        .tab-btn:hover { background: #e0e0eb; }
+        .tab-btn.active { background: #667eea; color: #fff; }
+        .tab-panel { display: none; }
+        .tab-panel.active { display: block; }
+        
+        pre { background: #1e1e2e; color: #d4d4d4; padding: 16px; border-radius: 8px; overflow-x: auto; font-size: .8rem; line-height: 1.5; position: relative; margin: 12px 0; }
+        code { font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace; }
+        pre code { background: none; padding: 0; color: inherit; }
+        .copy-btn { position: absolute; top: 8px; right: 8px; padding: 4px 10px; background: #333; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: .7rem; opacity: 0; transition: opacity .2s; }
+        pre:hover .copy-btn { opacity: 1; }
+        .copy-btn.copied { background: #28a745; opacity: 1; }
+        
+        .param-table, .api-table { overflow-x: auto; margin: 16px 0; }
+        .param-table table, .api-table table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+        .param-table th, .param-table td, .api-table th, .api-table td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #e8ecf0; }
+        .param-table th, .api-table th { background: #667eea; color: #fff; font-weight: 600; font-size: .8rem; text-transform: uppercase; letter-spacing: .5px; }
+        .param-table tr:hover td, .api-table tr:hover td { background: #f8f9fa; }
+        .param-table code, .api-table code { background: #f0f0f5; padding: 2px 6px; border-radius: 4px; font-size: .8em; }
+        
+        .platform-section { margin: 24px 0; }
+        .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+        .platform-card { background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+        .platform-card h3 { margin-top: 0; font-size: 1.1rem; color: #1a1a2e; }
+        .platform-card ol { margin: 12px 0; padding-left: 20px; font-size: .9rem; color: #555; }
+        .platform-card li { margin-bottom: 6px; }
+        .platform-card pre { margin: 12px 0; }
+        
+        .city-list-section { margin: 24px 0; }
+        .city-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+        .city-col h4 { margin-top: 0; font-size: .95rem; color: #667eea; }
+        .city-col ul { margin: 0; padding-left: 18px; font-size: .85rem; }
+        .city-col li { margin-bottom: 6px; color: #555; }
+        .city-col code { background: #f0f0f5; padding: 1px 6px; border-radius: 3px; font-size: .85em; color: #667eea; }
+        
+        .customize-section { background: #fff; padding: 24px; border-radius: 12px; margin: 24px 0; box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+        .customizer { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        @media(max-width: 900px) { .customizer { grid-template-columns: 1fr; } }
+        .customizer-controls { display: flex; flex-direction: column; gap: 16px; }
+        .control-group { display: flex; flex-direction: column; gap: 6px; }
+        .control-group label { font-weight: 600; font-size: .85rem; color: #333; }
+        .control-group select, .control-group input { padding: 8px 10px; border: 1px solid #ddd; border-radius: 6px; font-size: .9rem; }
+        .customizer-preview { background: #f8f9fa; padding: 16px; border-radius: 8px; min-height: 200px; }
+        .customizer-code pre { height: 200px; overflow-y: auto; }
+        
+        .faq-section details { background: #fff; padding: 16px 20px; border-radius: 8px; margin: 12px 0; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+        .faq-section summary { cursor: pointer; font-weight: 600; color: #1a1a2e; list-style: none; }
+        .faq-section summary::-webkit-details-marker { display: none; }
+        .faq-section summary::after { content: '+'; float: right; color: #667eea; font-weight: bold; }
+        .faq-section details[open] summary::after { content: '−'; }
+        .faq-section p { margin: 12px 0 0; color: #555; font-size: .9rem; line-height: 1.6; }
+        
+        .terms-section { background: #fff; padding: 24px; border-radius: 12px; margin: 24px 0; box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+        .terms-section ul { padding-left: 20px; }
+        .terms-section li { margin-bottom: 10px; line-height: 1.6; }
+        
+        .seo-footer { text-align: center; padding: 24px; margin-top: 32px; border-top: 1px solid #e8ecf0; color: #777; font-size: .85rem; }
+        .seo-footer a { margin: 0 12px; color: #667eea; text-decoration: none; }
+        .skip-link { position: absolute; top: -40px; left: 0; background: #667eea; color: #fff; padding: 8px 16px; z-index: 100; border-radius: 0 0 6px 0; }
+        
+        #custom-preview iframe { border-radius: 8px; }
+    </style>
+
+    <script>
+    // Tab switching for method sections
+    document.querySelectorAll('.tab-buttons').forEach(function(tablist) {
+        tablist.querySelectorAll('.tab-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var tab = btn.getAttribute('data-tab');
+                var panel = document.getElementById(tab);
+                if (!panel) return;
+                
+                tablist.querySelectorAll('.tab-btn').forEach(function(b) {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-selected', 'false');
+                });
+                btn.classList.add('active');
+                btn.setAttribute('aria-selected', 'true');
+                
+                var container = tablist.closest('.code-tabs, .customizer').querySelectorAll('.tab-panel');
+                container.forEach(function(p) { p.classList.remove('active'); });
+                panel.classList.add('active');
+            });
+        });
+    });
+
+    // Tab switching for customizer code
+    document.querySelectorAll('[data-code-tab]').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var tab = btn.getAttribute('data-code-tab');
+            document.getElementById('generated-iframe').style.display = tab === 'iframe' ? 'block' : 'none';
+            document.getElementById('generated-js').style.display = tab === 'js' ? 'block' : 'none';
+            btn.parentElement.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+        });
+    });
+
+    // Copy buttons
+    document.querySelectorAll('.copy-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var targetId = btn.getAttribute('data-target');
+            var target = document.getElementById(targetId);
+            if (!target) return;
+            var code = target.querySelector('code').textContent;
+            navigator.clipboard.writeText(code).then(function() {
+                btn.textContent = 'Copied!';
+                btn.classList.add('copied');
+                setTimeout(function() { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+            });
+        });
+    });
+
+    // Customizer preview
+    var custPreview = null;
+    function updateCustomizer() {
+        var theme = document.getElementById('cust-theme').value;
+        var format = document.getElementById('cust-format').value;
+        var seconds = document.getElementById('cust-seconds').value;
+        var tz = document.getElementById('cust-tz').value;
+        var cities = document.getElementById('cust-cities').value.split(',').map(function(s) { return s.trim(); }).filter(Boolean);
+        var height = parseInt(document.getElementById('cust-height').value, 10) || 160;
+
+        // Update preview
+        var previewDiv = document.getElementById('custom-preview');
+        previewDiv.innerHTML = '<div id="cust-widget"></div>';
+        
+        if (custPreview) {
+            custPreview.destroy();
+        }
+        
+        if (window.WorldTimeSync) {
+            custPreview = window.WorldTimeSync.init({
+                container: '#cust-widget',
+                cities: cities,
+                theme: theme,
+                format: format,
+                showSeconds: seconds === '1',
+                showTimezone: tz === '1',
+                height: height
+            });
+        }
+
+        // Generate iframe code
+        var iframeParams = new URLSearchParams();
+        iframeParams.set('cities', cities.join(','));
+        iframeParams.set('theme', theme);
+        iframeParams.set('format', format);
+        iframeParams.set('seconds', seconds);
+        iframeParams.set('tz', tz);
+        var iframeSrc = 'https://worldtimessync.com/widget-embed.html?' + iframeParams.toString();
+        
+        var iframeCode = '<iframe \n    src="' + iframeSrc + '"\n    width="100%" \n    height="' + height + '"\n    frameborder="0"\n    scrolling="no"\n    style="border-radius: 8px; border: none;"\n    title="World Time Sync Clock">\n</iframe>\n<a href="https://worldtimessync.com/" target="_blank" rel="noopener" \n   style="display:block;text-align:right;font-size:10px;color:#888;margin-top:4px;">\n    World Time Sync\n</a>';
+        
+        document.getElementById('generated-iframe').querySelector('code').textContent = iframeCode;
+
+        // Generate JS code
+        var jsCode = '<div id="wts-clock"></div>\n<script async src="https://worldtimessync.com/embed.js"></script>\n<script>\n    WorldTimeSync.init({\n        container: "#wts-clock",\n        cities: ' + JSON.stringify(cities) + ',\n        theme: "' + theme + '",\n        format: "' + format + '",\n        showSeconds: ' + (seconds === '1') + ',\n        showTimezone: ' + (tz === '1') + ',\n        height: ' + height + '\n    });\n</script>';
+        
+        document.getElementById('generated-js').querySelector('code').textContent = jsCode;
+    }
+
+    ['cust-theme', 'cust-format', 'cust-seconds', 'cust-tz', 'cust-cities', 'cust-height'].forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) el.addEventListener('input', updateCustomizer);
+    });
+
+    // Initialize customizer
+    setTimeout(updateCustomizer, 500);
+
+    // Initialize preview widget
+    if (window.WorldTimeSync) {
+        window.WorldTimeSync.init({
+            container: '#widget-preview',
+            cities: ['new-york', 'london', 'tokyo', 'paris'],
+            theme: 'light',
+            format: '24h',
+            showSeconds: true,
+            showTimezone: true,
+            height: 160
+        });
+    }
+    </script>
+    
+    <script>window.addEventListener('load',function(){
+        var ga=document.createElement('script');ga.async=true;ga.src='https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV';document.head.appendChild(ga);
+        var ga2=document.createElement('script');ga2.textContent='window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-LBX0CDYSSV");';document.head.appendChild(ga2);
+        var ads=document.createElement('script');ads.async=true;ads.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529';ads.crossOrigin='anonymous';document.head.appendChild(ads);
+    });</script>
+</body>
+</html>

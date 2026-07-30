@@ -67,6 +67,30 @@
       "dest": "/time/$1"
     },
     {
+      "src": "/world-clock",
+      "dest": "/world-clock.html"
+    },
+    {
+      "src": "/time-zone-converter",
+      "dest": "/time-zone-converter.html"
+    },
+    {
+      "src": "/time-zone-map",
+      "dest": "/time-zone-map.html"
+    },
+    {
+      "src": "/embed",
+      "dest": "/embed.html"
+    },
+    {
+      "src": "/embed.js",
+      "dest": "/embed.js"
+    },
+    {
+      "src": "/blog/page/(.*)",
+      "dest": "/blog/page/$1"
+    },
+    {
       "src": "/assets/(.*)",
       "headers": {
         "Cache-Control": "public, max-age=31536000, immutable"

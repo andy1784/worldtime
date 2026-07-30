@@ -4,169 +4,272 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#667eea">
+    <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk" />
+    <script src="https://analytics.ahrefs.com/analytics.js" data-key="hB1VYWuwb1i/f1d8re7P2A" async></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
             min-height: 100vh;
             overflow: hidden;
+            padding: 8px 0;
+        }
+        .widget-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            max-width: 100%;
+            padding: 8px;
         }
         .widget {
             text-align: center;
-            padding: 16px 20px;
-            width: 100%;
+            padding: 12px 16px;
+            min-width: 140px;
+            max-width: 180px;
+            flex: 1 1 140px;
+            border-radius: 10px;
+            transition: transform .2s, box-shadow .2s;
+        }
+        .widget:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,.15);
         }
         .city-name {
-            font-size: 14px;
+            font-size: 12px;
             font-weight: 600;
             margin-bottom: 4px;
             opacity: 0.8;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         .time {
-            font-size: 2.4em;
+            font-size: 1.8em;
             font-weight: 700;
             font-family: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
             letter-spacing: -1px;
             line-height: 1.1;
+            display: inline-flex;
+            align-items: baseline;
+            gap: 4px;
         }
         .time .seconds {
             font-size: 0.5em;
             opacity: 0.5;
             vertical-align: super;
         }
-        .date {
-            font-size: 12px;
-            opacity: 0.5;
-            margin-top: 4px;
-        }
-        .offset {
-            font-size: 11px;
-            opacity: 0.4;
-            margin-top: 2px;
-        }
-        .day-indicator {
-            display: inline-block;
+        .time .day-indicator {
             width: 8px;
             height: 8px;
             border-radius: 50%;
             margin-right: 6px;
-            vertical-align: middle;
+            flex-shrink: 0;
         }
-        .day-indicator.day { background: #facc15; }
-        .day-indicator.night { background: #6366f1; }
-        
-        /* Size variants */
-        .widget.small .time { font-size: 1.8em; }
-        .widget.small .city-name { font-size: 12px; }
-        .widget.small .date { font-size: 10px; }
-        .widget.large .time { font-size: 3.2em; }
-        .widget.large .city-name { font-size: 16px; }
-        .widget.large .date { font-size: 14px; }
-        
+        .time .day-indicator.day { background: #facc15; }
+        .time .day-indicator.night { background: #6366f1; }
+        .date {
+            font-size: 10px;
+            opacity: 0.4;
+            margin-top: 2px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .offset {
+            font-size: 9px;
+            opacity: 0.3;
+            margin-top: 1px;
+        }
+
         /* Theme: dark (default) */
-        body.dark { background: #0a0a0a; color: #fff; }
-        
+        body.dark { background: #0f0f1a; color: #fff; }
+        body.dark .widget { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); }
+        body.dark .city-name { color: #e0e4f0; }
+        body.dark .date { color: #888; }
+        body.dark .offset { color: #666; }
+
         /* Theme: light */
         body.light { background: #f8fafc; color: #1e293b; }
-        body.light .city-name { opacity: 0.7; }
-        body.light .date { opacity: 0.4; }
-        body.light .offset { opacity: 0.3; }
+        body.light .widget { background: #fff; border: 1px solid #e2e8f0; box-shadow: 0 1px 3px rgba(0,0,0,.05); }
+        body.light .widget:hover { box-shadow: 0 4px 12px rgba(0,0,0,.08); }
+        body.light .city-name { color: #475569; opacity: 1; }
+        body.light .date { color: #94a3b8; }
+        body.light .offset { color: #cbd5e1; }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .widget { min-width: 120px; padding: 10px 12px; }
+            .time { font-size: 1.5em; }
+            .city-name { font-size: 11px; }
+        }
+        @media (min-width: 900px) {
+            .widget { min-width: 160px; }
+            .time { font-size: 2em; }
+        }
     </style>
-<meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk" />
-<script src="https://analytics.ahrefs.com/analytics.js" data-key="hB1VYWuwb1i/f1d8re7P2A" async></script>
 </head>
 <body>
-    <div class="widget" id="widget">
-        <div class="city-name" id="cityName">Loading...</div>
-        <div class="time" id="timeDisplay">--:--:--</div>
-        <div class="date" id="dateDisplay">---</div>
-        <div class="offset" id="offsetDisplay">UTC</div>
-    </div>
+    <div class="widget-container" id="container"></div>
 
     <script>
     (function() {
         // Parse URL params
         var params = new URLSearchParams(window.location.search);
-        var tz = params.get('tz') || 'America/New_York';
-        var theme = params.get('theme') || 'dark';
-        var size = params.get('size') || 'medium';
-        var showDate = params.get('date') !== '0';
-        var customBg = params.get('bg') || '';
-        var customText = params.get('text') || '';
+        var citiesParam = params.get('cities') || 'America/New_York,Europe/London,Asia/Tokyo,Europe/Paris';
+        var theme = params.get('theme') || 'light';
+        var format = params.get('format') || '24h';
+        var showSeconds = params.get('seconds') !== '0';
+        var showTimezone = params.get('tz') !== '0';
 
         // Apply theme
         document.body.className = theme;
-        if (customBg) document.body.style.background = customBg;
-        if (customText) document.body.style.color = customText;
 
-        // Apply size
-        document.getElementById('widget').className = 'widget ' + size;
+        // Parse cities (comma-separated timezones or city slugs)
+        var cities = citiesParam.split(',').map(function(c) { return c.trim(); }).filter(Boolean);
 
-        // Extract city name from timezone
-        var cityName = tz.split('/').pop().replace(/_/g, ' ');
-        document.getElementById('cityName').textContent = cityName;
+        var container = document.getElementById('container');
 
-        // Hide date if not needed
-        if (!showDate) {
-            document.getElementById('dateDisplay').style.display = 'none';
-        }
+        // Create widget for each city
+        cities.forEach(function(tz, index) {
+            var widget = document.createElement('div');
+            widget.className = 'widget';
+            widget.innerHTML = 
+                '<div class="city-name" id="name-' + index + '">Loading...</div>' +
+                '<div class="time" id="time-' + index + '"><span class="day-indicator"></span>--:--:--</div>' +
+                '<div class="date" id="date-' + index + '">---</div>' +
+                '<div class="offset" id="offset-' + index + '">UTC</div>';
+            container.appendChild(widget);
+        });
 
-        // Update clock
+        // City name mapping for common slugs
+        var cityNames = {
+            'America/New_York': 'New York',
+            'America/Los_Angeles': 'Los Angeles',
+            'America/Chicago': 'Chicago',
+            'America/Denver': 'Denver',
+            'America/Toronto': 'Toronto',
+            'America/Vancouver': 'Vancouver',
+            'America/Mexico_City': 'Mexico City',
+            'America/Sao_Paulo': 'São Paulo',
+            'America/Argentina/Buenos_Aires': 'Buenos Aires',
+            'Europe/London': 'London',
+            'Europe/Paris': 'Paris',
+            'Europe/Berlin': 'Berlin',
+            'Europe/Rome': 'Rome',
+            'Europe/Madrid': 'Madrid',
+            'Europe/Amsterdam': 'Amsterdam',
+            'Europe/Stockholm': 'Stockholm',
+            'Europe/Warsaw': 'Warsaw',
+            'Europe/Moscow': 'Moscow',
+            'Europe/Kiev': 'Kyiv',
+            'Europe/Istanbul': 'Istanbul',
+            'Africa/Cairo': 'Cairo',
+            'Africa/Johannesburg': 'Johannesburg',
+            'Africa/Lagos': 'Lagos',
+            'Asia/Dubai': 'Dubai',
+            'Asia/Riyadh': 'Riyadh',
+            'Asia/Tehran': 'Tehran',
+            'Asia/Kolkata': 'Mumbai',
+            'Asia/Dhaka': 'Dhaka',
+            'Asia/Karachi': 'Karachi',
+            'Asia/Shanghai': 'Shanghai',
+            'Asia/Hong_Kong': 'Hong Kong',
+            'Asia/Singapore': 'Singapore',
+            'Asia/Tokyo': 'Tokyo',
+            'Asia/Seoul': 'Seoul',
+            'Asia/Bangkok': 'Bangkok',
+            'Asia/Jakarta': 'Jakarta',
+            'Asia/Manila': 'Manila',
+            'Australia/Sydney': 'Sydney',
+            'Australia/Melbourne': 'Melbourne',
+            'Australia/Brisbane': 'Brisbane',
+            'Australia/Perth': 'Perth',
+            'Pacific/Auckland': 'Auckland',
+            'UTC': 'UTC'
+        };
+
+        // Set city names
+        cities.forEach(function(tz, index) {
+            var nameEl = document.getElementById('name-' + index);
+            var name = cityNames[tz] || tz.split('/').pop().replace(/_/g, ' ');
+            nameEl.textContent = name;
+        });
+
+        // Update all clocks
         function update() {
+            var now = new Date();
+            var hour12 = format === '12h';
+
+            cities.forEach(function(tz, index) {
+                try {
+                    // Time
+                    var timeStr = new Intl.DateTimeFormat('en-US', {
+                        timeZone: tz,
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        second: showSeconds ? '2-digit' : undefined,
+                        hour12: hour12
+                    }).format(now);
+
+                    // Date
+                    var dateStr = new Intl.DateTimeFormat('en-US', {
+                        timeZone: tz,
+                        weekday: 'short',
+                        month: 'short',
+                        day: 'numeric'
+                    }).format(now);
+
+                    // UTC offset
+                    var offsetParts = new Intl.DateTimeFormat('en-US', {
+                        timeZone: tz,
+                        timeZoneName: 'shortOffset'
+                    }).formatToParts(now);
+                    var offsetStr = offsetParts.find(function(p) { return p.type === 'timeZoneName'; })?.value || '';
+
+                    // Day/night
+                    var hour = parseInt(new Intl.DateTimeFormat('en-US', {
+                        timeZone: tz, hour: 'numeric', hour12: false
+                    }).format(now));
+                    var isDay = hour >= 6 && hour < 18;
+
+                    // Update DOM
+                    var timeEl = document.getElementById('time-' + index);
+                    if (showSeconds) {
+                        var parts = timeStr.split(':');
+                        timeEl.innerHTML = '<span class="day-indicator ' + (isDay ? 'day' : 'night') + '"></span>' + parts[0] + ':' + parts[1] + '<span class="seconds">' + parts[2] + '</span>';
+                    } else {
+                        var parts = timeStr.split(':');
+                        timeEl.innerHTML = '<span class="day-indicator ' + (isDay ? 'day' : 'night') + '"></span>' + parts[0] + ':' + parts[1];
+                    }
+
+                    document.getElementById('date-' + index).textContent = dateStr;
+                    if (showTimezone) {
+                        document.getElementById('offset-' + index).textContent = offsetStr;
+                    } else {
+                        document.getElementById('offset-' + index).style.display = 'none';
+                    }
+
+                } catch(e) {
+                    document.getElementById('name-' + index).textContent = 'Invalid timezone';
+                    document.getElementById('time-' + index).textContent = '--:--';
+                }
+            });
+
+            // Send resize message to parent
             try {
-                var now = new Date();
-                
-                // Time
-                var timeStr = new Intl.DateTimeFormat('en-US', {
-                    timeZone: tz,
-                    hour: '2-digit',
-                    minute: '2-digit',
-                    second: '2-digit',
-                    hour12: false
-                }).format(now);
-                
-                // Date
-                var dateStr = new Intl.DateTimeFormat('en-US', {
-                    timeZone: tz,
-                    weekday: 'short',
-                    month: 'short',
-                    day: 'numeric'
-                }).format(now);
-
-                // UTC offset
-                var offsetStr = new Intl.DateTimeFormat('en-US', {
-                    timeZone: tz,
-                    timeZoneName: 'shortOffset'
-                }).formatToParts(now).find(function(p) { return p.type === 'timeZoneName'; })?.value || '';
-
-                // Day/night indicator
-                var hour = parseInt(new Intl.DateTimeFormat('en-US', {
-                    timeZone: tz, hour: 'numeric', hour12: false
-                }).format(now));
-                var isDay = hour >= 6 && hour < 18;
-
-                // Update DOM
-                var timeEl = document.getElementById('timeDisplay');
-                var parts = timeStr.split(':');
-                timeEl.innerHTML = parts[0] + ':' + parts[1] + '<span class="seconds">' + parts[2] + '</span>';
-                
-                // Add day indicator
-                var existing = timeEl.querySelector('.day-indicator');
-                if (existing) existing.remove();
-                var indicator = document.createElement('span');
-                indicator.className = 'day-indicator ' + (isDay ? 'day' : 'night');
-                timeEl.insertBefore(indicator, timeEl.firstChild);
-
-                document.getElementById('dateDisplay').textContent = dateStr;
-                document.getElementById('offsetDisplay').textContent = offsetStr;
-
-            } catch(e) {
-                document.getElementById('cityName').textContent = 'Invalid timezone';
-                document.getElementById('timeDisplay').textContent = '--:--:--';
-            }
+                var height = document.body.scrollHeight;
+                if (window.parent !== window) {
+                    window.parent.postMessage({
+                        type: 'wts-resize',
+                        height: height
+                    }, '*');
+                }
+            } catch(e) {}
         }
 
         update();
