@@ -6,6 +6,13 @@
   "trailingSlash": false,
   "routes": [
     {
+      "src": "/(es|zh|ru|it|de|ja|fr|uk)/blog/(.+)\\.html$",
+      "status": 301,
+      "headers": {
+        "Location": "/blog/$2-$1"
+      }
+    },
+    {
       "src": "/(.*\\.(py|sh))$",
       "status": 404
     },
@@ -55,12 +62,9 @@
     {
       "src": "/(es|zh|ru|it|de|ja|fr|uk)/blog/([^/]+)$",
       "status": 301,
-      "headers": { "Location": "/blog/$2-$1" }
-    },
-    {
-      "src": "/(es|zh|ru|it|de|ja|fr|uk)/blog/([^/]+)\\.html$",
-      "status": 301,
-      "headers": { "Location": "/blog/$2-$1" }
+      "headers": {
+        "Location": "/blog/$2-$1"
+      }
     },
     {
       "src": "/time/(.*)",
