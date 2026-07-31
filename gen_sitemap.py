@@ -38,6 +38,7 @@ ROOT_PAGES = [
     "dst-countdown.html", "world-clock.html", "world-time-map.html",
     "sunrise-sunset.html",
     "wordpress.html", "how-it-works.html", "event.html",
+    "time/index.html",  # city directory landing page (canonical /time)
 ]
 
 SKIP_DIRS = {"assets", "data", "i18n", "wp-plugin", "__pycache__", ".git", "node_modules", "tools"}
@@ -105,7 +106,7 @@ def collect_groups():
     time_dir = os.path.join(ROOT, "time")
     if os.path.isdir(time_dir):
         for fn in os.listdir(time_dir):
-            if not fn.endswith(".html"):
+            if not fn.endswith(".html") or fn == "index.html":
                 continue
             p = os.path.join(time_dir, fn)
             if is_stub(p):
