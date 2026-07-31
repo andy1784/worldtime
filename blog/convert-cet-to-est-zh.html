@@ -18,16 +18,16 @@
     <meta property="og:image" content="https://worldtimessync.com/og-image.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="CET 转 EST：时差与换算指南（2026）| World Time Sync">
-    <link rel="canonical" href="https://worldtimessync.com/blog/convert-cet-to-est-zh.html">
-    <link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/blog/convert-cet-to-est.html">
-    <link rel="alternate" hreflang="en" href="https://worldtimessync.com/blog/convert-cet-to-est.html">
-    <link rel="alternate" hreflang="ru" href="https://worldtimessync.com/blog/convert-cet-to-est-ru.html">
-    <link rel="alternate" hreflang="es" href="https://worldtimessync.com/blog/convert-cet-to-est-es.html">
-    <link rel="alternate" hreflang="zh" href="https://worldtimessync.com/blog/convert-cet-to-est-zh.html">
-    <link rel="alternate" hreflang="ja" href="https://worldtimessync.com/blog/convert-cet-to-est-ja.html">
-    <link rel="alternate" hreflang="fr" href="https://worldtimessync.com/blog/convert-cet-to-est-fr.html">
-    <link rel="alternate" hreflang="de" href="https://worldtimessync.com/blog/convert-cet-to-est-de.html">
-    <link rel="alternate" hreflang="uk" href="https://worldtimessync.com/blog/convert-cet-to-est-uk.html">
+    <link rel="canonical" href="https://worldtimessync.com/blog/convert-cet-to-est-zh">
+    <link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/blog/convert-cet-to-est">
+    <link rel="alternate" hreflang="en" href="https://worldtimessync.com/blog/convert-cet-to-est">
+    <link rel="alternate" hreflang="ru" href="https://worldtimessync.com/blog/convert-cet-to-est-ru">
+    <link rel="alternate" hreflang="es" href="https://worldtimessync.com/blog/convert-cet-to-est-es">
+    <link rel="alternate" hreflang="zh" href="https://worldtimessync.com/blog/convert-cet-to-est-zh">
+    <link rel="alternate" hreflang="ja" href="https://worldtimessync.com/blog/convert-cet-to-est-ja">
+    <link rel="alternate" hreflang="fr" href="https://worldtimessync.com/blog/convert-cet-to-est-fr">
+    <link rel="alternate" hreflang="de" href="https://worldtimessync.com/blog/convert-cet-to-est-de">
+    <link rel="alternate" hreflang="uk" href="https://worldtimessync.com/blog/convert-cet-to-est-uk">
     <link rel="preload" href="/assets/blog.css" as="style">
 <noscript><link rel="stylesheet" href="/assets/blog.css"></noscript>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -66,13 +66,13 @@
             <h1>CET 转 EST：稳定的 6 小时跨大西洋时差</h1>
             <div class="blog-meta">📅 2026年7月8日 &nbsp;·&nbsp; ⏱ 6 min read &nbsp;·&nbsp; 🏷 时区, 换算, 指南</div>
 
-<p>将中欧时间转换为美国东部时间，是跨大西洋业务、欧洲机构以及任何在柏林、巴黎或马德里与纽约或华盛顿之间通话的人经常需要做的。冬季相差 6 小时，夏季相差 5 小时。</p><h2>时区概览</h2><h3>中欧时间（CET）</h3><p>CET 冬季为 UTC+1，欧洲夏令时为 CEST（UTC+2），从 3 月最后一个星期日到 10 月最后一个星期日。</p><h3>东部时间（EST/EDT）</h3><p>美国东部时间冬季为 EST（UTC−5），美国夏令时为 EDT（UTC−4），从 3 月第二个星期日到 11 月第一个星期日。</p><h2>时差</h2><p><strong>冬季（均为标准时间）：</strong>CET 比 EST 早 6 小时。</p><p><strong>夏季（均为夏令时）：</strong>CET 比 EDT 早 6 小时。</p><p><strong>过渡周：</strong>当只有美国或只有欧洲切换时，短时间内时差为 5 或 7 小时。</p><h2>换算公式</h2><p><strong>EST = CET − 6 小时（冬季）/ CET − 6 小时（夏季，均为夏令时）</strong></p><p>由于两个地区都实行夏令时，6 小时的差距在一年大部分时间保持稳定，只在切换不一致的少数几周变化。</p><h2>快速换算表（CET → EST）</h2><table><thead><tr><th>中欧时间</th><th>美国东部时间</th></tr></thead><tbody><tr><td>9:00</td><td>3:00</td></tr><tr><td>12:00</td><td>6:00</td></tr><tr><td>14:00</td><td>8:00</td></tr><tr><td>17:00</td><td>11:00</td></tr><tr><td>20:00</td><td>14:00</td></tr><tr><td>23:00</td><td>17:00</td></tr></tbody></table><div class="converter-widget">    <h2>时区转换器</h2>    <div class="converter-row"><label for="from-time">CET/CEST 时间：</label><input type="time" id="from-time" value="14:00"></div>    <div class="converter-row"><label for="to-time">EST/EDT 时间：</label><input type="time" id="to-time" readonly></div>    <div class="converter-note">减去 6 小时（CET→EST）。特定日期请使用我们的<a href="/meeting-planner.html">会议规划器</a>。</div></div><script>document.addEventListener('DOMContentLoaded', function() {var f=document.getElementById('from-time'), t=document.getElementById('to-time');function cv(){ if(!f.value) return; var p=f.value.split(':').map(Number); var m=p[0]*60+p[1]-360; while(m<0)m+=1440; while(m>=1440)m-=1440; t.value=String(Math.floor(m/60)).padStart(2,'0')+':'+String(m%60).padStart(2,'0'); }f.addEventListener('input', cv); cv();});</script><h2>常见用途</h2><ul><li>欧盟与美国的商务通话（巴黎、柏林、马德里和纽约）</li><li>从美国东海岸与欧洲远程同事协调</li><li>安排跨大西洋的网络研讨会</li><li>对齐市场开盘和交易</li></ul><h2>常见问题</h2><div class="faq-section"><div class="faq-item"><h3>CET 和 EST 的时差是多少？</h3><p>通常为 6 小时；CET 更早。切换周会短暂变为 5 或 7 小时。</p></div><div class="faq-item"><h3>哪些城市使用 CET？</h3><p>巴黎、柏林、马德里、罗马、阿姆斯特丹、维也纳以及中欧大部分地区。</p></div><div class="faq-item"><h3>如果巴黎是 14:00，纽约是几点？</h3><p>冬季 EST 8:00 或夏季 EDT 8:00——仍是 6 小时。</p></div><div class="faq-item"><h3>6 小时差距全年保持吗？</h3><p>几乎如此。只在欧洲和美国切换日期不同的几周变化。</p></div><div class="faq-item"><h3>如何将 EST 转换为 CET？</h3><p>给东部时间加 6 小时。</p></div></div><p>要实时比较，请打开我们的<a href="/">世界时钟</a>并选择你的城市。</p>
+<p>将中欧时间转换为美国东部时间，是跨大西洋业务、欧洲机构以及任何在柏林、巴黎或马德里与纽约或华盛顿之间通话的人经常需要做的。冬季相差 6 小时，夏季相差 5 小时。</p><h2>时区概览</h2><h3>中欧时间（CET）</h3><p>CET 冬季为 UTC+1，欧洲夏令时为 CEST（UTC+2），从 3 月最后一个星期日到 10 月最后一个星期日。</p><h3>东部时间（EST/EDT）</h3><p>美国东部时间冬季为 EST（UTC−5），美国夏令时为 EDT（UTC−4），从 3 月第二个星期日到 11 月第一个星期日。</p><h2>时差</h2><p><strong>冬季（均为标准时间）：</strong>CET 比 EST 早 6 小时。</p><p><strong>夏季（均为夏令时）：</strong>CET 比 EDT 早 6 小时。</p><p><strong>过渡周：</strong>当只有美国或只有欧洲切换时，短时间内时差为 5 或 7 小时。</p><h2>换算公式</h2><p><strong>EST = CET − 6 小时（冬季）/ CET − 6 小时（夏季，均为夏令时）</strong></p><p>由于两个地区都实行夏令时，6 小时的差距在一年大部分时间保持稳定，只在切换不一致的少数几周变化。</p><h2>快速换算表（CET → EST）</h2><table><thead><tr><th>中欧时间</th><th>美国东部时间</th></tr></thead><tbody><tr><td>9:00</td><td>3:00</td></tr><tr><td>12:00</td><td>6:00</td></tr><tr><td>14:00</td><td>8:00</td></tr><tr><td>17:00</td><td>11:00</td></tr><tr><td>20:00</td><td>14:00</td></tr><tr><td>23:00</td><td>17:00</td></tr></tbody></table><div class="converter-widget">    <h2>时区转换器</h2>    <div class="converter-row"><label for="from-time">CET/CEST 时间：</label><input type="time" id="from-time" value="14:00"></div>    <div class="converter-row"><label for="to-time">EST/EDT 时间：</label><input type="time" id="to-time" readonly></div>    <div class="converter-note">减去 6 小时（CET→EST）。特定日期请使用我们的<a href="/meeting-planner">会议规划器</a>。</div></div><script>document.addEventListener('DOMContentLoaded', function() {var f=document.getElementById('from-time'), t=document.getElementById('to-time');function cv(){ if(!f.value) return; var p=f.value.split(':').map(Number); var m=p[0]*60+p[1]-360; while(m<0)m+=1440; while(m>=1440)m-=1440; t.value=String(Math.floor(m/60)).padStart(2,'0')+':'+String(m%60).padStart(2,'0'); }f.addEventListener('input', cv); cv();});</script><h2>常见用途</h2><ul><li>欧盟与美国的商务通话（巴黎、柏林、马德里和纽约）</li><li>从美国东海岸与欧洲远程同事协调</li><li>安排跨大西洋的网络研讨会</li><li>对齐市场开盘和交易</li></ul><h2>常见问题</h2><div class="faq-section"><div class="faq-item"><h3>CET 和 EST 的时差是多少？</h3><p>通常为 6 小时；CET 更早。切换周会短暂变为 5 或 7 小时。</p></div><div class="faq-item"><h3>哪些城市使用 CET？</h3><p>巴黎、柏林、马德里、罗马、阿姆斯特丹、维也纳以及中欧大部分地区。</p></div><div class="faq-item"><h3>如果巴黎是 14:00，纽约是几点？</h3><p>冬季 EST 8:00 或夏季 EDT 8:00——仍是 6 小时。</p></div><div class="faq-item"><h3>6 小时差距全年保持吗？</h3><p>几乎如此。只在欧洲和美国切换日期不同的几周变化。</p></div><div class="faq-item"><h3>如何将 EST 转换为 CET？</h3><p>给东部时间加 6 小时。</p></div></div><p>要实时比较，请打开我们的<a href="/">世界时钟</a>并选择你的城市。</p>
 
         <footer class="blog-footer">
-            <a href="/privacy.html">Privacy</a>
-            <a href="/about.html">About</a>
-            <a href="/contact.html">Contact</a>
-            <a href="/terms.html">Terms</a>
+            <a href="/privacy">Privacy</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+            <a href="/terms">Terms</a>
             <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p>
         </footer>
     </main>

@@ -119,10 +119,10 @@
             <footer class="event-footer">
                 <p>Part of <a href="/">World Time Sync</a> — Free time tools for global teams</p>
                 <p>
-                    <a href="/meeting-planner.html">Meeting Planner</a>
-                    <a href="/world-time-map.html">World Map</a>
-                    <a href="/blog/how-to-schedule-meetings-across-time-zones.html">Scheduling Guide</a>
-                    <a href="/blog/meeting-planner-tips.html">Meeting Tips</a>
+                    <a href="/meeting-planner">Meeting Planner</a>
+                    <a href="/world-time-map">World Map</a>
+                    <a href="/blog/how-to-schedule-meetings-across-time-zones">Scheduling Guide</a>
+                    <a href="/blog/meeting-planner-tips">Meeting Tips</a>
                 </p>
                 <p style="margin-top:8px">© 2026 World Time Sync. All rights reserved.</p>
             </footer>
@@ -254,7 +254,7 @@
                 const offsetStr = (diff >= 0 ? '+' : '') + diff.toFixed(1) + 'h';
 
                 return '<tr>' +
-                    '<td class="city-name"><a href="/time/' + c[0] + '.html" style="color:inherit;text-decoration:none">' + c[1] + '</a></td>' +
+                    '<td class="city-name"><a href="/time/' + c[0] + '" style="color:inherit;text-decoration:none">' + c[1] + '</a></td>' +
                     '<td class="local-time">' + localStr + '</td>' +
                     '<td>' + localDate + '</td>' +
                     '<td>' + dayLabel + ' <span class="utc-offset">UTC' + offsetStr + '</span></td>' +

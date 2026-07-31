@@ -18,16 +18,16 @@
     <meta property="og:image" content="https://worldtimessync.com/og-image.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="IST 转 GMT：时差与换算指南（2026）| World Time Sync">
-    <link rel="canonical" href="https://worldtimessync.com/blog/convert-ist-to-gmt-zh.html">
-    <link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/blog/convert-ist-to-gmt.html">
-    <link rel="alternate" hreflang="en" href="https://worldtimessync.com/blog/convert-ist-to-gmt.html">
-    <link rel="alternate" hreflang="ru" href="https://worldtimessync.com/blog/convert-ist-to-gmt-ru.html">
-    <link rel="alternate" hreflang="es" href="https://worldtimessync.com/blog/convert-ist-to-gmt-es.html">
-    <link rel="alternate" hreflang="zh" href="https://worldtimessync.com/blog/convert-ist-to-gmt-zh.html">
-    <link rel="alternate" hreflang="ja" href="https://worldtimessync.com/blog/convert-ist-to-gmt-ja.html">
-    <link rel="alternate" hreflang="fr" href="https://worldtimessync.com/blog/convert-ist-to-gmt-fr.html">
-    <link rel="alternate" hreflang="de" href="https://worldtimessync.com/blog/convert-ist-to-gmt-de.html">
-    <link rel="alternate" hreflang="uk" href="https://worldtimessync.com/blog/convert-ist-to-gmt-uk.html">
+    <link rel="canonical" href="https://worldtimessync.com/blog/convert-ist-to-gmt-zh">
+    <link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/blog/convert-ist-to-gmt">
+    <link rel="alternate" hreflang="en" href="https://worldtimessync.com/blog/convert-ist-to-gmt">
+    <link rel="alternate" hreflang="ru" href="https://worldtimessync.com/blog/convert-ist-to-gmt-ru">
+    <link rel="alternate" hreflang="es" href="https://worldtimessync.com/blog/convert-ist-to-gmt-es">
+    <link rel="alternate" hreflang="zh" href="https://worldtimessync.com/blog/convert-ist-to-gmt-zh">
+    <link rel="alternate" hreflang="ja" href="https://worldtimessync.com/blog/convert-ist-to-gmt-ja">
+    <link rel="alternate" hreflang="fr" href="https://worldtimessync.com/blog/convert-ist-to-gmt-fr">
+    <link rel="alternate" hreflang="de" href="https://worldtimessync.com/blog/convert-ist-to-gmt-de">
+    <link rel="alternate" hreflang="uk" href="https://worldtimessync.com/blog/convert-ist-to-gmt-uk">
     <link rel="preload" href="/assets/blog.css" as="style">
 <noscript><link rel="stylesheet" href="/assets/blog.css"></noscript>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -66,13 +66,13 @@
             <h1>IST 转 GMT：别忘了半小时</h1>
             <div class="blog-meta">📅 2026年7月8日 &nbsp;·&nbsp; ⏱ 6 min read &nbsp;·&nbsp; 🏷 时区, 换算, 指南</div>
 
-<p>将印度标准时间（IST）转换为格林尼治标准时间（GMT），是任何在印度与欧洲或非洲之间工作的人经常需要的。要记住的关键点：印度使用半小时偏移 UTC+5:30，且从不改变。正是这半小时让人困惑。</p><h2>时区概览</h2><h3>印度标准时间（IST）</h3><p>IST 全年为 UTC+5:30。印度不实行夏令时，因此偏移量固定。</p><h3>格林尼治标准时间（GMT）</h3><p>GMT 冬季为 UTC+0。英国夏季切换到 BST（UTC+1），因此参考点会变动。</p><h2>时差</h2><p><strong>英国冬季（GMT）：</strong>印度比 GMT 早 5 小时 30 分钟。</p><p><strong>英国夏季（BST）：</strong>印度比伦敦早 4 小时 30 分钟。</p><h2>换算公式</h2><p><strong>GMT = IST − 5 小时 30 分（冬季）/ IST − 4 小时 30 分（英国夏季）</strong></p><h2>换算示例</h2><p><strong>冬季：</strong>15:00 IST → 9:30 GMT</p><p><strong>夏季：</strong>15:00 IST → 10:30 BST</p><p>注意半小时。10:00 IST 是 4:30 GMT，而不是 5:00。</p><h2>快速换算表（IST → GMT）</h2><table><thead><tr><th>印度（IST）</th><th>伦敦（GMT，冬季）</th><th>伦敦（BST，夏季）</th></tr></thead><tbody><tr><td>9:00</td><td>3:30</td><td>4:30</td></tr><tr><td>12:00</td><td>6:30</td><td>7:30</td></tr><tr><td>15:00</td><td>9:30</td><td>10:30</td></tr><tr><td>18:00</td><td>12:30</td><td>13:30</td></tr><tr><td>21:00</td><td>15:30</td><td>16:30</td></tr><tr><td>0:00</td><td>18:30</td><td>19:30</td></tr></tbody></table><div class="converter-widget">    <h2>时区转换器</h2>    <div class="converter-row"><label for="from-time">印度时间：</label><input type="time" id="from-time" value="15:00"></div>    <div class="converter-row"><label for="dst">英国：</label>      <select id="dst"><option value="330">GMT（冬）−5小时30分</option><option value="270" selected>BST（夏）−4小时30分</option></select></div>    <div class="converter-row"><label for="to-time">伦敦时间：</label><input type="time" id="to-time" readonly></div></div><script>document.addEventListener('DOMContentLoaded', function() {var f=document.getElementById('from-time'), d=document.getElementById('dst'), t=document.getElementById('to-time');function cv(){ if(!f.value) return; var p=f.value.split(':').map(Number); var m=p[0]*60+p[1]-parseInt(d.value); while(m<0)m+=1440; while(m>=1440)m-=1440; t.value=String(Math.floor(m/60)).padStart(2,'0')+':'+String(m%60).padStart(2,'0'); }f.addEventListener('input', cv); d.addEventListener('change', cv); cv();});</script><h2>常见用途</h2><ul><li>英国与印度之间的外包和 IT 团队协调</li><li>安排伦敦与班加罗尔、孟买或德里之间的通话</li><li>从欧洲关注印度交易时段</li><li>两地之间的家庭和个人通话</li></ul><h2>常见问题</h2><div class="faq-section"><div class="faq-item"><h3>IST 和 GMT 的时差是多少？</h3><p>英国冬季 5 小时 30 分，夏季 4 小时 30 分。</p></div><div class="faq-item"><h3>为什么是半小时？</h3><p>印度特意使用 UTC+5:30，并全年保持。</p></div><div class="faq-item"><h3>如果印度是 15:00，伦敦是几点？</h3><p>冬季 GMT 9:30 或夏季 BST 10:30。</p></div><div class="faq-item"><h3>印度实行夏令时吗？</h3><p>不实行。IST 全年为 UTC+5:30。</p></div><div class="faq-item"><h3>如何将 GMT 转换为 IST？</h3><p>冬季加 5 小时 30 分，或英国夏季加 4 小时 30 分。</p></div></div><p>要按特定日期规划，请使用我们的<a href="/">世界时钟</a>和<a href="/meeting-planner.html">会议规划器</a>。</p>
+<p>将印度标准时间（IST）转换为格林尼治标准时间（GMT），是任何在印度与欧洲或非洲之间工作的人经常需要的。要记住的关键点：印度使用半小时偏移 UTC+5:30，且从不改变。正是这半小时让人困惑。</p><h2>时区概览</h2><h3>印度标准时间（IST）</h3><p>IST 全年为 UTC+5:30。印度不实行夏令时，因此偏移量固定。</p><h3>格林尼治标准时间（GMT）</h3><p>GMT 冬季为 UTC+0。英国夏季切换到 BST（UTC+1），因此参考点会变动。</p><h2>时差</h2><p><strong>英国冬季（GMT）：</strong>印度比 GMT 早 5 小时 30 分钟。</p><p><strong>英国夏季（BST）：</strong>印度比伦敦早 4 小时 30 分钟。</p><h2>换算公式</h2><p><strong>GMT = IST − 5 小时 30 分（冬季）/ IST − 4 小时 30 分（英国夏季）</strong></p><h2>换算示例</h2><p><strong>冬季：</strong>15:00 IST → 9:30 GMT</p><p><strong>夏季：</strong>15:00 IST → 10:30 BST</p><p>注意半小时。10:00 IST 是 4:30 GMT，而不是 5:00。</p><h2>快速换算表（IST → GMT）</h2><table><thead><tr><th>印度（IST）</th><th>伦敦（GMT，冬季）</th><th>伦敦（BST，夏季）</th></tr></thead><tbody><tr><td>9:00</td><td>3:30</td><td>4:30</td></tr><tr><td>12:00</td><td>6:30</td><td>7:30</td></tr><tr><td>15:00</td><td>9:30</td><td>10:30</td></tr><tr><td>18:00</td><td>12:30</td><td>13:30</td></tr><tr><td>21:00</td><td>15:30</td><td>16:30</td></tr><tr><td>0:00</td><td>18:30</td><td>19:30</td></tr></tbody></table><div class="converter-widget">    <h2>时区转换器</h2>    <div class="converter-row"><label for="from-time">印度时间：</label><input type="time" id="from-time" value="15:00"></div>    <div class="converter-row"><label for="dst">英国：</label>      <select id="dst"><option value="330">GMT（冬）−5小时30分</option><option value="270" selected>BST（夏）−4小时30分</option></select></div>    <div class="converter-row"><label for="to-time">伦敦时间：</label><input type="time" id="to-time" readonly></div></div><script>document.addEventListener('DOMContentLoaded', function() {var f=document.getElementById('from-time'), d=document.getElementById('dst'), t=document.getElementById('to-time');function cv(){ if(!f.value) return; var p=f.value.split(':').map(Number); var m=p[0]*60+p[1]-parseInt(d.value); while(m<0)m+=1440; while(m>=1440)m-=1440; t.value=String(Math.floor(m/60)).padStart(2,'0')+':'+String(m%60).padStart(2,'0'); }f.addEventListener('input', cv); d.addEventListener('change', cv); cv();});</script><h2>常见用途</h2><ul><li>英国与印度之间的外包和 IT 团队协调</li><li>安排伦敦与班加罗尔、孟买或德里之间的通话</li><li>从欧洲关注印度交易时段</li><li>两地之间的家庭和个人通话</li></ul><h2>常见问题</h2><div class="faq-section"><div class="faq-item"><h3>IST 和 GMT 的时差是多少？</h3><p>英国冬季 5 小时 30 分，夏季 4 小时 30 分。</p></div><div class="faq-item"><h3>为什么是半小时？</h3><p>印度特意使用 UTC+5:30，并全年保持。</p></div><div class="faq-item"><h3>如果印度是 15:00，伦敦是几点？</h3><p>冬季 GMT 9:30 或夏季 BST 10:30。</p></div><div class="faq-item"><h3>印度实行夏令时吗？</h3><p>不实行。IST 全年为 UTC+5:30。</p></div><div class="faq-item"><h3>如何将 GMT 转换为 IST？</h3><p>冬季加 5 小时 30 分，或英国夏季加 4 小时 30 分。</p></div></div><p>要按特定日期规划，请使用我们的<a href="/">世界时钟</a>和<a href="/meeting-planner">会议规划器</a>。</p>
 
         <footer class="blog-footer">
-            <a href="/privacy.html">Privacy</a>
-            <a href="/about.html">About</a>
-            <a href="/contact.html">Contact</a>
-            <a href="/terms.html">Terms</a>
+            <a href="/privacy">Privacy</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+            <a href="/terms">Terms</a>
             <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p>
         </footer>
     </main>

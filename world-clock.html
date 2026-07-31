@@ -189,7 +189,7 @@
                         </tbody>
                     </table>
                 </div>
-                <p class="table-note">* Arizona (except Navajo Nation) does not observe DST. <a href="/blog/daylight-saving-time-by-country.html">See full DST guide →</a></p>
+                <p class="table-note">* Arizona (except Navajo Nation) does not observe DST. <a href="/blog/daylight-saving-time-by-country">See full DST guide →</a></p>
             </section>
 
             <!-- Browse by Country -->
@@ -212,15 +212,15 @@
                         <strong>Time Difference Calculator</strong>
                         <span>Compare any two cities</span>
                     </a>
-                    <a href="/meeting-planner.html" class="tool-link">
+                    <a href="/meeting-planner" class="tool-link">
                         <strong>Meeting Planner</strong>
                         <span>Find best meeting times across zones</span>
                     </a>
-                    <a href="/world-time-map.html" class="tool-link">
+                    <a href="/world-time-map" class="tool-link">
                         <strong>Interactive World Time Map</strong>
                         <span>Visual day/night map with 600+ cities</span>
                     </a>
-                    <a href="/earth-clock.html" class="tool-link">
+                    <a href="/earth-clock" class="tool-link">
                         <strong>Earth Clock</strong>
                         <span>3D rotating globe with live time</span>
                     </a>
@@ -258,8 +258,8 @@
         </div>
         <footer class="seo-footer">
             <nav aria-label="Footer navigation">
-                <a href="/privacy.html">Privacy Policy</a>
-                <a href="/about.html">About Us</a>
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/about">About Us</a>
                 <a href="/">World Time Sync</a>
             </nav>
             <p>&copy; 2026 World Time Sync. All rights reserved.</p>
@@ -368,7 +368,7 @@
     ];
     countries.sort(function(a,b){return a.name.localeCompare(b.name)});
     var countryHTML = countries.map(function(c){
-        return '<a href="/country/'+c.slug+'.html">'+c.name+'</a>';
+        return '<a href="/country/'+c.slug+'">'+c.name+'</a>';
     }).join('');
     document.getElementById('country-list').innerHTML = countryHTML;
 
@@ -392,7 +392,7 @@
         {slug:'utc',name:'UTC (UTC+0)',abbr:'UTC'}
     ];
     var tzHTML = tzs.map(function(t){
-        return '<a href="/time-zones/'+t.slug+'.html">'+t.name+'</a>';
+        return '<a href="/time-zones/'+t.slug+'">'+t.name+'</a>';
     }).join('');
     document.getElementById('tz-list').innerHTML = tzHTML;
     // Note: using safe innerHTML here with hardcoded data, no user input
