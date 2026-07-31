@@ -8,17 +8,38 @@ the Vite/React **source** lives outside this repository (see `package.json`,
 which only exposes `start: npx serve .`). Audits that need a rebuild cannot be
 applied from here without first importing the SPA source into this repo.
 
-### TODO: real code-split (audit item #6)
-- Re-import the Vite/React source for the world-clock SPA, expose `build` /
-  `typecheck` / `lint` scripts in `package.json`, and Ship a `vite.config.ts`
-  with manual chunks (`React.lazy` for the city registry,
-  `react-dom/client` production build, time-zone registry as a separate chunk
-  loaded after LCP). This is not possible against the committed artifacts.
-- Until then, the main bundle is loaded with `async` everywhere (no `defer`
-  because Vite ESM modules already defer by default; `async` lets the bundle
-  download in parallel and not block HTML parsing/initial paint).
-- Make sure every page loads the bundle with `async` (12 blog pages used to load
-  it blocking; fixed on 2026-07-17).
+## Recent work log (2026-07-31)
+- `e5f35aa6` — Rewrote `<title>`/`<meta description>` on the top-10 impression
+  pages (`index.html`, `time-zones/{est,pst,cst,mst}.html`,
+  `country/{china,india}.html`) to target the high-impression GSC queries
+  (e.g. "est time now" 129impr, "pst time now" 103impr, "cst time now" 73impr).
+- `affad9fa` — Added `/time/index.html` city-directory landing (canonical,
+  hreflang, JSON-LD, 696 static city links). `gen_sitemap.py` now emits `/time`;
+  sitemap went 926 → 948 URLs.
+- `4f61ea16` — Added `vercel.json` route `/(es|zh|ru|it|de|ja|fr|uk)/blog/(.+)\.html`
+  → 301 `/blog/$2-$1` to collapse the 2-hop 308→301 redirect chain on localized
+  blog posts.
+- `e3a255a9` — Stripped 45,794 internal `/foo.html` hrefs → `/foo` (cleanUrls)
+  across 7,631 HTML files to eliminate GSC redirect/canonical errors; kept
+  `widget.html`/`widget-embed.html` (external-embed URLs).
+- `affad9fa` — Removed 1,256 broken `/time/<city>` hrefs (113 nonexistent cities),
+  fixed 40 suffix blog links, redirected `<lang>/time-difference`→`/time-difference`,
+  `<lang>/time/`→`/time/`, `/en/` breadcrumbs→`/`.
+- `f5279581` — Mobile CTR mitigation: homepage `index.html` now lazy-loads the
+  442 KB React bundle (`assets/index-Dd7au40z.js`) on first user interaction
+  (click/touch/keystroke) with a 4 s fallback eager load. Drops homepage TBT
+  from ~3838 ms to ~0 (Lighthouse) without hurting SEO (static HTML + H1 +
+  noscript city/FAQ content above `#root`). See comment block above the loader.
+
+### TODO: real code-split (audit item #6) — mitigated, not closed
+- The homepage bundle is now lazy-loaded (see `index.html` loader), so Core
+  Web Vitals TBT/INP are fixed for search. The bundle is no longer auto-loaded
+  on the homepage; it is created on-demand inside `loadApp()`.
+- True code-splitting (manual chunks / `React.lazy` / registry chunk after LCP)
+  still requires the Vite/React **source**, which lives outside this repo.
+  `package.json` only exposes `start: npx serve .` — see the rebuild TODO below.
+- Other pages load the bundle with `async` (12 blog pages used to load it
+  blocking; fixed 2026-07-17).
 
 ### TODO: rebuild pipeline (audit item #7)
 - `package.json` has only `start: npx serve .`. Add reproducible build:
