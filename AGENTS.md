@@ -60,11 +60,11 @@ keep URL consistency and redirect users to the country listing). The canonical
 on `noindex` stubs is ignored by Google, so this is **not a real bug** — only
 the 67 EN + 67 ES real country hubs have proper hreflang (committed).
 
-### TODO: blog hreflang block on 106 pages (2026-07-18 GSC Coverage finding)
+### TODO #4 blog hreflang block on 106 pages (2026-07-18 GSC Coverage finding) — RESOLVED
 Translation generator `gen_new_blog_translations_*.py` statically emits an
 hreflang link for all 8 languages on every blog post (e.g. `hreflang="ru"` on
 `blog/<slug>-zh.html`), regardless of whether a `blog/<slug>-<lang>.html`
-actually exists. This produces **483 broken (404-bound) hreflang links across
+actually exists. This produced **483 broken (404-bound) hreflang links across
 106 files** because:
 
 1. The hreflang URL is `worldtimessync.com/<lang>/blog/<slug>.html`.
@@ -73,10 +73,23 @@ actually exists. This produces **483 broken (404-bound) hreflang links across
 3. If `blog/<slug>-<lang>.html` doesn't exist (post is only translated to some
    languages), the URL ultimately 404s.
 
-Fix: rewrite the translation generator so the hreflang block only lists
-languages for which the target file exists. Alternative: post-process with a
-tool such as `add_hreflang_only_existing.py` that prunes the hreflang block
-based on filesystem presence of `blog/<slug>-<lang>.html` for each lang.
+Resolution (committed `eab1b879`):
+- `add_hreflang_only_existing.py` + `blog_hreflang_util.py` form a durable,
+  idempotent post-processor. `render_hreflang(slug, lang, present_langs)` emits
+  x-default + en + ONLY languages whose `blog/<slug>-<lang>.html` exists on disk.
+  Run `python3 add_hreflang_only_existing.py` after any generation batch.
+- Applied once over all committed `blog/*.html`: 8827 hreflang links verified,
+  0 broken targets, 0 duplicate langs, 0 old-format `<lang>/blog/` URLs.
+
+Deferred (do NOT edit blind):
+- Hardening the generator *source* (`gen_new_blog_translations_*.py`,
+  `gen_batch2.py`, `gen_batch3.py`) to call `render_hreflang` at write time is
+  NOT done. These scripts are stale/inconsistent with the committed output
+  (they pass `slug_html = slug + '.html'` — including the lang suffix — into
+  `build_head`, which would corrupt canonical hreflang URLs if run as-is).
+  Editing them risks breaking regeneration without a verified baseline. **Fix:
+  run the post-processor after re-generating instead of hand-patching these
+  stale scripts.** Re-visit once the active generator path is confirmed.
 
 ### TODO: corrupt localized title/description on fr/uk toulouse page
 Resolved 2026-07-18 (commit a12f1136) — `Touloutilise-t-il` / `Touloвикористовує`
