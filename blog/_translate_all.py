@@ -56,9 +56,12 @@ def get_all_en_slugs():
     slugs = []
     for f in sorted(glob.glob('/home/kaliuser/worldtime/blog/*.html')):
         base = os.path.basename(f)
-        if re.search(r'-(ru|es|zh|ja|fr|de|uk)\.html$', base):
+        if re.search(r'-(ru|es|zh|ja|fr|de|uk|it)\.html$', base):
             continue
-        slugs.append(base.replace('.html', ''))
+        slug = base.replace('.html', '')
+        if slug in ('index', 'blog', 'blog-index'):  # skip index/list pages
+            continue
+        slugs.append(slug)
     return slugs
 
 def extract(slug):
@@ -94,28 +97,38 @@ if __name__ == '__main__':
         en = extract(slug)
         title = translate(en['title'], lang)
         if title is None:
-            print(f'  QUOTA on {slug} — stop. Re-run later to continue.'); break
+            print(f'  QUOTA on {slug} title — skipping to next post.'); continue
         h1 = translate(en['h1'], lang)
+        if h1 is None:
+            print(f'  QUOTA on {slug} h1 — skipping to next post.'); continue
         meta = translate(en['meta'], lang)
+        if meta is None:
+            print(f'  QUOTA on {slug} meta — skipping to next post.'); continue
         kw = translate(en['kw'], lang)
+        if kw is None:
+            print(f'  QUOTA on {slug} kw — skipping to next post.'); continue
         bc = translate(en['bc'], lang)
+        if bc is None:
+            print(f'  QUOTA on {slug} bc — skipping to next post.'); continue
         faq_tr = []
+        quota_on_faq = False
         for q, a in en['faqs']:
             qt = translate(q, lang); at = translate(a, lang)
             if qt is None or at is None:
-                print(f'  QUOTA on {slug} FAQ — stop.'); break
+                print(f'  QUOTA on {slug} FAQ — skipping to next post.')
+                quota_on_faq = True
+                break
             faq_tr.append((qt, at))
-        else:
-            faq_html = '<div class="faq-section">' + ''.join(
-                f'<div class="faq-item"><h3>{q}</h3><p>{a}</p></div>' for q,a in faq_tr) + '</div>'
-            localized_content = NOTICE[lang] + '\n' + en['content'] + '\n' + faq_html
-            make_i18n_post(
-                slug, lang, LANG_CODE[lang],
-                title=title, h1=h1, meta_desc=meta, keywords=kw,
-                breadcrumb=bc, display_date='July 16, 2026', read_time='6',
-                tags='time zones', content=localized_content, faq_list=[]
-            )
-            done += 1
+        if quota_on_faq:
             continue
-        break
+        faq_html = '<div class="faq-section">' + ''.join(
+            f'<div class="faq-item"><h3>{q}</h3><p>{a}</p></div>' for q,a in faq_tr) + '</div>'
+        localized_content = NOTICE[lang] + '\n' + en['content'] + '\n' + faq_html
+        make_i18n_post(
+            slug, lang, LANG_CODE[lang],
+            title=title, h1=h1, meta_desc=meta, keywords=kw,
+            breadcrumb=bc, display_date='July 16, 2026', read_time='6',
+            tags='time zones', content=localized_content, faq_list=[]
+        )
+        done += 1
     print(f'Finished/stopped. Translated {done} posts to {lang}. Cache saved.')

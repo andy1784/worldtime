@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="theme-color" content="#667eea">
+    <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk">
+    <title>Reglas de zona horaria para desarrolladores: una guía práctica</title>
+    <meta name="title" content="Reglas de zona horaria para desarrolladores: una guía práctica">
+    <meta name="description" content="Los errores de zona horaria se encuentran entre los más difíciles de detectar y los más caros de solucionar. Estas son las reglas que todo desarrollador debe seguir al manejar las zonas horarias.">
+    <meta name="keywords" content="programación de zona horaria, zonas horarias de desarrolladores, mejores prácticas de fecha y hora, almacenamiento UTC, errores de zona horaria">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="World Time Sync">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://worldtimessync.com/blog/time-zone-rules-for-developers-es.html">
+    <meta property="og:title" content="Reglas de zona horaria para desarrolladores: una guía práctica">
+    <meta property="og:description" content="Los errores de zona horaria se encuentran entre los más difíciles de detectar y los más caros de solucionar. Estas son las reglas que todo desarrollador debe seguir al manejar las zonas horarias.">
+    <meta property="og:image" content="https://worldtimessync.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Reglas de zona horaria para desarrolladores: una guía práctica">
+    <link rel="canonical" href="https://worldtimessync.com/blog/time-zone-rules-for-developers-es">
+    <link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/blog/time-zone-rules-for-developers">
+    <link rel="alternate" hreflang="en" href="https://worldtimessync.com/blog/time-zone-rules-for-developers">
+    <link rel="alternate" hreflang="es" href="https://worldtimessync.com/blog/time-zone-rules-for-developers-es">
+    <link rel="alternate" hreflang="fr" href="https://worldtimessync.com/blog/time-zone-rules-for-developers-fr">
+    <link rel="alternate" hreflang="ja" href="https://worldtimessync.com/blog/time-zone-rules-for-developers-ja">
+    <link rel="alternate" hreflang="ru" href="https://worldtimessync.com/blog/time-zone-rules-for-developers-ru">
+    <link rel="alternate" hreflang="zh" href="https://worldtimessync.com/blog/time-zone-rules-for-developers-zh">
+    <link rel="alternate" hreflang="ru" href="https://worldtimessync.com/ru/blog/time-zone-rules-for-developers">
+    <link rel="alternate" hreflang="es" href="https://worldtimessync.com/es/blog/time-zone-rules-for-developers">
+    <link rel="alternate" hreflang="zh" href="https://worldtimessync.com/zh/blog/time-zone-rules-for-developers">
+    <link rel="alternate" hreflang="ja" href="https://worldtimessync.com/ja/blog/time-zone-rules-for-developers">
+    <link rel="alternate" hreflang="fr" href="https://worldtimessync.com/fr/blog/time-zone-rules-for-developers">
+    <link rel="preload" href="/assets/blog.css" as="style">
+<noscript><link rel="stylesheet" href="/assets/blog.css"></noscript>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/assets/index-ufePLcBr.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LBX0CDYSSV');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Reglas de zona horaria para desarrolladores: una gu\u00eda pr\u00e1ctica", "description": "Los errores de zona horaria se encuentran entre los m\u00e1s dif\u00edciles de detectar y los m\u00e1s caros de solucionar. Estas son las reglas que todo desarrollador debe seguir al manejar las zonas horarias.", "author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}, "publisher": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}, "datePublished": "2026-07-08", "dateModified": "2026-07-08", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/blog/time-zone-rules-for-developers-es.html"}, "image": "https://worldtimessync.com/og-image.png"}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://worldtimessync.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://worldtimessync.com/#blog"}, {"@type": "ListItem", "position": 3, "name": "Reglas de zona horaria para desarrolladores", "item": "https://worldtimessync.com/blog/time-zone-rules-for-developers-es.html"}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": []}
+    </script>
+
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div id="root" role="application" aria-label="World Time Online Application">
+        <div class="app-loading" aria-busy="true" aria-live="polite">
+            <div class="app-loading-spinner" role="status" aria-label="Loading application"></div>
+            <p class="app-loading-text">Loading World Time...</p>
+        </div>
+    </div>
+    <main id="main-content">
+        <article class="blog-wrap">
+            <nav class="blog-breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Home</a> › <a href="/#blog">Blog</a> › <span aria-current="page">Reglas de zona horaria para desarrolladores</span>
+            </nav>
+            <h1>Reglas de zona horaria que todo desarrollador debe seguir</h1>
+            <div class="blog-meta">📅 July 16, 2026 &nbsp;·&nbsp; ⏱ 6 min read &nbsp;·&nbsp; 🏷 time zones</div>
+
+<p><em>El texto completo del artículo está disponible en inglés a continuación.</em></p>
+<div class="blog-meta">📅 June 29, 2026 &nbsp;·&nbsp; ⏱ 9 min read &nbsp;·&nbsp; 🏷 Development, Tutorial</div>
+
+<p>Time zone bugs are some of the nastiest in software. They appear only under specific conditions: DST transitions, international users, midnight boundaries, or date-line crossings. A feature that works perfectly for a year can break on a single day in March.</p>
+
+<h2>Rule 1: Store Everything in UTC</h2>
+
+<p>This is the cardinal rule, and yet production databases are full of local timestamps without zone information. Every time you store a timestamp without a time zone, you are creating a bug that will surface exactly once — when a user in a different time zone reads the data and gets the wrong answer.</p>
+
+<p>Store UTC. Always. Without exception. Convert to local time only at the last possible moment — when displaying to a user.</p>
+
+<h2>Rule 2: Never Trust the Client's Clock</h2>
+
+<p>The user's system clock is not authoritative. Users have wrong time zones set, dead batteries reset their clock to 2001, and JavaScript's Date object has been known to lie about DST transitions. If your application logic depends on "what time is it," ask your server, not the browser.</p>
+
+<p>For recurring scheduled events, store the user's intended local time <em>and</em> their time zone (as an IANA zone name, like "America/New_York", not "EST"). Store intent, compute result.</p>
+
+<h2>Rule 3: Use Proper Time Zone Libraries</h2>
+
+<p>Rolling your own time zone logic is one of the most common sources of production bugs. Use:</p>
+
+<ul>
+    <li><strong>Python:</strong> zoneinfo (stdlib since 3.9) or pytz 2024b+</li>
+    <li><strong>JavaScript/TypeScript:</strong> Temporal (stage 3, use polyfill) or date-fns-tz</li>
+    <li><strong>Java:</strong> java.time (Java 8+)</li>
+    <li><strong>C#/.NET:</strong> TimeZoneInfo with IANA mapping via Noda Time</li>
+    <li><strong>Go:</strong> time.LoadLocation from the standard library</li>
+    <li><strong>Databases:</strong> TIMESTAMPTZ in PostgreSQL, DATETIMEOFFSET in SQL Server</li>
+</ul>
+
+<p>Avoid abbreviations like "EST," "PST," "CST." They are ambiguous (CST can mean China Standard Time or Central Standard Time) and do not encode DST rules.</p>
+
+<h2>Rule 4: Test at Boundaries</h2>
+
+<p>Most time zone bugs appear at transitions: DST start, DST end, midnight, year boundaries, and the International Date Line. Test these explicitly:</p>
+
+<ul>
+    <li>The 23-hour DST "spring forward" day</li>
+    <li>The 25-hour DST "fall back" day (including the ambiguous hour)</li>
+    <li>Midnight in every target time zone</li>
+    <li>Date line crossings</li>
+    <li>Leap year February 29</li>
+</ul>
+
+<h2>Rule 5: Disambiguate the "Fall Back" Hour</h2>
+
+<p>When clocks roll back, there are two 1:30 AMs. Any scheduling system must disambiguate: "the first 1:30 AM" vs "the second 1:30 AM." Most systems fail silently here.</p>
+
+<p>Best practice: ask users to pick a future time in UTC, or to confirm which occurrence if the local time falls in an ambiguous window.</p>
+
+<h2>Real-World Examples of Time Zone Disasters</h2>
+
+<p><strong>Calendar apps showing wrong meeting times:</strong> The classic. User schedules a recurring meeting for 2 PM London time, but the app stores 2 PM UTC. Now it shows 3 PM (1 PM in winter). Fixes itself six months later when DST flips. Nobody trusts the app.</p>
+
+<p><strong>Booking systems charging the wrong day:</strong> A hotel charges per night. Guest books "March 15 to March 18." If the checkout time converts to March 17 at 11 PM UTC but renders as March 18 local time, that is a free night nobody intended.</p>
+
+<p><strong>Medical record timestamps:</strong> In healthcare, a timestamp without zone information can cause misdiagnosis. The doctor sees "medication given at 8 AM" — was that 8 AM in the hospital's time zone or the patient's home time zone?</p>
+
+<h2>FAQ</h2>
+
+<h3>Should I store time zone offsets or IANA zone names?</h3>
+<p>Store IANA zone names (e.g., "America/New_York"), not offsets (e.g., "-05:00"). Offsets change with DST; zone names encode the full rule history.</p>
+
+<h3>How do I handle user availability across DST?</h3>
+<p>Store "9 AM local time in America/New_York" — not the UTC equivalent. When DST changes, 9 AM local is automatically 13:00 or 14:00 UTC as appropriate.</p>
+
+<h3>What about time zones that change their rules mid-year?</h3>
+<p>Use a library that updates with the IANA timezone database releases. These happen several times a year. Subscribe to the tz-announce mailing list.</p>
+
+            <div class="blog-related">
+                <h3>You might also like</h3>
+                <ul>
+                    <li><a href="/blog/time-zone-converter-api-for-developers">Time Zone Converter API Guide</a></li>
+                    <li><a href="/blog/how-to-convert-time-zones">How to Convert Time Zones</a></li>
+                    <li><a href="/blog/how-to-schedule-meetings-across-time-zones">Schedule Meetings Across Time Zones</a></li>
+                </ul>
+            </div>
+            <div class="blog-footer">
+                <p>� <a href="/">World Time Sync</a> — Current local time for 700+ cities worldwide</p>
+            </div>
+<div class="faq-section"></div>
+
+        <footer class="blog-footer">
+            <a href="/privacy">Privacy</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+            <a href="/terms">Terms</a>
+            <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p>
+        </footer>
+    </main>
+
+    <script type="module" src="/assets/index-Dd7au40z.js" async></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var seo = document.querySelector('.blog-wrap');
+        if (seo) seo.style.display = 'none';
+      });
+    </script>
+    <script>
+      window.addEventListener('load',function(){
+        var ahrefs=document.createElement('script');
+        ahrefs.async=true;
+        ahrefs.src='https://analytics.ahrefs.com/analytics.js';
+        ahrefs.setAttribute('data-key','hB1VYWuwb1i/f1d8re7P2A');
+        document.head.appendChild(ahrefs);
+      });
+    </script>
+  </body>
+</html>
