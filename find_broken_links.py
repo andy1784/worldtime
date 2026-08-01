@@ -68,9 +68,14 @@ def main() -> int:
     checked = 0
     files_scanned = 0
 
+    # Pre-compiled regex to drop <script>...</script> blocks: runtime JS can
+    # build href strings (e.g. '<a href="/time/'+c+"'>") that look like broken
+    # links to a static resolver. Googlebot doesn't treat those as crawlable
+    # static anchors, so we exclude script bodies from link validation.
+    STRIP_SCRIPT = re.compile(r'<script\b[^>]*>.*?</script>', re.IGNORECASE | re.DOTALL)
     for f in sorted(ROOT.rglob('*.html')):
         files_scanned += 1
-        text = f.read_text(encoding='utf-8', errors='replace')
+        text = STRIP_SCRIPT.sub('', f.read_text(encoding='utf-8', errors='replace'))
         rel = str(f.relative_to(ROOT))
         for m in HREFS.finditer(text):
             url = m.group(1).strip()
