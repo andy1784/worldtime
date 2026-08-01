@@ -1,189 +1,180 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <meta name="theme-color" content="#667eea">
-    
-    <title>Earth Clock — Live Day & Night World Clock Animation | World Time Sync</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0" name="viewport"/>
+<meta content="#667eea" name="theme-color"/>
+<title>Earth Clock — Live Day &amp; Night World Clock Animation | World Time Sync</title>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"World Time Sync","url":"https://worldtimessync.com/","logo":"https://worldtimessync.com/favicon.svg","contactPoint":{"@type":"ContactPoint","contactType":"customer support","availableLanguage":"English"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"World Time Sync","url":"https://worldtimessync.com/","description":"Free online world clock showing current local time in 700+ cities worldwide","inLanguage":"en"}</script>
-
-<link rel="stylesheet" href="/assets/earth-clock.min.css">
-
-    <meta name="title" content="Earth Clock — Live Day & Night World Clock">
-    <meta name="description" content="Watch the world tick in real-time. See day and night sweep across the globe, cities lighting up, and discover what happens every 60 seconds on Earth.">
-    <meta name="robots" content="index, follow">
-    
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://worldtimessync.com/earth-clock">
-    <meta property="og:title" content="Earth Clock — Live Day & Night World Clock">
-    <meta property="og:description" content="Live day/night sweep across the globe. Cities lighting up as local time begins. Watch what happens every 60 seconds on Earth.">
-    <meta property="og:image" content="https://worldtimessync.com/og-earth.png">
-    <meta property="og:site_name" content="World Time Sync">
-    
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="This World Clock Will Blow Your Mind">
-    <meta name="twitter:description" content="Watch the world tick in real-time. Day and night sweep across the globe.">
-    
-    <link rel="canonical" href="https://worldtimessync.com/earth-clock">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <script type="application/ld+json">
+<link href="/assets/earth-clock.min.css" rel="stylesheet"/>
+<meta content="Earth Clock — Live Day &amp; Night World Clock" name="title"/>
+<meta content="Watch the world tick in real-time. See day and night sweep across the globe, cities lighting up, and discover what happens every 60 seconds on Earth." name="description"/>
+<meta content="index, follow" name="robots"/>
+<meta content="website" property="og:type"/>
+<meta content="https://worldtimessync.com/earth-clock" property="og:url"/>
+<meta content="Earth Clock — Live Day &amp; Night World Clock" property="og:title"/>
+<meta content="Live day/night sweep across the globe. Cities lighting up as local time begins. Watch what happens every 60 seconds on Earth." property="og:description"/>
+<meta content="https://worldtimessync.com/og-earth.png" property="og:image"/>
+<meta content="World Time Sync" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="This World Clock Will Blow Your Mind" name="twitter:title"/>
+<meta content="Watch the world tick in real-time. Day and night sweep across the globe." name="twitter:description"/>
+<link href="https://worldtimessync.com/earth-clock" rel="canonical"/>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<script type="application/ld+json">
     {"@context": "https://schema.org", "@type": "WebApplication", "name": "World Clock", "url": "https://worldtimessync.com/earth-clock.html", "description": "Interactive world clock showing current time across all time zones", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any"}
     </script>
-    <script type="application/ld+json">
+<script type="application/ld+json">
     {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://worldtimessync.com/"}, {"@type": "ListItem", "position": 2, "name": "World Clock", "item": "https://worldtimessync.com/earth-clock.html"}]}
     </script>
-    <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk" />
-
-    <!-- Preconnect to external resources -->
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
-    <link rel="dns-prefetch" href="https://cdn.vercel-insights.com">
-  
-</head>
+<meta content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk" name="google-site-verification">
+<!-- Preconnect to external resources -->
+<link href="https://www.googletagmanager.com" rel="preconnect"/>
+<link href="https://pagead2.googlesyndication.com" rel="preconnect"/>
+<link href="https://www.googletagmanager.com" rel="dns-prefetch"/>
+<link href="https://pagead2.googlesyndication.com" rel="dns-prefetch"/>
+<link href="https://cdn.vercel-insights.com" rel="dns-prefetch"/>
+</meta></head>
 <body>
-    <!-- Hero -->
-    <section class="hero" id="hero">
-        <div class="hero-bg"></div>
-        <div class="stars" id="stars"></div>
-        <div class="hero-content">
-            <div class="hero-label" id="heroLabel">A World Time Experience</div>
-            <h1 id="heroTitle">Watch the World<br><span class="gradient">Tick in Real-Time</span></h1>
-            <p id="heroText">Every second, the sun rises somewhere and sets somewhere else. 7.8 billion people living in 24 time zones. This is Earth's clock.</p>
-        </div>
-        <div class="scroll-hint" id="scrollHint">
-            <div class="mouse"></div>
-            <span>Scroll to explore</span>
-        </div>
-    </section>
-    
-    <!-- Earth Section -->
-    <section class="earth-section" id="earthSection">
-        <div class="earth-container" id="earthContainer">
-            <div class="earth-glow"></div>
-            <div class="earth" id="earth">
-                <div class="earth-surface"></div>
-                <div class="earth-grid"></div>
-                <div class="earth-rotator" id="earthRotator"></div>
-                <div class="day-night-line" id="dayNightLine"></div>
-            </div>
-            <div class="sun" id="sun"></div>
-        </div>
-        <div class="time-label" id="earthTimeLabel">
+<!-- Hero -->
+<section class="hero" id="hero">
+<div class="hero-bg"></div>
+<div class="stars" id="stars"></div>
+<div class="hero-content">
+<div class="hero-label" id="heroLabel">A World Time Experience</div>
+<h1 id="heroTitle">Watch the World<br/><span class="gradient">Tick in Real-Time</span></h1>
+<p id="heroText">Every second, the sun rises somewhere and sets somewhere else. 7.8 billion people living in 24 time zones. This is Earth's clock.</p>
+</div>
+<div class="scroll-hint" id="scrollHint">
+<div class="mouse"></div>
+<span>Scroll to explore</span>
+</div>
+</section>
+<!-- Earth Section -->
+<section class="earth-section" id="earthSection">
+<div class="earth-container" id="earthContainer">
+<div class="earth-glow"></div>
+<div class="earth" id="earth">
+<div class="earth-surface"></div>
+<div class="earth-grid"></div>
+<div class="earth-rotator" id="earthRotator"></div>
+<div class="day-night-line" id="dayNightLine"></div>
+</div>
+<div class="sun" id="sun"></div>
+</div>
+<div class="time-label" id="earthTimeLabel">
             Current Universal Time
             <div class="utc" id="utcTime">--:--:-- UTC</div>
-        </div>
-    </section>
-    
-    <!-- Stats Section -->
-    <section class="stats-section">
-        <h2 class="section-title fade-up">What Happens Every 60 Seconds</h2>
-        <div class="stats-grid">
-            <div class="stat-card fade-up">
-                <div class="icon">&#128101;</div>
-                <div class="number counter" data-target="43">0</div>
-                <div class="label">People are born every minute</div>
-            </div>
-            <div class="stat-card fade-up">
-                <div class="icon">&#127752;</div>
-                <div class="number counter" data-target="1440">0</div>
-                <div class="label">New websites created every minute</div>
-            </div>
-            <div class="stat-card fade-up">
-                <div class="icon">&#9200;</div>
-                <div class="number"><span class="counter" data-target="1440">0</span>x</div>
-                <div class="label">Time zones exist on Earth</div>
-            </div>
-            <div class="stat-card fade-up">
-                <div class="icon">&#127760;</div>
-                <div class="number">682</div>
-                <div class="label">Cities we track worldwide</div>
-            </div>
-            <div class="stat-card fade-up">
-                <div class="icon">&#128267;</div>
-                <div class="number">24</div>
-                <div class="label">Time zones across the globe</div>
-            </div>
-            <div class="stat-card fade-up">
-                <div class="icon">&#9728;</div>
-                <div class="number">1</div>
-                <div class="label">Planet we all share</div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Cities Ticker -->
-    <section class="ticker-section">
-        <h2 class="ticker-title">Live Around the World</h2>
-        <div class="ticker-wrap">
-            <div class="ticker" id="ticker"></div>
-        </div>
-    </section>
-    
-    <!-- Share Section -->
-    <section class="share-section">
-        <h2 class="share-title fade-up">Share This Experience</h2>
-        <p class="share-subtitle fade-up">If this blew your mind, share it with someone in another time zone</p>
-        <div class="share-buttons fade-up">
-            <a class="share-btn twitter" id="shareTwitter" target="_blank" rel="noopener">
-                &#120146; Twitter
+</div>
+</section>
+<!-- Stats Section -->
+<section class="stats-section">
+<h2 class="section-title fade-up">What Happens Every 60 Seconds</h2>
+<div class="stats-grid">
+<div class="stat-card fade-up">
+<div class="icon">👥</div>
+<div class="number counter" data-target="43">0</div>
+<div class="label">People are born every minute</div>
+</div>
+<div class="stat-card fade-up">
+<div class="icon">🌈</div>
+<div class="number counter" data-target="1440">0</div>
+<div class="label">New websites created every minute</div>
+</div>
+<div class="stat-card fade-up">
+<div class="icon">⏰</div>
+<div class="number"><span class="counter" data-target="1440">0</span>x</div>
+<div class="label">Time zones exist on Earth</div>
+</div>
+<div class="stat-card fade-up">
+<div class="icon">🌐</div>
+<div class="number">682</div>
+<div class="label">Cities we track worldwide</div>
+</div>
+<div class="stat-card fade-up">
+<div class="icon">🔋</div>
+<div class="number">24</div>
+<div class="label">Time zones across the globe</div>
+</div>
+<div class="stat-card fade-up">
+<div class="icon">☀</div>
+<div class="number">1</div>
+<div class="label">Planet we all share</div>
+</div>
+</div>
+</section>
+<!-- Cities Ticker -->
+<section class="ticker-section">
+<h2 class="ticker-title">Live Around the World</h2>
+<div class="ticker-wrap">
+<div class="ticker" id="ticker"></div>
+</div>
+</section>
+<!-- Share Section -->
+<section class="share-section">
+<h2 class="share-title fade-up">Share This Experience</h2>
+<p class="share-subtitle fade-up">If this blew your mind, share it with someone in another time zone</p>
+<div class="share-buttons fade-up">
+<a class="share-btn twitter" id="shareTwitter" rel="noopener" target="_blank">
+                𝕒 Twitter
             </a>
-            <a class="share-btn facebook" id="shareFacebook" target="_blank" rel="noopener">
-                &#62001; Facebook
+<a class="share-btn facebook" id="shareFacebook" rel="noopener" target="_blank">
+                 Facebook
             </a>
-            <a class="share-btn linkedin" id="shareLinkedin" target="_blank" rel="noopener">
-                &#62217; LinkedIn
+<a class="share-btn linkedin" id="shareLinkedin" rel="noopener" target="_blank">
+                 LinkedIn
             </a>
-            <button class="share-btn copy" id="shareCopy">
-                &#128203; Copy Link
+<button class="share-btn copy" id="shareCopy">
+                📋 Copy Link
             </button>
-        </div>
-    </section>
-    
-    <!-- Tools CTA -->
-    <section class="tools-cta">
-        <h2 class="tools-title fade-up">Explore More Tools</h2>
-        <div class="tools-grid">
-            <a href="/meeting-planner" class="tool-card fade-up">
-                <div class="icon">&#9200;</div>
-                <div class="info">
-                    <h3>Meeting Planner</h3>
-                    <p>Find the best time across time zones for your global team</p>
-                </div>
-            </a>
-            <a href="/widget" class="tool-card fade-up">
-                <div class="icon">&#128267;</div>
-                <div class="info">
-                    <h3>World Clock Widget</h3>
-                    <p>Add a free clock to your website with one line of code</p>
-                </div>
-            </a>
-            <a href="/time/" class="tool-card fade-up">
-                <div class="icon">&#127760;</div>
-                <div class="info">
-                    <h3>City Time Pages</h3>
-                    <p>Check current time in 682 cities worldwide</p>
-                </div>
-            </a>
-            <a href="/" class="tool-card fade-up">
-                <div class="icon">&#128197;</div>
-                <div class="info">
-                    <h3>World Clock & Converter</h3>
-                    <p>Full world clock with timezone converter</p>
-                </div>
-            </a>
-        </div>
-    </section>
-    
-    <footer class="viral-footer">
-        <p>World Time Sync &mdash; Free tools for global teams</p>
-        <p style="margin-top:8px;"><a href="/">Home</a><a href="/time/">City Pages</a><a href="/meeting-planner">Meeting Planner</a><a href="/widget">Widget</a><a href="/about">About</a></p>
-    </footer>
-    
-    <script>
+</div>
+</section>
+<!-- Tools CTA -->
+<section class="tools-cta">
+<h2 class="tools-title fade-up">Explore More Tools</h2>
+<div class="tools-grid">
+<a class="tool-card fade-up" href="/meeting-planner">
+<div class="icon">⏰</div>
+<div class="info">
+<h3>Meeting Planner</h3>
+<p>Find the best time across time zones for your global team</p>
+</div>
+</a>
+<a class="tool-card fade-up" href="/widget">
+<div class="icon">🔋</div>
+<div class="info">
+<h3>World Clock Widget</h3>
+<p>Add a free clock to your website with one line of code</p>
+</div>
+</a>
+<a class="tool-card fade-up" href="/time/">
+<div class="icon">🌐</div>
+<div class="info">
+<h3>City Time Pages</h3>
+<p>Check current time in 682 cities worldwide</p>
+</div>
+</a>
+<a class="tool-card fade-up" href="/">
+<div class="icon">📅</div>
+<div class="info">
+<h3>World Clock &amp; Converter</h3>
+<p>Full world clock with timezone converter</p>
+</div>
+</a>
+</div>
+</section>
+
+<aside class="related-articles" style="margin:24px 0;padding:16px;border:1px solid #333;border-radius:8px">
+<h3 style="margin:0 0 8px;font-size:1rem;color:#fff">Related articles</h3>
+<ul style="margin:0;padding:0;font-size:.875rem"><li><a href="/blog/every-second" style="display:inline-block;min-height:44px;min-width:44px;padding:8px 6px;line-height:1.2">Every second on Earth</a></li> <li><a href="/blog/sunrise-sunset-times-explained" style="display:inline-block;min-height:44px;min-width:44px;padding:8px 6px;line-height:1.2">Sunrise &amp; sunset times</a></li> <li><a href="/blog/when-and-why-time-zones-were-invented" style="display:inline-block;min-height:44px;min-width:44px;padding:8px 6px;line-height:1.2">Why time zones were invented</a></li> <li><a href="/blog/time-zones-in-space-iss-mars" style="display:inline-block;min-height:44px;min-width:44px;padding:8px 6px;line-height:1.2">Time zones in space</a></li>
+</ul>
+</aside><footer class="viral-footer">
+<p>World Time Sync — Free tools for global teams</p>
+<p style="margin-top:8px;"><a href="/">Home</a><a href="/time/">City Pages</a><a href="/meeting-planner">Meeting Planner</a><a href="/widget">Widget</a><a href="/about">About</a></p>
+</footer>
+<script>
     (function() {
         // ===== STARS =====
         const starsEl = document.getElementById('stars');
@@ -398,9 +389,8 @@
         });
     })();
     </script>
-
-    <!-- Deferred analytics (loaded after page is interactive) -->
-    <script>
+<!-- Deferred analytics (loaded after page is interactive) -->
+<script>
     window.addEventListener('load',function(){
         var ahrefs=document.createElement('script');ahrefs.async=true;ahrefs.src='https://analytics.ahrefs.com/analytics.js';ahrefs.setAttribute('data-key','hB1VYWuwb1i/f1d8re7P2A');document.head.appendChild(ahrefs);
       var ga=document.createElement('script');ga.async=true;ga.src='https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV';document.head.appendChild(ga);
@@ -409,5 +399,5 @@
       var vi=document.createElement('script');vi.defer=true;vi.src='https://cdn.vercel-insights.com/v1/script.js';document.head.appendChild(vi);
     });
     </script>
-  </body>
+</body>
 </html>

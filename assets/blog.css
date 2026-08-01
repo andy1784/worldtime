@@ -37,3 +37,5 @@
 .faq-item:last-child{border-bottom:none}
 .faq-item h3{color:#e8e8e8;margin-bottom:8px;font-size:1.1rem}
 .faq-item p{color:#b0b0b0}
+.skip-link{min-height:44px!important;min-width:44px!important;padding:10px 16px!important;display:inline-block!important;line-height:1.2!important}
+.blog-breadcrumb a,.breadcrumb a{display:inline-block;min-height:44px;min-width:44px;padding:8px 4px;line-height:1.2}
