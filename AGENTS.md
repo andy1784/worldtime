@@ -1,5 +1,31 @@
 # Project notes / TODOs
 
+## Recent work log (2026-08-03)
+- Fixed empty UTC-offset fields on 6,181 city pages (all 9 langs): replaced
+  `<strong></strong>` / empty `<li>UTC offset:</li>` / empty `.time-details`
+  `<span>` with correct labels computed from IANA tz (e.g. `EST (UTC-5) / EDT
+  (UTC-4)`, `+0545 (UTC+5:45)`). `zoneinfo`-verified 0 bad tz names, 0 empty
+  tags remaining. Script: `/tmp/opencode/fix_utc_labels.py`.
+- Renamed 21 garbled city slugs (files renamed × 9 langs = 189; e.g.
+  `asunci-n`→`asuncion`, `s-o-paulo`→`sao-paulo`, `xi-an`→`xian`,
+  `yaound`→`yaounde`, `st-john-s`→`st-johns`) and fixed the garbled display
+  names everywhere (e.g. "Asunci N"→"Asunción", "Krak W"→"Kraków", "S O
+  Paulo"→"São Paulo") across all HTML + sitemap.xml. Added 42 × 301 redirect
+  rules (EN + 8 langs) in `vercel.json` before the `/time/(.*)` catch-all so
+  old URLs still resolve.
+- Added missing `twitter:url/description/image/creator` meta to 7,599 pages
+  that had og: tags (city, blog, country, time-zones, tools). All `og:url`
+  pages now have matching twitter tags; 0 duplicates.
+- Homepage `index.html`: removed the invalid 3-item BreadcrumbList JSON-LD
+  (all items pointed to `/`); removed duplicate "Urumqi, China (CST)" entry in
+  the noscript city list.
+- Fixed 6 files where `/country/turks-and-caicos-islands` anchor text said
+  "United States" → now "Turks and Caicos Islands".
+- Normalized lang-bar nav links `<a href="/es/">` → `/es` across 5,642 files
+  to match cleanUrls + trailingSlash:false (removes 308 redirect hop on nav).
+- `robots.txt`: AhrefsBot/SemrushBot crawl-delay 10 → 1 + `Allow: /` (site
+  uses Ahrefs analytics; these are SEO tool crawlers, not bad bots).
+
 ## Known limitations (require source; not in this repo)
 
 The production JS bundle (`assets/index-Dd7au40z.js`, 442 KB minified) and CSS
