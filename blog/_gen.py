@@ -55,7 +55,7 @@ def make_post(filename, title, meta_desc, keywords, breadcrumb, read_time, tags,
         f.write('<html lang="en">\n')
         f.write('<head>\n')
         f.write('    <meta charset="UTF-8">\n')
-        f.write('    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">\n')
+        f.write('    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">\n')
         f.write('    <meta name="theme-color" content="#667eea">\n')
         f.write('    <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk">\n')
         f.write(f'    <title>{title}</title>\n')

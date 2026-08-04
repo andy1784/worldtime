@@ -6,6 +6,13 @@
   "trailingSlash": false,
   "routes": [
     {
+      "src": "/(es|zh|ru|it|de|ja|fr|uk)/blog/(.+)\\.html$",
+      "status": 301,
+      "headers": {
+        "Location": "/blog/$2-$1"
+      }
+    },
+    {
       "src": "/(.*\\.(py|sh))$",
       "status": 404
     },
@@ -55,12 +62,303 @@
     {
       "src": "/(es|zh|ru|it|de|ja|fr|uk)/blog/([^/]+)$",
       "status": 301,
-      "headers": { "Location": "/blog/$2-$1" }
+      "headers": {
+        "Location": "/blog/$2-$1"
+      }
     },
     {
-      "src": "/(es|zh|ru|it|de|ja|fr|uk)/blog/([^/]+)\\.html$",
+      "src": "/time/asunci-n$",
       "status": 301,
-      "headers": { "Location": "/blog/$2-$1" }
+      "headers": {
+        "Location": "/time/asuncion"
+      }
+    },
+    {
+      "src": "/(es|zh|ru|it|de|ja|fr|uk)/time/asunci-n$",
+      "status": 301,
+      "headers": {
+        "Location": "/$1/time/asuncion"
+      }
+    },
+    {
+      "src": "/time/concepci-n$",
+      "status": 301,
+      "headers": {
+        "Location": "/time/concepcion"
+      }
+    },
+    {
+      "src": "/(es|zh|ru|it|de|ja|fr|uk)/time/concepci-n$",
+      "status": 301,
+      "headers": {
+        "Location": "/$1/time/concepcion"
+      }
+    },
+    {
+      "src": "/time/encarnaci-n$",
+      "status": 301,
+      "headers": {
+        "Location": "/time/encarnacion"
+      }
+    },
+    {
+      "src": "/(es|zh|ru|it|de|ja|fr|uk)/time/encarnaci-n$",
+      "status": 301,
+      "headers": {
+        "Location": "/$1/time/encarnacion"
+      }
+    },
+    {
+      "src": "/time/hag-t-a$",
+      "status": 301,
+      "headers": {
+        "Location": "/time/hagatna"
+      }
+    },
+    {
+      "src": "/(es|zh|ru|it|de|ja|fr|uk)/time/hag-t-a$",
+      "status": 301,
+      "headers": {
+        "Location": "/$1/time/hagatna"
+      }
+    },
+    {
+      "src": "/time/ia-i$",
+      "status": 301,
+      "headers": {
+        "Location": "/time/iasi"
+      }
+    },
+    {
+      "src": "/(es|zh|ru|it|de|ja|fr|uk)/time/ia-i$",
+      "status": 301,
+      "headers": {
+        "Location": "/$1/time/iasi"
+      }
+    },
+    {
+      "src": "/time/jo-o-pessoa$",
+      "status": 301,
+      "headers": {
+        "Location": "/time/joao-pessoa"
+      }
+    },
+    {
+      "src": "/(es|zh|ru|it|de|ja|fr|uk)/time/jo-o-pessoa$",
+      "status": 301,
+      "headers": {
+        "Location": "/$1/time/joao-pessoa"
+      }
+    },
+    {
+      "src": "/time/krak-w$",
+      "status": 301,
+      "headers": {
+        "Location": "/time/krakow"
+      }
+    },
+    {
+      "src": "/(es|zh|ru|it|de|ja|fr|uk)/time/krak-w$",
+      "status": 301,
+      "headers": {
+        "Location": "/$1/time/krakow"
+      }
+    },
+    {
+      "src": "/time/matur-n$",
+      "status": 301,
+      "headers": {
+        "Location": "/time/maturin"
+      }
+    },
+    {
+      "src": "/(es|zh|ru|it|de|ja|fr|uk)/time/matur-n$",
+      "status": 301,
+      "headers": {
+        "Location": "/$1/time/maturin"
+      }
+    },
+    {
+      "src": "/time/mazatl-n$",
+      "status": 301,
+      "headers": {
+        "Location": "/time/mazatlan"
+      }
+    },
+    {
+      "src": "/(es|zh|ru|it|de|ja|fr|uk)/time/mazatl-n$",
+      "status": 301,
+      "headers": {
+        "Location": "/$1/time/mazatlan"
+      }
+    },
+    {
+      "src": "/time/medell-n$",
+      "status": 301,
+      "headers": {
+        "Location": "/time/medellin"
+      }
+    },
+    {
+      "src": "/(es|zh|ru|it|de|ja|fr|uk)/time/medell-n$",
+      "status": 301,
+      "headers": {
+        "Location": "/$1/time/medellin"
+      }
+    },
+    {
+      "src": "/time/noum-a$",
+      "status": 301,
+      "headers": {
+        "Location": "/time/noumea"
+      }
+    },
+    {
+      "src": "/(es|zh|ru|it|de|ja|fr|uk)/time/noum-a$",
+      "status": 301,
+      "headers": {
+        "Location": "/$1/time/noumea"
+      }
+    },
+    {
+      "src": "/time/reykjav-k$",
+      "status": 301,
+      "headers": {
+        "Location": "/time/reykjavik"
+      }
+    },
+    {
+      "src": "/(es|zh|ru|it|de|ja|fr|uk)/time/reykjav-k$",
+      "status": 301,
+      "headers": {
+        "Location": "/$1/time/reykjavik"
+      }
+    },
+    {
+      "src": "/time/s-o-lu-s$",
+      "status": 301,
+      "headers": {
+        "Location": "/time/sao-luis"
+      }
+    },
+    {
+      "src": "/(es|zh|ru|it|de|ja|fr|uk)/time/s-o-lu-s$",
+      "status": 301,
+      "headers": {
+        "Location": "/$1/time/sao-luis"
+      }
+    },
+    {
+      "src": "/time/s-o-paulo$",
+      "status": 301,
+      "headers": {
+        "Location": "/time/sao-paulo"
+      }
+    },
+    {
+      "src": "/(es|zh|ru|it|de|ja|fr|uk)/time/s-o-paulo$",
+      "status": 301,
+      "headers": {
+        "Location": "/$1/time/sao-paulo"
+      }
+    },
+    {
+      "src": "/time/s-o-tom$",
+      "status": 301,
+      "headers": {
+        "Location": "/time/sao-tome"
+      }
+    },
+    {
+      "src": "/(es|zh|ru|it|de|ja|fr|uk)/time/s-o-tom$",
+      "status": 301,
+      "headers": {
+        "Location": "/$1/time/sao-tome"
+      }
+    },
+    {
+      "src": "/time/st-john-s$",
+      "status": 301,
+      "headers": {
+        "Location": "/time/st-johns"
+      }
+    },
+    {
+      "src": "/(es|zh|ru|it|de|ja|fr|uk)/time/st-john-s$",
+      "status": 301,
+      "headers": {
+        "Location": "/$1/time/st-johns"
+      }
+    },
+    {
+      "src": "/time/vit-ria$",
+      "status": 301,
+      "headers": {
+        "Location": "/time/vitoria"
+      }
+    },
+    {
+      "src": "/(es|zh|ru|it|de|ja|fr|uk)/time/vit-ria$",
+      "status": 301,
+      "headers": {
+        "Location": "/$1/time/vitoria"
+      }
+    },
+    {
+      "src": "/time/wroc-aw$",
+      "status": 301,
+      "headers": {
+        "Location": "/time/wroclaw"
+      }
+    },
+    {
+      "src": "/(es|zh|ru|it|de|ja|fr|uk)/time/wroc-aw$",
+      "status": 301,
+      "headers": {
+        "Location": "/$1/time/wroclaw"
+      }
+    },
+    {
+      "src": "/time/valpara-so$",
+      "status": 301,
+      "headers": {
+        "Location": "/time/valparaiso"
+      }
+    },
+    {
+      "src": "/(es|zh|ru|it|de|ja|fr|uk)/time/valpara-so$",
+      "status": 301,
+      "headers": {
+        "Location": "/$1/time/valparaiso"
+      }
+    },
+    {
+      "src": "/time/xi-an$",
+      "status": 301,
+      "headers": {
+        "Location": "/time/xian"
+      }
+    },
+    {
+      "src": "/(es|zh|ru|it|de|ja|fr|uk)/time/xi-an$",
+      "status": 301,
+      "headers": {
+        "Location": "/$1/time/xian"
+      }
+    },
+    {
+      "src": "/time/yaound$",
+      "status": 301,
+      "headers": {
+        "Location": "/time/yaounde"
+      }
+    },
+    {
+      "src": "/(es|zh|ru|it|de|ja|fr|uk)/time/yaound$",
+      "status": 301,
+      "headers": {
+        "Location": "/$1/time/yaounde"
+      }
     },
     {
       "src": "/time/(.*)",

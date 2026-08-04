@@ -1,29 +1,31 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="theme-color" content="#667eea">
-    
-    <title>Every Second on Earth — Fascinating World Time Facts | World Time Sync</title>
-    <meta name="title" content="Every Second on Earth — Fascinating World Time Facts">
-    <meta name="description" content="What happens every second on Earth? Watch time zones shift, cities light up, and discover mind-blowing facts about world time. Share this!">
-    <meta name="keywords" content="world time facts, time zone facts, earth clock, every second, world clock facts, time trivia">
-    <meta name="robots" content="index, follow">
-    
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://worldtimessync.com/every-second">
-    <meta property="og:title" content="Every Second on Earth — Fascinating World Time Facts">
-    <meta property="og:description" content="What happens every second on Earth? Watch time zones shift and cities light up.">
-    <meta property="og:image" content="https://worldtimessync.com/og-image.png">
-    
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Every Second on Earth — World Time Facts">
-    
-    <link rel="canonical" href="https://worldtimessync.com/every-second">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    
-    <script type="application/ld+json">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0" name="viewport"/>
+<meta content="#667eea" name="theme-color"/>
+<title>Every Second on Earth — World Time Animation &amp; Facts | World Time Sync</title>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"World Time Sync","url":"https://worldtimessync.com/","logo":"https://worldtimessync.com/favicon.svg","contactPoint":{"@type":"ContactPoint","contactType":"customer support","availableLanguage":"English"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"World Time Sync","url":"https://worldtimessync.com/","description":"Free online world clock showing current local time in 700+ cities worldwide","inLanguage":"en"}</script>
+<meta content="Every Second on Earth — World Time Animation" name="title"/>
+<meta content="See what happens every second on Earth: time zones shifting, cities lighting up, and fascinating facts about world time. Watch the 60-second animation." name="description"/>
+<meta content="world time facts, earth clock animation, every second, time zone facts, world clock" name="keywords"/>
+<meta content="index, follow" name="robots"/>
+<meta content="website" property="og:type"/>
+<meta content="https://worldtimessync.com/every-second" property="og:url"/>
+<meta content="Every Second on Earth — World Time Animation" property="og:title"/>
+<meta content="Watch time zones shift every second. Cities light up as local time changes. Mesmerizing 60-second animation of Earth's clocks." property="og:description"/>
+<meta content="https://worldtimessync.com/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Every Second on Earth — World Time Facts" name="twitter:title"/>
+    <meta name="twitter:url" content="https://worldtimessync.com/every-second">
+    <meta name="twitter:description" content="Watch time zones shift every second. Cities light up as local time changes. Mesmerizing 60-second animation of Earth's clocks.">
+    <meta name="twitter:image" content="https://worldtimessync.com/og-image.png">
+    <meta name="twitter:creator" content="@worldtimesync">
+<link href="https://worldtimessync.com/every-second" rel="canonical"/>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
@@ -32,7 +34,7 @@
       "url": "https://worldtimessync.com/every-second.html"
     }
     </script>
-    <script type="application/ld+json">
+<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
@@ -42,8 +44,7 @@
       ]
     }
     </script>
-    
-    <style>
+<style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
@@ -327,111 +328,101 @@
             .facts-grid { grid-template-columns: 1fr; }
         }
     </style>
-
 </head>
 <body>
-    <div class="stars" id="stars"></div>
-    
-    <div class="container">
-        <header class="hero">
-            <h1>Every Second on Earth</h1>
-            <p>What happens around the world right now</p>
-        </header>
-        
-        <!-- Live counter -->
-        <div class="counter-section">
-            <div class="counter-label">Seconds since you opened this page</div>
-            <div class="counter" id="counter">0</div>
-            <div class="counter-sub">In that time, the Earth has rotated ~0.46 km at the equator</div>
-        </div>
-        
-        <!-- Facts grid -->
-        <div class="facts-grid">
-            <div class="fact-card">
-                <div class="fact-icon">🌍</div>
-                <div class="fact-number" id="fact-tz">38</div>
-                <div class="fact-label">Active time zones right now</div>
-            </div>
-            <div class="fact-card">
-                <div class="fact-icon">🏙️</div>
-                <div class="fact-number">682</div>
-                <div class="fact-label">Cities tracked on World Time Sync</div>
-            </div>
-            <div class="fact-card">
-                <div class="fact-icon">☀️</div>
-                <div class="fact-number" id="fact-day">--</div>
-                <div class="fact-label">Cities currently in daylight</div>
-            </div>
-            <div class="fact-card">
-                <div class="fact-icon">🌙</div>
-                <div class="fact-number" id="fact-night">--</div>
-                <div class="fact-label">Cities currently at night</div>
-            </div>
-        </div>
-        
-        <!-- World timeline -->
-        <div class="timeline-section">
-            <h2 class="section-title">🌐 Right Now Around the World</h2>
-            <div class="timeline" id="timeline">
-                <!-- Populated by JS -->
-            </div>
-        </div>
-        
-        <!-- Fun facts -->
-        <div class="fun-facts">
-            <h2 class="section-title">🤯 Mind-Blowing Time Facts</h2>
-            
-            <div class="fun-fact">
-                <h3>The sun never sets on the British Empire... or does it?</h3>
-                <p>At its peak, the British Empire spanned all 24 time zones. Today, France holds the record with 12 time zones thanks to overseas territories.</p>
-            </div>
-            
-            <div class="fun-fact">
-                <h3>China has one time zone (and it's weird)</h3>
-                <p>Geographically spanning 5 time zones, China uses only one: Beijing Time (UTC+8). In western Xinjiang, the sun doesn't rise until 10 AM in winter.</p>
-            </div>
-            
-            <div class="fun-fact">
-                <h3>Nepal is 45 minutes off</h3>
-                <p>Nepal uses UTC+5:45 — the only country with a 45-minute offset. It was chosen to assert independence from India's UTC+5:30.</p>
-            </div>
-            
-            <div class="fun-fact">
-                <h3>The Date Line is crooked</h3>
-                <p>The International Date Line zigzags around Kiribati and Samoa. In 2011, Samoa skipped an entire day to move to the other side.</p>
-            </div>
-            
-            <div class="fun-fact">
-                <h3>Spain lives in the wrong time zone</h3>
-                <p>Spain should be in GMT (like Portugal), but Franco moved it to CET in 1940 to align with Germany. Spaniards eat dinner at 10 PM because of this.</p>
-            </div>
-            
-            <div class="fun-fact">
-                <h3>UTC is a compromise</h3>
-                <p>English speakers wanted "CUT", French wanted "TUC". UTC satisfies neither — which is exactly why it was chosen.</p>
-            </div>
-        </div>
-        
-        <!-- Share -->
-        <div class="share-section">
-            <h2>Share these facts</h2>
-            <p>Mind-blowing time zone facts your friends don't know</p>
-            <a class="share-btn" href="https://twitter.com/intent/tweet?text=Mind-blowing%20facts%20about%20time%20zones%20around%20the%20world%20🌍⏰&url=https://worldtimessync.com/every-second.html" target="_blank" rel="noopener">
+<div class="stars" id="stars"></div>
+<div class="container">
+<header class="hero">
+<h1>Every Second on Earth</h1>
+<p>What happens around the world right now</p>
+</header>
+<!-- Live counter -->
+<div class="counter-section">
+<div class="counter-label">Seconds since you opened this page</div>
+<div class="counter" id="counter">0</div>
+<div class="counter-sub">In that time, the Earth has rotated ~0.46 km at the equator</div>
+</div>
+<!-- Facts grid -->
+<div class="facts-grid">
+<div class="fact-card">
+<div class="fact-icon">🌍</div>
+<div class="fact-number" id="fact-tz">38</div>
+<div class="fact-label">Active time zones right now</div>
+</div>
+<div class="fact-card">
+<div class="fact-icon">🏙️</div>
+<div class="fact-number">682</div>
+<div class="fact-label">Cities tracked on World Time Sync</div>
+</div>
+<div class="fact-card">
+<div class="fact-icon">☀️</div>
+<div class="fact-number" id="fact-day">--</div>
+<div class="fact-label">Cities currently in daylight</div>
+</div>
+<div class="fact-card">
+<div class="fact-icon">🌙</div>
+<div class="fact-number" id="fact-night">--</div>
+<div class="fact-label">Cities currently at night</div>
+</div>
+</div>
+<!-- World timeline -->
+<div class="timeline-section">
+<h2 class="section-title">🌐 Right Now Around the World</h2>
+<div class="timeline" id="timeline">
+<!-- Populated by JS -->
+</div>
+</div>
+<!-- Fun facts -->
+<div class="fun-facts">
+<h2 class="section-title">🤯 Mind-Blowing Time Facts</h2>
+<div class="fun-fact">
+<h3>The sun never sets on the British Empire... or does it?</h3>
+<p>At its peak, the British Empire spanned all 24 time zones. Today, France holds the record with 12 time zones thanks to overseas territories.</p>
+</div>
+<div class="fun-fact">
+<h3>China has one time zone (and it's weird)</h3>
+<p>Geographically spanning 5 time zones, China uses only one: Beijing Time (UTC+8). In western Xinjiang, the sun doesn't rise until 10 AM in winter.</p>
+</div>
+<div class="fun-fact">
+<h3>Nepal is 45 minutes off</h3>
+<p>Nepal uses UTC+5:45 — the only country with a 45-minute offset. It was chosen to assert independence from India's UTC+5:30.</p>
+</div>
+<div class="fun-fact">
+<h3>The Date Line is crooked</h3>
+<p>The International Date Line zigzags around Kiribati and Samoa. In 2011, Samoa skipped an entire day to move to the other side.</p>
+</div>
+<div class="fun-fact">
+<h3>Spain lives in the wrong time zone</h3>
+<p>Spain should be in GMT (like Portugal), but Franco moved it to CET in 1940 to align with Germany. Spaniards eat dinner at 10 PM because of this.</p>
+</div>
+<div class="fun-fact">
+<h3>UTC is a compromise</h3>
+<p>English speakers wanted "CUT", French wanted "TUC". UTC satisfies neither — which is exactly why it was chosen.</p>
+</div>
+</div>
+<!-- Share -->
+<div class="share-section">
+<h2>Share these facts</h2>
+<p>Mind-blowing time zone facts your friends don't know</p>
+<a class="share-btn" href="https://twitter.com/intent/tweet?text=Mind-blowing%20facts%20about%20time%20zones%20around%20the%20world%20🌍⏰&amp;url=https://worldtimessync.com/every-second" rel="noopener" target="_blank">
                 𝕏 Share on X
             </a>
-        </div>
-        
-        <footer class="footer">
-            <a href="/">World Clock</a>
-            <a href="/live.html">Live Clocks</a>
-            <a href="/earth-clock.html">Earth Clock</a>
-            <a href="/meeting-planner.html">Meeting Planner</a>
-            <a href="/about.html">About</a>
-            <a href="/privacy.html">Privacy</a>
-        </footer>
-    </div>
-    
-    <script>
+</div>
+
+<aside class="related-articles" style="margin:24px 0;padding:16px;border:1px solid #333;border-radius:8px">
+<h3 style="margin:0 0 8px;font-size:1rem;color:#fff">Related articles</h3>
+<ul style="margin:0;padding:0;font-size:.875rem"><li><a href="/blog/every-second" style="display:inline-block;min-height:44px;min-width:44px;padding:8px 6px;line-height:1.2">Every second on Earth</a></li> <li><a href="/blog/world-clock-desk-setup" style="display:inline-block;min-height:44px;min-width:44px;padding:8px 6px;line-height:1.2">World clock desk setup</a></li> <li><a href="/blog/utc-everything-guide" style="display:inline-block;min-height:44px;min-width:44px;padding:8px 6px;line-height:1.2">UTC everything guide</a></li> <li><a href="/blog/how-to-find-exact-time-any-city-world" style="display:inline-block;min-height:44px;min-width:44px;padding:8px 6px;line-height:1.2">Find exact time anywhere</a></li>
+</ul>
+</aside><footer class="footer">
+<a href="/">World Clock</a>
+<a href="/live">Live Clocks</a>
+<a href="/earth-clock">Earth Clock</a>
+<a href="/meeting-planner">Meeting Planner</a>
+<a href="/about">About</a>
+<a href="/privacy">Privacy</a>
+</footer>
+</div>
+<script>
     // Create starfield
     const starsContainer = document.getElementById('stars');
     for (let i = 0; i < 100; i++) {

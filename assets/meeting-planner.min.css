@@ -408,6 +408,11 @@
             text-decoration: none;
             margin: 0 8px;
             font-size: 14px;
+            display: inline-block;
+            min-height: 44px;
+            min-width: 44px;
+            padding: 12px 6px;
+            line-height: 1.2;
         }
         .mp-share a:hover { text-decoration: underline; }
         

@@ -21,6 +21,7 @@
 .blog-related li{margin-bottom:4px}
 .blog-footer{margin-top:40px;padding-top:20px;border-top:1px solid #333;font-size:0.8rem;color:#555}
 .blog-footer a{color:#60a5fa;margin-right:12px}
+.blog-footer a,.seo-footer a,.footer a,.mp-share a{display:inline-block;min-height:44px;min-width:44px;padding:10px 8px;line-height:1.2}
 .blog-wrap pre{background:#1a1a1a;padding:12px;border-radius:4px;color:#aaa;overflow-x:auto;font-size:0.85rem}
 .converter-widget{background:#1a1a1a;padding:20px;border-radius:8px;margin:24px 0;border:1px solid #333}
 .converter-widget h2{margin-top:0;color:#e8e8e8;font-size:1.2rem}
@@ -36,3 +37,5 @@
 .faq-item:last-child{border-bottom:none}
 .faq-item h3{color:#e8e8e8;margin-bottom:8px;font-size:1.1rem}
 .faq-item p{color:#b0b0b0}
+.skip-link{min-height:44px!important;min-width:44px!important;padding:10px 16px!important;display:inline-block!important;line-height:1.2!important}
+.blog-breadcrumb a,.breadcrumb a{display:inline-block;min-height:44px;min-width:44px;padding:8px 4px;line-height:1.2}
