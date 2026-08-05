@@ -1,0 +1,793 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta name="theme-color" content="#667eea">
+    
+    <!-- Primary Meta Tags -->
+    <title>Meeting Planner - Find the Best Time Across Time Zones | World Time Sync</title>
+<link rel="stylesheet" href="/assets/meeting-planner.min.css">
+
+    <meta name="title" content="Meeting Planner - Find the Best Time Across Time Zones" />
+    <meta name="description" content="Free meeting planner tool to find the best time for a meeting across multiple time zones. Add cities, see overlapping business hours, and schedule with confidence." />
+    <meta name="keywords" content="meeting planner, time zone meeting scheduler, best time to meet, cross timezone meeting, remote team scheduler, world clock meeting" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph (base - dynamically updated by JS for shared URLs) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://worldtimessync.com/meeting-planner.html" />
+    <meta property="og:title" content="Meeting Planner - Find the Best Time Across Time Zones" />
+    <meta property="og:description" content="Add cities, see overlapping business hours, and find the perfect meeting time for your global team." />
+    <meta property="og:image" content="https://worldtimessync.com/og-image.png" />
+    <meta property="og:site_name" content="World Time Sync" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Meeting Planner - Find the Best Time Across Time Zones" />
+    <meta name="twitter:description" content="Free tool to find overlapping business hours across multiple time zones." />
+    <meta name="twitter:image" content="https://worldtimessync.com/og-image.png" />
+    <meta name="twitter:site" content="@WorldTimeSync" />
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://worldtimessync.com/meeting-planner" />
+    
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/assets/index-ufePLcBr.css" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="/assets/index-ufePLcBr.css" /></noscript>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Meeting Planner",
+      "description": "Free meeting planner tool to find the best time for a meeting across multiple time zones. Add cities, see overlapping business hours, and schedule with confidence.",
+      "url": "https://worldtimessync.com/meeting-planner.html",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock"},
+      "featureList": [
+        "Compare up to 8 cities simultaneously",
+        "Visual time zone overlap grid (24-hour view)",
+        "Business hours (9-17) and working hours (7-22) highlighting",
+        "Best meeting time suggestions with quality scoring",
+        "Shareable URLs with pre-selected cities",
+        "Google Calendar and ICS export",
+        "Email reminder capture"
+      ],
+      "screenshot": "https://worldtimessync.com/og-image.png",
+      "softwareVersion": "2026.1",
+      "datePublished": "2026-01-15",
+      "author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}
+    }
+    </script>
+    
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I find the best time for a meeting across time zones?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Use our Meeting Planner tool. Add the cities where your team members are located, and the tool will show you overlapping business hours (9 AM - 5 PM local time) so you can find a time that works for everyone."}
+        },
+        {
+          "@type": "Question",
+          "name": "Is this meeting planner free?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Yes, our meeting planner is completely free to use with no registration required."}
+        },
+        {
+          "@type": "Question",
+          "name": "How many cities can I add to the meeting planner?",
+          "acceptedAnswer": {"@type": "Answer", "text": "You can add up to 8 cities to compare time zones simultaneously."}
+        }
+      ]
+    }
+    </script>
+    
+    <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk" />
+
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cdn.vercel-insights.com">
+  
+</head>
+<body>
+    <div class="mp-container">
+        <header class="mp-header">
+            <h1>Meeting Planner</h1>
+            <p>Add cities where your team members are located. The tool finds overlapping business hours so you can schedule meetings that work for everyone.</p>
+        </header>
+        
+        <main class="mp-main">
+            <!-- City Search -->
+            <div class="mp-add-city">
+                <div class="mp-search-wrap">
+                    <input type="text" class="mp-search" id="citySearch" placeholder="Search for a city..." autocomplete="off" />
+                    <div class="mp-search-results" id="searchResults"></div>
+                </div>
+            </div>
+            
+            <!-- Selected Cities -->
+            <div class="mp-selected-cities" id="selectedCities"></div>
+            <div class="mp-actions">
+                <button class="mp-add-btn" id="addSelectedBtn" disabled>Add City</button>
+                <button class="mp-share-btn" id="shareLinkBtn" style="display:none" title="Copy shareable link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    Copy Link
+                </button>
+            </div>
+            
+            <!-- Time Grid -->
+            <div class="mp-grid-wrap" id="gridWrap" style="display:none;">
+                <div class="mp-grid-header" id="gridHeader">
+                    <div class="header-label">City</div>
+                </div>
+                <div class="mp-grid-body" id="gridBody"></div>
+            </div>
+            
+            <!-- Legend -->
+            <div class="mp-legend" id="legend" style="display:none;">
+                <div class="mp-legend-item"><div class="mp-legend-color best"></div> Best overlap</div>
+                <div class="mp-legend-item"><div class="mp-legend-color ok"></div> All working</div>
+                <div class="mp-legend-item"><div class="mp-legend-color maybe"></div> Some working</div>
+                <div class="mp-legend-item"><div class="mp-legend-color off"></div> Off hours</div>
+            </div>
+            
+            <!-- Best Times -->
+            <div class="mp-best-times" id="bestTimes" style="display:none;">
+                <h2><span class="icon">&#9200;</span> Best Meeting Times</h2>
+                <div id="bestTimesList"></div>
+            </div>
+            
+            <!-- Empty State -->
+            <div class="mp-empty" id="emptyState">
+                <div class="icon">&#128197;</div>
+                <h3>Add at least 2 cities to get started</h3>
+                <p>Search for cities above and add them to see overlapping business hours</p>
+            </div>
+            
+            <!-- Share -->
+            <div class="mp-share">
+                <p>World Time Sync &mdash; Free tools for global teams</p>
+                <a href="/">World Clock</a>
+                <a href="/#converter">Time Zone Converter</a>
+                <a href="/time/">City Time Pages</a>
+                <a href="/about.html">About</a>
+            </div>
+        </main>
+    </div>
+
+    <!-- Calendar Modal -->
+    <div class="mp-modal-overlay" id="calendarModal">
+        <div class="mp-modal">
+            <button class="btn-close" id="closeModal" aria-label="Close">&times;</button>
+            <h2>� Schedule This Meeting</h2>
+            <p class="modal-sub" id="modalTimeInfo"></p>
+
+            <div id="citySummary" class="city-summary"></div>
+
+            <label for="meetTitle">Meeting Title</label>
+            <input type="text" id="meetTitle" placeholder="e.g. Weekly Standup" value="Team Meeting" />
+
+            <label for="meetDate">Date</label>
+            <input type="date" id="meetDate" />
+
+            <label for="meetDuration">Duration</label>
+            <select id="meetDuration">
+                <option value="15">15 minutes</option>
+                <option value="30" selected>30 minutes</option>
+                <option value="45">45 minutes</option>
+                <option value="60">1 hour</option>
+                <option value="90">1.5 hours</option>
+                <option value="120">2 hours</option>
+            </select>
+
+            <div class="modal-actions">
+                <a class="btn-primary" id="googleCalBtn" href="#" target="_blank" rel="noopener">� Google Calendar</a>
+                <button class="btn-secondary" id="icsBtn">📥 Download .ics</button>
+            </div>
+
+            <div class="mp-lead">
+                <label>🔔 Get a meeting reminder (free, no spam)</label>
+                <div class="lead-row">
+                    <input type="email" id="reminderEmail" placeholder="your@email.com" />
+                    <button class="lead-btn" id="setReminderBtn">Remind Me</button>
+                </div>
+                <p class="lead-note">We'll send one reminder 15 minutes before the meeting. Unsubscribe anytime.</p>
+                <p class="lead-success" id="leadSuccess">✅ Added! Check your email for a confirmation.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    // City data will be injected here
+    const CITIES = [{"id":"nyc","name":"New York","country":"United States","timezone":"America/New_York"},{"id":"lax","name":"Los Angeles","country":"United States","timezone":"America/Los_Angeles"},{"id":"chi","name":"Chicago","country":"United States","timezone":"America/Chicago"},{"id":"den","name":"Denver","country":"United States","timezone":"America/Denver"},{"id":"phx","name":"Phoenix","country":"United States","timezone":"America/Phoenix"},{"id":"mia","name":"Miami","country":"United States","timezone":"America/New_York"},{"id":"sea","name":"Seattle","country":"United States","timezone":"America/Los_Angeles"},{"id":"dal","name":"Dallas","country":"United States","timezone":"America/Chicago"},{"id":"hou","name":"Houston","country":"United States","timezone":"America/Chicago"},{"id":"atl","name":"Atlanta","country":"United States","timezone":"America/New_York"},{"id":"bos","name":"Boston","country":"United States","timezone":"America/New_York"},{"id":"sfo","name":"San Francisco","country":"United States","timezone":"America/Los_Angeles"},{"id":"las","name":"Las Vegas","country":"United States","timezone":"America/Los_Angeles"},{"id":"phl","name":"Philadelphia","country":"United States","timezone":"America/New_York"},{"id":"san","name":"San Diego","country":"United States","timezone":"America/Los_Angeles"},{"id":"san2","name":"San Antonio","country":"United States","timezone":"America/Chicago"},{"id":"aus","name":"Austin","country":"United States","timezone":"America/Chicago"},{"id":"sjc","name":"San Jose","country":"United States","timezone":"America/Los_Angeles"},{"id":"jax","name":"Jacksonville","country":"United States","timezone":"America/New_York"},{"id":"clt","name":"Charlotte","country":"United States","timezone":"America/New_York"},{"id":"det","name":"Detroit","country":"United States","timezone":"America/New_York"},{"id":"cle","name":"Cleveland","country":"United States","timezone":"America/New_York"},{"id":"ind","name":"Indianapolis","country":"United States","timezone":"America/New_York"},{"id":"col","name":"Columbus","country":"United States","timezone":"America/New_York"},{"id":"pdx","name":"Portland","country":"United States","timezone":"America/Los_Angeles"},{"id":"mem","name":"Memphis","country":"United States","timezone":"America/Chicago"},{"id":"nsh","name":"Nashville","country":"United States","timezone":"America/Chicago"},{"id":"mil","name":"Milwaukee","country":"United States","timezone":"America/Chicago"},{"id":"bal","name":"Baltimore","country":"United States","timezone":"America/New_York"},{"id":"okc","name":"Oklahoma City","country":"United States","timezone":"America/Chicago"},{"id":"kcm","name":"Kansas City","country":"United States","timezone":"America/Chicago"},{"id":"tul","name":"Tulsa","country":"United States","timezone":"America/Chicago"},{"id":"alb","name":"Albuquerque","country":"United States","timezone":"America/Denver"},{"id":"tuc","name":"Tucson","country":"United States","timezone":"America/Phoenix"},{"id":"sac","name":"Sacramento","country":"United States","timezone":"America/Los_Angeles"},{"id":"oak","name":"Oakland","country":"United States","timezone":"America/Los_Angeles"},{"id":"fres","name":"Fresno","country":"United States","timezone":"America/Los_Angeles"},{"id":"mesa","name":"Mesa","country":"United States","timezone":"America/Phoenix"},{"id":"min","name":"Minneapolis","country":"United States","timezone":"America/Chicago"},{"id":"pit","name":"Pittsburgh","country":"United States","timezone":"America/New_York"},{"id":"cin","name":"Cincinnati","country":"United States","timezone":"America/New_York"},{"id":"stl","name":"St. Louis","country":"United States","timezone":"America/Chicago"},{"id":"tpa","name":"Tampa","country":"United States","timezone":"America/New_York"},{"id":"orl","name":"Orlando","country":"United States","timezone":"America/New_York"},{"id":"ric","name":"Richmond","country":"United States","timezone":"America/New_York"},{"id":"ral","name":"Raleigh","country":"United States","timezone":"America/New_York"},{"id":"buf","name":"Buffalo","country":"United States","timezone":"America/New_York"},{"id":"hon","name":"Honolulu","country":"United States","timezone":"Pacific/Honolulu"},{"id":"anc","name":"Anchorage","country":"United States","timezone":"America/Anchorage"},{"id":"boi","name":"Boise","country":"United States","timezone":"America/Boise"},{"id":"slc","name":"Salt Lake City","country":"United States","timezone":"America/Denver"},{"id":"nola","name":"New Orleans","country":"United States","timezone":"America/Chicago"},{"id":"lou","name":"Louisville","country":"United States","timezone":"America/New_York"},{"id":"tor","name":"Toronto","country":"Canada","timezone":"America/Toronto"},{"id":"van","name":"Vancouver","country":"Canada","timezone":"America/Vancouver"},{"id":"mtl","name":"Montreal","country":"Canada","timezone":"America/Toronto"},{"id":"cal","name":"Calgary","country":"Canada","timezone":"America/Edmonton"},{"id":"ott","name":"Ottawa","country":"Canada","timezone":"America/Toronto"},{"id":"edm","name":"Edmonton","country":"Canada","timezone":"America/Edmonton"},{"id":"win","name":"Winnipeg","country":"Canada","timezone":"America/Winnipeg"},{"id":"que","name":"Quebec City","country":"Canada","timezone":"America/Toronto"},{"id":"hal","name":"Halifax","country":"Canada","timezone":"America/Halifax"},{"id":"sas","name":"Saskatoon","country":"Canada","timezone":"America/Regina"},{"id":"reg","name":"Regina","country":"Canada","timezone":"America/Regina"},{"id":"stj","name":"St. John's","country":"Canada","timezone":"America/St_Johns"},{"id":"vic","name":"Victoria","country":"Canada","timezone":"America/Vancouver"},{"id":"kel","name":"Kelowna","country":"Canada","timezone":"America/Vancouver"},{"id":"mex","name":"Mexico City","country":"Mexico","timezone":"America/Mexico_City"},{"id":"can","name":"Cancun","country":"Mexico","timezone":"America/Cancun"},{"id":"gdl","name":"Guadalajara","country":"Mexico","timezone":"America/Mexico_City"},{"id":"mty","name":"Monterrey","country":"Mexico","timezone":"America/Monterrey"},{"id":"tij","name":"Tijuana","country":"Mexico","timezone":"America/Tijuana"},{"id":"pue","name":"Puebla","country":"Mexico","timezone":"America/Mexico_City"},{"id":"aca","name":"Acapulco","country":"Mexico","timezone":"America/Mexico_City"},{"id":"maz","name":"Mazatl\u00e1n","country":"Mexico","timezone":"America/Mazatlan"},{"id":"mer","name":"M\u00e9rida","country":"Mexico","timezone":"America/Merida"},{"id":"ver","name":"Veracruz","country":"Mexico","timezone":"America/Mexico_City"},{"id":"hav","name":"Havana","country":"Cuba","timezone":"America/Havana"},{"id":"sgo","name":"Santiago de Cuba","country":"Cuba","timezone":"America/Havana"},{"id":"pap","name":"Panama City","country":"Panama","timezone":"America/Panama"},{"id":"sjo","name":"San Jos\u00e9","country":"Costa Rica","timezone":"America/Costa_Rica"},{"id":"gua","name":"Guatemala City","country":"Guatemala","timezone":"America/Guatemala"},{"id":"teg","name":"Tegucigalpa","country":"Honduras","timezone":"America/Tegucigalpa"},{"id":"mga","name":"Managua","country":"Nicaragua","timezone":"America/Managua"},{"id":"sal","name":"San Salvador","country":"El Salvador","timezone":"America/El_Salvador"},{"id":"kin","name":"Kingston","country":"Jamaica","timezone":"America/Jamaica"},{"id":"nas","name":"Nassau","country":"Bahamas","timezone":"America/Nassau"},{"id":"pos","name":"Port of Spain","country":"Trinidad and Tobago","timezone":"America/Port_of_Spain"},{"id":"brb","name":"Bridgetown","country":"Barbados","timezone":"America/Barbados"},{"id":"stu","name":"St. John's","country":"Antigua and Barbuda","timezone":"America/Antigua"},{"id":"cast","name":"Castries","country":"St. Lucia","timezone":"America/St_Lucia"},{"id":"geo","name":"Georgetown","country":"Guyana","timezone":"America/Guyana"},{"id":"prm","name":"Paramaribo","country":"Suriname","timezone":"America/Paramaribo"},{"id":"bel","name":"Belize City","country":"Belize","timezone":"America/Belize"},{"id":"bze","name":"Belmopan","country":"Belize","timezone":"America/Belize"},{"id":"nuuk","name":"Nuuk","country":"Greenland","timezone":"America/Nuuk"},{"id":"sao","name":"S\u00e3o Paulo","country":"Brazil","timezone":"America/Sao_Paulo"},{"id":"rio","name":"Rio de Janeiro","country":"Brazil","timezone":"America/Sao_Paulo"},{"id":"bsb","name":"Bras\u00edlia","country":"Brazil","timezone":"America/Sao_Paulo"},{"id":"rec","name":"Recife","country":"Brazil","timezone":"America/Recife"},{"id":"for","name":"Fortaleza","country":"Brazil","timezone":"America/Fortaleza"},{"id":"man","name":"Manaus","country":"Brazil","timezone":"America/Manaus"},{"id":"cur","name":"Curitiba","country":"Brazil","timezone":"America/Sao_Paulo"},{"id":"poa","name":"Porto Alegre","country":"Brazil","timezone":"America/Sao_Paulo"},{"id":"gyn","name":"Goi\u00e2nia","country":"Brazil","timezone":"America/Sao_Paulo"},{"id":"cgb","name":"Cuiab\u00e1","country":"Brazil","timezone":"America/Cuiaba"},{"id":"nat","name":"Natal","country":"Brazil","timezone":"America/Fortaleza"},{"id":"mcz","name":"Macei\u00f3","country":"Brazil","timezone":"America/Maceio"},{"id":"arv","name":"Aracaju","country":"Brazil","timezone":"America/Maceio"},{"id":"fln","name":"Florian\u00f3polis","country":"Brazil","timezone":"America/Sao_Paulo"},{"id":"vix","name":"Vit\u00f3ria","country":"Brazil","timezone":"America/Sao_Paulo"},{"id":"sor","name":"Sorocaba","country":"Brazil","timezone":"America/Sao_Paulo"},{"id":"rbr","name":"Rio Branco","country":"Brazil","timezone":"America/Rio_Branco"},{"id":"boa","name":"Boa Vista","country":"Brazil","timezone":"America/Boa_Vista"},{"id":"mac","name":"Macap\u00e1","country":"Brazil","timezone":"America/Belem"},{"id":"slz","name":"S\u00e3o Lu\u00eds","country":"Brazil","timezone":"America/Fortaleza"},{"id":"ter","name":"Teresina","country":"Brazil","timezone":"America/Fortaleza"},{"id":"jpa","name":"Jo\u00e3o Pessoa","country":"Brazil","timezone":"America/Fortaleza"},{"id":"camp","name":"Campinas","country":"Brazil","timezone":"America/Sao_Paulo"},{"id":"bue","name":"Buenos Aires","country":"Argentina","timezone":"America/Argentina/Buenos_Aires"},{"id":"cor","name":"C\u00f3rdoba","country":"Argentina","timezone":"America/Argentina/Cordoba"},{"id":"ros","name":"Rosario","country":"Argentina","timezone":"America/Argentina/Cordoba"},{"id":"mdz","name":"Mendoza","country":"Argentina","timezone":"America/Argentina/Mendoza"},{"id":"sla","name":"Salta","country":"Argentina","timezone":"America/Argentina/Salta"},{"id":"brc","name":"San Carlos de Bariloche","country":"Argentina","timezone":"America/Argentina/Salta"},{"id":"mdq","name":"Mar del Plata","country":"Argentina","timezone":"America/Argentina/Buenos_Aires"},{"id":"ush","name":"Ushuaia","country":"Argentina","timezone":"America/Argentina/Ushuaia"},{"id":"scl","name":"Santiago","country":"Chile","timezone":"America/Santiago"},{"id":"valp","name":"Valpara\u00edso","country":"Chile","timezone":"America/Santiago"},{"id":"ccp","name":"Concepci\u00f3n","country":"Chile","timezone":"America/Santiago"},{"id":"ari","name":"Arica","country":"Chile","timezone":"America/Santiago"},{"id":"puq","name":"Punta Arenas","country":"Chile","timezone":"America/Punta_Arenas"},{"id":"iqq","name":"Iquique","country":"Chile","timezone":"America/Santiago"},{"id":"ancud","name":"Ancud","country":"Chile","timezone":"America/Santiago"},{"id":"easter","name":"Hanga Roa","country":"Chile","timezone":"Pacific/Easter"},{"id":"bog","name":"Bogot\u00e1","country":"Colombia","timezone":"America/Bogota"},{"id":"med","name":"Medell\u00edn","country":"Colombia","timezone":"America/Bogota"},{"id":"bar","name":"Barranquilla","country":"Colombia","timezone":"America/Bogota"},{"id":"ctg","name":"Cartagena","country":"Colombia","timezone":"America/Bogota"},{"id":"buc","name":"Bucaramanga","country":"Colombia","timezone":"America/Bogota"},{"id":"peri","name":"Pereira","country":"Colombia","timezone":"America/Bogota"},{"id":"maniz","name":"Manizales","country":"Colombia","timezone":"America/Bogota"},{"id":"lim","name":"Lima","country":"Peru","timezone":"America/Lima"},{"id":"aqp","name":"Arequipa","country":"Peru","timezone":"America/Lima"},{"id":"tru","name":"Trujillo","country":"Peru","timezone":"America/Lima"},{"id":"cus","name":"Cusco","country":"Peru","timezone":"America/Lima"},{"id":"chic","name":"Chiclayo","country":"Peru","timezone":"America/Lima"},{"id":"piura","name":"Piura","country":"Peru","timezone":"America/Lima"},{"id":"ica","name":"Ica","country":"Peru","timezone":"America/Lima"},{"id":"ccs","name":"Caracas","country":"Venezuela","timezone":"America/Caracas"},{"id":"mar","name":"Maracaibo","country":"Venezuela","timezone":"America/Caracas"},{"id":"val","name":"Valencia","country":"Venezuela","timezone":"America/Caracas"},{"id":"barq","name":"Barquisimeto","country":"Venezuela","timezone":"America/Caracas"},{"id":"mat","name":"Matur\u00edn","country":"Venezuela","timezone":"America/Caracas"},{"id":"uio","name":"Quito","country":"Ecuador","timezone":"America/Guayaquil"},{"id":"gye","name":"Guayaquil","country":"Ecuador","timezone":"America/Guayaquil"},{"id":"cue","name":"Cuenca","country":"Ecuador","timezone":"America/Guayaquil"},{"id":"gal","name":"Puerto Baquerizo Moreno","country":"Ecuador","timezone":"Pacific/Galapagos"},{"id":"mvd","name":"Montevideo","country":"Uruguay","timezone":"America/Montevideo"},{"id":"pde","name":"Punta del Este","country":"Uruguay","timezone":"America/Montevideo"},{"id":"salto","name":"Salto","country":"Uruguay","timezone":"America/Montevideo"},{"id":"asu","name":"Asunci\u00f3n","country":"Paraguay","timezone":"America/Asuncion"},{"id":"cde","name":"Ciudad del Este","country":"Paraguay","timezone":"America/Asuncion"},{"id":"enc","name":"Encarnaci\u00f3n","country":"Paraguay","timezone":"America/Asuncion"},{"id":"lpb","name":"La Paz","country":"Bolivia","timezone":"America/La_Paz"},{"id":"suc","name":"Sucre","country":"Bolivia","timezone":"America/La_Paz"},{"id":"cbb","name":"Cochabamba","country":"Bolivia","timezone":"America/La_Paz"},{"id":"scr","name":"Santa Cruz de la Sierra","country":"Bolivia","timezone":"America/La_Paz"},{"id":"pot","name":"Potos\u00ed","country":"Bolivia","timezone":"America/La_Paz"},{"id":"cay","name":"Cayenne","country":"French Guiana","timezone":"America/Cayenne"},{"id":"mpn","name":"Stanley","country":"Falkland Islands","timezone":"Atlantic/Stanley"},{"id":"lon","name":"London","country":"United Kingdom","timezone":"Europe/London"},{"id":"manu","name":"Manchester","country":"United Kingdom","timezone":"Europe/London"},{"id":"birm","name":"Birmingham","country":"United Kingdom","timezone":"Europe/London"},{"id":"gla","name":"Glasgow","country":"United Kingdom","timezone":"Europe/London"},{"id":"liv","name":"Liverpool","country":"United Kingdom","timezone":"Europe/London"},{"id":"edi","name":"Edinburgh","country":"United Kingdom","timezone":"Europe/London"},{"id":"lee","name":"Leeds","country":"United Kingdom","timezone":"Europe/London"},{"id":"shef","name":"Sheffield","country":"United Kingdom","timezone":"Europe/London"},{"id":"brist","name":"Bristol","country":"United Kingdom","timezone":"Europe/London"},{"id":"card","name":"Cardiff","country":"United Kingdom","timezone":"Europe/London"},{"id":"belu","name":"Belfast","country":"United Kingdom","timezone":"Europe/London"},{"id":"newc","name":"Newcastle","country":"United Kingdom","timezone":"Europe/London"},{"id":"not","name":"Nottingham","country":"United Kingdom","timezone":"Europe/London"},{"id":"lei","name":"Leicester","country":"United Kingdom","timezone":"Europe/London"},{"id":"cov","name":"Coventry","country":"United Kingdom","timezone":"Europe/London"},{"id":"aberdeen","name":"Aberdeen","country":"United Kingdom","timezone":"Europe/London"},{"id":"cam","name":"Cambridge","country":"United Kingdom","timezone":"Europe/London"},{"id":"oxf","name":"Oxford","country":"United Kingdom","timezone":"Europe/London"},{"id":"brigh","name":"Brighton","country":"United Kingdom","timezone":"Europe/London"},{"id":"york","name":"York","country":"United Kingdom","timezone":"Europe/London"},{"id":"par","name":"Paris","country":"France","timezone":"Europe/Paris"},{"id":"lyo","name":"Lyon","country":"France","timezone":"Europe/Paris"},{"id":"toul","name":"Toulouse","country":"France","timezone":"Europe/Paris"},{"id":"nice","name":"Nice","country":"France","timezone":"Europe/Paris"},{"id":"nan","name":"Nantes","country":"France","timezone":"Europe/Paris"},{"id":"str","name":"Strasbourg","country":"France","timezone":"Europe/Paris"},{"id":"mont","name":"Montpellier","country":"France","timezone":"Europe/Paris"},{"id":"lil","name":"Lille","country":"France","timezone":"Europe/Paris"},{"id":"ren","name":"Rennes","country":"France","timezone":"Europe/Paris"},{"id":"reim","name":"Reims","country":"France","timezone":"Europe/Paris"},{"id":"bor","name":"Bordeaux","country":"France","timezone":"Europe/Paris"},{"id":"cann","name":"Cannes","country":"France","timezone":"Europe/Paris"},{"id":"ber","name":"Berlin","country":"Germany","timezone":"Europe/Berlin"},{"id":"ham","name":"Hamburg","country":"Germany","timezone":"Europe/Berlin"},{"id":"mun","name":"Munich","country":"Germany","timezone":"Europe/Berlin"},{"id":"cgn","name":"Cologne","country":"Germany","timezone":"Europe/Berlin"},{"id":"fra","name":"Frankfurt","country":"Germany","timezone":"Europe/Berlin"},{"id":"dus","name":"D\u00fcsseldorf","country":"Germany","timezone":"Europe/Berlin"},{"id":"stutt","name":"Stuttgart","country":"Germany","timezone":"Europe/Berlin"},{"id":"dres","name":"Dresden","country":"Germany","timezone":"Europe/Berlin"},{"id":"lep","name":"Leipzig","country":"Germany","timezone":"Europe/Berlin"},{"id":"nur","name":"Nuremberg","country":"Germany","timezone":"Europe/Berlin"},{"id":"han","name":"Hannover","country":"Germany","timezone":"Europe/Berlin"},{"id":"brem","name":"Bremen","country":"Germany","timezone":"Europe/Berlin"},{"id":"dort","name":"Dortmund","country":"Germany","timezone":"Europe/Berlin"},{"id":"essen","name":"Essen","country":"Germany","timezone":"Europe/Berlin"},{"id":"heidel","name":"Heidelberg","country":"Germany","timezone":"Europe/Berlin"},{"id":"rom","name":"Rome","country":"Italy","timezone":"Europe/Rome"},{"id":"nap","name":"Naples","country":"Italy","timezone":"Europe/Rome"},{"id":"tur","name":"Turin","country":"Italy","timezone":"Europe/Rome"},{"id":"pal","name":"Palermo","country":"Italy","timezone":"Europe/Rome"},{"id":"gen","name":"Genoa","country":"Italy","timezone":"Europe/Rome"},{"id":"bol","name":"Bologna","country":"Italy","timezone":"Europe/Rome"},{"id":"flo","name":"Florence","country":"Italy","timezone":"Europe/Rome"},{"id":"ven","name":"Venice","country":"Italy","timezone":"Europe/Rome"},{"id":"bari","name":"Bari","country":"Italy","timezone":"Europe/Rome"},{"id":"cat","name":"Catania","country":"Italy","timezone":"Europe/Rome"},{"id":"mad","name":"Madrid","country":"Spain","timezone":"Europe/Madrid"},{"id":"barc","name":"Barcelona","country":"Spain","timezone":"Europe/Madrid"},{"id":"valc","name":"Valencia","country":"Spain","timezone":"Europe/Madrid"},{"id":"sev","name":"Seville","country":"Spain","timezone":"Europe/Madrid"},{"id":"zarag","name":"Zaragoza","country":"Spain","timezone":"Europe/Madrid"},{"id":"mal","name":"M\u00e1laga","country":"Spain","timezone":"Europe/Madrid"},{"id":"mur","name":"Murcia","country":"Spain","timezone":"Europe/Madrid"},{"id":"bil","name":"Bilbao","country":"Spain","timezone":"Europe/Madrid"},{"id":"canar","name":"Las Palmas","country":"Spain","timezone":"Atlantic/Canary"},{"id":"tener","name":"Santa Cruz de Tenerife","country":"Spain","timezone":"Atlantic/Canary"},{"id":"ibiza","name":"Ibiza","country":"Spain","timezone":"Europe/Madrid"},{"id":"ams","name":"Amsterdam","country":"Netherlands","timezone":"Europe/Amsterdam"},{"id":"rot","name":"Rotterdam","country":"Netherlands","timezone":"Europe/Amsterdam"},{"id":"hag","name":"The Hague","country":"Netherlands","timezone":"Europe/Amsterdam"},{"id":"utr","name":"Utrecht","country":"Netherlands","timezone":"Europe/Amsterdam"},{"id":"eind","name":"Eindhoven","country":"Netherlands","timezone":"Europe/Amsterdam"},{"id":"bru","name":"Brussels","country":"Belgium","timezone":"Europe/Brussels"},{"id":"ant","name":"Antwerp","country":"Belgium","timezone":"Europe/Brussels"},{"id":"ghent","name":"Ghent","country":"Belgium","timezone":"Europe/Brussels"},{"id":"lieg","name":"Li\u00e8ge","country":"Belgium","timezone":"Europe/Brussels"},{"id":"zur","name":"Zurich","country":"Switzerland","timezone":"Europe/Zurich"},{"id":"genv","name":"Geneva","country":"Switzerland","timezone":"Europe/Zurich"},{"id":"bas","name":"Basel","country":"Switzerland","timezone":"Europe/Zurich"},{"id":"bern","name":"Bern","country":"Switzerland","timezone":"Europe/Zurich"},{"id":"laus","name":"Lausanne","country":"Switzerland","timezone":"Europe/Zurich"},{"id":"luc","name":"Lucerne","country":"Switzerland","timezone":"Europe/Zurich"},{"id":"vie","name":"Vienna","country":"Austria","timezone":"Europe/Vienna"},{"id":"graz","name":"Graz","country":"Austria","timezone":"Europe/Vienna"},{"id":"linz","name":"Linz","country":"Austria","timezone":"Europe/Vienna"},{"id":"salz","name":"Salzburg","country":"Austria","timezone":"Europe/Vienna"},{"id":"inns","name":"Innsbruck","country":"Austria","timezone":"Europe/Vienna"},{"id":"lis","name":"Lisbon","country":"Portugal","timezone":"Europe/Lisbon"},{"id":"por","name":"Porto","country":"Portugal","timezone":"Europe/Lisbon"},{"id":"faro","name":"Faro","country":"Portugal","timezone":"Europe/Lisbon"},{"id":"funch","name":"Funchal","country":"Portugal","timezone":"Atlantic/Madeira"},{"id":"azores","name":"Ponta Delgada","country":"Portugal","timezone":"Atlantic/Azores"},{"id":"sto","name":"Stockholm","country":"Sweden","timezone":"Europe/Stockholm"},{"id":"got","name":"Gothenburg","country":"Sweden","timezone":"Europe/Stockholm"},{"id":"malmo","name":"Malm\u00f6","country":"Sweden","timezone":"Europe/Stockholm"},{"id":"osl","name":"Oslo","country":"Norway","timezone":"Europe/Oslo"},{"id":"bergn","name":"Bergen","country":"Norway","timezone":"Europe/Oslo"},{"id":"trond","name":"Trondheim","country":"Norway","timezone":"Europe/Oslo"},{"id":"trom","name":"Troms\u00f8","country":"Norway","timezone":"Europe/Oslo"},{"id":"cph","name":"Copenhagen","country":"Denmark","timezone":"Europe/Copenhagen"},{"id":"aar","name":"Aarhus","country":"Denmark","timezone":"Europe/Copenhagen"},{"id":"hel","name":"Helsinki","country":"Finland","timezone":"Europe/Helsinki"},{"id":"esp","name":"Espoo","country":"Finland","timezone":"Europe/Helsinki"},{"id":"tamp","name":"Tampere","country":"Finland","timezone":"Europe/Helsinki"},{"id":"turku","name":"Turku","country":"Finland","timezone":"Europe/Helsinki"},{"id":"rov","name":"Rovaniemi","country":"Finland","timezone":"Europe/Helsinki"},{"id":"reyk","name":"Reykjav\u00edk","country":"Iceland","timezone":"Atlantic/Reykjavik"},{"id":"mos","name":"Moscow","country":"Russia","timezone":"Europe/Moscow"},{"id":"spb","name":"St. Petersburg","country":"Russia","timezone":"Europe/Moscow"},{"id":"novo","name":"Novosibirsk","country":"Russia","timezone":"Asia/Novosibirsk"},{"id":"yek","name":"Yekaterinburg","country":"Russia","timezone":"Asia/Yekaterinburg"},{"id":"kazan","name":"Kazan","country":"Russia","timezone":"Europe/Moscow"},{"id":"nizh","name":"Nizhny Novgorod","country":"Russia","timezone":"Europe/Moscow"},{"id":"vlad","name":"Vladivostok","country":"Russia","timezone":"Asia/Vladivostok"},{"id":"sam","name":"Samara","country":"Russia","timezone":"Europe/Samara"},{"id":"omsk","name":"Omsk","country":"Russia","timezone":"Asia/Omsk"},{"id":"kras","name":"Krasnoyarsk","country":"Russia","timezone":"Asia/Krasnoyarsk"},{"id":"irk","name":"Irkutsk","country":"Russia","timezone":"Asia/Irkutsk"},{"id":"yaku","name":"Yakutsk","country":"Russia","timezone":"Asia/Yakutsk"},{"id":"mag","name":"Magadan","country":"Russia","timezone":"Asia/Magadan"},{"id":"petr","name":"Petropavlovsk-Kamchatsky","country":"Russia","timezone":"Asia/Kamchatka"},{"id":"kalin","name":"Kaliningrad","country":"Russia","timezone":"Europe/Kaliningrad"},{"id":"ark","name":"Arkhangelsk","country":"Russia","timezone":"Europe/Moscow"},{"id":"murm","name":"Murmansk","country":"Russia","timezone":"Europe/Moscow"},{"id":"sochi","name":"Sochi","country":"Russia","timezone":"Europe/Moscow"},{"id":"kiev","name":"Kyiv","country":"Ukraine","timezone":"Europe/Kyiv"},{"id":"khark","name":"Kharkiv","country":"Ukraine","timezone":"Europe/Kyiv"},{"id":"odes","name":"Odesa","country":"Ukraine","timezone":"Europe/Kyiv"},{"id":"dnip","name":"Dnipro","country":"Ukraine","timezone":"Europe/Kyiv"},{"id":"lviv","name":"Lviv","country":"Ukraine","timezone":"Europe/Kyiv"},{"id":"don","name":"Donetsk","country":"Ukraine","timezone":"Europe/Kyiv"},{"id":"gom","name":"Gomel","country":"Belarus","timezone":"Europe/Minsk"},{"id":"brest","name":"Brest","country":"Belarus","timezone":"Europe/Minsk"},{"id":"waw","name":"Warsaw","country":"Poland","timezone":"Europe/Warsaw"},{"id":"krak","name":"Krak\u00f3w","country":"Poland","timezone":"Europe/Warsaw"},{"id":"lodz","name":"\u0141\u00f3d\u017a","country":"Poland","timezone":"Europe/Warsaw"},{"id":"wroc","name":"Wroc\u0142aw","country":"Poland","timezone":"Europe/Warsaw"},{"id":"poz","name":"Pozna\u0144","country":"Poland","timezone":"Europe/Warsaw"},{"id":"gdan","name":"Gda\u0144sk","country":"Poland","timezone":"Europe/Warsaw"},{"id":"kat","name":"Katowice","country":"Poland","timezone":"Europe/Warsaw"},{"id":"prg","name":"Prague","country":"Czech Republic","timezone":"Europe/Prague"},{"id":"brno","name":"Brno","country":"Czech Republic","timezone":"Europe/Prague"},{"id":"ostr","name":"Ostrava","country":"Czech Republic","timezone":"Europe/Prague"},{"id":"brat","name":"Bratislava","country":"Slovakia","timezone":"Europe/Bratislava"},{"id":"kos","name":"Ko\u0161ice","country":"Slovakia","timezone":"Europe/Bratislava"},{"id":"buk","name":"Bucharest","country":"Romania","timezone":"Europe/Bucharest"},{"id":"cluj","name":"Cluj-Napoca","country":"Romania","timezone":"Europe/Bucharest"},{"id":"tims","name":"Timi\u0219oara","country":"Romania","timezone":"Europe/Bucharest"},{"id":"ias","name":"Ia\u0219i","country":"Romania","timezone":"Europe/Bucharest"},{"id":"sof","name":"Sofia","country":"Bulgaria","timezone":"Europe/Sofia"},{"id":"plov","name":"Plovdiv","country":"Bulgaria","timezone":"Europe/Sofia"},{"id":"varn","name":"Varna","country":"Bulgaria","timezone":"Europe/Sofia"},{"id":"bud","name":"Budapest","country":"Hungary","timezone":"Europe/Budapest"},{"id":"deb","name":"Debrecen","country":"Hungary","timezone":"Europe/Budapest"},{"id":"szeg","name":"Szeged","country":"Hungary","timezone":"Europe/Budapest"},{"id":"zag","name":"Zagreb","country":"Croatia","timezone":"Europe/Zagreb"},{"id":"split","name":"Split","country":"Croatia","timezone":"Europe/Zagreb"},{"id":"belg","name":"Belgrade","country":"Serbia","timezone":"Europe/Belgrade"},{"id":"novis","name":"Novi Sad","country":"Serbia","timezone":"Europe/Belgrade"},{"id":"sar","name":"Sarajevo","country":"Bosnia and Herzegovina","timezone":"Europe/Sarajevo"},{"id":"lju","name":"Ljubljana","country":"Slovenia","timezone":"Europe/Ljubljana"},{"id":"tir","name":"Tirana","country":"Albania","timezone":"Europe/Tirane"},{"id":"sko","name":"Skopje","country":"North Macedonia","timezone":"Europe/Skopje"},{"id":"podg","name":"Podgorica","country":"Montenegro","timezone":"Europe/Podgorica"},{"id":"ath","name":"Athens","country":"Greece","timezone":"Europe/Athens"},{"id":"thes","name":"Thessaloniki","country":"Greece","timezone":"Europe/Athens"},{"id":"her","name":"Heraklion","country":"Greece","timezone":"Europe/Athens"},{"id":"ist","name":"Istanbul","country":"Turkey","timezone":"Europe/Istanbul"},{"id":"ank","name":"Ankara","country":"Turkey","timezone":"Europe/Istanbul"},{"id":"izm","name":"Izmir","country":"Turkey","timezone":"Europe/Istanbul"},{"id":"burs","name":"Bursa","country":"Turkey","timezone":"Europe/Istanbul"},{"id":"adana","name":"Adana","country":"Turkey","timezone":"Europe/Istanbul"},{"id":"tln","name":"Tallinn","country":"Estonia","timezone":"Europe/Tallinn"},{"id":"rig","name":"Riga","country":"Latvia","timezone":"Europe/Riga"},{"id":"vil","name":"Vilnius","country":"Lithuania","timezone":"Europe/Vilnius"},{"id":"kaun","name":"Kaunas","country":"Lithuania","timezone":"Europe/Vilnius"},{"id":"dub","name":"Dublin","country":"Ireland","timezone":"Europe/Dublin"},{"id":"galw","name":"Galway","country":"Ireland","timezone":"Europe/Dublin"},{"id":"nicos","name":"Nicosia","country":"Cyprus","timezone":"Asia/Nicosia"},{"id":"limas","name":"Limassol","country":"Cyprus","timezone":"Asia/Nicosia"},{"id":"valm","name":"Valletta","country":"Malta","timezone":"Europe/Malta"},{"id":"kiv","name":"Chisinau","country":"Moldova","timezone":"Europe/Chisinau"},{"id":"tbl","name":"Tbilisi","country":"Georgia","timezone":"Asia/Tbilisi"},{"id":"bat","name":"Batumi","country":"Georgia","timezone":"Asia/Tbilisi"},{"id":"yere","name":"Yerevan","country":"Armenia","timezone":"Asia/Yerevan"},{"id":"aku","name":"Baku","country":"Azerbaijan","timezone":"Asia/Baku"},{"id":"gan","name":"Ganja","country":"Azerbaijan","timezone":"Asia/Baku"},{"id":"ura","name":"Oral","country":"Kazakhstan","timezone":"Asia/Oral"},{"id":"akt","name":"Aktobe","country":"Kazakhstan","timezone":"Asia/Aqtobe"},{"id":"bei","name":"Beijing","country":"China","timezone":"Asia/Shanghai"},{"id":"sha","name":"Shanghai","country":"China","timezone":"Asia/Shanghai"},{"id":"guw","name":"Guangzhou","country":"China","timezone":"Asia/Shanghai"},{"id":"she","name":"Shenzhen","country":"China","timezone":"Asia/Shanghai"},{"id":"cgo","name":"Chengdu","country":"China","timezone":"Asia/Shanghai"},{"id":"xian","name":"Xi'an","country":"China","timezone":"Asia/Shanghai"},{"id":"wuhan","name":"Wuhan","country":"China","timezone":"Asia/Shanghai"},{"id":"hang","name":"Hangzhou","country":"China","timezone":"Asia/Shanghai"},{"id":"tian","name":"Tianjin","country":"China","timezone":"Asia/Shanghai"},{"id":"chong","name":"Chongqing","country":"China","timezone":"Asia/Shanghai"},{"id":"suz","name":"Suzhou","country":"China","timezone":"Asia/Shanghai"},{"id":"qing","name":"Qingdao","country":"China","timezone":"Asia/Shanghai"},{"id":"dalian","name":"Dalian","country":"China","timezone":"Asia/Shanghai"},{"id":"shen","name":"Shenyang","country":"China","timezone":"Asia/Shanghai"},{"id":"harb","name":"Harbin","country":"China","timezone":"Asia/Shanghai"},{"id":"zheng","name":"Zhengzhou","country":"China","timezone":"Asia/Shanghai"},{"id":"jinan","name":"Jinan","country":"China","timezone":"Asia/Shanghai"},{"id":"chang","name":"Changsha","country":"China","timezone":"Asia/Shanghai"},{"id":"fuz","name":"Fuzhou","country":"China","timezone":"Asia/Shanghai"},{"id":"xiam","name":"Xiamen","country":"China","timezone":"Asia/Shanghai"},{"id":"kunm","name":"Kunming","country":"China","timezone":"Asia/Shanghai"},{"id":"guiy","name":"Guiyang","country":"China","timezone":"Asia/Shanghai"},{"id":"lasa","name":"Lhasa","country":"China","timezone":"Asia/Shanghai"},{"id":"urum","name":"Urumqi","country":"China","timezone":"Asia/Urumqi"},{"id":"hk","name":"Hong Kong","country":"Hong Kong","timezone":"Asia/Hong_Kong"},{"id":"macau","name":"Macau","country":"Macau","timezone":"Asia/Macau"},{"id":"tok","name":"Tokyo","country":"Japan","timezone":"Asia/Tokyo"},{"id":"osa","name":"Osaka","country":"Japan","timezone":"Asia/Tokyo"},{"id":"kyo","name":"Kyoto","country":"Japan","timezone":"Asia/Tokyo"},{"id":"sap","name":"Sapporo","country":"Japan","timezone":"Asia/Tokyo"},{"id":"fuk","name":"Fukuoka","country":"Japan","timezone":"Asia/Tokyo"},{"id":"nag","name":"Nagoya","country":"Japan","timezone":"Asia/Tokyo"},{"id":"kobe","name":"Kobe","country":"Japan","timezone":"Asia/Tokyo"},{"id":"send","name":"Sendai","country":"Japan","timezone":"Asia/Tokyo"},{"id":"hiro","name":"Hiroshima","country":"Japan","timezone":"Asia/Tokyo"},{"id":"kita","name":"Kitakyushu","country":"Japan","timezone":"Asia/Tokyo"},{"id":"chiba","name":"Chiba","country":"Japan","timezone":"Asia/Tokyo"},{"id":"okin","name":"Naha","country":"Japan","timezone":"Asia/Tokyo"},{"id":"yoko","name":"Yokohama","country":"Japan","timezone":"Asia/Tokyo"},{"id":"kawa","name":"Kawasaki","country":"Japan","timezone":"Asia/Tokyo"},{"id":"sel","name":"Seoul","country":"South Korea","timezone":"Asia/Seoul"},{"id":"bus","name":"Busan","country":"South Korea","timezone":"Asia/Seoul"},{"id":"inc","name":"Incheon","country":"South Korea","timezone":"Asia/Seoul"},{"id":"dae","name":"Daegu","country":"South Korea","timezone":"Asia/Seoul"},{"id":"gwang","name":"Gwangju","country":"South Korea","timezone":"Asia/Seoul"},{"id":"daeje","name":"Daejeon","country":"South Korea","timezone":"Asia/Seoul"},{"id":"ulsan","name":"Ulsan","country":"South Korea","timezone":"Asia/Seoul"},{"id":"suwon","name":"Suwon","country":"South Korea","timezone":"Asia/Seoul"},{"id":"jeju","name":"Jeju City","country":"South Korea","timezone":"Asia/Seoul"},{"id":"del","name":"New Delhi","country":"India","timezone":"Asia/Kolkata"},{"id":"bom","name":"Mumbai","country":"India","timezone":"Asia/Kolkata"},{"id":"kol","name":"Kolkata","country":"India","timezone":"Asia/Kolkata"},{"id":"chn","name":"Chennai","country":"India","timezone":"Asia/Kolkata"},{"id":"ban","name":"Bangalore","country":"India","timezone":"Asia/Kolkata"},{"id":"hyd","name":"Hyderabad","country":"India","timezone":"Asia/Kolkata"},{"id":"pune","name":"Pune","country":"India","timezone":"Asia/Kolkata"},{"id":"ahm","name":"Ahmedabad","country":"India","timezone":"Asia/Kolkata"},{"id":"sur","name":"Surat","country":"India","timezone":"Asia/Kolkata"},{"id":"jaip","name":"Jaipur","country":"India","timezone":"Asia/Kolkata"},{"id":"kanp","name":"Kanpur","country":"India","timezone":"Asia/Kolkata"},{"id":"luck","name":"Lucknow","country":"India","timezone":"Asia/Kolkata"},{"id":"nagp","name":"Nagpur","country":"India","timezone":"Asia/Kolkata"},{"id":"indor","name":"Indore","country":"India","timezone":"Asia/Kolkata"},{"id":"patn","name":"Patna","country":"India","timezone":"Asia/Kolkata"},{"id":"bhop","name":"Bhopal","country":"India","timezone":"Asia/Kolkata"},{"id":"ludh","name":"Ludhiana","country":"India","timezone":"Asia/Kolkata"},{"id":"agra","name":"Agra","country":"India","timezone":"Asia/Kolkata"},{"id":"var","name":"Varanasi","country":"India","timezone":"Asia/Kolkata"},{"id":"koch","name":"Kochi","country":"India","timezone":"Asia/Kolkata"},{"id":"goa","name":"Panaji","country":"India","timezone":"Asia/Kolkata"},{"id":"chand","name":"Chandigarh","country":"India","timezone":"Asia/Kolkata"},{"id":"guwa","name":"Guwahati","country":"India","timezone":"Asia/Kolkata"},{"id":"bhub","name":"Bhubaneswar","country":"India","timezone":"Asia/Kolkata"},{"id":"coim","name":"Coimbatore","country":"India","timezone":"Asia/Kolkata"},{"id":"mys","name":"Mysore","country":"India","timezone":"Asia/Kolkata"},{"id":"madu","name":"Madurai","country":"India","timezone":"Asia/Kolkata"},{"id":"vija","name":"Vijayawada","country":"India","timezone":"Asia/Kolkata"},{"id":"vish","name":"Visakhapatnam","country":"India","timezone":"Asia/Kolkata"},{"id":"thir","name":"Thiruvananthapuram","country":"India","timezone":"Asia/Kolkata"},{"id":"sin","name":"Singapore","country":"Singapore","timezone":"Asia/Singapore"},{"id":"bkk","name":"Bangkok","country":"Thailand","timezone":"Asia/Bangkok"},{"id":"chiang","name":"Chiang Mai","country":"Thailand","timezone":"Asia/Bangkok"},{"id":"phuk","name":"Phuket","country":"Thailand","timezone":"Asia/Bangkok"},{"id":"patt","name":"Pattaya","country":"Thailand","timezone":"Asia/Bangkok"},{"id":"kul","name":"Kuala Lumpur","country":"Malaysia","timezone":"Asia/Kuala_Lumpur"},{"id":"pen","name":"George Town","country":"Malaysia","timezone":"Asia/Kuala_Lumpur"},{"id":"johor","name":"Johor Bahru","country":"Malaysia","timezone":"Asia/Kuala_Lumpur"},{"id":"kota","name":"Kota Kinabalu","country":"Malaysia","timezone":"Asia/Kuching"},{"id":"kuch","name":"Kuching","country":"Malaysia","timezone":"Asia/Kuching"},{"id":"jkt","name":"Jakarta","country":"Indonesia","timezone":"Asia/Jakarta"},{"id":"surab","name":"Surabaya","country":"Indonesia","timezone":"Asia/Jakarta"},{"id":"band","name":"Bandung","country":"Indonesia","timezone":"Asia/Jakarta"},{"id":"meda","name":"Medan","country":"Indonesia","timezone":"Asia/Jakarta"},{"id":"denp","name":"Denpasar","country":"Indonesia","timezone":"Asia/Makassar"},{"id":"maka","name":"Makassar","country":"Indonesia","timezone":"Asia/Makassar"},{"id":"yogya","name":"Yogyakarta","country":"Indonesia","timezone":"Asia/Jakarta"},{"id":"manad","name":"Manado","country":"Indonesia","timezone":"Asia/Makassar"},{"id":"jay","name":"Jayapura","country":"Indonesia","timezone":"Asia/Jayapura"},{"id":"mnl","name":"Manila","country":"Philippines","timezone":"Asia/Manila"},{"id":"cebu","name":"Cebu City","country":"Philippines","timezone":"Asia/Manila"},{"id":"davao","name":"Davao City","country":"Philippines","timezone":"Asia/Manila"},{"id":"hoh","name":"Ho Chi Minh City","country":"Vietnam","timezone":"Asia/Ho_Chi_Minh"},{"id":"da","name":"Da Nang","country":"Vietnam","timezone":"Asia/Ho_Chi_Minh"},{"id":"nhat","name":"Nha Trang","country":"Vietnam","timezone":"Asia/Ho_Chi_Minh"},{"id":"tpe","name":"Taipei","country":"Taiwan","timezone":"Asia/Taipei"},{"id":"kaoh","name":"Kaohsiung","country":"Taiwan","timezone":"Asia/Taipei"},{"id":"taich","name":"Taichung","country":"Taiwan","timezone":"Asia/Taipei"},{"id":"yang","name":"Yangon","country":"Myanmar","timezone":"Asia/Yangon"},{"id":"manda","name":"Mandalay","country":"Myanmar","timezone":"Asia/Yangon"},{"id":"phn","name":"Phnom Penh","country":"Cambodia","timezone":"Asia/Phnom_Penh"},{"id":"siem","name":"Siem Reap","country":"Cambodia","timezone":"Asia/Phnom_Penh"},{"id":"vte","name":"Vientiane","country":"Laos","timezone":"Asia/Vientiane"},{"id":"luang","name":"Luang Prabang","country":"Laos","timezone":"Asia/Vientiane"},{"id":"bwn","name":"Bandar Seri Begawan","country":"Brunei","timezone":"Asia/Brunei"},{"id":"dili","name":"Dili","country":"East Timor","timezone":"Asia/Dili"},{"id":"dxb","name":"Dubai","country":"United Arab Emirates","timezone":"Asia/Dubai"},{"id":"auh","name":"Abu Dhabi","country":"United Arab Emirates","timezone":"Asia/Dubai"},{"id":"shj","name":"Sharjah","country":"United Arab Emirates","timezone":"Asia/Dubai"},{"id":"riy","name":"Riyadh","country":"Saudi Arabia","timezone":"Asia/Riyadh"},{"id":"jed","name":"Jeddah","country":"Saudi Arabia","timezone":"Asia/Riyadh"},{"id":"makk","name":"Mecca","country":"Saudi Arabia","timezone":"Asia/Riyadh"},{"id":"madin","name":"Medina","country":"Saudi Arabia","timezone":"Asia/Riyadh"},{"id":"dmm","name":"Dammam","country":"Saudi Arabia","timezone":"Asia/Riyadh"},{"id":"doh","name":"Doha","country":"Qatar","timezone":"Asia/Qatar"},{"id":"kuw","name":"Kuwait City","country":"Kuwait","timezone":"Asia/Kuwait"},{"id":"mct","name":"Muscat","country":"Oman","timezone":"Asia/Muscat"},{"id":"bah","name":"Manama","country":"Bahrain","timezone":"Asia/Bahrain"},{"id":"amm","name":"Amman","country":"Jordan","timezone":"Asia/Amman"},{"id":"aqab","name":"Aqaba","country":"Jordan","timezone":"Asia/Amman"},{"id":"bei2","name":"Beirut","country":"Lebanon","timezone":"Asia/Beirut"},{"id":"trip","name":"Tripoli","country":"Lebanon","timezone":"Asia/Beirut"},{"id":"bag","name":"Baghdad","country":"Iraq","timezone":"Asia/Baghdad"},{"id":"basr","name":"Basra","country":"Iraq","timezone":"Asia/Baghdad"},{"id":"mosu","name":"Mosul","country":"Iraq","timezone":"Asia/Baghdad"},{"id":"erb","name":"Erbil","country":"Iraq","timezone":"Asia/Baghdad"},{"id":"teh","name":"Tehran","country":"Iran","timezone":"Asia/Tehran"},{"id":"mash","name":"Mashhad","country":"Iran","timezone":"Asia/Tehran"},{"id":"isf","name":"Isfahan","country":"Iran","timezone":"Asia/Tehran"},{"id":"shir","name":"Shiraz","country":"Iran","timezone":"Asia/Tehran"},{"id":"tab","name":"Tabriz","country":"Iran","timezone":"Asia/Tehran"},{"id":"kar","name":"Karachi","country":"Pakistan","timezone":"Asia/Karachi"},{"id":"lah","name":"Lahore","country":"Pakistan","timezone":"Asia/Karachi"},{"id":"isl","name":"Islamabad","country":"Pakistan","timezone":"Asia/Karachi"},{"id":"raw","name":"Rawalpindi","country":"Pakistan","timezone":"Asia/Karachi"},{"id":"fais","name":"Faisalabad","country":"Pakistan","timezone":"Asia/Karachi"},{"id":"mult","name":"Multan","country":"Pakistan","timezone":"Asia/Karachi"},{"id":"pesh","name":"Peshawar","country":"Pakistan","timezone":"Asia/Karachi"},{"id":"quet","name":"Quetta","country":"Pakistan","timezone":"Asia/Karachi"},{"id":"dac","name":"Dhaka","country":"Bangladesh","timezone":"Asia/Dhaka"},{"id":"chit","name":"Chittagong","country":"Bangladesh","timezone":"Asia/Dhaka"},{"id":"khul","name":"Khulna","country":"Bangladesh","timezone":"Asia/Dhaka"},{"id":"sylh","name":"Sylhet","country":"Bangladesh","timezone":"Asia/Dhaka"},{"id":"kandy","name":"Kandy","country":"Sri Lanka","timezone":"Asia/Colombo"},{"id":"pokh","name":"Pokhara","country":"Nepal","timezone":"Asia/Kathmandu"},{"id":"thi","name":"Thimphu","country":"Bhutan","timezone":"Asia/Thimphu"},{"id":"male","name":"Mal\u00e9","country":"Maldives","timezone":"Indian/Maldives"},{"id":"alm","name":"Almaty","country":"Kazakhstan","timezone":"Asia/Almaty"},{"id":"ast","name":"Astana","country":"Kazakhstan","timezone":"Asia/Almaty"},{"id":"shym","name":"Shymkent","country":"Kazakhstan","timezone":"Asia/Almaty"},{"id":"karag","name":"Karaganda","country":"Kazakhstan","timezone":"Asia/Almaty"},{"id":"tas","name":"Tashkent","country":"Uzbekistan","timezone":"Asia/Tashkent"},{"id":"samark","name":"Samarkand","country":"Uzbekistan","timezone":"Asia/Samarkand"},{"id":"bukh","name":"Bukhara","country":"Uzbekistan","timezone":"Asia/Samarkand"},{"id":"ash","name":"Ashgabat","country":"Turkmenistan","timezone":"Asia/Ashgabat"},{"id":"turk","name":"T\u00fcrkmenabat","country":"Turkmenistan","timezone":"Asia/Ashgabat"},{"id":"bis","name":"Bishkek","country":"Kyrgyzstan","timezone":"Asia/Bishkek"},{"id":"osh","name":"Osh","country":"Kyrgyzstan","timezone":"Asia/Bishkek"},{"id":"gyum","name":"Gyumri","country":"Armenia","timezone":"Asia/Yerevan"},{"id":"kuta","name":"Kutaisi","country":"Georgia","timezone":"Asia/Tbilisi"},{"id":"ulaan","name":"Ulaanbaatar","country":"Mongolia","timezone":"Asia/Ulaanbaatar"},{"id":"erden","name":"Erdenet","country":"Mongolia","timezone":"Asia/Ulaanbaatar"},{"id":"cai","name":"Cairo","country":"Egypt","timezone":"Africa/Cairo"},{"id":"alex","name":"Alexandria","country":"Egypt","timezone":"Africa/Cairo"},{"id":"giza","name":"Giza","country":"Egypt","timezone":"Africa/Cairo"},{"id":"lux","name":"Luxor","country":"Egypt","timezone":"Africa/Cairo"},{"id":"aswan","name":"Aswan","country":"Egypt","timezone":"Africa/Cairo"},{"id":"sharm","name":"Sharm el-Sheikh","country":"Egypt","timezone":"Africa/Cairo"},{"id":"hurgh","name":"Hurghada","country":"Egypt","timezone":"Africa/Cairo"},{"id":"cas","name":"Casablanca","country":"Morocco","timezone":"Africa/Casablanca"},{"id":"rab","name":"Rabat","country":"Morocco","timezone":"Africa/Casablanca"},{"id":"fes","name":"Fez","country":"Morocco","timezone":"Africa/Casablanca"},{"id":"marr","name":"Marrakesh","country":"Morocco","timezone":"Africa/Casablanca"},{"id":"tanger","name":"Tangier","country":"Morocco","timezone":"Africa/Casablanca"},{"id":"agad","name":"Agadir","country":"Morocco","timezone":"Africa/Casablanca"},{"id":"tun","name":"Tunis","country":"Tunisia","timezone":"Africa/Tunis"},{"id":"sfax","name":"Sfax","country":"Tunisia","timezone":"Africa/Tunis"},{"id":"sousse","name":"Sousse","country":"Tunisia","timezone":"Africa/Tunis"},{"id":"alg","name":"Algiers","country":"Algeria","timezone":"Africa/Algiers"},{"id":"oran","name":"Oran","country":"Algeria","timezone":"Africa/Algiers"},{"id":"const","name":"Constantine","country":"Algeria","timezone":"Africa/Algiers"},{"id":"tri","name":"Tripoli","country":"Libya","timezone":"Africa/Tripoli"},{"id":"bengh","name":"Benghazi","country":"Libya","timezone":"Africa/Tripoli"},{"id":"kha","name":"Khartoum","country":"Sudan","timezone":"Africa/Khartoum"},{"id":"lag","name":"Lagos","country":"Nigeria","timezone":"Africa/Lagos"},{"id":"abu","name":"Abuja","country":"Nigeria","timezone":"Africa/Lagos"},{"id":"ibadan","name":"Ibadan","country":"Nigeria","timezone":"Africa/Lagos"},{"id":"kan","name":"Kano","country":"Nigeria","timezone":"Africa/Lagos"},{"id":"benin","name":"Benin City","country":"Nigeria","timezone":"Africa/Lagos"},{"id":"acc","name":"Accra","country":"Ghana","timezone":"Africa/Accra"},{"id":"kum","name":"Kumasi","country":"Ghana","timezone":"Africa/Accra"},{"id":"dak","name":"Dakar","country":"Senegal","timezone":"Africa/Dakar"},{"id":"abi","name":"Abidjan","country":"Ivory Coast","timezone":"Africa/Abidjan"},{"id":"lom","name":"Lom\u00e9","country":"Togo","timezone":"Africa/Lome"},{"id":"ouag","name":"Ouagadougou","country":"Burkina Faso","timezone":"Africa/Ouagadougou"},{"id":"bama","name":"Bamako","country":"Mali","timezone":"Africa/Bamako"},{"id":"conak","name":"Conakry","country":"Guinea","timezone":"Africa/Conakry"},{"id":"freet","name":"Freetown","country":"Sierra Leone","timezone":"Africa/Freetown"},{"id":"monro","name":"Monrovia","country":"Liberia","timezone":"Africa/Monrovia"},{"id":"biss","name":"Bissau","country":"Guinea-Bissau","timezone":"Africa/Bissau"},{"id":"banj","name":"Banjul","country":"Gambia","timezone":"Africa/Banjul"},{"id":"praia","name":"Praia","country":"Cape Verde","timezone":"Atlantic/Cape_Verde"},{"id":"niame","name":"Niamey","country":"Niger","timezone":"Africa/Niamey"},{"id":"coton","name":"Cotonou","country":"Benin","timezone":"Africa/Lagos"},{"id":"portn","name":"Porto-Novo","country":"Benin","timezone":"Africa/Lagos"},{"id":"kin2","name":"Kinshasa","country":"DR Congo","timezone":"Africa/Kinshasa"},{"id":"lun","name":"Lubumbashi","country":"DR Congo","timezone":"Africa/Lubumbashi"},{"id":"kan2","name":"Kananga","country":"DR Congo","timezone":"Africa/Lubumbashi"},{"id":"kis","name":"Kisangani","country":"DR Congo","timezone":"Africa/Lubumbashi"},{"id":"lbr","name":"Luanda","country":"Angola","timezone":"Africa/Luanda"},{"id":"huam","name":"Huambo","country":"Angola","timezone":"Africa/Luanda"},{"id":"gab","name":"Libreville","country":"Gabon","timezone":"Africa/Libreville"},{"id":"portg","name":"Port-Gentil","country":"Gabon","timezone":"Africa/Libreville"},{"id":"dou","name":"Douala","country":"Cameroon","timezone":"Africa/Douala"},{"id":"yaou","name":"Yaound\u00e9","country":"Cameroon","timezone":"Africa/Douala"},{"id":"bangu","name":"Bangui","country":"Central African Republic","timezone":"Africa/Bangui"},{"id":"n_dja","name":"N'Djamena","country":"Chad","timezone":"Africa/Ndjamena"},{"id":"braz","name":"Brazzaville","country":"Congo","timezone":"Africa/Brazzaville"},{"id":"malab","name":"Malabo","country":"Equatorial Guinea","timezone":"Africa/Malabo"},{"id":"sao_t","name":"S\u00e3o Tom\u00e9","country":"S\u00e3o Tom\u00e9 and Pr\u00edncipe","timezone":"Africa/Sao_Tome"},{"id":"nbo","name":"Nairobi","country":"Kenya","timezone":"Africa/Nairobi"},{"id":"mom","name":"Mombasa","country":"Kenya","timezone":"Africa/Nairobi"},{"id":"dar","name":"Dar es Salaam","country":"Tanzania","timezone":"Africa/Dar_es_Salaam"},{"id":"zanz","name":"Zanzibar City","country":"Tanzania","timezone":"Africa/Dar_es_Salaam"},{"id":"arush","name":"Arusha","country":"Tanzania","timezone":"Africa/Dar_es_Salaam"},{"id":"kam","name":"Kampala","country":"Uganda","timezone":"Africa/Kampala"},{"id":"kig","name":"Kigali","country":"Rwanda","timezone":"Africa/Kigali"},{"id":"buj","name":"Bujumbura","country":"Burundi","timezone":"Africa/Bujumbura"},{"id":"add","name":"Addis Ababa","country":"Ethiopia","timezone":"Africa/Addis_Ababa"},{"id":"dire","name":"Dire Dawa","country":"Ethiopia","timezone":"Africa/Addis_Ababa"},{"id":"mog","name":"Mogadishu","country":"Somalia","timezone":"Africa/Mogadishu"},{"id":"harg","name":"Hargeisa","country":"Somalia","timezone":"Africa/Mogadishu"},{"id":"jub","name":"Juba","country":"South Sudan","timezone":"Africa/Juba"},{"id":"djib","name":"Djibouti","country":"Djibouti","timezone":"Africa/Djibouti"},{"id":"asm","name":"Asmara","country":"Eritrea","timezone":"Africa/Asmara"},{"id":"jnb","name":"Johannesburg","country":"South Africa","timezone":"Africa/Johannesburg"},{"id":"cpt","name":"Cape Town","country":"South Africa","timezone":"Africa/Johannesburg"},{"id":"dur","name":"Durban","country":"South Africa","timezone":"Africa/Johannesburg"},{"id":"pret","name":"Pretoria","country":"South Africa","timezone":"Africa/Johannesburg"},{"id":"portel","name":"Port Elizabeth","country":"South Africa","timezone":"Africa/Johannesburg"},{"id":"bloem","name":"Bloemfontein","country":"South Africa","timezone":"Africa/Johannesburg"},{"id":"eastl","name":"East London","country":"South Africa","timezone":"Africa/Johannesburg"},{"id":"kim","name":"Kimberley","country":"South Africa","timezone":"Africa/Johannesburg"},{"id":"lus","name":"Lusaka","country":"Zambia","timezone":"Africa/Lusaka"},{"id":"ndola","name":"Ndola","country":"Zambia","timezone":"Africa/Lusaka"},{"id":"kitw","name":"Kitwe","country":"Zambia","timezone":"Africa/Lusaka"},{"id":"har","name":"Harare","country":"Zimbabwe","timezone":"Africa/Harare"},{"id":"bulaw","name":"Bulawayo","country":"Zimbabwe","timezone":"Africa/Harare"},{"id":"map","name":"Maputo","country":"Mozambique","timezone":"Africa/Maputo"},{"id":"beir","name":"Beira","country":"Mozambique","timezone":"Africa/Maputo"},{"id":"namp","name":"Nampula","country":"Mozambique","timezone":"Africa/Maputo"},{"id":"wind","name":"Windhoek","country":"Namibia","timezone":"Africa/Windhoek"},{"id":"walv","name":"Walvis Bay","country":"Namibia","timezone":"Africa/Windhoek"},{"id":"gab2","name":"Gaborone","country":"Botswana","timezone":"Africa/Gaborone"},{"id":"fran","name":"Francistown","country":"Botswana","timezone":"Africa/Gaborone"},{"id":"maser","name":"Maseru","country":"Lesotho","timezone":"Africa/Maseru"},{"id":"mbab","name":"Mbabane","country":"Eswatini","timezone":"Africa/Mbabane"},{"id":"lilong","name":"Lilongwe","country":"Malawi","timezone":"Africa/Blantyre"},{"id":"blant","name":"Blantyre","country":"Malawi","timezone":"Africa/Blantyre"},{"id":"antanan","name":"Antananarivo","country":"Madagascar","timezone":"Indian/Antananarivo"},{"id":"portl","name":"Port Louis","country":"Mauritius","timezone":"Indian/Mauritius"},{"id":"moron","name":"Moroni","country":"Comoros","timezone":"Indian/Comoro"},{"id":"mamou","name":"Mamoudzou","country":"Mayotte","timezone":"Indian/Mayotte"},{"id":"victo","name":"Victoria","country":"Seychelles","timezone":"Indian/Mahe"},{"id":"syd","name":"Sydney","country":"Australia","timezone":"Australia/Sydney"},{"id":"mel","name":"Melbourne","country":"Australia","timezone":"Australia/Melbourne"},{"id":"bne","name":"Brisbane","country":"Australia","timezone":"Australia/Brisbane"},{"id":"per","name":"Perth","country":"Australia","timezone":"Australia/Perth"},{"id":"ade","name":"Adelaide","country":"Australia","timezone":"Australia/Adelaide"},{"id":"canb","name":"Canberra","country":"Australia","timezone":"Australia/Sydney"},{"id":"hob","name":"Hobart","country":"Australia","timezone":"Australia/Hobart"},{"id":"darw","name":"Darwin","country":"Australia","timezone":"Australia/Darwin"},{"id":"gold","name":"Gold Coast","country":"Australia","timezone":"Australia/Brisbane"},{"id":"newcst","name":"Newcastle","country":"Australia","timezone":"Australia/Sydney"},{"id":"woll","name":"Wollongong","country":"Australia","timezone":"Australia/Sydney"},{"id":"cairns","name":"Cairns","country":"Australia","timezone":"Australia/Brisbane"},{"id":"town","name":"Townsville","country":"Australia","timezone":"Australia/Brisbane"},{"id":"alice","name":"Alice Springs","country":"Australia","timezone":"Australia/Darwin"},{"id":"broome","name":"Broome","country":"Australia","timezone":"Australia/Perth"},{"id":"auc","name":"Auckland","country":"New Zealand","timezone":"Pacific/Auckland"},{"id":"wel","name":"Wellington","country":"New Zealand","timezone":"Pacific/Auckland"},{"id":"chc","name":"Christchurch","country":"New Zealand","timezone":"Pacific/Auckland"},{"id":"hamil","name":"Hamilton","country":"New Zealand","timezone":"Pacific/Auckland"},{"id":"tau","name":"Tauranga","country":"New Zealand","timezone":"Pacific/Auckland"},{"id":"dun","name":"Dunedin","country":"New Zealand","timezone":"Pacific/Auckland"},{"id":"queen","name":"Queenstown","country":"New Zealand","timezone":"Pacific/Auckland"},{"id":"nelson","name":"Nelson","country":"New Zealand","timezone":"Pacific/Auckland"},{"id":"inver","name":"Invercargill","country":"New Zealand","timezone":"Pacific/Auckland"},{"id":"por2","name":"Port Moresby","country":"Papua New Guinea","timezone":"Pacific/Port_Moresby"},{"id":"lae","name":"Lae","country":"Papua New Guinea","timezone":"Pacific/Port_Moresby"},{"id":"suv","name":"Suva","country":"Fiji","timezone":"Pacific/Fiji"},{"id":"nadi","name":"Nadi","country":"Fiji","timezone":"Pacific/Fiji"},{"id":"nou","name":"Noum\u00e9a","country":"New Caledonia","timezone":"Pacific/Noumea"},{"id":"pape","name":"Papeete","country":"French Polynesia","timezone":"Pacific/Tahiti"},{"id":"apia","name":"Apia","country":"Samoa","timezone":"Pacific/Apia"},{"id":"nuku","name":"Nuku'alofa","country":"Tonga","timezone":"Pacific/Tongatapu"},{"id":"portv","name":"Port Vila","country":"Vanuatu","timezone":"Pacific/Efate"},{"id":"honi","name":"Honiara","country":"Solomon Islands","timezone":"Pacific/Guadalcanal"},{"id":"maj","name":"Majuro","country":"Marshall Islands","timezone":"Pacific/Majuro"},{"id":"tar","name":"Tarawa","country":"Kiribati","timezone":"Pacific/Tarawa"},{"id":"kirit","name":"Kiritimati","country":"Kiribati","timezone":"Pacific/Kiritimati"},{"id":"fun","name":"Funafuti","country":"Tuvalu","timezone":"Pacific/Funafuti"},{"id":"nau","name":"Yaren","country":"Nauru","timezone":"Pacific/Nauru"},{"id":"palau","name":"Ngerulmud","country":"Palau","timezone":"Pacific/Palau"},{"id":"guam","name":"Hag\u00e5t\u00f1a","country":"Guam","timezone":"Pacific/Guam"},{"id":"saip","name":"Saipan","country":"Northern Mariana Islands","timezone":"Pacific/Saipan"},{"id":"rarot","name":"Avarua","country":"Cook Islands","timezone":"Pacific/Rarotonga"},{"id":"alof","name":"Alofi","country":"Niue","timezone":"Pacific/Niue"},{"id":"pago","name":"Pago Pago","country":"American Samoa","timezone":"Pacific/Pago_Pago"},{"id":"wallis","name":"Mata-Utu","country":"Wallis and Futuna","timezone":"Pacific/Wallis"},{"id":"norfol","name":"Kingston","country":"Norfolk Island","timezone":"Pacific/Norfolk"},{"id":"chatham","name":"Waitangi","country":"Chatham Islands","timezone":"Pacific/Chatham"}];
+    
+    // State
+    let selectedCities = [];
+    let searchQuery = '';
+    let searchResults = [];
+    let selectedSearchIndex = -1;
+    
+    // DOM
+    const searchInput = document.getElementById('citySearch');
+    const searchResultsEl = document.getElementById('searchResults');
+    const addBtn = document.getElementById('addSelectedBtn');
+    const selectedEl = document.getElementById('selectedCities');
+    const gridWrap = document.getElementById('gridWrap');
+    const gridHeader = document.getElementById('gridHeader');
+    const gridBody = document.getElementById('gridBody');
+    const legend = document.getElementById('legend');
+    const bestTimes = document.getElementById('bestTimes');
+    const bestTimesList = document.getElementById('bestTimesList');
+    const emptyState = document.getElementById('emptyState');
+    
+    // Initialize
+    function init() {
+        // Check URL params for pre-selected cities
+        const params = new URLSearchParams(window.location.search);
+        const citiesParam = params.get('cities');
+        if (citiesParam) {
+            const ids = citiesParam.split(',');
+            ids.forEach(id => {
+                const city = CITIES.find(c => c.id === id);
+                if (city && !selectedCities.find(c => c.id === id)) {
+                    selectedCities.push(city);
+                }
+            });
+            if (selectedCities.length >= 2) {
+                renderGrid();
+            }
+        }
+        renderSelected();
+    }
+    
+    // Search
+    searchInput.addEventListener('input', function() {
+        searchQuery = this.value.toLowerCase().trim();
+        if (searchQuery.length < 2) {
+            searchResultsEl.classList.remove('active');
+            return;
+        }
+        searchResults = CITIES.filter(c => 
+            !selectedCities.find(s => s.id === c.id) &&
+            (c.name.toLowerCase().includes(searchQuery) || 
+             c.country.toLowerCase().includes(searchQuery) ||
+             c.timezone.toLowerCase().includes(searchQuery))
+        ).slice(0, 10);
+        selectedSearchIndex = -1;
+        renderSearchResults();
+    });
+    
+    searchInput.addEventListener('keydown', function(e) {
+        if (!searchResultsEl.classList.contains('active')) return;
+        if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            selectedSearchIndex = Math.min(selectedSearchIndex + 1, searchResults.length - 1);
+            renderSearchResults();
+        } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            selectedSearchIndex = Math.max(selectedSearchIndex - 1, -1);
+            renderSearchResults();
+        } else if (e.key === 'Enter') {
+            e.preventDefault();
+            if (selectedSearchIndex >= 0 && searchResults[selectedSearchIndex]) {
+                addCity(searchResults[selectedSearchIndex]);
+            }
+        } else if (e.key === 'Escape') {
+            searchResultsEl.classList.remove('active');
+        }
+    });
+    
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.mp-search-wrap')) {
+            searchResultsEl.classList.remove('active');
+        }
+    });
+    
+    function renderSearchResults() {
+        if (searchResults.length === 0) {
+            searchResultsEl.classList.remove('active');
+            return;
+        }
+        searchResultsEl.innerHTML = searchResults.map((c, i) => 
+            '<div class="result-item' + (i === selectedSearchIndex ? ' selected' : '') + '" data-id="' + c.id + '">' +
+            '<span class="city-name">' + c.name + '</span>' +
+            '<span class="city-detail">' + c.country + ' &middot; ' + c.timezone + '</span></div>'
+        ).join('');
+        searchResultsEl.classList.add('active');
+        
+        searchResultsEl.querySelectorAll('.result-item').forEach(el => {
+            el.addEventListener('click', function() {
+                const city = CITIES.find(c => c.id === this.dataset.id);
+                if (city) addCity(city);
+            });
+        });
+    }
+    
+    addBtn.addEventListener('click', function() {
+        if (selectedSearchIndex >= 0 && searchResults[selectedSearchIndex]) {
+            addCity(searchResults[selectedSearchIndex]);
+        }
+    });
+    
+    function addCity(city) {
+        if (selectedCities.length >= 8) {
+            alert('Maximum 8 cities allowed');
+            return;
+        }
+        if (selectedCities.find(c => c.id === city.id)) return;
+        selectedCities.push(city);
+        searchInput.value = '';
+        searchResultsEl.classList.remove('active');
+        renderSelected();
+        if (selectedCities.length >= 2) {
+            renderGrid();
+        }
+        updateURL();
+    }
+    
+    function removeCity(id) {
+        selectedCities = selectedCities.filter(c => c.id !== id);
+        renderSelected();
+        if (selectedCities.length >= 2) {
+            renderGrid();
+        } else {
+            gridWrap.style.display = 'none';
+            legend.style.display = 'none';
+            bestTimes.style.display = 'none';
+            emptyState.style.display = 'block';
+        }
+        updateURL();
+    }
+    
+    function renderSelected() {
+        selectedEl.innerHTML = selectedCities.map(c => {
+            const tzAbbr = getTimezoneAbbr(c.timezone);
+            return '<div class="mp-city-chip">' +
+                '<span>' + c.name + '</span>' +
+                '<span class="tz-abbr">' + tzAbbr + '</span>' +
+                '<span class="remove" data-id="' + c.id + '">&times;</span></div>';
+        }).join('');
+
+        // Show/hide share button
+        const shareBtn = document.getElementById('shareLinkBtn');
+        if (shareBtn) {
+            shareBtn.style.display = selectedCities.length >= 2 ? 'inline-flex' : 'none';
+        }
+        
+        selectedEl.querySelectorAll('.remove').forEach(el => {
+            el.addEventListener('click', function() {
+                removeCity(this.dataset.id);
+            });
+        });
+        updateShareButton();
+        updateOpenGraphTags();
+    }
+
+    function updateOpenGraphTags() {
+        if (selectedCities.length < 2) return;
+
+        const cityNames = selectedCities.map(c => c.name).join(', ');
+        const title = 'Meeting Planner: ' + cityNames;
+        const desc = 'Find the best meeting time for ' + cityNames + ' across time zones.';
+
+        // Update OG tags
+        document.querySelector('meta[property="og:title"]').setAttribute('content', title);
+        document.querySelector('meta[property="og:description"]').setAttribute('content', desc);
+        document.querySelector('meta[name="twitter:title"]').setAttribute('content', title);
+        document.querySelector('meta[name="twitter:description"]').setAttribute('content', desc);
+
+        // Update canonical URL with cities param
+        const ids = selectedCities.map(c => c.id).join(',');
+        const canonicalUrl = window.location.origin + window.location.pathname + '?cities=' + ids;
+        document.querySelector('link[rel="canonical"]').setAttribute('href', canonicalUrl);
+        document.querySelector('meta[property="og:url"]').setAttribute('content', canonicalUrl);
+    }
+    
+    function getTimezoneAbbr(tz) {
+        try {
+            const d = new Date();
+            return new Intl.DateTimeFormat('en-US', { timeZone: tz, timeZoneName: 'short' })
+                .formatToParts(d).find(p => p.type === 'timeZoneName')?.value || '';
+        } catch(e) { return ''; }
+    }
+    
+    function getTimeInZone(tz, utcHour) {
+        try {
+            const d = new Date();
+            d.setUTCHours(utcHour, 0, 0, 0);
+            const parts = new Intl.DateTimeFormat('en-US', {
+                timeZone: tz, hour: 'numeric', hour12: false
+            }).formatToParts(d);
+            return parseInt(parts.find(p => p.type === 'hour')?.value || '0');
+        } catch(e) { return 0; }
+    }
+    
+    function isBusinessHour(tz, utcHour) {
+        const localHour = getTimeInZone(tz, utcHour);
+        return localHour >= 9 && localHour < 17;
+    }
+    
+    function isWorkingHour(tz, utcHour) {
+        const localHour = getTimeInZone(tz, utcHour);
+        return localHour >= 7 && localHour < 22;
+    }
+    
+    function renderGrid() {
+        emptyState.style.display = 'none';
+        gridWrap.style.display = 'block';
+        legend.style.display = 'flex';
+        bestTimes.style.display = 'block';
+        
+        // Header with UTC hours
+        let headerHTML = '<div class="header-label">City</div>';
+        for (let h = 0; h < 24; h++) {
+            headerHTML += '<div class="header-cell">' + (h < 10 ? '0' : '') + h + '</div>';
+        }
+        gridHeader.innerHTML = headerHTML;
+        
+        // Rows
+        let bodyHTML = '';
+        const now = new Date();
+        const currentUTCH = now.getUTCHours();
+        
+        selectedCities.forEach(city => {
+            const tzAbbr = getTimezoneAbbr(city.timezone);
+            bodyHTML += '<div class="mp-grid-row">';
+            bodyHTML += '<div class="city-label"><span class="name">' + city.name + '</span><span class="tz">' + tzAbbr + '</span></div>';
+            
+            for (let h = 0; h < 24; h++) {
+                const isBusiness = isBusinessHour(city.timezone, h);
+                const isWorking = isWorkingHour(city.timezone, h);
+                const isNow = h === currentUTCH;
+                let cls = 'hour-cell ';
+                if (isBusiness) cls += 'free';
+                else if (isWorking) cls += 'working';
+                else cls += 'off';
+                if (isNow) cls += ' now';
+                
+                const localH = getTimeInZone(city.timezone, h);
+                bodyHTML += '<div class="' + cls + '" title="UTC ' + h + ':00 → ' + city.name + ' ' + localH + ':00">' + localH + '</div>';
+            }
+            bodyHTML += '</div>';
+        });
+        gridBody.innerHTML = bodyHTML;
+        
+        // Find best times
+        findBestTimes();
+    }
+    
+    function findBestTimes() {
+        const slots = [];
+        
+        for (let h = 0; h < 24; h++) {
+            let allBusiness = 0;
+            let someWorking = 0;
+            const cityTimes = [];
+            
+            selectedCities.forEach(city => {
+                const localH = getTimeInZone(city.timezone, h);
+                const isBiz = isBusinessHour(city.timezone, h);
+                const isWork = isWorkingHour(city.timezone, h);
+                if (isBiz) allBusiness++;
+                if (isWork) someWorking++;
+                cityTimes.push({ city: city.name, hour: localH, isBiz, isWork });
+            });
+            
+            let score, scoreClass;
+            if (allBusiness === selectedCities.length) {
+                score = 'Perfect';
+                scoreClass = 'perfect';
+            } else if (allBusiness >= selectedCities.length * 0.7 && someWorking === selectedCities.length) {
+                score = 'Good';
+                scoreClass = 'good';
+            } else if (someWorking >= selectedCities.length * 0.5) {
+                score = 'OK';
+                scoreClass = 'ok';
+            } else {
+                score = null;
+            }
+            
+            if (score) {
+                slots.push({ utcHour: h, score, scoreClass, cityTimes, allBusiness, total: selectedCities.length });
+            }
+        }
+        
+        // Sort: perfect first, then good, then ok
+        slots.sort((a, b) => {
+            const order = { perfect: 0, good: 1, ok: 2 };
+            return (order[a.scoreClass] || 3) - (order[b.scoreClass] || 3);
+        });
+        
+        // Render top slots
+        if (slots.length === 0) {
+            bestTimesList.innerHTML = '<p style="color:rgba(255,255,255,0.4);text-align:center;padding:20px;">No overlapping business hours found. Try different cities.</p>';
+            return;
+        }
+
+        const topSlots = slots.slice(0, 6);
+        bestTimesList.innerHTML = topSlots.map((slot, idx) => {
+            const utcStr = (slot.utcHour < 10 ? '0' : '') + slot.utcHour + ':00 UTC';
+            const chips = slot.cityTimes.map(ct =>
+                '<span class="local-time-chip' + (ct.isBiz ? ' biz' : '') + '">' +
+                '<span class="time">' + (ct.hour < 10 ? '0' : '') + ct.hour + ':00</span> ' +
+                '<span class="city">' + ct.city + '</span></span>'
+            ).join('');
+
+            return '<div class="mp-slot" data-slot="' + idx + '">' +
+                '<div class="utc-time">' + utcStr + '</div>' +
+                '<div class="local-times">' + chips + '</div>' +
+                '<div class="cal-btns">' +
+                '<button class="cal-btn" data-open-cal="' + slot.utcHour + '" title="Add to Calendar">� Add to Calendar</button>' +
+                '</div>' +
+                '<div class="score ' + slot.scoreClass + '">' + slot.score + ' (' + slot.allBusiness + '/' + slot.total + ')</div>' +
+                '</div>';
+        }).join('');
+
+        // Wire up calendar button clicks
+        bestTimesList.querySelectorAll('[data-open-cal]').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const hour = parseInt(this.getAttribute('data-open-cal'), 10);
+                const slotData = topSlots.find(s => s.utcHour === hour);
+                if (slotData) {
+                    openCalendarModal(hour, slotData.cityTimes);
+                }
+            });
+        });
+
+        // Highlight best cells in grid
+        const bestHours = new Set(topSlots.filter(s => s.scoreClass === 'perfect').map(s => s.utcHour));
+        if (bestHours.size > 0) {
+            document.querySelectorAll('.hour-cell.free').forEach((cell, i) => {
+                const hourIndex = i % 24;
+                if (bestHours.has(hourIndex)) {
+                    cell.classList.add('best');
+                }
+            });
+        }
+    }
+    
+    function updateURL() {
+        if (selectedCities.length >= 2) {
+            const ids = selectedCities.map(c => c.id).join(',');
+            history.replaceState(null, '', '?cities=' + ids);
+        } else {
+            history.replaceState(null, '', window.location.pathname);
+        }
+        updateShareButton();
+    }
+
+    function updateShareButton() {
+        const shareBtn = document.getElementById('shareLinkBtn');
+        if (shareBtn && selectedCities.length >= 2) {
+            const ids = selectedCities.map(c => c.id).join(',');
+            shareBtn.dataset.url = window.location.origin + window.location.pathname + '?cities=' + ids;
+        }
+    }
+
+    // Share button click handler
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('#shareLinkBtn')) {
+            const btn = e.target.closest('#shareLinkBtn');
+            const url = btn.dataset.url || window.location.href;
+            navigator.clipboard.writeText(url).then(() => {
+                const original = btn.innerHTML;
+                btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Copied!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.innerHTML = original;
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+    });
+    
+    // ============ CALENDAR & LEAD MAGNET ============
+    let currentSlotUTC = null;
+
+    function openCalendarModal(utcHour, cityTimes) {
+        currentSlotUTC = utcHour;
+        const modal = document.getElementById('calendarModal');
+        const modalTime = document.getElementById('modalTimeInfo');
+        const cs = document.getElementById('citySummary');
+        const dateInput = document.getElementById('meetDate');
+
+        // Default date: tomorrow
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        dateInput.value = tomorrow.toISOString().split('T')[0];
+        dateInput.min = new Date().toISOString().split('T')[0];
+
+        // Header
+        const dayName = new Date(Date.now() + 86400000).toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' });
+        modalTime.textContent = utcHour + ':00 UTC · ' + dayName;
+
+        // City summary
+        cs.innerHTML = cityTimes.map(ct =>
+            '<div class="cs-row"><span class="cs-city">' + ct.city + '</span><span class="cs-time">' + (ct.hour < 10 ? '0' : '') + ct.hour + ':00 local</span></div>'
+        ).join('');
+
+        // Hide lead success
+        document.getElementById('leadSuccess').style.display = 'none';
+
+        updateGoogleCalLink();
+        modal.classList.add('active');
+    }
+
+    function updateGoogleCalLink() {
+        if (currentSlotUTC === null) return;
+        const date = document.getElementById('meetDate').value;
+        const title = encodeURIComponent(document.getElementById('meetTitle').value || 'Team Meeting');
+        const dur = parseInt(document.getElementById('meetDuration').value, 10);
+
+        // Compute start/end in UTC
+        const startDt = new Date(date + 'T' + (currentSlotUTC < 10 ? '0' : '') + currentSlotUTC + ':00:00Z');
+        const endDt = new Date(startDt.getTime() + dur * 60000);
+
+        const pad = (n) => String(n).padStart(2, '0');
+        const startCompact = date.replace(/-/g, '') + 'T' + pad(currentSlotUTC) + '0000Z';
+        const endCompact = endDt.getUTCFullYear() + pad(endDt.getUTCMonth() + 1) + pad(endDt.getUTCDate()) + 'T' + pad(endDt.getUTCHours()) + pad(endDt.getUTCMinutes()) + '00Z';
+        const dates = startCompact + '/' + endCompact;
+        const gUrl = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=' + title + '&dates=' + encodeURIComponent(dates);
+        document.getElementById('googleCalBtn').href = gUrl;
+    }
+
+    function downloadICS() {
+        if (currentSlotUTC === null) return;
+        const date = document.getElementById('meetDate').value;
+        const title = (document.getElementById('meetTitle').value || 'Team Meeting').replace(/[\\\n,]/g, ' ');
+        const dur = parseInt(document.getElementById('meetDuration').value, 10);
+
+        const start = new Date(date + 'T' + (currentSlotUTC < 10 ? '0' : '') + currentSlotUTC + ':00:00Z');
+        const end = new Date(start.getTime() + dur * 60000);
+
+        const fmt = (d) => {
+            return d.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '') + 'Z';
+        };
+
+        const dtStart = fmt(start);
+        const dtEnd = fmt(end);
+
+        const cityList = selectedCities.map(c => c.name).join(', ');
+        const desc = 'Meeting time for: ' + cityList + '\\nPlanned via World Time Sync (worldtimessync.com)';
+
+        const ics = [
+            'BEGIN:VCALENDAR',
+            'VERSION:2.0',
+            'PRODID:-//WorldTimeSync//Meeting Planner//EN',
+            'CALSCALE:GREGORIAN',
+            'METHOD:PUBLISH',
+            'BEGIN:VEVENT',
+            'DTSTART:' + dtStart,
+            'DTEND:' + dtEnd,
+            'SUMMARY:' + title,
+            'DESCRIPTION:' + desc,
+            'STATUS:CONFIRMED',
+            'END:VEVENT',
+            'END:VCALENDAR'
+        ].join('\r\n');
+
+        const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'meeting.ics';
+        a.click();
+        URL.revokeObjectURL(url);
+    }
+
+    function setReminder() {
+        const email = document.getElementById('reminderEmail').value.trim();
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            alert('Please enter a valid email address.');
+            return;
+        }
+        // Store locally (no backend yet) — this is a soft lead capture
+        const reminders = JSON.parse(localStorage.getItem('mp_reminders') || '[]');
+        reminders.push({
+            email,
+            date: document.getElementById('meetDate').value,
+            timeUTC: currentSlotUTC,
+            title: document.getElementById('meetTitle').value,
+            cities: selectedCities.map(c => c.name).join(', '),
+            dateSet: new Date().toISOString()
+        });
+        localStorage.setItem('mp_reminders', JSON.stringify(reminders));
+        document.getElementById('leadSuccess').style.display = 'block';
+        document.getElementById('reminderEmail').value = '';
+    }
+
+    // Wire up modal events
+    document.getElementById('closeModal').addEventListener('click', function() {
+        document.getElementById('calendarModal').classList.remove('active');
+    });
+    document.getElementById('calendarModal').addEventListener('click', function(e) {
+        if (e.target === this) this.classList.remove('active');
+    });
+    document.getElementById('meetDate').addEventListener('change', updateGoogleCalLink);
+    document.getElementById('meetTitle').addEventListener('input', updateGoogleCalLink);
+    document.getElementById('meetDuration').addEventListener('change', updateGoogleCalLink);
+    document.getElementById('icsBtn').addEventListener('click', downloadICS);
+    document.getElementById('setReminderBtn').addEventListener('click', setReminder);
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') document.getElementById('calendarModal').classList.remove('active');
+    });
+
+    // Share button functionality
+    const shareBtn = document.getElementById('shareLinkBtn');
+    if (shareBtn) {
+        shareBtn.addEventListener('click', function() {
+            if (selectedCities.length >= 2) {
+                const ids = selectedCities.map(c => c.id).join(',');
+                const url = window.location.origin + window.location.pathname + '?cities=' + ids;
+                navigator.clipboard.writeText(url).then(() => {
+                    const original = shareBtn.innerHTML;
+                    shareBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Copied!';
+                    shareBtn.classList.add('copied');
+                    setTimeout(() => {
+                        shareBtn.innerHTML = original;
+                        shareBtn.classList.remove('copied');
+                    }, 2000);
+                });
+            }
+        });
+    }
+
+    function updateShareButton() {
+        const shareBtn = document.getElementById('shareLinkBtn');
+        if (shareBtn) {
+            shareBtn.style.display = selectedCities.length >= 2 ? 'inline-flex' : 'none';
+        }
+    }
+
+    function updateOpenGraphTags() {
+        if (selectedCities.length < 2) return;
+
+        const cityNames = selectedCities.map(c => c.name).join(', ');
+        const title = 'Meeting Planner: ' + cityNames;
+        const desc = 'Find the best meeting time for ' + cityNames + ' across time zones.';
+
+        // Update OG tags
+        const ogTitle = document.querySelector('meta[property="og:title"]');
+        const ogDesc = document.querySelector('meta[property="og:description"]');
+        const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+        const twitterDesc = document.querySelector('meta[name="twitter:description"]');
+
+        if (ogTitle) ogTitle.setAttribute('content', title);
+        if (ogDesc) ogDesc.setAttribute('content', desc);
+        if (twitterTitle) twitterTitle.setAttribute('content', title);
+        if (twitterDesc) twitterDesc.setAttribute('content', desc);
+
+        // Update canonical URL
+        const ids = selectedCities.map(c => c.id).join(',');
+        const canonicalUrl = window.location.origin + window.location.pathname + '?cities=' + ids;
+        const canonical = document.querySelector('link[rel="canonical"]');
+        const ogUrl = document.querySelector('meta[property="og:url"]');
+        if (canonical) canonical.setAttribute('href', canonicalUrl);
+        if (ogUrl) ogUrl.setAttribute('content', canonicalUrl);
+    }
+
+    init();
+    </script>
+
+    <!-- Deferred analytics (loaded after page is interactive) -->
+    <script>
+    window.addEventListener('load',function(){
+        var ahrefs=document.createElement('script');ahrefs.async=true;ahrefs.src='https://analytics.ahrefs.com/analytics.js';ahrefs.setAttribute('data-key','hB1VYWuwb1i/f1d8re7P2A');document.head.appendChild(ahrefs);
+      var ga=document.createElement('script');ga.async=true;ga.src='https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV';document.head.appendChild(ga);
+      var ga2=document.createElement('script');ga2.textContent='window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-LBX0CDYSSV");';document.head.appendChild(ga2);
+      var ads=document.createElement('script');ads.async=true;ads.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529';ads.crossOrigin='anonymous';document.head.appendChild(ads);
+      var vi=document.createElement('script');vi.defer=true;vi.src='https://cdn.vercel-insights.com/v1/script.js';document.head.appendChild(vi);
+    });
+    </script>
+  </body>
+</html>

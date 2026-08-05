@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="theme-color" content="#667eea">
+    <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk">
+    <title>Time Difference Calculator — Compare Time Zones Online | World Time Sync</title>
+    <meta name="title" content="Time Difference Calculator — Compare Time Zones Online">
+    <meta name="description" content="Free time difference calculator. Compare time zones of any two cities worldwide. See exact hour difference, overlapping business hours, and best meeting times.">
+    <meta name="keywords" content="time difference calculator, time zone difference, compare time zones, time between cities, meeting time calculator, time zone converter online">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://worldtimessync.com/time-difference">
+    <meta property="og:title" content="Time Difference Calculator — Compare Time Zones">
+    <meta property="og:image" content="https://worldtimessync.com/og-image.png">
+    <meta property="og:description" content="Calculate time difference between any two cities. Free online tool.">
+    <meta property="og:site_name" content="World Time Sync">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://worldtimessync.com/time-difference">
+    <link rel="stylesheet" href="/assets/index.min.css">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://www.googlesyndication.com">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Time Difference Calculator","description":"Calculate time difference between any two cities worldwide.","url":"https://worldtimessync.com/time-difference"","applicationCategory":"UtilityApplication"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+        {"@type":"Question","name":"How do I calculate time difference between two cities?","acceptedAnswer":{"@type":"Answer","text":"Select two cities in the calculator above to see their exact time difference in hours and minutes, including DST adjustments."}},
+        {"@type":"Question","name":"Does this account for daylight saving time?","acceptedAnswer":{"@type":"Answer","text":"Yes — this calculator automatically accounts for DST. It shows the current real-time offset between any two locations."}},
+        {"@type":"Question","name":"What are the best times for international meetings?","acceptedAnswer":{"@type":"Answer","text":"The calculator shows overlapping business hours (9 AM–5 PM local). Generally, early morning in the US overlaps with afternoon in Europe, and late afternoon in the US overlaps with morning in Asia."}}
+    ]}</script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <main id="main-content">
+        <div class="calc-container">
+            <nav class="breadcrumb" aria-label="Breadcrumb" style="padding:0 0 12px">
+                <a href="/">Home</a> &gt;
+                <span aria-current="page">Time Difference Calculator</span>
+            </nav>
+            <h1>Time Difference Calculator</h1>
+            <p class="subtitle">Compare time zones of any two cities. See exact difference, current times, and overlapping business hours.</p>
+
+            <div class="calc-row">
+                <div class="calc-city">
+                    <label for="city1">City A</label>
+                    <select id="city1">
+                        <option value="America/New_York">New York (EST)</option>
+                        <option value="America/Los_Angeles">Los Angeles (PST)</option>
+                        <option value="America/Chicago">Chicago (CST)</option>
+                        <option value="Europe/London">London (GMT)</option>
+                        <option value="Europe/Paris">Paris (CET)</option>
+                        <option value="Europe/Berlin">Berlin (CET)</option>
+                        <option value="Europe/Kiev">Kiev (EET)</option>
+                        <option value="Europe/Moscow">Moscow (MSK)</option>
+                        <option value="Asia/Dubai">Dubai (GST)</option>
+                        <option value="Asia/Kolkata">Mumbai (IST)</option>
+                        <option value="Asia/Singapore">Singapore (SGT)</option>
+                        <option value="Asia/Shanghai">Shanghai (CST)</option>
+                        <option value="Asia/Tokyo">Tokyo (JST)</option>
+                        <option value="Asia/Seoul">Seoul (KST)</option>
+                        <option value="Australia/Sydney">Sydney (AEST)</option>
+                        <option value="America/Sao_Paulo">Sao Paulo (BRT)</option>
+                    </select>
+                    <div class="city-time" id="city1-time">—</div>
+                </div>
+                <div class="calc-vs">VS</div>
+                <div class="calc-city">
+                    <label for="city2">City B</label>
+                    <select id="city2">
+                        <option value="Asia/Tokyo">Tokyo (JST)</option>
+                        <option value="America/New_York">New York (EST)</option>
+                        <option value="America/Los_Angeles">Los Angeles (PST)</option>
+                        <option value="America/Chicago">Chicago (CST)</option>
+                        <option value="Europe/London">London (GMT)</option>
+                        <option value="Europe/Paris">Paris (CET)</option>
+                        <option value="Europe/Berlin">Berlin (CET)</option>
+                        <option value="Europe/Kiev">Kiev (EET)</option>
+                        <option value="Europe/Moscow">Moscow (MSK)</option>
+                        <option value="Asia/Dubai">Dubai (GST)</option>
+                        <option value="Asia/Kolkata">Mumbai (IST)</option>
+                        <option value="Asia/Singapore">Singapore (SGT)</option>
+                        <option value="Asia/Shanghai">Shanghai (CST)</option>
+                        <option value="Asia/Seoul">Seoul (KST)</option>
+                        <option value="Australia/Sydney">Sydney (AEST)</option>
+                        <option value="America/Sao_Paulo">Sao Paulo (BRT)</option>
+                    </select>
+                    <div class="city-time" id="city2-time">—</div>
+                </div>
+            </div>
+
+            <div id="result" class="result">
+                <div class="diff-badge" id="diff-badge">0h difference</div>
+                <div class="overlap-section">
+                    <h3>Overlapping Business Hours</h3>
+                    <p id="overlap-text">Select two cities to see when both are at work.</p>
+                </div>
+            </div>
+
+            <section class="popular-pairs">
+                <h2>Popular City Pairs</h2>
+                <p>Click to compare instantly:</p>
+                <div class="pair-links">
+                    <a href="#" data-c1="America/New_York" data-c2="Europe/London">New York ↔ London</a>
+                    <a href="#" data-c1="America/New_York" data-c2="Asia/Tokyo">New York ↔ Tokyo</a>
+                    <a href="#" data-c1="America/Los_Angeles" data-c2="Asia/Kolkata">LA ↔ Mumbai</a>
+                    <a href="#" data-c1="Europe/London" data-c2="Asia/Shanghai">London ↔ Shanghai</a>
+                    <a href="#" data-c1="Europe/Berlin" data-c2="Asia/Tokyo">Berlin ↔ Tokyo</a>
+                    <a href="#" data-c1="America/New_York" data-c2="Europe/Paris">New York ↔ Paris</a>
+                    <a href="#" data-c1="America/Chicago" data-c2="Asia/Seoul">Chicago ↔ Seoul</a>
+                    <a href="#" data-c1="Europe/Kiev" data-c2="America/Los_Angeles">Kiev ↔ Los Angeles</a>
+                </div>
+            </section>
+
+            <section class="faq-section" aria-label="Frequently asked questions">
+                <h2>Frequently Asked Questions</h2>
+                <h3>How do you calculate time difference?</h3>
+                <p>We use the IANA time zone database with real-time UTC offsets, including daylight switching. The result shows the exact difference right now.</p>
+                <h3>Does this work for half-hour time zones?</h3>
+                <p>Yes — zones like India (UTC+5:30), Nepal (UTC+5:45), and Iran (UTC+3:30) are fully supported.</p>
+                <h3>What are the worst time zones for cross-continental meetings?</h3>
+                <p>PST/JST and HST/Europe pairs have the least overlap. A 9 AM in Tokyo is 5 PM previous-day in New York — nearly impossible for real-time meetings.</p>
+                <h3>Is there a way to find the best meeting time?</h3>
+                <p>Yes — check our <a href="/meeting-planner.html">Meeting Planner</a> for a visual overlap grid across multiple cities.</p>
+            </section>
+        </div>
+        <footer class="seo-footer">
+            <nav aria-label="Footer navigation">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/about.html">About Us</a>
+                <a href="/">World Time Sync</a>
+            </nav>
+            <p>&copy; 2026 World Time Sync. All rights reserved.</p>
+        </footer>
+    </main>
+    <script>
+(function() {
+    var cityOpts = [
+        {tz:"America/New_York",city:"New York"},{tz:"America/Los_Angeles",city:"Los Angeles"},
+        {tz:"America/Chicago",city:"Chicago"},{tz:"Europe/London",city:"London"},
+        {tz:"Europe/Paris",city:"Paris"},{tz:"Europe/Berlin",city:"Berlin"},
+        {tz:"Europe/Kiev",city:"Kiev"},{tz:"Europe/Moscow",city:"Moscow"},
+        {tz:"Asia/Dubai",city:"Dubai"},{tz:"Asia/Kolkata",city:"Mumbai"},
+        {tz:"Asia/Singapore",city:"Singapore"},{tz:"Asia/Shanghai",city:"Shanghai"},
+        {tz:"Asia/Tokyo",city:"Tokyo"},{tz:"Asia/Seoul",city:"Seoul"},
+        {tz:"Australia/Sydney",city:"Sydney"},{tz:"America/Sao_Paulo",city:"Sao Paulo"},
+    ];
+
+    function getOffsetMinutes(tz) {
+        try {
+            var d = new Date();
+            var utcStr = d.toLocaleString('en-US', {timeZone: 'UTC'});
+            var tzStr = d.toLocaleString('en-US', {timeZone: tz});
+            var utcDate = new Date(utcStr);
+            var tzDate = new Date(tzStr);
+            return (tzDate - utcDate) / 60000;
+        } catch(e) { return null; }
+    }
+
+    function formatTime(tz) {
+        try {
+            return new Intl.DateTimeFormat('en-US', {
+                timeZone: tz, hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true
+            }).format(new Date());
+        } catch(e) { return '—'; }
+    }
+
+    function calcBusinessOverlap(offset1, offset2) {
+        // Business hours 9:00-17:00 local = 8 working hours
+        var startDate = new Date();
+        startDate.setUTCHours(0,0,0,0);
+        var list1 = [], list2 = [];
+        for (var h = 0; h < 24; h++) {
+            var local1 = ((h + offset1/60) % 24 + 24) % 24;
+            var local2 = ((h + offset2/60) % 24 + 24) % 24;
+            if (local1 >= 9 && local1 < 17) list1.push(h);
+            if (local2 >= 9 && local2 < 17) list2.push(h);
+        }
+        var overlap = list1.filter(function(h) { return list2.indexOf(h) >= 0; });
+        if (overlap.length === 0) return 'No overlapping business hours — consider async communication.';
+        var startHour = overlap[0];
+        var endHour = overlap[overlap.length-1] + 1;
+        return overlap.length + ' hours overlap: ' + startHour + ':00–' + endHour + ':00 UTC';
+    }
+
+    function update() {
+        var s1 = document.getElementById('city1');
+        var s2 = document.getElementById('city2');
+        var tz1 = s1.value, tz2 = s2.value;
+        
+        document.getElementById('city1-time').textContent = formatTime(tz1);
+        document.getElementById('city2-time').textContent = formatTime(tz2);
+        
+        var off1 = getOffsetMinutes(tz1);
+        var off2 = getOffsetMinutes(tz2);
+        if (off1 === null || off2 === null) return;
+        
+        var diffMin = off2 - off1;
+        var diffHours = diffMin / 60;
+        var sign = diffHours >= 0 ? '+' : '';
+        var label = diffHours === 0 ? 'Same time zone' : 
+            tz2 + ' is ' + sign + diffHours + 'h from ' + tz1.split('/')[1];
+        
+        document.getElementById('diff-badge').textContent = sign + diffHours + 'h difference';
+        document.getElementById('overlap-text').textContent = calcBusinessOverlap(off1, off2);
+    }
+
+    // Popular pairs
+    document.querySelectorAll('.pair-links a').forEach(function(el) {
+        el.addEventListener('click', function(e) {
+            e.preventDefault();
+            var c1 = el.getAttribute('data-c1');
+            var c2 = el.getAttribute('data-c2');
+            document.getElementById('city1').value = c1;
+            document.getElementById('city2').value = c2;
+            update();
+        });
+    });
+
+    document.getElementById('city1').addEventListener('change', update);
+    document.getElementById('city2').addEventListener('change', update);
+    update();
+    setInterval(update, 1000);
+})();
+    </script>
+    <style>
+        .calc-container{max-width:760px;margin:0 auto;padding:24px 16px;font-family:system-ui,-apple-system,sans-serif;color:#333}
+        .calc-container h1{font-size:1.8rem;margin:8px 0 4px;color:#1a1a2e}
+        .subtitle{color:#666;margin-bottom:24px;font-size:.95rem}
+        .calc-row{display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap;margin-bottom:24px}
+        .calc-city{flex:1;min-width:200px}
+        .calc-city label{display:block;font-weight:600;margin-bottom:6px;font-size:.85rem;color:#555}
+        .calc-city select{width:100%;padding:10px 12px;border:2px solid #ddd;border-radius:8px;font-size:1rem;background:#fff;cursor:pointer}
+        .calc-city select:focus{border-color:#667eea;outline:none}
+        .city-time{margin-top:8px;font-size:1.3rem;font-weight:700;color:#667eea;font-variant-numeric:tabular-nums}
+        .calc-vs{font-size:1.2rem;font-weight:700;color:#999;padding-top:32px}
+        .result{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);border-radius:12px;padding:24px;color:#fff;margin-bottom:32px}
+        .diff-badge{font-size:2rem;font-weight:800;text-align:center;margin-bottom:16px}
+        .overlap-section{text-align:center}
+        .overlap-section h3{font-size:.9rem;opacity:.8;margin-bottom:4px}
+        .overlap-section p{font-size:1rem;margin:0}
+        .popular-pairs{margin-bottom:32px}
+        .popular-pairs h2{font-size:1.2rem;margin-bottom:8px;color:#1a1a2e}
+        .pair-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+        .pair-links a{display:inline-block;padding:6px 14px;background:#f0f0f5;border-radius:20px;color:#667eea;text-decoration:none;font-size:.85rem;font-weight:500}
+        .pair-links a:hover{background:#667eea;color:#fff}
+        .faq-section{background:#fff;padding:20px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+        .faq-section h2{margin-top:0;font-size:1.2rem;color:#1a1a2e}
+        .faq-section h3{font-size:.95rem;margin:12px 0 4px;color:#0f3460}
+        .faq-section p{font-size:.9rem;color:#555;margin-bottom:8px;line-height:1.6}
+        .seo-footer{text-align:center;padding:20px;margin-top:24px;border-top:1px solid #ccc;color:#555;font-size:.85rem}
+        .seo-footer a{margin:0 8px;color:#667eea;text-decoration:none}
+        .breadcrumb a{color:#667eea;text-decoration:none}
+        .skip-link{position:absolute;top:-40px;left:0;background:#667eea;color:#fff;padding:8px 16px;z-index:100}
+        @media(max-width:600px){.calc-row{flex-direction:column}.calc-vs{padding-top:0}}
+    </style>
+    <script>window.addEventListener('load',function(){
+        var ga=document.createElement('script');ga.async=true;ga.src='https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV';document.head.appendChild(ga);
+        var ga2=document.createElement('script');ga2.textContent='window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-LBX0CDYSSV");';document.head.appendChild(ga2);
+        var ads=document.createElement('script');ads.async=true;ads.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529';ads.crossOrigin='anonymous';document.head.appendChild(ads);
+    });
+    </script>
+    </body>
+</html>

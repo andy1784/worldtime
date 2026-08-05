@@ -31,6 +31,64 @@
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Pacific Standard Time (PST)","description":"Current time in Pacific Standard Time with UTC-8 offset and DST details.","url":"https://worldtimessync.com/time-zones/pst"}</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://worldtimessync.com/"},{"@type":"ListItem","position":2,"name":"Time Zones","item":"https://worldtimessync.com/time-zones/"},{"@type":"ListItem","position":3,"name":"PST","item":"https://worldtimessync.com/time-zones/pst"}]}</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Pacific Standard Time (PST)?","acceptedAnswer":{"@type":"Answer","text":"Pacific Standard Time (PST) is a time zone with offset UTC-8 covering North America."}}, {"@type":"Question","name":"Does PST observe daylight saving time?","acceptedAnswer":{"@type":"Answer","text":"Yes, Pacific Standard Time observes daylight saving time. Clocks switch to PDT (UTC-7) during summer months."}}, {"@type":"Question","name":"What cities are in PST?","acceptedAnswer":{"@type":"Answer","text":"Major cities include Fresno, Kelowna, Las Vegas, Los Angeles, Oakland, Portland, Sacramento, San Diego, and more."}}, {"@type":"Question","name":"How do I convert PST to my time zone?","acceptedAnswer":{"@type":"Answer","text":"Use our &lt;a href=&quot;/&quot;&gt;time zone converter&lt;/a&gt; to convert PST to any other time zone."}}, {"@type":"Question","name":"What is the current time in PST?","acceptedAnswer":{"@type":"Answer","text":"The current time is shown in the live clock above. PST is UTC-8 (or UTC-7 during DST)."}}]}</script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Major Cities in EST",
+        "description": "Major cities observing Eastern Standard Time",
+        "numberOfItems": 24,
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "item": {"@type": "Place", "name": "New York", "url": "https://worldtimessync.com/time/new-york"}},
+            {"@type": "ListItem", "position": 2, "item": {"@type": "Place", "name": "Atlanta", "url": "https://worldtimessync.com/time/atlanta"}},
+            {"@type": "ListItem", "position": 3, "item": {"@type": "Place", "name": "Boston", "url": "https://worldtimessync.com/time/boston"}},
+            {"@type": "ListItem", "position": 4, "item": {"@type": "Place", "name": "Miami", "url": "https://worldtimessync.com/time/miami"}},
+            {"@type": "ListItem", "position": 5, "item": {"@type": "Place", "name": "Toronto", "url": "https://worldtimessync.com/time/toronto"}},
+            {"@type": "ListItem", "position": 6, "item": {"@type": "Place", "name": "Washington DC", "url": "https://worldtimessync.com/time/washington-dc"}},
+            {"@type": "ListItem", "position": 7, "item": {"@type": "Place", "name": "Philadelphia", "url": "https://worldtimessync.com/time/philadelphia"}},
+            {"@type": "ListItem", "position": 8, "item": {"@type": "Place", "name": "Chicago", "url": "https://worldtimessync.com/time/chicago"}},
+            {"@type": "ListItem", "position": 9, "item": {"@type": "Place", "name": "Detroit", "url": "https://worldtimessync.com/time/detroit"}},
+            {"@type": "ListItem", "position": 10, "item": {"@type": "Place", "name": "Baltimore", "url": "https://worldtimessync.com/time/baltimore"}}
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to Convert EST to Any Time Zone",
+        "description": "Step-by-step guide to convert Eastern Standard Time to your local time zone",
+        "totalTime": "PT1M",
+        "estimatedCost": "Free",
+        "step": [
+            {
+                "@type": "HowToStep",
+                "position": 1,
+                "name": "Select Source Time Zone",
+                "text": "Choose "Eastern Time (ET)" or "America/New_York" as your source time zone in the converter above."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 2,
+                "name": "Select Target Time Zone",
+                "text": "Choose your destination time zone from the dropdown (e.g., London, Tokyo, Sydney)."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 3,
+                "name": "Enter the Time",
+                "text": "Input the time in EST you want to convert (e.g., 2:00 PM)."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 4,
+                "name": "Get the Result",
+                "text": "The converter instantly shows the equivalent time in your target time zone, including DST adjustments."
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -50,6 +108,179 @@
                     <span>North America</span>
                 </p>
             </div>
+            <!-- Above-fold Time Zone Converter Widget -->
+            <section class="converter-widget" aria-label="Time zone converter for EST">
+                <h2>Convert EST to Your Time Zone</h2>
+                <div class="converter-form">
+                    <div class="form-row">
+                        <label for="tz-from">From</label>
+                        <select id="tz-from" aria-label="Source time zone">
+                            <option value="America/New_York" selected>Eastern Time (ET)</option>
+                            <option value="America/Chicago">Central Time (CT)</option>
+                            <option value="America/Denver">Mountain Time (MT)</option>
+                            <option value="America/Los_Angeles">Pacific Time (PT)</option>
+                            <option value="Europe/London">London (GMT/BST)</option>
+                            <option value="Europe/Paris">Paris (CET/CEST)</option>
+                            <option value="Europe/Berlin">Berlin (CET/CEST)</option>
+                            <option value="Asia/Tokyo">Tokyo (JST)</option>
+                            <option value="Asia/Shanghai">Shanghai (CST)</option>
+                            <option value="Asia/Kolkata">Kolkata (IST)</option>
+                            <option value="Australia/Sydney">Sydney (AEDT/AEST)</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <label for="tz-to">To</label>
+                        <select id="tz-to" aria-label="Target time zone">
+                            <option value="Europe/London">London (GMT/BST)</option>
+                            <option value="Europe/Paris">Paris (CET/CEST)</option>
+                            <option value="Europe/Berlin">Berlin (CET/CEST)</option>
+                            <option value="Asia/Tokyo">Tokyo (JST)</option>
+                            <option value="Asia/Shanghai">Shanghai (CST)</option>
+                            <option value="Asia/Kolkata">Kolkata (IST)</option>
+                            <option value="Australia/Sydney">Sydney (AEDT/AEST)</option>
+                            <option value="America/Chicago">Central Time (CT)</option>
+                            <option value="America/Denver">Mountain Time (MT)</option>
+                            <option value="America/Los_Angeles">Pacific Time (PT)</option>
+                            <option value="America/New_York" selected>Eastern Time (ET)</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <label for="conv-time">Time</label>
+                        <input type="time" id="conv-time" value="12:00" aria-label="Time to convert">
+                    </div>
+                    <button type="button" id="convert-btn" class="convert-btn">Convert</button>
+                </div>
+                <div class="converter-result" id="converter-result" aria-live="polite" style="display:none;">
+                    <span id="result-time"></span> in <span id="result-zone"></span>
+                </div>
+            </section>
+
+            <style>
+                .converter-widget {
+                    background: linear-gradient(135deg, rgba(102,126,234,0.1) 0%, rgba(118,75,162,0.1) 100%);
+                    border: 1px solid rgba(102,126,234,0.2);
+                    border-radius: 12px;
+                    padding: 20px;
+                    margin: 20px 0;
+                }
+                .converter-widget h2 {
+                    margin: 0 0 16px;
+                    font-size: 1.1rem;
+                    color: #667eea;
+                }
+                .converter-form {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                    gap: 12px;
+                    align-items: end;
+                }
+                .form-row {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+                }
+                .form-row label {
+                    font-size: 0.75rem;
+                    color: #666;
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+                }
+                .form-row select, .form-row input {
+                    padding: 10px 12px;
+                    border: 1px solid #ddd;
+                    border-radius: 8px;
+                    font-size: 1rem;
+                    background: #fff;
+                }
+                .form-row select:focus, .form-row input:focus {
+                    outline: none;
+                    border-color: #667eea;
+                    box-shadow: 0 0 0 3px rgba(102,126,234,0.15);
+                }
+                .convert-btn {
+                    padding: 10px 20px;
+                    background: #667eea;
+                    color: #fff;
+                    border: none;
+                    border-radius: 8px;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: background 0.2s;
+                }
+                .convert-btn:hover {
+                    background: #5568d3;
+                }
+                .converter-result {
+                    margin-top: 16px;
+                    padding: 12px;
+                    background: #fff;
+                    border-radius: 8px;
+                    font-size: 1.1rem;
+                    font-weight: 600;
+                    color: #1a1a2e;
+                    text-align: center;
+                }
+                #result-time {
+                    color: #667eea;
+                }
+                @media (max-width: 600px) {
+                    .converter-form {
+                        grid-template-columns: 1fr;
+                    }
+                }
+            </style>
+
+            <script>
+            (function() {
+                var fromSelect = document.getElementById('tz-from');
+                var toSelect = document.getElementById('tz-to');
+                var timeInput = document.getElementById('conv-time');
+                var convertBtn = document.getElementById('convert-btn');
+                var resultDiv = document.getElementById('converter-result');
+                var resultTime = document.getElementById('result-time');
+                var resultZone = document.getElementById('result-zone');
+                
+                function convert() {
+                    var fromTz = fromSelect.value;
+                    var toTz = toSelect.value;
+                    var timeVal = timeInput.value;
+                    
+                    if (!timeVal) return;
+                    
+                    var today = new Date();
+                    var dateStr = today.toISOString().split('T')[0];
+                    var dateTime = dateStr + 'T' + timeVal + ':00';
+                    
+                    try {
+                        var sourceDate = new Date(dateTime);
+                        var targetStr = new Intl.DateTimeFormat('en-US', {
+                            timeZone: toTz,
+                            hour: '2-digit',
+                            minute: '2-digit',
+                            hour12: true,
+                            timeZoneName: 'short'
+                        }).format(sourceDate);
+                        
+                        var zoneName = toSelect.options[toSelect.selectedIndex].text;
+                        resultTime.textContent = targetStr;
+                        resultZone.textContent = zoneName;
+                        resultDiv.style.display = 'block';
+                    } catch (e) {
+                        resultTime.textContent = 'Error';
+                        resultZone.textContent = '';
+                        resultDiv.style.display = 'block';
+                    }
+                }
+                
+                convertBtn.addEventListener('click', convert);
+                timeInput.addEventListener('change', convert);
+                
+                // Auto-convert on load
+                convert();
+            })();
+            </script>
+
             <section class="city-info" aria-label="About Pacific Standard Time">
                 <h2>About Pacific Standard Time (PST)</h2>
                 <p>Pacific Standard Time (PST) is a time zone in North America with offset UTC-8. It serves approximately ~50 million people across multiple countries and territories.</p>

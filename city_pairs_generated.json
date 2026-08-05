@@ -1,0 +1,7802 @@
+[
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "London",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Tokyo",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "London",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Tokyo",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Singapore",
+    "country2": "Singapore",
+    "tz2": "Asia/Singapore"
+  },
+  {
+    "city1": "London",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Singapore",
+    "country2": "Singapore",
+    "tz2": "Asia/Singapore"
+  },
+  {
+    "city1": "Hong Kong",
+    "country1": "Hong Kong",
+    "tz1": "Asia/Hong_Kong",
+    "city2": "London",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "Hong Kong",
+    "country1": "Hong Kong",
+    "tz1": "Asia/Hong_Kong",
+    "city2": "New York",
+    "country2": "United States",
+    "tz2": "America/New_York"
+  },
+  {
+    "city1": "Dubai",
+    "country1": "United Arab Emirates",
+    "tz1": "Asia/Dubai",
+    "city2": "London",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "Dubai",
+    "country1": "United Arab Emirates",
+    "tz1": "Asia/Dubai",
+    "city2": "New York",
+    "country2": "United States",
+    "tz2": "America/New_York"
+  },
+  {
+    "city1": "Frankfurt",
+    "country1": "Germany",
+    "tz1": "Europe/Berlin",
+    "city2": "London",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "Frankfurt",
+    "country1": "Germany",
+    "tz1": "Europe/Berlin",
+    "city2": "New York",
+    "country2": "United States",
+    "tz2": "America/New_York"
+  },
+  {
+    "city1": "Paris",
+    "country1": "France",
+    "tz1": "Europe/Paris",
+    "city2": "New York",
+    "country2": "United States",
+    "tz2": "America/New_York"
+  },
+  {
+    "city1": "Paris",
+    "country1": "France",
+    "tz1": "Europe/Paris",
+    "city2": "Tokyo",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "Zurich",
+    "country1": "Switzerland",
+    "tz1": "Europe/Zurich",
+    "city2": "New York",
+    "country2": "United States",
+    "tz2": "America/New_York"
+  },
+  {
+    "city1": "Zurich",
+    "country1": "Switzerland",
+    "tz1": "Europe/Zurich",
+    "city2": "London",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "London",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "New York",
+    "country2": "United States",
+    "tz2": "America/New_York"
+  },
+  {
+    "city1": "Sydney",
+    "country1": "Australia",
+    "tz1": "Australia/Sydney",
+    "city2": "London",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "Sydney",
+    "country1": "Australia",
+    "tz1": "Australia/Sydney",
+    "city2": "New York",
+    "country2": "United States",
+    "tz2": "America/New_York"
+  },
+  {
+    "city1": "Toronto",
+    "country1": "Canada",
+    "tz1": "America/Toronto",
+    "city2": "London",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "Toronto",
+    "country1": "Canada",
+    "tz1": "America/Toronto",
+    "city2": "New York",
+    "country2": "United States",
+    "tz2": "America/New_York"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Los Angeles",
+    "country2": "United States",
+    "tz2": "America/Los_Angeles"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Chicago",
+    "country2": "United States",
+    "tz2": "America/Chicago"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "San Francisco",
+    "country2": "United States",
+    "tz2": "America/Los_Angeles"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "London",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "San Francisco",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "London",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "London",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "Boston",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "London",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "London",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Paris",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "London",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Berlin",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "Paris",
+    "country1": "France",
+    "tz1": "Europe/Paris",
+    "city2": "Berlin",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "Paris",
+    "country1": "France",
+    "tz1": "Europe/Paris",
+    "city2": "Frankfurt",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "Madrid",
+    "country1": "Spain",
+    "tz1": "Europe/Madrid",
+    "city2": "London",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "Amsterdam",
+    "country1": "Netherlands",
+    "tz1": "Europe/Amsterdam",
+    "city2": "London",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "Stockholm",
+    "country1": "Sweden",
+    "tz1": "Europe/Stockholm",
+    "city2": "London",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "Copenhagen",
+    "country1": "Denmark",
+    "tz1": "Europe/Copenhagen",
+    "city2": "London",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "Vienna",
+    "country1": "Austria",
+    "tz1": "Europe/Vienna",
+    "city2": "London",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "Warsaw",
+    "country1": "Poland",
+    "tz1": "Europe/Warsaw",
+    "city2": "London",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "Tokyo",
+    "country1": "Japan",
+    "tz1": "Asia/Tokyo",
+    "city2": "Shanghai",
+    "country2": "China",
+    "tz2": "Asia/Shanghai"
+  },
+  {
+    "city1": "Tokyo",
+    "country1": "Japan",
+    "tz1": "Asia/Tokyo",
+    "city2": "Seoul",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "Tokyo",
+    "country1": "Japan",
+    "tz1": "Asia/Tokyo",
+    "city2": "Singapore",
+    "country2": "Singapore",
+    "tz2": "Asia/Singapore"
+  },
+  {
+    "city1": "Tokyo",
+    "country1": "Japan",
+    "tz1": "Asia/Tokyo",
+    "city2": "Hong Kong",
+    "country2": "Hong Kong",
+    "tz2": "Asia/Hong_Kong"
+  },
+  {
+    "city1": "Singapore",
+    "country1": "Singapore",
+    "tz1": "Asia/Singapore",
+    "city2": "Mumbai",
+    "country2": "India",
+    "tz2": "Asia/Kolkata"
+  },
+  {
+    "city1": "Singapore",
+    "country1": "Singapore",
+    "tz1": "Asia/Singapore",
+    "city2": "Sydney",
+    "country2": "Australia",
+    "tz2": "Australia/Sydney"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Singapore",
+    "country2": "Singapore",
+    "tz2": "Asia/Singapore"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Hong Kong",
+    "country2": "Hong Kong",
+    "tz2": "Asia/Hong_Kong"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Dubai",
+    "country2": "United Arab Emirates",
+    "tz2": "Asia/Dubai"
+  },
+  {
+    "city1": "Bangkok",
+    "country1": "Thailand",
+    "tz1": "Asia/Bangkok",
+    "city2": "Singapore",
+    "country2": "Singapore",
+    "tz2": "Asia/Singapore"
+  },
+  {
+    "city1": "Jakarta",
+    "country1": "Indonesia",
+    "tz1": "Asia/Jakarta",
+    "city2": "Singapore",
+    "country2": "Singapore",
+    "tz2": "Asia/Singapore"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "New York",
+    "country2": "United States",
+    "tz2": "America/New_York"
+  },
+  {
+    "city1": "Mexico City",
+    "country1": "Mexico",
+    "tz1": "America/Mexico_City",
+    "city2": "New York",
+    "country2": "United States",
+    "tz2": "America/New_York"
+  },
+  {
+    "city1": "Buenos Aires",
+    "country1": "Argentina",
+    "tz1": "America/Argentina/Buenos_Aires",
+    "city2": "New York",
+    "country2": "United States",
+    "tz2": "America/New_York"
+  },
+  {
+    "city1": "Santiago",
+    "country1": "Chile",
+    "tz1": "America/Santiago",
+    "city2": "New York",
+    "country2": "United States",
+    "tz2": "America/New_York"
+  },
+  {
+    "city1": "Bogot\u00e1",
+    "country1": "Colombia",
+    "tz1": "America/Bogota",
+    "city2": "New York",
+    "country2": "United States",
+    "tz2": "America/New_York"
+  },
+  {
+    "city1": "Lima",
+    "country1": "Peru",
+    "tz1": "America/Lima",
+    "city2": "New York",
+    "country2": "United States",
+    "tz2": "America/New_York"
+  },
+  {
+    "city1": "Toronto",
+    "country1": "Canada",
+    "tz1": "America/Toronto",
+    "city2": "Vancouver",
+    "country2": "Canada",
+    "tz2": "America/Vancouver"
+  },
+  {
+    "city1": "Toronto",
+    "country1": "Canada",
+    "tz1": "America/Toronto",
+    "city2": "Los Angeles",
+    "country2": "United States",
+    "tz2": "America/Los_Angeles"
+  },
+  {
+    "city1": "Vancouver",
+    "country1": "Canada",
+    "tz1": "America/Vancouver",
+    "city2": "Tokyo",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "Dubai",
+    "country1": "United Arab Emirates",
+    "tz1": "Asia/Dubai",
+    "city2": "Riyadh",
+    "country2": "Saudi Arabia",
+    "tz2": "Asia/Riyadh"
+  },
+  {
+    "city1": "Dubai",
+    "country1": "United Arab Emirates",
+    "tz1": "Asia/Dubai",
+    "city2": "Johannesburg",
+    "country2": "South Africa",
+    "tz2": "Africa/Johannesburg"
+  },
+  {
+    "city1": "Cape Town",
+    "country1": "South Africa",
+    "tz1": "Africa/Johannesburg",
+    "city2": "London",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "Lagos",
+    "country1": "Nigeria",
+    "tz1": "Africa/Lagos",
+    "city2": "London",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "Sydney",
+    "country1": "Australia",
+    "tz1": "Australia/Sydney",
+    "city2": "Melbourne",
+    "country2": "Australia",
+    "tz2": "Australia/Melbourne"
+  },
+  {
+    "city1": "Sydney",
+    "country1": "Australia",
+    "tz1": "Australia/Sydney",
+    "city2": "Auckland",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "Melbourne",
+    "country1": "Australia",
+    "tz1": "Australia/Melbourne",
+    "city2": "Auckland",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "Perth",
+    "country1": "Australia",
+    "tz1": "Australia/Perth",
+    "city2": "Singapore",
+    "country2": "Singapore",
+    "tz2": "Asia/Singapore"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "New Delhi",
+    "country2": "India",
+    "tz2": "Asia/Kolkata"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Mumbai",
+    "country2": "India",
+    "tz2": "Asia/Kolkata"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Kolkata",
+    "country2": "India",
+    "tz2": "Asia/Kolkata"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "New Delhi",
+    "country2": "India",
+    "tz2": "Asia/Kolkata"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Mumbai",
+    "country2": "India",
+    "tz2": "Asia/Kolkata"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Kolkata",
+    "country2": "India",
+    "tz2": "Asia/Kolkata"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "New Delhi",
+    "country2": "India",
+    "tz2": "Asia/Kolkata"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Mumbai",
+    "country2": "India",
+    "tz2": "Asia/Kolkata"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Kolkata",
+    "country2": "India",
+    "tz2": "Asia/Kolkata"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Beijing",
+    "country2": "China",
+    "tz2": "Asia/Shanghai"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Guangzhou",
+    "country2": "China",
+    "tz2": "Asia/Shanghai"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Beijing",
+    "country2": "China",
+    "tz2": "Asia/Shanghai"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Shanghai",
+    "country2": "China",
+    "tz2": "Asia/Shanghai"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Guangzhou",
+    "country2": "China",
+    "tz2": "Asia/Shanghai"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Beijing",
+    "country2": "China",
+    "tz2": "Asia/Shanghai"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Shanghai",
+    "country2": "China",
+    "tz2": "Asia/Shanghai"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Guangzhou",
+    "country2": "China",
+    "tz2": "Asia/Shanghai"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Rio de Janeiro",
+    "country2": "Brazil",
+    "tz2": "America/Sao_Paulo"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Bras\u00edlia",
+    "country2": "Brazil",
+    "tz2": "America/Sao_Paulo"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "S\u00e3o Paulo",
+    "country2": "Brazil",
+    "tz2": "America/Sao_Paulo"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Rio de Janeiro",
+    "country2": "Brazil",
+    "tz2": "America/Sao_Paulo"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Bras\u00edlia",
+    "country2": "Brazil",
+    "tz2": "America/Sao_Paulo"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "S\u00e3o Paulo",
+    "country2": "Brazil",
+    "tz2": "America/Sao_Paulo"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Rio de Janeiro",
+    "country2": "Brazil",
+    "tz2": "America/Sao_Paulo"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Bras\u00edlia",
+    "country2": "Brazil",
+    "tz2": "America/Sao_Paulo"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Manchester",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Birmingham",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Manchester",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Birmingham",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Manchester",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Birmingham",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Moscow",
+    "country2": "Russia",
+    "tz2": "Europe/Moscow"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "St. Petersburg",
+    "country2": "Russia",
+    "tz2": "Europe/Moscow"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Novosibirsk",
+    "country2": "Russia",
+    "tz2": "Asia/Novosibirsk"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Moscow",
+    "country2": "Russia",
+    "tz2": "Europe/Moscow"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "St. Petersburg",
+    "country2": "Russia",
+    "tz2": "Europe/Moscow"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Novosibirsk",
+    "country2": "Russia",
+    "tz2": "Asia/Novosibirsk"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Moscow",
+    "country2": "Russia",
+    "tz2": "Europe/Moscow"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "St. Petersburg",
+    "country2": "Russia",
+    "tz2": "Europe/Moscow"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Novosibirsk",
+    "country2": "Russia",
+    "tz2": "Asia/Novosibirsk"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Berlin",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Hamburg",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Munich",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Berlin",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Hamburg",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Munich",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Berlin",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Hamburg",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Munich",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Melbourne",
+    "country2": "Australia",
+    "tz2": "Australia/Melbourne"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Brisbane",
+    "country2": "Australia",
+    "tz2": "Australia/Brisbane"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Sydney",
+    "country2": "Australia",
+    "tz2": "Australia/Sydney"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Melbourne",
+    "country2": "Australia",
+    "tz2": "Australia/Melbourne"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Brisbane",
+    "country2": "Australia",
+    "tz2": "Australia/Brisbane"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Sydney",
+    "country2": "Australia",
+    "tz2": "Australia/Sydney"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Melbourne",
+    "country2": "Australia",
+    "tz2": "Australia/Melbourne"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Brisbane",
+    "country2": "Australia",
+    "tz2": "Australia/Brisbane"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Vancouver",
+    "country2": "Canada",
+    "tz2": "America/Vancouver"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Montreal",
+    "country2": "Canada",
+    "tz2": "America/Toronto"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Vancouver",
+    "country2": "Canada",
+    "tz2": "America/Vancouver"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Montreal",
+    "country2": "Canada",
+    "tz2": "America/Toronto"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Toronto",
+    "country2": "Canada",
+    "tz2": "America/Toronto"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Vancouver",
+    "country2": "Canada",
+    "tz2": "America/Vancouver"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Montreal",
+    "country2": "Canada",
+    "tz2": "America/Toronto"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Osaka",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Kyoto",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Tokyo",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Osaka",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Kyoto",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Tokyo",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Osaka",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Kyoto",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Lyon",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Toulouse",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Paris",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Lyon",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Toulouse",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Paris",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Lyon",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Toulouse",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Madrid",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Barcelona",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Valencia",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Madrid",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Barcelona",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Valencia",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Madrid",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Barcelona",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Valencia",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Cancun",
+    "country2": "Mexico",
+    "tz2": "America/Cancun"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Guadalajara",
+    "country2": "Mexico",
+    "tz2": "America/Mexico_City"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Mexico City",
+    "country2": "Mexico",
+    "tz2": "America/Mexico_City"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Cancun",
+    "country2": "Mexico",
+    "tz2": "America/Cancun"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Guadalajara",
+    "country2": "Mexico",
+    "tz2": "America/Mexico_City"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Mexico City",
+    "country2": "Mexico",
+    "tz2": "America/Mexico_City"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Cancun",
+    "country2": "Mexico",
+    "tz2": "America/Cancun"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Guadalajara",
+    "country2": "Mexico",
+    "tz2": "America/Mexico_City"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Rome",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Naples",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Turin",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Rome",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Naples",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Turin",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Rome",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Naples",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Turin",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Seoul",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Busan",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Incheon",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Seoul",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Busan",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Incheon",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Seoul",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Busan",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Incheon",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Jakarta",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Surabaya",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Bandung",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Jakarta",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Surabaya",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Bandung",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Jakarta",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Surabaya",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Bandung",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Auckland",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Wellington",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Christchurch",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Auckland",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Wellington",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Christchurch",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Auckland",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Wellington",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Christchurch",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "C\u00f3rdoba",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Cordoba"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Rosario",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Cordoba"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Buenos Aires",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Buenos_Aires"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "C\u00f3rdoba",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Cordoba"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Rosario",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Cordoba"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Buenos Aires",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Buenos_Aires"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "C\u00f3rdoba",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Cordoba"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Rosario",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Cordoba"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Valpara\u00edso",
+    "country2": "Chile",
+    "tz2": "America/Santiago"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Concepci\u00f3n",
+    "country2": "Chile",
+    "tz2": "America/Santiago"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Santiago",
+    "country2": "Chile",
+    "tz2": "America/Santiago"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Valpara\u00edso",
+    "country2": "Chile",
+    "tz2": "America/Santiago"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Concepci\u00f3n",
+    "country2": "Chile",
+    "tz2": "America/Santiago"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Santiago",
+    "country2": "Chile",
+    "tz2": "America/Santiago"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Valpara\u00edso",
+    "country2": "Chile",
+    "tz2": "America/Santiago"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Concepci\u00f3n",
+    "country2": "Chile",
+    "tz2": "America/Santiago"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Karachi",
+    "country2": "Pakistan",
+    "tz2": "Asia/Karachi"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Lahore",
+    "country2": "Pakistan",
+    "tz2": "Asia/Karachi"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Islamabad",
+    "country2": "Pakistan",
+    "tz2": "Asia/Karachi"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Karachi",
+    "country2": "Pakistan",
+    "tz2": "Asia/Karachi"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Lahore",
+    "country2": "Pakistan",
+    "tz2": "Asia/Karachi"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Islamabad",
+    "country2": "Pakistan",
+    "tz2": "Asia/Karachi"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Karachi",
+    "country2": "Pakistan",
+    "tz2": "Asia/Karachi"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Lahore",
+    "country2": "Pakistan",
+    "tz2": "Asia/Karachi"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Islamabad",
+    "country2": "Pakistan",
+    "tz2": "Asia/Karachi"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Johannesburg",
+    "country2": "South Africa",
+    "tz2": "Africa/Johannesburg"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Cape Town",
+    "country2": "South Africa",
+    "tz2": "Africa/Johannesburg"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Durban",
+    "country2": "South Africa",
+    "tz2": "Africa/Johannesburg"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Johannesburg",
+    "country2": "South Africa",
+    "tz2": "Africa/Johannesburg"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Cape Town",
+    "country2": "South Africa",
+    "tz2": "Africa/Johannesburg"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Durban",
+    "country2": "South Africa",
+    "tz2": "Africa/Johannesburg"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Johannesburg",
+    "country2": "South Africa",
+    "tz2": "Africa/Johannesburg"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Cape Town",
+    "country2": "South Africa",
+    "tz2": "Africa/Johannesburg"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Durban",
+    "country2": "South Africa",
+    "tz2": "Africa/Johannesburg"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Medell\u00edn",
+    "country2": "Colombia",
+    "tz2": "America/Bogota"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Barranquilla",
+    "country2": "Colombia",
+    "tz2": "America/Bogota"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Bogot\u00e1",
+    "country2": "Colombia",
+    "tz2": "America/Bogota"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Medell\u00edn",
+    "country2": "Colombia",
+    "tz2": "America/Bogota"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Barranquilla",
+    "country2": "Colombia",
+    "tz2": "America/Bogota"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Bogot\u00e1",
+    "country2": "Colombia",
+    "tz2": "America/Bogota"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Medell\u00edn",
+    "country2": "Colombia",
+    "tz2": "America/Bogota"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Barranquilla",
+    "country2": "Colombia",
+    "tz2": "America/Bogota"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Arequipa",
+    "country2": "Peru",
+    "tz2": "America/Lima"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Trujillo",
+    "country2": "Peru",
+    "tz2": "America/Lima"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Lima",
+    "country2": "Peru",
+    "tz2": "America/Lima"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Arequipa",
+    "country2": "Peru",
+    "tz2": "America/Lima"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Trujillo",
+    "country2": "Peru",
+    "tz2": "America/Lima"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Lima",
+    "country2": "Peru",
+    "tz2": "America/Lima"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Arequipa",
+    "country2": "Peru",
+    "tz2": "America/Lima"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Trujillo",
+    "country2": "Peru",
+    "tz2": "America/Lima"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Warsaw",
+    "country2": "Poland",
+    "tz2": "Europe/Warsaw"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Krak\u00f3w",
+    "country2": "Poland",
+    "tz2": "Europe/Warsaw"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "\u0141\u00f3d\u017a",
+    "country2": "Poland",
+    "tz2": "Europe/Warsaw"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Warsaw",
+    "country2": "Poland",
+    "tz2": "Europe/Warsaw"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Krak\u00f3w",
+    "country2": "Poland",
+    "tz2": "Europe/Warsaw"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "\u0141\u00f3d\u017a",
+    "country2": "Poland",
+    "tz2": "Europe/Warsaw"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Warsaw",
+    "country2": "Poland",
+    "tz2": "Europe/Warsaw"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Krak\u00f3w",
+    "country2": "Poland",
+    "tz2": "Europe/Warsaw"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "\u0141\u00f3d\u017a",
+    "country2": "Poland",
+    "tz2": "Europe/Warsaw"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Cairo",
+    "country2": "Egypt",
+    "tz2": "Africa/Cairo"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Alexandria",
+    "country2": "Egypt",
+    "tz2": "Africa/Cairo"
+  },
+  {
+    "city1": "New York",
+    "country1": "United States",
+    "tz1": "America/New_York",
+    "city2": "Giza",
+    "country2": "Egypt",
+    "tz2": "Africa/Cairo"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Cairo",
+    "country2": "Egypt",
+    "tz2": "Africa/Cairo"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Alexandria",
+    "country2": "Egypt",
+    "tz2": "Africa/Cairo"
+  },
+  {
+    "city1": "Los Angeles",
+    "country1": "United States",
+    "tz1": "America/Los_Angeles",
+    "city2": "Giza",
+    "country2": "Egypt",
+    "tz2": "Africa/Cairo"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Cairo",
+    "country2": "Egypt",
+    "tz2": "Africa/Cairo"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Alexandria",
+    "country2": "Egypt",
+    "tz2": "Africa/Cairo"
+  },
+  {
+    "city1": "Chicago",
+    "country1": "United States",
+    "tz1": "America/Chicago",
+    "city2": "Giza",
+    "country2": "Egypt",
+    "tz2": "Africa/Cairo"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Beijing",
+    "country2": "China",
+    "tz2": "Asia/Shanghai"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Shanghai",
+    "country2": "China",
+    "tz2": "Asia/Shanghai"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Guangzhou",
+    "country2": "China",
+    "tz2": "Asia/Shanghai"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Beijing",
+    "country2": "China",
+    "tz2": "Asia/Shanghai"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Shanghai",
+    "country2": "China",
+    "tz2": "Asia/Shanghai"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Guangzhou",
+    "country2": "China",
+    "tz2": "Asia/Shanghai"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Beijing",
+    "country2": "China",
+    "tz2": "Asia/Shanghai"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Shanghai",
+    "country2": "China",
+    "tz2": "Asia/Shanghai"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Guangzhou",
+    "country2": "China",
+    "tz2": "Asia/Shanghai"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "S\u00e3o Paulo",
+    "country2": "Brazil",
+    "tz2": "America/Sao_Paulo"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Rio de Janeiro",
+    "country2": "Brazil",
+    "tz2": "America/Sao_Paulo"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Bras\u00edlia",
+    "country2": "Brazil",
+    "tz2": "America/Sao_Paulo"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "S\u00e3o Paulo",
+    "country2": "Brazil",
+    "tz2": "America/Sao_Paulo"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Rio de Janeiro",
+    "country2": "Brazil",
+    "tz2": "America/Sao_Paulo"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Bras\u00edlia",
+    "country2": "Brazil",
+    "tz2": "America/Sao_Paulo"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "S\u00e3o Paulo",
+    "country2": "Brazil",
+    "tz2": "America/Sao_Paulo"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Rio de Janeiro",
+    "country2": "Brazil",
+    "tz2": "America/Sao_Paulo"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Bras\u00edlia",
+    "country2": "Brazil",
+    "tz2": "America/Sao_Paulo"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "London",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Manchester",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Birmingham",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "London",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Manchester",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Birmingham",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "London",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Manchester",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Birmingham",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Moscow",
+    "country2": "Russia",
+    "tz2": "Europe/Moscow"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "St. Petersburg",
+    "country2": "Russia",
+    "tz2": "Europe/Moscow"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Novosibirsk",
+    "country2": "Russia",
+    "tz2": "Asia/Novosibirsk"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Moscow",
+    "country2": "Russia",
+    "tz2": "Europe/Moscow"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "St. Petersburg",
+    "country2": "Russia",
+    "tz2": "Europe/Moscow"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Novosibirsk",
+    "country2": "Russia",
+    "tz2": "Asia/Novosibirsk"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Moscow",
+    "country2": "Russia",
+    "tz2": "Europe/Moscow"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "St. Petersburg",
+    "country2": "Russia",
+    "tz2": "Europe/Moscow"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Novosibirsk",
+    "country2": "Russia",
+    "tz2": "Asia/Novosibirsk"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Berlin",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Hamburg",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Munich",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Berlin",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Hamburg",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Munich",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Berlin",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Hamburg",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Munich",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Sydney",
+    "country2": "Australia",
+    "tz2": "Australia/Sydney"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Melbourne",
+    "country2": "Australia",
+    "tz2": "Australia/Melbourne"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Brisbane",
+    "country2": "Australia",
+    "tz2": "Australia/Brisbane"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Sydney",
+    "country2": "Australia",
+    "tz2": "Australia/Sydney"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Melbourne",
+    "country2": "Australia",
+    "tz2": "Australia/Melbourne"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Brisbane",
+    "country2": "Australia",
+    "tz2": "Australia/Brisbane"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Sydney",
+    "country2": "Australia",
+    "tz2": "Australia/Sydney"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Melbourne",
+    "country2": "Australia",
+    "tz2": "Australia/Melbourne"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Brisbane",
+    "country2": "Australia",
+    "tz2": "Australia/Brisbane"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Toronto",
+    "country2": "Canada",
+    "tz2": "America/Toronto"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Vancouver",
+    "country2": "Canada",
+    "tz2": "America/Vancouver"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Montreal",
+    "country2": "Canada",
+    "tz2": "America/Toronto"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Toronto",
+    "country2": "Canada",
+    "tz2": "America/Toronto"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Vancouver",
+    "country2": "Canada",
+    "tz2": "America/Vancouver"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Montreal",
+    "country2": "Canada",
+    "tz2": "America/Toronto"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Toronto",
+    "country2": "Canada",
+    "tz2": "America/Toronto"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Vancouver",
+    "country2": "Canada",
+    "tz2": "America/Vancouver"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Montreal",
+    "country2": "Canada",
+    "tz2": "America/Toronto"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Tokyo",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Osaka",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Kyoto",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Tokyo",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Osaka",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Kyoto",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Tokyo",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Osaka",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Kyoto",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Paris",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Lyon",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Toulouse",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Paris",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Lyon",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Toulouse",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Paris",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Lyon",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Toulouse",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Madrid",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Barcelona",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Valencia",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Madrid",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Barcelona",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Valencia",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Madrid",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Barcelona",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Valencia",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Mexico City",
+    "country2": "Mexico",
+    "tz2": "America/Mexico_City"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Cancun",
+    "country2": "Mexico",
+    "tz2": "America/Cancun"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Guadalajara",
+    "country2": "Mexico",
+    "tz2": "America/Mexico_City"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Mexico City",
+    "country2": "Mexico",
+    "tz2": "America/Mexico_City"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Cancun",
+    "country2": "Mexico",
+    "tz2": "America/Cancun"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Guadalajara",
+    "country2": "Mexico",
+    "tz2": "America/Mexico_City"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Mexico City",
+    "country2": "Mexico",
+    "tz2": "America/Mexico_City"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Cancun",
+    "country2": "Mexico",
+    "tz2": "America/Cancun"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Guadalajara",
+    "country2": "Mexico",
+    "tz2": "America/Mexico_City"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Rome",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Naples",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Turin",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Rome",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Naples",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Turin",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Rome",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Naples",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Turin",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Seoul",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Busan",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Incheon",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Seoul",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Busan",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Incheon",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Seoul",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Busan",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Incheon",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Jakarta",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Surabaya",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Bandung",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Jakarta",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Surabaya",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Bandung",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Jakarta",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Surabaya",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Bandung",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Auckland",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Wellington",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Christchurch",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Auckland",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Wellington",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Christchurch",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Auckland",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Wellington",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Christchurch",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Buenos Aires",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Buenos_Aires"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "C\u00f3rdoba",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Cordoba"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Rosario",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Cordoba"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Buenos Aires",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Buenos_Aires"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "C\u00f3rdoba",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Cordoba"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Rosario",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Cordoba"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Buenos Aires",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Buenos_Aires"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "C\u00f3rdoba",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Cordoba"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Rosario",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Cordoba"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Santiago",
+    "country2": "Chile",
+    "tz2": "America/Santiago"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Valpara\u00edso",
+    "country2": "Chile",
+    "tz2": "America/Santiago"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Concepci\u00f3n",
+    "country2": "Chile",
+    "tz2": "America/Santiago"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Santiago",
+    "country2": "Chile",
+    "tz2": "America/Santiago"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Valpara\u00edso",
+    "country2": "Chile",
+    "tz2": "America/Santiago"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Concepci\u00f3n",
+    "country2": "Chile",
+    "tz2": "America/Santiago"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Santiago",
+    "country2": "Chile",
+    "tz2": "America/Santiago"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Valpara\u00edso",
+    "country2": "Chile",
+    "tz2": "America/Santiago"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Concepci\u00f3n",
+    "country2": "Chile",
+    "tz2": "America/Santiago"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Karachi",
+    "country2": "Pakistan",
+    "tz2": "Asia/Karachi"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Lahore",
+    "country2": "Pakistan",
+    "tz2": "Asia/Karachi"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Islamabad",
+    "country2": "Pakistan",
+    "tz2": "Asia/Karachi"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Karachi",
+    "country2": "Pakistan",
+    "tz2": "Asia/Karachi"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Lahore",
+    "country2": "Pakistan",
+    "tz2": "Asia/Karachi"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Islamabad",
+    "country2": "Pakistan",
+    "tz2": "Asia/Karachi"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Karachi",
+    "country2": "Pakistan",
+    "tz2": "Asia/Karachi"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Lahore",
+    "country2": "Pakistan",
+    "tz2": "Asia/Karachi"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Islamabad",
+    "country2": "Pakistan",
+    "tz2": "Asia/Karachi"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Johannesburg",
+    "country2": "South Africa",
+    "tz2": "Africa/Johannesburg"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Cape Town",
+    "country2": "South Africa",
+    "tz2": "Africa/Johannesburg"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Durban",
+    "country2": "South Africa",
+    "tz2": "Africa/Johannesburg"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Johannesburg",
+    "country2": "South Africa",
+    "tz2": "Africa/Johannesburg"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Cape Town",
+    "country2": "South Africa",
+    "tz2": "Africa/Johannesburg"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Durban",
+    "country2": "South Africa",
+    "tz2": "Africa/Johannesburg"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Johannesburg",
+    "country2": "South Africa",
+    "tz2": "Africa/Johannesburg"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Cape Town",
+    "country2": "South Africa",
+    "tz2": "Africa/Johannesburg"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Durban",
+    "country2": "South Africa",
+    "tz2": "Africa/Johannesburg"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Bogot\u00e1",
+    "country2": "Colombia",
+    "tz2": "America/Bogota"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Medell\u00edn",
+    "country2": "Colombia",
+    "tz2": "America/Bogota"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Barranquilla",
+    "country2": "Colombia",
+    "tz2": "America/Bogota"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Bogot\u00e1",
+    "country2": "Colombia",
+    "tz2": "America/Bogota"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Medell\u00edn",
+    "country2": "Colombia",
+    "tz2": "America/Bogota"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Barranquilla",
+    "country2": "Colombia",
+    "tz2": "America/Bogota"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Bogot\u00e1",
+    "country2": "Colombia",
+    "tz2": "America/Bogota"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Medell\u00edn",
+    "country2": "Colombia",
+    "tz2": "America/Bogota"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Barranquilla",
+    "country2": "Colombia",
+    "tz2": "America/Bogota"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Lima",
+    "country2": "Peru",
+    "tz2": "America/Lima"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Arequipa",
+    "country2": "Peru",
+    "tz2": "America/Lima"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Trujillo",
+    "country2": "Peru",
+    "tz2": "America/Lima"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Lima",
+    "country2": "Peru",
+    "tz2": "America/Lima"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Arequipa",
+    "country2": "Peru",
+    "tz2": "America/Lima"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Trujillo",
+    "country2": "Peru",
+    "tz2": "America/Lima"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Lima",
+    "country2": "Peru",
+    "tz2": "America/Lima"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Arequipa",
+    "country2": "Peru",
+    "tz2": "America/Lima"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Trujillo",
+    "country2": "Peru",
+    "tz2": "America/Lima"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Warsaw",
+    "country2": "Poland",
+    "tz2": "Europe/Warsaw"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Krak\u00f3w",
+    "country2": "Poland",
+    "tz2": "Europe/Warsaw"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "\u0141\u00f3d\u017a",
+    "country2": "Poland",
+    "tz2": "Europe/Warsaw"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Warsaw",
+    "country2": "Poland",
+    "tz2": "Europe/Warsaw"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Krak\u00f3w",
+    "country2": "Poland",
+    "tz2": "Europe/Warsaw"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "\u0141\u00f3d\u017a",
+    "country2": "Poland",
+    "tz2": "Europe/Warsaw"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Warsaw",
+    "country2": "Poland",
+    "tz2": "Europe/Warsaw"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Krak\u00f3w",
+    "country2": "Poland",
+    "tz2": "Europe/Warsaw"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "\u0141\u00f3d\u017a",
+    "country2": "Poland",
+    "tz2": "Europe/Warsaw"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Cairo",
+    "country2": "Egypt",
+    "tz2": "Africa/Cairo"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Alexandria",
+    "country2": "Egypt",
+    "tz2": "Africa/Cairo"
+  },
+  {
+    "city1": "New Delhi",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Giza",
+    "country2": "Egypt",
+    "tz2": "Africa/Cairo"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Cairo",
+    "country2": "Egypt",
+    "tz2": "Africa/Cairo"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Alexandria",
+    "country2": "Egypt",
+    "tz2": "Africa/Cairo"
+  },
+  {
+    "city1": "Mumbai",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Giza",
+    "country2": "Egypt",
+    "tz2": "Africa/Cairo"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Cairo",
+    "country2": "Egypt",
+    "tz2": "Africa/Cairo"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Alexandria",
+    "country2": "Egypt",
+    "tz2": "Africa/Cairo"
+  },
+  {
+    "city1": "Kolkata",
+    "country1": "India",
+    "tz1": "Asia/Kolkata",
+    "city2": "Giza",
+    "country2": "Egypt",
+    "tz2": "Africa/Cairo"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "S\u00e3o Paulo",
+    "country2": "Brazil",
+    "tz2": "America/Sao_Paulo"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Rio de Janeiro",
+    "country2": "Brazil",
+    "tz2": "America/Sao_Paulo"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Bras\u00edlia",
+    "country2": "Brazil",
+    "tz2": "America/Sao_Paulo"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "S\u00e3o Paulo",
+    "country2": "Brazil",
+    "tz2": "America/Sao_Paulo"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Rio de Janeiro",
+    "country2": "Brazil",
+    "tz2": "America/Sao_Paulo"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Bras\u00edlia",
+    "country2": "Brazil",
+    "tz2": "America/Sao_Paulo"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "S\u00e3o Paulo",
+    "country2": "Brazil",
+    "tz2": "America/Sao_Paulo"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Rio de Janeiro",
+    "country2": "Brazil",
+    "tz2": "America/Sao_Paulo"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Bras\u00edlia",
+    "country2": "Brazil",
+    "tz2": "America/Sao_Paulo"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "London",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Manchester",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Birmingham",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Manchester",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Birmingham",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "London",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Manchester",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Birmingham",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Moscow",
+    "country2": "Russia",
+    "tz2": "Europe/Moscow"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "St. Petersburg",
+    "country2": "Russia",
+    "tz2": "Europe/Moscow"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Novosibirsk",
+    "country2": "Russia",
+    "tz2": "Asia/Novosibirsk"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Moscow",
+    "country2": "Russia",
+    "tz2": "Europe/Moscow"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "St. Petersburg",
+    "country2": "Russia",
+    "tz2": "Europe/Moscow"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Novosibirsk",
+    "country2": "Russia",
+    "tz2": "Asia/Novosibirsk"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Moscow",
+    "country2": "Russia",
+    "tz2": "Europe/Moscow"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "St. Petersburg",
+    "country2": "Russia",
+    "tz2": "Europe/Moscow"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Novosibirsk",
+    "country2": "Russia",
+    "tz2": "Asia/Novosibirsk"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Berlin",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Hamburg",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Munich",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Berlin",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Hamburg",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Munich",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Berlin",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Hamburg",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Munich",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Sydney",
+    "country2": "Australia",
+    "tz2": "Australia/Sydney"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Melbourne",
+    "country2": "Australia",
+    "tz2": "Australia/Melbourne"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Brisbane",
+    "country2": "Australia",
+    "tz2": "Australia/Brisbane"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Sydney",
+    "country2": "Australia",
+    "tz2": "Australia/Sydney"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Melbourne",
+    "country2": "Australia",
+    "tz2": "Australia/Melbourne"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Brisbane",
+    "country2": "Australia",
+    "tz2": "Australia/Brisbane"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Sydney",
+    "country2": "Australia",
+    "tz2": "Australia/Sydney"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Melbourne",
+    "country2": "Australia",
+    "tz2": "Australia/Melbourne"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Brisbane",
+    "country2": "Australia",
+    "tz2": "Australia/Brisbane"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Toronto",
+    "country2": "Canada",
+    "tz2": "America/Toronto"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Vancouver",
+    "country2": "Canada",
+    "tz2": "America/Vancouver"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Montreal",
+    "country2": "Canada",
+    "tz2": "America/Toronto"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Toronto",
+    "country2": "Canada",
+    "tz2": "America/Toronto"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Vancouver",
+    "country2": "Canada",
+    "tz2": "America/Vancouver"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Montreal",
+    "country2": "Canada",
+    "tz2": "America/Toronto"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Toronto",
+    "country2": "Canada",
+    "tz2": "America/Toronto"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Vancouver",
+    "country2": "Canada",
+    "tz2": "America/Vancouver"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Montreal",
+    "country2": "Canada",
+    "tz2": "America/Toronto"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Tokyo",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Osaka",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Kyoto",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Osaka",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Kyoto",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Tokyo",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Osaka",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Kyoto",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Paris",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Lyon",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Toulouse",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Paris",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Lyon",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Toulouse",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Paris",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Lyon",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Toulouse",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Madrid",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Barcelona",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Valencia",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Madrid",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Barcelona",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Valencia",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Madrid",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Barcelona",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Valencia",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Mexico City",
+    "country2": "Mexico",
+    "tz2": "America/Mexico_City"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Cancun",
+    "country2": "Mexico",
+    "tz2": "America/Cancun"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Guadalajara",
+    "country2": "Mexico",
+    "tz2": "America/Mexico_City"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Mexico City",
+    "country2": "Mexico",
+    "tz2": "America/Mexico_City"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Cancun",
+    "country2": "Mexico",
+    "tz2": "America/Cancun"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Guadalajara",
+    "country2": "Mexico",
+    "tz2": "America/Mexico_City"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Mexico City",
+    "country2": "Mexico",
+    "tz2": "America/Mexico_City"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Cancun",
+    "country2": "Mexico",
+    "tz2": "America/Cancun"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Guadalajara",
+    "country2": "Mexico",
+    "tz2": "America/Mexico_City"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Rome",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Naples",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Turin",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Rome",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Naples",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Turin",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Rome",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Naples",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Turin",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Seoul",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Busan",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Incheon",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Seoul",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Busan",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Incheon",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Seoul",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Busan",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Incheon",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Jakarta",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Surabaya",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Bandung",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Jakarta",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Surabaya",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Bandung",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Jakarta",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Surabaya",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Bandung",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Auckland",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Wellington",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Christchurch",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Auckland",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Wellington",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Christchurch",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Auckland",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Wellington",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Christchurch",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Buenos Aires",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Buenos_Aires"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "C\u00f3rdoba",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Cordoba"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Rosario",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Cordoba"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Buenos Aires",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Buenos_Aires"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "C\u00f3rdoba",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Cordoba"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Rosario",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Cordoba"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Buenos Aires",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Buenos_Aires"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "C\u00f3rdoba",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Cordoba"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Rosario",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Cordoba"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Santiago",
+    "country2": "Chile",
+    "tz2": "America/Santiago"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Valpara\u00edso",
+    "country2": "Chile",
+    "tz2": "America/Santiago"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Concepci\u00f3n",
+    "country2": "Chile",
+    "tz2": "America/Santiago"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Santiago",
+    "country2": "Chile",
+    "tz2": "America/Santiago"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Valpara\u00edso",
+    "country2": "Chile",
+    "tz2": "America/Santiago"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Concepci\u00f3n",
+    "country2": "Chile",
+    "tz2": "America/Santiago"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Santiago",
+    "country2": "Chile",
+    "tz2": "America/Santiago"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Valpara\u00edso",
+    "country2": "Chile",
+    "tz2": "America/Santiago"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Concepci\u00f3n",
+    "country2": "Chile",
+    "tz2": "America/Santiago"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Karachi",
+    "country2": "Pakistan",
+    "tz2": "Asia/Karachi"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Lahore",
+    "country2": "Pakistan",
+    "tz2": "Asia/Karachi"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Islamabad",
+    "country2": "Pakistan",
+    "tz2": "Asia/Karachi"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Karachi",
+    "country2": "Pakistan",
+    "tz2": "Asia/Karachi"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Lahore",
+    "country2": "Pakistan",
+    "tz2": "Asia/Karachi"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Islamabad",
+    "country2": "Pakistan",
+    "tz2": "Asia/Karachi"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Karachi",
+    "country2": "Pakistan",
+    "tz2": "Asia/Karachi"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Lahore",
+    "country2": "Pakistan",
+    "tz2": "Asia/Karachi"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Islamabad",
+    "country2": "Pakistan",
+    "tz2": "Asia/Karachi"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Johannesburg",
+    "country2": "South Africa",
+    "tz2": "Africa/Johannesburg"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Cape Town",
+    "country2": "South Africa",
+    "tz2": "Africa/Johannesburg"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Durban",
+    "country2": "South Africa",
+    "tz2": "Africa/Johannesburg"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Johannesburg",
+    "country2": "South Africa",
+    "tz2": "Africa/Johannesburg"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Cape Town",
+    "country2": "South Africa",
+    "tz2": "Africa/Johannesburg"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Durban",
+    "country2": "South Africa",
+    "tz2": "Africa/Johannesburg"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Johannesburg",
+    "country2": "South Africa",
+    "tz2": "Africa/Johannesburg"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Cape Town",
+    "country2": "South Africa",
+    "tz2": "Africa/Johannesburg"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Durban",
+    "country2": "South Africa",
+    "tz2": "Africa/Johannesburg"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Bogot\u00e1",
+    "country2": "Colombia",
+    "tz2": "America/Bogota"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Medell\u00edn",
+    "country2": "Colombia",
+    "tz2": "America/Bogota"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Barranquilla",
+    "country2": "Colombia",
+    "tz2": "America/Bogota"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Bogot\u00e1",
+    "country2": "Colombia",
+    "tz2": "America/Bogota"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Medell\u00edn",
+    "country2": "Colombia",
+    "tz2": "America/Bogota"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Barranquilla",
+    "country2": "Colombia",
+    "tz2": "America/Bogota"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Bogot\u00e1",
+    "country2": "Colombia",
+    "tz2": "America/Bogota"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Medell\u00edn",
+    "country2": "Colombia",
+    "tz2": "America/Bogota"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Barranquilla",
+    "country2": "Colombia",
+    "tz2": "America/Bogota"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Lima",
+    "country2": "Peru",
+    "tz2": "America/Lima"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Arequipa",
+    "country2": "Peru",
+    "tz2": "America/Lima"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Trujillo",
+    "country2": "Peru",
+    "tz2": "America/Lima"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Lima",
+    "country2": "Peru",
+    "tz2": "America/Lima"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Arequipa",
+    "country2": "Peru",
+    "tz2": "America/Lima"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Trujillo",
+    "country2": "Peru",
+    "tz2": "America/Lima"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Lima",
+    "country2": "Peru",
+    "tz2": "America/Lima"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Arequipa",
+    "country2": "Peru",
+    "tz2": "America/Lima"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Trujillo",
+    "country2": "Peru",
+    "tz2": "America/Lima"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Warsaw",
+    "country2": "Poland",
+    "tz2": "Europe/Warsaw"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Krak\u00f3w",
+    "country2": "Poland",
+    "tz2": "Europe/Warsaw"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "\u0141\u00f3d\u017a",
+    "country2": "Poland",
+    "tz2": "Europe/Warsaw"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Warsaw",
+    "country2": "Poland",
+    "tz2": "Europe/Warsaw"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Krak\u00f3w",
+    "country2": "Poland",
+    "tz2": "Europe/Warsaw"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "\u0141\u00f3d\u017a",
+    "country2": "Poland",
+    "tz2": "Europe/Warsaw"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Warsaw",
+    "country2": "Poland",
+    "tz2": "Europe/Warsaw"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Krak\u00f3w",
+    "country2": "Poland",
+    "tz2": "Europe/Warsaw"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "\u0141\u00f3d\u017a",
+    "country2": "Poland",
+    "tz2": "Europe/Warsaw"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Cairo",
+    "country2": "Egypt",
+    "tz2": "Africa/Cairo"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Alexandria",
+    "country2": "Egypt",
+    "tz2": "Africa/Cairo"
+  },
+  {
+    "city1": "Beijing",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Giza",
+    "country2": "Egypt",
+    "tz2": "Africa/Cairo"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Cairo",
+    "country2": "Egypt",
+    "tz2": "Africa/Cairo"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Alexandria",
+    "country2": "Egypt",
+    "tz2": "Africa/Cairo"
+  },
+  {
+    "city1": "Shanghai",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Giza",
+    "country2": "Egypt",
+    "tz2": "Africa/Cairo"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Cairo",
+    "country2": "Egypt",
+    "tz2": "Africa/Cairo"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Alexandria",
+    "country2": "Egypt",
+    "tz2": "Africa/Cairo"
+  },
+  {
+    "city1": "Guangzhou",
+    "country1": "China",
+    "tz1": "Asia/Shanghai",
+    "city2": "Giza",
+    "country2": "Egypt",
+    "tz2": "Africa/Cairo"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "London",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Manchester",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Birmingham",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "London",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Manchester",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Birmingham",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "London",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Manchester",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Birmingham",
+    "country2": "United Kingdom",
+    "tz2": "Europe/London"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Moscow",
+    "country2": "Russia",
+    "tz2": "Europe/Moscow"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "St. Petersburg",
+    "country2": "Russia",
+    "tz2": "Europe/Moscow"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Novosibirsk",
+    "country2": "Russia",
+    "tz2": "Asia/Novosibirsk"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Moscow",
+    "country2": "Russia",
+    "tz2": "Europe/Moscow"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "St. Petersburg",
+    "country2": "Russia",
+    "tz2": "Europe/Moscow"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Novosibirsk",
+    "country2": "Russia",
+    "tz2": "Asia/Novosibirsk"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Moscow",
+    "country2": "Russia",
+    "tz2": "Europe/Moscow"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "St. Petersburg",
+    "country2": "Russia",
+    "tz2": "Europe/Moscow"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Novosibirsk",
+    "country2": "Russia",
+    "tz2": "Asia/Novosibirsk"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Berlin",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Hamburg",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Munich",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Berlin",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Hamburg",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Munich",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Berlin",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Hamburg",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Munich",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Sydney",
+    "country2": "Australia",
+    "tz2": "Australia/Sydney"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Melbourne",
+    "country2": "Australia",
+    "tz2": "Australia/Melbourne"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Brisbane",
+    "country2": "Australia",
+    "tz2": "Australia/Brisbane"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Sydney",
+    "country2": "Australia",
+    "tz2": "Australia/Sydney"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Melbourne",
+    "country2": "Australia",
+    "tz2": "Australia/Melbourne"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Brisbane",
+    "country2": "Australia",
+    "tz2": "Australia/Brisbane"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Sydney",
+    "country2": "Australia",
+    "tz2": "Australia/Sydney"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Melbourne",
+    "country2": "Australia",
+    "tz2": "Australia/Melbourne"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Brisbane",
+    "country2": "Australia",
+    "tz2": "Australia/Brisbane"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Toronto",
+    "country2": "Canada",
+    "tz2": "America/Toronto"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Vancouver",
+    "country2": "Canada",
+    "tz2": "America/Vancouver"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Montreal",
+    "country2": "Canada",
+    "tz2": "America/Toronto"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Toronto",
+    "country2": "Canada",
+    "tz2": "America/Toronto"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Vancouver",
+    "country2": "Canada",
+    "tz2": "America/Vancouver"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Montreal",
+    "country2": "Canada",
+    "tz2": "America/Toronto"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Toronto",
+    "country2": "Canada",
+    "tz2": "America/Toronto"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Vancouver",
+    "country2": "Canada",
+    "tz2": "America/Vancouver"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Montreal",
+    "country2": "Canada",
+    "tz2": "America/Toronto"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Tokyo",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Osaka",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Kyoto",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Tokyo",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Osaka",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Kyoto",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Tokyo",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Osaka",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Kyoto",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Paris",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Lyon",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Toulouse",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Paris",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Lyon",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Toulouse",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Paris",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Lyon",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Toulouse",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Madrid",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Barcelona",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Valencia",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Madrid",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Barcelona",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Valencia",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Madrid",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Barcelona",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Valencia",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Mexico City",
+    "country2": "Mexico",
+    "tz2": "America/Mexico_City"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Cancun",
+    "country2": "Mexico",
+    "tz2": "America/Cancun"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Guadalajara",
+    "country2": "Mexico",
+    "tz2": "America/Mexico_City"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Mexico City",
+    "country2": "Mexico",
+    "tz2": "America/Mexico_City"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Cancun",
+    "country2": "Mexico",
+    "tz2": "America/Cancun"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Guadalajara",
+    "country2": "Mexico",
+    "tz2": "America/Mexico_City"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Mexico City",
+    "country2": "Mexico",
+    "tz2": "America/Mexico_City"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Cancun",
+    "country2": "Mexico",
+    "tz2": "America/Cancun"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Guadalajara",
+    "country2": "Mexico",
+    "tz2": "America/Mexico_City"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Rome",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Naples",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Turin",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Rome",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Naples",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Turin",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Rome",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Naples",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Turin",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Seoul",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Busan",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Incheon",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Seoul",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Busan",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Incheon",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Seoul",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Busan",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Incheon",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Jakarta",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Surabaya",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Bandung",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Jakarta",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Surabaya",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Bandung",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Jakarta",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Surabaya",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Bandung",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Auckland",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Wellington",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Christchurch",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Auckland",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Wellington",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Christchurch",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Auckland",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Wellington",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Christchurch",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Buenos Aires",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Buenos_Aires"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "C\u00f3rdoba",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Cordoba"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Rosario",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Cordoba"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Buenos Aires",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Buenos_Aires"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "C\u00f3rdoba",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Cordoba"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Rosario",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Cordoba"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Buenos Aires",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Buenos_Aires"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "C\u00f3rdoba",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Cordoba"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Rosario",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Cordoba"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Santiago",
+    "country2": "Chile",
+    "tz2": "America/Santiago"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Valpara\u00edso",
+    "country2": "Chile",
+    "tz2": "America/Santiago"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Concepci\u00f3n",
+    "country2": "Chile",
+    "tz2": "America/Santiago"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Santiago",
+    "country2": "Chile",
+    "tz2": "America/Santiago"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Valpara\u00edso",
+    "country2": "Chile",
+    "tz2": "America/Santiago"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Concepci\u00f3n",
+    "country2": "Chile",
+    "tz2": "America/Santiago"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Santiago",
+    "country2": "Chile",
+    "tz2": "America/Santiago"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Valpara\u00edso",
+    "country2": "Chile",
+    "tz2": "America/Santiago"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Concepci\u00f3n",
+    "country2": "Chile",
+    "tz2": "America/Santiago"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Karachi",
+    "country2": "Pakistan",
+    "tz2": "Asia/Karachi"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Lahore",
+    "country2": "Pakistan",
+    "tz2": "Asia/Karachi"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Islamabad",
+    "country2": "Pakistan",
+    "tz2": "Asia/Karachi"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Karachi",
+    "country2": "Pakistan",
+    "tz2": "Asia/Karachi"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Lahore",
+    "country2": "Pakistan",
+    "tz2": "Asia/Karachi"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Islamabad",
+    "country2": "Pakistan",
+    "tz2": "Asia/Karachi"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Karachi",
+    "country2": "Pakistan",
+    "tz2": "Asia/Karachi"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Lahore",
+    "country2": "Pakistan",
+    "tz2": "Asia/Karachi"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Islamabad",
+    "country2": "Pakistan",
+    "tz2": "Asia/Karachi"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Johannesburg",
+    "country2": "South Africa",
+    "tz2": "Africa/Johannesburg"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Cape Town",
+    "country2": "South Africa",
+    "tz2": "Africa/Johannesburg"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Durban",
+    "country2": "South Africa",
+    "tz2": "Africa/Johannesburg"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Johannesburg",
+    "country2": "South Africa",
+    "tz2": "Africa/Johannesburg"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Cape Town",
+    "country2": "South Africa",
+    "tz2": "Africa/Johannesburg"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Durban",
+    "country2": "South Africa",
+    "tz2": "Africa/Johannesburg"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Johannesburg",
+    "country2": "South Africa",
+    "tz2": "Africa/Johannesburg"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Cape Town",
+    "country2": "South Africa",
+    "tz2": "Africa/Johannesburg"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Durban",
+    "country2": "South Africa",
+    "tz2": "Africa/Johannesburg"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Bogot\u00e1",
+    "country2": "Colombia",
+    "tz2": "America/Bogota"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Medell\u00edn",
+    "country2": "Colombia",
+    "tz2": "America/Bogota"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Barranquilla",
+    "country2": "Colombia",
+    "tz2": "America/Bogota"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Bogot\u00e1",
+    "country2": "Colombia",
+    "tz2": "America/Bogota"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Medell\u00edn",
+    "country2": "Colombia",
+    "tz2": "America/Bogota"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Barranquilla",
+    "country2": "Colombia",
+    "tz2": "America/Bogota"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Bogot\u00e1",
+    "country2": "Colombia",
+    "tz2": "America/Bogota"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Medell\u00edn",
+    "country2": "Colombia",
+    "tz2": "America/Bogota"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Barranquilla",
+    "country2": "Colombia",
+    "tz2": "America/Bogota"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Lima",
+    "country2": "Peru",
+    "tz2": "America/Lima"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Arequipa",
+    "country2": "Peru",
+    "tz2": "America/Lima"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Trujillo",
+    "country2": "Peru",
+    "tz2": "America/Lima"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Lima",
+    "country2": "Peru",
+    "tz2": "America/Lima"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Arequipa",
+    "country2": "Peru",
+    "tz2": "America/Lima"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Trujillo",
+    "country2": "Peru",
+    "tz2": "America/Lima"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Lima",
+    "country2": "Peru",
+    "tz2": "America/Lima"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Arequipa",
+    "country2": "Peru",
+    "tz2": "America/Lima"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Trujillo",
+    "country2": "Peru",
+    "tz2": "America/Lima"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Warsaw",
+    "country2": "Poland",
+    "tz2": "Europe/Warsaw"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Krak\u00f3w",
+    "country2": "Poland",
+    "tz2": "Europe/Warsaw"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "\u0141\u00f3d\u017a",
+    "country2": "Poland",
+    "tz2": "Europe/Warsaw"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Warsaw",
+    "country2": "Poland",
+    "tz2": "Europe/Warsaw"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Krak\u00f3w",
+    "country2": "Poland",
+    "tz2": "Europe/Warsaw"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "\u0141\u00f3d\u017a",
+    "country2": "Poland",
+    "tz2": "Europe/Warsaw"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Warsaw",
+    "country2": "Poland",
+    "tz2": "Europe/Warsaw"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Krak\u00f3w",
+    "country2": "Poland",
+    "tz2": "Europe/Warsaw"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "\u0141\u00f3d\u017a",
+    "country2": "Poland",
+    "tz2": "Europe/Warsaw"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Cairo",
+    "country2": "Egypt",
+    "tz2": "Africa/Cairo"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Alexandria",
+    "country2": "Egypt",
+    "tz2": "Africa/Cairo"
+  },
+  {
+    "city1": "S\u00e3o Paulo",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Giza",
+    "country2": "Egypt",
+    "tz2": "Africa/Cairo"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Cairo",
+    "country2": "Egypt",
+    "tz2": "Africa/Cairo"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Alexandria",
+    "country2": "Egypt",
+    "tz2": "Africa/Cairo"
+  },
+  {
+    "city1": "Rio de Janeiro",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Giza",
+    "country2": "Egypt",
+    "tz2": "Africa/Cairo"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Cairo",
+    "country2": "Egypt",
+    "tz2": "Africa/Cairo"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Alexandria",
+    "country2": "Egypt",
+    "tz2": "Africa/Cairo"
+  },
+  {
+    "city1": "Bras\u00edlia",
+    "country1": "Brazil",
+    "tz1": "America/Sao_Paulo",
+    "city2": "Giza",
+    "country2": "Egypt",
+    "tz2": "Africa/Cairo"
+  },
+  {
+    "city1": "London",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Moscow",
+    "country2": "Russia",
+    "tz2": "Europe/Moscow"
+  },
+  {
+    "city1": "London",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "St. Petersburg",
+    "country2": "Russia",
+    "tz2": "Europe/Moscow"
+  },
+  {
+    "city1": "London",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Novosibirsk",
+    "country2": "Russia",
+    "tz2": "Asia/Novosibirsk"
+  },
+  {
+    "city1": "Manchester",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Moscow",
+    "country2": "Russia",
+    "tz2": "Europe/Moscow"
+  },
+  {
+    "city1": "Manchester",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "St. Petersburg",
+    "country2": "Russia",
+    "tz2": "Europe/Moscow"
+  },
+  {
+    "city1": "Manchester",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Novosibirsk",
+    "country2": "Russia",
+    "tz2": "Asia/Novosibirsk"
+  },
+  {
+    "city1": "Birmingham",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Moscow",
+    "country2": "Russia",
+    "tz2": "Europe/Moscow"
+  },
+  {
+    "city1": "Birmingham",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "St. Petersburg",
+    "country2": "Russia",
+    "tz2": "Europe/Moscow"
+  },
+  {
+    "city1": "Birmingham",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Novosibirsk",
+    "country2": "Russia",
+    "tz2": "Asia/Novosibirsk"
+  },
+  {
+    "city1": "London",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Hamburg",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "London",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Munich",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "Manchester",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Berlin",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "Manchester",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Hamburg",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "Manchester",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Munich",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "Birmingham",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Berlin",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "Birmingham",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Hamburg",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "Birmingham",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Munich",
+    "country2": "Germany",
+    "tz2": "Europe/Berlin"
+  },
+  {
+    "city1": "London",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Melbourne",
+    "country2": "Australia",
+    "tz2": "Australia/Melbourne"
+  },
+  {
+    "city1": "London",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Brisbane",
+    "country2": "Australia",
+    "tz2": "Australia/Brisbane"
+  },
+  {
+    "city1": "Manchester",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Sydney",
+    "country2": "Australia",
+    "tz2": "Australia/Sydney"
+  },
+  {
+    "city1": "Manchester",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Melbourne",
+    "country2": "Australia",
+    "tz2": "Australia/Melbourne"
+  },
+  {
+    "city1": "Manchester",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Brisbane",
+    "country2": "Australia",
+    "tz2": "Australia/Brisbane"
+  },
+  {
+    "city1": "Birmingham",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Sydney",
+    "country2": "Australia",
+    "tz2": "Australia/Sydney"
+  },
+  {
+    "city1": "Birmingham",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Melbourne",
+    "country2": "Australia",
+    "tz2": "Australia/Melbourne"
+  },
+  {
+    "city1": "Birmingham",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Brisbane",
+    "country2": "Australia",
+    "tz2": "Australia/Brisbane"
+  },
+  {
+    "city1": "London",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Vancouver",
+    "country2": "Canada",
+    "tz2": "America/Vancouver"
+  },
+  {
+    "city1": "London",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Montreal",
+    "country2": "Canada",
+    "tz2": "America/Toronto"
+  },
+  {
+    "city1": "Manchester",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Toronto",
+    "country2": "Canada",
+    "tz2": "America/Toronto"
+  },
+  {
+    "city1": "Manchester",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Vancouver",
+    "country2": "Canada",
+    "tz2": "America/Vancouver"
+  },
+  {
+    "city1": "Manchester",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Montreal",
+    "country2": "Canada",
+    "tz2": "America/Toronto"
+  },
+  {
+    "city1": "Birmingham",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Toronto",
+    "country2": "Canada",
+    "tz2": "America/Toronto"
+  },
+  {
+    "city1": "Birmingham",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Vancouver",
+    "country2": "Canada",
+    "tz2": "America/Vancouver"
+  },
+  {
+    "city1": "Birmingham",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Montreal",
+    "country2": "Canada",
+    "tz2": "America/Toronto"
+  },
+  {
+    "city1": "London",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Osaka",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "London",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Kyoto",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "Manchester",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Tokyo",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "Manchester",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Osaka",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "Manchester",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Kyoto",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "Birmingham",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Tokyo",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "Birmingham",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Osaka",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "Birmingham",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Kyoto",
+    "country2": "Japan",
+    "tz2": "Asia/Tokyo"
+  },
+  {
+    "city1": "London",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Lyon",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "London",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Toulouse",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "Manchester",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Paris",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "Manchester",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Lyon",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "Manchester",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Toulouse",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "Birmingham",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Paris",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "Birmingham",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Lyon",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "Birmingham",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Toulouse",
+    "country2": "France",
+    "tz2": "Europe/Paris"
+  },
+  {
+    "city1": "London",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Barcelona",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "London",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Valencia",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "Manchester",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Madrid",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "Manchester",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Barcelona",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "Manchester",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Valencia",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "Birmingham",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Madrid",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "Birmingham",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Barcelona",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "Birmingham",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Valencia",
+    "country2": "Spain",
+    "tz2": "Europe/Madrid"
+  },
+  {
+    "city1": "London",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Mexico City",
+    "country2": "Mexico",
+    "tz2": "America/Mexico_City"
+  },
+  {
+    "city1": "London",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Cancun",
+    "country2": "Mexico",
+    "tz2": "America/Cancun"
+  },
+  {
+    "city1": "London",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Guadalajara",
+    "country2": "Mexico",
+    "tz2": "America/Mexico_City"
+  },
+  {
+    "city1": "Manchester",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Mexico City",
+    "country2": "Mexico",
+    "tz2": "America/Mexico_City"
+  },
+  {
+    "city1": "Manchester",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Cancun",
+    "country2": "Mexico",
+    "tz2": "America/Cancun"
+  },
+  {
+    "city1": "Manchester",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Guadalajara",
+    "country2": "Mexico",
+    "tz2": "America/Mexico_City"
+  },
+  {
+    "city1": "Birmingham",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Mexico City",
+    "country2": "Mexico",
+    "tz2": "America/Mexico_City"
+  },
+  {
+    "city1": "Birmingham",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Cancun",
+    "country2": "Mexico",
+    "tz2": "America/Cancun"
+  },
+  {
+    "city1": "Birmingham",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Guadalajara",
+    "country2": "Mexico",
+    "tz2": "America/Mexico_City"
+  },
+  {
+    "city1": "London",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Rome",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "London",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Naples",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "London",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Turin",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "Manchester",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Rome",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "Manchester",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Naples",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "Manchester",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Turin",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "Birmingham",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Rome",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "Birmingham",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Naples",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "Birmingham",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Turin",
+    "country2": "Italy",
+    "tz2": "Europe/Rome"
+  },
+  {
+    "city1": "London",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Seoul",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "London",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Busan",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "London",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Incheon",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "Manchester",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Seoul",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "Manchester",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Busan",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "Manchester",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Incheon",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "Birmingham",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Seoul",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "Birmingham",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Busan",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "Birmingham",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Incheon",
+    "country2": "South Korea",
+    "tz2": "Asia/Seoul"
+  },
+  {
+    "city1": "London",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Jakarta",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "London",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Surabaya",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "London",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Bandung",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "Manchester",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Jakarta",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "Manchester",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Surabaya",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "Manchester",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Bandung",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "Birmingham",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Jakarta",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "Birmingham",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Surabaya",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "Birmingham",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Bandung",
+    "country2": "Indonesia",
+    "tz2": "Asia/Jakarta"
+  },
+  {
+    "city1": "London",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Auckland",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "London",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Wellington",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "London",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Christchurch",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "Manchester",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Auckland",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "Manchester",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Wellington",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "Manchester",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Christchurch",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "Birmingham",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Auckland",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "Birmingham",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Wellington",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "Birmingham",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Christchurch",
+    "country2": "New Zealand",
+    "tz2": "Pacific/Auckland"
+  },
+  {
+    "city1": "London",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Buenos Aires",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Buenos_Aires"
+  },
+  {
+    "city1": "London",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "C\u00f3rdoba",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Cordoba"
+  },
+  {
+    "city1": "London",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Rosario",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Cordoba"
+  },
+  {
+    "city1": "Manchester",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Buenos Aires",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Buenos_Aires"
+  },
+  {
+    "city1": "Manchester",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "C\u00f3rdoba",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Cordoba"
+  },
+  {
+    "city1": "Manchester",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Rosario",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Cordoba"
+  },
+  {
+    "city1": "Birmingham",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Buenos Aires",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Buenos_Aires"
+  },
+  {
+    "city1": "Birmingham",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "C\u00f3rdoba",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Cordoba"
+  },
+  {
+    "city1": "Birmingham",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Rosario",
+    "country2": "Argentina",
+    "tz2": "America/Argentina/Cordoba"
+  },
+  {
+    "city1": "London",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Santiago",
+    "country2": "Chile",
+    "tz2": "America/Santiago"
+  },
+  {
+    "city1": "London",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Valpara\u00edso",
+    "country2": "Chile",
+    "tz2": "America/Santiago"
+  },
+  {
+    "city1": "London",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Concepci\u00f3n",
+    "country2": "Chile",
+    "tz2": "America/Santiago"
+  },
+  {
+    "city1": "Manchester",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Santiago",
+    "country2": "Chile",
+    "tz2": "America/Santiago"
+  },
+  {
+    "city1": "Manchester",
+    "country1": "United Kingdom",
+    "tz1": "Europe/London",
+    "city2": "Valpara\u00edso",
+    "country2": "Chile",
+    "tz2": "America/Santiago"
+  }
+]
