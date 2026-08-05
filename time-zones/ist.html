@@ -139,11 +139,53 @@
         </footer>
     </main>
     <script>(function(){var tz="Asia/Kolkata";var el=document.getElementById("live-time");function update(){try{var now=new Date();var timeStr=new Intl.DateTimeFormat("en-US",{timeZone:tz,hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:true,weekday:"long",year:"numeric",month:"long",day:"numeric"}).format(now);el.textContent=timeStr}catch(e){el.textContent="Time zone not supported"}}update();setInterval(update,1000)})();</script>
-    <script>window.addEventListener('load',function(){
+    
+    <script>
+      (function () {
+        var loaded = false;
+        function loadApp() {
+          if (loaded) return;
+          loaded = true;
+          var s = document.createElement('script');
+          s.type = 'module';
+          s.src = '/assets/index-Dd7au40z.js';
+          document.body.appendChild(s);
+          window.removeEventListener('click', loadApp);
+          window.removeEventListener('keydown', loadApp);
+          window.removeEventListener('touchstart', loadApp);
+        }
+        window.addEventListener('click', loadApp);
+        window.addEventListener('keydown', loadApp);
+        window.addEventListener('touchstart', loadApp);
+        setTimeout(function () { if (!loaded) loadApp(); }, 4000);
+      })();
+    </script>
+
+    <script>
+      window.addEventListener('load',function(){
         var ga=document.createElement('script');ga.async=true;ga.src='https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV';document.head.appendChild(ga);
         var ga2=document.createElement('script');ga2.textContent='window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-LBX0CDYSSV");';document.head.appendChild(ga2);
         var ads=document.createElement('script');ads.async=true;ads.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529';ads.crossOrigin='anonymous';document.head.appendChild(ads);
-    });
+      });
     </script>
-    </body>
+
+    <script>
+      (function () {
+        function loadIdleParties() {
+          var vi = document.createElement('script');
+          vi.defer = true;
+          vi.src = 'https://cdn.vercel-insights.com/v1/script.js';
+          document.head.appendChild(vi);
+
+          var ah = document.createElement('script');
+          ah.async = true;
+          ah.src = 'https://analytics.ahrefs.com/analytics.js';
+          ah.dataset.key = 'hB1VYWuwb1i/f1d8re7P2A';
+          document.head.appendChild(ah);
+        }
+        var ric = window.requestIdleCallback || function (cb) { return setTimeout(cb, 2000); };
+        ric(loadIdleParties);
+      })();
+    </script>
+</body>
 </html>

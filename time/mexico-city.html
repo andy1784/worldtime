@@ -1,7 +1,19 @@
 <!doctype html>
 <html lang="en">
 <head>
-<style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;line-height:1.6;color:#1a1a2e;background:#f5f7fa;min-height:100vh}.container{max-width:800px;margin:0 auto;padding:16px}h1{font-size:clamp(1.3rem,4vw,1.8rem);margin:16px 0 8px;color:#1a1a2e;line-height:1.3}h2{font-size:clamp(1.1rem,3vw,1.3rem);margin:20px 0 8px;color:#16213e;line-height:1.3}.skip-link{position:absolute;top:-40px;left:0;background:#667eea;color:#fff;padding:8px 16px;z-index:100;text-decoration:none;border-radius:0 0 4px 0}.breadcrumb{margin-bottom:12px;font-size:.85rem;color:#555}.breadcrumb a{color:#667eea;text-decoration:none}.current-time-card{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;padding:clamp(20px,5vw,30px);border-radius:12px;margin:16px 0;text-align:center}.current-time-card h2{color:#fff;margin-top:0;font-size:clamp(1rem,2.5vw,1.2rem)}.live-time{font-size:clamp(1.5rem,6vw,2.5rem);font-weight:700;margin:10px 0;font-variant-numeric:tabular-nums;line-height:1.2}.time-details{opacity:.9;margin-top:8px;font-size:.9rem}a{color:#667eea}</style>
+<style>
+
+    /* CLS reserves for dynamic content */
+    .city-list::before { content: ""; display: block; min-height: 200px; visibility: hidden; }
+    .city-grid::before { content: ""; display: block; min-height: 200px; visibility: hidden; }
+    .sunrise-data::before { content: ""; display: block; min-height: 60px; visibility: hidden; }
+    .related-cities::before, .related-articles::before { content: ""; display: block; min-height: 200px; visibility: hidden; }
+    .live-time { min-height: 2.5rem; }
+    .current-time-card { min-height: 200px; }
+    .minute-progress { min-height: 4px; }
+    ins.adsbygoogle { display: block; min-height: 90px; }
+    .ad-slot { min-height: 90px; }
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;line-height:1.6;color:#1a1a2e;background:#f5f7fa;min-height:100vh}.container{max-width:800px;margin:0 auto;padding:16px}h1{font-size:clamp(1.3rem,4vw,1.8rem);margin:16px 0 8px;color:#1a1a2e;line-height:1.3}h2{font-size:clamp(1.1rem,3vw,1.3rem);margin:20px 0 8px;color:#16213e;line-height:1.3}.skip-link{position:absolute;top:-40px;left:0;background:#667eea;color:#fff;padding:8px 16px;z-index:100;text-decoration:none;border-radius:0 0 4px 0}.breadcrumb{margin-bottom:12px;font-size:.85rem;color:#555}.breadcrumb a{color:#667eea;text-decoration:none}.current-time-card{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;padding:clamp(20px,5vw,30px);border-radius:12px;margin:16px 0;text-align:center}.current-time-card h2{color:#fff;margin-top:0;font-size:clamp(1rem,2.5vw,1.2rem)}.live-time{font-size:clamp(1.5rem,6vw,2.5rem);font-weight:700;margin:10px 0;font-variant-numeric:tabular-nums;line-height:1.2}.time-details{opacity:.9;margin-top:8px;font-size:.9rem}a{color:#667eea}</style>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -56,10 +68,10 @@
                 <span aria-current="page">Mexico City</span>
             </nav>
             <h1>What Time Is It in Mexico City? Current Local Time Now</h1>
-            <div class="current-time-card" role="region" aria-label="Live clock for Mexico City">
+            <div class="current-time-card" style="min-height: 200px;" role="region" aria-label="Live clock for Mexico City">
                 <h2>Current Time in Mexico City</h2>
-                <p class="live-time" style="min-height:2.5rem" id="live-time" data-timezone="America/Mexico_City" aria-live="polite">Loading...</p>
-                <div class="minute-progress"><div class="minute-progress-bar" id="minute-bar" style="width:0%"></div></div>
+                <p class="live-time" style="min-height: 2.5rem;" style="min-height:2.5rem" id="live-time" data-timezone="America/Mexico_City" aria-live="polite">Loading...</p>
+                <div class="minute-progress" style="min-height: 4px;"><div class="minute-progress-bar" id="minute-bar" style="width:0%"></div></div>
                 <button class="copy-time-btn" id="copy-time-btn" type="button">Copy time</button>
                 <p class="time-details">
                     <span>America/Mexico_City</span>
@@ -157,13 +169,53 @@
 <script src="/assets/sunrise.js" defer></script>
 </main>
         <script>(function(){var tz="America/Mexico_City";var el=document.getElementById("live-time");function update(){try{var now=new Date();var timeStr=new Intl.DateTimeFormat("en-US",{timeZone:tz,hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:true,weekday:"long",year:"numeric",month:"long",day:"numeric"}).format(now);el.textContent=timeStr}catch(e){el.textContent="Time zone not supported"}}update();setInterval(update,1000)})();</script>
-    <script>window.addEventListener('load',function(){
-        // Defer ahrefs analytics
-        var ahrefs=document.createElement('script');
-        ahrefs.async=true;
-        ahrefs.src='https://analytics.ahrefs.com/analytics.js';
-        ahrefs.setAttribute('data-key','hB1VYWuwb1i/f1d8re7P2A');
-        document.head.appendChild(ahrefs);
-        var ga=document.createElement('script');ga.async=true;ga.src='https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV';document.head.appendChild(ga);var ga2=document.createElement('script');ga2.textContent='window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-LBX0CDYSSV");';document.head.appendChild(ga2);var ads=document.createElement('script');ads.async=true;ads.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529';ads.crossOrigin='anonymous';document.head.appendChild(ads)});</script>
-    </body>
+    
+    <script>
+      (function () {
+        var loaded = false;
+        function loadApp() {
+          if (loaded) return;
+          loaded = true;
+          var s = document.createElement('script');
+          s.type = 'module';
+          s.src = '/assets/index-Dd7au40z.js';
+          document.body.appendChild(s);
+          window.removeEventListener('click', loadApp);
+          window.removeEventListener('keydown', loadApp);
+          window.removeEventListener('touchstart', loadApp);
+        }
+        window.addEventListener('click', loadApp);
+        window.addEventListener('keydown', loadApp);
+        window.addEventListener('touchstart', loadApp);
+        setTimeout(function () { if (!loaded) loadApp(); }, 4000);
+      })();
+    </script>
+
+    <script>
+      window.addEventListener('load',function(){
+        var ga=document.createElement('script');ga.async=true;ga.src='https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV';document.head.appendChild(ga);
+        var ga2=document.createElement('script');ga2.textContent='window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-LBX0CDYSSV");';document.head.appendChild(ga2);
+        var ads=document.createElement('script');ads.async=true;ads.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529';ads.crossOrigin='anonymous';document.head.appendChild(ads);
+      });
+    </script>
+
+    <script>
+      (function () {
+        function loadIdleParties() {
+          var vi = document.createElement('script');
+          vi.defer = true;
+          vi.src = 'https://cdn.vercel-insights.com/v1/script.js';
+          document.head.appendChild(vi);
+
+          var ah = document.createElement('script');
+          ah.async = true;
+          ah.src = 'https://analytics.ahrefs.com/analytics.js';
+          ah.dataset.key = 'hB1VYWuwb1i/f1d8re7P2A';
+          document.head.appendChild(ah);
+        }
+        var ric = window.requestIdleCallback || function (cb) { return setTimeout(cb, 2000); };
+        ric(loadIdleParties);
+      })();
+    </script>
+</body>
 </html>

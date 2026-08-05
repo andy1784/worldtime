@@ -1,6 +1,20 @@
 <!doctype html>
 <html lang="en">
 <head>
+<style>
+
+    /* CLS reserves for dynamic content */
+    .city-list::before { content: ""; display: block; min-height: 200px; visibility: hidden; }
+    .city-grid::before { content: ""; display: block; min-height: 200px; visibility: hidden; }
+    .sunrise-data::before { content: ""; display: block; min-height: 60px; visibility: hidden; }
+    .related-cities::before, .related-articles::before { content: ""; display: block; min-height: 200px; visibility: hidden; }
+    .live-time { min-height: 2.5rem; }
+    .current-time-card { min-height: 200px; }
+    .minute-progress { min-height: 4px; }
+    ins.adsbygoogle { display: block; min-height: 90px; }
+    .ad-slot { min-height: 90px; }
+
+</style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="theme-color" content="#667eea">
@@ -70,7 +84,7 @@
             
             <h2>Major Cities in China</h2>
             <p>Click any city to see the current local time:</p>
-            <ul class="city-list">
+            <ul class="city-list" style="min-height: 200px;">
 <li><a href="/time/beijing">Beijing</a></li>
 <li><a href="/time/shanghai">Shanghai</a></li>
 <li><a href="/time/guangzhou">Guangzhou</a></li>
@@ -103,7 +117,7 @@
             <p>Business in Shanghai and Shenzhen runs roughly 09:00 to 18:00, and the lack of any daylight saving keeps schedules stable year-round despite the country's huge span.</p>
             </div>
             <h2>Related Articles</h2>
-<ul class="city-list">
+<ul class="city-list" style="min-height: 200px;">
     <li><a href="/blog/working-across-time-zones-mental-health">Mental Health When Working Across Time Zones</a></li>
     <li><a href="/blog/does-daylight-saving-time-save-energy-2026">Does Daylight Saving Time Save Energy?</a></li>
     <li><a href="/blog/async-communication-distributed-teams">Async Communication for Distributed Teams</a></li>
@@ -136,5 +150,53 @@
         document.head.appendChild(ahrefs);
       });
     </script>
-  </body>
+  
+    <script>
+      (function () {
+        var loaded = false;
+        function loadApp() {
+          if (loaded) return;
+          loaded = true;
+          var s = document.createElement('script');
+          s.type = 'module';
+          s.src = '/assets/index-Dd7au40z.js';
+          document.body.appendChild(s);
+          window.removeEventListener('click', loadApp);
+          window.removeEventListener('keydown', loadApp);
+          window.removeEventListener('touchstart', loadApp);
+        }
+        window.addEventListener('click', loadApp);
+        window.addEventListener('keydown', loadApp);
+        window.addEventListener('touchstart', loadApp);
+        setTimeout(function () { if (!loaded) loadApp(); }, 4000);
+      })();
+    </script>
+
+    <script>
+      window.addEventListener('load',function(){
+        var ga=document.createElement('script');ga.async=true;ga.src='https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV';document.head.appendChild(ga);
+        var ga2=document.createElement('script');ga2.textContent='window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-LBX0CDYSSV");';document.head.appendChild(ga2);
+        var ads=document.createElement('script');ads.async=true;ads.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529';ads.crossOrigin='anonymous';document.head.appendChild(ads);
+      });
+    </script>
+
+    <script>
+      (function () {
+        function loadIdleParties() {
+          var vi = document.createElement('script');
+          vi.defer = true;
+          vi.src = 'https://cdn.vercel-insights.com/v1/script.js';
+          document.head.appendChild(vi);
+
+          var ah = document.createElement('script');
+          ah.async = true;
+          ah.src = 'https://analytics.ahrefs.com/analytics.js';
+          ah.dataset.key = 'hB1VYWuwb1i/f1d8re7P2A';
+          document.head.appendChild(ah);
+        }
+        var ric = window.requestIdleCallback || function (cb) { return setTimeout(cb, 2000); };
+        ric(loadIdleParties);
+      })();
+    </script>
+</body>
 </html>
