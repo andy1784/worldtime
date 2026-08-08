@@ -39,6 +39,28 @@ ROOT_PAGES = [
     "sunrise-sunset.html",
     "wordpress.html", "how-it-works.html", "event.html",
     "time/index.html",  # city directory landing page (canonical /time)
+    "time-zones/index.html",
+    "time-zones/est.html",
+    "time-zones/pst.html",
+    "time-zones/cst.html",
+    "time-zones/mst.html",
+    "time-zones/akst.html",
+    "time-zones/hst.html",
+    "time-zones/gmt.html",
+    "time-zones/cet.html",
+    "time-zones/eet.html",
+    "time-zones/msk.html",
+    "time-zones/ist.html",
+    "time-zones/jst.html",
+    "time-zones/kst.html",
+    "time-zones/aest.html",
+    "time-zones/akst.html",
+    "time-zones/brt.html",
+    "time-zones/cst-china.html",
+    "time-zones/utc.html",
+    "time-zones/americas.html",
+    "time-zones/asia.html",
+    "time-zones/europe.html",
 ]
 
 SKIP_DIRS = {"assets", "data", "i18n", "wp-plugin", "__pycache__", ".git", "node_modules", "tools"}

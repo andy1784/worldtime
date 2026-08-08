@@ -25,6 +25,22 @@
       "status": 404
     },
     {
+      "src": "/(es|zh|ru|it|de|ja|fr|uk|ar|hi|pt)/country/.*",
+      "status": 404
+    },
+    {
+      "src": "/(es|zh|ru|it|de|ja|fr|uk|ar|hi|pt)/time-zones/.*",
+      "status": 404
+    },
+    {
+      "src": "/(es|zh|ru|it|de|ja|fr|uk|ar|hi|pt)/meeting-planner",
+      "status": 404
+    },
+    {
+      "src": "/(es|zh|ru|it|de|ja|fr|uk|ar|hi|pt)/blog/?$",
+      "status": 404
+    },
+    {
       "src": "/widget.js",
       "dest": "/widget.js"
     },
