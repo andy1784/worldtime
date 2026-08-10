@@ -46,11 +46,15 @@
     {"@context": "https://schema.org", "@type": "BlogPosting", "headline": "R\u00e8gles de fuseau horaire pour les d\u00e9veloppeurs\u00a0: un guide pratique", "description": "Les bugs de fuseau horaire sont parmi les plus difficiles \u00e0 attraper et les plus co\u00fbteux \u00e0 corriger. Voici les r\u00e8gles que chaque d\u00e9veloppeur doit suivre lors de la gestion des fuseaux horaires.", "author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}, "publisher": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}, "datePublished": "2026-07-08", "dateModified": "2026-07-08", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/blog/time-zone-rules-for-developers-fr.html"}, "image": "https://worldtimessync.com/og-image.png"}
     </script>
     <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "Règles de fuseau horaire pour les développeurs : un guide pratique", "description": "Les bugs de fuseau horaire sont parmi les plus difficiles à attraper et les plus coûteux à corriger. Voici les règles que chaque développeur doit suivre lors de la gestion des fuseaux horaires.", "author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}, "publisher": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}, "datePublished": "2026-07-08", "dateModified": "2026-07-08", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/blog/time-zone-rules-for-developers-fr.html"}, "image": "https://worldtimessync.com/og-image.png"}
+</script>
+    <script type="application/ld+json">
     {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://worldtimessync.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://worldtimessync.com/#blog"}, {"@type": "ListItem", "position": 3, "name": "R\u00e8gles de fuseau horaire pour les d\u00e9veloppeurs", "item": "https://worldtimessync.com/blog/time-zone-rules-for-developers-fr.html"}]}
     </script>
     <script type="application/ld+json">
-    {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": []}
-    </script>
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Should I store time zone offsets or IANA zone names?", "acceptedAnswer": {"@type": "Answer", "text": "Store IANA zone names (e.g., \"America/New_York\"), not offsets (e.g., \"-05:00\"). Offsets change with DST; zone names encode the full rule history."}}, {"@type": "Question", "name": "How do I handle user availability across DST?", "acceptedAnswer": {"@type": "Answer", "text": "Store \"9 AM local time in America/New_York\" — not the UTC equivalent. When DST changes, 9 AM local is automatically 13:00 or 14:00 UTC as appropriate."}}, {"@type": "Question", "name": "What about time zones that change their rules mid-year?", "acceptedAnswer": {"@type": "Answer", "text": "Use a library that updates with the IANA timezone database releases. These happen several times a year. Subscribe to the tz-announce mailing list."}}]}
+</script>
+    
 
 </head>
 <body>

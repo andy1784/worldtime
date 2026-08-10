@@ -46,11 +46,15 @@
     {"@context": "https://schema.org", "@type": "BlogPosting", "headline": "\u958b\u767a\u8005\u306e\u305f\u3081\u306e\u30bf\u30a4\u30e0\u30be\u30fc\u30f3\u30eb\u30fc\u30eb\uff1a\u5b9f\u7528\u7684\u306a\u30ac\u30a4\u30c9", "description": "\u30bf\u30a4\u30e0\u30be\u30fc\u30f3\u306e\u30d0\u30b0\u306f\u3001\u30ad\u30e3\u30c3\u30c1\u3059\u308b\u306e\u304c\u6700\u3082\u96e3\u3057\u304f\u3001\u4fee\u6b63\u3059\u308b\u306e\u304c\u6700\u3082\u9ad8\u4fa1\u3067\u3059\u3002\u4ee5\u4e0b\u306f\u3001\u3059\u3079\u3066\u306e\u958b\u767a\u8005\u304c\u30bf\u30a4\u30e0\u30be\u30fc\u30f3\u3092\u6271\u3046\u969b\u306b\u5f93\u3046\u3079\u304d\u30eb\u30fc\u30eb\u3067\u3059\u3002", "author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}, "publisher": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}, "datePublished": "2026-07-08", "dateModified": "2026-07-08", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/blog/time-zone-rules-for-developers-ja.html"}, "image": "https://worldtimessync.com/og-image.png"}
     </script>
     <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "開発者のためのタイムゾーンルール：実用的なガイド", "description": "タイムゾーンのバグは、キャッチするのが最も難しく、修正するのが最も高価です。以下は、すべての開発者がタイムゾーンを扱う際に従うべきルールです。", "author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}, "publisher": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}, "datePublished": "2026-07-08", "dateModified": "2026-07-08", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/blog/time-zone-rules-for-developers-ja.html"}, "image": "https://worldtimessync.com/og-image.png"}
+</script>
+    <script type="application/ld+json">
     {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://worldtimessync.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://worldtimessync.com/#blog"}, {"@type": "ListItem", "position": 3, "name": "\u30c7\u30d9\u30ed\u30c3\u30d1\u30fc\u306e\u305f\u3081\u306e\u30bf\u30a4\u30e0\u30be\u30fc\u30f3\u30eb\u30fc\u30eb", "item": "https://worldtimessync.com/blog/time-zone-rules-for-developers-ja.html"}]}
     </script>
     <script type="application/ld+json">
-    {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": []}
-    </script>
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Should I store time zone offsets or IANA zone names?", "acceptedAnswer": {"@type": "Answer", "text": "Store IANA zone names (e.g., \"America/New_York\"), not offsets (e.g., \"-05:00\"). Offsets change with DST; zone names encode the full rule history."}}, {"@type": "Question", "name": "How do I handle user availability across DST?", "acceptedAnswer": {"@type": "Answer", "text": "Store \"9 AM local time in America/New_York\" — not the UTC equivalent. When DST changes, 9 AM local is automatically 13:00 or 14:00 UTC as appropriate."}}, {"@type": "Question", "name": "What about time zones that change their rules mid-year?", "acceptedAnswer": {"@type": "Answer", "text": "Use a library that updates with the IANA timezone database releases. These happen several times a year. Subscribe to the tz-announce mailing list."}}]}
+</script>
+    
 
 </head>
 <body>

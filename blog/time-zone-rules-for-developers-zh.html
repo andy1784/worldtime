@@ -46,11 +46,15 @@
     {"@context": "https://schema.org", "@type": "BlogPosting", "headline": "\u5f00\u53d1\u4eba\u5458\u65f6\u533a\u89c4\u5219\uff1a\u5b9e\u7528\u6307\u5357", "description": "\u65f6\u533a\u6f0f\u6d1e\u662f\u6700\u96be\u6355\u83b7\u3001\u4fee\u590d\u6210\u672c\u6700\u9ad8\u7684\u6f0f\u6d1e\u4e4b\u4e00\u3002\u4ee5\u4e0b\u662f\u6bcf\u4e2a\u5f00\u53d1\u4eba\u5458\u5728\u5904\u7406\u65f6\u533a\u65f6\u5e94\u9075\u5faa\u7684\u89c4\u5219\u3002", "author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}, "publisher": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}, "datePublished": "2026-07-08", "dateModified": "2026-07-08", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/blog/time-zone-rules-for-developers-zh.html"}, "image": "https://worldtimessync.com/og-image.png"}
     </script>
     <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "开发人员时区规则：实用指南", "description": "时区漏洞是最难捕获、修复成本最高的漏洞之一。以下是每个开发人员在处理时区时应遵循的规则。", "author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}, "publisher": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}, "datePublished": "2026-07-08", "dateModified": "2026-07-08", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/blog/time-zone-rules-for-developers-zh.html"}, "image": "https://worldtimessync.com/og-image.png"}
+</script>
+    <script type="application/ld+json">
     {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://worldtimessync.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://worldtimessync.com/#blog"}, {"@type": "ListItem", "position": 3, "name": "\u5f00\u53d1\u4eba\u5458\u65f6\u533a\u89c4\u5219", "item": "https://worldtimessync.com/blog/time-zone-rules-for-developers-zh.html"}]}
     </script>
     <script type="application/ld+json">
-    {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": []}
-    </script>
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Should I store time zone offsets or IANA zone names?", "acceptedAnswer": {"@type": "Answer", "text": "Store IANA zone names (e.g., \"America/New_York\"), not offsets (e.g., \"-05:00\"). Offsets change with DST; zone names encode the full rule history."}}, {"@type": "Question", "name": "How do I handle user availability across DST?", "acceptedAnswer": {"@type": "Answer", "text": "Store \"9 AM local time in America/New_York\" — not the UTC equivalent. When DST changes, 9 AM local is automatically 13:00 or 14:00 UTC as appropriate."}}, {"@type": "Question", "name": "What about time zones that change their rules mid-year?", "acceptedAnswer": {"@type": "Answer", "text": "Use a library that updates with the IANA timezone database releases. These happen several times a year. Subscribe to the tz-announce mailing list."}}]}
+</script>
+    
 
 </head>
 <body>

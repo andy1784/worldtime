@@ -46,11 +46,15 @@
     {"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Reglas de zona horaria para desarrolladores: una gu\u00eda pr\u00e1ctica", "description": "Los errores de zona horaria se encuentran entre los m\u00e1s dif\u00edciles de detectar y los m\u00e1s caros de solucionar. Estas son las reglas que todo desarrollador debe seguir al manejar las zonas horarias.", "author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}, "publisher": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}, "datePublished": "2026-07-08", "dateModified": "2026-07-08", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/blog/time-zone-rules-for-developers-es.html"}, "image": "https://worldtimessync.com/og-image.png"}
     </script>
     <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "Reglas de zona horaria para desarrolladores: una guía práctica", "description": "Los errores de zona horaria se encuentran entre los más difíciles de detectar y los más caros de solucionar. Estas son las reglas que todo desarrollador debe seguir al manejar las zonas horarias.", "author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}, "publisher": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}, "datePublished": "2026-07-08", "dateModified": "2026-07-08", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/blog/time-zone-rules-for-developers-es.html"}, "image": "https://worldtimessync.com/og-image.png"}
+</script>
+    <script type="application/ld+json">
     {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://worldtimessync.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://worldtimessync.com/#blog"}, {"@type": "ListItem", "position": 3, "name": "Reglas de zona horaria para desarrolladores", "item": "https://worldtimessync.com/blog/time-zone-rules-for-developers-es.html"}]}
     </script>
     <script type="application/ld+json">
-    {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": []}
-    </script>
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Should I store time zone offsets or IANA zone names?", "acceptedAnswer": {"@type": "Answer", "text": "Store IANA zone names (e.g., \"America/New_York\"), not offsets (e.g., \"-05:00\"). Offsets change with DST; zone names encode the full rule history."}}, {"@type": "Question", "name": "How do I handle user availability across DST?", "acceptedAnswer": {"@type": "Answer", "text": "Store \"9 AM local time in America/New_York\" — not the UTC equivalent. When DST changes, 9 AM local is automatically 13:00 or 14:00 UTC as appropriate."}}, {"@type": "Question", "name": "What about time zones that change their rules mid-year?", "acceptedAnswer": {"@type": "Answer", "text": "Use a library that updates with the IANA timezone database releases. These happen several times a year. Subscribe to the tz-announce mailing list."}}]}
+</script>
+    
 
 </head>
 <body>
