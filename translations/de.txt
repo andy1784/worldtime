@@ -1,0 +1,79 @@
+de:Zeitzone-Abkürzungen Spickzettel (2026)
+Schnellreferenz für alle wichtigen Zeitzonen-Abkürzungen — EST, PST, CET, IST, JST und 50 mehr. Enthält UTC-Offsets, Sommerzeit-Varianten und die Städte, die jede nutzen.
+zeitzonen-abkürzungen, EST PST CST MST, UTC-offsets spickzettel, zeitzonen-codes liste, zeitzonen-akronyme, sommerzeit-abkürzungen
+Zeitzone-Abkürzungen Spickzettel
+<p>Du siehst "EST" auf einer Flugbestätigung, "CET" in einer Meeting-Einladung, "IST" in einer Log-Datei. Jede Abkürzung steht für einen spezifischen Offset zu UTC, aber manche bedeuten im Sommer etwas anderes als im Winter. Dieser Spickzettel gibt dir den exakten Offset, die Hauptstädte und ob die Sommerzeit ihn verschiebt.</p>
+<h2>Nordamerikanische Zeitzonen</h2>
+<table class="tz-table"><thead><tr><th>Abk.</th><th>Vollständiger Name</th><th>UTC-Offset</th><th>Sommerzeit-Variante</th><th>Hauptstädte</th></tr></thead>
+<tbody><tr><td>EST</td><td>Eastern Standard Time</td><td>UTC-5</td><td>EDT (UTC-4)</td><td>New York, Toronto, Miami, Atlanta</td></tr>
+<tr><td>EDT</td><td>Eastern Daylight Time</td><td>UTC-4</td><td>EST (Winter)</td><td>Gleiche Städte, März-November</td></tr>
+<tr><td>CST</td><td>Central Standard Time</td><td>UTC-6</td><td>CDT (UTC-5)</td><td>Chicago, Dallas, Mexiko-Stadt, Houston</td></tr>
+<tr><td>CDT</td><td>Central Daylight Time</td><td>UTC-5</td><td>CST (Winter)</td><td>Gleiche Städte, März-November</td></tr>
+<tr><td>MST</td><td>Mountain Standard Time</td><td>UTC-7</td><td>MDT (UTC-6)</td><td>Denver, Phoenix*, Edmonton, El Paso</td></tr>
+<tr><td>MDT</td><td>Mountain Daylight Time</td><td>UTC-6</td><td>MST (Winter)</td><td>Gleiche Städte (außer Arizona)</td></tr>
+<tr><td>PST</td><td>Pacific Standard Time</td><td>UTC-8</td><td>PDT (UTC-7)</td><td>Los Angeles, Vancouver, Seattle, Tijuana</td></tr>
+<tr><td>PDT</td><td>Pacific Daylight Time</td><td>UTC-7</td><td>PST (Winter)</td><td>Gleiche Städte, März-November</td></tr>
+<tr><td>AKST</td><td>Alaska Standard Time</td><td>UTC-9</td><td>AKDT (UTC-8)</td><td>Anchorage, Fairbanks, Juneau</td></tr>
+<tr><td>HST</td><td>Hawaii-Aleutian Standard Time</td><td>UTC-10</td><td>Keine Sommerzeit</td><td>Honolulu, Hilo, Adak</td></tr></tbody></table>
+<p><small>* Arizona (außer Navajo-Reservat) stellt nicht auf Sommerzeit um und bleibt ganzjährig auf MST.</small></p>
+<h2>Atlantik & Südamerikanische Zeitzonen</h2>
+<table class="tz-table"><thead><tr><th>Abk.</th><th>Vollständiger Name</th><th>UTC-Offset</th><th>Sommerzeit-Variante</th><th>Hauptstädte</th></tr></thead>
+<tbody><tr><td>AST</td><td>Atlantic Standard Time</td><td>UTC-4</td><td>ADT (UTC-3)</td><td>Halifax, San Juan, Bermuda, Caracas</td></tr>
+<tr><td>BRT</td><td>Brasilia Time</td><td>UTC-3</td><td>Keine Sommerzeit seit 2019</td><td>São Paulo, Rio de Janeiro, Brasilia</td></tr>
+<tr><td>ART</td><td>Argentina Time</td><td>UTC-3</td><td>Keine Sommerzeit seit 2009</td><td>Buenos Aires, Córdoba, Rosario</td></tr>
+<tr><td>CLT</td><td>Chile Standard Time</td><td>UTC-4</td><td>CLST (UTC-3)</td><td>Santiago, Valparaíso, Concepción</td></tr></tbody></table>
+<h2>Europäische & Afrikanische Zeitzonen</h2>
+<table class="tz-table"><thead><tr><th>Abk.</th><th>Vollständiger Name</th><th>UTC-Offset</th><th>Sommerzeit-Variante</th><th>Hauptstädte</th></tr></thead>
+<tbody><tr><td>GMT</td><td>Greenwich Mean Time</td><td>UTC+0</td><td>BST (UTC+1)</td><td>London, Dublin, Lissabon (Winter)</td></tr>
+<tr><td>BST</td><td>British Summer Time</td><td>UTC+1</td><td>GMT (Winter)</td><td>London, Dublin, Edinburgh (Sommer)</td></tr>
+<tr><td>WET</td><td>Western European Time</td><td>UTC+0</td><td>WEST (UTC+1)</td><td>Lissabon, Casablanca, Reykjavik</td></tr>
+<tr><td>CET</td><td>Central European Time</td><td>UTC+1</td><td>CEST (UTC+2)</td><td>Paris, Berlin, Rom, Madrid, Warschau</td></tr>
+<tr><td>CEST</td><td>Central European Summer Time</td><td>UTC+2</td><td>CET (Winter)</td><td>Gleiche Städte, März-Oktober</td></tr>
+<tr><td>EET</td><td>Eastern European Time</td><td>UTC+2</td><td>EEST (UTC+3)</td><td>Helsinki, Kiew, Bukarest, Kairo</td></tr>
+<tr><td>MSK</td><td>Moscow Standard Time</td><td>UTC+3</td><td>Keine Sommerzeit seit 2014</td><td>Moskau, St. Petersburg, Istanbul, Minsk</td></tr>
+<tr><td>SAST</td><td>South Africa Standard Time</td><td>UTC+2</td><td>Keine Sommerzeit</td><td>Johannesburg, Kapstadt, Durban</td></tr>
+<tr><td>WAT</td><td>West Africa Time</td><td>UTC+1</td><td>Keine Sommerzeit</td><td>Lagos, Kinshasa, Algier</td></tr></tbody></table>
+<h2>Nahöstliche & Zentralasiatische Zeitzonen</h2>
+<table class="tz-table"><thead><tr><th>Abk.</th><th>Vollständiger Name</th><th>UTC-Offset</th><th>Sommerzeit-Variante</th><th>Hauptstädte</th></tr></thead>
+<tbody><tr><td>GST</td><td>Gulf Standard Time</td><td>UTC+4</td><td>Keine Sommerzeit</td><td>Dubai, Abu Dhabi, Maskat, Doha</td></tr>
+<tr><td>AST</td><td>Arabia Standard Time</td><td>UTC+3</td><td>Keine Sommerzeit</td><td>Riad, Dschidda, Kuwait-Stadt, Manama</td></tr>
+<tr><td>IRST</td><td>Iran Standard Time</td><td>UTC+3:30</td><td>IRDT (UTC+4:30)</td><td>Teheran, Mashhad, Isfahan</td></tr>
+<tr><td>AFT</td><td>Afghanistan Time</td><td>UTC+4:30</td><td>Keine Sommerzeit</td><td>Kabul, Herat, Mazar-i-Sharif</td></tr>
+<tr><td>PKT</td><td>Pakistan Standard Time</td><td>UTC+5</td><td>Keine Sommerzeit</td><td>Karachi, Lahore, Islamabad</td></tr></tbody></table>
+<h2>Süd- & Südostasiatische Zeitzonen</h2>
+<table class="tz-table"><thead><tr><th>Abk.</th><th>Vollständiger Name</th><th>UTC-Offset</th><th>Sommerzeit-Variante</th><th>Hauptstädte</th></tr></thead>
+<tbody><tr><td>IST</td><td>India Standard Time</td><td>UTC+5:30</td><td>Keine Sommerzeit</td><td>Mumbai, Delhi, Bangalore, Kolkata, Chennai</td></tr>
+<tr><td>NPT</td><td>Nepal Time</td><td>UTC+5:45</td><td>Keine Sommerzeit</td><td>Kathmandu, Pokhara, Biratnagar</td></tr>
+<tr><td>BST</td><td>Bangladesh Standard Time</td><td>UTC+6</td><td>Keine Sommerzeit</td><td>Dhaka, Chittagong, Sylhet</td></tr>
+<tr><td>MMT</td><td>Myanmar Time</td><td>UTC+6:30</td><td>Keine Sommerzeit</td><td>Yangon, Mandalay, Naypyidaw</td></tr>
+<tr><td>ICT</td><td>Indochina Time</td><td>UTC+7</td><td>Keine Sommerzeit</td><td>Bangkok, Hanoi, Jakarta*, Phnom Penh</td></tr>
+<tr><td>WIB</td><td>Western Indonesian Time</td><td>UTC+7</td><td>Keine Sommerzeit</td><td>Jakarta, Bandung, Surabaya</td></tr>
+<tr><td>CST</td><td>China Standard Time</td><td>UTC+8</td><td>Keine Sommerzeit</td><td>Peking, Shanghai, Hongkong, Taipeh</td></tr>
+<tr><td>SGT</td><td>Singapore Time</td><td>UTC+8</td><td>Keine Sommerzeit</td><td>Singapur, Kuala Lumpur, Manila, Perth</td></tr></tbody></table>
+<p><small>* Jakarta nutzt WIB (UTC+7), nicht ICT.</small></p>
+<h2>Ostasiatische & Pazifische Zeitzonen</h2>
+<table class="tz-table"><thead><tr><th>Abk.</th><th>Vollständiger Name</th><th>UTC-Offset</th><th>Sommerzeit-Variante</th><th>Hauptstädte</th></tr></thead>
+<tbody><tr><td>JST</td><td>Japan Standard Time</td><td>UTC+9</td><td>Keine Sommerzeit</td><td>Tokio, Osaka, Seoul*, Pjöngjang*</td></tr>
+<tr><td>KST</td><td>Korea Standard Time</td><td>UTC+9</td><td>Keine Sommerzeit</td><td>Seoul, Busan, Incheon</td></tr>
+<tr><td>AWST</td><td>Australian Western Standard Time</td><td>UTC+8</td><td>Keine Sommerzeit</td><td>Perth, Broome, Karratha</td></tr>
+<tr><td>ACST</td><td>Australian Central Standard Time</td><td>UTC+9:30</td><td>ACDT (UTC+10:30)</td><td>Adelaide, Darwin, Alice Springs</td></tr>
+<tr><td>AEST</td><td>Australian Eastern Standard Time</td><td>UTC+10</td><td>AEDT (UTC+11)</td><td>Sydney, Melbourne, Brisbane*, Canberra</td></tr>
+<tr><td>NZST</td><td>New Zealand Standard Time</td><td>UTC+12</td><td>NZDT (UTC+13)</td><td>Auckland, Wellington, Christchurch</td></tr></tbody></table>
+<p><small>* Seoul und Pjöngjang nutzen KST, nicht JST. * Brisbane (Queensland) stellt nicht auf Sommerzeit um.</small></p>
+<h2>Mehrdeutige Abkürzungen — Vorsicht</h2>
+<p>Einige Abkürzungen bedeuten je nach Kontext verschiedene Zonen:</p>
+<ul><li><strong>CST</strong> — Central Standard Time (UTC-6, Nordamerika) <em>oder</em> China Standard Time (UTC+8) <em>oder</em> Cuba Standard Time (UTC-5)</li>
+<li><strong>IST</strong> — India Standard Time (UTC+5:30) <em>oder</em> Irish Standard Time (UTC+1, Sommer) <em>oder</em> Israel Standard Time (UTC+2)</li>
+<li><strong>PST</strong> — Pacific Standard Time (UTC-8) <em>oder</em> Philippine Standard Time (UTC+8)</li>
+<li><strong>BST</strong> — British Summer Time (UTC+1) <em>oder</em> Bangladesh Standard Time (UTC+6) <em>oder</em> Bougainville Standard Time (UTC+11)</li>
+<li><strong>AST</strong> — Atlantic Standard Time (UTC-4) <em>oder</em> Arabia Standard Time (UTC+3) <em>oder</em> Amazon Standard Time (UTC-4, Brasilien)</li></ul>
+<p>Wenn du einen mehrdeutigen Code siehst, prüfe den Ländernamen oder die Stadt in der Nähe. Für exakte Umrechnungen nutze unseren <a href="/de/time-zone-converter.html">Zeitzonen-Konverter</a>, der alle diese korrekt handhabt.</p>
+<h2>Schnellreferenz: Sommerzeit-Umschaltdaten (Typisch)</h2>
+<ul><li><strong>Nordamerika</strong>: 2. Sonntag März → 1. Sonntag November</li>
+<li><strong>Europa</strong>: Letzter Sonntag März → Letzter Sonntag Oktober</li>
+<li><strong>Australien (Südost)</strong>: 1. Sonntag Oktober → 1. Sonntag April</li>
+<li><strong>Neuseeland</strong>: Letzter Sonntag September → 1. Sonntag April</li>
+<li><strong>Chile</strong>: 1. Sonntag September → 1. Sonntag April</li>
+<li><strong>Paraguay</strong>: 1. Sonntag Oktober → Letzter Sonntag März</li></ul>
+<h2>Diese Seite Merken, Tool Nutzen</h2>
+<p>Du musst dir nicht 50+ Codes merken. Merke dir diese Seite für die Nachschlagetabelle. Wenn du eine exakte Umrechnung für ein bestimmtes Datum brauchst — besonders in den Sommerzeit-Übergangswochen — nutze unseren <a href="/de/time-difference.html">Zeitdifferenz-Rechner</a> oder <a href="/de/meeting-planner.html">Terminplaner</a>. Sie nutzen die IANA-Zeitzonen-Datenbank, sodass jeder Offset aktuell und korrekt ist.</p>

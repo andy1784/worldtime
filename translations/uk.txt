@@ -1,0 +1,79 @@
+uk:Шпаргалка по скороченням часових поясів (2026)
+Швидкий довідник по всіх основних скороченнях часових поясів — EST, PST, CET, IST, JST та 50 інших. Включує UTC-зсуви, варіанти літнього часу й міста, що використовують кожне.
+скорочення часових поясів, EST PST CST MST, шпаргалка UTC-зсувів, список кодів часового пояса, акроніми часового пояса, скорочення літнього часу
+Шпаргалка по скороченням часових поясів
+<p>Ти бачиш "EST" на підтвердженні рейсу, "CET" у запрошенні на зустріч, "IST" у лог-файлі. Кожне скорочення означає конкретний UTC-зсув, але деякі мають інше значення влітку проти зими. Ця шпаргалка дає точний зсув, головні міста й чи змінює літній час його.</p>
+<h2>Північноамериканські часові пояси</h2>
+<table class="tz-table"><thead><tr><th>Скороч.</th><th>Повна назва</th><th>UTC-зсув</th><th>Варіант літнього часу</th><th>Головні міста</th></tr></thead>
+<tbody><tr><td>EST</td><td>Eastern Standard Time</td><td>UTC-5</td><td>EDT (UTC-4)</td><td>Нью-Йорк, Торонто, Маямі, Атланта</td></tr>
+<tr><td>EDT</td><td>Eastern Daylight Time</td><td>UTC-4</td><td>EST (зима)</td><td>Ті самі міста, бер-квіт</td></tr>
+<tr><td>CST</td><td>Central Standard Time</td><td>UTC-6</td><td>CDT (UTC-5)</td><td>Чикаго, Даллас, Мехико, Х'юстон</td></tr>
+<tr><td>CDT</td><td>Central Daylight Time</td><td>UTC-5</td><td>CST (зима)</td><td>Ті самі міста, бер-квіт</td></tr>
+<tr><td>MST</td><td>Mountain Standard Time</td><td>UTC-7</td><td>MDT (UTC-6)</td><td>Денвер, Фенікс*, Едмонтон, Ель-Пасо</td></tr>
+<tr><td>MDT</td><td>Mountain Daylight Time</td><td>UTC-6</td><td>MST (зима)</td><td>Ті самі міста (окрім Аризони)</td></tr>
+<tr><td>PST</td><td>Pacific Standard Time</td><td>UTC-8</td><td>PDT (UTC-7)</td><td>Лос-Анджелес, Ванкувер, Сіетл, Тіхуана</td></tr>
+<tr><td>PDT</td><td>Pacific Daylight Time</td><td>UTC-7</td><td>PST (зима)</td><td>Ті самі міста, бер-квіт</td></tr>
+<tr><td>AKST</td><td>Alaska Standard Time</td><td>UTC-9</td><td>AKDT (UTC-8)</td><td>Анкорідж, Фейрбанкс, Джуно</td></tr>
+<tr><td>HST</td><td>Hawaii-Aleutian Standard Time</td><td>UTC-10</td><td>Немає літнього часу</td><td>Гонолулу, Хіло, Адак</td></tr></tbody></table>
+<p><small>* Аризона (крім резервації Навахо) не переходить на літній час і залишається на MST цілий рік.</small></p>
+<h2>Атлантичні й Південноамериканські часові пояси</h2>
+<table class="tz-table"><thead><tr><th>Скороч.</th><th>Повна назва</th><th>UTC-зсув</th><th>Варіант літнього часу</th><th>Головні міста</th></tr></thead>
+<tbody><tr><td>AST</td><td>Atlantic Standard Time</td><td>UTC-4</td><td>ADT (UTC-3)</td><td>Галіфакс, Сан-Хуан, Бермуди, Каракас</td></tr>
+<tr><td>BRT</td><td>Brasilia Time</td><td>UTC-3</td><td>Немає літнього часу з 2019</td><td>Сан-Паулу, Ріо-де-Жанейро, Бразилія</td></tr>
+<tr><td>ART</td><td>Argentina Time</td><td>UTC-3</td><td>Немає літнього часу з 2009</td><td>Буенос-Айрес, Кордова, Росаріо</td></tr>
+<tr><td>CLT</td><td>Chile Standard Time</td><td>UTC-4</td><td>CLST (UTC-3)</td><td>Сантьяго, Вальпараїсо, Консепсьйон</td></tr></tbody></table>
+<h2>Європейські й Африканські часові пояси</h2>
+<table class="tz-table"><thead><tr><th>Скороч.</th><th>Повна назва</th><th>UTC-зсув</th><th>Варіант літнього часу</th><th>Головні міста</th></tr></thead>
+<tbody><tr><td>GMT</td><td>Greenwich Mean Time</td><td>UTC+0</td><td>BST (UTC+1)</td><td>Лондон, Дублин, Ліссабон (зима)</td></tr>
+<tr><td>BST</td><td>British Summer Time</td><td>UTC+1</td><td>GMT (зима)</td><td>Лондон, Дублин, Единбург (літо)</td></tr>
+<tr><td>WET</td><td>Western European Time</td><td>UTC+0</td><td>WEST (UTC+1)</td><td>Ліссабон, Касабланка, Рейк'явік</td></tr>
+<tr><td>CET</td><td>Central European Time</td><td>UTC+1</td><td>CEST (UTC+2)</td><td>Париж, Берлін, Рим, Мадрид, Варшава</td></tr>
+<tr><td>CEST</td><td>Central European Summer Time</td><td>UTC+2</td><td>CET (зима)</td><td>Ті самі міста, бер-жовт</td></tr>
+<tr><td>EET</td><td>Eastern European Time</td><td>UTC+2</td><td>EEST (UTC+3)</td><td>Гельсінкі, Київ, Бухарест, Каїр</td></tr>
+<tr><td>MSK</td><td>Moscow Standard Time</td><td>UTC+3</td><td>Немає літнього часу з 2014</td><td>Москва, Санкт-Петербург, Стамбул, Мінськ</td></tr>
+<tr><td>SAST</td><td>South Africa Standard Time</td><td>UTC+2</td><td>Немає літнього часу</td><td>Йоганнесбург, Кейптаун, Дурбан</td></tr>
+<tr><td>WAT</td><td>West Africa Time</td><td>UTC+1</td><td>Немає літнього часу</td><td>Лагос, Кіншаса, Альжір</td></tr></tbody></table>
+<h2>Східні й Центральноазійські часові пояси</h2>
+<table class="tz-table"><thead><tr><th>Скороч.</th><th>Повна назва</th><th>UTC-зсув</th><th>Варіант літнього часу</th><th>Головні міста</th></tr></thead>
+<tbody><tr><td>GST</td><td>Gulf Standard Time</td><td>UTC+4</td><td>Немає літнього часу</td><td>Дубай, Абу-Дабі, Маскат, Доха</td></tr>
+<tr><td>AST</td><td>Arabia Standard Time</td><td>UTC+3</td><td>Немає літнього часу</td><td>Ріяд, Джидда, Ель-Кувейт, Манама</td></tr>
+<tr><td>IRST</td><td>Iran Standard Time</td><td>UTC+3:30</td><td>IRDT (UTC+4:30)</td><td>Тегеран, Машхад, Ісфаган</td></tr>
+<tr><td>AFT</td><td>Afghanistan Time</td><td>UTC+4:30</td><td>Немає літнього часу</td><td>Кабул, Герат, Мазарі-Шариф</td></tr>
+<tr><td>PKT</td><td>Pakistan Standard Time</td><td>UTC+5</td><td>Немає літнього часу</td><td>Карачі, Лахор, Ісламабад</td></tr></tbody></table>
+<h2>Південноазійські й Південно-Східноазійські часові пояси</h2>
+<table class="tz-table"><thead><tr><th>Скороч.</th><th>Повна назва</th><th>UTC-зсув</th><th>Варіант літнього часу</th><th>Головні міста</th></tr></thead>
+<tbody><tr><td>IST</td><td>India Standard Time</td><td>UTC+5:30</td><td>Немає літнього часу</td><td>Мумбаї, Делі, Бангалор, Калкутта, Ченнай</td></tr>
+<tr><td>NPT</td><td>Nepal Time</td><td>UTC+5:45</td><td>Немає літнього часу</td><td>Катманду, Покхара, Біратнагар</td></tr>
+<tr><td>BST</td><td>Bangladesh Standard Time</td><td>UTC+6</td><td>Немає літнього часу</td><td>Дакка, Чіттагонг, Силет</td></tr>
+<tr><td>MMT</td><td>Myanmar Time</td><td>UTC+6:30</td><td>Немає літнього часу</td><td>Янгон, Мандалай, Нейпідо</td></tr>
+<tr><td>ICT</td><td>Indochina Time</td><td>UTC+7</td><td>Немає літнього часу</td><td>Бангкок, Ханої, Джакарта*, Пномпень</td></tr>
+<tr><td>WIB</td><td>Western Indonesian Time</td><td>UTC+7</td><td>Немає літнього часу</td><td>Джакарта, Бандунг, Сурабая</td></tr>
+<tr><td>CST</td><td>China Standard Time</td><td>UTC+8</td><td>Немає літнього часу</td><td>Пекін, Шанхай, Гонконг, Тайбей</td></tr>
+<tr><td>SGT</td><td>Singapore Time</td><td>UTC+8</td><td>Немає літнього часу</td><td>Сінгапур, Куала-Лумпур, Маніла, Перт</td></tr></tbody></table>
+<p><small>* Джакарта використовує WIB (UTC+7), а не ICT.</small></p>
+<h2>Східноазійські й Тихоокеанські часові пояси</h2>
+<table class="tz-table"><thead><tr><th>Скороч.</th><th>Повна назва</th><th>UTC-зсув</th><th>Варіант літнього часу</th><th>Головні міста</th></tr></thead>
+<tbody><tr><td>JST</td><td>Japan Standard Time</td><td>UTC+9</td><td>Немає літнього часу</td><td>Токіо, Осака, Сеул*, Пхеньян*</td></tr>
+<tr><td>KST</td><td>Korea Standard Time</td><td>UTC+9</td><td>Немає літнього часу</td><td>Сеул, Пусан, Інчхон</td></tr>
+<tr><td>AWST</td><td>Australian Western Standard Time</td><td>UTC+8</td><td>Немає літнього часу</td><td>Перт, Брум, Карратха</td></tr>
+<tr><td>ACST</td><td>Australian Central Standard Time</td><td>UTC+9:30</td><td>ACDT (UTC+10:30)</td><td>Аделаїда, Дарвін, Аліс-Спрінгс</td></tr>
+<tr><td>AEST</td><td>Australian Eastern Standard Time</td><td>UTC+10</td><td>AEDT (UTC+11)</td><td>Сідней, Мельбурн, Брісбен*, Канберра</td></tr>
+<tr><td>NZST</td><td>New Zealand Standard Time</td><td>UTC+12</td><td>NZDT (UTC+13)</td><td>Окленд, Веллінгтон, Крайстчерч</td></tr></tbody></table>
+<p><small>* Сеул і Пхеньян використовують KST, а не JST. * Брісбен (Квінсленд) не переходить на літній час.</small></p>
+<h2>Двозначні скорочення — Увага</h2>
+<p>Деякі скорочення залежно від контексту означають різні пояси:</p>
+<ul><li><strong>CST</strong> — Central Standard Time (UTC-6, Північна Америка) <em>або</em> China Standard Time (UTC+8) <em>або</em> Cuba Standard Time (UTC-5)</li>
+<li><strong>IST</strong> — India Standard Time (UTC+5:30) <em>або</em> Irish Standard Time (UTC+1, літо) <em>або</em> Israel Standard Time (UTC+2)</li>
+<li><strong>PST</strong> — Pacific Standard Time (UTC-8) <em>або</em> Philippine Standard Time (UTC+8)</li>
+<li><strong>BST</strong> — British Summer Time (UTC+1) <em>або</em> Bangladesh Standard Time (UTC+6) <em>або</em> Bougainville Standard Time (UTC+11)</li>
+<li><strong>AST</strong> — Atlantic Standard Time (UTC-4) <em>або</em> Arabia Standard Time (UTC+3) <em>або</em> Amazon Standard Time (UTC-4, Бразилія)</li></ul>
+<p>Коли бачиш двозначний код, подивись на країну чи місто поруч. Для точних перерахунків скористайся нашим <a href="/uk/time-zone-converter.html">конвертером часових поясів</a>, який правильно обробляє всі ці випадки.</p>
+<h2>Швидкий довідник: Дати переходу на літній час (Типові)</h2>
+<ul><li><strong>Північна Америка</strong>: 2-га неділя бер → 1-ша неділя лис</li>
+<li><strong>Європа</strong>: остання неділя бер → остання неділя жов</li>
+<li><strong>Австралія (південний схід)</strong>: 1-ша неділя жов → 1-ша неділя кві</li>
+<li><strong>Нова Зеландія</strong>: остання неділя вер → 1-ша неділя кві</li>
+<li><strong>Чилі</strong>: 1-ша неділя вер → 1-ша неділя кві</li>
+<li><strong>Парагвай</strong>: 1-ша неділя жов → остання неділя бер</li></ul>
+<h2>Збережи Цю Сторінку, Використовуй Інструмент</h2>
+<p>Тобі не потрібно запам'ятовувати 50+ кодів. Збережи цю сторінку як довідкову таблицю. Коли потрібен точний перерахунок для конкретної дати — особливо під час тижнів переходу на літній час — скористайся нашим <a href="/uk/time-difference.html">калькулятором різниці часу</a> або <a href="/uk/meeting-planner.html">планувальником зустрічей</a>. Вони використовують IANA базу часових поясів, тому кожен зсув актуальний і правильний.</p>

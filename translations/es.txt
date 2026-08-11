@@ -1,0 +1,79 @@
+es:Hoja de referencia de abreviaturas de zonas horarias (2026)
+Referencia rápida para todas las abreviaturas principales de zonas horarias: EST, PST, CET, IST, JST y 50 más. Incluye desfases UTC, variantes de horario de verano y las ciudades que usan cada una.
+abreviaturas de zonas horarias, EST PST CST MST, hoja de trucos desfases UTC, lista de códigos de zona horaria, acrónimos de zona horaria, abreviaturas de horario de verano
+Hoja de referencia de abreviaturas de zonas horarias
+<p>Ves "EST" en una confirmación de vuelo, "CET" en una invitación de reunión, "IST" en un archivo de log. Cada abreviatura significa un desfase específico de UTC, pero algunas significan cosas distintas en verano versus invierno. Esta hoja de referencia te da el desfase exacto, las ciudades principales y si el horario de verano lo cambia.</p>
+<h2>Zonas Horarias de Norteamérica</h2>
+<table class="tz-table"><thead><tr><th>Abr</th><th>Nombre Completo</th><th>Desfase UTC</th><th>Variante Horario de Verano</th><th>Ciudades Principales</th></tr></thead>
+<tbody><tr><td>EST</td><td>Eastern Standard Time</td><td>UTC-5</td><td>EDT (UTC-4)</td><td>Nueva York, Toronto, Miami, Atlanta</td></tr>
+<tr><td>EDT</td><td>Eastern Daylight Time</td><td>UTC-4</td><td>EST (invierno)</td><td>Mismas ciudades, marzo-noviembre</td></tr>
+<tr><td>CST</td><td>Central Standard Time</td><td>UTC-6</td><td>CDT (UTC-5)</td><td>Chicago, Dallas, Ciudad de México, Houston</td></tr>
+<tr><td>CDT</td><td>Central Daylight Time</td><td>UTC-5</td><td>CST (invierno)</td><td>Mismas ciudades, marzo-noviembre</td></tr>
+<tr><td>MST</td><td>Mountain Standard Time</td><td>UTC-7</td><td>MDT (UTC-6)</td><td>Denver, Phoenix*, Edmonton, El Paso</td></tr>
+<tr><td>MDT</td><td>Mountain Daylight Time</td><td>UTC-6</td><td>MST (invierno)</td><td>Mismas ciudades (excepto Arizona)</td></tr>
+<tr><td>PST</td><td>Pacific Standard Time</td><td>UTC-8</td><td>PDT (UTC-7)</td><td>Los Ángeles, Vancouver, Seattle, Tijuana</td></tr>
+<tr><td>PDT</td><td>Pacific Daylight Time</td><td>UTC-7</td><td>PST (invierno)</td><td>Mismas ciudades, marzo-noviembre</td></tr>
+<tr><td>AKST</td><td>Alaska Standard Time</td><td>UTC-9</td><td>AKDT (UTC-8)</td><td>Anchorage, Fairbanks, Juneau</td></tr>
+<tr><td>HST</td><td>Hawaii-Aleutian Standard Time</td><td>UTC-10</td><td>Sin horario de verano</td><td>Honolulu, Hilo, Adak</td></tr></tbody></table>
+<p><small>* Arizona (excepto la Nación Navajo) no observa horario de verano y se queda en MST todo el año.</small></p>
+<h2>Zonas Horarias del Atlántico y Sudamérica</h2>
+<table class="tz-table"><thead><tr><th>Abr</th><th>Nombre Completo</th><th>Desfase UTC</th><th>Variante Horario de Verano</th><th>Ciudades Principales</th></tr></thead>
+<tbody><tr><td>AST</td><td>Atlantic Standard Time</td><td>UTC-4</td><td>ADT (UTC-3)</td><td>Halifax, San Juan, Bermudas, Caracas</td></tr>
+<tr><td>BRT</td><td>Brasilia Time</td><td>UTC-3</td><td>Sin horario de verano desde 2019</td><td>São Paulo, Río de Janeiro, Brasilia</td></tr>
+<tr><td>ART</td><td>Argentina Time</td><td>UTC-3</td><td>Sin horario de verano desde 2009</td><td>Buenos Aires, Córdoba, Rosario</td></tr>
+<tr><td>CLT</td><td>Chile Standard Time</td><td>UTC-4</td><td>CLST (UTC-3)</td><td>Santiago, Valparaíso, Concepción</td></tr></tbody></table>
+<h2>Zonas Horarias Europeas y Africanas</h2>
+<table class="tz-table"><thead><tr><th>Abr</th><th>Nombre Completo</th><th>Desfase UTC</th><th>Variante Horario de Verano</th><th>Ciudades Principales</th></tr></thead>
+<tbody><tr><td>GMT</td><td>Greenwich Mean Time</td><td>UTC+0</td><td>BST (UTC+1)</td><td>Londres, Dublín, Lisboa (invierno)</td></tr>
+<tr><td>BST</td><td>British Summer Time</td><td>UTC+1</td><td>GMT (invierno)</td><td>Londres, Dublín, Edimburgo (verano)</td></tr>
+<tr><td>WET</td><td>Western European Time</td><td>UTC+0</td><td>WEST (UTC+1)</td><td>Lisboa, Casablanca, Reikiavik</td></tr>
+<tr><td>CET</td><td>Central European Time</td><td>UTC+1</td><td>CEST (UTC+2)</td><td>París, Berlín, Roma, Madrid, Varsovia</td></tr>
+<tr><td>CEST</td><td>Central European Summer Time</td><td>UTC+2</td><td>CET (invierno)</td><td>Mismas ciudades, marzo-octubre</td></tr>
+<tr><td>EET</td><td>Eastern European Time</td><td>UTC+2</td><td>EEST (UTC+3)</td><td>Helsinki, Kiev, Bucarest, El Cairo</td></tr>
+<tr><td>MSK</td><td>Moscow Standard Time</td><td>UTC+3</td><td>Sin horario de verano desde 2014</td><td>Moscú, San Petersburgo, Estambul, Minsk</td></tr>
+<tr><td>SAST</td><td>South Africa Standard Time</td><td>UTC+2</td><td>Sin horario de verano</td><td>Johannesburgo, Ciudad del Cabo, Durban</td></tr>
+<tr><td>WAT</td><td>West Africa Time</td><td>UTC+1</td><td>Sin horario de verano</td><td>Lagos, Kinshasa, Argel</td></tr></tbody></table>
+<h2>Zonas Horarias del Medio Oriente y Asia Central</h2>
+<table class="tz-table"><thead><tr><th>Abr</th><th>Nombre Completo</th><th>Desfase UTC</th><th>Variante Horario de Verano</th><th>Ciudades Principales</th></tr></thead>
+<tbody><tr><td>GST</td><td>Gulf Standard Time</td><td>UTC+4</td><td>Sin horario de verano</td><td>Dubái, Abu Dabi, Mascate, Doha</td></tr>
+<tr><td>AST</td><td>Arabia Standard Time</td><td>UTC+3</td><td>Sin horario de verano</td><td>Riad, Yeda, Ciudad de Kuwait, Manama</td></tr>
+<tr><td>IRST</td><td>Iran Standard Time</td><td>UTC+3:30</td><td>IRDT (UTC+4:30)</td><td>Teherán, Mashhad, Isfahán</td></tr>
+<tr><td>AFT</td><td>Afghanistan Time</td><td>UTC+4:30</td><td>Sin horario de verano</td><td>Kabul, Herat, Mazar-i-Sharif</td></tr>
+<tr><td>PKT</td><td>Pakistan Standard Time</td><td>UTC+5</td><td>Sin horario de verano</td><td>Karachi, Lahore, Islamabad</td></tr></tbody></table>
+<h2>Zonas Horarias del Sur y Sudeste Asiático</h2>
+<table class="tz-table"><thead><tr><th>Abr</th><th>Nombre Completo</th><th>Desfase UTC</th><th>Variante Horario de Verano</th><th>Ciudades Principales</th></tr></thead>
+<tbody><tr><td>IST</td><td>India Standard Time</td><td>UTC+5:30</td><td>Sin horario de verano</td><td>Mumbai, Delhi, Bangalore, Kolkata, Chennai</td></tr>
+<tr><td>NPT</td><td>Nepal Time</td><td>UTC+5:45</td><td>Sin horario de verano</td><td>Katmandú, Pokhara, Biratnagar</td></tr>
+<tr><td>BST</td><td>Bangladesh Standard Time</td><td>UTC+6</td><td>Sin horario de verano</td><td>Daca, Chittagong, Sylhet</td></tr>
+<tr><td>MMT</td><td>Myanmar Time</td><td>UTC+6:30</td><td>Sin horario de verano</td><td>Yangon, Mandalay, Naypyidaw</td></tr>
+<tr><td>ICT</td><td>Indochina Time</td><td>UTC+7</td><td>Sin horario de verano</td><td>Bangkok, Hanói, Yakarta*, Phnom Penh</td></tr>
+<tr><td>WIB</td><td>Western Indonesian Time</td><td>UTC+7</td><td>Sin horario de verano</td><td>Yakarta, Bandung, Surabaya</td></tr>
+<tr><td>CST</td><td>China Standard Time</td><td>UTC+8</td><td>Sin horario de verano</td><td>Pekín, Shanghái, Hong Kong, Taipéi</td></tr>
+<tr><td>SGT</td><td>Singapore Time</td><td>UTC+8</td><td>Sin horario de verano</td><td>Singapur, Kuala Lumpur, Manila, Perth</td></tr></tbody></table>
+<p><small>* Yakarta usa WIB (UTC+7), no ICT.</small></p>
+<h2>Zonas Horarias de Asia Oriental y el Pacífico</h2>
+<table class="tz-table"><thead><tr><th>Abr</th><th>Nombre Completo</th><th>Desfase UTC</th><th>Variante Horario de Verano</th><th>Ciudades Principales</th></tr></thead>
+<tbody><tr><td>JST</td><td>Japan Standard Time</td><td>UTC+9</td><td>Sin horario de verano</td><td>Tokio, Osaka, Seúl*, Pionyang*</td></tr>
+<tr><td>KST</td><td>Korea Standard Time</td><td>UTC+9</td><td>Sin horario de verano</td><td>Seúl, Busán, Incheon</td></tr>
+<tr><td>AWST</td><td>Australian Western Standard Time</td><td>UTC+8</td><td>Sin horario de verano</td><td>Perth, Broome, Karratha</td></tr>
+<tr><td>ACST</td><td>Australian Central Standard Time</td><td>UTC+9:30</td><td>ACDT (UTC+10:30)</td><td>Adelaida, Darwin, Alice Springs</td></tr>
+<tr><td>AEST</td><td>Australian Eastern Standard Time</td><td>UTC+10</td><td>AEDT (UTC+11)</td><td>Sídney, Melbourne, Brisbane*, Canberra</td></tr>
+<tr><td>NZST</td><td>New Zealand Standard Time</td><td>UTC+12</td><td>NZDT (UTC+13)</td><td>Auckland, Wellington, Christchurch</td></tr></tbody></table>
+<p><small>* Seúl y Pionyang usan KST, no JST. * Brisbane (Queensland) no observa horario de verano.</small></p>
+<h2>Abreviaturas Ambiguas — Cuidado</h2>
+<p>Algunas abreviaturas significan zonas distintas según el contexto:</p>
+<ul><li><strong>CST</strong> — Central Standard Time (UTC-6, Norteamérica) <em>o</em> China Standard Time (UTC+8) <em>o</em> Cuba Standard Time (UTC-5)</li>
+<li><strong>IST</strong> — India Standard Time (UTC+5:30) <em>o</em> Irish Standard Time (UTC+1, verano) <em>o</em> Israel Standard Time (UTC+2)</li>
+<li><strong>PST</strong> — Pacific Standard Time (UTC-8) <em>o</em> Philippine Standard Time (UTC+8)</li>
+<li><strong>BST</strong> — British Summer Time (UTC+1) <em>o</em> Bangladesh Standard Time (UTC+6) <em>o</em> Bougainville Standard Time (UTC+11)</li>
+<li><strong>AST</strong> — Atlantic Standard Time (UTC-4) <em>o</em> Arabia Standard Time (UTC+3) <em>o</em> Amazon Standard Time (UTC-4, Brasil)</li></ul>
+<p>Cuando ves un código ambiguo, mira el país o ciudad cercana. Para conversiones exactas, usa nuestro <a href="/es/time-zone-converter.html">convertidor de zonas horarias</a> que maneja todos estos correctamente.</p>
+<h2>Referencia Rápida: Fechas de Cambio de Horario de Verano (Típicas)</h2>
+<ul><li><strong>Norteamérica</strong>: 2.º domingo de marzo → 1.er domingo de noviembre</li>
+<li><strong>Europa</strong>: último domingo de marzo → último domingo de octubre</li>
+<li><strong>Australia (sureste)</strong>: 1.er domingo de octubre → 1.er domingo de abril</li>
+<li><strong>Nueva Zelanda</strong>: último domingo de septiembre → 1.er domingo de abril</li>
+<li><strong>Chile</strong>: 1.er domingo de septiembre → 1.er domingo de abril</li>
+<li><strong>Paraguay</strong>: 1.er domingo de octubre → último domingo de marzo</li></ul>
+<h2>Guarda Esta Página, Usa la Herramienta</h2>
+<p>No necesitas memorizar 50+ códigos. Guarda esta página para la tabla de consulta. Cuando necesites una conversión exacta para una fecha específica — especialmente durante las semanas de transición de horario de verano — usa nuestra <a href="/es/time-difference.html">calculadora de diferencia horaria</a> o <a href="/es/meeting-planner.html">planificador de reuniones</a>. Usan la base de datos IANA de zonas horarias así que cada desfase está actualizado y es correcto.</p>

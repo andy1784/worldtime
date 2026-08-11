@@ -1,0 +1,79 @@
+ja:タイムゾーン略語チートシート (2026)
+主要なタイムゾーン略語のクイックリファレンス——EST、PST、CET、IST、JST およびその他 50 以上。UTC オフセット、夏時間バリエーション、各略語を使用する都市を含む。
+タイムゾーン略語,EST PST CST MST,UTC オフセット チートシート,タイムゾーンコード リスト,タイムゾーン頭字語,夏時間略語
+タイムゾーン略語チートシート
+<p>フライトの確認で "EST"、会議の招待で "CET"、ログファイルで "IST" を見かける。各略語は UTC からの特定のオフセットを意味するが、夏と冬で異なるものもある。このチートシートでは正確なオフセット、主要都市、夏時間で変わるかどうかを示す。</p>
+<h2>北米のタイムゾーン</h2>
+<table class="tz-table"><thead><tr><th>略語</th><th>正式名称</th><th>UTC オフセット</th><th>夏時間バリエーション</th><th>主要都市</th></tr></thead>
+<tbody><tr><td>EST</td><td>Eastern Standard Time</td><td>UTC-5</td><td>EDT (UTC-4)</td><td>ニューヨーク、トロント、マイアミ、アトランタ</td></tr>
+<tr><td>EDT</td><td>Eastern Daylight Time</td><td>UTC-4</td><td>EST (冬)</td><td>同じ都市、3-11月</td></tr>
+<tr><td>CST</td><td>Central Standard Time</td><td>UTC-6</td><td>CDT (UTC-5)</td><td>シカゴ、ダラス、メキシコシティ、ヒューストン</td></tr>
+<tr><td>CDT</td><td>Central Daylight Time</td><td>UTC-5</td><td>CST (冬)</td><td>同じ都市、3-11月</td></tr>
+<tr><td>MST</td><td>Mountain Standard Time</td><td>UTC-7</td><td>MDT (UTC-6)</td><td>デンバー、フェニックス*、エドモントン、エルパソ</td></tr>
+<tr><td>MDT</td><td>Mountain Daylight Time</td><td>UTC-6</td><td>MST (冬)</td><td>同じ都市 (アリゾナ州を除く)</td></tr>
+<tr><td>PST</td><td>Pacific Standard Time</td><td>UTC-8</td><td>PDT (UTC-7)</td><td>ロサンゼルス、バンクーバー、シアトル、ティフアナ</td></tr>
+<tr><td>PDT</td><td>Pacific Daylight Time</td><td>UTC-7</td><td>PST (冬)</td><td>同じ都市、3-11月</td></tr>
+<tr><td>AKST</td><td>Alaska Standard Time</td><td>UTC-9</td><td>AKDT (UTC-8)</td><td>アンカレッジ、フェアバンクス、ジュノー</td></tr>
+<tr><td>HST</td><td>Hawaii-Aleutian Standard Time</td><td>UTC-10</td><td>夏時間なし</td><td>ホノルル、ヒロ、アダック</td></tr></tbody></table>
+<p><small>* アリゾナ州 (ナバホ族居留地を除く) は夏時間を実施せず、通年 MST。</small></p>
+<h2>大西洋と南米のタイムゾーン</h2>
+<table class="tz-table"><thead><tr><th>略語</th><th>正式名称</th><th>UTC オフセット</th><th>夏時間バリエーション</th><th>主要都市</th></tr></thead>
+<tbody><tr><td>AST</td><td>Atlantic Standard Time</td><td>UTC-4</td><td>ADT (UTC-3)</td><td>ハリファックス、サンフアン、バミューダ、カラカス</td></tr>
+<tr><td>BRT</td><td>Brasilia Time</td><td>UTC-3</td><td>2019 年以降夏時間なし</td><td>サンパウロ、リオデジャネイロ、ブラジリア</td></tr>
+<tr><td>ART</td><td>Argentina Time</td><td>UTC-3</td><td>2009 年以降夏時間なし</td><td>ブエノスアイレス、コルドバ、ロサリオ</td></tr>
+<tr><td>CLT</td><td>Chile Standard Time</td><td>UTC-4</td><td>CLST (UTC-3)</td><td>サンティアゴ、バルパライソ、コンセプシオン</td></tr></tbody></table>
+<h2>ヨーロッパとアフリカのタイムゾーン</h2>
+<table class="tz-table"><thead><tr><th>略語</th><th>正式名称</th><th>UTC オフセット</th><th>夏時間バリエーション</th><th>主要都市</th></tr></thead>
+<tbody><tr><td>GMT</td><td>Greenwich Mean Time</td><td>UTC+0</td><td>BST (UTC+1)</td><td>ロンドン、ダブリン、リスボン (冬)</td></tr>
+<tr><td>BST</td><td>British Summer Time</td><td>UTC+1</td><td>GMT (冬)</td><td>ロンドン、ダブリン、エディンバラ (夏)</td></tr>
+<tr><td>WET</td><td>Western European Time</td><td>UTC+0</td><td>WEST (UTC+1)</td><td>リスボン、カサブランカ、レイキャビク</td></tr>
+<tr><td>CET</td><td>Central European Time</td><td>UTC+1</td><td>CEST (UTC+2)</td><td>パリ、ベルリン、ローマ、マドリード、ワルシャワ</td></tr>
+<tr><td>CEST</td><td>Central European Summer Time</td><td>UTC+2</td><td>CET (冬)</td><td>同じ都市、3-10月</td></tr>
+<tr><td>EET</td><td>Eastern European Time</td><td>UTC+2</td><td>EEST (UTC+3)</td><td>ヘルシンキ、キーウ、ブカレスト、カイロ</td></tr>
+<tr><td>MSK</td><td>Moscow Standard Time</td><td>UTC+3</td><td>2014 年以降夏時間なし</td><td>モスクワ、サンクトペテルブルク、イスタンブール、ミンスク</td></tr>
+<tr><td>SAST</td><td>South Africa Standard Time</td><td>UTC+2</td><td>夏時間なし</td><td>ヨハネスブルグ、ケープタウン、ダーバン</td></tr>
+<tr><td>WAT</td><td>West Africa Time</td><td>UTC+1</td><td>夏時間なし</td><td>ラゴス、キンシャサ、アルジェ</td></tr></tbody></table>
+<h2>中東と中央アジアのタイムゾーン</h2>
+<table class="tz-table"><thead><tr><th>略語</th><th>正式名称</th><th>UTC オフセット</th><th>夏時間バリエーション</th><th>主要都市</th></tr></thead>
+<tbody><tr><td>GST</td><td>Gulf Standard Time</td><td>UTC+4</td><td>夏時間なし</td><td>ドバイ、アブダビ、マスカット、ドーハ</td></tr>
+<tr><td>AST</td><td>Arabia Standard Time</td><td>UTC+3</td><td>夏時間なし</td><td>リヤド、ジッダ、クウェートシティ、マナマ</td></tr>
+<tr><td>IRST</td><td>Iran Standard Time</td><td>UTC+3:30</td><td>IRDT (UTC+4:30)</td><td>テヘラン、マシュハド、エスファハーン</td></tr>
+<tr><td>AFT</td><td>Afghanistan Time</td><td>UTC+4:30</td><td>夏時間なし</td><td>カーブル、ヘラート、マザーリシャリーフ</td></tr>
+<tr><td>PKT</td><td>Pakistan Standard Time</td><td>UTC+5</td><td>夏時間なし</td><td>カラチ、ラホール、イスラマバード</td></tr></tbody></table>
+<h2>南アジアと東南アジアのタイムゾーン</h2>
+<table class="tz-table"><thead><tr><th>略語</th><th>正式名称</th><th>UTC オフセット</th><th>夏時間バリエーション</th><th>主要都市</th></tr></thead>
+<tbody><tr><td>IST</td><td>India Standard Time</td><td>UTC+5:30</td><td>夏時間なし</td><td>ムンバイ、デリー、バンガロール、コルカタ、チェンナイ</td></tr>
+<tr><td>NPT</td><td>Nepal Time</td><td>UTC+5:45</td><td>夏時間なし</td><td>カトマンズ、ポカラ、ビラトナガル</td></tr>
+<tr><td>BST</td><td>Bangladesh Standard Time</td><td>UTC+6</td><td>夏時間なし</td><td>ダッカ、チッタゴン、シレット</td></tr>
+<tr><td>MMT</td><td>Myanmar Time</td><td>UTC+6:30</td><td>夏時間なし</td><td>ヤンゴン、マンダレー、ネピドー</td></tr>
+<tr><td>ICT</td><td>Indochina Time</td><td>UTC+7</td><td>夏時間なし</td><td>バンコク、ハノイ、ジャカルタ*、プノンペン</td></tr>
+<tr><td>WIB</td><td>Western Indonesian Time</td><td>UTC+7</td><td>夏時間なし</td><td>ジャカルタ、バンドン、スラバヤ</td></tr>
+<tr><td>CST</td><td>China Standard Time</td><td>UTC+8</td><td>夏時間なし</td><td>北京、上海、香港、台北</td></tr>
+<tr><td>SGT</td><td>Singapore Time</td><td>UTC+8</td><td>夏時間なし</td><td>シンガポール、クアラルンプール、マニラ、パース</td></tr></tbody></table>
+<p><small>* ジャカルタは WIB (UTC+7) を使用し、ICT ではない。</small></p>
+<h2>東アジアと太平洋のタイムゾーン</h2>
+<table class="tz-table"><thead><tr><th>略語</th><th>正式名称</th><th>UTC オフセット</th><th>夏時間バリエーション</th><th>主要都市</th></tr></thead>
+<tbody><tr><td>JST</td><td>Japan Standard Time</td><td>UTC+9</td><td>夏時間なし</td><td>東京、大阪、ソウル*、平壌*</td></tr>
+<tr><td>KST</td><td>Korea Standard Time</td><td>UTC+9</td><td>夏時間なし</td><td>ソウル、釜山、仁川</td></tr>
+<tr><td>AWST</td><td>Australian Western Standard Time</td><td>UTC+8</td><td>夏時間なし</td><td>パース、ブルーム、カラサ</td></tr>
+<tr><td>ACST</td><td>Australian Central Standard Time</td><td>UTC+9:30</td><td>ACDT (UTC+10:30)</td><td>アデレード、ダーウィン、アリススプリングス</td></tr>
+<tr><td>AEST</td><td>Australian Eastern Standard Time</td><td>UTC+10</td><td>AEDT (UTC+11)</td><td>シドニー、メルボルン、ブリスベン*、キャンベラ</td></tr>
+<tr><td>NZST</td><td>New Zealand Standard Time</td><td>UTC+12</td><td>NZDT (UTC+13)</td><td>オークランド、ウェリントン、クライストチャーチ</td></tr></tbody></table>
+<p><small>* ソウルと平壌は KST を使用し、JST ではない。* ブリスベン (クイーンズランド州) は夏時間を実施しない。</small></p>
+<h2>曖昧な略語 — 注意</h2>
+<p>文脈によって異なるゾーンを意味する略語がある:</p>
+<ul><li><strong>CST</strong> — Central Standard Time (UTC-6, 北米) <em>または</em> China Standard Time (UTC+8) <em>または</em> Cuba Standard Time (UTC-5)</li>
+<li><strong>IST</strong> — India Standard Time (UTC+5:30) <em>または</em> Irish Standard Time (UTC+1, 夏) <em>または</em> Israel Standard Time (UTC+2)</li>
+<li><strong>PST</strong> — Pacific Standard Time (UTC-8) <em>または</em> Philippine Standard Time (UTC+8)</li>
+<li><strong>BST</strong> — British Summer Time (UTC+1) <em>または</em> Bangladesh Standard Time (UTC+6) <em>または</em> Bougainville Standard Time (UTC+11)</li>
+<li><strong>AST</strong> — Atlantic Standard Time (UTC-4) <em>または</em> Arabia Standard Time (UTC+3) <em>または</em> Amazon Standard Time (UTC-4, ブラジル)</li></ul>
+<p>曖昧なコードを見たら、近くの国名や都市名を確認しよう。正確な変換には <a href="/ja/time-zone-converter.html">タイムゾーンコンバーター</a> を使えば、これらすべてを正しく処理できる。</p>
+<h2>クイックリファレンス: 夏時間切り替え日 (典型)</h2>
+<ul><li><strong>北米</strong>: 3月第2日曜日 → 11月第1日曜日</li>
+<li><strong>ヨーロッパ</strong>: 3月最終日曜日 → 10月最終日曜日</li>
+<li><strong>オーストラリア (南東)</strong>: 10月第1日曜日 → 4月第1日曜日</li>
+<li><strong>ニュージーランド</strong>: 9月最終日曜日 → 4月第1日曜日</li>
+<li><strong>チリ</strong>: 9月第1日曜日 → 4月第1日曜日</li>
+<li><strong>パラグアイ</strong>: 10月第1日曜日 → 3月最終日曜日</li></ul>
+<h2>このページをブックマーク、ツールを活用</h2>
+<p>50 以上のコードを暗記する必要はない。このページを参照表としてブックマークしよう。特定の日付での正確な変換が必要なとき——特に夏時間の移行週では——<a href="/ja/time-difference.html">時差計算ツール</a> や <a href="/ja/meeting-planner.html">ミーティングプランナー</a> を使おう。IANA タイムゾーンデータベースを使用しているため、すべてのオフセットが最新かつ正確だ。</p>

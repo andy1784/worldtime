@@ -1,0 +1,79 @@
+it:Scheda di riferimento per le abbreviazioni dei fusi orari (2026)
+Riferimento rapido per tutte le principali abbreviazioni dei fusi orari - EST, PST, CET, IST, JST e 50 altre. Include offset UTC, varianti ora legale e le città che usano ciascuna.
+abbreviazioni fusi orari, EST PST CST MST, foglio trucco offset UTC, lista codici fuso orario, acronimi fuso orario, abbreviazioni ora legale
+Scheda di riferimento per le abbreviazioni dei fusi orari
+<p>Vedi "EST" su una conferma di volo, "CET" in un invito a una riunione, "IST" in un file di log. Ogni abbreviazione significa un offset specifico da UTC, ma alcune significano cose diverse d'estate versus d'inverno. Questa scheda ti dà l'offset esatto, le città principali e se l'ora legale lo sposta.</p>
+<h2>Fusi Orari Nordamericani</h2>
+<table class="tz-table"><thead><tr><th>ABBREV</th><th>Nome Completo</th><th>Offset UTC</th><th>Variante Ora Legale</th><th>Città Principali</th></tr></thead>
+<tbody><tr><td>EST</td><td>Eastern Standard Time</td><td>UTC-5</td><td>EDT (UTC-4)</td><td>New York, Toronto, Miami, Atlanta</td></tr>
+<tr><td>EDT</td><td>Eastern Daylight Time</td><td>UTC-4</td><td>EST (inverno)</td><td>Stesse città, marzo-novembre</td></tr>
+<tr><td>CST</td><td>Central Standard Time</td><td>UTC-6</td><td>CDT (UTC-5)</td><td>Chicago, Dallas, Città del Messico, Houston</td></tr>
+<tr><td>CDT</td><td>Central Daylight Time</td><td>UTC-5</td><td>CST (inverno)</td><td>Stesse città, marzo-novembre</td></tr>
+<tr><td>MST</td><td>Mountain Standard Time</td><td>UTC-7</td><td>MDT (UTC-6)</td><td>Denver, Phoenix*, Edmonton, El Paso</td></tr>
+<tr><td>MDT</td><td>Mountain Daylight Time</td><td>UTC-6</td><td>MST (inverno)</td><td>Stesse città (eccetto Arizona)</td></tr>
+<tr><td>PST</td><td>Pacific Standard Time</td><td>UTC-8</td><td>PDT (UTC-7)</td><td>Los Angeles, Vancouver, Seattle, Tijuana</td></tr>
+<tr><td>PDT</td><td>Pacific Daylight Time</td><td>UTC-7</td><td>PST (inverno)</td><td>Stesse città, marzo-novembre</td></tr>
+<tr><td>AKST</td><td>Alaska Standard Time</td><td>UTC-9</td><td>AKDT (UTC-8)</td><td>Anchorage, Fairbanks, Juneau</td></tr>
+<tr><td>HST</td><td>Hawaii-Aleutian Standard Time</td><td>UTC-10</td><td>Nessuna ora legale</td><td>Honolulu, Hilo, Adak</td></tr></tbody></table>
+<p><small>* Arizona (eccetto Nazione Navajo) non osserva l'ora legale e resta su MST tutto l'anno.</small></p>
+<h2>Fusi Orari dell'Atlantico e Sudamericani</h2>
+<table class="tz-table"><thead><tr><th>ABBREV</th><th>Nome Completo</th><th>Offset UTC</th><th>Variante Ora Legale</th><th>Città Principali</th></tr></thead>
+<tbody><tr><td>AST</td><td>Atlantic Standard Time</td><td>UTC-4</td><td>ADT (UTC-3)</td><td>Halifax, San Juan, Bermuda, Caracas</td></tr>
+<tr><td>BRT</td><td>Brasilia Time</td><td>UTC-3</td><td>Nessuna ora legale dal 2019</td><td>São Paulo, Rio de Janeiro, Brasilia</td></tr>
+<tr><td>ART</td><td>Argentina Time</td><td>UTC-3</td><td>Nessuna ora legale dal 2009</td><td>Buenos Aires, Córdoba, Rosario</td></tr>
+<tr><td>CLT</td><td>Chile Standard Time</td><td>UTC-4</td><td>CLST (UTC-3)</td><td>Santiago, Valparaíso, Concepción</td></tr></tbody></table>
+<h2>Fusi Orari Europei e Africani</h2>
+<table class="tz-table"><thead><tr><th>ABBREV</th><th>Nome Completo</th><th>Offset UTC</th><th>Variante Ora Legale</th><th>Città Principali</th></tr></thead>
+<tbody><tr><td>GMT</td><td>Greenwich Mean Time</td><td>UTC+0</td><td>BST (UTC+1)</td><td>Londra, Dublino, Lisbona (inverno)</td></tr>
+<tr><td>BST</td><td>British Summer Time</td><td>UTC+1</td><td>GMT (inverno)</td><td>Londra, Dublino, Edimburgo (estate)</td></tr>
+<tr><td>WET</td><td>Western European Time</td><td>UTC+0</td><td>WEST (UTC+1)</td><td>Lisbona, Casablanca, Reykjavik</td></tr>
+<tr><td>CET</td><td>Central European Time</td><td>UTC+1</td><td>CEST (UTC+2)</td><td>Parigi, Berlino, Roma, Madrid, Varsavia</td></tr>
+<tr><td>CEST</td><td>Central European Summer Time</td><td>UTC+2</td><td>CET (inverno)</td><td>Stesse città, marzo-ottobre</td></tr>
+<tr><td>EET</td><td>Eastern European Time</td><td>UTC+2</td><td>EEST (UTC+3)</td><td>Helsinki, Kiev, Bucarest, Il Cairo</td></tr>
+<tr><td>MSK</td><td>Moscow Standard Time</td><td>UTC+3</td><td>Nessuna ora legale dal 2014</td><td>Mosca, San Pietroburgo, Istanbul, Minsk</td></tr>
+<tr><td>SAST</td><td>South Africa Standard Time</td><td>UTC+2</td><td>Nessuna ora legale</td><td>Johannesburg, Città del Capo, Durban</td></tr>
+<tr><td>WAT</td><td>West Africa Time</td><td>UTC+1</td><td>Nessuna ora legale</td><td>Lagos, Kinshasa, Algeri</td></tr></tbody></table>
+<h2>Fusi Orari del Medio Oriente e Asia Centrale</h2>
+<table class="tz-table"><thead><tr><th>ABBREV</th><th>Nome Completo</th><th>Offset UTC</th><th>Variante Ora Legale</th><th>Città Principali</th></tr></thead>
+<tbody><tr><td>GST</td><td>Gulf Standard Time</td><td>UTC+4</td><td>Nessuna ora legale</td><td>Dubai, Abu Dhabi, Muscat, Doha</td></tr>
+<tr><td>AST</td><td>Arabia Standard Time</td><td>UTC+3</td><td>Nessuna ora legale</td><td>Riyadh, Gedda, Città del Kuwait, Manama</td></tr>
+<tr><td>IRST</td><td>Iran Standard Time</td><td>UTC+3:30</td><td>IRDT (UTC+4:30)</td><td>Tehran, Mashhad, Isfahan</td></tr>
+<tr><td>AFT</td><td>Afghanistan Time</td><td>UTC+4:30</td><td>Nessuna ora legale</td><td>Kabul, Herat, Mazar-i-Sharif</td></tr>
+<tr><td>PKT</td><td>Pakistan Standard Time</td><td>UTC+5</td><td>Nessuna ora legale</td><td>Karachi, Lahore, Islamabad</td></tr></tbody></table>
+<h2>Fusi Orari dell'Asia Meridionale e Sudorientale</h2>
+<table class="tz-table"><thead><tr><th>ABBREV</th><th>Nome Completo</th><th>Offset UTC</th><th>Variante Ora Legale</th><th>Città Principali</th></tr></thead>
+<tbody><tr><td>IST</td><td>India Standard Time</td><td>UTC+5:30</td><td>Nessuna ora legale</td><td>Mumbai, Delhi, Bangalore, Kolkata, Chennai</td></tr>
+<tr><td>NPT</td><td>Nepal Time</td><td>UTC+5:45</td><td>Nessuna ora legale</td><td>Kathmandu, Pokhara, Biratnagar</td></tr>
+<tr><td>BST</td><td>Bangladesh Standard Time</td><td>UTC+6</td><td>Nessuna ora legale</td><td>Dacca, Chittagong, Sylhet</td></tr>
+<tr><td>MMT</td><td>Myanmar Time</td><td>UTC+6:30</td><td>Nessuna ora legale</td><td>Yangon, Mandalay, Naypyidaw</td></tr>
+<tr><td>ICT</td><td>Indochina Time</td><td>UTC+7</td><td>Nessuna ora legale</td><td>Bangkok, Hanoi, Giacarta*, Phnom Penh</td></tr>
+<tr><td>WIB</td><td>Western Indonesian Time</td><td>UTC+7</td><td>Nessuna ora legale</td><td>Giacarta, Bandung, Surabaya</td></tr>
+<tr><td>CST</td><td>China Standard Time</td><td>UTC+8</td><td>Nessuna ora legale</td><td>Pechino, Shanghai, Hong Kong, Taipei</td></tr>
+<tr><td>SGT</td><td>Singapore Time</td><td>UTC+8</td><td>Nessuna ora legale</td><td>Singapore, Kuala Lumpur, Manila, Perth</td></tr></tbody></table>
+<p><small>* Giacarta usa WIB (UTC+7), non ICT.</small></p>
+<h2>Fusi Orari dell'Asia Orientale e del Pacifico</h2>
+<table class="tz-table"><thead><tr><th>ABBREV</th><th>Nome Completo</th><th>Offset UTC</th><th>Variante Ora Legale</th><th>Città Principali</th></tr></thead>
+<tbody><tr><td>JST</td><td>Japan Standard Time</td><td>UTC+9</td><td>Nessuna ora legale</td><td>Tokyo, Osaka, Seul*, Pyongyang*</td></tr>
+<tr><td>KST</td><td>Korea Standard Time</td><td>UTC+9</td><td>Nessuna ora legale</td><td>Seul, Busan, Incheon</td></tr>
+<tr><td>AWST</td><td>Australian Western Standard Time</td><td>UTC+8</td><td>Nessuna ora legale</td><td>Perth, Broome, Karratha</td></tr>
+<tr><td>ACST</td><td>Australian Central Standard Time</td><td>UTC+9:30</td><td>ACDT (UTC+10:30)</td><td>Adelaide, Darwin, Alice Springs</td></tr>
+<tr><td>AEST</td><td>Australian Eastern Standard Time</td><td>UTC+10</td><td>AEDT (UTC+11)</td><td>Sydney, Melbourne, Brisbane*, Canberra</td></tr>
+<tr><td>NZST</td><td>New Zealand Standard Time</td><td>UTC+12</td><td>NZDT (UTC+13)</td><td>Auckland, Wellington, Christchurch</td></tr></tbody></table>
+<p><small>* Seul e Pyongyang usano KST, non JST. * Brisbane (Queensland) non osserva l'ora legale.</small></p>
+<h2>Abbreviazioni Ambigue — Attenzione</h2>
+<p>Alcune abbreviazioni significano zone diverse a seconda del contesto:</p>
+<ul><li><strong>CST</strong> — Central Standard Time (UTC-6, Nord America) <em>o</em> China Standard Time (UTC+8) <em>o</em> Cuba Standard Time (UTC-5)</li>
+<li><strong>IST</strong> — India Standard Time (UTC+5:30) <em>o</em> Irish Standard Time (UTC+1, estate) <em>o</em> Israel Standard Time (UTC+2)</li>
+<li><strong>PST</strong> — Pacific Standard Time (UTC-8) <em>o</em> Philippine Standard Time (UTC+8)</li>
+<li><strong>BST</strong> — British Summer Time (UTC+1) <em>o</em> Bangladesh Standard Time (UTC+6) <em>o</em> Bougainville Standard Time (UTC+11)</li>
+<li><strong>AST</strong> — Atlantic Standard Time (UTC-4) <em>o</em> Arabia Standard Time (UTC+3) <em>o</em> Amazon Standard Time (UTC-4, Brasile)</li></ul>
+<p>Quando vedi un codice ambiguo, controlla il paese o la città vicina. Per conversioni esatte, usa il nostro <a href="/it/time-zone-converter.html">convertitore di fusi orari</a> che gestisce correttamente tutti questi casi.</p>
+<h2>Riferimento Rapido: Date Cambio Ora Legale (Tipiche)</h2>
+<ul><li><strong>Nord America</strong>: 2ª domenica di marzo → 1ª domenica di novembre</li>
+<li><strong>Europa</strong>: ultima domenica di marzo → ultima domenica di ottobre</li>
+<li><strong>Australia (sudest)</strong>: 1ª domenica di ottobre → 1ª domenica di aprile</li>
+<li><strong>Nuova Zelanda</strong>: ultima domenica di settembre → 1ª domenica di aprile</li>
+<li><strong>Cile</strong>: 1ª domenica di settembre → 1ª domenica di aprile</li>
+<li><strong>Paraguay</strong>: 1ª domenica di ottobre → ultima domenica di marzo</li></ul>
+<h2>Salva Questa Pagina, Usa lo Strumento</h2>
+<p>Non devi memorizzare 50+ codici. Salva questa pagina per la tabella di consultazione. Quando ti serve una conversione esatta per una data specifica — soprattutto durante le settimane di transizione dell'ora legale — usa il nostro <a href="/it/time-difference.html">calcolatore di differenza oraria</a> o <a href="/it/meeting-planner.html">pianificatore di riunioni</a>. Usano il database IANA dei fusi orari quindi ogni offset è aggiornato e corretto.</p>

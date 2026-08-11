@@ -1,0 +1,79 @@
+fr:Aide-mémoire des abréviations de fuseaux horaires (2026)
+Référence rapide pour toutes les abréviations principales de fuseaux horaires — EST, PST, CET, IST, JST et 50 autres. Inclut les décalages UTC, les variantes d'heure d'été et les villes qui utilisent chacune.
+abréviations fuseaux horaires, EST PST CST MST, décalages UTC fiche mémoire, liste codes fuseau horaire, acronymes fuseau horaire, abréviations heure d'été
+Aide-mémoire des abréviations de fuseaux horaires
+<p>Vous voyez "EST" sur une confirmation de vol, "CET" dans une invitation de réunion, "IST" dans un fichier log. Chaque abréviation signifie un décalage UTC précis, mais certaines changent de sens entre l'été et l'hiver. Cette fiche vous donne le décalage exact, les villes principales et si l'heure d'été le modifie.</p>
+<h2>Fuseaux Horaires Nord-Américains</h2>
+<table class="tz-table"><thead><tr><th>Abrév.</th><th>Nom Complet</th><th>Décalage UTC</th><th>Variante Heure d'Été</th><th>Villes Principales</th></tr></thead>
+<tbody><tr><td>EST</td><td>Eastern Standard Time</td><td>UTC-5</td><td>EDT (UTC-4)</td><td>New York, Toronto, Miami, Atlanta</td></tr>
+<tr><td>EDT</td><td>Eastern Daylight Time</td><td>UTC-4</td><td>EST (hiver)</td><td>Mêmes villes, mars-novembre</td></tr>
+<tr><td>CST</td><td>Central Standard Time</td><td>UTC-6</td><td>CDT (UTC-5)</td><td>Chicago, Dallas, Mexico, Houston</td></tr>
+<tr><td>CDT</td><td>Central Daylight Time</td><td>UTC-5</td><td>CST (hiver)</td><td>Mêmes villes, mars-novembre</td></tr>
+<tr><td>MST</td><td>Mountain Standard Time</td><td>UTC-7</td><td>MDT (UTC-6)</td><td>Denver, Phoenix*, Edmonton, El Paso</td></tr>
+<tr><td>MDT</td><td>Mountain Daylight Time</td><td>UTC-6</td><td>MST (hiver)</td><td>Mêmes villes (sauf Arizona)</td></tr>
+<tr><td>PST</td><td>Pacific Standard Time</td><td>UTC-8</td><td>PDT (UTC-7)</td><td>Los Angeles, Vancouver, Seattle, Tijuana</td></tr>
+<tr><td>PDT</td><td>Pacific Daylight Time</td><td>UTC-7</td><td>PST (hiver)</td><td>Mêmes villes, mars-novembre</td></tr>
+<tr><td>AKST</td><td>Alaska Standard Time</td><td>UTC-9</td><td>AKDT (UTC-8)</td><td>Anchorage, Fairbanks, Juneau</td></tr>
+<tr><td>HST</td><td>Hawaii-Aleutian Standard Time</td><td>UTC-10</td><td>Pas d'heure d'été</td><td>Honolulu, Hilo, Adak</td></tr></tbody></table>
+<p><small>* L'Arizona (sauf réserve Navajo) ne change pas d'heure et reste sur MST toute l'année.</small></p>
+<h2>Fuseaux Horaires de l'Atlantique et d'Amérique du Sud</h2>
+<table class="tz-table"><thead><tr><th>Abrév.</th><th>Nom Complet</th><th>Décalage UTC</th><th>Variante Heure d'Été</th><th>Villes Principales</th></tr></thead>
+<tbody><tr><td>AST</td><td>Atlantic Standard Time</td><td>UTC-4</td><td>ADT (UTC-3)</td><td>Halifax, San Juan, Bermudes, Caracas</td></tr>
+<tr><td>BRT</td><td>Brasilia Time</td><td>UTC-3</td><td>Pas d'heure d'été depuis 2019</td><td>São Paulo, Rio de Janeiro, Brasilia</td></tr>
+<tr><td>ART</td><td>Argentina Time</td><td>UTC-3</td><td>Pas d'heure d'été depuis 2009</td><td>Buenos Aires, Córdoba, Rosario</td></tr>
+<tr><td>CLT</td><td>Chile Standard Time</td><td>UTC-4</td><td>CLST (UTC-3)</td><td>Santiago, Valparaíso, Concepción</td></tr></tbody></table>
+<h2>Fuseaux Horaires Européens et Africains</h2>
+<table class="tz-table"><thead><tr><th>Abrév.</th><th>Nom Complet</th><th>Décalage UTC</th><th>Variante Heure d'Été</th><th>Villes Principales</th></tr></thead>
+<tbody><tr><td>GMT</td><td>Greenwich Mean Time</td><td>UTC+0</td><td>BST (UTC+1)</td><td>Londres, Dublin, Lisbonne (hiver)</td></tr>
+<tr><td>BST</td><td>British Summer Time</td><td>UTC+1</td><td>GMT (hiver)</td><td>Londres, Dublin, Édimbourg (été)</td></tr>
+<tr><td>WET</td><td>Western European Time</td><td>UTC+0</td><td>WEST (UTC+1)</td><td>Lisbonne, Casablanca, Reykjavik</td></tr>
+<tr><td>CET</td><td>Central European Time</td><td>UTC+1</td><td>CEST (UTC+2)</td><td>Paris, Berlin, Rome, Madrid, Varsovie</td></tr>
+<tr><td>CEST</td><td>Central European Summer Time</td><td>UTC+2</td><td>CET (hiver)</td><td>Mêmes villes, mars-octobre</td></tr>
+<tr><td>EET</td><td>Eastern European Time</td><td>UTC+2</td><td>EEST (UTC+3)</td><td>Helsinki, Kyiv, Bucarest, Le Caire</td></tr>
+<tr><td>MSK</td><td>Moscow Standard Time</td><td>UTC+3</td><td>Pas d'heure d'été depuis 2014</td><td>Moscou, Saint-Pétersbourg, Istanbul, Minsk</td></tr>
+<tr><td>SAST</td><td>South Africa Standard Time</td><td>UTC+2</td><td>Pas d'heure d'été</td><td>Johannesburg, Le Cap, Durban</td></tr>
+<tr><td>WAT</td><td>West Africa Time</td><td>UTC+1</td><td>Pas d'heure d'été</td><td>Lagos, Kinshasa, Alger</td></tr></tbody></table>
+<h2>Fuseaux Horaires du Moyen-Orient et d'Asie Centrale</h2>
+<table class="tz-table"><thead><tr><th>Abrév.</th><th>Nom Complet</th><th>Décalage UTC</th><th>Variante Heure d'Été</th><th>Villes Principales</th></tr></thead>
+<tbody><tr><td>GST</td><td>Gulf Standard Time</td><td>UTC+4</td><td>Pas d'heure d'été</td><td>Dubaï, Abu Dhabi, Mascate, Doha</td></tr>
+<tr><td>AST</td><td>Arabia Standard Time</td><td>UTC+3</td><td>Pas d'heure d'été</td><td>Riyad, Djeddah, Koweït, Manama</td></tr>
+<tr><td>IRST</td><td>Iran Standard Time</td><td>UTC+3:30</td><td>IRDT (UTC+4:30)</td><td>Téhéran, Mashhad, Ispahan</td></tr>
+<tr><td>AFT</td><td>Afghanistan Time</td><td>UTC+4:30</td><td>Pas d'heure d'été</td><td>Kaboul, Héra, Mazâr-e Charîf</td></tr>
+<tr><td>PKT</td><td>Pakistan Standard Time</td><td>UTC+5</td><td>Pas d'heure d'été</td><td>Karachi, Lahore, Islamabad</td></tr></tbody></table>
+<h2>Fuseaux Horaires d'Asie du Sud et du Sud-Est</h2>
+<table class="tz-table"><thead><tr><th>Abrév.</th><th>Nom Complet</th><th>Décalage UTC</th><th>Variante Heure d'Été</th><th>Villes Principales</th></tr></thead>
+<tbody><tr><td>IST</td><td>India Standard Time</td><td>UTC+5:30</td><td>Pas d'heure d'été</td><td>Mumbai, Delhi, Bangalore, Kolkata, Chennai</td></tr>
+<tr><td>NPT</td><td>Nepal Time</td><td>UTC+5:45</td><td>Pas d'heure d'été</td><td>Katmandou, Pokhara, Biratnagar</td></tr>
+<tr><td>BST</td><td>Bangladesh Standard Time</td><td>UTC+6</td><td>Pas d'heure d'été</td><td>Dacca, Chittagong, Sylhet</td></tr>
+<tr><td>MMT</td><td>Myanmar Time</td><td>UTC+6:30</td><td>Pas d'heure d'été</td><td>Yangon, Mandalay, Naypyidaw</td></tr>
+<tr><td>ICT</td><td>Indochina Time</td><td>UTC+7</td><td>Pas d'heure d'été</td><td>Bangkok, Hanoï, Jakarta*, Phnom Penh</td></tr>
+<tr><td>WIB</td><td>Western Indonesian Time</td><td>UTC+7</td><td>Pas d'heure d'été</td><td>Jakarta, Bandung, Surabaya</td></tr>
+<tr><td>CST</td><td>China Standard Time</td><td>UTC+8</td><td>Pas d'heure d'été</td><td>Pékin, Shanghai, Hong Kong, Taipei</td></tr>
+<tr><td>SGT</td><td>Singapore Time</td><td>UTC+8</td><td>Pas d'heure d'été</td><td>Singapour, Kuala Lumpur, Manille, Perth</td></tr></tbody></table>
+<p><small>* Jakarta utilise WIB (UTC+7), pas ICT.</small></p>
+<h2>Fuseaux Horaires d'Asie de l'Est et du Pacifique</h2>
+<table class="tz-table"><thead><tr><th>Abrév.</th><th>Nom Complet</th><th>Décalage UTC</th><th>Variante Heure d'Été</th><th>Villes Principales</th></tr></thead>
+<tbody><tr><td>JST</td><td>Japan Standard Time</td><td>UTC+9</td><td>Pas d'heure d'été</td><td>Tokyo, Osaka, Séoul*, Pyongyang*</td></tr>
+<tr><td>KST</td><td>Korea Standard Time</td><td>UTC+9</td><td>Pas d'heure d'été</td><td>Séoul, Busan, Incheon</td></tr>
+<tr><td>AWST</td><td>Australian Western Standard Time</td><td>UTC+8</td><td>Pas d'heure d'été</td><td>Perth, Broome, Karratha</td></tr>
+<tr><td>ACST</td><td>Australian Central Standard Time</td><td>UTC+9:30</td><td>ACDT (UTC+10:30)</td><td>Adélaïde, Darwin, Alice Springs</td></tr>
+<tr><td>AEST</td><td>Australian Eastern Standard Time</td><td>UTC+10</td><td>AEDT (UTC+11)</td><td>Sydney, Melbourne, Brisbane*, Canberra</td></tr>
+<tr><td>NZST</td><td>New Zealand Standard Time</td><td>UTC+12</td><td>NZDT (UTC+13)</td><td>Auckland, Wellington, Christchurch</td></tr></tbody></table>
+<p><small>* Séoul et Pyongyang utilisent KST, pas JST. * Brisbane (Queensland) ne change pas d'heure.</small></p>
+<h2>Abréviations Ambiguës — Attention</h2>
+<p>Certaines abréviations signifient des fuseaux différents selon le contexte:</p>
+<ul><li><strong>CST</strong> — Central Standard Time (UTC-6, Amérique du Nord) <em>ou</em> China Standard Time (UTC+8) <em>ou</em> Cuba Standard Time (UTC-5)</li>
+<li><strong>IST</strong> — India Standard Time (UTC+5:30) <em>ou</em> Irish Standard Time (UTC+1, été) <em>ou</em> Israel Standard Time (UTC+2)</li>
+<li><strong>PST</strong> — Pacific Standard Time (UTC-8) <em>ou</em> Philippine Standard Time (UTC+8)</li>
+<li><strong>BST</strong> — British Summer Time (UTC+1) <em>ou</em> Bangladesh Standard Time (UTC+6) <em>ou</em> Bougainville Standard Time (UTC+11)</li>
+<li><strong>AST</strong> — Atlantic Standard Time (UTC-4) <em>ou</em> Arabia Standard Time (UTC+3) <em>ou</em> Amazon Standard Time (UTC-4, Brésil)</li></ul>
+<p>Quand vous voyez un code ambigu, regardez le pays ou la ville à côté. Pour des conversions exactes, utilisez notre <a href="/fr/time-zone-converter.html">convertisseur de fuseaux horaires</a> qui gère correctement tous ces cas.</p>
+<h2>Référence Rapide: Dates de Changement d'Heure d'Été (Typiques)</h2>
+<ul><li><strong>Amérique du Nord</strong>: 2e dimanche mars → 1er dimanche novembre</li>
+<li><strong>Europe</strong>: dernier dimanche mars → dernier dimanche octobre</li>
+<li><strong>Australie (sud-est)</strong>: 1er dimanche octobre → 1er dimanche avril</li>
+<li><strong>Nouvelle-Zélande</strong>: dernier dimanche septembre → 1er dimanche avril</li>
+<li><strong>Chili</strong>: 1er dimanche septembre → 1er dimanche avril</li>
+<li><strong>Paraguay</strong>: 1er dimanche octobre → dernier dimanche mars</li></ul>
+<h2>Marquez Cette Page, Utilisez l'Outil</h2>
+<p>Vous n'avez pas besoin de mémoriser 50+ codes. Marquez cette page pour la table de référence. Quand vous avez besoin d'une conversion exacte pour une date spécifique — surtout pendant les semaines de transition d'heure d'été — utilisez notre <a href="/fr/time-difference.html">calculateur de décalage horaire</a> ou <a href="/fr/meeting-planner.html">planificateur de réunion</a>. Ils utilisent la base de données IANA des fuseaux horaires donc chaque décalage est à jour et correct.</p>
