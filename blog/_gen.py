@@ -2,8 +2,8 @@ import os, json, re
 
 os.makedirs('/home/kaliuser/worldtime/blog', exist_ok=True)
 
-DATE = '2026-06-28'
-DISPLAY_DATE = 'June 28, 2026'
+DATE = '2026-08-10'
+DISPLAY_DATE = 'August 10, 2026'
 
 # Shared analytics/footer HTML
 ANALYTICS_HEAD = '''    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>
@@ -44,12 +44,89 @@ FOOTER = '''
             <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p>
         </footer>'''
 
-def make_post(filename, title, meta_desc, keywords, breadcrumb, read_time, tags, h1, content, faq_list):
+def make_post(filename, title, meta_desc, keywords, breadcrumb, read_time, tags, h1, content, faq_list, article_section="Time Zones", word_count=None, speakable=None):
+    """
+    Generate a blog post with enhanced Article schema.
+    
+    Args:
+        filename: Output filename (e.g., 'my-post.html')
+        title: Page title
+        meta_desc: Meta description
+        keywords: Meta keywords
+        breadcrumb: Breadcrumb display name
+        read_time: Minutes to read (int)
+        tags: Comma-separated tags string
+        h1: H1 heading
+        content: HTML content string
+        faq_list: List of (question, answer) tuples for FAQ schema
+        article_section: Article section/category (default: "Time Zones")
+        word_count: Word count (int), auto-calculated if None
+        speakable: List of CSS selectors for speakable content, or None
+    """
+    # Calculate word count if not provided
+    if word_count is None:
+        # Strip HTML tags and count words
+        text_content = re.sub(r'<[^>]+>', ' ', content)
+        word_count = len(text_content.split())
+    
+    # Build FAQ JSON
     faq_json = json.dumps([{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in faq_list], ensure_ascii=False)
     
     canonical = f'https://worldtimessync.com/blog/{filename}'
     
-    # Write file line by line
+    # Build Article schema with all enhanced fields
+    article_schema = {
+        "@context": "https://schema.org",
+        "@type": "Article",  # Article type (BlogPosting is subtype but Article is preferred for Google News)
+        "headline": title,
+        "description": meta_desc,
+        "articleSection": article_section,
+        "keywords": keywords,
+        "wordCount": word_count,
+        "timeRequired": f"PT{read_time}M",
+        "inLanguage": "en",
+        "author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"},
+        "publisher": {
+            "@type": "Organization",
+            "name": "World Time Sync",
+            "url": "https://worldtimessync.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://worldtimessync.com/logo.png",
+                "width": 512,
+                "height": 512
+            }
+        },
+        "datePublished": DATE,
+        "dateModified": DATE,
+        "mainEntityOfPage": {"@type": "WebPage", "@id": canonical},
+        "image": "https://worldtimessync.com/og-image.png"
+    }
+    
+    # Add speakable if provided
+    if speakable:
+        article_schema["speakable"] = {
+            "@type": "SpeakableSpecification",
+            "cssSelector": speakable
+        }
+    
+    article_json = json.dumps(article_schema, ensure_ascii=False)
+    
+    # Breadcrumb schema
+    breadcrumb_json = json.dumps({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://worldtimessync.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://worldtimessync.com/#blog"},
+            {"@type": "ListItem", "position": 3, "name": breadcrumb, "item": canonical}
+        ]
+    }, ensure_ascii=False)
+    
+    # FAQ schema
+    faq_schema = f'{{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": {faq_json}}}'
+    
+    # Write file
     with open(f'/home/kaliuser/worldtime/blog/{filename}', 'w', encoding='utf-8') as f:
         f.write('<!doctype html>\n')
         f.write('<html lang="en">\n')
@@ -85,13 +162,13 @@ def make_post(filename, title, meta_desc, keywords, breadcrumb, read_time, tags,
         f.write('    <link rel="stylesheet" href="/assets/index-ufePLcBr.css">\n')
         f.write(ANALYTICS_HEAD + '\n')
         f.write(f'    <script type="application/ld+json">\n')
-        f.write(f'    {{"@context": "https://schema.org", "@type": "BlogPosting", "headline": {json.dumps(title)}, "description": {json.dumps(meta_desc)}, "author": {{"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}}, "publisher": {{"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}}, "datePublished": "{DATE}", "dateModified": "{DATE}", "mainEntityOfPage": {{"@type": "WebPage", "@id": "{canonical}"}}, "image": "https://worldtimessync.com/og-image.png"}}\n')
+        f.write(f'    {article_json}\n')
         f.write(f'    </script>\n')
         f.write(f'    <script type="application/ld+json">\n')
-        f.write(f'    {{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://worldtimessync.com/"}}, {{"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://worldtimessync.com/#blog"}}, {{"@type": "ListItem", "position": 3, "name": {json.dumps(breadcrumb)}, "item": "{canonical}"}}]}}\n')
+        f.write(f'    {breadcrumb_json}\n')
         f.write(f'    </script>\n')
         f.write(f'    <script type="application/ld+json">\n')
-        f.write(f'    {{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": {faq_json}}}\n')
+        f.write(f'    {faq_schema}\n')
         f.write(f'    </script>\n')
         f.write('\n</head>\n')
         f.write('<body>\n')
@@ -108,7 +185,7 @@ def make_post(filename, title, meta_desc, keywords, breadcrumb, read_time, tags,
         f.write(f'                <a href="/">Home</a> › <a href="/#blog">Blog</a> › <span aria-current="page">{breadcrumb}</span>\n')
         f.write('            </nav>\n')
         f.write(f'            <h1>{h1}</h1>\n')
-        f.write(f'            <div class="blog-meta">📅 {DISPLAY_DATE} &nbsp;·&nbsp; ⏱ {read_time} min read &nbsp;·&nbsp; 🏷 {tags}</div>\n')
+        f.write(f'            <div class="blog-meta">���� {DISPLAY_DATE} &nbsp;·&nbsp; ��� {read_time} min read &nbsp;·&nbsp; ��� {tags}</div>\n')
         f.write('\n')
         f.write(content)
         f.write('\n')
