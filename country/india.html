@@ -21,18 +21,18 @@
     <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk">
     <title>India Time Zone — IST UTC+5:30, Cities & Current Time</title>
     <meta name="title" content="Time Zones in India — Complete List & City Times">
-    <meta name="description" content="India time zone guide. UTC+5:30 IST — single zone, no DST. Current time Delhi, Mumbai, Bangalore. Half-hour offset explained.">
-    <meta name="keywords" content="India time zones, India time zone map, time in India, India cities time">
+    <meta name="description" content="India time zone guide. UTC+5:30 IST — single zone, no DST. Current time Delhi, Mumbai, Bangalore. Half-hour offset explained. Check india time now, what time is it in india, current time india instantly.">
+    <meta name="keywords" content="India time zones, India time zone map, time in India, India cities time, india time now, what time is it in india, current time india, delhi time now, mumbai time now, indian standard time ist, india time zone utc+5:30">
     <meta name="robots" content="index, follow">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://worldtimessync.com/country/india">
     <meta property="og:title" content="Time Zones in India — Complete List & City Times">
-    <meta property="og:description" content="Complete guide to time zones in India. Current local time, UTC offset, DST info, and major cities.">
-    <meta property="og:image" content="https://worldtimessync.com/og-image.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://worldtimessync.com/country/india">
-    <meta name="twitter:description" content="Complete guide to time zones in India. Current local time, UTC offset, DST info, and major cities.">
-    <meta name="twitter:image" content="https://worldtimessync.com/og-image.png">
+    <meta property="og:description" content="Complete guide to time zones in India. Current local time, UTC offset, DST info, and major cities. Check india time now, what time is it in india, current time india.">
+            <meta property="og:image" content="https://worldtimessync.com/og-image.png">
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:url" content="https://worldtimessync.com/country/india">
+            <meta name="twitter:description" content="Complete guide to time zones in India. Current local time, UTC offset, DST info, and major cities. Check india time now, what time is it in india, current time india.">
+            <meta name="twitter:image" content="https://worldtimessync.com/og-image.png">
     <meta name="twitter:creator" content="@worldtimesync">
     <link rel="canonical" href="https://worldtimessync.com/country/india">
     <link rel="alternate" hreflang="en" href="https://worldtimessync.com/country/india">
@@ -73,7 +73,192 @@
             </nav>
             <h1>🇮🇳 Time Zones in India</h1>
             <p>India uses a single time zone (IST, UTC+5:30) despite spanning what would naturally be two time zones. The 30-hour offset is one of the most distinctive in the world — only a few countries use half-hour offsets. India's IT industry operates on IST, and the 10.5-hour difference with US Eastern Time means most trans-Pacific calls happen in India's evening.</p>
-            
+            <div class="current-time-card" role="region" aria-label="Live clock for India">
+                <h2>Current Time in India</h2>
+                <p class="live-time" style="min-height:2.5rem" id="live-time" data-timezone="Asia/Kolkata" aria-live="polite">Loading...</p>
+                <p class="time-details">
+                    <span>UTC+5:30</span>
+                    <span>Indian Standard Time (IST)</span>
+                </p>
+            </div>
+            <!-- Above-fold Time Zone Converter Widget -->
+            <section class="converter-widget" aria-label="Time zone converter for India">
+                <h2>Convert India Time to Your Time Zone</h2>
+                <div class="converter-form">
+                    <div class="form-row">
+                        <label for="tz-from">From</label>
+                        <select id="tz-from" aria-label="Source time zone">
+                            <option value="Asia/Kolkata" selected>Indian Standard Time (IST)</option>
+                            <option value="Europe/London">London (GMT/BST)</option>
+                            <option value="Europe/Paris">Paris (CET/CEST)</option>
+                            <option value="Europe/Berlin">Berlin (CET/CEST)</option>
+                            <option value="America/New_York">Eastern Time (ET)</option>
+                            <option value="America/Chicago">Central Time (CT)</option>
+                            <option value="America/Denver">Mountain Time (MT)</option>
+                            <option value="America/Los_Angeles">Pacific Time (PT)</option>
+                            <option value="Asia/Tokyo">Tokyo (JST)</option>
+                            <option value="Asia/Shanghai">Shanghai (CST)</option>
+                            <option value="Asia/Dubai">Dubai (GST)</option>
+                            <option value="Australia/Sydney">Sydney (AEDT/AEST)</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <label for="tz-to">To</label>
+                        <select id="tz-to" aria-label="Target time zone">
+                            <option value="Europe/London">London (GMT/BST)</option>
+                            <option value="Europe/Paris">Paris (CET/CEST)</option>
+                            <option value="Europe/Berlin">Berlin (CET/CEST)</option>
+                            <option value="America/New_York">Eastern Time (ET)</option>
+                            <option value="America/Chicago">Central Time (CT)</option>
+                            <option value="America/Denver">Mountain Time (MT)</option>
+                            <option value="America/Los_Angeles">Pacific Time (PT)</option>
+                            <option value="Asia/Tokyo">Tokyo (JST)</option>
+                            <option value="Asia/Shanghai">Shanghai (CST)</option>
+                            <option value="Asia/Kolkata" selected>Indian Standard Time (IST)</option>
+                            <option value="Australia/Sydney">Sydney (AEDT/AEST)</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <label for="conv-time">Time</label>
+                        <input type="time" id="conv-time" value="12:00" aria-label="Time to convert">
+                    </div>
+                    <button type="button" id="convert-btn" class="convert-btn">Convert</button>
+                </div>
+                <div class="converter-result" id="converter-result" aria-live="polite" style="display:none;">
+                    <span id="result-time"></span> in <span id="result-zone"></span>
+                </div>
+            </section>
+
+            <style>
+                .converter-widget {
+                    background: linear-gradient(135deg, rgba(102,126,234,0.1) 0%, rgba(118,75,162,0.1) 100%);
+                    border: 1px solid rgba(102,126,234,0.2);
+                    border-radius: 12px;
+                    padding: 20px;
+                    margin: 20px 0;
+                }
+                .converter-widget h2 {
+                    margin: 0 0 16px;
+                    font-size: 1.1rem;
+                    color: #667eea;
+                }
+                .converter-form {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                    gap: 12px;
+                    align-items: end;
+                }
+                .form-row {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+                }
+                .form-row label {
+                    font-size: 0.75rem;
+                    color: #666;
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+                }
+                .form-row select, .form-row input {
+                    padding: 10px 12px;
+                    border: 1px solid #ddd;
+                    border-radius: 8px;
+                    font-size: 1rem;
+                    background: #fff;
+                }
+                .form-row select:focus, .form-row input:focus {
+                    outline: none;
+                    border-color: #667eea;
+                    box-shadow: 0 0 0 3px rgba(102,126,234,0.15);
+                }
+                .convert-btn {
+                    padding: 10px 20px;
+                    background: #667eea;
+                    color: #fff;
+                    border: none;
+                    border-radius: 8px;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: background 0.2s;
+                }
+                .convert-btn:hover {
+                    background: #5568d3;
+                }
+                .converter-result {
+                    margin-top: 16px;
+                    padding: 12px;
+                    background: #fff;
+                    border-radius: 8px;
+                    font-size: 1.1rem;
+                    font-weight: 600;
+                    color: #1a1a2e;
+                    text-align: center;
+                }
+                #result-time {
+                    color: #667eea;
+                }
+                @media (max-width: 600px) {
+                    .converter-form {
+                        grid-template-columns: 1fr;
+                    }
+                    .convert-btn {
+                        width: 100%;
+                        min-height: 48px;
+                    }
+                }
+            </style>
+
+            <script>
+            (function() {
+                var fromSelect = document.getElementById('tz-from');
+                var toSelect = document.getElementById('tz-to');
+                var timeInput = document.getElementById('conv-time');
+                var convertBtn = document.getElementById('convert-btn');
+                var resultDiv = document.getElementById('converter-result');
+                var resultTime = document.getElementById('result-time');
+                var resultZone = document.getElementById('result-zone');
+
+                function convert() {
+                    var fromTz = fromSelect.value;
+                    var toTz = toSelect.value;
+                    var timeVal = timeInput.value;
+
+                    if (!timeVal) return;
+
+                    var today = new Date();
+                    var dateStr = today.toISOString().split('T')[0];
+                    var dateTime = dateStr + 'T' + timeVal + ':00';
+
+                    try {
+                        var sourceDate = new Date(dateTime);
+                        var targetStr = new Intl.DateTimeFormat('en-US', {
+                            timeZone: toTz,
+                            hour: '2-digit',
+                            minute: '2-digit',
+                            hour12: true,
+                            timeZoneName: 'short'
+                        }).format(sourceDate);
+
+                        var zoneName = toSelect.options[toSelect.selectedIndex].text;
+                        resultTime.textContent = targetStr;
+                        resultZone.textContent = zoneName;
+                        resultDiv.style.display = 'block';
+                    } catch (e) {
+                        resultTime.textContent = 'Error';
+                        resultZone.textContent = '';
+                        resultDiv.style.display = 'block';
+                    }
+                }
+
+                convertBtn.addEventListener('click', convert);
+                timeInput.addEventListener('change', convert);
+
+                // Auto-convert on load
+                convert();
+            })();
+            </script>
+
             <h2>Time Zone Overview</h2>
             <table class="tz-table">
                 <thead><tr><th>Time Zone(s)</th><th>UTC Offset</th><th>DST</th></tr></thead>
@@ -110,6 +295,17 @@
                 <p>India has 1 time zone(s): IST (Indian Standard Time, UTC+5:30).</p>
                 <h3>Does India observe daylight saving time?</h3>
                 <p>India does not observe daylight saving time. The offset stays at UTC+5:30 year-round.</p>
+                <h3>What time is it in India right now?</h3>
+                <p>The live clock above shows the exact current time in Indian Standard Time (IST). India uses a single time zone (UTC+5:30) nationwide with no daylight saving time.</p>
+                <h3>What is India time now?</h3>
+                <p>India time now is shown in the live clock above. It is always UTC+5:30 (Indian Standard Time) since India does not observe daylight saving time.</p>
+                <h3>What is the current time in India?</h3>
+                <p>Current time in India is displayed in the live clock above. India uses a single time zone (IST, UTC+5:30) across the entire country with no DST changes.</p>
+                <h3>What time is it in Delhi right now?</h3>
+                <p>Delhi time is shown in the live clock above. Delhi follows Indian Standard Time (IST), which is UTC+5:30 year-round with no DST changes.</p>
+                <h3>What is the UTC offset for India?</h3>
+                <p>India uses Indian Standard Time (IST) with a fixed UTC+5:30 offset. There is no daylight saving time, so the offset stays UTC+5:30 throughout the year.</p>
+
             </div>
         </div>
                     <div class="info-card">
