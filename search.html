@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="theme-color" content="#667eea">
+    <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk">
+    <title>Search — World Time Sync</title>
+    <meta name="title" content="Search — World Time Sync">
+    <meta name="description" content="Search World Time Sync for time zones, cities, countries, and time conversion guides.">
+    <meta name="keywords" content="search, time zones, world clock, time conversion, cities, countries">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://worldtimessync.com/search">
+    <meta property="og:title" content="Search — World Time Sync">
+    <meta property="og:description" content="Search World Time Sync for time zones, cities, countries, and time conversion guides.">
+    <meta property="og:image" content="https://worldtimessync.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Search — World Time Sync">
+    <meta name="twitter:description" content="Search World Time Sync for time zones, cities, countries, and time conversion guides.">
+    <meta name="twitter:image" content="https://worldtimessync.com/og-image.png">
+    <meta name="twitter:image:alt" content="World Time Sync Search">
+    <meta name="twitter:creator" content="@worldtimesync">
+    <meta name="twitter:site" content="@worldtimesync">
+    <link rel="canonical" href="https://worldtimessync.com/search">
+    <link rel="stylesheet" href="/assets/city.css">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://www.googlesyndication.com">
+    
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"WebPage","name":"Search","description":"Search World Time Sync for time zones, cities, countries, and time conversion guides.","url":"https://worldtimessync.com/search"}
+    </script>
+    <script type="application/ld+json>
+    {"@context":"https://schema.org","@type":"SearchAction","target":"https://worldtimessync.com/search?q={search_term_string}","query-input":"required name=search_term_string"}
+    </script>
+
+    <style>
+        .search-container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        .search-box { 
+            width: 100%; 
+            padding: 16px 20px; 
+            font-size: 1.1rem; 
+            border: 2px solid #ddd; 
+            border-radius: 12px; 
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .search-box:focus { 
+            border-color: #667eea; 
+            box-shadow: 0 0 0 4px rgba(102,126,234,0.15); 
+        }
+        .search-results { margin-top: 24px; }
+        .result-item { 
+            background: #fff; 
+            border: 1px solid #eee; 
+            border-radius: 8px; 
+            padding: 16px; 
+            margin-bottom: 12px;
+            transition: box-shadow 0.2s;
+        }
+        .result-item:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        .result-title { 
+            font-size: 1.1rem; 
+            font-weight: 600; 
+            color: #667eea; 
+            text-decoration: none;
+            display: block;
+            margin-bottom: 4px;
+        }
+        .result-title:hover { text-decoration: underline; }
+        .result-snippet { color: #555; font-size: 0.95rem; line-height: 1.5; }
+        .result-url { color: #888; font-size: 0.8rem; margin-top: 4px; display: block; }
+        .no-results { text-align: center; padding: 40px; color: #666; }
+        .search-stats { color: #888; font-size: 0.9rem; margin-bottom: 16px; }
+        .suggestions { margin-top: 24px; padding: 16px; background: #f8f9fa; border-radius: 8px; }
+        .suggestion-link { 
+            display: inline-block; 
+            margin: 4px 8px; 
+            padding: 8px 16px; 
+            background: #fff; 
+            border: 1px solid #ddd; 
+            border-radius: 20px; 
+            text-decoration: none; 
+            color: #667eea;
+            font-size: 0.9rem;
+        }
+        .suggestion-link:hover { background: #667eea; color: #fff; }
+        .zero-results-msg { margin-top: 24px; padding: 16px; background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; color: #856404; }
+        @media (max-width: 600px) {
+            .search-container { padding: 12px; }
+            .search-box { padding: 14px 16px; font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <main id="main-content">
+        <div class="container search-container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Home</a> >
+                <span aria-current="page">Search</span>
+            </nav>
+            <h1>Search World Time Sync</h1>
+            <p class="tz-intro">Find time zones, city times, country guides, and conversion tools.</p>
+            
+            <form id="search-form" role="search">
+                <input type="search" id="search-input" class="search-box" placeholder="Search for a city, country, time zone, or topic..." autocomplete="off" aria-label="Search query">
+            </form>
+            
+            <div class="search-stats" id="search-stats" style="display:none;"></div>
+            <div class="search-results" id="search-results" role="region" aria-live="polite"></div>
+            
+            <div class="suggestions" id="suggestions" style="display:none;">
+                <strong>Popular searches:</strong>
+                <a href="/time/new-york" class="suggestion-link">New York Time</a>
+                <a href="/time/london" class="suggestion-link">London Time</a>
+                <a href="/time/tokyo" class="suggestion-link">Tokyo Time</a>
+                <a href="/time-zones/est" class="suggestion-link">Eastern Time</a>
+                <a href="/time-zones/pst" class="suggestion-link">Pacific Time</a>
+                <a href="/country/united-states" class="suggestion-link">US Time Zones</a>
+                <a href="/country/australia" class="suggestion-link">Australia Time Zones</a>
+                <a href="/world-clock" class="suggestion-link">World Clock</a>
+                <a href="/time-difference" class="suggestion-link">Time Difference Calculator</a>
+            </div>
+            
+            <div class="zero-results-msg" id="zero-results-msg" style="display:none;">
+                <strong>No results found.</strong> Try a different search term, or browse popular pages below.
+                <br><br>
+                <a href="/world-clock" class="suggestion-link">World Clock</a>
+                <a href="/time-difference" class="suggestion-link">Time Difference Calculator</a>
+                <a href="/meeting-planner" class="suggestion-link">Meeting Planner</a>
+            </div>
+        </div>
+        <footer class="seo-footer">
+            <nav aria-label="Footer navigation">
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/about">About Us</a>
+                <a href="/">World Time Sync</a>
+            </nav>
+            <p>&copy; 2026 World Time Sync. All rights reserved.</p>
+        </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
+    
+    <script>
+    (function() {
+        // Search index - populated at build time
+        var searchIndex = [];
+        var fuse = null;
+        var searchInput = document.getElementById('search-input');
+        var searchResults = document.getElementById('search-results');
+        var searchStats = document.getElementById('search-stats');
+        var suggestions = document.getElementById('suggestions');
+        var zeroResultsMsg = document.getElementById('zero-results-msg');
+        var searchForm = document.getElementById('search-form');
+        var debounceTimer = null;
+        
+        // Load search index
+        fetch('/search-index.json')
+            .then(function(response) { return response.json(); })
+            .then(function(data) {
+                searchIndex = data;
+                fuse = new Fuse(searchIndex, {
+                    keys: ['title', 'description', 'tags', 'url'],
+                    threshold: 0.4,
+                    includeScore: true,
+                    includeMatches: true,
+                    minMatchCharLength: 2,
+                    ignoreLocation: true,
+                });
+                searchInput.disabled = false;
+                searchInput.placeholder = 'Search for a city, country, time zone, or topic...';
+            })
+            .catch(function(err) {
+                console.error('Failed to load search index:', err);
+                searchInput.placeholder = 'Search unavailable - try again later';
+            });
+        
+        function performSearch(query) {
+            if (!fuse || !query.trim()) {
+                searchResults.innerHTML = '';
+                searchStats.style.display = 'none';
+                suggestions.style.display = 'block';
+                zeroResultsMsg.style.display = 'none';
+                return;
+            }
+            
+            var results = fuse.search(query).slice(0, 20);
+            
+            if (results.length === 0) {
+                searchResults.innerHTML = '';
+                searchStats.textContent = 'No results for "' + escapeHtml(query) + '"';
+                searchStats.style.display = 'block';
+                suggestions.style.display = 'none';
+                zeroResultsMsg.style.display = 'block';
+                
+                // Log zero-results query to analytics endpoint
+                logZeroResultsQuery(query);
+                return;
+            }
+            
+            searchStats.textContent = results.length + ' result' + (results.length !== 1 ? 's' : '') + ' for "' + escapeHtml(query) + '"';
+            searchStats.style.display = 'block';
+            suggestions.style.display = 'none';
+            zeroResultsMsg.style.display = 'none';
+            
+            var html = '';
+            results.forEach(function(result) {
+                var item = result.item;
+                var snippet = item.description || '';
+                // Highlight matches
+                if (result.matches) {
+                    result.matches.forEach(function(match) {
+                        if (match.key === 'description' && match.indices) {
+                            // Simple highlighting - just show first 200 chars with match context
+                        }
+                    });
+                }
+                if (snippet.length > 200) snippet = snippet.substring(0, 200) + '...';
+                
+                html += '<div class="result-item">' +
+                    '<a href="' + escapeHtml(item.url) + '" class="result-title">' + escapeHtml(item.title) + '</a>' +
+                    '<div class="result-snippet">' + escapeHtml(snippet) + '</div>' +
+                    '<span class="result-url">' + escapeHtml(item.url) + '</span>' +
+                '</div>';
+            });
+            searchResults.innerHTML = html;
+        }
+        
+        function logZeroResultsQuery(query) {
+            // Send to analytics endpoint (can be a simple serverless function)
+            fetch('/api/log-zero-results', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ 
+                    query: query, 
+                    timestamp: new Date().toISOString(),
+                    referrer: document.referrer,
+                    userAgent: navigator.userAgent
+                })
+            }).catch(function() { /* Silently fail */ });
+        }
+        
+        function escapeHtml(text) {
+            var div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+        
+        searchInput.addEventListener('input', function() {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(function() {
+                performSearch(searchInput.value);
+            }, 150);
+        });
+        
+        searchForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            performSearch(searchInput.value);
+        });
+        
+        // Handle Enter key
+        searchInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                performSearch(searchInput.value);
+            }
+        });
+    })();
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LBX0CDYSSV');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>
+
+    <script>
+      window.addEventListener('load',function(){
+        var ahrefs=document.createElement('script');
+        ahrefs.async=true;
+        ahrefs.src='https://analytics.ahrefs.com/analytics.js';
+        ahrefs.setAttribute('data-key','hB1VYWuwb1i/f1d8re7P2A');
+        document.head.appendChild(ahrefs);
+      });
+    </script>
+</body>
+</html>
