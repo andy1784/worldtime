@@ -1,0 +1,3985 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "World Time Sync Blog",
+  "home_page_url": "https://worldtimessync.com/blog",
+  "feed_url": "https://worldtimessync.com/feed.json",
+  "description": "Current time, time zones, and world clock tools. Blog covers time zone conversions, DST, scheduling across time zones, and global time coordination.",
+  "language": "en",
+  "icon": "https://worldtimessync.com/favicon.svg",
+  "favicon": "https://worldtimessync.com/favicon.svg",
+  "authors": [
+    {
+      "name": "World Time Sync",
+      "url": "https://worldtimessync.com/"
+    }
+  ],
+  "items": [
+    {
+      "id": "https://worldtimessync.com/blog/time-zone-abbreviations-cheat-sheet.html",
+      "url": "https://worldtimessync.com/blog/time-zone-abbreviations-cheat-sheet.html",
+      "title": "Time Zone Abbreviations Cheat Sheet (2026) | World Time Sync",
+      "content_html": "<p>Quick reference for every major time zone abbreviation - EST, PST, CET, IST, JST and 50 more. Includes UTC offsets, DST variants, and the cities that use each one.</p>",
+      "summary": "Quick reference for every major time zone abbreviation - EST, PST, CET, IST, JST and 50 more. Includes UTC offsets, DST variants, and the cities that use each one.",
+      "date_published": "2026-08-10T00:00:00Z",
+      "date_modified": "2026-08-10T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "time zone abbreviations",
+        "EST PST CST MST",
+        "UTC offsets cheat sheet",
+        "timezone codes list",
+        "time zone acronyms",
+        "daylight saving abbreviations"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "time-zone-abbreviations-cheat-sheet"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/world-clock-for-remote-teams.html",
+      "url": "https://worldtimessync.com/blog/world-clock-for-remote-teams.html",
+      "title": "World Clock for Remote Teams: Setup Guide (2026) | World Time Sync",
+      "content_html": "<p>How to set up a world clock for your remote team. Tools, Slack integrations, and best practices for distributed teams.</p>",
+      "summary": "How to set up a world clock for your remote team. Tools, Slack integrations, and best practices for distributed teams.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "world clock remote team",
+        "remote team clock",
+        "distributed team time zones",
+        "team world clock",
+        "remote work tools"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "world-clock-for-remote-teams"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/time-difference-los-angeles-london.html",
+      "url": "https://worldtimessync.com/blog/time-difference-los-angeles-london.html",
+      "title": "Los Angeles to London Time Difference & Conversion Guide (2026) | World Time Sync",
+      "content_html": "<p>Learn the 7-8 hour gap between Los Angeles and London, with conversion tables, DST handling, and a live converter.</p>",
+      "summary": "Learn the 7-8 hour gap between Los Angeles and London, with conversion tables, DST handling, and a live converter.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "Los Angeles to London time difference",
+        "LA London time conversion",
+        "PST to GMT guide"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "time-difference-los-angeles-london"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/best-time-to-call-china.html",
+      "url": "https://worldtimessync.com/blog/best-time-to-call-china.html",
+      "title": "Best Time to Call China from Abroad: Complete Guide (2026) | World Time Sync",
+      "content_html": "<p>Find the best time to call China from any country. Complete guide with CST (UTC+8), single time zone, and business hours.</p>",
+      "summary": "Find the best time to call China from any country. Complete guide with CST (UTC+8), single time zone, and business hours.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "best time to call China",
+        "call Beijing from abroad",
+        "China time zone",
+        "CST",
+        "call Shanghai",
+        "China calling guide"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "best-time-to-call-china"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/time-zones-global-sports-events.html",
+      "url": "https://worldtimessync.com/blog/time-zones-global-sports-events.html",
+      "title": "How Time Zones Shape Global Sporting Events | World Time Sync",
+      "content_html": "<p>Why do Olympic finals air at 3 AM in some countries? How World Cup scheduling balances global audiences. The politics of prime time across time zones.</p>",
+      "summary": "Why do Olympic finals air at 3 AM in some countries? How World Cup scheduling balances global audiences. The politics of prime time across time zones.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "olympics time zone",
+        "world cup timing",
+        "prime time sports global",
+        "when to watch finals"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "time-zones-global-sports-events"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/time-difference-dubai-london.html",
+      "url": "https://worldtimessync.com/blog/time-difference-dubai-london.html",
+      "title": "What is the Time Difference Between Dubai and London? | World Time Sync",
+      "content_html": "<p>What is the Time Difference Between Dubai and London?</p>",
+      "summary": "What is the Time Difference Between Dubai and London?",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "Time Difference Dubai London"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "time-difference-dubai-london"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/add-world-clock-wordpress.html",
+      "url": "https://worldtimessync.com/blog/add-world-clock-wordpress.html",
+      "title": "Add a World Clock to Your WordPress Site: Complete Guide (2026) | World Time Sync",
+      "content_html": "<p>How to add a world clock widget to your WordPress site. Step-by-step guide with our free plugin.</p>",
+      "summary": "How to add a world clock widget to your WordPress site. Step-by-step guide with our free plugin.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "wordpress world clock",
+        "wordpress time zone widget",
+        "add clock to wordpress",
+        "wordpress plugin world clock"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "add-world-clock-wordpress"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/time-zones-in-space-iss-mars.html",
+      "url": "https://worldtimessync.com/blog/time-zones-in-space-iss-mars.html",
+      "title": "Time Zones in Space: ISS, Moon, Mars | World Time Sync",
+      "content_html": "<p>There are no time zones in space. So how do astronauts tell time on the ISS? And what happens when we colonize Mars?</p>",
+      "summary": "There are no time zones in space. So how do astronauts tell time on the ISS? And what happens when we colonize Mars?",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "time zones space",
+        "iss time zone",
+        "mars time",
+        "astronaut time",
+        "international space station time"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "time-zones-in-space-iss-mars"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/ramadan-2026-timetable.html",
+      "url": "https://worldtimessync.com/blog/ramadan-2026-timetable.html",
+      "title": "Ramadan 2026 Timetable: Sehri & Iftar Times for Major Cities Worldwide | World Time Sync",
+      "content_html": "<p>Ramadan 2026 expected 2026-02-18 to 2026-03-19. Sehri (Fajr) and Iftar (Maghrib) times for Dubai, London, New York, Jakarta, and 50+ cities. DST-aware, moon-sighting notes included.</p>",
+      "summary": "Ramadan 2026 expected 2026-02-18 to 2026-03-19. Sehri (Fajr) and Iftar (Maghrib) times for Dubai, London, New York, Jakarta, and 50+ cities. DST-aware, moon-sighting notes included.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "ramadan 2026 timetable",
+        "sehri iftar times 2026",
+        "ramadan 2026 start date",
+        "ramadan 2026 end date",
+        "ramadan calendar 2026",
+        "fasting times 2026"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "ramadan-2026-timetable"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/why-spain-is-in-the-wrong-time-zone.html",
+      "url": "https://worldtimessync.com/blog/why-spain-is-in-the-wrong-time-zone.html",
+      "title": "Why Spain Is in the Wrong Time Zone and What It Costs",
+      "content_html": "<p>Spain should be on GMT but uses Central European Time. Here is the history, the consequences, and why they cannot switch back.</p>",
+      "summary": "Spain should be on GMT but uses Central European Time. Here is the history, the consequences, and why they cannot switch back.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "spain time zone",
+        "spain wrong time zone",
+        "spain CET"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "why-spain-is-in-the-wrong-time-zone"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/utc-everything-guide.html",
+      "url": "https://worldtimessync.com/blog/utc-everything-guide.html",
+      "title": "UTC: The One Time Standard Worth Knowing (2026) | World Time Sync",
+      "content_html": "<p>A plain-language guide to Coordinated Universal Time - what it is, why systems and travelers rely on it, and how to convert it to your local clock.</p>",
+      "summary": "A plain-language guide to Coordinated Universal Time - what it is, why systems and travelers rely on it, and how to convert it to your local clock.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "what is UTC",
+        "UTC explained",
+        "Coordinated Universal Time",
+        "UTC to local time",
+        "why use UTC"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "utc-everything-guide"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/best-time-to-schedule-meeting-across-time-zones.html",
+      "url": "https://worldtimessync.com/blog/best-time-to-schedule-meeting-across-time-zones.html",
+      "title": "Best Time to Schedule a Meeting Across Multiple Time Zones | World Time Sync",
+      "content_html": "<p>A practical framework for finding fair meeting windows across 3+ time zones, with a San Francisco-London-Bangalore example.</p>",
+      "summary": "A practical framework for finding fair meeting windows across 3+ time zones, with a San Francisco-London-Bangalore example.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "schedule meeting across time zones",
+        "fair meeting time",
+        "global meeting window",
+        "multi-time-zone meeting"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "best-time-to-schedule-meeting-across-time-zones"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/convert-gmt-to-ist.html",
+      "url": "https://worldtimessync.com/blog/convert-gmt-to-ist.html",
+      "title": "Convert GMT to IST: Time Difference & Conversion Guide (2026) | World Time Sync",
+      "content_html": "<p>Learn how to convert Greenwich Mean Time (GMT) to Indian Standard Time (IST, UTC+5:30) with our step-by-step guide. Includes half-hour offset handling, DST notes, and conversion formula.</p>",
+      "summary": "Learn how to convert Greenwich Mean Time (GMT) to Indian Standard Time (IST, UTC+5:30) with our step-by-step guide. Includes half-hour offset handling, DST notes, and conversion formula.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "convert GMT to IST",
+        "GMT to IST time difference",
+        "Greenwich to India time",
+        "GMT IST converter"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "convert-gmt-to-ist"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/phone-time-wrong-after-flight.html",
+      "url": "https://worldtimessync.com/blog/phone-time-wrong-after-flight.html",
+      "title": "Why Your Phone Shows a Different Time After Landing (And Why That's Normal) | World Time Sync",
+      "content_html": "<p></p>",
+      "summary": "",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "phone-time-wrong-after-flight"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/daylight-saving-time-by-country.html",
+      "url": "https://worldtimessync.com/blog/daylight-saving-time-by-country.html",
+      "title": "Daylight Saving Time by Country: Complete List (2026) | World Time Sync",
+      "content_html": "<p>Which countries observe daylight saving time? Complete country-by-country list with DST schedules for 2026.</p>",
+      "summary": "Which countries observe daylight saving time? Complete country-by-country list with DST schedules for 2026.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "daylight saving time by country",
+        "DST countries",
+        "which countries have DST",
+        "DST 2026 by country"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "daylight-saving-time-by-country"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/convert-est-to-pst.html",
+      "url": "https://worldtimessync.com/blog/convert-est-to-pst.html",
+      "title": "Convert EST to PST: Eastern to Pacific Time Conversion | World Time Sync",
+      "content_html": "<p>Convert EST to PST: Eastern to Pacific Time Conversion</p>",
+      "summary": "Convert EST to PST: Eastern to Pacific Time Conversion",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "Convert Est To Pst"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "convert-est-to-pst"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/time-zone-abbreviations-explained.html",
+      "url": "https://worldtimessync.com/blog/time-zone-abbreviations-explained.html",
+      "title": "Time Zone Abbreviations Explained: EST, PST, IST & More (2026) | World Time Sync",
+      "content_html": "<p>What do EST, PST, IST, CET, and other time zone abbreviations mean? Complete guide to time zone codes.</p>",
+      "summary": "What do EST, PST, IST, CET, and other time zone abbreviations mean? Complete guide to time zone codes.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "time zone abbreviations",
+        "EST meaning",
+        "PST meaning",
+        "IST meaning",
+        "CET meaning",
+        "time zone codes"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "time-zone-abbreviations-explained"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/how-daylight-saving-affects-meetings.html",
+      "url": "https://worldtimessync.com/blog/how-daylight-saving-affects-meetings.html",
+      "title": "How Daylight Saving Time Affects Meetings (and How to Avoid Chaos) | World Time Sync",
+      "content_html": "<p>Learn why DST breaks global meeting schedules, the US-EU limbo weeks, and how to schedule meetings safely during transitions.</p>",
+      "summary": "Learn why DST breaks global meeting schedules, the US-EU limbo weeks, and how to schedule meetings safely during transitions.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "daylight saving meetings",
+        "DST meeting chaos",
+        "US EU DST dates",
+        "schedule meetings DST"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "how-daylight-saving-affects-meetings"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/time-difference-tokyo-london.html",
+      "url": "https://worldtimessync.com/blog/time-difference-tokyo-london.html",
+      "title": "Time Difference Between Tokyo and London: Guide & Converter (2026) | World Time Sync",
+      "content_html": "<p>Discover the 8-9 hour gap between Tokyo (JST) and London (GMT/BST). Includes conversion table, DST handling, and an interactive Tokyo-London time zone converter.</p>",
+      "summary": "Discover the 8-9 hour gap between Tokyo (JST) and London (GMT/BST). Includes conversion table, DST handling, and an interactive Tokyo-London time zone converter.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "time difference Tokyo London",
+        "Tokyo to London time",
+        "JST to GMT conversion",
+        "Tokyo London time zone"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "time-difference-tokyo-london"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/time-zone-converter-how-it-works.html",
+      "url": "https://worldtimessync.com/blog/time-zone-converter-how-it-works.html",
+      "title": "How Time Zone Converters Actually Work (Behind the Scenes)",
+      "content_html": "<p>The technology behind time zone conversion. IANA database, UTC offsets, DST rules, and why your calendar sometimes gets it wrong.</p>",
+      "summary": "The technology behind time zone conversion. IANA database, UTC offsets, DST rules, and why your calendar sometimes gets it wrong.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "time zone converter",
+        "how time zones work",
+        "iana time zone database"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "time-zone-converter-how-it-works"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/world-clock-desk-setup.html",
+      "url": "https://worldtimessync.com/blog/world-clock-desk-setup.html",
+      "title": "Setting Up a World Clock on Your Desk (2026) | World Time Sync",
+      "content_html": "<p>Why a visible world clock helps remote workers, travelers, and global teams stay oriented, and the simple ways to set one up.</p>",
+      "summary": "Why a visible world clock helps remote workers, travelers, and global teams stay oriented, and the simple ways to set one up.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "world clock desk setup",
+        "desktop world clock",
+        "multiple time zone clock",
+        "world clock widget",
+        "keep track of time zones"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "world-clock-desk-setup"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/history-of-time-zones.html",
+      "url": "https://worldtimessync.com/blog/history-of-time-zones.html",
+      "title": "The History of Time Zones: From Sundials to Atomic Clocks | World Time Sync",
+      "content_html": "<p>The fascinating history of time zones — from ancient sundials to modern atomic clocks. How the world agreed on standardized time and why.</p>",
+      "summary": "The fascinating history of time zones — from ancient sundials to modern atomic clocks. How the world agreed on standardized time and why.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "history of time zones",
+        "time zone history",
+        "standard time",
+        "railway time",
+        "UTC history",
+        "time standardization"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "history-of-time-zones"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/convert-ist-to-gmt.html",
+      "url": "https://worldtimessync.com/blog/convert-ist-to-gmt.html",
+      "title": "Convert IST to GMT: Time Difference & Conversion Guide (2026) | World Time Sync",
+      "content_html": "<p>Convert India Standard Time to GMT with our guide. India is UTC+5:30 year-round, so mind the half hour.</p>",
+      "summary": "Convert India Standard Time to GMT with our guide. India is UTC+5:30 year-round, so mind the half hour.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "convert IST to GMT",
+        "India to GMT time difference",
+        "IST GMT conversion"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "convert-ist-to-gmt"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/daylight-saving-2026-prep.html",
+      "url": "https://worldtimessync.com/blog/daylight-saving-2026-prep.html",
+      "title": "Getting Ready for Daylight Saving Time 2026 (2026) | World Time Sync",
+      "content_html": "<p>What changes when the clocks move in 2026, which major regions shift and which do not, and how to keep your schedule straight through the transition.</p>",
+      "summary": "What changes when the clocks move in 2026, which major regions shift and which do not, and how to keep your schedule straight through the transition.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "daylight saving time 2026",
+        "DST 2026 dates",
+        "when clocks change 2026",
+        "summer time preparation",
+        "DST schedule"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "daylight-saving-2026-prep"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/daylight-saving-time-2026-start-end-dates.html",
+      "url": "https://worldtimessync.com/blog/daylight-saving-time-2026-start-end-dates.html",
+      "title": "Daylight Saving Time 2026: When Clocks Change",
+      "content_html": "<p>DST dates for 2026 in the US, UK, EU, and Australia. Spring forward, fall back -- here is when exactly the clock change happens.</p>",
+      "summary": "DST dates for 2026 in the US, UK, EU, and Australia. Spring forward, fall back -- here is when exactly the clock change happens.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "daylight saving time 2026",
+        "DST dates 2026",
+        "clocks change 2026"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "daylight-saving-time-2026-start-end-dates"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/how-to-convert-time-zones.html",
+      "url": "https://worldtimessync.com/blog/how-to-convert-time-zones.html",
+      "title": "How to Convert Time Zones: The Complete Guide (2026) | World Time Sync",
+      "content_html": "<p>Learn how to convert time zones manually and with tools. Step-by-step guide with examples, DST handling, and common mistakes.</p>",
+      "summary": "Learn how to convert time zones manually and with tools. Step-by-step guide with examples, DST handling, and common mistakes.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "how to convert time zones",
+        "time zone conversion",
+        "convert time",
+        "time zone calculator",
+        "time zone math"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "how-to-convert-time-zones"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/when-and-why-time-zones-were-invented.html",
+      "url": "https://worldtimessync.com/blog/when-and-why-time-zones-were-invented.html",
+      "title": "When and Why Time Zones Were Invented — The Full History",
+      "content_html": "<p>Time zones did not exist until 1883. Before that, every town had its own local time. Here is how railroads and telegraphs forced the world to standardize.</p>",
+      "summary": "Time zones did not exist until 1883. Before that, every town had its own local time. Here is how railroads and telegraphs forced the world to standardize.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "history of time zones",
+        "when were time zones invented",
+        "sandford fleming",
+        "standard time"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "when-and-why-time-zones-were-invented"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/time-zones-that-no-longer-exist.html",
+      "url": "https://worldtimessync.com/blog/time-zones-that-no-longer-exist.html",
+      "title": "Time Zones That Do Not Exist Anymore -- and Why They Disappeared",
+      "content_html": "<p>Half-hour offsets, colonial time zones, and political changes that erased time zones from the map.</p>",
+      "summary": "Half-hour offsets, colonial time zones, and political changes that erased time zones from the map.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "disappeared time zones",
+        "historical time zones",
+        "defunct time zones"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "time-zones-that-no-longer-exist"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/time-differences-between-neighboring-countries-surprising-facts.html",
+      "url": "https://worldtimessync.com/blog/time-differences-between-neighboring-countries-surprising-facts.html",
+      "title": "Time Differences Between Neighboring Countries — Surprising Facts",
+      "content_html": "<p>Some neighboring countries have huge time differences while others on opposite sides of the world share the same hour. Here are the most surprising facts.</p>",
+      "summary": "Some neighboring countries have huge time differences while others on opposite sides of the world share the same hour. Here are the most surprising facts.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "time difference neighbors",
+        "border time zones",
+        "countries same time",
+        "biggest time difference border"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "time-differences-between-neighboring-countries-surprising-facts"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/most-time-zones-in-the-world-by-country.html",
+      "url": "https://worldtimessync.com/blog/most-time-zones-in-the-world-by-country.html",
+      "title": "Which Country Has the Most Time Zones? (Hint: It Is Not Russia)",
+      "content_html": "<p>France has 12 time zones thanks to overseas territories. Here is the full ranking and why most countries need so many.</p>",
+      "summary": "France has 12 time zones thanks to overseas territories. Here is the full ranking and why most countries need so many.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "country with most time zones",
+        "france time zones",
+        "russia time zones"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "most-time-zones-in-the-world-by-country"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/convert-pst-to-est.html",
+      "url": "https://worldtimessync.com/blog/convert-pst-to-est.html",
+      "title": "Convert PST to EST: Pacific to Eastern Time Conversion | World Time Sync",
+      "content_html": "<p>Convert PST to EST: Pacific to Eastern Time Conversion</p>",
+      "summary": "Convert PST to EST: Pacific to Eastern Time Conversion",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "Convert Pst To Est"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "convert-pst-to-est"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/best-time-to-call-india.html",
+      "url": "https://worldtimessync.com/blog/best-time-to-call-india.html",
+      "title": "Best Time to Call India from Abroad: Complete Guide (2026) | World Time Sync",
+      "content_html": "<p>Find the best time to call India from any country. Complete guide with IST time zone (UTC+5:30), business hours, and calling tips.</p>",
+      "summary": "Find the best time to call India from any country. Complete guide with IST time zone (UTC+5:30), business hours, and calling tips.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "best time to call India",
+        "call Mumbai from abroad",
+        "India time zone",
+        "IST",
+        "call Delhi",
+        "call Bangalore",
+        "India calling guide"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "best-time-to-call-india"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/how-to-find-exact-time-any-city-world.html",
+      "url": "https://worldtimessync.com/blog/how-to-find-exact-time-any-city-world.html",
+      "title": "How to Find the Exact Time in Any City in the World",
+      "content_html": "<p>Finding the exact current time in any city requires understanding time zones, DST rules, and UTC offsets. Here is a practical guide to always knowing the right time.</p>",
+      "summary": "Finding the exact current time in any city requires understanding time zones, DST rules, and UTC offsets. Here is a practical guide to always knowing the right time.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "exact time any city",
+        "current time world",
+        "world clock",
+        "time zone lookup",
+        "what time is it"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "how-to-find-exact-time-any-city-world"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/best-time-to-call-brazil.html",
+      "url": "https://worldtimessync.com/blog/best-time-to-call-brazil.html",
+      "title": "Best Time to Call Brazil from Abroad: Complete Guide (2026) | World Time Sync",
+      "content_html": "<p>Find the best time to call Brazil from any country. Complete guide with BRT/BRST, multiple time zones, and business hours.</p>",
+      "summary": "Find the best time to call Brazil from any country. Complete guide with BRT/BRST, multiple time zones, and business hours.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "best time to call Brazil",
+        "call Sao Paulo from abroad",
+        "Brazil time zone",
+        "BRT",
+        "call Rio de Janeiro",
+        "Brazil calling guide"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "best-time-to-call-brazil"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/international-meeting-planner.html",
+      "url": "https://worldtimessync.com/blog/international-meeting-planner.html",
+      "title": "International Meeting Planner: Tools and Strategies for Global Teams (2026) | World Time Sync",
+      "content_html": "<p>Best international meeting planner tools and strategies for coordinating across multiple time zones.</p>",
+      "summary": "Best international meeting planner tools and strategies for coordinating across multiple time zones.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "international meeting planner",
+        "global meeting tools",
+        "schedule meeting worldwide",
+        "meeting planner time zones",
+        "cross border meeting coordination"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "international-meeting-planner"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/the-village-that-lives-in-two-time-zones.html",
+      "url": "https://worldtimessync.com/blog/the-village-that-lives-in-two-time-zones.html",
+      "title": "The Village That Lives in Two Time Zones — A Street Split by the Clock | World Time Sync",
+      "content_html": "<p>There's a village in Europe where one side of the street is an hour ahead of the other. How do people live, work, and schedule their lives when the time zone border runs through their backyard?</p>",
+      "summary": "There's a village in Europe where one side of the street is an hour ahead of the other. How do people live, work, and schedule their lives when the time zone border runs through their backyard?",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "time zone border",
+        "village two time zones",
+        "Belgium Netherlands border",
+        "Baarle-Hertog",
+        "Baarle-Nassau",
+        "living on a time zone line"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "the-village-that-lives-in-two-time-zones"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/jet-lag-management-guide.html",
+      "url": "https://worldtimessync.com/blog/jet-lag-management-guide.html",
+      "title": "Jet Lag Tips: What Actually Works After Years of Flying | World Time Sync",
+      "content_html": "<p>Real strategies for beating jet lag from someone who crosses time zones monthly. No magic tricks, just what stuck.</p>",
+      "summary": "Real strategies for beating jet lag from someone who crosses time zones monthly. No magic tricks, just what stuck.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "jet lag",
+        "travel tips",
+        "time zones",
+        "frequent flyer"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "jet-lag-management-guide"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/dst-2026-us-fall-back.html",
+      "url": "https://worldtimessync.com/blog/dst-2026-us-fall-back.html",
+      "title": "Daylight Saving Time 2026: US Fall Back (Fall back) - Complete Guide | World Time Sync",
+      "content_html": "<p>US Fall Back occurs on November 01, 2026. Clocks change -1 hour. Full guide with affected countries, time zones, meeting impact, and conversion tables.</p>",
+      "summary": "US Fall Back occurs on November 01, 2026. Clocks change -1 hour. Full guide with affected countries, time zones, meeting impact, and conversion tables.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "daylight saving time 2026",
+        "dst 2026 us-fall-back",
+        "when does dst start 2026",
+        "when does dst end 2026",
+        "time change 2026",
+        "dst schedule 2026"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "dst-2026-us-fall-back"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/time-difference-sydney-london.html",
+      "url": "https://worldtimessync.com/blog/time-difference-sydney-london.html",
+      "title": "What is the Time Difference Between Sydney and London? | World Time Sync",
+      "content_html": "<p>What is the Time Difference Between Sydney and London?</p>",
+      "summary": "What is the Time Difference Between Sydney and London?",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "Time Difference Sydney London"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "time-difference-sydney-london"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/remote-team-meeting-scheduler.html",
+      "url": "https://worldtimessync.com/blog/remote-team-meeting-scheduler.html",
+      "title": "Remote Team Meeting Scheduler: Automate Fair Meeting Times (2026) | World Time Sync",
+      "content_html": "<p>Best remote team meeting scheduler tools that automatically find fair meeting times across time zones.</p>",
+      "summary": "Best remote team meeting scheduler tools that automatically find fair meeting times across time zones.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "remote team meeting scheduler",
+        "automate meeting times",
+        "fair meeting scheduler",
+        "global team calendar",
+        "meeting time automation"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "remote-team-meeting-scheduler"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/best-meeting-time-global-teams.html",
+      "url": "https://worldtimessync.com/blog/best-meeting-time-global-teams.html",
+      "title": "Best Meeting Time for Global Teams: Find the Perfect Overlap (2026) | World Time Sync",
+      "content_html": "<p>How to find the optimal meeting time for globally distributed teams using time zone overlap analysis and fair rotation strategies.</p>",
+      "summary": "How to find the optimal meeting time for globally distributed teams using time zone overlap analysis and fair rotation strategies.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "best meeting time global teams",
+        "global team meeting overlap",
+        "distributed team meeting time",
+        "fair meeting rotation",
+        "time zone overlap calculator"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "best-meeting-time-global-teams"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/most-confusing-time-zones-in-the-world.html",
+      "url": "https://worldtimessync.com/blog/most-confusing-time-zones-in-the-world.html",
+      "title": "10 Cities With the Most Confusing Time Zones in the World",
+      "content_html": "<p>These 10 cities have the most confusing time zones on the planet. Half-hour offsets, DST chaos, and borders that split time zones in two.</p>",
+      "summary": "These 10 cities have the most confusing time zones on the planet. Half-hour offsets, DST chaos, and borders that split time zones in two.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "confusing time zones",
+        "half hour time zone",
+        "quarter hour offset",
+        "weird time zones"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "most-confusing-time-zones-in-the-world"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/time-zone-converter-guide.html",
+      "url": "https://worldtimessync.com/blog/time-zone-converter-guide.html",
+      "title": "Time Zone Converter Guide: Tools & Techniques (2026) | World Time Sync",
+      "content_html": "<p>The best time zone converter tools and techniques. Online converters, calendar features, and manual methods.</p>",
+      "summary": "The best time zone converter tools and techniques. Online converters, calendar features, and manual methods.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "time zone converter",
+        "best time zone converter",
+        "convert time zones online",
+        "time zone tool"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "time-zone-converter-guide"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/time-zones-that-disappeared.html",
+      "url": "https://worldtimessync.com/blog/time-zones-that-disappeared.html",
+      "title": "Time Zones That Don't Exist Anymore (and Why They Vanished) | World Time Sync",
+      "content_html": "<p>Countries that abolished, merged, or shifted their time zones — and the politics behind each decision.</p>",
+      "summary": "Countries that abolished, merged, or shifted their time zones — and the politics behind each decision.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "time zone history",
+        "discontinued time zones",
+        "politics of time"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "time-zones-that-disappeared"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/30-minute-time-zone-offsets.html",
+      "url": "https://worldtimessync.com/blog/30-minute-time-zone-offsets.html",
+      "title": "Why Some Countries Use 30-Minute Time Zone Offsets | World Time Sync",
+      "content_html": "<p>India, Iran, Nepal, parts of Australia — why the world isn't neatly divided into hourly chunks.</p>",
+      "summary": "India, Iran, Nepal, parts of Australia — why the world isn't neatly divided into hourly chunks.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "time zone offsets",
+        "India",
+        "Iran",
+        "Nepal",
+        "half-hour zones"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "30-minute-time-zone-offsets"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/what-is-the-international-date-line.html",
+      "url": "https://worldtimessync.com/blog/what-is-the-international-date-line.html",
+      "title": "What Is the International Date Line? How It Works and Why It Bends",
+      "content_html": "<p>The International Date Line explained: where it is, why it zigzags, and what happens when you cross it.</p>",
+      "summary": "The International Date Line explained: where it is, why it zigzags, and what happens when you cross it.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "international date line",
+        "idl",
+        "date line explained"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "what-is-the-international-date-line"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/biggest-time-zones-utc-minus-12-to-plus-14.html",
+      "url": "https://worldtimessync.com/blog/biggest-time-zones-utc-minus-12-to-plus-14.html",
+      "title": "The Biggest Time Zones in the World: From UTC-12 to UTC+14",
+      "content_html": "<p>Time zones range from UTC-12 (Baker Island) to UTC+14 (Line Islands). Here is the full story of the world's most extreme time zones.</p>",
+      "summary": "Time zones range from UTC-12 (Baker Island) to UTC+14 (Line Islands). Here is the full story of the world's most extreme time zones.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "UTC-12",
+        "UTC+14",
+        "biggest time zones",
+        "baker island time",
+        "line islands time"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "biggest-time-zones-utc-minus-12-to-plus-14"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/convert-utc-to-est.html",
+      "url": "https://worldtimessync.com/blog/convert-utc-to-est.html",
+      "title": "Convert UTC to EST: Time Difference & Conversion Guide (2026) | World Time Sync",
+      "content_html": "<p>Learn how to convert Coordinated Universal Time (UTC) to Eastern Standard Time (EST, UTC−5) with our step-by-step guide. Includes conversion chart, DST handling, and UTC-EST formula.</p>",
+      "summary": "Learn how to convert Coordinated Universal Time (UTC) to Eastern Standard Time (EST, UTC−5) with our step-by-step guide. Includes conversion chart, DST handling, and UTC-EST formula.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "convert UTC to EST",
+        "UTC to EST time difference",
+        "Coordinated Universal to Eastern time",
+        "UTC EST converter"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "convert-utc-to-est"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/best-time-to-call-internationally.html",
+      "url": "https://worldtimessync.com/blog/best-time-to-call-internationally.html",
+      "title": "Best Time to Call Internationally: The Universal Guide (2026) | World Time Sync",
+      "content_html": "<p>The complete guide to calling anyone in the world at the right time. Time zone math, overlap windows, and tools to make it painless.</p>",
+      "summary": "The complete guide to calling anyone in the world at the right time. Time zone math, overlap windows, and tools to make it painless.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "best time to call internationally",
+        "international calling guide",
+        "time zone overlap",
+        "call abroad",
+        "world clock calling"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "best-time-to-call-internationally"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/half-hour-time-zones-why-they-exist.html",
+      "url": "https://worldtimessync.com/blog/half-hour-time-zones-why-they-exist.html",
+      "title": "Why Some Countries Use Half-Hour Time Zones (2026) | World Time Sync",
+      "content_html": "<p>India, Iran, Nepal, and Australia have time zones with 30 or 45-minute offsets. Here's why they exist.</p>",
+      "summary": "India, Iran, Nepal, and Australia have time zones with 30 or 45-minute offsets. Here's why they exist.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "half hour time zone",
+        "30 minute time offset",
+        "India time zone",
+        "Nepal UTC+5:45"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "half-hour-time-zones-why-they-exist"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/remote-team-time-management-best-practices.html",
+      "url": "https://worldtimessync.com/blog/remote-team-time-management-best-practices.html",
+      "title": "Remote Team Time Management: Best Practices for Global Teams (2026) | World Time Sync",
+      "content_html": "<p>Best practices for managing time across global remote teams. Async communication, overlap hours, and tools that help.</p>",
+      "summary": "Best practices for managing time across global remote teams. Async communication, overlap hours, and tools that help.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "remote team time management",
+        "global remote team",
+        "async communication",
+        "remote work time zones",
+        "distributed team"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "remote-team-time-management-best-practices"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/meeting-planner-tips.html",
+      "url": "https://worldtimessync.com/blog/meeting-planner-tips.html",
+      "title": "Meeting Planner Tips: How to Find the Perfect Time for Global Teams (2026) | World Time Sync",
+      "content_html": "<p>Practical tips for using a meeting planner tool to schedule across time zones. Real-world strategies that actually work.</p>",
+      "summary": "Practical tips for using a meeting planner tool to schedule across time zones. Real-world strategies that actually work.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "meeting planner tips",
+        "schedule global meetings",
+        "meeting planner tool",
+        "time zone meeting tips"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "meeting-planner-tips"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/explaining-time-zones-to-kids.html",
+      "url": "https://worldtimessync.com/blog/explaining-time-zones-to-kids.html",
+      "title": "How I Explain Time Zones to My Kids (And Why It Works) | World Time Sync",
+      "content_html": "<p>No jargon. No maps with colored bands. Just a flashlight, an orange, and a story about Grandma's birthday call.</p>",
+      "summary": "No jargon. No maps with colored bands. Just a flashlight, an orange, and a story about Grandma's birthday call.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "time zones",
+        "kids",
+        "education",
+        "simple explanations"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "explaining-time-zones-to-kids"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/schedule-meetings-across-time-zones.html",
+      "url": "https://worldtimessync.com/blog/schedule-meetings-across-time-zones.html",
+      "title": "Schedule Meetings Across Time Zones: Step-by-Step (2026) | World Time Sync",
+      "content_html": "<p>Step-by-step guide to scheduling meetings across time zones. From finding overlap to sending the invite.</p>",
+      "summary": "Step-by-step guide to scheduling meetings across time zones. From finding overlap to sending the invite.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "schedule meetings time zones",
+        "meeting scheduler",
+        "cross-timezone meeting",
+        "global meeting setup"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "schedule-meetings-across-time-zones"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/how-time-zones-affect-air-travel.html",
+      "url": "https://worldtimessync.com/blog/how-time-zones-affect-air-travel.html",
+      "title": "How Time Zones Affect Air Travel — A Complete Guide",
+      "content_html": "<p>Time zones make air travel confusing. Jet lag, flight schedules, and arrival times all depend on how many time zones you cross. Here is how it works.</p>",
+      "summary": "Time zones make air travel confusing. Jet lag, flight schedules, and arrival times all depend on how many time zones you cross. Here is how it works.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "time zones air travel",
+        "jet lag",
+        "flight time zones",
+        "international flight time"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "how-time-zones-affect-air-travel"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/time-difference-los-angeles-sydney.html",
+      "url": "https://worldtimessync.com/blog/time-difference-los-angeles-sydney.html",
+      "title": "What is the Time Difference Between Los Angeles and Sydney? | World Time Sync",
+      "content_html": "<p>What is the Time Difference Between Los Angeles and Sydney?</p>",
+      "summary": "What is the Time Difference Between Los Angeles and Sydney?",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "Time Difference Los Angeles Sydney"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "time-difference-los-angeles-sydney"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/village-two-time-zones-one-street.html",
+      "url": "https://worldtimessync.com/blog/village-two-time-zones-one-street.html",
+      "title": "The Village With Two Time Zones on One Street | World Time Sync",
+      "content_html": "<p>It's a real place. Walk 50 meters and your phone jumps an hour. Welcome to the weirdest time zone border on Earth.</p>",
+      "summary": "It's a real place. Walk 50 meters and your phone jumps an hour. Welcome to the weirdest time zone border on Earth.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "time zone borders",
+        "weird geography",
+        "real places"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "village-two-time-zones-one-street"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/time-zone-fails-apps-get-it-wrong.html",
+      "url": "https://worldtimessync.com/blog/time-zone-fails-apps-get-it-wrong.html",
+      "title": "Time Zone Fails: When Apps Get It Wrong (And It's a Big Deal) | World Time Sync",
+      "content_html": "<p>Real stories of software messing up time zones — from missed flights to million-dollar mistakes.</p>",
+      "summary": "Real stories of software messing up time zones — from missed flights to million-dollar mistakes.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "time zone bugs",
+        "software fails",
+        "real stories"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "time-zone-fails-apps-get-it-wrong"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/best-time-to-call-usa.html",
+      "url": "https://worldtimessync.com/blog/best-time-to-call-usa.html",
+      "title": "Best Time to Call the USA from Abroad: Complete Guide (2026) | World Time Sync",
+      "content_html": "<p>Find the best time to call the United States from any country. Complete guide covering all US time zones, DST, and business hours.</p>",
+      "summary": "Find the best time to call the United States from any country. Complete guide covering all US time zones, DST, and business hours.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "best time to call USA",
+        "call New York from abroad",
+        "call Los Angeles",
+        "US time zones",
+        "EST PST",
+        "call America"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "best-time-to-call-usa"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/grandmother-time-zones-vs-app.html",
+      "url": "https://worldtimessync.com/blog/grandmother-time-zones-vs-app.html",
+      "title": "Why My Grandmother Is Better at Time Zones Than Your App | World Time Sync",
+      "content_html": "<p>She doesn't use apps. She doesn't Google. She just knows. Here's what I learned from watching her track family time across continents.</p>",
+      "summary": "She doesn't use apps. She doesn't Google. She just knows. Here's what I learned from watching her track family time across continents.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "time zones",
+        "family",
+        "human intuition",
+        "technology"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "grandmother-time-zones-vs-app"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/time-difference-calculator.html",
+      "url": "https://worldtimessync.com/blog/time-difference-calculator.html",
+      "title": "Time Difference Calculator: How to Calculate Time Between Any Two Cities (2026) | World Time Sync",
+      "content_html": "<p>Learn how to calculate the time difference between any two cities. Manual method, online tools, and DST handling.</p>",
+      "summary": "Learn how to calculate the time difference between any two cities. Manual method, online tools, and DST handling.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "time difference calculator",
+        "calculate time difference",
+        "time between cities",
+        "time zone difference"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "time-difference-calculator"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/half-hour-quarter-hour-time-zones.html",
+      "url": "https://worldtimessync.com/blog/half-hour-quarter-hour-time-zones.html",
+      "title": "Why Some Time Zones Are 30 or 45 Minutes Off | World Time Sync",
+      "content_html": "<p>Most time zones differ by whole hours from UTC, but India, Iran, Nepal, and Australia use half-hour or quarter-hour offsets. Here is why.</p>",
+      "summary": "Most time zones differ by whole hours from UTC, but India, Iran, Nepal, and Australia use half-hour or quarter-hour offsets. Here is why.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "half hour time zone",
+        "30 minute offset",
+        "quarter hour time zone",
+        "india utc+5:30",
+        "nepal utc+5:45"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "half-hour-quarter-hour-time-zones"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/best-meeting-times-remote-teams.html",
+      "url": "https://worldtimessync.com/blog/best-meeting-times-remote-teams.html",
+      "title": "Finding the Best Meeting Time for Remote Teams (2026) | World Time Sync",
+      "content_html": "<p>A practical method for picking meeting times that a distributed team across several time zones can actually attend, without burning out one region.</p>",
+      "summary": "A practical method for picking meeting times that a distributed team across several time zones can actually attend, without burning out one region.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "best meeting time remote team",
+        "distributed team meeting schedule",
+        "global team standup time",
+        "fair meeting times",
+        "time zone overlap"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "best-meeting-times-remote-teams"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/olympics-time-zone-problem.html",
+      "url": "https://worldtimessync.com/blog/olympics-time-zone-problem.html",
+      "title": "The Olympics Time Zone Problem: Watching Live From the Other Side of the World | World Time Sync",
+      "content_html": "<p>Why watching the Olympics live means setting your alarm at 3 AM — and the math behind prime time broadcasting.</p>",
+      "summary": "Why watching the Olympics live means setting your alarm at 3 AM — and the math behind prime time broadcasting.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "Olympics",
+        "broadcasting",
+        "live events",
+        "time zones"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "olympics-time-zone-problem"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/timezone-api-comparison-2026.html",
+      "url": "https://worldtimessync.com/blog/timezone-api-comparison-2026.html",
+      "title": "Timezone API Comparison 2026: Google, TimeZoneDB, Abstract & More | World Time Sync",
+      "content_html": "<p>Compare the best timezone APIs for developers: Google Time Zone API, TimeZoneDB, Abstract API, and open-source alternatives.</p>",
+      "summary": "Compare the best timezone APIs for developers: Google Time Zone API, TimeZoneDB, Abstract API, and open-source alternatives.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "timezone api comparison 2026",
+        "google time zone api",
+        "timezone db",
+        "abstract api",
+        "best timezone api",
+        "free timezone api"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "timezone-api-comparison-2026"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/time-zone-myths-debunked.html",
+      "url": "https://worldtimessync.com/blog/time-zone-myths-debunked.html",
+      "title": "10 Time Zone Myths Debunked: Common Misconceptions (2026) | World Time Sync",
+      "content_html": "<p>Common time zone myths and misconceptions. The truth about DST, time zone boundaries, and more.</p>",
+      "summary": "Common time zone myths and misconceptions. The truth about DST, time zone boundaries, and more.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "time zone myths",
+        "time zone misconceptions",
+        "DST myths",
+        "time zone facts",
+        "time zone trivia"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "time-zone-myths-debunked"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/convert-cet-to-est.html",
+      "url": "https://worldtimessync.com/blog/convert-cet-to-est.html",
+      "title": "Convert CET to EST: Time Difference & Conversion Guide (2026) | World Time Sync",
+      "content_html": "<p>Convert Central European Time to US Eastern Time with our guide, tables, and live converter. Usually a steady 6-hour gap.</p>",
+      "summary": "Convert Central European Time to US Eastern Time with our guide, tables, and live converter. Usually a steady 6-hour gap.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "convert CET to EST",
+        "CET to EST time difference",
+        "Central European to Eastern time"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "convert-cet-to-est"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/how-to-schedule-meetings-across-time-zones.html",
+      "url": "https://worldtimessync.com/blog/how-to-schedule-meetings-across-time-zones.html",
+      "title": "How to Schedule Meetings Across Time Zones: Complete Guide (2026) | World Time Sync",
+      "content_html": "<p>The complete guide to scheduling meetings across time zones. Tools, etiquette, and strategies for global teams.</p>",
+      "summary": "The complete guide to scheduling meetings across time zones. Tools, etiquette, and strategies for global teams.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "schedule meetings across time zones",
+        "global meeting scheduling",
+        "time zone meeting planner",
+        "remote team meetings"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "how-to-schedule-meetings-across-time-zones"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/time-zone-business-mistakes-cost.html",
+      "url": "https://worldtimessync.com/blog/time-zone-business-mistakes-cost.html",
+      "title": "Time Zone Mistakes That Cost Companies Real Money | World Time Sync",
+      "content_html": "<p>From product launches at 3 AM to meeting invites sent in the wrong zone — real examples of time zone failures and how to prevent them.</p>",
+      "summary": "From product launches at 3 AM to meeting invites sent in the wrong zone — real examples of time zone failures and how to prevent them.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "time zone mistakes",
+        "business time zone errors",
+        "meeting time zone wrong",
+        "time zone launch failure"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "time-zone-business-mistakes-cost"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/dst-2026-australia-fall-back.html",
+      "url": "https://worldtimessync.com/blog/dst-2026-australia-fall-back.html",
+      "title": "Daylight Saving Time 2026: Australia Fall Back (Fall back) - Complete Guide | World Time Sync",
+      "content_html": "<p>Australia Fall Back occurs on April 05, 2026. Clocks change -1 hour. Full guide with affected countries, time zones, meeting impact, and conversion tables.</p>",
+      "summary": "Australia Fall Back occurs on April 05, 2026. Clocks change -1 hour. Full guide with affected countries, time zones, meeting impact, and conversion tables.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "daylight saving time 2026",
+        "dst 2026 australia-fall-back",
+        "when does dst start 2026",
+        "when does dst end 2026",
+        "time change 2026",
+        "dst schedule 2026"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "dst-2026-australia-fall-back"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/dst-2026-eu-spring-forward.html",
+      "url": "https://worldtimessync.com/blog/dst-2026-eu-spring-forward.html",
+      "title": "Daylight Saving Time 2026: EU Spring Forward (Spring forward) - Complete Guide | World Time Sync",
+      "content_html": "<p>EU Spring Forward occurs on March 29, 2026. Clocks change +1 hour. Full guide with affected countries, time zones, meeting impact, and conversion tables.</p>",
+      "summary": "EU Spring Forward occurs on March 29, 2026. Clocks change +1 hour. Full guide with affected countries, time zones, meeting impact, and conversion tables.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "daylight saving time 2026",
+        "dst 2026 eu-spring-forward",
+        "when does dst start 2026",
+        "when does dst end 2026",
+        "time change 2026",
+        "dst schedule 2026"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "dst-2026-eu-spring-forward"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/cross-timezone-meeting-guide.html",
+      "url": "https://worldtimessync.com/blog/cross-timezone-meeting-guide.html",
+      "title": "Cross Timezone Meeting Guide: Schedule Without Burning Out Your Team (2026) | World Time Sync",
+      "content_html": "<p>Complete guide to scheduling effective cross-timezone meetings with async-first approach and fair rotation strategies.</p>",
+      "summary": "Complete guide to scheduling effective cross-timezone meetings with async-first approach and fair rotation strategies.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "cross timezone meeting guide",
+        "schedule across time zones",
+        "async first meetings",
+        "meeting rotation strategy",
+        "distributed team scheduling"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "cross-timezone-meeting-guide"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/managing-remote-team-12-time-zones.html",
+      "url": "https://worldtimessync.com/blog/managing-remote-team-12-time-zones.html",
+      "title": "Running a Team Across 12 Time Zones: What Actually Works | World Time Sync",
+      "content_html": "<p>Practical lessons from managing distributed teams. The tools, rituals, and unwritten rules that keep everyone sane.</p>",
+      "summary": "Practical lessons from managing distributed teams. The tools, rituals, and unwritten rules that keep everyone sane.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "remote work",
+        "time zones",
+        "team management",
+        "distributed team"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "managing-remote-team-12-time-zones"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/what-time-is-it-right-now.html",
+      "url": "https://worldtimessync.com/blog/what-time-is-it-right-now.html",
+      "title": "What Time Is It Right Now? Live World Clock (2026) | World Time Sync",
+      "content_html": "<p>What time is it right now in major cities worldwide? Live world clock with current time for 682 cities.</p>",
+      "summary": "What time is it right now in major cities worldwide? Live world clock with current time for 682 cities.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "what time is it right now",
+        "current time",
+        "world clock",
+        "live clock",
+        "time now",
+        "current time in cities"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "what-time-is-it-right-now"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/dayline-saving-time-health-effects.html",
+      "url": "https://worldtimessync.com/blog/dayline-saving-time-health-effects.html",
+      "title": "How Daylight Saving Time Affects Your Health (2026) | World Time Sync",
+      "content_html": "<p>The science behind DST's impact on sleep, heart health, and productivity — and what you can do about it.</p>",
+      "summary": "The science behind DST's impact on sleep, heart health, and productivity — and what you can do about it.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "daylight saving time health",
+        "DST sleep disruption",
+        "time change health effects",
+        "spring forward health"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "dayline-saving-time-health-effects"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/dst-2026-australia-spring-forward.html",
+      "url": "https://worldtimessync.com/blog/dst-2026-australia-spring-forward.html",
+      "title": "Daylight Saving Time 2026: Australia Spring Forward (Spring forward) - Complete Guide | World Time Sync",
+      "content_html": "<p>Australia Spring Forward occurs on October 04, 2026. Clocks change +1 hour. Full guide with affected countries, time zones, meeting impact, and conversion tables.</p>",
+      "summary": "Australia Spring Forward occurs on October 04, 2026. Clocks change +1 hour. Full guide with affected countries, time zones, meeting impact, and conversion tables.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "daylight saving time 2026",
+        "dst 2026 australia-spring-forward",
+        "when does dst start 2026",
+        "when does dst end 2026",
+        "time change 2026",
+        "dst schedule 2026"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "dst-2026-australia-spring-forward"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/military-time-format-explained.html",
+      "url": "https://worldtimessync.com/blog/military-time-format-explained.html",
+      "title": "Military Time: How to Read the 24-Hour Clock (2026) | World Time Sync",
+      "content_html": "<p>A simple guide to reading and using military time (24-hour format) — no math required.</p>",
+      "summary": "A simple guide to reading and using military time (24-hour format) — no math required.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "military time",
+        "24 hour clock",
+        "how to read military time",
+        "24 hour time format"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "military-time-format-explained"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/stock-exchange-trading-hours-worldwide.html",
+      "url": "https://worldtimessync.com/blog/stock-exchange-trading-hours-worldwide.html",
+      "title": "Stock Exchange Trading Hours Around the World (2026) | World Time Sync",
+      "content_html": "<p>Opening and closing times for major stock exchanges — NYSE, LSE, Tokyo, Shanghai, and more.</p>",
+      "summary": "Opening and closing times for major stock exchanges — NYSE, LSE, Tokyo, Shanghai, and more.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "stock exchange hours",
+        "NYSE trading hours",
+        "London stock exchange time",
+        "Tokyo stock market hours"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "stock-exchange-trading-hours-worldwide"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/meeting-time-zone-converter.html",
+      "url": "https://worldtimessync.com/blog/meeting-time-zone-converter.html",
+      "title": "Meeting Time Zone Converter: Find Overlap for Any City Pair (2026) | World Time Sync",
+      "content_html": "<p>Use our meeting time zone converter to instantly find the best overlap for your global team meetings.</p>",
+      "summary": "Use our meeting time zone converter to instantly find the best overlap for your global team meetings.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "meeting time zone converter",
+        "find meeting overlap",
+        "global team scheduler",
+        "time zone meeting tool",
+        "convert meeting times"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "meeting-time-zone-converter"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/time-zone-meeting-etiquette-remote-teams.html",
+      "url": "https://worldtimessync.com/blog/time-zone-meeting-etiquette-remote-teams.html",
+      "title": "Time Zone Meeting Etiquette for Remote Teams | World Time Sync",
+      "content_html": "<p>The unspoken rules of remote meetings across time zones: async-first, rotate inconvenience, record syncs, respect sleep.</p>",
+      "summary": "The unspoken rules of remote meetings across time zones: async-first, rotate inconvenience, record syncs, respect sleep.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "remote team meeting etiquette",
+        "time zone etiquette",
+        "global team meetings",
+        "distributed team norms"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "time-zone-meeting-etiquette-remote-teams"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/async-communication-distributed-teams.html",
+      "url": "https://worldtimessync.com/blog/async-communication-distributed-teams.html",
+      "title": "Async Communication Across Time Zones: Manager's Guide | World Time Sync",
+      "content_html": "<p>How to build remote team communication that works across 5+ time zones without burning anyone out. Practical patterns from teams that do it well.</p>",
+      "summary": "How to build remote team communication that works across 5+ time zones without burning anyone out. Practical patterns from teams that do it well.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "async communication",
+        "remote team async",
+        "time zone async",
+        "distributed team communication"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "async-communication-distributed-teams"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/best-time-to-call-usa-from-europe.html",
+      "url": "https://worldtimessync.com/blog/best-time-to-call-usa-from-europe.html",
+      "title": "Best Time to Call the USA from Europe: Scheduling Guide (2026) | World Time Sync",
+      "content_html": "<p>Find the best overlap window to call the US from Europe. Covers the 6-7 hour gap, DST shifts, and practical tips for US-Europe meetings.</p>",
+      "summary": "Find the best overlap window to call the US from Europe. Covers the 6-7 hour gap, DST shifts, and practical tips for US-Europe meetings.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "best time to call USA from Europe",
+        "Europe to US call time",
+        "US Europe meeting time",
+        "call America from UK"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "best-time-to-call-usa-from-europe"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/international-business-hours-guide.html",
+      "url": "https://worldtimessync.com/blog/international-business-hours-guide.html",
+      "title": "International Business Hours Guide: When Offices Are Open Worldwide (2026) | World Time Sync",
+      "content_html": "<p>Complete guide to business hours around the world. When offices open, lunch breaks, and cultural norms for 30+ countries.</p>",
+      "summary": "Complete guide to business hours around the world. When offices open, lunch breaks, and cultural norms for 30+ countries.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "international business hours",
+        "business hours by country",
+        "when offices are open",
+        "global business hours",
+        "work hours worldwide"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "international-business-hours-guide"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/time-difference-between-dubai-and-new-york.html",
+      "url": "https://worldtimessync.com/blog/time-difference-between-dubai-and-new-york.html",
+      "title": "Time Difference Between Dubai and New York: Every Season Explained",
+      "content_html": "<p>The exact time difference between Dubai and New York changes twice a year. Here is the full breakdown with DST dates.</p>",
+      "summary": "The exact time difference between Dubai and New York changes twice a year. Here is the full breakdown with DST dates.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "dubai new york time difference",
+        "dubai time new york time"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "time-difference-between-dubai-and-new-york"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/common-time-zone-abbreviations-cheat-sheet.html",
+      "url": "https://worldtimessync.com/blog/common-time-zone-abbreviations-cheat-sheet.html",
+      "title": "Time Zone Abbreviations Cheat Sheet: Printable Reference (2026) | World Time Sync",
+      "content_html": "<p>Printable cheat sheet of common time zone abbreviations. UTC offsets, DST info, and IANA names.</p>",
+      "summary": "Printable cheat sheet of common time zone abbreviations. UTC offsets, DST info, and IANA names.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "time zone abbreviations cheat sheet",
+        "time zone reference",
+        "UTC offset chart",
+        "time zone table"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "common-time-zone-abbreviations-cheat-sheet"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/why-phone-timezone-wrong.html",
+      "url": "https://worldtimessync.com/blog/why-phone-timezone-wrong.html",
+      "title": "Why Your Phone's Time Zone Might Be Wrong (And How to Fix It) | World Time Sync",
+      "content_html": "<p>Phone showing wrong time? Common causes: auto timezone off, outdated tzdata, carrier issues, dual-SIM conflicts. Step-by-step fixes for iOS and Android.</p>",
+      "summary": "Phone showing wrong time? Common causes: auto timezone off, outdated tzdata, carrier issues, dual-SIM conflicts. Step-by-step fixes for iOS and Android.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "phone time zone wrong",
+        "fix phone time",
+        "auto timezone not working",
+        "iOS Android time fix"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "why-phone-timezone-wrong"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/spain-time-zone-history.html",
+      "url": "https://worldtimessync.com/blog/spain-time-zone-history.html",
+      "title": "The Day Spain Moved Its Clock Forward (and Never Moved Back) | World Time Sync",
+      "content_html": "<p>Spain sits in the wrong time zone. It has for over 80 years. Here's the strange history of how that happened.</p>",
+      "summary": "Spain sits in the wrong time zone. It has for over 80 years. Here's the strange history of how that happened.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "Spain",
+        "time zone history",
+        "DST",
+        "European time"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "spain-time-zone-history"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/planning-meetings-across-time-zones.html",
+      "url": "https://worldtimessync.com/blog/planning-meetings-across-time-zones.html",
+      "title": "How to Plan Meetings Across Time Zones (2026 Guide) | World Time Sync",
+      "content_html": "<p>A simple, repeatable method to plan meetings across time zones: find the real overlap, rotate the pain fairly, send invites in local time, and build an async fallback.</p>",
+      "summary": "A simple, repeatable method to plan meetings across time zones: find the real overlap, rotate the pain fairly, send invites in local time, and build an async fallback.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "plan meetings across time zones",
+        "global team meeting time",
+        "time zone overlap",
+        "meeting planner",
+        "distributed team scheduling",
+        "async meetings"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "planning-meetings-across-time-zones"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/most-time-zones-in-the-world.html",
+      "url": "https://worldtimessync.com/blog/most-time-zones-in-the-world.html",
+      "title": "Which Country Has the Most Time Zones? (2026) | World Time Sync",
+      "content_html": "<p>It's not Russia. France has more time zones than any other country — here's why, and the full ranking.</p>",
+      "summary": "It's not Russia. France has more time zones than any other country — here's why, and the full ranking.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "most time zones country",
+        "France time zones",
+        "Russia time zones",
+        "country with most time zones"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "most-time-zones-in-the-world"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/china-one-time-zone-reality.html",
+      "url": "https://worldtimessync.com/blog/china-one-time-zone-reality.html",
+      "title": "Does China Really Have One Time Zone? What It Means | World Time Sync",
+      "content_html": "<p>China officially uses a single time zone (UTC+8), but geographically it spans five. Here is how 1.4 billion people live with this reality.</p>",
+      "summary": "China officially uses a single time zone (UTC+8), but geographically it spans five. Here is how 1.4 billion people live with this reality.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "china time zone",
+        "china single time zone",
+        "beijing time",
+        "xinjiang time",
+        "utc+8"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "china-one-time-zone-reality"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/winter-olympics-2026-schedule-timezones.html",
+      "url": "https://worldtimessync.com/blog/winter-olympics-2026-schedule-timezones.html",
+      "title": "Winter Olympics 2026 Schedule in Your Time Zone: Complete Guide (2026) | World Time Sync",
+      "content_html": "<p>Winter Olympics 2026 runs 2026-02-06 to 2026-02-22. Convert match/event times to your local time zone. Covers all host cities with DST-aware time zone converter.</p>",
+      "summary": "Winter Olympics 2026 runs 2026-02-06 to 2026-02-22. Convert match/event times to your local time zone. Covers all host cities with DST-aware time zone converter.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "winter olympics 2026 schedule time zones",
+        "winter olympics 2026 match times",
+        "winter olympics 2026 in my time zone"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "winter-olympics-2026-schedule-timezones"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/time-zone-management-remote-teams.html",
+      "url": "https://worldtimessync.com/blog/time-zone-management-remote-teams.html",
+      "title": "Time Zone Management for Remote Teams: Complete Guide",
+      "content_html": "<p>Master time zone coordination for distributed teams. Tools, rotation rules, DST handling, and async alternatives for smooth collaboration.</p>",
+      "summary": "Master time zone coordination for distributed teams. Tools, rotation rules, DST handling, and async alternatives for smooth collaboration.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "remote team time zones",
+        "distributed team coordination",
+        "time zone tools",
+        "async communication",
+        "meeting rotation"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "time-zone-management-remote-teams"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/5-places-that-have-never-used-daylight-saving-time.html",
+      "url": "https://worldtimessync.com/blog/5-places-that-have-never-used-daylight-saving-time.html",
+      "title": "5 Places in the World That Have Never Used Daylight Saving Time",
+      "content_html": "<p>Billions of people change their clocks twice a year. But these 5 places never have — and probably never will.</p>",
+      "summary": "Billions of people change their clocks twice a year. But these 5 places never have — and probably never will.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "no daylight saving time",
+        "countries without DST",
+        "no time change",
+        "equatorial time"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "5-places-that-have-never-used-daylight-saving-time"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/best-time-to-call-germany.html",
+      "url": "https://worldtimessync.com/blog/best-time-to-call-germany.html",
+      "title": "Best Time to Call Germany from Abroad: Complete Guide (2026) | World Time Sync",
+      "content_html": "<p>Find the best time to call Germany from any country. Complete guide with CET/CEST, business hours, and calling tips.</p>",
+      "summary": "Find the best time to call Germany from any country. Complete guide with CET/CEST, business hours, and calling tips.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "best time to call Germany",
+        "call Berlin from abroad",
+        "Germany time zone",
+        "CET CEST",
+        "call Munich",
+        "Germany calling guide"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "best-time-to-call-germany"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/time-difference-tokyo-sydney.html",
+      "url": "https://worldtimessync.com/blog/time-difference-tokyo-sydney.html",
+      "title": "Time Difference Between Tokyo and Sydney: Guide & Converter (2026) | World Time Sync",
+      "content_html": "<p>Learn the 1-2 hour gap between Tokyo (JST) and Sydney (AEST/AEDT). Includes conversion table, opposite DST schedules, and Tokyo-Sydney converter.</p>",
+      "summary": "Learn the 1-2 hour gap between Tokyo (JST) and Sydney (AEST/AEDT). Includes conversion table, opposite DST schedules, and Tokyo-Sydney converter.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "time difference Tokyo Sydney",
+        "Tokyo to Sydney time",
+        "JST to AEDT conversion",
+        "Tokyo Sydney time zone"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "time-difference-tokyo-sydney"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/global-team-coordination.html",
+      "url": "https://worldtimessync.com/blog/global-team-coordination.html",
+      "title": "Global Team Coordination: Async Communication & Time Zone Mastery (2026) | World Time Sync",
+      "content_html": "<p>Master global team coordination with async communication, time zone awareness, and meeting rotation.</p>",
+      "summary": "Master global team coordination with async communication, time zone awareness, and meeting rotation.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "global team coordination",
+        "async communication remote teams",
+        "time zone awareness",
+        "distributed team management",
+        "remote team best practices"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "global-team-coordination"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/convert-gmt-to-est.html",
+      "url": "https://worldtimessync.com/blog/convert-gmt-to-est.html",
+      "title": "Convert GMT to EST: Greenwich Mean Time to Eastern Time | World Time Sync",
+      "content_html": "<p>Convert GMT to EST: Greenwich Mean Time to Eastern Time</p>",
+      "summary": "Convert GMT to EST: Greenwich Mean Time to Eastern Time",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "Convert Gmt To Est"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "convert-gmt-to-est"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/convert-pst-to-gmt.html",
+      "url": "https://worldtimessync.com/blog/convert-pst-to-gmt.html",
+      "title": "Convert PST to GMT: Time Difference & Conversion Guide (2026) | World Time Sync",
+      "content_html": "<p>Learn how to convert US Pacific Time (PST/PDT) to GMT with our guide. Includes DST handling, conversion table, and formula.</p>",
+      "summary": "Learn how to convert US Pacific Time (PST/PDT) to GMT with our guide. Includes DST handling, conversion table, and formula.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "convert PST to GMT",
+        "PST to GMT time difference",
+        "Pacific to Greenwich time",
+        "PST GMT converter"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "convert-pst-to-gmt"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/best-time-to-call-uae.html",
+      "url": "https://worldtimessync.com/blog/best-time-to-call-uae.html",
+      "title": "Best Time to Call UAE from Abroad: Complete Guide (2026) | World Time Sync",
+      "content_html": "<p>Find the best time to call the UAE from any country. Complete guide with GST (UTC+4), business hours, and calling tips.</p>",
+      "summary": "Find the best time to call the UAE from any country. Complete guide with GST (UTC+4), business hours, and calling tips.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "best time to call UAE",
+        "call Dubai from abroad",
+        "UAE time zone",
+        "GST",
+        "call Abu Dhabi",
+        "Dubai calling guide"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "best-time-to-call-uae"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/how-to-schedule-global-meetings.html",
+      "url": "https://worldtimessync.com/blog/how-to-schedule-global-meetings.html",
+      "title": "How to Schedule Global Meetings Without the Headache",
+      "content_html": "<p>Practical guide to coordinating meetings across multiple time zones. Tools, tips, and best practices for distributed teams.</p>",
+      "summary": "Practical guide to coordinating meetings across multiple time zones. Tools, tips, and best practices for distributed teams.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "global meetings",
+        "time zones",
+        "distributed teams",
+        "meeting scheduling",
+        "time difference"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "how-to-schedule-global-meetings"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/fifa-world-cup-2026-schedule-timezones.html",
+      "url": "https://worldtimessync.com/blog/fifa-world-cup-2026-schedule-timezones.html",
+      "title": "FIFA World Cup 2026 Schedule in Your Time Zone: Complete Guide (2026) | World Time Sync",
+      "content_html": "<p>FIFA World Cup 2026 runs 2026-06-11 to 2026-07-19. Convert match/event times to your local time zone. Covers all host cities with DST-aware time zone converter.</p>",
+      "summary": "FIFA World Cup 2026 runs 2026-06-11 to 2026-07-19. Convert match/event times to your local time zone. Covers all host cities with DST-aware time zone converter.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "fifa world cup 2026 schedule time zones",
+        "fifa world cup 2026 match times",
+        "fifa world cup 2026 in my time zone"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "fifa-world-cup-2026-schedule-timezones"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/how-to-read-military-time.html",
+      "url": "https://worldtimessync.com/blog/how-to-read-military-time.html",
+      "title": "How to Read Military Time: A Simple Conversion Guide",
+      "content_html": "<p>Military time explained simply. How to convert between 24-hour clock and standard time with examples and a conversion chart.</p>",
+      "summary": "Military time explained simply. How to convert between 24-hour clock and standard time with examples and a conversion chart.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "military time",
+        "24 hour clock",
+        "how to read military time"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "how-to-read-military-time"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/night-shift-nurse-time-zones.html",
+      "url": "https://worldtimessync.com/blog/night-shift-nurse-time-zones.html",
+      "title": "A Day in the Life of a Night Shift Nurse Across Time Zones | World Time Sync",
+      "content_html": "<p>When your body says midnight but the clock says 6 AM. What night shift workers know about time that the rest of us forget.</p>",
+      "summary": "When your body says midnight but the clock says 6 AM. What night shift workers know about time that the rest of us forget.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "night shift",
+        "healthcare",
+        "circadian rhythm",
+        "shift work"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "night-shift-nurse-time-zones"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/convert-est-to-gmt.html",
+      "url": "https://worldtimessync.com/blog/convert-est-to-gmt.html",
+      "title": "Convert EST to GMT: Time Difference & Conversion Guide (2026) | World Time Sync",
+      "content_html": "<p>Learn how to convert US Eastern Time (EST/EDT) to GMT with our guide. Includes DST handling, conversion table, and formula.</p>",
+      "summary": "Learn how to convert US Eastern Time (EST/EDT) to GMT with our guide. Includes DST handling, conversion table, and formula.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "convert EST to GMT",
+        "EST to GMT time difference",
+        "Eastern to Greenwich time",
+        "EST GMT converter"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "convert-est-to-gmt"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/utc-travel-tip.html",
+      "url": "https://worldtimessync.com/blog/utc-travel-tip.html",
+      "title": "Why I Set All My Devices to UTC When I Travel | World Time Sync",
+      "content_html": "<p>It sounds weird. It takes two days to get used to. But once you switch, you never go back. Here's my system.</p>",
+      "summary": "It sounds weird. It takes two days to get used to. But once you switch, you never go back. Here's my system.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "UTC",
+        "travel tips",
+        "personal system",
+        "productivity"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "utc-travel-tip"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/time-zone-map-of-the-united-states.html",
+      "url": "https://worldtimessync.com/blog/time-zone-map-of-the-united-states.html",
+      "title": "US Time Zone Map: Every Time Zone in America Explained",
+      "content_html": "<p>From Eastern to Hawaii, here is how all 6 US time zones work, which states use them, and why Arizona is the weird exception.</p>",
+      "summary": "From Eastern to Hawaii, here is how all 6 US time zones work, which states use them, and why Arizona is the weird exception.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "us time zones",
+        "united states time zones",
+        "arizona time zone"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "time-zone-map-of-the-united-states"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/best-time-to-call-australia.html",
+      "url": "https://worldtimessync.com/blog/best-time-to-call-australia.html",
+      "title": "Best Time to Call Australia from Abroad: Complete Guide (2026) | World Time Sync",
+      "content_html": "<p>Find the best time to call Australia from any country. Complete guide with AEST/AEDT, multiple time zones, and business hours.</p>",
+      "summary": "Find the best time to call Australia from any country. Complete guide with AEST/AEDT, multiple time zones, and business hours.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "best time to call Australia",
+        "call Sydney from abroad",
+        "Australia time zone",
+        "AEST",
+        "call Melbourne",
+        "Australia calling guide"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "best-time-to-call-australia"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/does-daylight-saving-time-save-energy-2026.html",
+      "url": "https://worldtimessync.com/blog/does-daylight-saving-time-save-energy-2026.html",
+      "title": "Does Daylight Saving Time Save Energy in 2026? | World Time Sync",
+      "content_html": "<p>Daylight saving time was introduced to save energy. A century later, the savings are negligible. Here is what the research says in 2026.</p>",
+      "summary": "Daylight saving time was introduced to save energy. A century later, the savings are negligible. Here is what the research says in 2026.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "daylight saving time energy",
+        "dst energy savings",
+        "does dst work",
+        "daylight saving science 2026"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "does-daylight-saving-time-save-energy-2026"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/cruise-ship-time-zone-change.html",
+      "url": "https://worldtimessync.com/blog/cruise-ship-time-zone-change.html",
+      "title": "What Happens When a Cruise Ship Crosses Time Zones (2026) | World Time Sync",
+      "content_html": "<p>How cruise ships handle time changes at sea — and what passengers need to know before boarding.</p>",
+      "summary": "How cruise ships handle time changes at sea — and what passengers need to know before boarding.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "cruise ship time zone",
+        "cruise time change",
+        "ship clock adjustment",
+        "cruise travel tips"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "cruise-ship-time-zone-change"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/schedule-online-classes-time-zones.html",
+      "url": "https://worldtimessync.com/blog/schedule-online-classes-time-zones.html",
+      "title": "How to Schedule Online Classes Across Time Zones (2026) | World Time Sync",
+      "content_html": "<p>Practical ways to schedule online classes and live sessions when students and teachers sit in different time zones, without leaving anyone out.</p>",
+      "summary": "Practical ways to schedule online classes and live sessions when students and teachers sit in different time zones, without leaving anyone out.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "schedule online classes",
+        "time zones for teachers",
+        "virtual classroom timing",
+        "online course scheduling",
+        "remote class times"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "schedule-online-classes-time-zones"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/countries-that-changed-time-zones.html",
+      "url": "https://worldtimessync.com/blog/countries-that-changed-time-zones.html",
+      "title": "Countries That Changed Their Time Zones (2026) | World Time Sync",
+      "content_html": "<p>From Samoa skipping a day to North Korea's own time zone — countries that switched time zones and the reasons behind it.</p>",
+      "summary": "From Samoa skipping a day to North Korea's own time zone — countries that switched time zones and the reasons behind it.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "countries changed time zone",
+        "timezone change history",
+        "Samoa date line",
+        "North Korea time zone"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "countries-that-changed-time-zones"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/daylight-saving-time-travel-guide.html",
+      "url": "https://worldtimessync.com/blog/daylight-saving-time-travel-guide.html",
+      "title": "Daylight Saving Time Travel Guide: Avoid DST Confusion (2026) | World Time Sync",
+      "content_html": "<p>Traveling during DST transition? Here's how to avoid missed flights, confused hotel bookings, and scheduling disasters.</p>",
+      "summary": "Traveling during DST transition? Here's how to avoid missed flights, confused hotel bookings, and scheduling disasters.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "DST travel guide",
+        "travel during daylight saving",
+        "DST travel tips",
+        "DST flight schedule",
+        "travel time zone"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "daylight-saving-time-travel-guide"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/time-zones-in-space-iss-astronauts.html",
+      "url": "https://worldtimessync.com/blog/time-zones-in-space-iss-astronauts.html",
+      "title": "Time Zones in Space: How Astronauts Track Days on the ISS | World Time Sync",
+      "content_html": "<p>There are no time zones in orbit. So how do astronauts keep a 24-hour day? The answer is more practical than you'd think.</p>",
+      "summary": "There are no time zones in orbit. So how do astronauts keep a 24-hour day? The answer is more practical than you'd think.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "space",
+        "ISS",
+        "astronauts",
+        "time zones",
+        "NASA"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "time-zones-in-space-iss-astronauts"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/what-cities-are-in-gmt+5.html",
+      "url": "https://worldtimessync.com/blog/what-cities-are-in-gmt+5.html",
+      "title": "What Cities Are in GMT+5? Complete List of Major Cities",
+      "content_html": "<p>All major cities in the GMT+5 time zone. From Karachi to Tashkent, here is what time it is now in every UTC+5 city.</p>",
+      "summary": "All major cities in the GMT+5 time zone. From Karachi to Tashkent, here is what time it is now in every UTC+5 city.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "GMT+5 cities",
+        "UTC+5 time zone",
+        "cities in GMT+5"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "what-cities-are-in-gmt+5"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/time-difference-singapore-london.html",
+      "url": "https://worldtimessync.com/blog/time-difference-singapore-london.html",
+      "title": "Time Difference Between Singapore and London: Guide & Converter (2026) | World Time Sync",
+      "content_html": "<p>Find the 7-8 hour gap between Singapore (SGT) and London (GMT/BST). Includes conversion chart, DST info, and a Singapore-London time zone converter.</p>",
+      "summary": "Find the 7-8 hour gap between Singapore (SGT) and London (GMT/BST). Includes conversion chart, DST info, and a Singapore-London time zone converter.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "time difference Singapore London",
+        "Singapore to London time",
+        "SGT to GMT conversion",
+        "Singapore London time zone"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "time-difference-singapore-london"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/convert-cst-to-est.html",
+      "url": "https://worldtimessync.com/blog/convert-cst-to-est.html",
+      "title": "Convert CST to EST: Central to Eastern Time Conversion | World Time Sync",
+      "content_html": "<p>Convert CST to EST: Central to Eastern Time Conversion</p>",
+      "summary": "Convert CST to EST: Central to Eastern Time Conversion",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "Convert Cst To Est"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "convert-cst-to-est"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/how-to-set-world-clock-on-iphone-android.html",
+      "url": "https://worldtimessync.com/blog/how-to-set-world-clock-on-iphone-android.html",
+      "title": "How to Add a World Clock on Your Phone (2026) | World Time Sync",
+      "content_html": "<p>Step-by-step guide to adding world clocks on iPhone and Android so you can check multiple time zones at a glance.</p>",
+      "summary": "Step-by-step guide to adding world clocks on iPhone and Android so you can check multiple time zones at a glance.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "world clock iPhone",
+        "world clock Android",
+        "add world clock phone",
+        "multiple time zones phone"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "how-to-set-world-clock-on-iphone-android"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/time-difference-new-york-london.html",
+      "url": "https://worldtimessync.com/blog/time-difference-new-york-london.html",
+      "title": "What is the Time Difference Between New York and London? | World Time Sync",
+      "content_html": "<p>What is the Time Difference Between New York and London?</p>",
+      "summary": "What is the Time Difference Between New York and London?",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "Time Difference New York London"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "time-difference-new-york-london"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/why-does-russia-have-11-time-zones.html",
+      "url": "https://worldtimessync.com/blog/why-does-russia-have-11-time-zones.html",
+      "title": "Why Russia Has 11 Time Zones and How They Keep Changing",
+      "content_html": "<p>Russia's 11 time zones explained. From Kaliningrad to Kamchatka, how they work and why the number keeps changing.</p>",
+      "summary": "Russia's 11 time zones explained. From Kaliningrad to Kamchatka, how they work and why the number keeps changing.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "russia time zones",
+        "russia 11 time zones",
+        "moscow time zone"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "why-does-russia-have-11-time-zones"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/dst-2026-us-spring-forward.html",
+      "url": "https://worldtimessync.com/blog/dst-2026-us-spring-forward.html",
+      "title": "Daylight Saving Time 2026: US Spring Forward (Spring forward) - Complete Guide | World Time Sync",
+      "content_html": "<p>US Spring Forward occurs on March 08, 2026. Clocks change +1 hour. Full guide with affected countries, time zones, meeting impact, and conversion tables.</p>",
+      "summary": "US Spring Forward occurs on March 08, 2026. Clocks change +1 hour. Full guide with affected countries, time zones, meeting impact, and conversion tables.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "daylight saving time 2026",
+        "dst 2026 us-spring-forward",
+        "when does dst start 2026",
+        "when does dst end 2026",
+        "time change 2026",
+        "dst schedule 2026"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "dst-2026-us-spring-forward"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/daylight-saving-time-australia-how-it-works.html",
+      "url": "https://worldtimessync.com/blog/daylight-saving-time-australia-how-it-works.html",
+      "title": "How Daylight Saving Time Works in Australia — A State-by-State Guide",
+      "content_html": "<p>Australia's daylight saving time is split by state. Some observe it, some do not, and the time differences change four times a year. Here is how it all works.</p>",
+      "summary": "Australia's daylight saving time is split by state. Some observe it, some do not, and the time differences change four times a year. Here is how it all works.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "australia daylight saving",
+        "australia DST",
+        "sydney time zone",
+        "melbourne time change"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "daylight-saving-time-australia-how-it-works"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/best-time-to-call-canada.html",
+      "url": "https://worldtimessync.com/blog/best-time-to-call-canada.html",
+      "title": "Best Time to Call Canada from Abroad: Complete Guide (2026) | World Time Sync",
+      "content_html": "<p>Find the best time to call Canada from any country. Complete guide with all Canadian time zones, DST, and business hours.</p>",
+      "summary": "Find the best time to call Canada from any country. Complete guide with all Canadian time zones, DST, and business hours.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "best time to call Canada",
+        "call Toronto from abroad",
+        "Canada time zone",
+        "EST PST",
+        "call Vancouver",
+        "Canada calling guide"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "best-time-to-call-canada"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/utc-vs-gmt-explained.html",
+      "url": "https://worldtimessync.com/blog/utc-vs-gmt-explained.html",
+      "title": "UTC vs GMT Explained: What's the Difference? (2026) | World Time Sync",
+      "content_html": "<p>What's the difference between UTC and GMT? Clear explanation with history, technical details, and when it matters.</p>",
+      "summary": "What's the difference between UTC and GMT? Clear explanation with history, technical details, and when it matters.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "UTC vs GMT",
+        "difference between UTC and GMT",
+        "UTC explained",
+        "GMT explained",
+        "coordinated universal time"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "utc-vs-gmt-explained"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/broadcast-tv-scheduling-time-zones.html",
+      "url": "https://worldtimessync.com/blog/broadcast-tv-scheduling-time-zones.html",
+      "title": "How TV Networks Handle Time Zones for Live Broadcasts (2026) | World Time Sync",
+      "content_html": "<p>Why live shows air at different times across countries — the logistics of broadcasting across time zones.</p>",
+      "summary": "Why live shows air at different times across countries — the logistics of broadcasting across time zones.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "TV broadcast time zones",
+        "live show scheduling",
+        "TV network time zones",
+        "primetime across time zones"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "broadcast-tv-scheduling-time-zones"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/international-date-line-explained.html",
+      "url": "https://worldtimessync.com/blog/international-date-line-explained.html",
+      "title": "The International Date Line Explained (2026) | World Time Sync",
+      "content_html": "<p>The International Date Line isn't straight. Here's why it bends around countries, islands, and political borders.</p>",
+      "summary": "The International Date Line isn't straight. Here's why it bends around countries, islands, and political borders.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "international date line",
+        "date line explained",
+        "why date line zigzags",
+        "Pacific date line"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "international-date-line-explained"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/best-time-to-call-japan.html",
+      "url": "https://worldtimessync.com/blog/best-time-to-call-japan.html",
+      "title": "Best Time to Call Japan from Abroad: Complete Guide (2026) | World Time Sync",
+      "content_html": "<p>Find the best time to call Japan from any country. Complete guide with JST (UTC+9), business hours, and calling tips.</p>",
+      "summary": "Find the best time to call Japan from any country. Complete guide with JST (UTC+9), business hours, and calling tips.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "best time to call Japan",
+        "call Tokyo from abroad",
+        "Japan time zone",
+        "JST",
+        "call Osaka",
+        "Japan calling guide"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "best-time-to-call-japan"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/why-nepal-utc-plus-5-45.html",
+      "url": "https://worldtimessync.com/blog/why-nepal-utc-plus-5-45.html",
+      "title": "Why Nepal Uses UTC+5:45 — The Story Behind the 45-Minute Time Zone",
+      "content_html": "<p>Nepal's UTC+5:45 timezone is one of only three quarter-hour time zones in the world. Here is the history and reasoning behind it.</p>",
+      "summary": "Nepal's UTC+5:45 timezone is one of only three quarter-hour time zones in the world. Here is the history and reasoning behind it.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "nepal time zone",
+        "UTC+5:45",
+        "kathmandu time",
+        "quarter hour time zone"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "why-nepal-utc-plus-5-45"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/how-airlines-manage-time-zones.html",
+      "url": "https://worldtimessync.com/blog/how-airlines-manage-time-zones.html",
+      "title": "How Airlines Keep Track of Time Zones (2026) | World Time Sync",
+      "content_html": "<p>From flight planning to crew scheduling — how the aviation industry manages time zones across the globe.</p>",
+      "summary": "From flight planning to crew scheduling — how the aviation industry manages time zones across the globe.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "airlines time zones",
+        "flight time zone management",
+        "pilot time zones",
+        "aviation UTC"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "how-airlines-manage-time-zones"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/why-noon-is-not-at-12.html",
+      "url": "https://worldtimessync.com/blog/why-noon-is-not-at-12.html",
+      "title": "Why Noon Isn't at 12:00 in Most Places (And That's Fine) | World Time Sync",
+      "content_html": "<p>Solar noon and clock noon are rarely the same. Here's why — and why nobody notices.</p>",
+      "summary": "Solar noon and clock noon are rarely the same. Here's why — and why nobody notices.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "solar time",
+        "clock time",
+        "noon",
+        "longitude"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "why-noon-is-not-at-12"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/country-time-zones-by-utc-offset.html",
+      "url": "https://worldtimessync.com/blog/country-time-zones-by-utc-offset.html",
+      "title": "List of Countries by UTC Offset: Every Country (2026)",
+      "content_html": "<p>A complete, up-to-date reference of 197 countries organised by UTC offset, from UTC-12 to UTC+14, with DST and half-hour zone notes for 2026.</p>",
+      "summary": "A complete, up-to-date reference of 197 countries organised by UTC offset, from UTC-12 to UTC+14, with DST and half-hour zone notes for 2026.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "countries by UTC offset",
+        "list of UTC offsets",
+        "country time zones",
+        "UTC reference",
+        "2026"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "country-time-zones-by-utc-offset"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/china-single-time-zone-one-country-many-suns.html",
+      "url": "https://worldtimessync.com/blog/china-single-time-zone-one-country-many-suns.html",
+      "title": "Why China Uses One Time Zone Despite Spanning 5 Geographic Zones",
+      "content_html": "<p>China spans five geographic time zones but uses only one official time zone (UTC+8). Here is why, and what it means for people living at the western edge.</p>",
+      "summary": "China spans five geographic time zones but uses only one official time zone (UTC+8). Here is why, and what it means for people living at the western edge.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "china time zone",
+        "china single timezone",
+        "beijing time",
+        "xinjiang time",
+        "UTC+8 china"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "china-single-time-zone-one-country-many-suns"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/china-single-time-zone-problem.html",
+      "url": "https://worldtimessync.com/blog/china-single-time-zone-problem.html",
+      "title": "China Has One Time Zone - Here Is Why That Is a Problem",
+      "content_html": "<p>China stretches across five geographical time zones but uses only one. What that means for daily life from Beijing to Xinjiang.</p>",
+      "summary": "China stretches across five geographical time zones but uses only one. What that means for daily life from Beijing to Xinjiang.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "china time zone",
+        "china single time zone",
+        "beijing time xinjiang"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "china-single-time-zone-problem"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/why-i-use-city-names-not-utc.html",
+      "url": "https://worldtimessync.com/blog/why-i-use-city-names-not-utc.html",
+      "title": "Why I Stopped Saying 'UTC+5:30' and Just Use City Names | World Time Sync",
+      "content_html": "<p>The problem with offset notation and why switching to city names made my life easier. A simple change that reduces mistakes.</p>",
+      "summary": "The problem with offset notation and why switching to city names made my life easier. A simple change that reduces mistakes.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "UTC",
+        "time zone notation",
+        "city names",
+        "productivity"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "why-i-use-city-names-not-utc"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/daylight-saving-time-explained.html",
+      "url": "https://worldtimessync.com/blog/daylight-saving-time-explained.html",
+      "title": "Daylight Saving Time Explained: When & Why Clocks Change (2026) | World Time Sync",
+      "content_html": "<p>Everything you need to know about Daylight Saving Time: history, 2026 schedule, which countries observe it, and how to avoid DST scheduling mistakes.</p>",
+      "summary": "Everything you need to know about Daylight Saving Time: history, 2026 schedule, which countries observe it, and how to avoid DST scheduling mistakes.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "daylight saving time",
+        "DST 2026",
+        "when do clocks change",
+        "spring forward fall back",
+        "DST schedule",
+        "daylight saving dates"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "daylight-saving-time-explained"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/time-zone-rules-for-developers.html",
+      "url": "https://worldtimessync.com/blog/time-zone-rules-for-developers.html",
+      "title": "Time Zone Rules for Developers: A Practical Guide | World Time Sync",
+      "content_html": "<p>Time zone bugs are among the hardest to catch and most expensive to fix. Here are the rules every developer should follow when handling time zones.</p>",
+      "summary": "Time zone bugs are among the hardest to catch and most expensive to fix. Here are the rules every developer should follow when handling time zones.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "time zone programming",
+        "developer time zones",
+        "datetime best practices",
+        "UTC storage",
+        "timezone bugs"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "time-zone-rules-for-developers"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/dst-2026-eu-fall-back.html",
+      "url": "https://worldtimessync.com/blog/dst-2026-eu-fall-back.html",
+      "title": "Daylight Saving Time 2026: EU Fall Back (Fall back) - Complete Guide | World Time Sync",
+      "content_html": "<p>EU Fall Back occurs on October 25, 2026. Clocks change -1 hour. Full guide with affected countries, time zones, meeting impact, and conversion tables.</p>",
+      "summary": "EU Fall Back occurs on October 25, 2026. Clocks change -1 hour. Full guide with affected countries, time zones, meeting impact, and conversion tables.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "daylight saving time 2026",
+        "dst 2026 eu-fall-back",
+        "when does dst start 2026",
+        "when does dst end 2026",
+        "time change 2026",
+        "dst schedule 2026"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "dst-2026-eu-fall-back"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/india-time-zone-one-country-many-suns.html",
+      "url": "https://worldtimessync.com/blog/india-time-zone-one-country-many-suns.html",
+      "title": "India Has One Time Zone Despite Spanning 2,900 km East to West",
+      "content_html": "<p>Why India uses UTC+5:30 across the entire country, from Gujarat to Assam, and what it means for daily life.</p>",
+      "summary": "Why India uses UTC+5:30 across the entire country, from Gujarat to Assam, and what it means for daily life.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "india time zone",
+        "ist time zone",
+        "india utc+5:30"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "india-time-zone-one-country-many-suns"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/working-across-time-zones-mental-health.html",
+      "url": "https://worldtimessync.com/blog/working-across-time-zones-mental-health.html",
+      "title": "How Working Across Time Zones Affects Mental Health | World Time Sync",
+      "content_html": "<p>Working across time zones can lead to isolation, sleep disruption, and chronic fatigue. Here is what the research says and practical steps to protect your wellbeing.</p>",
+      "summary": "Working across time zones can lead to isolation, sleep disruption, and chronic fatigue. Here is what the research says and practical steps to protect your wellbeing.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "time zone mental health",
+        "remote work health",
+        "time zone fatigue",
+        "night shift remote work"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "working-across-time-zones-mental-health"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/time-zone-apps-compared-2026.html",
+      "url": "https://worldtimessync.com/blog/time-zone-apps-compared-2026.html",
+      "title": "Best Time Zone Apps in 2026: An Honest Comparison | World Time Sync",
+      "content_html": "<p>We compared popular time zone apps and tools. See which ones actually help you manage across time zones — and which ones just look pretty.</p>",
+      "summary": "We compared popular time zone apps and tools. See which ones actually help you manage across time zones — and which ones just look pretty.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "best time zone app",
+        "time zone tool comparison",
+        "world clock app",
+        "time zone converter app"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "time-zone-apps-compared-2026"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/convert-ist-to-est.html",
+      "url": "https://worldtimessync.com/blog/convert-ist-to-est.html",
+      "title": "Convert IST to EST: India Time to Eastern Time Conversion | World Time Sync",
+      "content_html": "<p>Convert IST to EST: India Time to Eastern Time Conversion</p>",
+      "summary": "Convert IST to EST: India Time to Eastern Time Conversion",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "Convert Ist To Est"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "convert-ist-to-est"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/time-difference-new-york-sydney.html",
+      "url": "https://worldtimessync.com/blog/time-difference-new-york-sydney.html",
+      "title": "New York to Sydney Time Difference & Conversion Guide (2026) | World Time Sync",
+      "content_html": "<p>Understand the 14-16 hour gap between New York and Sydney, with tables, DST notes, and planning tips.</p>",
+      "summary": "Understand the 14-16 hour gap between New York and Sydney, with tables, DST notes, and planning tips.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "New York to Sydney time difference",
+        "NY Sydney time conversion",
+        "EST to AEDT guide"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "time-difference-new-york-sydney"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/time-difference-london-tokyo.html",
+      "url": "https://worldtimessync.com/blog/time-difference-london-tokyo.html",
+      "title": "What is the Time Difference Between London and Tokyo? | World Time Sync",
+      "content_html": "<p>What is the Time Difference Between London and Tokyo?</p>",
+      "summary": "What is the Time Difference Between London and Tokyo?",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "Time Difference London Tokyo"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "time-difference-london-tokyo"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/time-zone-converter-api-developers-guide.html",
+      "url": "https://worldtimessync.com/blog/time-zone-converter-api-developers-guide.html",
+      "title": "Building a Time Zone Converter: Full API & Implementation Guide | World Time Sync",
+      "content_html": "<p>Building a time zone converter? Here is a practical guide to the best APIs, libraries, and implementation patterns for accurate time zone conversion.</p>",
+      "summary": "Building a time zone converter? Here is a practical guide to the best APIs, libraries, and implementation patterns for accurate time zone conversion.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "time zone converter api",
+        "timezone conversion api",
+        "build timezone converter",
+        "time zone api comparison"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "time-zone-converter-api-developers-guide"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/time-zones-for-freelancers.html",
+      "url": "https://worldtimessync.com/blog/time-zones-for-freelancers.html",
+      "title": "Time Zones for Freelancers (2026) | World Time Sync",
+      "content_html": "<p>Practical tips for freelancers managing clients across time zones — scheduling, communication, and setting boundaries.</p>",
+      "summary": "Practical tips for freelancers managing clients across time zones — scheduling, communication, and setting boundaries.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "freelancer time zones",
+        "work with international clients",
+        "freelancer scheduling",
+        "remote freelance tips"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "time-zones-for-freelancers"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/sunrise-sunset-times-explained.html",
+      "url": "https://worldtimessync.com/blog/sunrise-sunset-times-explained.html",
+      "title": "Sunrise and Sunset Times: How Daylight Hours Change Across the World | World Time Sync",
+      "content_html": "<p>Understanding sunrise and sunset times helps you plan travel, photography, and remote work across time zones. Learn how daylight hours vary by latitude and season.</p>",
+      "summary": "Understanding sunrise and sunset times helps you plan travel, photography, and remote work across time zones. Learn how daylight hours vary by latitude and season.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "sunrise sunset times",
+        "daylight hours by city",
+        "golden hour photography",
+        "how daylight changes",
+        "longest day shortest day"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "sunrise-sunset-times-explained"
+      }
+    },
+    {
+      "id": "https://worldtimessync.com/blog/why-no-single-world-time.html",
+      "url": "https://worldtimessync.com/blog/why-no-single-world-time.html",
+      "title": "Why the World Will Never Agree on One Time Zone | World Time Sync",
+      "content_html": "<p>A look at why a single global time standard keeps failing, and what we'd lose if it ever succeeded.</p>",
+      "summary": "A look at why a single global time standard keeps failing, and what we'd lose if it ever succeeded.",
+      "date_published": "2026-06-28T00:00:00Z",
+      "date_modified": "2026-06-28T00:00:00Z",
+      "authors": [
+        {
+          "name": "World Time Sync",
+          "url": "https://worldtimessync.com/"
+        }
+      ],
+      "tags": [
+        "Time Zones",
+        "single time zone",
+        "world time standard",
+        "UTC",
+        "global time",
+        "time zones explained"
+      ],
+      "image": "https://worldtimessync.com/og-image.png",
+      "_meta": {
+        "section": "Time Zones",
+        "slug": "why-no-single-world-time"
+      }
+    }
+  ]
+}
