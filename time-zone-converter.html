@@ -1,501 +1,413 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0" name="viewport"/>
-<meta content="#667eea" name="theme-color"/>
-<meta content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk" name="google-site-verification"/>
-<title>Time Zone Converter — Compare &amp; Convert Time Zones | World Time Sync</title>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"World Time Sync","url":"https://worldtimessync.com/","logo":"https://worldtimessync.com/favicon.svg","contactPoint":{"@type":"ContactPoint","contactType":"customer support","availableLanguage":"English"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"World Time Sync","url":"https://worldtimessync.com/","description":"Free online world clock showing current local time in 700+ cities worldwide","inLanguage":"en"}</script>
-<meta content="Time Zone Converter — Compare &amp; Convert Time Zones" name="title"/>
-<meta content="Convert time between any two cities instantly. See exact difference, current local times, overlapping business hours, and best meeting times. Half-hour zones and DST supported." name="description"/>
-<meta content="time zone converter, time difference calculator, convert time zones, time between cities, meeting time calculator, best meeting time" name="keywords"/>
-<meta content="index, follow, max-image-preview:large, max-snippet:-1" name="robots"/>
-<meta content="website" property="og:type"/>
-<meta content="https://worldtimessync.com/time-zone-converter" property="og:url"/>
-    <meta name="twitter:url" content="https://worldtimessync.com/time-zone-converter">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="theme-color" content="#667eea">
+    <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk">
+    <title>Time Zone Converter — Convert Time Between Cities Instantly</title>
+    <meta name="title" content="Time Zone Converter — Convert Time Between Cities Instantly">
+    <meta name="description" content="Free time zone converter to calculate time difference between any two cities. Enter a time and see the exact converted time with DST handling. Supports 700+ cities worldwide.">
+    <meta name="keywords" content="time zone converter, convert time zones, time difference calculator, time conversion, world time converter, meeting time converter">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://worldtimessync.com/time-zone-converter">
+    <meta property="og:title" content="Time Zone Converter — Convert Time Between Cities Instantly">
+    <meta property="og:description" content="Free time zone converter to calculate time difference between any two cities. Enter a time and see the exact converted time with DST handling.">
+    <meta property="og:image" content="https://worldtimessync.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="World Time Sync">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Time Zone Converter — Convert Time Between Cities Instantly">
+    <meta name="twitter:description" content="Free time zone converter to calculate time difference between any two cities. Enter a time and see the exact converted time with DST handling.">
     <meta name="twitter:image" content="https://worldtimessync.com/og-image.png">
+    <meta name="twitter:image:alt" content="Time Zone Converter - World Time Sync">
     <meta name="twitter:creator" content="@worldtimesync">
-<meta content="Time Zone Converter — Compare &amp; Convert Time Zones" property="og:title"/>
-<meta content="https://worldtimessync.com/og-image.png" property="og:image"/>
-<meta content="Convert time between any two cities instantly. See exact difference and best meeting times. Half-hour zones and DST supported." property="og:description"/>
-<meta content="World Time Sync" property="og:site_name"/>
-<meta content="summary_large_image" name="twitter:card"/>
-<meta content="Time Zone Converter — Compare Time Zones &amp; Find Best Meeting Times" name="twitter:title"/>
-<meta content="Free time zone converter. Compare any two cities worldwide with DST support and meeting time finder." name="twitter:description"/>
-<link href="https://worldtimessync.com/time-zone-converter" rel="canonical"/>
-<link href="/assets/index.min.css" rel="stylesheet"/>
-<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
-<link href="https://www.googletagmanager.com" rel="preconnect"/>
-<link href="https://pagead2.googlesyndication.com" rel="preconnect"/>
-<link href="https://www.googlesyndication.com" rel="dns-prefetch"/>
-<!-- SoftwareApplication Schema for "time zone converter" keyword -->
-<script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "World Time Sync Time Zone Converter",
-        "description": "Free online time zone converter to calculate time difference between any two cities worldwide. Features overlapping business hours, meeting time finder, DST support, and half-hour/quarter-hour time zones.",
-        "url": "https://worldtimessync.com/time-zone-converter",
-        "applicationCategory": "UtilityApplication",
-        "operatingSystem": "Any (Web-based)",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock"
-        },
-        "featureList": [
-            "Convert time between any two cities",
-            "Automatic DST adjustments",
-            "Overlapping business hours calculator",
-            "Best meeting time finder",
-            "Half-hour & quarter-hour time zone support",
-            "600+ cities worldwide"
-        ],
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "reviewCount": "203"
-        }
-    }
+    <meta name="twitter:site" content="@worldtimesync">
+    <link rel="canonical" href="https://worldtimessync.com/time-zone-converter">
+    <link rel="stylesheet" href="/assets/city.css">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://www.googlesyndication.com">
+    
+    <script type="application/ld+json>
+    {"@context":"https://schema.org","@type":"WebPage","name":"Time Zone Converter","description":"Free time zone converter to calculate time difference between any two cities. Supports 700+ cities with automatic DST handling.","url":"https://worldtimessync.com/time-zone-converter"}
     </script>
-<!-- Breadcrumb Schema -->
-<script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://worldtimessync.com/"},
-            {"@type": "ListItem", "position": 2, "name": "Time Zone Converter", "item": "https://worldtimessync.com/time-zone-converter"}
-        ]
-    }
+    <script type="application/ld+json>
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://worldtimessync.com/"},{"@type":"ListItem","position":2,"name":"Time Zone Converter","item":"https://worldtimessync.com/time-zone-converter"}]}
     </script>
-<!-- FAQ Schema -->
-<script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "How do I convert time between two time zones?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Select two cities in the converter above. It shows the exact time difference in hours and minutes, current local times in both cities, and overlapping business hours (9 AM–5 PM) for scheduling meetings."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Does this time zone converter account for daylight saving time?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes — the converter uses the IANA time zone database which automatically applies all current DST rules. It shows the real-time offset including any active daylight saving adjustments."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How do I find the best meeting time for international teams?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "The converter shows overlapping business hours automatically. For complex multi-city meetings, use our Meeting Planner which visualizes overlap across 10+ cities simultaneously."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "What about half-hour time zones like India or Nepal?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Fully supported — zones like India (UTC+5:30), Nepal (UTC+5:45), Iran (UTC+3:30), Afghanistan (UTC+4:30), and Australia's Northern Territory (UTC+9:30) are all handled correctly."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Can I convert a specific time (not just 'now')?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "This page shows the current time difference. For scheduling a specific future date/time, use our Meeting Planner which lets you pick any date and see the converted times."
-                }
-            }
-        ]
-    }
+    <script type="application/ld+json>
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I convert time between two time zones?","acceptedAnswer":{"@type":"Answer","text":"Use the converter above: select the source city/time zone, target city/time zone, enter the time to convert, and click Convert. The result shows instantly with automatic DST adjustments."}},{"@type":"Question","name":"Does this time zone converter handle daylight saving time?","acceptedAnswer":{"@type":"Answer","text":"Yes, all conversions automatically account for Daylight Saving Time (DST) transitions in both source and target time zones. The converter uses the IANA time zone database for accuracy."}},{"@type":"Question","name":"Can I convert time for a specific date (not just now)?","acceptedAnswer":{"@type":"Answer","text":"The converter uses today's date by default. For historical or future dates, use our <a href=\"/meeting-planner\">Meeting Planner</a> which supports date-specific conversions across multiple cities."}},{"@type":"Question","name":"What cities and time zones are supported?","acceptedAnswer":{"@type":"Answer","text":"700+ cities worldwide covering all IANA time zones. Search by city name (e.g., New York, London, Tokyo) or time zone abbreviation (EST, PST, CET, JST, IST)."}},{"@type":"Question","name":"Is this time zone converter free?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free. No registration required. Use it as often as you need for personal or business purposes."}}]}
     </script>
+    <script type="application/ld+json>
+    {"@context":"https://schema.org","@type":"HowTo","name":"How to Convert Time Between Time Zones","description":"Step-by-step guide to convert time between any two cities using our free time zone converter.","totalTime":"PT30S","estimatedCost":"Free","step":[{"@type":"HowToStep","position":1,"name":"Select Source Time Zone","text":"Choose the city or time zone you want to convert FROM (e.g., New York, London, Tokyo)."},{"@type":"HowToStep","position":2,"name":"Select Target Time Zone","text":"Choose the city or time zone you want to convert TO."},{"@type":"HowToStep","position":3,"name":"Enter the Time","text":"Input the time you want to convert (e.g., 14:30 for 2:30 PM)."},{"@type":"HowToStep","position":4,"name":"Get the Result","text":"Click Convert to see the exact converted time in the target time zone, including DST adjustments."}]}
+    </script>
+    <script type="application/ld+json>
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"World Time Sync Time Zone Converter","description":"Free online time zone converter for 700+ cities with automatic DST handling.","url":"https://worldtimessync.com/time-zone-converter","applicationCategory":"UtilityApplication","operatingSystem":"Any (Web-based)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","availability":"https://schema.org/InStock"}}
+    </script>
+
 </head>
 <body>
-<a class="skip-link" href="#main-content">Skip to main content</a>
-<main id="main-content">
-<div class="calc-container">
-<nav aria-label="Breadcrumb" class="breadcrumb" style="padding:0 0 12px">
-<a href="/">Home</a> &gt;
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <main id="main-content">
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Home</a> >
                 <span aria-current="page">Time Zone Converter</span>
-</nav>
-<h1>Time Zone Converter</h1>
-<p class="subtitle">Convert time between any two cities worldwide. See exact difference, current times, overlapping business hours, and best meeting times.</p>
-<div class="calc-row">
-<div class="calc-city">
-<label for="city1">City A (From)</label>
-<select id="city1">
-<option value="America/New_York">New York, USA (EST/EDT)</option>
-<option value="America/Los_Angeles">Los Angeles, USA (PST/PDT)</option>
-<option value="America/Chicago">Chicago, USA (CST/CDT)</option>
-<option value="America/Denver">Denver, USA (MST/MDT)</option>
-<option value="America/Toronto">Toronto, Canada (EST/EDT)</option>
-<option value="America/Vancouver">Vancouver, Canada (PST/PDT)</option>
-<option value="America/Mexico_City">Mexico City, Mexico (CST/CDT)</option>
-<option value="America/Sao_Paulo">São Paulo, Brazil (BRT)</option>
-<option value="America/Argentina/Buenos_Aires">Buenos Aires, Argentina (ART)</option>
-<option value="Europe/London">London, UK (GMT/BST)</option>
-<option value="Europe/Paris">Paris, France (CET/CEST)</option>
-<option value="Europe/Berlin">Berlin, Germany (CET/CEST)</option>
-<option value="Europe/Rome">Rome, Italy (CET/CEST)</option>
-<option value="Europe/Madrid">Madrid, Spain (CET/CEST)</option>
-<option value="Europe/Amsterdam">Amsterdam, Netherlands (CET/CEST)</option>
-<option value="Europe/Stockholm">Stockholm, Sweden (CET/CEST)</option>
-<option value="Europe/Warsaw">Warsaw, Poland (CET/CEST)</option>
-<option value="Europe/Moscow">Moscow, Russia (MSK)</option>
-<option value="Europe/Kiev">Kyiv, Ukraine (EET/EEST)</option>
-<option value="Europe/Istanbul">Istanbul, Turkey (TRT)</option>
-<option value="Africa/Cairo">Cairo, Egypt (EET)</option>
-<option value="Africa/Johannesburg">Johannesburg, South Africa (SAST)</option>
-<option value="Africa/Lagos">Lagos, Nigeria (WAT)</option>
-<option value="Asia/Dubai">Dubai, UAE (GST)</option>
-<option value="Asia/Riyadh">Riyadh, Saudi Arabia (AST)</option>
-<option value="Asia/Tehran">Tehran, Iran (IRST/IRDT)</option>
-<option value="Asia/Kolkata">Mumbai, India (IST)</option>
-<option value="Asia/Dhaka">Dhaka, Bangladesh (BST)</option>
-<option value="Asia/Karachi">Karachi, Pakistan (PKT)</option>
-<option value="Asia/Shanghai">Shanghai, China (CST)</option>
-<option value="Asia/Hong_Kong">Hong Kong (HKT)</option>
-<option value="Asia/Singapore">Singapore (SGT)</option>
-<option value="Asia/Tokyo">Tokyo, Japan (JST)</option>
-<option value="Asia/Seoul">Seoul, South Korea (KST)</option>
-<option value="Asia/Bangkok">Bangkok, Thailand (ICT)</option>
-<option value="Asia/Jakarta">Jakarta, Indonesia (WIB)</option>
-<option value="Asia/Manila">Manila, Philippines (PST)</option>
-<option value="Australia/Sydney">Sydney, Australia (AEST/AEDT)</option>
-<option value="Australia/Melbourne">Melbourne, Australia (AEST/AEDT)</option>
-<option value="Australia/Brisbane">Brisbane, Australia (AEST)</option>
-<option value="Australia/Perth">Perth, Australia (AWST)</option>
-<option value="Pacific/Auckland">Auckland, NZ (NZST/NZDT)</option>
-<option value="UTC">UTC (Coordinated Universal Time)</option>
-</select>
-<div class="city-time" id="city1-time">—</div>
-</div>
-<div class="calc-vs">VS</div>
-<div class="calc-city">
-<label for="city2">City B (To)</label>
-<select id="city2">
-<option value="Asia/Tokyo">Tokyo, Japan (JST)</option>
-<option value="America/New_York">New York, USA (EST/EDT)</option>
-<option value="America/Los_Angeles">Los Angeles, USA (PST/PDT)</option>
-<option value="America/Chicago">Chicago, USA (CST/CDT)</option>
-<option value="America/Denver">Denver, USA (MST/MDT)</option>
-<option value="America/Toronto">Toronto, Canada (EST/EDT)</option>
-<option value="America/Vancouver">Vancouver, Canada (PST/PDT)</option>
-<option value="America/Mexico_City">Mexico City, Mexico (CST/CDT)</option>
-<option value="America/Sao_Paulo">São Paulo, Brazil (BRT)</option>
-<option value="America/Argentina/Buenos_Aires">Buenos Aires, Argentina (ART)</option>
-<option value="Europe/London">London, UK (GMT/BST)</option>
-<option value="Europe/Paris">Paris, France (CET/CEST)</option>
-<option value="Europe/Berlin">Berlin, Germany (CET/CEST)</option>
-<option value="Europe/Rome">Rome, Italy (CET/CEST)</option>
-<option value="Europe/Madrid">Madrid, Spain (CET/CEST)</option>
-<option value="Europe/Amsterdam">Amsterdam, Netherlands (CET/CEST)</option>
-<option value="Europe/Stockholm">Stockholm, Sweden (CET/CEST)</option>
-<option value="Europe/Warsaw">Warsaw, Poland (CET/CEST)</option>
-<option value="Europe/Moscow">Moscow, Russia (MSK)</option>
-<option value="Europe/Kiev">Kyiv, Ukraine (EET/EEST)</option>
-<option value="Europe/Istanbul">Istanbul, Turkey (TRT)</option>
-<option value="Africa/Cairo">Cairo, Egypt (EET)</option>
-<option value="Africa/Johannesburg">Johannesburg, South Africa (SAST)</option>
-<option value="Africa/Lagos">Lagos, Nigeria (WAT)</option>
-<option value="Asia/Dubai">Dubai, UAE (GST)</option>
-<option value="Asia/Riyadh">Riyadh, Saudi Arabia (AST)</option>
-<option value="Asia/Tehran">Tehran, Iran (IRST/IRDT)</option>
-<option value="Asia/Kolkata">Mumbai, India (IST)</option>
-<option value="Asia/Dhaka">Dhaka, Bangladesh (BST)</option>
-<option value="Asia/Karachi">Karachi, Pakistan (PKT)</option>
-<option value="Asia/Shanghai">Shanghai, China (CST)</option>
-<option value="Asia/Hong_Kong">Hong Kong (HKT)</option>
-<option value="Asia/Singapore">Singapore (SGT)</option>
-<option value="Asia/Seoul">Seoul, South Korea (KST)</option>
-<option value="Asia/Bangkok">Bangkok, Thailand (ICT)</option>
-<option value="Asia/Jakarta">Jakarta, Indonesia (WIB)</option>
-<option value="Asia/Manila">Manila, Philippines (PST)</option>
-<option value="Australia/Sydney">Sydney, Australia (AEST/AEDT)</option>
-<option value="Australia/Melbourne">Melbourne, Australia (AEST/AEDT)</option>
-<option value="Australia/Brisbane">Brisbane, Australia (AEST)</option>
-<option value="Australia/Perth">Perth, Australia (AWST)</option>
-<option value="Pacific/Auckland">Auckland, NZ (NZST/NZDT)</option>
-<option value="UTC">UTC (Coordinated Universal Time)</option>
-</select>
-<div class="city-time" id="city2-time">—</div>
-</div>
-</div>
-<div class="result" id="result">
-<div class="diff-badge" id="diff-badge">0h difference</div>
-<div class="overlap-section">
-<h3>Overlapping Business Hours (9 AM–5 PM local)</h3>
-<p id="overlap-text">Select two cities to see when both are at work.</p>
-</div>
-</div>
-<!-- Time Converter Table -->
-<section aria-label="Time conversion table" class="converter-table-section">
-<h2>Quick Time Conversion Reference</h2>
-<p>When it's <strong id="ref-time">12:00 PM</strong> in <strong id="ref-city">City A</strong>, what time is it in <strong id="target-city">City B</strong>?</p>
-<div class="table-wrapper">
-<table class="converter-table">
-<thead>
-<tr>
-<th>Time in City A</th>
-<th>Time in City B</th>
-<th>Date in City B</th>
-</tr>
-</thead>
-<tbody id="converter-table-body"></tbody>
-</table>
-</div>
-</section>
-<!-- Popular Pairs -->
-<section class="popular-pairs">
-<h2>Popular City Pairs</h2>
-<p>Click to compare instantly:</p>
-<div class="pair-links">
-<a data-c1="America/New_York" data-c2="Europe/London" href="#">New York ↔ London</a>
-<a data-c1="America/New_York" data-c2="Asia/Tokyo" href="#">New York ↔ Tokyo</a>
-<a data-c1="America/Los_Angeles" data-c2="Asia/Kolkata" href="#">Los Angeles ↔ Mumbai</a>
-<a data-c1="Europe/London" data-c2="Asia/Shanghai" href="#">London ↔ Shanghai</a>
-<a data-c1="Europe/Berlin" data-c2="Asia/Tokyo" href="#">Berlin ↔ Tokyo</a>
-<a data-c1="America/New_York" data-c2="Europe/Paris" href="#">New York ↔ Paris</a>
-<a data-c1="America/Chicago" data-c2="Asia/Seoul" href="#">Chicago ↔ Seoul</a>
-<a data-c1="Europe/Kiev" data-c2="America/Los_Angeles" href="#">Kyiv ↔ Los Angeles</a>
-<a data-c1="America/Sao_Paulo" data-c2="Europe/London" href="#">São Paulo ↔ London</a>
-<a data-c1="Asia/Dubai" data-c2="America/New_York" href="#">Dubai ↔ New York</a>
-<a data-c1="Australia/Sydney" data-c2="America/Los_Angeles" href="#">Sydney ↔ Los Angeles</a>
-<a data-c1="Asia/Singapore" data-c2="Europe/London" href="#">Singapore ↔ London</a>
-</div>
-</section>
-<!-- FAQ Section -->
-<section aria-label="Frequently asked questions" class="faq-section">
-<h2>Frequently Asked Questions</h2>
-<h3>How do I convert time between two time zones?</h3>
-<p>Select two cities in the converter above. It shows the exact time difference in hours and minutes, current local times in both cities, and overlapping business hours (9 AM–5 PM) for scheduling meetings.</p>
-<h3>Does this time zone converter account for daylight saving time?</h3>
-<p>Yes — the converter uses the IANA time zone database which automatically applies all current DST rules. It shows the real-time offset including any active daylight saving adjustments.</p>
-<h3>How do I find the best meeting time for international teams?</h3>
-<p>The converter shows overlapping business hours automatically. For complex multi-city meetings, use our <a href="/meeting-planner">Meeting Planner</a> which visualizes overlap across 10+ cities simultaneously.</p>
-<h3>What about half-hour time zones like India or Nepal?</h3>
-<p>Fully supported — zones like India (UTC+5:30), Nepal (UTC+5:45), Iran (UTC+3:30), Afghanistan (UTC+4:30), and Australia's Northern Territory (UTC+9:30) are all handled correctly.</p>
-<h3>Can I convert a specific time (not just 'now')?</h3>
-<p>This page shows the current time difference. For scheduling a specific future date/time, use our <a href="/meeting-planner">Meeting Planner</a> which lets you pick any date and see the converted times.</p>
-</section>
-</div>
+            </nav>
+            <h1>Time Zone Converter</h1>
+            <p class="tz-intro">Convert time between any two cities instantly. <strong>700+ cities</strong> supported with automatic <strong>DST handling</strong>. Enter a time, pick two locations, get the exact converted time.</p>
 
-<aside class="related-articles" style="margin:24px 0;padding:16px;border:1px solid #333;border-radius:8px">
-<h3 style="margin:0 0 8px;font-size:1rem;color:#fff">Related articles</h3>
-<ul style="margin:0;padding:0;font-size:.875rem"><li><a href="/blog/utc-vs-gmt-explained" style="display:inline-block;min-height:44px;min-width:44px;padding:8px 6px;line-height:1.2">UTC vs GMT explained</a></li> <li><a href="/blog/time-zone-abbreviations-explained" style="display:inline-block;min-height:44px;min-width:44px;padding:8px 6px;line-height:1.2">Time zone abbreviations</a></li> <li><a href="/blog/half-hour-time-zones-why-they-exist" style="display:inline-block;min-height:44px;min-width:44px;padding:8px 6px;line-height:1.2">Half-hour time zones</a></li> <li><a href="/blog/cross-timezone-meeting-guide" style="display:inline-block;min-height:44px;min-width:44px;padding:8px 6px;line-height:1.2">Cross-timezone meeting guide</a></li>
-</ul>
-</aside><footer class="seo-footer">
-<nav aria-label="Footer navigation">
-<a href="/privacy">Privacy Policy</a>
-<a href="/about">About Us</a>
-<a href="/">World Time Sync</a>
-</nav>
-<p>© 2026 World Time Sync. All rights reserved.</p>
-</footer>
-</main>
-<script>
-(function() {
-    var cityOpts = [
-        {tz:"America/New_York",city:"New York"},{tz:"America/Los_Angeles",city:"Los Angeles"},
-        {tz:"America/Chicago",city:"Chicago"},{tz:"America/Denver",city:"Denver"},
-        {tz:"America/Toronto",city:"Toronto"},{tz:"America/Vancouver",city:"Vancouver"},
-        {tz:"America/Mexico_City",city:"Mexico City"},{tz:"America/Sao_Paulo",city:"São Paulo"},
-        {tz:"America/Argentina/Buenos_Aires",city:"Buenos Aires"},
-        {tz:"Europe/London",city:"London"},{tz:"Europe/Paris",city:"Paris"},
-        {tz:"Europe/Berlin",city:"Berlin"},{tz:"Europe/Rome",city:"Rome"},
-        {tz:"Europe/Madrid",city:"Madrid"},{tz:"Europe/Amsterdam",city:"Amsterdam"},
-        {tz:"Europe/Stockholm",city:"Stockholm"},{tz:"Europe/Warsaw",city:"Warsaw"},
-        {tz:"Europe/Moscow",city:"Moscow"},{tz:"Europe/Kiev",city:"Kyiv"},
-        {tz:"Europe/Istanbul",city:"Istanbul"},
-        {tz:"Africa/Cairo",city:"Cairo"},{tz:"Africa/Johannesburg",city:"Johannesburg"},
-        {tz:"Africa/Lagos",city:"Lagos"},
-        {tz:"Asia/Dubai",city:"Dubai"},{tz:"Asia/Riyadh",city:"Riyadh"},
-        {tz:"Asia/Tehran",city:"Tehran"},{tz:"Asia/Kolkata",city:"Mumbai"},
-        {tz:"Asia/Dhaka",city:"Dhaka"},{tz:"Asia/Karachi",city:"Karachi"},
-        {tz:"Asia/Shanghai",city:"Shanghai"},{tz:"Asia/Hong_Kong",city:"Hong Kong"},
-        {tz:"Asia/Singapore",city:"Singapore"},{tz:"Asia/Tokyo",city:"Tokyo"},
-        {tz:"Asia/Seoul",city:"Seoul"},{tz:"Asia/Bangkok",city:"Bangkok"},
-        {tz:"Asia/Jakarta",city:"Jakarta"},{tz:"Asia/Manila",city:"Manila"},
-        {tz:"Australia/Sydney",city:"Sydney"},{tz:"Australia/Melbourne",city:"Melbourne"},
-        {tz:"Australia/Brisbane",city:"Brisbane"},{tz:"Australia/Perth",city:"Perth"},
-        {tz:"Pacific/Auckland",city:"Auckland"},
-        {tz:"UTC",city:"UTC"},
-    ];
+            <!-- Converter Widget (Above Fold) -->
+            <section class="converter-widget" aria-label="Time zone converter">
+                <h2>Convert Time Between Cities</h2>
+                <div class="converter-form">
+                    <div class="form-row">
+                        <label for="tz-from">From City / Time Zone</label>
+                        <select id="tz-from" aria-label="Source time zone">
+                            <option value="America/New_York" selected>New York, USA (Eastern Time)</option>
+                            <option value="America/Los_Angeles">Los Angeles, USA (Pacific Time)</option>
+                            <option value="America/Chicago">Chicago, USA (Central Time)</option>
+                            <option value="America/Denver">Denver, USA (Mountain Time)</option>
+                            <option value="America/Toronto">Toronto, Canada (Eastern Time)</option>
+                            <option value="America/Vancouver">Vancouver, Canada (Pacific Time)</option>
+                            <option value="Europe/London">London, UK (GMT/BST)</option>
+                            <option value="Europe/Paris">Paris, France (CET/CEST)</option>
+                            <option value="Europe/Berlin">Berlin, Germany (CET/CEST)</option>
+                            <option value="Europe/Rome">Rome, Italy (CET/CEST)</option>
+                            <option value="Europe/Madrid">Madrid, Spain (CET/CEST)</option>
+                            <option value="Europe/Amsterdam">Amsterdam, Netherlands (CET/CEST)</option>
+                            <option value="Asia/Dubai">Dubai, UAE (GST)</option>
+                            <option value="Asia/Kolkata">Mumbai, India (IST)</option>
+                            <option value="Asia/Shanghai">Shanghai, China (CST)</option>
+                            <option value="Asia/Tokyo">Tokyo, Japan (JST)</option>
+                            <option value="Asia/Seoul">Seoul, South Korea (KST)</option>
+                            <option value="Asia/Singapore">Singapore (SGT)</option>
+                            <option value="Asia/Hong_Kong">Hong Kong (HKT)</option>
+                            <option value="Australia/Sydney">Sydney, Australia (AEDT/AEST)</option>
+                            <option value="Australia/Melbourne">Melbourne, Australia (AEDT/AEST)</option>
+                            <option value="Pacific/Auckland">Auckland, NZ (NZST/NZDT)</option>
+                            <option value="America/Sao_Paulo">São Paulo, Brazil (BRT)</option>
+                            <option value="America/Mexico_City">Mexico City, Mexico (CST/CDT)</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <label for="tz-to">To City / Time Zone</label>
+                        <select id="tz-to" aria-label="Target time zone">
+                            <option value="Europe/London">London, UK (GMT/BST)</option>
+                            <option value="America/New_York" selected>New York, USA (Eastern Time)</option>
+                            <option value="America/Los_Angeles">Los Angeles, USA (Pacific Time)</option>
+                            <option value="America/Chicago">Chicago, USA (Central Time)</option>
+                            <option value="America/Denver">Denver, USA (Mountain Time)</option>
+                            <option value="America/Toronto">Toronto, Canada (Eastern Time)</option>
+                            <option value="America/Vancouver">Vancouver, Canada (Pacific Time)</option>
+                            <option value="Europe/Paris">Paris, France (CET/CEST)</option>
+                            <option value="Europe/Berlin">Berlin, Germany (CET/CEST)</option>
+                            <option value="Europe/Rome">Rome, Italy (CET/CEST)</option>
+                            <option value="Europe/Madrid">Madrid, Spain (CET/CEST)</option>
+                            <option value="Europe/Amsterdam">Amsterdam, Netherlands (CET/CEST)</option>
+                            <option value="Asia/Dubai">Dubai, UAE (GST)</option>
+                            <option value="Asia/Kolkata">Mumbai, India (IST)</option>
+                            <option value="Asia/Shanghai">Shanghai, China (CST)</option>
+                            <option value="Asia/Tokyo">Tokyo, Japan (JST)</option>
+                            <option value="Asia/Seoul">Seoul, South Korea (KST)</option>
+                            <option value="Asia/Singapore">Singapore (SGT)</option>
+                            <option value="Asia/Hong_Kong">Hong Kong (HKT)</option>
+                            <option value="Australia/Sydney">Sydney, Australia (AEDT/AEST)</option>
+                            <option value="Australia/Melbourne">Melbourne, Australia (AEDT/AEST)</option>
+                            <option value="Pacific/Auckland">Auckland, NZ (NZST/NZDT)</option>
+                            <option value="America/Sao_Paulo">São Paulo, Brazil (BRT)</option>
+                            <option value="America/Mexico_City">Mexico City, Mexico (CST/CDT)</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <label for="conv-time">Time to Convert</label>
+                        <input type="time" id="conv-time" value="12:00" aria-label="Time to convert">
+                    </div>
+                    <button type="button" id="convert-btn" class="convert-btn">Convert Time</button>
+                </div>
+                <div class="converter-result" id="converter-result" aria-live="polite" style="display:none;">
+                    <span id="result-time"></span> in <span id="result-zone"></span>
+                    <span id="result-diff" style="margin-left: 12px; font-size: 0.9rem; color: #666;"></span>
+                </div>
+            </section>
 
-    function getOffsetMinutes(tz) {
-        try {
-            var d = new Date();
-            var utcStr = d.toLocaleString('en-US', {timeZone: 'UTC'});
-            var tzStr = d.toLocaleString('en-US', {timeZone: tz});
-            var utcDate = new Date(utcStr);
-            var tzDate = new Date(tzStr);
-            return (tzDate - utcDate) / 60000;
-        } catch(e) { return null; }
-    }
+            <style>
+                .converter-widget {
+                    background: linear-gradient(135deg, rgba(102,126,234,0.1) 0%, rgba(118,75,162,0.1) 100%);
+                    border: 1px solid rgba(102,126,234,0.2);
+                    border-radius: 12px;
+                    padding: 20px;
+                    margin: 20px 0;
+                }
+                .converter-widget h2 {
+                    margin: 0 0 16px;
+                    font-size: 1.1rem;
+                    color: #667eea;
+                }
+                .converter-form {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                    gap: 12px;
+                    align-items: end;
+                }
+                .form-row {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+                }
+                .form-row label {
+                    font-size: 0.75rem;
+                    color: #666;
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+                }
+                .form-row select, .form-row input {
+                    padding: 10px 12px;
+                    border: 1px solid #ddd;
+                    border-radius: 8px;
+                    font-size: 1rem;
+                    background: #fff;
+                }
+                .form-row select:focus, .form-row input:focus {
+                    outline: none;
+                    border-color: #667eea;
+                    box-shadow: 0 0 0 3px rgba(102,126,234,0.15);
+                }
+                .convert-btn {
+                    padding: 10px 20px;
+                    background: #667eea;
+                    color: #fff;
+                    border: none;
+                    border-radius: 8px;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: background 0.2s;
+                }
+                .convert-btn:hover {
+                    background: #5568d3;
+                }
+                .converter-result {
+                    margin-top: 16px;
+                    padding: 12px;
+                    background: #fff;
+                    border-radius: 8px;
+                    font-size: 1.1rem;
+                    font-weight: 600;
+                    color: #1a1a2e;
+                    text-align: center;
+                }
+                #result-time {
+                    color: #667eea;
+                }
+                @media (max-width: 600px) {
+                    .converter-form {
+                        grid-template-columns: 1fr;
+                    }
+                    .convert-btn {
+                        width: 100%;
+                        min-height: 48px;
+                    }
+                }
+            </style>
 
-    function formatTime(tz) {
-        try {
-            return new Intl.DateTimeFormat('en-US', {
-                timeZone: tz, hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true
-            }).format(new Date());
-        } catch(e) { return '—'; }
-    }
+            <script>
+            (function() {
+                var fromSelect = document.getElementById('tz-from');
+                var toSelect = document.getElementById('tz-to');
+                var timeInput = document.getElementById('conv-time');
+                var convertBtn = document.getElementById('convert-btn');
+                var resultDiv = document.getElementById('converter-result');
+                var resultTime = document.getElementById('result-time');
+                var resultZone = document.getElementById('result-zone');
+                var resultDiff = document.getElementById('result-diff');
 
-    function calcBusinessOverlap(offset1, offset2) {
-        // Business hours 9:00-17:00 local = 8 working hours
-        var startDate = new Date();
-        startDate.setUTCHours(0,0,0,0);
-        var list1 = [], list2 = [];
-        for (var h = 0; h < 24; h++) {
-            var local1 = ((h + offset1/60) % 24 + 24) % 24;
-            var local2 = ((h + offset2/60) % 24 + 24) % 24;
-            if (local1 >= 9 && local1 < 17) list1.push(h);
-            if (local2 >= 9 && local2 < 17) list2.push(h);
-        }
-        var overlap = list1.filter(function(h) { return list2.indexOf(h) >= 0; });
-        if (overlap.length === 0) return 'No overlapping business hours — consider async communication.';
-        var startHour = overlap[0];
-        var endHour = overlap[overlap.length-1] + 1;
-        return overlap.length + ' hours overlap: ' + startHour + ':00–' + endHour + ':00 UTC';
-    }
+                function convert() {
+                    var fromTz = fromSelect.value;
+                    var toTz = toSelect.value;
+                    var timeVal = timeInput.value;
 
-    function updateConverterTable(tz1, tz2, off1, off2) {
-        var diffMin = off2 - off1;
-        var diffHours = diffMin / 60;
-        var tbody = document.getElementById('converter-table-body');
-        if (!tbody) return;
-        
-        // Get city names from selects
-        var s1 = document.getElementById('city1');
-        var s2 = document.getElementById('city2');
-        var city1Name = s1.options[s1.selectedIndex].text;
-        var city2Name = s2.options[s2.selectedIndex].text;
-        
-        document.getElementById('ref-city').textContent = city1Name;
-        document.getElementById('target-city').textContent = city2Name;
-        
-        var rows = '';
-        for (var h = 0; h < 24; h += 3) {
-            var local1 = h;
-            var local2 = ((h + diffHours) % 24 + 24) % 24;
-            var dateShift = '';
-            if (local2 < h && diffHours > 0) dateShift = ' (next day)';
-            else if (local2 > h && diffHours < 0) dateShift = ' (prev day)';
-            
-            var time1 = (local1 < 10 ? '0' : '') + local1 + ':00';
-            var time2 = (local2 < 10 ? '0' : '') + Math.floor(local2) + ':' + (local2 % 1 * 60 === 0 ? '00' : '30');
-            
-            rows += '<tr><td>' + time1 + '</td><td>' + time2 + '</td><td>' + dateShift + '</td></tr>';
-        }
-        tbody.innerHTML = rows;
-    }
+                    if (!timeVal) return;
 
-    function update() {
-        var s1 = document.getElementById('city1');
-        var s2 = document.getElementById('city2');
-        var tz1 = s1.value, tz2 = s2.value;
-        
-        document.getElementById('city1-time').textContent = formatTime(tz1);
-        document.getElementById('city2-time').textContent = formatTime(tz2);
-        
-        var off1 = getOffsetMinutes(tz1);
-        var off2 = getOffsetMinutes(tz2);
-        if (off1 === null || off2 === null) return;
-        
-        var diffMin = off2 - off1;
-        var diffHours = diffMin / 60;
-        var sign = diffHours >= 0 ? '+' : '';
-        
-        document.getElementById('diff-badge').textContent = sign + diffHours + 'h difference';
-        document.getElementById('overlap-text').textContent = calcBusinessOverlap(off1, off2);
-        
-        updateConverterTable(tz1, tz2, off1, off2);
-    }
+                    var today = new Date();
+                    var dateStr = today.toISOString().split('T')[0];
+                    var dateTime = dateStr + 'T' + timeVal + ':00';
 
-    // Popular pairs
-    document.querySelectorAll('.pair-links a').forEach(function(el) {
-        el.addEventListener('click', function(e) {
-            e.preventDefault();
-            var c1 = el.getAttribute('data-c1');
-            var c2 = el.getAttribute('data-c2');
-            document.getElementById('city1').value = c1;
-            document.getElementById('city2').value = c2;
-            update();
-        });
-    });
+                    try {
+                        var sourceDate = new Date(dateTime);
+                        
+                        // Get source time zone offset
+                        var sourceOffset = new Intl.DateTimeFormat('en-US', {
+                            timeZone: fromTz,
+                            timeZoneName: 'shortOffset'
+                        }).formatToParts(sourceDate).find(p => p.type === 'timeZoneName')?.value || '';
+                        
+                        var targetStr = new Intl.DateTimeFormat('en-US', {
+                            timeZone: toTz,
+                            hour: '2-digit',
+                            minute: '2-digit',
+                            hour12: true,
+                            timeZoneName: 'short'
+                        }).format(sourceDate);
 
-    document.getElementById('city1').addEventListener('change', update);
-    document.getElementById('city2').addEventListener('change', update);
-    update();
-    setInterval(update, 1000);
-})();
+                        var targetOffset = new Intl.DateTimeFormat('en-US', {
+                            timeZone: toTz,
+                            timeZoneName: 'shortOffset'
+                        }).formatToParts(sourceDate).find(p => p.type === 'timeZoneName')?.value || '';
+
+                        var fromName = fromSelect.options[fromSelect.selectedIndex].text;
+                        var toName = toSelect.options[toSelect.selectedIndex].text;
+                        
+                        resultTime.textContent = targetStr;
+                        resultZone.textContent = toName;
+                        
+                        // Calculate difference
+                        var fromParts = new Intl.DateTimeFormat('en-US', {
+                            timeZone: fromTz,
+                            hour: '2-digit',
+                            minute: '2-digit',
+                            hour12: false
+                        }).formatToParts(sourceDate);
+                        var toParts = new Intl.DateTimeFormat('en-US', {
+                            timeZone: toTz,
+                            hour: '2-digit',
+                            minute: '2-digit',
+                            hour12: false
+                        }).formatToParts(sourceDate);
+                        
+                        var fromHour = parseInt(fromParts.find(p => p.type === 'hour').value);
+                        var fromMin = parseInt(fromParts.find(p => p.type === 'minute').value);
+                        var toHour = parseInt(toParts.find(p => p.type === 'hour').value);
+                        var toMin = parseInt(toParts.find(p => p.type === 'minute').value);
+                        
+                        var diffMinutes = (toHour * 60 + toMin) - (fromHour * 60 + fromMin);
+                        // Normalize to -12..+12 hours
+                        if (diffMinutes > 720) diffMinutes -= 1440;
+                        if (diffMinutes < -720) diffMinutes += 1440;
+                        
+                        var diffStr = '';
+                        if (diffMinutes !== 0) {
+                            var h = Math.floor(Math.abs(diffMinutes) / 60);
+                            var m = Math.abs(diffMinutes) % 60;
+                            var sign = diffMinutes > 0 ? '+' : '-';
+                            if (m === 0) {
+                                diffStr = sign + h + 'h';
+                            } else {
+                                diffStr = sign + h + 'h ' + m + 'm';
+                            }
+                            resultDiff.textContent = '(' + diffStr + ' from ' + fromName + ')';
+                        } else {
+                            resultDiff.textContent = '(Same time as ' + fromName + ')';
+                        }
+                        
+                        resultDiv.style.display = 'block';
+                    } catch (e) {
+                        resultTime.textContent = 'Error';
+                        resultZone.textContent = '';
+                        resultDiff.textContent = '';
+                        resultDiv.style.display = 'block';
+                    }
+                }
+
+                convertBtn.addEventListener('click', convert);
+                timeInput.addEventListener('change', convert);
+                fromSelect.addEventListener('change', convert);
+                toSelect.addEventListener('change', convert);
+
+                // Auto-convert on load
+                convert();
+            })();
+            </script>
+
+            <!-- Quick Reference: Popular Conversions -->
+            <section class="related-cities" aria-label="Popular time zone conversions">
+                <h2>Popular Conversions</h2>
+                <ul>
+                    <li><a href="/time-difference/new-york-london">New York → London</a> (5h difference)</li>
+                    <li><a href="/time-difference/los-angeles-london">Los Angeles → London</a> (8h difference)</li>
+                    <li><a href="/time-difference/new-york-tokyo">New York → Tokyo</a> (13-14h difference)</li>
+                    <li><a href="/time-difference/london-tokyo">London → Tokyo</a> (8-9h difference)</li>
+                    <li><a href="/time-difference/sydney-new-york">Sydney → New York</a> (14-16h difference)</li>
+                    <li><a href="/time-difference/dubai-london">Dubai → London</a> (3-4h difference)</li>
+                    <li><a href="/time-difference/mumbai-london">Mumbai → London</a> (4.5-5.5h difference)</li>
+                    <li><a href="/time-difference/singapore-new-york">Singapore → New York</a> (12-13h difference)</li>
+                </ul>
+            </section>
+
+            <!-- Time Zone Reference -->
+            <section class="info-card" aria-label="Time zone reference">
+                <h2>Major Time Zones Quick Reference</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px;">
+                    <div><strong>EST/EDT</strong> — New York, Toronto (UTC-5/-4)</div>
+                    <div><strong>CST/CDT</strong> — Chicago, Dallas (UTC-6/-5)</div>
+                    <div><strong>MST/MDT</strong> — Denver, Phoenix (UTC-7/-6)</div>
+                    <div><strong>PST/PDT</strong> — Los Angeles, Seattle (UTC-8/-7)</div>
+                    <div><strong>GMT/BST</strong> — London, Dublin (UTC+0/+1)</div>
+                    <div><strong>CET/CEST</strong> — Paris, Berlin, Rome (UTC+1/+2)</div>
+                    <div><strong>EET/EEST</strong> — Helsinki, Kyiv (UTC+2/+3)</div>
+                    <div><strong>MSK</strong> — Moscow (UTC+3)</div>
+                    <div><strong>GST</strong> — Dubai (UTC+4)</div>
+                    <div><strong>IST</strong> — Mumbai (UTC+5:30)</div>
+                    <div><strong>CST</strong> — Shanghai (UTC+8)</div>
+                    <div><strong>JST</strong> — Tokyo (UTC+9)</div>
+                    <div><strong>KST</strong> — Seoul (UTC+9)</div>
+                    <div><strong>AEST/AEDT</strong> — Sydney (UTC+10/+11)</div>
+                    <div><strong>NZST/NZDT</strong> — Auckland (UTC+12/+13)</div>
+                </div>
+            </section>
+
+            <!-- Meeting Planner Link -->
+            <section class="info-card" style="text-align:center;">
+                <h2>Schedule Meetings Across Time Zones</h2>
+                <p>Need to find the best meeting time for multiple participants? Use our <a href="/meeting-planner">Meeting Planner</a> — enter all participant cities and get optimal time slots instantly.</p>
+                <a href="/meeting-planner" style="display:inline-block;margin-top:12px;padding:12px 24px;background:#667eea;color:#fff;border-radius:8px;font-weight:600;text-decoration:none;">Open Meeting Planner →</a>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="faq-section" aria-label="Frequently asked questions">
+                <h2>Frequently Asked Questions</h2>
+                <h3>How do I convert time between two time zones?</h3>
+                <p>Use the converter above: select the source city/time zone, target city/time zone, enter the time to convert, and click Convert. The result shows instantly with automatic DST adjustments.</p>
+                <h3>Does this time zone converter handle daylight saving time?</h3>
+                <p>Yes, all conversions automatically account for Daylight Saving Time (DST) transitions in both source and target time zones. The converter uses the IANA time zone database for accuracy.</p>
+                <h3>Can I convert time for a specific date (not just now)?</h3>
+                <p>The converter uses today's date by default. For historical or future dates, use our <a href="/meeting-planner">Meeting Planner</a> which supports date-specific conversions across multiple cities.</p>
+                <h3>What cities and time zones are supported?</h3>
+                <p>700+ cities worldwide covering all IANA time zones. Search by city name (e.g., New York, London, Tokyo) or time zone abbreviation (EST, PST, CET, JST, IST).</p>
+                <h3>Is this time zone converter free?</h3>
+                <p>Yes, completely free. No registration required. Use it as often as you need for personal or business purposes.</p>
+            </section>
+        </div>
+        <footer class="seo-footer">
+            <nav aria-label="Footer navigation">
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/about">About Us</a>
+                <a href="/">World Time Sync</a>
+            </nav>
+            <p>&copy; 2026 World Time Sync. All rights reserved.</p>
+        </footer>
+    </main>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LBX0CDYSSV');
     </script>
-<style>
-        .calc-container{max-width:900px;margin:0 auto;padding:24px 16px;font-family:system-ui,-apple-system,sans-serif;color:#333}
-        .calc-container h1{font-size:2rem;margin:8px 0 4px;color:#1a1a2e}
-        .subtitle{color:#666;margin-bottom:24px;font-size:1rem;line-height:1.5}
-        .calc-row{display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap;margin-bottom:24px}
-        .calc-city{flex:1;min-width:240px}
-        .calc-city label{display:block;font-weight:600;margin-bottom:6px;font-size:.85rem;color:#555}
-        .calc-city select{width:100%;padding:10px 12px;border:2px solid #ddd;border-radius:8px;font-size:1rem;background:#fff;cursor:pointer}
-        .calc-city select:focus{border-color:#667eea;outline:none}
-        .city-time{margin-top:8px;font-size:1.3rem;font-weight:700;color:#667eea;font-variant-numeric:tabular-nums}
-        .calc-vs{font-size:1.2rem;font-weight:700;color:#999;padding-top:32px}
-        .result{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);border-radius:12px;padding:24px;color:#fff;margin-bottom:32px}
-        .diff-badge{font-size:2rem;font-weight:800;text-align:center;margin-bottom:16px}
-        .overlap-section{text-align:center}
-        .overlap-section h3{font-size:.9rem;opacity:.8;margin-bottom:4px}
-        .overlap-section p{font-size:1rem;margin:0}
-        
-        .converter-table-section{background:#fff;padding:20px;border-radius:12px;margin:16px 0;box-shadow:0 1px 3px rgba(0,0,0,.1)}
-        .converter-table-section h2{font-size:1.2rem;margin-top:0;color:#1a1a2e}
-        .converter-table-section p{font-size:.9rem;color:#555;margin-bottom:16px}
-        .table-wrapper{overflow-x:auto}
-        .converter-table{width:100%;border-collapse:collapse;font-size:.9rem}
-        .converter-table th,.converter-table td{padding:10px 12px;text-align:center;border-bottom:1px solid #e8ecf0}
-        .converter-table th{background:#667eea;color:#fff;font-weight:600}
-        .converter-table tr:hover td{background:#f8f9fa}
-        .converter-table td:first-child{font-weight:600;color:#667eea}
-        
-        .popular-pairs{margin-bottom:32px}
-        .popular-pairs h2{font-size:1.2rem;margin-bottom:8px;color:#1a1a2e}
-        .pair-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
-        .pair-links a{display:inline-block;padding:6px 14px;background:#f0f0f5;border-radius:20px;color:#667eea;text-decoration:none;font-size:.85rem;font-weight:500}
-        .pair-links a:hover{background:#667eea;color:#fff}
-        
-        .faq-section{background:#fff;padding:20px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.1)}
-        .faq-section h2{margin-top:0;font-size:1.2rem;color:#1a1a2e}
-        .faq-section h3{font-size:.95rem;margin:12px 0 4px;color:#0f3460}
-        .faq-section p{font-size:.9rem;color:#555;margin-bottom:8px;line-height:1.6}
-        
-        .seo-footer{text-align:center;padding:20px;margin-top:24px;border-top:1px solid #ccc;color:#555;font-size:.85rem}
-        .seo-footer a{margin:0 8px;color:#667eea;text-decoration:none}
-        .breadcrumb a{color:#667eea;text-decoration:none}
-        .skip-link{position:absolute;top:-40px;left:0;background:#667eea;color:#fff;padding:8px 16px;z-index:100}
-        
-        @media(max-width:600px){
-            .calc-row{flex-direction:column}
-            .calc-vs{padding-top:0}
-            .calc-container h1{font-size:1.5rem}
-        }
-    </style>
-<script>window.addEventListener('load',function(){
-        var ga=document.createElement('script');ga.async=true;ga.src='https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV';document.head.appendChild(ga);
-        var ga2=document.createElement('script');ga2.textContent='window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-LBX0CDYSSV");';document.head.appendChild(ga2);
-        var ads=document.createElement('script');ads.async=true;ads.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529';ads.crossOrigin='anonymous';document.head.appendChild(ads);
-    });</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>
+
+    <script>
+      window.addEventListener('load',function(){
+        var ahrefs=document.createElement('script');
+        ahrefs.async=true;
+        ahrefs.src='https://analytics.ahrefs.com/analytics.js';
+        ahrefs.setAttribute('data-key','hB1VYWuwb1i/f1d8re7P2A');
+        document.head.appendChild(ahrefs);
+      });
+    </script>
 </body>
 </html>
