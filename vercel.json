@@ -6,6 +6,10 @@
   "trailingSlash": false,
   "routes": [
     {
+      "src": "/(es|zh|ru|it|de|ja|fr|uk)/blog/(.+)",
+      "dest": "/$1/blog/$2"
+    },
+    {
       "src": "/(es|zh|ru|it|de|ja|fr|uk)/blog/(.+)\\.html$",
       "status": 301,
       "headers": {
