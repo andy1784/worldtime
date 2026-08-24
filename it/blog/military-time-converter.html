@@ -97,45 +97,7 @@ Now also need to translate any text inside <noscript>? <noscript><link rel="styl
 
 Now also need to translate any text inside <svg>? none.
 
-Now also need to translate any text inside JSON-LD? We must keep JSON-LD blocks exactly as-is, per rule. So we will not modify the content inside <script type="application/ld+json">.
-
-Now also need to translate any text inside <script> that is not JSON-LD? Eg the converter script has strings like "Military (HHMM):" inside label? Actually that's in HTML label, not script. The script has variable names, not visible.
-
-Now also need to translate any text inside <style>? none.
-
-Now we need to output the full HTML with translations.
-
-Let's go through the HTML and replace.
-
-Original:
-
-<!doctype html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <meta name="theme-color" content="#667eea">
-    <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk">
-    <title>Military Time Converter — 24-Hour Clock Chart & Zulu Time | World Time Sync</title>
-    <meta name="title" content="Military Time Converter — 24-Hour Clock Chart & Zulu Time | World Time Sync">
-    <meta name="description" content="Convert military time to standard time instantly. Full 24-hour chart plus Zulu (Z) time explained.">
-    <meta name="keywords" content="military time converter, military time chart, zulu time, 24 hour clock converter, what is 1700 military time">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="World Time Sync">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://worldtimessync.com/it/blog/military-time-converter.html">
-    <meta property="og:title" content="Military Time Converter — 24-Hour Clock Chart & Zulu Time | World Time Sync">
-    <meta property="og:description" content="Convert military time to standard time instantly. Full 24-hour chart plus Zulu (Z) time explained.">
-    <meta property="og:image" content="https://worldtimessync.com/og-image.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Military Time Converter — 24-Hour Clock Chart & Zulu Time | World Time Sync">
-    <link rel="canonical" href="https://worldtimessync.com/it/blog/military-time-converter.html">
-    <link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/it/blog/military-time-converter.html">
-    <link rel="preload" href="/assets/blog.css" as="style">
-<noscript><link rel="stylesheet" href="/assets/blog.css"></noscript>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="stylesheet" href="/assets/index-ufePLcBr.css">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>
+Now also need to translate any text inside JSON-LD? We must keep JSON-LD blocks exactly as-is, per rule. So we will not modify the content inside 
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
