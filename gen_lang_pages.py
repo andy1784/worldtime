@@ -13,7 +13,7 @@ for t in auth['credential_pool'].get('alibaba', []):
     if t.get('access_token','').startswith('sk-or'):
         TOK = t['access_token']; break
 assert TOK, "no openrouter token"
-MODEL = "openai/gpt-4o-mini"
+MODEL = "nvidia/nemotron-3-super-120b-a12b:free"
 LANGS = {
     'es': 'Spanish', 'zh': 'Chinese (Simplified)', 'ru': 'Russian',
     'it': 'Italian', 'de': 'German', 'ja': 'Japanese', 'fr': 'French', 'uk': 'Ukrainian',
