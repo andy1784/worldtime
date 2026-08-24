@@ -1,0 +1,553 @@
+We need to translate visible/user-facing text into Russian, preserving HTML tags, attributes, etc. Also need to translate JSON-LD content values (like headline, description, etc.) as they are inside JSON strings but they are user-facing? The rule says translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. JSON-LD blocks are not HTML tags but they are script type application/ld+json. The content inside is JSON strings; they are not directly visible but could be considered metadata. The rule says "Do NOT translate URLs, city/feature names that are proper nouns unless a natural localized form exists, UTC offsets, IANA timezone IDs, or code." JSON-LD values like "headline": "Moon Phase Today — Current Moon Phase & 2026 Calendar | World Time Sync" is user-facing? It's for search engines. Should we translate? The instruction says translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. JSON-LD is not a tag attribute but is inside a script tag. The content is not directly visible but could be considered metadata. Usually we would translate JSON-LD values as they are meant for SEO and should be in the page language. Since the page lang is ru, we should translate them. However the rule says "Keep ALL HTML tags, attributes, href/lang values, JSON-LD blocks, and CSS exactly as-is." Wait: It says keep JSON-LD blocks exactly as-is. That means we should NOT translate JSON-LD content. So we must leave JSON-LD blocks unchanged. Good.
+
+Thus we only translate visible text in HTML tags and attributes like title, meta name="title", meta name="description", meta name="keywords", og:title, og:description, twitter:title, etc. Also alt, aria-label, etc. Also text inside tags like <title>, <h1>, <p>, etc. Also inside <meta name="description" content="..."> we need to translate the content attribute value. Also inside <meta name="keywords" content="..."> translate keywords? Keywords are meta tags; they are user-facing? They are not visible but are attributes; rule says translate attributes like title/alt/aria-label/description/keywords/content. So we should translate the content of keywords meta tag. However keywords are often kept in English for SEO; but rule says translate. We'll follow.
+
+Also need to translate text inside <noscript>? It's a link tag inside noscript; the link tag has href and rel etc; no visible text.
+
+Also need to translate text inside <a> elements like "Skip to main content", "Home", "Blog", the breadcrumb items, etc.
+
+Also need to translate text inside <div class="blog-meta"> which currently shows garbled characters due to encoding issue: " August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide". Those are likely mojibake for Russian month? Actually original probably was "Август 10, 2026 · 6 мин чтения · Time Zones, Guide". But we see garbage due to UTF-8 misinterpretation. We need to translate the visible text; but we see garbage characters. We need to interpret what they should be. The page lang is ru, so likely the date is in Russian: "Август 10, 2026 · 6 мин чтения · Time Zones, Guide". The garbage "" corresponds to UTF-8 bytes for "Август"? Let's check: "Август" in UTF-8: D0 90 D0 B2 D0 B3 D1 83 D1 81 D1 82. If interpreted as windows-1251? Not sure. But we see four replacement characters. Actually "" is four replacement chars, each representing a byte that is invalid. So maybe the original was "Август". We'll need to output correct Russian translation. Since we must translate visible text, we should output proper Russian. So we need to replace that segment with proper Russian translation.
+
+Similarly " 6 min read" likely "6 мин чтения". And " Time Zones, Guide" likely "Time Zones, Guide" maybe unchanged? Actually "Time Zones" is a proper noun? It's a category; maybe keep as is? But we should translate "Guide" to "Руководство"? However the rule says translate only human-readable text; "Guide" is a word; we should translate. But "Time Zones" maybe keep as is because it's a proper noun? It's a section name; could be translated as "Часовые пояса". However the original likely had "Time Zones, Guide" as English labels; but since page is Russian, we should translate. However we need to see if there is a natural localized form. "Time Zones" could be translated as "Часовые пояса". "Guide" as "Руководство". We'll do that.
+
+Also need to translate other visible text: "Skip to main content", "Home", "Blog", breadcrumb current page text (which is same as h1). Also the h1 itself: "Moon Phase Today — Current Moon Phase & 2026 Calendar". Need to translate to Russian. Also the paragraph after h1: "The Moon goes through eight phases..." etc. Also the live widget headings: "Current Moon Phase". Also the table headings: Month, Full Moon Date (UTC), Traditional Name. Also month names (January etc) should stay as they are proper nouns? Month names are not proper nouns? They are common nouns but names of months; they could be translated to Russian. Usually we would translate month names to Russian. However the rule says do NOT translate city/feature names that are proper nouns unless a natural localized form exists. Month names are not proper nouns; they are common nouns; we should translate them. So "January" -> "Январь", etc. However the table also includes "May 1 &amp; May 31" etc. We need to translate month names and keep the day numbers. Also the ampersand entity should stay.
+
+Also the traditional names: "Wolf Moon", "Snow Moon", etc. Those are proper names? They are traditional names for full moons; could be translated? Usually they are kept in English but could be translated: "Волчья Луна", etc. However the rule says do NOT translate city/feature names that are proper nouns unless a natural localized form exists. These are not city/feature names; they are traditional names; we could translate. But maybe better to keep as is? The instruction says translate all visible/user-facing text. So we should translate them. However we need to consider if there is a natural localized form. There are Russian traditional names for full moons? Not sure. Might be "Волчья луна". We'll translate.
+
+Also the text after table: "How the Cycle Works" heading and paragraph. Also FAQ heading and the FAQ section placeholder {FAQ} - we need to translate the FAQ questions and answers? The FAQ is inside a script JSON-LD block; we must not translate JSON-LD blocks. However the visible FAQ section is marked with <div class="faq-section">{FAQ}</div>. The {FAQ} placeholder likely is replaced by JS; we should not translate placeholder. We'll leave as is.
+
+Also the paragraph after FAQ: "Check local times on our <a href="/">world clock</a> or plan outdoor shoots with <a href="/sunrise-sunset.html">sunrise &amp; sunset times</a>." Need to translate visible text: "Check local times on our", "world clock", "or plan outdoor shoots with", "sunrise &amp; sunset times". Also the link text inside <a> should be translated.
+
+Also footer links: "Privacy", "About", "Contact", "Terms". Also copyright text: "&copy; 2026 World Time Sync". The name "World Time Sync" is a brand; keep as is.
+
+Also need to translate the <title> tag content and meta tags.
+
+Also need to translate the <meta name="title" content="...">.
+
+Also <meta name="description" content="...">.
+
+Also <meta name="keywords" content="...">.
+
+Also Open Graph tags: og:title, og:description.
+
+Also Twitter: twitter:title.
+
+Also the link rel="canonical" href value stays same.
+
+Also the link rel="alternate" hreflang="x-default" href stays same.
+
+Also the <noscript><link rel="stylesheet" href="/assets/blog.css"></noscript> - no text.
+
+Also the <div class="app-loading-text">Loading World Time...</div> - translate.
+
+Also the <a href="#main-content" class="skip-link">Skip to main content</a> - translate.
+
+Also the aria-label on div id="root": aria-label="World Time Online Application" - translate? It's an attribute; we should translate per rule: translate attributes like title/alt/aria-label/description/keywords/content. So we need to translate that aria-label value.
+
+Also the aria-label on spinner: aria-label="Loading application" - translate.
+
+Also the aria-live attribute values are not text.
+
+Also the aria-busy attribute is boolean.
+
+Also the aria-current="page" on span - value is "page" not translate.
+
+Also the aria-label on <nav class="blog-breadcrumb" aria-label="Breadcrumb"> - translate.
+
+Also the aria-label on <a href="#main-content" class="skip-link">? No aria-label.
+
+Also the aria-label on <div class="app-loading-spinner" role="status" aria-label="Loading application"> - translate.
+
+Also the aria-label on <div id="root" role="application" aria-label="World Time Online Application"> - translate.
+
+Also the aria-label on <nav class="blog-breadcrumb" aria-label="Breadcrumb"> - translate.
+
+Also the aria-label on maybe other elements.
+
+Also the <meta name="theme-color" content="#667eea"> - content is a color, not translate.
+
+Also the <meta name="google-site-verification" content="..."> - not translate.
+
+Now we need to produce the full HTML with translated text.
+
+Let's go step by step.
+
+First, <title> tag: "Moon Phase Today — Current Moon Phase & 2026 Calendar | World Time Sync". Translate to Russian: "Фаза Луны сегодня — текущая фаза Луны и календарь 2026 | World Time Sync". Need to keep the brand unchanged. Use appropriate punctuation. The original uses em dash and ampersand. We'll keep similar: "Фаза Луны сегодня — текущая фаза Луны & 2026 календарь | World Time Sync"? Actually original: "Moon Phase Today — Current Moon Phase & 2026 Calendar | World Time Sync". We'll translate: "Фаза Луны сегодня — текущая фаза Луны & 2026 календарь | World Time Sync". Keep ampersand.
+
+But maybe better: "Фаза Луны сегодня — текущая фаза Луны & календарь 2026 | World Time Sync". We'll keep order similar: "Фаза Луны сегодня — текущая фаза Луны & 2026 календарь | World Time Sync". Good.
+
+Now meta name="title" content same as title.
+
+Meta name="description": "See today's moon phase, illumination percentage and the full 2026 lunar calendar with all full moon dates." Translate: "Посмотрите текущую фазу Луны, процент освещённости и полный лунный календарь 2026 со всеми датами полнолуния." Ensure proper Russian.
+
+Meta name="keywords": "moon phase today, current moon phase, moon phases 2026, full moon calendar 2026, next full moon date 2026". Translate each phrase: "фаза луны сегодня, текущая фаза луны, фазы луны 2026, лунный календарь 2026, дата следующего полнолуния 2026". Keep lowercase? We'll translate.
+
+Meta property="og:title": same as title.
+
+Meta property="og:description": same as description.
+
+Meta name="twitter:title": same as title.
+
+Now inside body:
+
+Skip link: "Skip to main content" -> "Перейти к основному содержимому".
+
+Aria-label on root: "World Time Online Application" -> translate: "Приложение World Time Онлайн"? Actually "World Time Online Application" could be "Приложение World Time Онлайн". Keep brand? "World Time" is part of brand; maybe keep as is but translate "Online Application". We'll translate: "Приложение World Time Онлайн". Or "World Time Онлайн приложение". We'll choose "Приложение World Time Онлайн".
+
+App loading text: "Loading World Time..." -> "Загрузка World Time...".
+
+Spinner aria-label: "Loading application" -> "Загрузка приложения".
+
+Nav aria-label: "Breadcrumb" -> "Хлебные крошки".
+
+Breadcrumb links: Home -> "Домашняя"? Usually "Главная". We'll use "Главная". Blog -> "Блог". Current page span: we will translate the h1 later.
+
+H1: "Moon Phase Today — Current Moon Phase & 2026 Calendar" -> translate as earlier: "Фаза Луны сегодня — текущая фаза Луны & 2026 календарь". Keep ampersand.
+
+Blog-meta div: we need to replace the garbled text. Let's produce proper Russian: "Август 10, 2026 · 6 мин чтения · Time Zones, Guide". But we need to translate "Time Zones, Guide". We'll translate: "Часовые пояса, Руководство". So final: "Август 10, 2026 · 6 мин чтения · Часовые пояса, Руководство". Use middle dot · as in original.
+
+Now paragraph after that: "The Moon goes through eight phases in a repeating cycle that lasts about 29.5 days. Below is a live look at where the cycle stands right now, plus every full moon date for 2026." Translate: "Луна проходит восемь фаз в повторяющемся цикле, который длится около 29,5 дней. Ниже представлен живой вид того, где находится цикл прямо сейчас, а также все даты полнолуния в 2026 году."
+
+Make sure to keep numbers and punctuation.
+
+Next heading: <h2>Today's Moon Phase (Live)</h2> -> translate: "Текущая фаза Луны (в реальном времени)". Could be "Сегодняшняя фаза Луны (в реальном времени)". We'll use "Текущая фаза Луны (в реальном времени)".
+
+Inside converter-widget: <h2>Current Moon Phase</h2> -> translate: "Текущая фаза Луны".
+
+Paragraph: "Illumination: <span id="mp-illum">…</span>% · Moon age: <span id="mp-age">…</span> days" -> translate: "Освещённость: <span id="mp-illum">…</span>% · Возраст Луны: <span id="mp-age">…</span> дней". Note the middle dot.
+
+Now the script inside is code; we leave as-is.
+
+Next heading: <h2>Full Moon Calendar 2026</h2> -> translate: "Лунный календарь полнолуния 2026". Or "Календарь полнолуния 2026". We'll use "Календарь полнолуния 2026".
+
+Table headers: <th>Month</th> -> "Месяц". <th>Full Moon Date (UTC)</th> -> "Дата полнолуния (UTC)". <th>Traditional Name</th> -> "Традиционное название".
+
+Now month names: need to translate each month to Russian.
+
+January -> Январь
+February -> Февраль
+March -> Март
+April -> Апрель
+May -> Май
+June -> Июнь
+July -> Июль
+August -> Август
+September -> Сентябрь
+October -> Октябрь
+November -> Ноябрь
+December -> Декабрь
+
+Day numbers stay same.
+
+For May row: "May 1 &amp; May 31" -> translate month: "Май 1 &amp; Май 31". Keep ampersand entity.
+
+Traditional names: translate each.
+
+Wolf Moon -> "Волчья Луна"
+Snow Moon -> "Снежная Луна"
+Worm Moon -> "Луна червей"? Actually "Worm Moon" translates to "Луна червей". We'll use "Луна червей".
+Pink Moon -> "Розовая Луна"
+Flower Moon -> "Цветочная Луна"
+Blue Moon -> "Голубая Луна" (but note "Blue Moon" is a term for second full moon; we could translate as "Голубая луна". However the traditional name for May's second full moon is "Blue Moon". We'll translate as "Голубая Луна". But the row has "Flower Moon / Blue Moon". We'll translate both: "Цветочная Луна / Голубая Луна". Keep slash.
+
+Strawberry Moon -> "Клубничная Луна"
+Buck Moon -> "Олений рог"? Actually "Buck Moon" is "Луна оленя". We'll translate as "Луна оленя".
+Sturgeon Moon -> "Осётровая Луна"
+Harvest Moon -> "Урожайная Луна"
+Hunter's Moon -> "Охотничья Луна"
+Beaver Moon -> "Бобровая Луна"
+Cold Moon -> "Холодная Луна"
+
+We'll keep the slash for May row.
+
+Now after table heading: <h2>How the Cycle Works</h2> -> translate: "Как работает цикл".
+
+Paragraph: "A synodic month runs 29 days, 12 hours and 44 minutes. Half the cycle the Moon waxes (grows from new to full), half it wanes. Because the calendar month averages 30.4 days, some months fit two full moons — the second one is called a blue moon. May 2026 is one of those months." Translate: "Синодический месяц длится 29 дней, 12 часов и 44 минуты. Половина цикла Луна растёт (от новолуния до полнолуния), половина — убывает. Поскольку средняя продолжительность календарного месяца составляет 30,4 дня, в некоторых месяцах помещаются два полнолуния — второе называется голубая луна. Май 2026 относится к таким месяцам."
+
+Note: "blue moon" we translated as "голубая луна". Keep lower case? We'll keep as "голубая луна". Also "May 2026" -> "Май 2026".
+
+Next heading: <h2>Frequently Asked Questions</h2> -> translate: "Часто задаваемые вопросы".
+
+Div class="faq-section": {FAQ} placeholder; we leave as is.
+
+Paragraph after: "Check local times on our <a href="/">world clock</a> or plan outdoor shoots with <a href="/sunrise-sunset.html">sunrise &amp; sunset times</a>." Translate: "Проверьте местное время на наших <a href="/">мировых часах</a> или спланируйте съёмки на открытом воздухе с помощью <a href="/sunset-sunrise.html">времени восхода и заката</a>." Wait we need to keep href values unchanged. The link text should be translated. So "world clock" -> "мировые часы". "sunrise &amp; sunset times" -> "время восхода и заката". Keep ampersand entity.
+
+Now footer: links: Privacy -> "Конфиденциальность". About -> "О нас". Contact -> "Контакты". Terms -> "Условия". Copyright: "&copy; 2026 World Time Sync" -> keep brand, maybe add Russian? Usually keep as is. We'll leave "&copy; 2026 World Time Sync". No translation needed.
+
+Now also need to translate any other visible text: The <meta name="author" content="World Time Sync"> - content is brand; keep.
+
+Also <meta name="author" content="World Time Sync"> - not translate.
+
+Also <meta name="theme-color" content="#667eea"> - not translate.
+
+Also <meta name="google-site-verification" content="..."> - not translate.
+
+Also <link rel="icon" type="image/svg+xml" href="/favicon.svg"> - not translate.
+
+Also <link rel="preload" href="/assets/blog.css" as="style"> - not translate.
+
+Also <noscript><link rel="stylesheet" href="/assets/blog.css"></noscript> - not translate.
+
+Also the script tags content (JSON-LD) we keep as-is.
+
+Also the <div class="app-loading" aria-busy="true" aria-live="polite"> - attributes not translate.
+
+Also the <p class="app-loading-text">Loading World Time...</p> we translated.
+
+Also the <div class="app-loading-spinner" role="status" aria-label="Loading application"> - we translated aria-label.
+
+Also the <a href="#main-content" class="skip-link">Skip to main content</a> translated.
+
+Also the <nav class="blog-breadcrumb" aria-label="Breadcrumb"> - we translated aria-label.
+
+Also the <span aria-current="page">Moon Phase Today — Current Moon Phase & 2026 Calendar</span> - we need to translate the text inside span (the current page label). It currently duplicates h1. We'll translate same as h1: "Фаза Луны сегодня — текущая фаза Луны & 2026 календарь". Keep aria-current="page".
+
+Also the <a href="/">Home</a> in breadcrumb: we translated to "Главная". Also <a href="/#blog">Blog</a> -> "Блог". The href "/#blog" stays.
+
+Now also need to translate any other attributes like title on any tags? Not present.
+
+Now also need to translate the text inside the <script> that is not JSON-LD? There's a script with the live calculator; we leave as-is.
+
+Also there is a script that hides .blog-wrap; we leave.
+
+Also the script for ahrefs; leave.
+
+Now also need to translate the text inside the <meta name="description" content="..."> we already did.
+
+Also the <meta name="keywords" content="..."> we did.
+
+Now also need to translate the <meta property="og:description" content="..."> we did.
+
+Now also need to translate the <meta name="twitter:title" content="..."> we did.
+
+Now also need to translate the <meta name="title" content="..."> we did.
+
+Now also need to translate the <meta property="og:title" content="..."> we did.
+
+Now also need to translate the <meta name="author" content="World Time Sync"> - keep.
+
+Now also need to translate the <meta name="theme-color" content="#667eea"> - keep.
+
+Now also need to translate the <meta name="google-site-verification" content="..."> - keep.
+
+Now also need to translate the <link rel="canonical" href="..."> - keep.
+
+Now also need to translate the <link rel="alternate" hreflang="x-default" href="..."> - keep.
+
+Now also need to translate the <link rel="preload" href="/assets/blog.css" as="style"> - keep.
+
+Now also need to translate the <noscript><link rel="stylesheet" href="/assets/blog.css"></noscript> - keep.
+
+Now also need to translate the <link rel="icon" type="image/svg+xml" href="/favicon.svg"> - keep.
+
+Now also need to translate the <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script> - keep.
+
+Now also need to translate the <script> block with gtag - keep.
+
+Now also need to translate the <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script> - keep.
+
+Now also need to translate the <script type="module" src="/assets/index-Dd7au40z.js" async></script> - keep.
+
+Now also need to translate the <script> that hides .blog-wrap - keep.
+
+Now also need to translate the <script> for ahrefs - keep.
+
+Now also need to ensure we didn't miss any visible text: The <div class="blog-meta"> we replaced.
+
+Also the <p> after the meta: we translated.
+
+Also the <h2>Today's Moon Phase (Live)</h2> we translated.
+
+Also the <div class="converter-widget"> inner h2 we translated.
+
+Also the p inside we translated.
+
+Also the <h2>Full Moon Calendar 2026</h2> we translated.
+
+Also the <h2>How the Cycle Works</h2> we translated.
+
+Also the <p> after that we translated.
+
+Also the <h2>Frequently Asked Questions</h2> we translated.
+
+Also the <div class="faq-section">{FAQ}</div> we keep placeholder.
+
+Also the <p> after FAQ we translated.
+
+Also the <footer> links we translated.
+
+Also the <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p> we keep.
+
+Now also need to translate any text inside <title> we did.
+
+Now also need to translate any text inside <meta name="description"> we did.
+
+Now also need to translate any text inside <meta name="keywords"> we did.
+
+Now also need to translate any text inside <meta property="og:title"> we did.
+
+Now also need to translate any text inside <meta property="og:description"> we did.
+
+Now also need to translate any text inside <meta name="twitter:title"> we did.
+
+Now also need to translate any text inside <meta name="author"> - keep brand.
+
+Now also need to translate any text inside <meta name="publisher">? Not present.
+
+Now also need to translate any text inside <link rel="alternate" hreflang="x-default" href="..."> - not.
+
+Now also need to translate any text inside <link rel="canonical"> - not.
+
+Now also need to translate any text inside <link rel="preload"> - not.
+
+Now also need to translate any text inside <noscript> link - not.
+
+Now also need to translate any text inside <link rel="icon"> - not.
+
+Now also need to translate any text inside <script type="application/ld+json"> - we keep as-is per rule.
+
+Now also need to translate any text inside <script> that is not JSON-LD but contains visible strings? The script with live calculator contains strings like "Calculating…" inside the p id="mp-name". That's set via JS; the initial text is "Calculating…". That is visible text before script runs. Should we translate that? It's inside the HTML as initial content of <p id="mp-name">Calculating…</p>. Yes, that is visible text. We need to translate "Calculating…" to Russian: "Вычисляется…" or "Рассчитывается…". We'll translate to "Вычисляется…". Also the p contains that text; we need to translate it.
+
+Also the <p> inside converter-widget: "Illumination: <span id="mp-illum">…</span>% · Moon age: <span id="mp-age">…</span> days" we already translated the surrounding text.
+
+Also the script sets values; we leave script unchanged.
+
+Also there is a <p> inside the app-loading div: we translated.
+
+Also there is a <p> inside the blog-meta we replaced.
+
+Also there is a <p> after the meta we translated.
+
+Also there is a <p> after the FAQ we translated.
+
+Also there is a <p> inside the converter-widget we translated.
+
+Also there is a <p> inside the app-loading we translated.
+
+Also there is a <p> inside the blog-meta we replaced.
+
+Now also need to translate any text inside <th> elements we did.
+
+Also need to translate any text inside <td> elements: month names we translated, day numbers unchanged, traditional names we translated.
+
+Also need to translate any text inside <caption>? none.
+
+Now also need to translate any text inside <label>? none.
+
+Now also need to translate any text inside <button>? none.
+
+Now also need to translate any text inside <option>? none.
+
+Now also need to translate any text inside <legend>? none.
+
+Now also need to translate any text inside <figcaption>? none.
+
+Now also need to translate any text inside <cite>? none.
+
+Now also need to translate any text inside <abbr>? none.
+
+Now also need to translate any text inside <dfn>? none.
+
+Now also need to translate any text inside <kbd>? none.
+
+Now also need to translate any text inside <samp>? none.
+
+Now also need to translate any text inside <var>? none.
+
+Now also need to translate any text inside <time>? none.
+
+Now also need to translate any text inside <data>? none.
+
+Now also need to translate any text inside <output>? none.
+
+Now also need to translate any text inside <progress>? none.
+
+Now also need to translate any text inside <meter>? none.
+
+Now also need to translate any text inside <details>? none.
+
+Now also need to translate any text inside <summary>? none.
+
+Now also need to translate any text inside <dialog>? none.
+
+Now also need to translate any text inside <menu>? none.
+
+Now also need to translate any text inside <menuitem>? none.
+
+Now also need to translate any text inside <slot>? none.
+
+Now also need to translate any text inside <template>? none.
+
+Now also need to translate any text inside <canvas>? none.
+
+Now also need to translate any text inside <svg>? none.
+
+Now also need to translate any text inside <math>? none.
+
+Now also need to translate any text inside <object>? none.
+
+Now also need to translate any text inside <embed>? none.
+
+Now also need to translate any text inside <iframe>? none.
+
+Now also need to translate any text inside <frame>? none.
+
+Now also need to translate any text inside <frameset>? none.
+
+Now also need to translate any text inside <noframes>? none.
+
+Now also need to translate any text inside <noscript>? we already have link only.
+
+Now also need to translate any text inside <script>? we keep as-is except we already translated the initial text in p.
+
+Now also need to translate any text inside <style>? none.
+
+Now also need to translate any text inside <comment>? none.
+
+Now also need to translate any text inside <del>? none.
+
+Now also need to translate any text inside <ins>? none.
+
+Now also need to translate any text inside <mark>? none.
+
+Now also need to translate any text inside <small>? none.
+
+Now also need to translate any text inside <sub>? none.
+
+Now also need to translate any text inside <sup>? none.
+
+Now also need to translate any text inside <b>? none.
+
+Now also need to translate any text inside <i>? none.
+
+Now also need to translate any text inside <u>? none.
+
+Now also need to translate any text inside <strong>? none.
+
+Now also need to translate any text inside <em>? none.
+
+Now also need to translate any text inside <code>? none.
+
+Now also need to translate any text inside <pre>? none.
+
+Now also need to translate any text inside <blockquote>? none.
+
+Now also need to translate any text inside <q>? none.
+
+Now also need to translate any text inside <cite>? none.
+
+Now also need to translate any text inside <bdi>? none.
+
+Now also need to translate any text inside <bdo>? none.
+
+Now also need to translate any text inside <ruby>? none.
+
+Now also need to translate any text inside <rt>? none.
+
+Now also need to translate any text inside <rp>? none.
+
+Now also need to translate any text inside <wbr>? none.
+
+Now also need to translate any text inside <track>? none.
+
+Now also need to translate any text inside <source>? none.
+
+Now also need to translate any text inside <img> alt attributes? none present.
+
+Now also need to translate any text inside <area> alt? none.
+
+Now also need to translate any text inside <input> placeholder? none.
+
+Now also need to translate any text inside <button> value? none.
+
+Now also need to translate any text inside <label> for? none.
+
+Now also need to translate any text inside <legend>? none.
+
+Now also need to translate any text inside <optgroup> label? none.
+
+Now also need to translate any text inside <option> label? none.
+
+Now also need to translate any text inside <select> size? none.
+
+Now also need to translate any text inside <textarea> placeholder? none.
+
+Now also need to translate any text inside <keygen>? none.
+
+Now also need to translate any text inside <output>? none.
+
+Now also need to translate any text inside <progress>? none.
+
+Now also need to translate any text inside <meter>? none.
+
+Now also need to translate any text inside <datalist> options? none.
+
+Now also need to translate any text inside <details> summary? none.
+
+Now also need to translate any text inside <dialog>? none.
+
+Now also need to translate any text inside <menu> label? none.
+
+Now also need to translate any text inside <menuitem> label? none.
+
+Now also need to translate any text inside <slot> name? none.
+
+Now also need to translate any text inside <template>? none.
+
+Now also need to translate any text inside <canvas>? none.
+
+Now also need to translate any text inside <svg>? none.
+
+Now also need to translate any text inside <math>? none.
+
+Now also need to translate any text inside <object>? none.
+
+Now also need to translate any text inside <embed>? none.
+
+Now also need to translate any text inside <iframe>? none.
+
+Now also need to translate any text inside <frame>? none.
+
+Now also need to translate any text inside <frameset>? none.
+
+Now also need to translate any text inside <noframes>? none.
+
+Now also need to translate any text inside <noscript>? we have link only.
+
+Now also need to translate any text inside <script>? we keep.
+
+Now also need to translate any text inside <style>? none.
+
+Now also need to translate any text inside <comment>? none.
+
+Now also need to translate any text inside <del>? none.
+
+Now also need to translate any text inside <ins>? none.
+
+Now also need to translate any text inside <mark>? none.
+
+Now also need to translate any text inside <small>? none.
+
+Now also need to translate any text inside <sub>? none.
+
+Now also need to translate any text inside <sup>? none.
+
+Now also need to translate any text inside <b>? none.
+
+Now also need to translate any text inside <i>? none.
+
+Now also need to translate any text inside <u>? none.
+
+Now also need to translate any text inside <strong>? none.
+
+Now also need to translate any text inside <em>? none.
+
+Now also need to translate any text inside <code>? none.
+
+Now also need to translate any text inside <pre>? none.
+
+Now also need to translate any text inside <blockquote>? none.
+
+Now also need to translate any text inside <q>? none.
+
+Now also need to translate any text inside <cite

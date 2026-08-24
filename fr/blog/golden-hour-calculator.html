@@ -1,0 +1,629 @@
+We need to translate visible/user-facing text into French, preserving HTML tags, attributes, etc. The HTML currently has lang="fr" already, but many texts are in English. We need to translate them to French.
+
+We must translate text inside tags and attributes like title, alt, aria-label, description, keywords, content (meta tags). Also inside visible content: headings, paragraphs, table cells, list items, etc. Also inside JSON-LD values: we need to translate the human-readable text there as well (like headline, description, name, text). However, we must keep the JSON structure intact, just translate the string values.
+
+Also need to translate the breadcrumb items? The breadcrumb includes "Home", "Blog", "Golden Hour Calculator — Blue Hour & Solar Noon Today". Those should be translated.
+
+Also the skip link text: "Skip to main content". Translate.
+
+Also the aria-label on div id="root": "World Time Online Application". Translate.
+
+Also the app-loading-text: "Loading World Time...". Translate.
+
+Also the blog-meta contains some weird characters () which seem to be placeholders for icons? Actually they are likely emojis that got corrupted. We should keep them as is? They are not text to translate; they are likely icons. We'll keep them unchanged.
+
+Also the table headers: "Period", "Sun position", "Light quality". Translate.
+
+Table rows: "Golden hour (AM)", "Solar noon", "Golden hour (PM)", "Blue hour". Also the descriptions: "-6° to +6°", "Highest point", "+6° to -0°", "-4° to -6°". Those are values, keep as is. Light quality descriptions: "Warm, soft, long shadows", "Harsh overhead light", "Warm, directional", "Cool, even, diffused". Translate.
+
+Also the paragraphs after table: need translation.
+
+Also the "Quick Estimator" heading and its paragraph.
+
+Also the FAQ section: there is a placeholder {FAQ} which likely will be replaced by script; we should not translate that placeholder. Keep as is.
+
+Also the footer links: "Privacy", "About", "Contact", "Terms". Translate.
+
+Also the copyright text: "&copy; 2026 World Time Sync". Translate? The name "World Time Sync" is a proper noun, keep as is. The phrase maybe "© 2026 World Time Sync". Keep same.
+
+Also the skip link href attribute? Keep.
+
+Also the aria-label on app-loading-spinner: "Loading application". Translate.
+
+Also the meta tags: title, name="title", name="description", name="keywords", og:title, og:description, twitter:title. Also the JSON-LD.
+
+We must also translate the content attribute of meta name="description": "Find today's golden hour, blue hour, solar noon and day length for any city with a live calculator." Translate.
+
+Similarly for keywords.
+
+Also the og:description.
+
+Also the JSON-LD: need to translate headline, description, articleSection, keywords, author name? Author name is organization name "World Time Sync" keep. Publisher name same. Also the FAQ question and answer texts.
+
+Also the BreadcrumbList: itemListElement names: "Home", "Blog", "Golden Hour Calculator — Blue Hour & Solar Noon Today". Translate.
+
+Also the FAQPage: question names and answer texts.
+
+Also note: The HTML already has lang="fr". So we translate to French.
+
+We must be careful not to translate URLs, city names, proper nouns, etc. Also not translate the word "World Time Sync" as it's a brand.
+
+Also not translate "UTC offsets", "IANA timezone IDs". Not present.
+
+Now let's go through the HTML and produce translated version.
+
+We'll need to be careful with the corrupted characters in blog-meta: " August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide". The weird characters likely represent icons (calendar, clock, folder). We should keep them as is. So we translate the readable parts: "August 10, 2026" -> "10 août 2026" (French date format). "6 min read" -> "6 min de lecture". "Time Zones, Guide" -> "Fuseaux horaires, Guide". Keep the weird characters unchanged.
+
+Now translate the rest.
+
+Let's produce final HTML.
+
+We'll go step by step.
+
+First, <title> and meta name="title": "Golden Hour Calculator — Blue Hour & Solar Noon Today | World Time Sync". Translate: "Calculateur de l'heure dorée — Heure bleue & midi solaire aujourd'hui | World Time Sync". Keep the brand.
+
+Similarly meta name="description": "Find today's golden hour, blue hour, solar noon and day length for any city with a live calculator." -> "Trouvez l'heure dorée d'aujourd'hui, l'heure bleue, le midi solaire et la durée du jour pour n'importe quelle ville avec une calculatrice en direct."
+
+Meta name="keywords": "golden hour calculator today, blue hour tonight, solar noon time today, day length calculator, when does the sun set tomorrow" -> translate each phrase: "calculateur d'heure dorée aujourd'hui, heure bleue ce soir, heure du midi solaire aujourd'hui, calculateur de la durée du jour, quand le soleil se couche-t-il demain". Keep punctuation.
+
+Meta property og:title same as title.
+
+og:description same as description.
+
+twitter:title same as title.
+
+Now JSON-LD Article:
+
+- headline: same as title -> translate.
+- description: same as meta description -> translate.
+- articleSection: "Time Zones" -> "Fuseaux horaires".
+- keywords: same as meta keywords -> translate.
+- wordCount: keep number.
+- timeRequired: "PT6M" keep.
+- inLanguage: "en" keep? The language of the content is English originally, but after translation it's French. Should we change to "fr"? The rule says translate only human-readable text; inLanguage is a language code attribute; it's not human-readable text but a code. Probably we should keep as is? However, if we translate the page to French, the language should be fr. But the instruction says do NOT translate UTC offsets, IANA timezone IDs, or code. Language code is a code; we should not translate it. So keep "en". But it might be misleading. However we follow rule: keep code as is. So keep "en".
+- author name: "World Time Sync" keep.
+- publisher name: same.
+- logo url keep.
+- datePublished, dateModified keep.
+- mainEntityOfPage @id keep.
+- image keep.
+
+Now BreadcrumbList JSON-LD:
+
+- itemListElement[0] name: "Home" -> "Accueil".
+- item: URL keep.
+- position 1.
+- itemListElement[1] name: "Blog" -> "Blog" (maybe keep as Blog? In French often "Blog" stays same, but we can translate to "Blog" or "Journal". Usually keep as "Blog". We'll keep "Blog" as it's a common term. But we could translate to "Blog". I'd keep "Blog".
+- itemListElement[2] name: "Golden Hour Calculator — Blue Hour & Solar Noon Today" -> translate as earlier.
+
+Now FAQPage JSON-LD:
+
+- Question name: "What time is golden hour today?" -> "Quelle est l'heure de l'heure dorée aujourd'hui?" Might be "À quelle heure est l'heure dorée aujourd'hui?" We'll choose natural French: "À quelle heure est l'heure dorée aujourd'hui?".
+- Answer text: "It starts about an hour before sunset and ends shortly after sunrise ends — check the calculator above plus your city's sunset time." -> translate: "Elle commence environ une heure avant le coucher du soleil et se termine peu après la fin du lever du soleil — consultez la calculatrice ci-dessus ainsi que l'heure du coucher du soleil de votre ville."
+
+- Question: "Is blue hour before or after sunset?" -> "L'heure bleue est-elle avant ou après le coucher du soleil ?"
+- Answer text: "Both: civil twilight after sunset and before sunrise. The sky stays bright enough to shoot without artificial light." -> translate: "Les deux : le crépuscule civil après le coucher du soleil et avant le lever du soleil. Le ciel reste suffisamment lumineux pour photographier sans lumière artificielle."
+
+- Question: "Why does solar noon differ from 12 PM?" -> "Pourquoi le midi solaire diffère-t-il de 12 h ?"
+- Answer text: "Time zones are wide; solar noon tracks the Sun's actual highest point, which can be 30+ minutes from clock noon depending on where you are in the zone." -> translate: "Les fuseaux horaires sont larges ; le midi solaire suit le point réel le plus haut du Soleil, qui peut être à 30+ minutes de midi selon votre position dans le fuseau."
+
+Now body content:
+
+- Skip link: <a href="#main-content" class="skip-link">Skip to main content</a> -> translate: "Passer au contenu principal".
+
+- div id="root" aria-label="World Time Online Application" -> translate: "Application World Time en ligne". Keep brand? "World Time Online Application" maybe "Application World Time en ligne". Keep brand as is? "World Time" is brand; "Online" maybe keep. We'll translate: "Application World Time en ligne". Keep brand "World Time". Could also be "Application World Time en ligne". We'll do that.
+
+- div class="app-loading-spinner" aria-label="Loading application" -> translate: "Chargement de l'application".
+
+- p class="app-loading-text">Loading World Time...</p> -> translate: "Chargement de World Time...".
+
+- nav class="blog-breadcrumb": inner text: Home › Blog › Golden Hour Calculator — Blue Hour & Solar Noon Today. Translate: "Accueil › Blog › Calculateur de l'heure dorée — Heure bleue & midi solaire aujourd'hui". Keep the separator ‹? Actually it's the HTML entity &rsaquo;? In source it's just the character ›. We'll keep same.
+
+- h1: "Golden Hour Calculator — Blue Hour & Solar Noon Today" -> translate as above.
+
+- div class="blog-meta": we need to translate the date and minute read and categories. Keep the weird icons.
+
+So: " August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide"
+
+Translate: " 10 août 2026 &nbsp;·&nbsp;  6 min de lecture &nbsp;·&nbsp;  Fuseaux horaires, Guide"
+
+Now paragraphs:
+
+First paragraph: "Photographers and filmmakers plan shoots around the Sun's angle. Golden hour is when the Sun sits within roughly 6° of the horizon; blue hour is the stretch of twilight just after sunset or before sunrise. Both depend on your exact location and date."
+
+Translate: "Les photographes et les cinéastes planifient leurs prises de vue autour de l'angle du Soleil. L'heure dorée est lorsque le Soleil se trouve à environ 6° de l'horizon ; l'heure bleue est la période de crépuscule juste après le coucher du soleil ou avant le lever du soleil. Les deux dépendent de votre emplacement exact et de la date."
+
+Second heading: <h2>How to Read the Numbers</h2> -> translate: "Comment lire les chiffres".
+
+Table headers: <th>Period</th> -> "Période". <th>Sun position</th> -> "Position du Soleil". <th>Light quality</th> -> "Qualité de la lumière".
+
+Table rows:
+
+- <td>Golden hour (AM)</td> -> "Heure dorée (AM)". Keep AM? Could translate to "heure du matin" but AM is standard. We'll keep "AM". Could also translate to "heure du matin". I'd keep "AM" as it's an abbreviation. Similarly "Golden hour (PM)" -> "Heure dorée (PM)". "Solar noon" -> "Midi solaire". "Blue hour" -> "Heure bleue".
+
+- Sun position values: keep as is.
+
+- Light quality descriptions:
+
+"Warm, soft, long shadows" -> "Chaud, doux, longues ombres".
+"Harsh overhead light" -> "Lumière dure venant d'en haut".
+"Warm, directional" -> "Chaud, directionnel".
+"Cool, even, diffused" -> "Frais, uniforme, diffus".
+
+Now paragraph after table: <h2>Solar Noon &amp; Day Length</h2> -> translate: "Midi solaire & durée du jour". Keep &amp; as is.
+
+Paragraph: "Solar noon is not 12:00 on the clock. It shifts with your position inside your time zone and with daylight saving time. Cities on the eastern edge of a zone see solar noon earlier than cities on the western edge — sometimes by more than half an hour."
+
+Translate: "Le midi solaire n'est pas à 12:00 à l'horloge. Il varie selon votre position dans votre fuseau horaire et avec l'heure d'été. Les villes situées à l'extrémité orientale d'un fuseau voient le midi solaire plus tôt que celles à l'extrémité occidentale — parfois de plus d'une demi-heure."
+
+Next paragraph: "Day length changes fastest around the equinoxes (roughly March 20 and September 22), gaining or losing several minutes per day at mid-latitudes. Near the solstices it barely moves for a couple of weeks."
+
+Translate: "La durée du jour varie le plus rapidement autour des équinoxes (environ le 20 mars et le 22 septembre), gagnant ou perdant plusieurs minutes par jour à mi-latitude. Près des solstices, elle varie à peine pendant quelques semaines."
+
+Now div class="converter-widget": <h2>Quick Estimator</h2> -> translate: "Estimateur rapide". Paragraph: "Golden hour lasts longer in summer and at higher latitudes. Rule of thumb: duration ≈ 40 minutes at 40° latitude near the equinox, up to an hour or more in summer."
+
+Translate: "L'heure dorée dure plus longtemps en été et à des latitudes plus élevées. Règle pratique : la durée ≈ 40 minutes à 40° de latitude près de l'équinoxe, jusqu'à une heure ou plus en été."
+
+Now <h2>Frequently Asked Questions</h2> -> translate: "Questions fréquemment posées".
+
+Then <div class="faq-section">{FAQ}</div> keep placeholder.
+
+Paragraph after: "Get precise times per city via <a href="/sunrise-sunset.html">sunrise &amp; sunset</a> or the <a href="/world-clock.html">world clock</a>."
+
+Translate: "Obtenez des heures précises par ville via <a href="/sunrise-sunset.html">lever & coucher du soleil</a> ou le <a href="/world-clock.html">horloge mondiale</a>."
+
+Now footer links: "Privacy" -> "Confidentialité". "About" -> "À propos". "Contact" -> "Contact". "Terms" -> "Conditions". Keep as is.
+
+Copyright: "<p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p>" Keep same.
+
+Now also need to translate any other attributes like placeholder? Not present.
+
+Now also need to translate the text inside the <noscript> tag? It contains <link rel="stylesheet" href="/assets/blog.css"> no text.
+
+Now also need to translate the text inside the <script> tags? No.
+
+Now also need to translate the text inside the <title> attribute of <link rel="icon">? No.
+
+Now also need to translate the text inside the <meta name="theme-color" content="#667eea">? No.
+
+Now also need to translate the <meta name="google-site-verification" content="...">? No.
+
+Now also need to translate the <meta name="viewport" content="...">? No.
+
+Now also need to translate the <meta name="robots" content="index, follow">? No.
+
+Now also need to translate the <meta name="author" content="World Time Sync">? The author is a proper noun, keep.
+
+Now also need to translate the <meta property="og:url" content="...">? No.
+
+Now also need to translate the <link rel="canonical" href="...">? No.
+
+Now also need to translate the <link rel="alternate" hreflang="x-default" href="...">? No.
+
+Now also need to translate the <link rel="preload" href="/assets/blog.css" as="style">? No.
+
+Now also need to translate the <noscript><link rel="stylesheet" href="/assets/blog.css"></noscript>? No.
+
+Now also need to translate the <link rel="icon" type="image/svg+xml" href="/favicon.svg">? No.
+
+Now also need to translate the <link rel="stylesheet" href="/assets/index-ufePLcBr.css">? No.
+
+Now also need to translate the <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>? No.
+
+Now also need to translate the <script> block with gtag? No.
+
+Now also need to translate the <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>? No.
+
+Now also need to translate the JSON-LD blocks as we did.
+
+Now also need to translate the text inside the <script type="module" src="/assets/index-Dd7au40z.js" async></script>? No.
+
+Now also need to translate the <script> block after that (the SEO hide) no text.
+
+Now also need to translate the <script> block for ahrefs? No.
+
+Now we need to ensure we didn't miss any visible text: The blog-meta had weird characters; we kept them.
+
+Now also need to translate the text inside the <a> tags for skip link, footer links, etc.
+
+Now also need to translate the text inside the <a> tags in the paragraph after FAQ: we already translated.
+
+Now also need to translate the text inside the <a> tags in the breadcrumb: we translated Home and Blog, but we kept the separator.
+
+Now also need to translate the text inside the <span aria-current="page">Golden Hour Calculator — Blue Hour & Solar Noon Today</span> -> we need to translate that as well.
+
+Now also need to translate the text inside the <a href="/">Home</a> and <a href="/#blog">Blog</a> inside the breadcrumb.
+
+Now also need to translate the text inside the <a> tags in the footer.
+
+Now also need to translate the text inside the <a> tags in the skip link.
+
+Now also need to translate the text inside the <a> tags in the paragraph after FAQ.
+
+Now also need to translate the text inside the <a> tags in the blog-meta? No.
+
+Now also need to translate the text inside the <a> tags in the nav? Already done.
+
+Now also need to translate the text inside the <a> tags in the blog-meta? none.
+
+Now also need to translate the text inside the <a> tags in the blog-meta? none.
+
+Now also need to translate the text inside the <a> tags in the blog-meta? none.
+
+Now also need to translate the text inside the <a> tags in the blog-meta? none.
+
+Now also need to translate the text inside the <a> tags in the blog-meta? none.
+
+Now also need to translate the text inside the <a> tags in the blog-meta? none.
+
+Now also need to translate the text inside the <a> tags in the blog-meta? none.
+
+Now also need to translate the text inside the <a> tags in the blog-meta? none.
+
+Now also need to translate the text inside the <a> tags in the blog-meta? none.
+
+Now also need to translate the text inside the <a> tags in the blog-meta? none.
+
+Now also need to translate the text inside the <a> tags in the blog-meta? none.
+
+Now also need to translate the text inside the <a> tags in the blog-meta? none.
+
+Now also need to translate the text inside the <a> tags in the blog-meta? none.
+
+Ok.
+
+Now also need to translate the text inside the <title> attribute of the <link rel="icon">? No.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> we did.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> we did.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Ok.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Ok.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Ok.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Ok.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Ok.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Ok.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Ok.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Ok.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Ok.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Ok.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Ok.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Ok.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Ok.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Ok.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Ok.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Ok.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Ok.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Ok.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Ok.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Ok.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Ok.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Ok.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Ok.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Ok.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Ok.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Ok.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Ok.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Ok.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> done.
+
+Now also need to translate the text

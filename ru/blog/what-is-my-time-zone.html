@@ -1,0 +1,469 @@
+We need to translate visible/user-facing text into Russian, preserving HTML tags, attributes, etc. The page currently has some Russian meta tags (lang="ru") but many English texts. We need to translate them.
+
+We must translate text inside tags and attributes like title, alt, aria-label, description, keywords, content (meta content). Also inside visible elements: e.g., <title>, meta name="title", meta name="description", meta name="keywords", og:title, og:description, twitter:title, etc. Also inside body: skip-link text, aria-label on root, app-loading-text, blog-breadcrumb links text, h1, blog-meta (contains some garbled characters currently:  August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide). Those are likely placeholders for date, reading time, category. Need to translate those parts: date format maybe keep as is but translate "August" to Russian month? Usually we keep date as is? The instruction: translate only human-readable text. The date includes month name in English; we should translate to Russian. Also "6 min read" -> "6 мин чтения" or "6 мин чтения". "Time Zones, Guide" -> "Часовые пояса, Руководство". Also the blog-meta currently has garbled characters due to encoding issue; we need to replace with proper Russian translation.
+
+Also need to translate FAQ questions and answers inside JSON-LD blocks: they are inside script type="application/ld+json". Those are JSON-LD blocks; we must translate only human-readable text inside them, but keep JSON structure. So we need to translate the "name" of questions and the "text" of answers. Also the "articleSection": "Time Zones" should be translated? It's a field; it's human-readable text; we should translate to Russian: "Часовые пояса". Also "keywords": list; those are keywords; they should be translated? The rule says translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. Keywords meta tag content should be translated. Also inside JSON-LD "keywords": array; those are also human-readable; we should translate. Also "inLanguage": "en" should stay as language code; not translate. "wordCount": number; keep. "timeRequired": "PT6M" keep. "author": name "World Time Sync" is organization name; proper noun; keep as is. "publisher": name same. "logo": url etc. "datePublished": keep. "mainEntityOfPage": "@id": URL; keep. "image": URL; keep.
+
+Also inside BreadcrumbList: "name": "Home", "Blog", "What Is My Time Zone? — Detect Your Zone & UTC Offset". Those should be translated to Russian: "Главная", "Блог", "Какой мой часовой пояс? — Определите ваш часовой пояс и смещение UTC". However note that the breadcrumb item for Blog links to "/#blog". The name should be translated but keep link same.
+
+FAQ: translate questions and answers.
+
+Also inside the HTML body: skip-link text: "Skip to main content" -> "Перейти к основному содержимому". aria-label on root: "World Time Online Application" -> maybe "Приложение World Time Online". Keep as translation.
+
+app-loading-text: "Loading World Time..." -> "Загрузка World Time...".
+
+In blog-breadcrumb: links text: "Home" -> "Главная". "Blog" -> "Блог". The span aria-current page text: same as h1? It currently is "What Is My Time Zone? — Detect Your Zone & UTC Offset". Should translate.
+
+h1: same as above.
+
+blog-meta: we need to produce proper Russian translation: date: "10 августа 2026 г." maybe keep format? The original had " August 10, 2026". We'll translate to "10 августа 2026 г." The reading time: "6 min read" -> "6 мин чтения". The category: "Time Zones, Guide" -> "Часовые пояса, Руководство". Use appropriate separators: maybe "·" remains.
+
+Also the paragraph after h1: "Your browser knows your time zone from your device settings. Below it reports the IANA zone name, the current UTC offset, and whether daylight saving is active right now." Translate.
+
+h2 "Your Detected Zone" -> "Определённый ваш часовой пояс". Actually "Your Detected Zone" -> "Определённый ваш часовой пояс". Could be "Обнаруженный часовой пояс". We'll translate as "Обнаруженный часовой пояс".
+
+Inside converter-widget: h2 "🌍 Your Time Zone" -> maybe keep emoji and translate: "🌍 Ваш часовой пояс". The p elements are filled by script; we don't translate.
+
+h2 "Reading the Result" -> "Как читать результат". The ul items: translate.
+
+First li: "<strong>IANA name</strong> like America/New_York is the canonical identifier — use it in code, never fixed offsets." Translate: "<strong>Имя IANA</strong>, например America/New_York, является каноническим идентификатором — используйте его в коде, никогда не фиксированные смещения."
+
+Second li: "<strong>Offset</strong> changes twice a year where DST applies; the zone name does not." Translate: "<strong>Смещение</strong> меняется два раза в год там, где применяется DST; имя зоны не меняется."
+
+Third li: "If the result looks wrong, check your OS location settings — browsers follow them." Translate: "Если результат выглядит неверно, проверьте настройки местоположения вашей ОС — браузеры следуют им."
+
+h2 "Frequently Asked Questions" -> "Часто задаваемые вопросы". The FAQ section placeholder {FAQ} will be replaced by script? Actually it's a placeholder; we need to keep {FAQ} as is? It's not inside a tag; it's just text. Probably it's a template placeholder that will be replaced by JS; we should not translate it. Keep {FAQ}.
+
+Paragraph after FAQ: "Browse zones via the <a href="/time-zone-map.html">time zone map</a>." Translate: "Изучайте часовые пояса с помощью <a href="/time-zone-map.html">карты часовых поясов</a>."
+
+Footer links: "Privacy" -> "Конфиденциальность". "About" -> "О нас". "Contact" -> "Контакты". "Terms" -> "Условия". Copyright: "&copy; 2026 World Time Sync" keep as is; maybe translate "World Time Sync" stays.
+
+Now also need to translate meta tags: title, name="title", name="description", name="keywords", og:title, og:description, twitter:title. Also maybe the "content" attributes.
+
+Also the link rel="canonical" href and hreflang values stay.
+
+Also the <noscript><link rel="stylesheet" href="/assets/blog.css"></noscript> stays.
+
+Also the <link rel="icon"... stays.
+
+Also the <script> tags content (like gtag) should stay unchanged (code). Not translate.
+
+Now also need to translate the text inside the <noscript>? No.
+
+Now also need to translate the text inside the <div class="app-loading" aria-busy="true" aria-live="polite">? The aria-label on spinner: "Loading application" -> "Загрузка приложения". Also the aria-busy and aria-live attributes values stay.
+
+Now also need to translate the text inside the <script> that sets FAQ? Actually the FAQ is placed via {FAQ} placeholder; maybe it's replaced by some script later; we keep placeholder.
+
+Now also need to translate the text inside the <script type="application/ld+json"> blocks. We'll need to produce JSON with translated strings.
+
+Let's do step by step.
+
+First, original HTML:
+
+We'll produce final HTML with translations.
+
+Let's copy and modify.
+
+I'll write the final HTML.
+
+But need to be careful to keep all attributes exactly.
+
+Let's start.
+
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="theme-color" content="#667eea">
+    <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk">
+    <title>What Is My Time Zone? — Detect Your Zone & UTC Offset | World Time Sync</title>
+    <meta name="title" content="What Is My Time Zone? — Detect Your Zone & UTC Offset | World Time Sync">
+    <meta name="description" content="Instantly detect your device's time zone, UTC offset and DST status with one click.">
+    <meta name="keywords" content="what is my time zone, my time zone now, what timezone am i in, current utc offset">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="World Time Sync">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://worldtimessync.com/ru/blog/what-is-my-time-zone.html">
+    <meta property="og:title" content="What Is My Time Zone? — Detect Your Zone & UTC Offset | World Time Sync">
+    <meta property="og:description" content="Instantly detect your device's time zone, UTC offset and DST status with one click.">
+    <meta property="og:image" content="https://worldtimessync.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="What Is My Time Zone? — Detect Your Zone & UTC Offset | World Time Sync">
+    <link rel="canonical" href="https://worldtimessync.com/ru/blog/what-is-my-time-zone.html">
+    <link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/ru/blog/what-is-my-time-zone.html">
+    <link rel="preload" href="/assets/blog.css" as="style">
+<noscript><link rel="stylesheet" href="/assets/blog.css"></noscript>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/assets/index-ufePLcBr.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LBX0CDYSSV');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "Article", "headline": "What Is My Time Zone? — Detect Your Zone & UTC Offset | World Time Sync", "description": "Instantly detect your device's time zone, UTC offset and DST status with one click.", "articleSection": "Time Zones", "keywords": "what is my time zone, my time zone now, what timezone am i in, current utc offset", "wordCount": 119, "timeRequired": "PT6M", "inLanguage": "en", "author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}, "publisher": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com", "logo": {"@type": "ImageObject", "url": "https://worldtimessync.com/logo.png", "width": 512, "height": 512}}, "datePublished": "2026-08-10", "dateModified": "2026-08-10", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/ru/blog/what-is-my-time-zone.html"}, "image": "https://worldtimessync.com/og-image.png"}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://worldtimessync.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://worldtimessync.com/#blog"}, {"@type": "ListItem", "position": 3, "name": "What Is My Time Zone? — Detect Your Zone & UTC Offset", "item": "https://worldtimessync.com/ru/blog/what-is-my-time-zone.html"}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How does this page know my time zone?", "acceptedAnswer": {"@type": "Answer", "text": "Your browser exposes the device-configured IANA zone through JavaScript — no data leaves your device."}}, {"@type": "Question", "name": "My offset shows UTC−4 but I expected −5. Why?", "acceptedAnswer": {"@type": "Answer", "text": "Daylight saving is probably active — Eastern shifts between EST (−5) and EDT (−4)."}}, {"@type": "Question", "name": "Can a device be in the wrong time zone?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, if set manually or after travel without auto-update. Fix it in system settings."}}]}
+    </script>
+
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div id="root" role="application" aria-label="World Time Online Application">
+        <div class="app-loading" aria-busy="true" aria-live="polite">
+            <div class="app-loading-spinner" role="status" aria-label="Loading application"></div>
+            <p class="app-loading-text">Loading World Time...</p>
+        </div>
+    </div>
+    <main id="main-content">
+        <article class="blog-wrap">
+            <nav class="blog-breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Home</a> › <a href="/#blog">Blog</a> › <span aria-current="page">What Is My Time Zone? — Detect Your Zone & UTC Offset</span>
+            </nav>
+            <h1>What Is My Time Zone? — Detect Your Zone & UTC Offset</h1>
+            <div class="blog-meta"> August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide</div>
+
+<p>Your browser knows your time zone from your device settings. Below it reports the IANA zone name, the current UTC offset, and whether daylight saving is active right now.</p>
+
+<h2>Your Detected Zone</h2>
+<div class="converter-widget">
+<h2>🌍 Your Time Zone</h2>
+<p id="tz-name" style="font-size:1.3em;font-weight:700;"></p>
+<p id="tz-off"></p>
+<p id="tz-dst"></p>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+ try{
+  var z=Intl.DateTimeFormat().resolvedOptions().timeZone||"unknown";
+  document.getElementById('tz-name').textContent=z;
+ }catch(e){document.getElementById('tz-name').textContent="Not detected";}
+ var n=new Date();
+ var off=-n.getTimezoneOffset();
+ var sign=off>=0?'+':'−';
+ var ah=Math.floor(Math.abs(off)/60),am=Math.abs(off)%60;
+ document.getElementById('tz-off').textContent="UTC"+sign+ah+(am?":"+String(am).padStart(2,'0'):"");
+ document.getElementById('tz-dst').textContent=(n.getTimezoneOffset()!==new Date(n.getFullYear(),0,1).getTimezoneOffset())?"Daylight saving: ACTIVE":"Daylight saving: not active");
+});
+</script>
+
+<h2>Reading the Result</h2>
+<ul>
+<li><strong>IANA name</strong> like America/New_York is the canonical identifier — use it in code, never fixed offsets.</li>
+<li><strong>Offset</strong> changes twice a year where DST applies; the zone name does not.</li>
+<li>If the result looks wrong, check your OS location settings — browsers follow them.</li>
+</ul>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-section">
+{FAQ}
+</div>
+<p>Browse zones via the <a href="/time-zone-map.html">time zone map</a>.</p>
+
+        <footer class="blog-footer">
+            <a href="/privacy.html">Privacy</a>
+            <a href="/about.html">About</a>
+            <a href="/contact.html">Contact</a>
+            <a href="/terms.html">Terms</a>
+            <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p>
+        </footer>
+    </main>
+
+    <script type="module" src="/assets/index-Dd7au40z.js" async></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var seo = document.querySelector('.blog-wrap');
+        if (seo) seo.style.display = 'none';
+      });
+    </script>
+    <script>
+      window.addEventListener('load',function(){
+        var ahrefs=document.createElement('script');
+        ahrefs.async=true;
+        ahrefs.src='https://analytics.ahrefs.com/analytics.js';
+        ahrefs.setAttribute('data-key','hB1VYWuwb1i/f1d8re7P2A');
+        document.head.appendChild(ahrefs);
+      });
+    </script>
+  </body>
+</html>
+
+Now we need to translate all visible text.
+
+Let's go through each piece.
+
+1. <title>: translate to Russian: "Какой мой часовой пояс? — Определите ваш часовой пояс и смещение UTC | World Time Sync". Keep the pipe and brand name.
+
+2. meta name="title": same content as title; translate similarly.
+
+3. meta name="description": translate: "Мгновенно определите часовой пояс вашего устройства, смещение UTC и статус DST одним нажатием."
+
+4. meta name="keywords": translate keywords: "какой мой часовой пояс, мой часовой пояс сейчас, в каком часовом поясе я, текущее смещение UTC". Keep commas.
+
+5. meta property="og:title": same as title translation.
+
+6. meta property="og:description": same as description translation.
+
+7. meta name="twitter:title": same as title translation.
+
+8. In body:
+
+- skip-link: "Skip to main content" -> "Перейти к основному содержимому"
+
+- aria-label on root: "World Time Online Application" -> "Приложение World Time Online". Keep as is? Could translate "World Time Online" as is? It's a proper noun; maybe keep unchanged. But instruction: translate human-readable text; "World Time Online Application" is not a proper noun? It's a name of the app; could be considered proper noun; but we can translate "Application" to "Приложение". Keep "World Time Online" unchanged. So aria-label="Приложение World Time Online".
+
+- app-loading-spinner aria-label: "Loading application" -> "Загрузка приложения"
+
+- app-loading-text: "Loading World Time..." -> "Загрузка World Time..." (keep brand)
+
+- blog-breadcrumb: 
+   <a href="/">Home</a> -> "Главная"
+   <a href="/#blog">Blog</a> -> "Блог"
+   <span aria-current="page">What Is My Time Zone? — Detect Your Zone & UTC Offset</span> -> translate: "Какой мой часовой пояс? — Определите ваш часовой пояс и смещение UTC"
+
+- h1: same as above translation.
+
+- blog-meta: need to replace garbled with proper Russian.
+
+We need to produce something like: "10 августа 2026 г. · 6 мин чтения · Часовые пояса, Руководство". Use middle dot maybe same as &middot; but original used &nbsp;·&nbsp; (space, middot, space). We'll keep that.
+
+Thus: "10 августа 2026 г. &nbsp;·&nbsp; 6 мин чтения &nbsp;·&nbsp; Часовые пояса, Руководство"
+
+Note: The original had " August 10, 2026". We'll replace with "10 августа 2026 г.".
+
+Now paragraph after h1: translate: "Ваш браузер знает ваш часовой пояс из настроек устройства. Ниже он сообщает имя зоны IANA, текущее смещение UTC и активен ли сейчас летнее время."
+
+But need to keep "IANA zone name" maybe translate as "имя зоны IANA". "UTC offset" -> "смещение UTC". "daylight saving" -> "летнее время". "active right now" -> "активно сейчас". So: "Ваш браузер знает ваш часовой пояс из настроек устройства. Ниже он сообщает имя зоны IANA, текущее смещение UTC и активно ли сейчас летнее время."
+
+Now h2 "Your Detected Zone": translate as "Обнаруженный часовой пояс". Could also be "Ваш обнаруженный часовой пояс". We'll use "Обнаруженный часовой пояс".
+
+Inside converter-widget: h2 "🌍 Your Time Zone" -> keep emoji and translate: "🌍 Ваш часовой пояс".
+
+Now h2 "Reading the Result": translate as "Как читать результат".
+
+Now ul items:
+
+First li: "<strong>IANA name</strong> like America/New_York is the canonical identifier — use it in code, never fixed offsets."
+
+Translate: "<strong>Имя IANA</strong>, например America/New_York, является каноническим идентификатором — используйте его в коде, никогда не фиксированные смещения."
+
+Second li: "<strong>Offset</strong> changes twice a year where DST applies; the zone name does not."
+
+Translate: "<strong>Смещение</strong> меняется два раза в год там, где применяется DST; имя зоны не меняется."
+
+Third li: "If the result looks wrong, check your OS location settings — browsers follow them."
+
+Translate: "Если результат выглядит неверно, проверьте настройки местоположения вашей ОС — браузеры следуют им."
+
+Now h2 "Frequently Asked Questions": translate as "Часто задаваемые вопросы".
+
+Now the FAQ placeholder {FAQ} stays.
+
+Now paragraph after FAQ: "Browse zones via the <a href="/time-zone-map.html">time zone map</a>."
+
+Translate: "Изучайте часовые пояса с помощью <a href="/time-zone-map.html">карты часовых поясов</a>."
+
+Now footer links:
+
+- Privacy -> "Конфиденциальность"
+- About -> "О нас"
+- Contact -> "Контакты"
+- Terms -> "Условия"
+
+Copyright line: "&copy; 2026 World Time Sync" keep as is; maybe add space? Keep.
+
+Now we need to translate JSON-LD blocks.
+
+First JSON-LD (Article):
+
+- "headline": translate same as title: "Какой мой часовой пояс? — Определите ваш часовой пояс и смещение UTC | World Time Sync"
+
+- "description": translate same as meta description: "Мгновенно определите часовой пояс вашего устройства, смещение UTC и статус DST одним нажатием."
+
+- "articleSection": "Time Zones" -> translate to "Часовые пояса"
+
+- "keywords": list: translate each keyword: "какой мой часовой пояс, мой часовой пояс сейчас, в каком часовом поясе я, текущее смещение UTC". Keep as string.
+
+- "author": name "World Time Sync" stays.
+
+- "publisher": name stays.
+
+- "logo": url stays.
+
+- "datePublished": keep.
+
+- "mainEntityOfPage": "@id": keep.
+
+- "image": keep.
+
+Second JSON-LD (BreadcrumbList):
+
+- itemListElement[0].name: "Home" -> "Главная"
+
+- itemListElement[1].name: "Blog" -> "Блог"
+
+- itemListElement[2].name: "What Is My Time Zone? — Detect Your Zone & UTC Offset" -> translate: "Какой мой часовой пояс? — Определите ваш часовой пояс и смещение UTC"
+
+Third JSON-LD (FAQPage):
+
+We need to translate each question name and answer text.
+
+Question 1 name: "How does this page know my time zone?" -> translate: "Как эта страница определяет мой часовой пояс?"
+
+Answer text: "Your browser exposes the device-configured IANA zone through JavaScript — no data leaves your device." -> translate: "Ваш браузер предоставляет настроенный IANA-часовой пояс устройства через JavaScript — данные не покидают ваше устройство."
+
+Question 2 name: "My offset shows UTC−4 but I expected −5. Why?" -> translate: "Мой offset показывает UTC−4, но я ожидал −5. Почему?" Keep the symbols.
+
+Answer text: "Daylight saving is probably active — Eastern shifts between EST (−5) and EDT (−4)." -> translate: "Вероятно, активно летнее время — восточный пояс переключается между EST (−5) и EDT (−4)."
+
+Question 3 name: "Can a device be in the wrong time zone?" -> translate: "Может ли устройство находиться в неправильном часовом поясе?"
+
+Answer text: "Yes, if set manually or after travel without auto-update. Fix it in system settings." -> translate: "Да, если установлено вручную или после поездки без автоматического обновления. Исправьте это в настройках системы."
+
+Now ensure we keep JSON syntax correct: double quotes inside strings need to be escaped? In original they are not escaped because the JSON values are plain strings; we must keep the same quoting. We'll replace the English strings with Russian strings, ensuring we keep double quotes around them. No internal quotes besides maybe the apostrophe? There's none. So fine.
+
+Now also need to translate any other visible text like the text inside the <script> that sets FAQ? Not needed.
+
+Now also need to translate the text inside the <noscript>? No.
+
+Now also need to translate the text inside the <link rel="preload"...>? No.
+
+Now also need to translate the text inside the <script async src="...">? No.
+
+Now also need to translate the text inside the <script type="module" src="/assets/index-Dd7au40z.js" async></script>? No.
+
+Now also need to translate the text inside the <script> that hides .blog-wrap? No.
+
+Now also need to translate the text inside the <script> that adds ahrefs? No.
+
+Now also need to translate the text inside the <div class="app-loading" aria-busy="true" aria-live="polite">? Already did aria-label on spinner.
+
+Now also need to translate the text inside the <p class="app-loading-text">? Already.
+
+Now also need to translate the text inside the <a href="#main-content" class="skip-link">? Already.
+
+Now also need to translate the text inside the <footer> links? Already.
+
+Now also need to translate the text inside the <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p>? Keep.
+
+Now also need to translate the text inside the <meta name="author" content="World Time Sync">? It's a meta content; should translate? It's organization name; proper noun; keep as is.
+
+Now also need to translate the text inside the <meta name="theme-color" content="#667eea">? No.
+
+Now also need to translate the text inside the <meta name="google-site-verification" content="...">? No.
+
+Now also need to translate the text inside the <link rel="icon"...>? No.
+
+Now also need to translate the text inside the <link rel="stylesheet"...>? No.
+
+Now also need to translate the text inside the <script> that sets gtag? No.
+
+Now also need to translate the text inside the <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>? No.
+
+Now also need to translate the text inside the <script type="application/ld+json">? Already.
+
+Now also need to translate the text inside the <script> that does the detection? No.
+
+Now also need to translate the text inside the <script> that hides .blog-wrap? No.
+
+Now also need to translate the text inside the <script> that adds ahrefs? No.
+
+Now also need to translate the text inside the <div class="blog-meta">? Already.
+
+Now also need to translate the text inside the <p> after h1? Already.
+
+Now also need to translate the text inside the <h2> "Your Detected Zone"? Already.
+
+Now also need to translate the text inside the <h2> inside converter-widget? Already.
+
+Now also need to translate the text inside the <p id="tz-name"> etc? They are empty; script fills; no translation.
+
+Now also need to translate the text inside the <h2> "Reading the Result"? Already.
+
+Now also need to translate the text inside the <ul> items? Already.
+
+Now also need to translate the text inside the <h2> "Frequently Asked Questions"? Already.
+
+Now also need to translate the text inside the <div class="faq-section">? It contains {FAQ} placeholder; keep.
+
+Now also need to translate the text inside the <p> after FAQ? Already.
+
+Now also need to translate the text inside the <footer>? Already.
+
+Now also need to translate the text inside the <a href="/privacy.html">Privacy</a> etc? Already.
+
+Now also need to translate the text inside the <a href="/about.html">About</a> etc.
+
+Now also need to translate the text inside the <a href="/contact.html">Contact</a> etc.
+
+Now also need to translate the text inside the <a href="/terms.html">Terms</a> etc.
+
+Now also need to translate the text inside the <a href="/">Home</a> in breadcrumb? Already.
+
+Now also need to translate the text inside the <a href="/#blog">Blog</a> in breadcrumb? Already.
+
+Now also need to translate the text inside the <span aria-current="page">... </span>? Already.
+
+Now also need to translate the text inside the <meta property="og:type" content="article">? No.
+
+Now also need to translate the text inside the <meta property="og:url" content="...">? No.
+
+Now also need to translate the text inside the <meta property="og:image" content="...">? No.
+
+Now also need to translate the text inside the <meta name="twitter:card" content="summary_large_image">? No.
+
+Now also need to translate the text inside the <link rel="canonical" href="...">? No.
+
+Now also need to translate the text inside the <link rel="alternate" hreflang="x-default" href="...">? No.
+
+Now also need to translate the text inside the <link rel="preload" href="/assets/blog.css" as="style">? No.
+
+Now also need to translate the text inside the <noscript><link rel="stylesheet" href="/assets/blog.css"></noscript>? No.
+
+Now also need to translate the text inside the <link rel="icon" type="image/svg+xml" href="/favicon.svg">? No.
+
+Now also need to translate the text inside the <link rel="stylesheet" href="/assets/index-ufePLcBr.css">? No.
+
+Now also need to translate the text inside the <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>? No.
+
+Now also need to translate the text inside the <script> that sets gtag? No.
+
+Now also need to translate the text inside the <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>? No.
+
+Now also need to translate the text inside the <script type="application/ld+json">? Already.
+
+Now also need to translate the text inside the <script type="module" src="/assets/index-Dd7au40z.js" async></script>? No.
+
+Now also need to translate the text inside the <script> that hides .blog-wrap? No.
+
+Now also need to translate the text inside the <script> that adds ahrefs? No.
+
+Now also need to translate the text inside the <div class="app-loading-spinner" role="status" aria-label="Loading application">? Already.
+
+Now also need to translate the text inside the <p class="app-loading-text">? Already.
+
+Now also need to translate the text inside the <a href="#main-content" class="skip-link">? Already.
+
+Now also need to translate the text inside the <div id="root" role="application" aria-label="World Time Online Application">? Already.
+
+Now also need to translate the text inside the <nav class="blog-breadcrumb" aria-label="Breadcrumb">? The aria-label value "Breadcrumb" should be translated? It's an attribute; we should translate human-readable text inside attributes like aria-label. So change to "Маршрут хлебных крошек" or "Навигация". Usually "Breadcrumb" translated as "Хлебные крошки". We'll use "Хлебные крошки". So aria-label="Хлебные крошки".
+
+Now also need to translate the text inside the <meta name="robots" content="index, follow">? The content values are directives; not translate.
+
+Now also need to translate the text inside the <meta name="author" content="World Time Sync">? Already.
+
+Now also need to translate the text inside the <meta property="og:type" content="article">? No.
+
+Now also need to translate the text inside the <meta property="og:url" content="...">? No.
+
+Now also need to translate the text inside the <meta property="og:title" content="...">? Already.
+
+Now also need to translate the text inside the

@@ -1,0 +1,542 @@
+We need to translate visible/user-facing text into French, preserving HTML tags, attributes, JSON-LD blocks, CSS, etc. The HTML currently has lang="fr" already, but content is English. We need to translate text inside tags and attributes like title, alt, aria-label, description, keywords, content, etc. Also translate visible text in body.
+
+We must not translate URLs, proper nouns (city/feature names) unless natural localized form exists. Keep code, JSON-LD values (like @type, etc.) but need to translate the values of fields like "headline", "description", "name", "text" inside JSON-LD? The rule says: translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. JSON-LD blocks are also content? They are inside <script type="application/ld+json">. The content is JSON; we should translate the human-readable values inside JSON (like "headline": "...", "description": "...", "name": "...", "text": "...") because they are user-facing? Usually yes, they are meant for search engines; but rule says translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. JSON-LD is not a tag attribute but content inside script. However the instruction says "Translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content." It does not explicitly mention JSON-LD, but earlier they said "Keep ALL HTML tags, attributes, href/lang values, JSON-LD blocks, and CSS exactly as-is." That means we should NOT modify JSON-LD blocks at all. So we must keep JSON-LD exactly as-is, no translation inside them. So we leave JSON-LD unchanged.
+
+Thus we only translate visible text in HTML (outside script tags). Also translate meta tags like title, meta name="title", meta name="description", meta name="keywords", og:title, og:description, twitter:title, etc. Those are attributes content; we should translate them.
+
+Also translate text inside <a> tags, <h1>, <h2>, <p>, <li>, etc. Also translate text inside <div class="blog-meta"> etc. Also translate text inside <noscript>? The noscript contains a link tag; not visible text.
+
+Also translate text inside <script>? Not needed.
+
+Also translate text inside attributes like aria-label, title, etc. For example <a href="#main-content" class="skip-link">Skip to main content</a> -> translate "Skip to main content". Also aria-label on div: aria-label="World Time Online Application" -> translate? It's an aria-label, should be translated as per rule: translate attributes like aria-label. So we need to translate that to French.
+
+Also aria-busy, aria-live values are not translatable (they are tokens). Keep as is.
+
+Also translate placeholder text inside <p class="app-loading-text">Loading World Time...</p>.
+
+Also translate text inside <nav class="blog-breadcrumb">: "Home", "Blog", and the current page span: "Current UTC Time Now — GMT Time & Zone Conversions". Also the separator ‹? Actually they use ›. Keep.
+
+Also translate <h1> same as breadcrumb.
+
+Also translate <div class="blog-meta"> content: " August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide". There are some weird characters (maybe icons). We need to translate the text parts: "August 10, 2026" -> French date format? Usually "10 août 2026". Keep the same style? The original uses "August 10, 2026". We'll translate to "10 août 2026". Also "6 min read" -> "6 min de lecture" or "6 min de lecture". In French typical: "6 min de lecture". Also "Time Zones, Guide" -> "Fuseaux horaires, Guide". Keep punctuation.
+
+Also translate the text inside <h2> "UTC Right Now" -> "UTC maintenant". Could be "UTC maintenant". Or "UTC maintenant". We'll translate.
+
+Also inside the converter-widget: <h2>🕐 Current UTC Time</h2> -> translate to "Heure UTC actuelle". Keep the clock emoji? The emoji is not text; we can keep it. So "<h2>🕐 Current UTC Time</h2>" -> "<h2>🕐 Heure UTC actuelle</h2>".
+
+Also <p>Date: <span id="utc-date"></span></p> -> translate "Date:" to "Date :" maybe keep colon. French: "Date :". We'll translate.
+
+Also <h2>UTC vs Major Zones Right Now</h2> -> translate to "UTC par rapport aux principaux fuseaux maintenant". Or "UTC vs principaux fuseaux maintenant". We'll translate.
+
+Also table headers: <th>Zone</th> -> "Zone". Could stay "Zone" (same). But we can translate to "Fuseau". However "Zone" is understandable; but we should translate to French: "Fuseau". Similarly "Standard offset" -> "Décalage standard". "Summer offset" -> "Décalage été". We'll translate.
+
+Also table rows: zone names like "EST / EDT" remain same (abbreviations). Offsets remain same.
+
+Also after table: <p>GMT and UTC show the same clock time for everyday purposes; the difference is technical — UTC is maintained by atomic clocks while GMT is based on Earth's rotation.</p> -> translate.
+
+Also <h2>Frequently Asked Questions</h2> -> translate to "Questions fréquemment posées". Also the <div class="faq-section">{FAQ}</div> placeholder; we leave as is (maybe it's replaced by JS). Not translate.
+
+Also <p>Convert any pair with our <a href="/time-zone-converter.html">time zone converter</a>.</p> -> translate.
+
+Also footer links: "Privacy", "About", "Contact", "Terms" -> translate to French: "Confidentialité", "À propos", "Contact", "Conditions". Also copyright text: "&copy; 2026 World Time Sync" -> keep name unchanged, but translate? Usually keep as is; but we can translate "World Time Sync" is a proper noun, keep. So "&copy; 2026 World Time Sync". Also maybe add "Tous droits réservés"? Not needed.
+
+Also translate aria-label on div id="root": aria-label="World Time Online Application" -> translate to French: "Application World Time en ligne". Keep brand? Might translate "World Time Online Application" to "Application World Time en ligne". We'll translate.
+
+Also translate aria-label on spinner: aria-label="Loading application" -> "Chargement de l'application".
+
+Also translate text inside <p class="app-loading-text">Loading World Time...</p> -> "Chargement de l'heure mondiale...".
+
+Also translate <noscript><link rel="stylesheet" href="/assets/blog.css"></noscript> no text.
+
+Also translate <meta name="title" content="Current UTC Time Now — GMT Time & Zone Conversions | World Time Sync"> -> translate content.
+
+Also <meta name="description" content="Live UTC clock right now plus instant conversion to EST, PST, CET, IST and every major zone."> -> translate.
+
+Also <meta name="keywords" content="current utc time, utc time now, gmt time now, what time is it in utc, current gmt"> -> translate keywords? Should translate but keep as comma-separated. We'll translate each phrase to French.
+
+Also <meta property="og:title" content="Current UTC Time Now — GMT Time & Zone Conversions | World Time Sync"> -> translate.
+
+Also <meta property="og:description" content="Live UTC clock right now plus instant conversion to EST, PST, CET, IST and every major zone."> -> translate.
+
+Also <meta name="twitter:title" content="Current UTC Time Now — GMT Time & Zone Conversions | World Time Sync"> -> translate.
+
+Also <link rel="canonical" href="..."> keep href.
+
+Also <link rel="alternate" hreflang="x-default" href="..."> keep.
+
+Also <title>Current UTC Time Now — GMT Time & Zone Conversions | World Time Sync</title> -> translate.
+
+Also translate text inside <script>? Not needed.
+
+Now we need to output the full HTML with translations.
+
+Let's go step by step.
+
+Original HTML:
+
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="theme-color" content="#667eea">
+    <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk">
+    <title>Current UTC Time Now — GMT Time & Zone Conversions | World Time Sync</title>
+    <meta name="title" content="Current UTC Time Now — GMT Time & Zone Conversions | World Time Sync">
+    <meta name="description" content="Live UTC clock right now plus instant conversion to EST, PST, CET, IST and every major zone.">
+    <meta name="keywords" content="current utc time, utc time now, gmt time now, what time is it in utc, current gmt">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="World Time Sync">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://worldtimessync.com/fr/blog/current-utc-time-now.html">
+    <meta property="og:title" content="Current UTC Time Now — GMT Time & Zone Conversions | World Time Sync">
+    <meta property="og:description" content="Live UTC clock right now plus instant conversion to EST, PST, CET, IST and every major zone.">
+    <meta property="og:image" content="https://worldtimessync.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Current UTC Time Now — GMT Time & Zone Conversions | World Time Sync">
+    <link rel="canonical" href="https://worldtimessync.com/fr/blog/current-utc-time-now.html">
+    <link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/fr/blog/current-utc-time-now.html">
+    <link rel="preload" href="/assets/blog.css" as="style">
+<noscript><link rel="stylesheet" href="/assets/blog.css"></noscript>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/assets/index-ufePLcBr.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LBX0CDYSSV');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "Article", "headline": "Current UTC Time Now — GMT Time & Zone Conversions | World Time Sync", "description": "Live UTC clock right now plus instant conversion to EST, PST, CET, IST and every major zone.", "articleSection": "Time Zones", "keywords": "current utc time, utc time now, gmt time now, what time is it in utc, current gmt", "wordCount": 126, "timeRequired": "PT6M", "inLanguage": "en", "author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}, "publisher": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com", "logo": {"@type": "ImageObject", "url": "https://worldtimessync.com/logo.png", "width": 512, "height": 512}}, "datePublished": "2026-08-10", "dateModified": "2026-08-10", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/fr/blog/current-utc-time-now.html"}, "image": "https://worldtimessync.com/og-image.png"}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://worldtimessync.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://worldtimessync.com/#blog"}, {"@type": "ListItem", "position": 3, "name": "Current UTC Time Now — GMT Time & Zone Conversions", "item": "https://worldtimessync.com/fr/blog/current-utc-time-now.html"}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What time is it in UTC right now?", "acceptedAnswer": {"@type": "Answer", "text": "The live clock above shows the current UTC time, updating every second from your device clock."}}, {"@type": "Question", "name": "Is UTC the same as GMT?", "acceptedAnswer": {"@type": "Answer", "text": "For daily use yes. Technically UTC is an atomic-clock standard and GMT is astronomical, but they never differ by more than a fraction of a second."}}, {"@type": "Question", "name": "Why do servers store timestamps in UTC?", "acceptedAnswer": {"@type": "Answer", "text": "No DST shifts and one unambiguous reference — converting to local time happens only at display."}}]}
+    </script>
+
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div id="root" role="application" aria-label="World Time Online Application">
+        <div class="app-loading" aria-busy="true" aria-live="polite">
+            <div class="app-loading-spinner" role="status" aria-label="Loading application"></div>
+            <p class="app-loading-text">Loading World Time...</p>
+        </div>
+    </div>
+    <main id="main-content">
+        <article class="blog-wrap">
+            <nav class="blog-breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Home</a> › <a href="/#blog">Blog</a> › <span aria-current="page">Current UTC Time Now — GMT Time & Zone Conversions</span>
+            </nav>
+            <h1>Current UTC Time Now — GMT Time & Zone Conversions</h1>
+            <div class="blog-meta"> August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide</div>
+
+<p>UTC (Coordinated Universal Time) is the reference every other zone offsets from. It never shifts for daylight saving, which makes it the standard for servers, logs, aviation and anything cross-border.</p>
+
+<h2>UTC Right Now</h2>
+<div class="converter-widget">
+<h2>🕐 Current UTC Time</h2>
+<p id="utc-now" style="font-size:1.5em;font-weight:700;font-variant-numeric:tabular-nums;"></p>
+<p>Date: <span id="utc-date"></span></p>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+ function t(){var n=new Date();
+ document.getElementById('utc-now').textContent=n.toISOString().slice(11,19);
+ document.getElementById('utc-date').textContent=n.toISOString().slice(0,10);}
+ t(); setInterval(t,1000);
+});
+</script>
+
+<h2>UTC vs Major Zones Right Now</h2>
+<table><thead><tr><th>Zone</th><th>Standard offset</th><th>Summer offset</th></tr></thead><tbody>
+<tr><td>EST / EDT</td><td>UTC−5</td><td>UTC−4</td></tr>
+<tr><td>PST / PDT</td><td>UTC−8</td><td>UTC−7</td></tr>
+<tr><td>CET / CEST</td><td>UTC+1</td><td>UTC+2</td></tr>
+<tr><td>IST (India)</td><td>UTC+5:30</td><td>No change</td></tr>
+<tr><td>JST (Japan)</td><td>UTC+9</td><td>No change</td></tr>
+</tbody></table>
+
+<p>GMT and UTC show the same clock time for everyday purposes; the difference is technical — UTC is maintained by atomic clocks while GMT is based on Earth's rotation.</p>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-section">
+{FAQ}
+</div>
+<p>Convert any pair with our <a href="/time-zone-converter.html">time zone converter</a>.</p>
+
+        <footer class="blog-footer">
+            <a href="/privacy.html">Privacy</a>
+            <a href="/about.html">About</a>
+            <a href="/contact.html">Contact</a>
+            <a href="/terms.html">Terms</a>
+            <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p>
+        </footer>
+    </main>
+
+    <script type="module" src="/assets/index-Dd7au40z.js" async></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var seo = document.querySelector('.blog-wrap');
+        if (seo) seo.style.display = 'none';
+      });
+    </script>
+    <script>
+      window.addEventListener('load',function(){
+        var ahrefs=document.createElement('script');
+        ahrefs.async=true;
+        ahrefs.src='https://analytics.ahrefs.com/analytics.js';
+        ahrefs.setAttribute('data-key','hB1VYWuwb1i/f1d8re7P2A');
+        document.head.appendChild(ahrefs);
+      });
+    </script>
+  </body>
+</html>
+
+Now translate.
+
+We'll produce final HTML.
+
+Let's translate each piece.
+
+Head:
+
+<title>Current UTC Time Now — GMT Time & Zone Conversions | World Time Sync</title>
+
+Translate: "Heure UTC actuelle — GMT et conversions de fuseaux | World Time Sync". Need to keep the pipe and brand. "GMT Time & Zone Conversions" maybe "GMT et conversions de fuseaux". Could also be "GMT et conversions de fuseaux horaires". But original: "GMT Time & Zone Conversions". We'll translate to "GMT et conversions de fuseaux". Keep the em dash? We'll keep " — ". So: "Heure UTC actuelle — GMT et conversions de fuseaux | World Time Sync".
+
+Meta name="title" same content.
+
+Meta name="description": "Live UTC clock right now plus instant conversion to EST, PST, CET, IST and every major zone."
+
+Translate: "Horloge UTC en direct maintenant plus conversion instantanée vers EST, PST, CET, IST et chaque fuseau majeur."
+
+Meta name="keywords": list: "current utc time, utc time now, gmt time now, what time is it in utc, current gmt"
+
+Translate each:
+
+- current utc time -> "heure utc actuelle"
+- utc time now -> "heure utc maintenant"
+- gmt time now -> "heure gmt maintenant"
+- what time is it in utc -> "quelle heure est-il en utc"
+- current gmt -> "gmt actuel"
+
+So content: "heure utc actuelle, heure utc maintenant, heure gmt maintenant, quelle heure est-il en utc, gmt actuel"
+
+Meta name="author": content "World Time Sync" stays.
+
+Meta property="og:title": same as title.
+
+Meta property="og:description": same as description.
+
+Meta name="twitter:title": same as title.
+
+Now body.
+
+Skip link: <a href="#main-content" class="skip-link">Skip to main content</a> -> translate to "Passer au contenu principal".
+
+Div id="root" aria-label="World Time Online Application" -> translate to "Application World Time en ligne". Keep brand? We'll translate "World Time Online Application" to "Application World Time en ligne". Could also be "Application World Time en ligne". We'll do that.
+
+Spinner aria-label="Loading application" -> "Chargement de l'application".
+
+<p class="app-loading-text">Loading World Time...</p> -> "Chargement de l'heure mondiale...".
+
+Now main content.
+
+Breadcrumb nav aria-label="Breadcrumb" -> translate to "Fil d'Ariane". Keep attribute.
+
+Inside nav: <a href="/">Home</a> -> "Accueil". <a href="/#blog">Blog</a> -> "Blog" (could stay Blog but translate to "Blog" is same; maybe "Blog" stays). We'll translate to "Blog" (it's same). The span aria-current="page">Current UTC Time Now — GMT Time & Zone Conversions</span> -> translate to "Heure UTC actuelle — GMT et conversions de fuseaux".
+
+Now h1 same as breadcrumb: translate to "Heure UTC actuelle — GMT et conversions de fuseaux".
+
+Now blog-meta div: content: " August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide"
+
+We need to translate the text parts, keep the weird icons (maybe they are emojis that got corrupted). We'll keep them as is.
+
+Translate "August 10, 2026" to "10 août 2026". Keep the same spacing and entities.
+
+Translate "6 min read" to "6 min de lecture". (French often "6 min de lecture").
+
+Translate "Time Zones, Guide" to "Fuseaux horaires, Guide".
+
+Thus the div becomes: " 10 août 2026 &nbsp;·&nbsp;  6 min de lecture &nbsp;·&nbsp;  Fuseaux horaires, Guide"
+
+Now paragraph after: <p>UTC (Coordinated Universal Time) is the reference every other zone offsets from. It never shifts for daylight saving, which makes it the standard for servers, logs, aviation and anything cross-border.</p>
+
+Translate: "L'UTC (Temps universel coordonné) est la référence à partir de laquelle chaque autre fuseau est décalé. Il ne change jamais pour l'heure d'été, ce qui en fait la norme pour les serveurs, les journaux, l'aviation et tout ce qui concerne les frontières."
+
+We need to keep the abbreviation UTC and maybe keep parentheses. We'll translate "Coordinated Universal Time" to "Temps universel coordonné". Keep UTC.
+
+Now h2 "UTC Right Now" -> translate to "UTC maintenant". Could be "UTC maintenant". We'll do that.
+
+Now converter-widget: <h2>🕐 Current UTC Time</h2> -> translate to "🕐 Heure UTC actuelle". Keep emoji.
+
+<p>Date: <span id="utc-date"></span></p> -> translate "Date:" to "Date :". Keep colon and space.
+
+Now h2 "UTC vs Major Zones Right Now" -> translate to "UTC par rapport aux principaux fuseaux maintenant". Could be "UTC vs principaux fuseaux maintenant". We'll choose "UTC par rapport aux principaux fuseaux maintenant".
+
+Now table headers: <th>Zone</th> -> translate to "Fuseau". <th>Standard offset</th> -> "Décalage standard". <th>Summer offset</th> -> "Décalage été". (Could be "Décalage d'été". We'll use "Décalage été").
+
+Now table rows: keep same.
+
+Now paragraph after table: <p>GMT and UTC show the same clock time for everyday purposes; the difference is technical — UTC is maintained by atomic clocks while GMT is based on Earth's rotation.</p>
+
+Translate: "GMT et UTC affichent la même heure pour un usage quotidien ; la différence est technique — l'UTC est maintenue par des horloges atomiques tandis que le GMT repose sur la rotation de la Terre."
+
+Now h2 "Frequently Asked Questions" -> translate to "Questions fréquemment posées".
+
+Now div class="faq-section">{FAQ}</div> leave as is.
+
+Now paragraph: <p>Convert any pair with our <a href="/time-zone-converter.html">time zone converter</a>.</p>
+
+Translate: "Convertissez n'importe quelle paire avec notre <a href="/time-zone-converter.html">convertisseur de fuseaux horaires</a>."
+
+Now footer links:
+
+<a href="/privacy.html">Privacy</a> -> "Confidentialité"
+
+<a href="/about.html">About</a> -> "À propos"
+
+<a href="/contact.html">Contact</a> -> "Contact" (same)
+
+<a href="/terms.html">Terms</a> -> "Conditions"
+
+Copyright line: <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p> -> keep as is (maybe add "Tous droits réservés"? Not required). We'll keep same.
+
+Now also need to translate any other aria-label or title attributes we missed.
+
+Check: <div class="app-loading" aria-busy="true" aria-live="polite"> - attributes values are not translatable.
+
+Check: <div class="app-loading-spinner" role="status" aria-label="Loading application"> we translated.
+
+Check: <nav class="blog-breadcrumb" aria-label="Breadcrumb"> we translated.
+
+Check: <span aria-current="page">... </span> attribute value "page" not translatable.
+
+Check: <a href="#main-content" class="skip-link"> we translated inner text.
+
+Check: <div id="root" role="application" aria-label="World Time Online Application"> we translated.
+
+Check: maybe there is a title attribute on any tag? Not seen.
+
+Check: <link rel="preload" href="/assets/blog.css" as="style"> - as attribute not translatable.
+
+Check: <meta name="theme-color" content="#667eea"> not translatable.
+
+Check: <meta name="google-site-verification" content="..."> not translatable.
+
+Check: <meta name="robots" content="index, follow"> not translatable.
+
+Check: <meta name="author" content="World Time Sync"> not translatable (proper noun).
+
+Check: <meta property="og:type" content="article"> not translatable.
+
+Check: <meta property="og:url" content="..."> not translatable.
+
+Check: <meta property="og:image" content="..."> not translatable.
+
+Check: <meta name="twitter:card" content="summary_large_image"> not translatable.
+
+Check: <link rel="icon" type="image/svg+xml" href="/favicon.svg"> not translatable.
+
+Check: <link rel="stylesheet" href="/assets/index-ufePLcBr.css"> not translatable.
+
+Check: <script> tags content not translatable (except maybe inner text but it's code). We'll leave as is.
+
+Now also need to translate any text inside <noscript>? No.
+
+Now also need to translate any text inside <svg>? none.
+
+Now also need to translate any text inside <style>? none.
+
+Now we need to ensure we didn't miss any visible text: The text inside the <p> after the table: we translated.
+
+Now also the text inside the <p> after FAQ: we translated.
+
+Now also the text inside the <div class="blog-meta"> we translated.
+
+Now also the text inside the <p> after the h2 "UTC Right Now": there is none besides the widget.
+
+Now also the text inside the <p> inside the widget: we translated "Date:" to "Date :".
+
+Now also the text inside the <p> after the widget? none.
+
+Now also the text inside the <p> after the table: we translated.
+
+Now also the text inside the <p> after the FAQ section: we translated.
+
+Now also the text inside the <footer> we translated.
+
+Now also the text inside the <p> inside the footer: we kept.
+
+Now also the text inside the <a> tags inside footer: we translated.
+
+Now also the text inside the <a> href="/#blog">Blog</a> we left as Blog (maybe translate to "Blog" unchanged). Could also translate to "Blog" (same). We'll keep.
+
+Now also the text inside the <a> href="/">Home</a> we translated to "Accueil".
+
+Now also the text inside the <span aria-current="page"> we translated.
+
+Now also the text inside the <h1> we translated.
+
+Now also the text inside the <h2> "UTC Right Now" we translated.
+
+Now also the text inside the <h2> inside converter-widget we translated.
+
+Now also the text inside the <h2> "UTC vs Major Zones Right Now" we translated.
+
+Now also the text inside the <h2> "Frequently Asked Questions" we translated.
+
+Now also the text inside the <p> after the h2 "UTC Right Now": there is none.
+
+Now also the text inside the <p> inside the converter-widget: we translated.
+
+Now also the text inside the <p> after the table: we translated.
+
+Now also the text inside the <p> after the FAQ: we translated.
+
+Now also the text inside the <p> after the blog-meta: we translated.
+
+Now also the text inside the <p> at the very top after blog-meta: we translated.
+
+Now also the text inside the <p> inside the <noscript>? none.
+
+Now also the text inside the <script> type="application/ld+json": we must NOT translate. Keep as is.
+
+Now also the text inside the <script> for gtag etc: not translate.
+
+Now also the text inside the <script> for the UTC clock: not translate.
+
+Now also the text inside the <script> for the SEO hide: not translate.
+
+Now also the text inside the <script> for ahrefs: not translate.
+
+Now also the text inside the <script> module src: not translate.
+
+Now also the text inside the <link rel="preload"> etc: not translate.
+
+Now also the text inside the <meta name="viewport" content="..."> not translate.
+
+Now also the text inside the <meta name="theme-color"> not translate.
+
+Now also the text inside the <meta name="google-site-verification"> not translate.
+
+Now also the text inside the <meta name="robots"> not translate.
+
+Now also the text inside the <meta name="author"> not translate.
+
+Now also the meta property og:type not translate.
+
+Now also the meta property og:url not translate.
+
+Now also the meta property og:image not translate.
+
+Now also the meta name twitter:card not translate.
+
+Now also the link rel="canonical" href not translate.
+
+Now also the link rel="alternate" hreflang not translate.
+
+Now also the link rel="preload" not translate.
+
+Now also the link rel="icon" not translate.
+
+Now also the link rel="stylesheet" not translate.
+
+Now also the script async src for googletagmanager not translate.
+
+Now also the script async src for adsbygoogle not translate.
+
+Now also the script type="application/ld+json" not translate.
+
+Now also the script type="module" src not translate.
+
+Now also the script for seo hide not translate.
+
+Now also the script for ahrefs not translate.
+
+Now also the noscript link not translate.
+
+Now also the <div class="app-loading"> etc not translate.
+
+Now also the <div class="app-loading-spinner"> not translate.
+
+Now also the <p class="app-loading-text"> we translated.
+
+Now also the <a href="#main-content" class="skip-link"> we translated.
+
+Now also the <div id="root" role="application" aria-label="World Time Online Application"> we translated.
+
+Now also the <nav class="blog-breadcrumb" aria-label="Breadcrumb"> we translated.
+
+Now also the <a href="/">Home</a> we translated.
+
+Now also the <a href="/#blog">Blog</a> we left as Blog.
+
+Now also the <span aria-current="page"> we translated.
+
+Now also the <h1> we translated.
+
+Now also the <div class="blog-meta"> we translated.
+
+Now also the <p> after blog-meta we translated.
+
+Now also the <h2> UTC Right Now we translated.
+
+Now also the <div class="converter-widget"> we translated inner h2 and p.
+
+Now also the <script> for UTC clock not translate.
+
+Now also the <h2> UTC vs Major Zones Right Now we translated.
+
+Now also the <table> we translated headers.
+
+Now also the <p> after table we translated.
+
+Now also the <h2> Frequently Asked Questions we translated.
+
+Now also the <div class="faq-section">{FAQ}</div> we left.
+
+Now also the <p> Convert any pair... we translated.
+
+Now also the <footer class="blog-footer"> we translated inner links and copyright.
+
+Now also the <script type="module" src... not translate.
+
+Now also the <script> for seo hide not translate.
+
+Now also the <script> for ahrefs not translate.
+
+Now also the closing tags.
+
+Now we need to ensure we kept the exact HTML structure, including spaces and line breaks? Not required but we should output the full HTML.
+
+Now let's produce final HTML.
+
+We'll go line by line.
+
+Start:
+
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="theme-color" content="#667eea">
+    <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk">
+    <title>Heure UTC actuelle — GMT et conversions de fuseaux | World Time Sync</title>
+    <meta name="title" content="Heure UTC actuelle — GMT et conversions de fuseaux | World Time Sync">
+    <meta name="description" content="Horloge UTC en direct maintenant plus conversion instantanée vers EST, PST, CET, IST et chaque fuseau majeur.">
+    <meta name="keywords" content="heure utc actuelle, heure utc maintenant, heure gmt maintenant, quelle heure est-il en utc, gmt actuel">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="World Time Sync">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://worldtimessync.com/fr/blog/current-utc-time-now.html">
+    <meta property="og:title" content="Heure UTC actuelle — GMT et conversions de fuseaux | World Time Sync">
+    <meta property="og:description" content="Horloge UTC en direct maintenant plus conversion instantanée vers EST, PST, CET, IST et chaque fuseau majeur.">
+    <meta property="og:image" content="https://worldtimessync.com/og-image.png">
+    <meta

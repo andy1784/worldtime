@@ -1,0 +1,549 @@
+We need to translate visible/user-facing text into German, preserving HTML tags, attributes, etc. The HTML currently has lang="de". We need to translate English text to German.
+
+We must translate text inside tags and attributes like title, alt, aria-label, description, keywords, content (meta tags). Also visible text in body.
+
+We must not translate URLs, proper nouns (city/feature names) unless natural localized form exists. Also not translate UTC offsets, IANA timezone IDs, code.
+
+We need to output full translated HTML.
+
+Let's go through the HTML.
+
+First, head:
+
+<title>Military Time Converter — 24-Hour Clock Chart & Zulu Time | World Time Sync</title>
+
+Translate: "Military Time Converter — 24-Hour Clock Chart & Zulu Time | World Time Sync"
+
+We need German translation. "Military Time Converter" -> "Militärzeit-Umrechner" or "Militärzeit Umrechner". Usually "Militärzeit-Umrechner". "24-Hour Clock Chart" -> "24-Stunden-Uhr Diagramm" or "24-Stunden-Uhr-Tabelle". "Zulu Time" -> "Zulu-Zeit" (Zulu is proper noun, keep as Zulu). "World Time Sync" is brand name, keep unchanged.
+
+Thus: "Militärzeit-Umrechner — 24-Stunden-Uhr Diagramm & Zulu-Zeit | World Time Sync". Keep the dash and &.
+
+But need to keep the same punctuation: " — " (em dash). We'll keep.
+
+Meta name="title" content same as title. Translate similarly.
+
+Meta name="description": "Convert military time to standard time instantly. Full 24-hour chart plus Zulu (Z) time explained."
+
+Translate: "Konvertiere Militärzeit sofort in Standardzeit. Vollständiges 24-Stunden-Diagramm plus Erklärung der Zulu-Zeit (Z)."
+
+But need to keep "Zulu (Z)" maybe "Zulu (Z)" unchanged. Could translate "Zulu time" as "Zulu-Zeit". Keep (Z). So: "Konvertiere Militärzeit sofort in Standardzeit. Vollständiges 24-Stunden-Diagramm plus Erklärung der Zulu-Zeit (Z)."
+
+Meta name="keywords": list: "military time converter, military time chart, zulu time, 24 hour clock converter, what is 1700 military time"
+
+Translate each term? Usually keywords can stay English but we should translate? The rule says translate only human-readable text inside attributes like keywords/content. So we should translate the content. So translate each phrase.
+
+"military time converter" -> "Militärzeit-Umrechner"
+"military time chart" -> "Militärzeit-Diagramm"
+"zulu time" -> "Zulu-Zeit"
+"24 hour clock converter" -> "24-Stunden-Uhr-Umrechner"
+"what is 1700 military time" -> "was ist 1700 Militärzeit" maybe "Was ist 1700 Militärzeit?" Keep capitalization? We'll translate to German: "Was ist 1700 Militärzeit". Keep numbers.
+
+Thus content: "Militärzeit-Umrechner, Militärzeit-Diagramm, Zulu-Zeit, 24-Stunden-Uhr-Umrechner, Was ist 1700 Militärzeit"
+
+Meta name="robots": content "index, follow" - not translate (it's directive). Keep as is.
+
+Meta name="author": content "World Time Sync" - brand, keep.
+
+Meta property og:type content "article" - keep.
+
+og:url: URL keep.
+
+og:title: same as title, translate.
+
+og:description: same as description, translate.
+
+og:image: URL keep.
+
+twitter:card: keep.
+
+twitter:title: same as title, translate.
+
+link rel="canonical": href keep.
+
+link rel="alternate" hreflang="x-default": href keep.
+
+link rel="preload": href keep.
+
+noscript link: keep.
+
+link rel="icon": keep.
+
+link rel="stylesheet": keep.
+
+script tags: keep.
+
+JSON-LD blocks: need to translate visible text inside them? The rule says translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. JSON-LD is inside script tag, not visible to user but is data. However the content inside JSON-LD includes fields like "headline", "description", "articleSection", "keywords", "author.name", "publisher.name", etc. Those are meant for search engines; they are human-readable? The rule says translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. JSON-LD is not a tag attribute but content inside a script tag. Should we translate? The instruction: "Translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content." JSON-LD is inside a script tag, not an attribute. It's not explicitly listed. However the content is meant for search engines and is human-readable. The rule might intend to translate visible text only, not structured data. But to be safe, we could translate the values inside JSON-LD as they are similar to meta description etc. However the rule says "inside tags and attributes like title/alt/aria-label/description/keywords/content." JSON-LD is not an attribute, it's inside a script tag. I'd lean to not translate JSON-LD because it's not user-facing visible text; it's structured data for search engines. However the description inside JSON-LD is same as meta description; but we already translated meta description. Changing JSON-LD might be beneficial but not required. I'd keep JSON-LD unchanged to avoid risk.
+
+But we need to check if any visible text inside body needs translation.
+
+Body:
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+Translate: "Skip to main content" -> "Zum Hauptinhalt springen" or "Zum Hauptinhalt gehen". Common: "Zum Hauptinhalt springen". We'll use "Zum Hauptinhalt springen".
+
+<div id="root" role="application" aria-label="World Time Online Application">
+
+aria-label: "World Time Online Application" -> translate? It's an aria-label, should translate: "World Time Online Application" -> "World Time Online Anwendung" or "World Time Online Anwendung". Keep brand? "World Time Online" maybe brand? It's part of site name? Could be "World Time Online". Keep as is? The rule says translate human-readable text inside attributes like aria-label. So we should translate "World Time Online Application". However "World Time Online" might be a proper noun (site name). Not sure. Safer to translate only "Application" to "Anwendung". Keep "World Time Online" unchanged. So aria-label="World Time Online Anwendung".
+
+<div class="app-loading" aria-busy="true" aria-live="polite"> (attributes unchanged)
+
+<div class="app-loading-spinner" role="status" aria-label="Loading application"></div>
+
+aria-label: "Loading application" -> translate: "Anwendung wird geladen" or "Lade Anwendung". Common: "Anwendung wird geladen". We'll use "Anwendung wird geladen".
+
+<p class="app-loading-text">Loading World Time...</p>
+
+Translate: "Loading World Time..." -> "World Time wird geladen..." or "World Time wird geladen". Keep brand? "World Time" maybe generic. We'll translate: "World Time wird geladen...".
+
+<main id="main-content"> (no text)
+
+<article class="blog-wrap">
+<nav class="blog-breadcrumb" aria-label="Breadcrumb">
+
+aria-label: "Breadcrumb" -> translate: "Breadcrumb" maybe keep? In German often "Breadcrumb" not translated; but we can translate to "Breadcrumb-Navigation" or "Breadcrumb". I'd translate to "Breadcrumb". Actually "Breadcrumb" is a term; could keep. But rule says translate. I'd translate to "Breadcrumb" (same) or "Breadcrumb-Navigation". Let's translate to "Breadcrumb-Navigation". So aria-label="Breadcrumb-Navigation".
+
+Inside nav: <a href="/">Home</a> › <a href="/#blog">Blog</a> › <span aria-current="page">Military Time Converter — 24-Hour Clock Chart & Zulu Time</span>
+
+Translate "Home" -> "Startseite" or "Home". Usually "Home" stays as "Home" but we can translate to "Startseite". I'll translate to "Startseite". "Blog" -> "Blog" maybe keep as "Blog" (common). Could translate to "Blog" unchanged. We'll keep "Blog". The span: "Military Time Converter — 24-Hour Clock Chart & Zulu Time" translate as earlier: "Militärzeit-Umrechner — 24-Stunden-Uhr Diagramm & Zulu-Zeit". Keep same formatting.
+
+<h1>Military Time Converter — 24-Hour Clock Chart & Zulu Time</h1> translate similarly.
+
+<div class="blog-meta"> August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide</div>
+
+We see weird characters (maybe placeholder for icons). The actual text: likely includes icons before date, reading time, category. We need to translate the visible text: "August 10, 2026" -> German date format: "10. August 2026". Keep day month year. "6 min read" -> "6 Min Lesezeit" or "6 Minuten Lesedauer". Usually "6 min read" -> "6 Min Lesezeit". We'll translate to "6 Min Lesezeit". "Time Zones, Guide" -> "Zeitzonen, Leitfaden" or "Zeitzonen, Guide". Translate: "Zeitzonen, Leitfaden". Keep the icons unchanged (they are likely emoji or placeholder). We'll keep the weird characters as they are (they are not text). So the div content becomes:  10. August 2026 &nbsp;·&nbsp;  6 Min Lesezeit &nbsp;·&nbsp;  Zeitzonen, Leitfaden
+
+But we need to keep the exact characters: the placeholder characters are likely actual icons (maybe font icons). We'll keep them as is.
+
+Now paragraphs:
+
+<p>Military time uses a 24-hour clock: hours run from 00 (midnight) to 23 (11 PM), and no AM/PM marker is needed. It removes ambiguity in aviation, medicine, logistics and anything else where mixing up morning and evening matters.</p>
+
+Translate to German.
+
+"Military time uses a 24-hour clock: hours run from 00 (midnight) to 23 (11 PM), and no AM/PM marker is needed." -> "Die Militärzeit verwendet eine 24-Stunden-Uhr: Die Stunden laufen von 00 (Mitternacht) bis 23 (23 Uhr), und es wird kein AM/PM-Marker benötigt." But need to keep "AM/PM" maybe translate? In German we use "vormittags/nachmittags" but AM/PM is known. Could keep "AM/PM". We'll translate concept: "und es wird kein AM/PM-Marker benötigt." Keep AM/PM as is.
+
+Second sentence: "It removes ambiguity in aviation, medicine, logistics and anything else where mixing up morning and evening matters." -> "Es beseitigt Mehrdeutigkeit in der Luftfahrt, Medizin, Logistik und überall sonst, wo ein Verwechseln von Morgen und Abend problematisch wäre."
+
+We'll produce a natural German translation.
+
+Next:
+
+<h2>Military Time Converter</h2> -> translate: "Militärzeit-Umrechner"
+
+<div class="converter-widget">
+<h2>24-hour ↔ 12-hour</h2> translate: "24-Stunden ↔ 12-Stunden" maybe "24-Stunden ↔ 12-Stunden". Keep the arrow.
+
+<div class="converter-row"><label>Military (HHMM):</label><input type="text" id="mil-in" value="1700" maxlength="4"></div>
+
+label text: "Military (HHMM):" -> translate: "Militärzeit (HHMM):" maybe "Militärzeit (HHMM):". Keep HHMM as placeholder.
+
+<div class="converter-row"><label>Standard:</label><output id="std-out">5:00 PM</output></div>
+
+label: "Standard:" -> translate: "Standard:" maybe "Standardzeit:"? But "Standard" as label for output. Could translate to "Standardzeit:". We'll use "Standardzeit:".
+
+The output value "5:00 PM" will be dynamically changed by script; we keep as is.
+
+Next:
+
+<h2>Military Time Chart</h2> -> translate: "Militärzeit-Diagramm"
+
+<table> headers: <th>24-hour</th><th>Standard</th><th>Spoken as</th>
+
+Translate: "24-hour" -> "24-Stunden". "Standard" -> "Standardzeit". "Spoken as" -> "Ausgesprochen als". Keep.
+
+Rows: values like "0000", "12:00 AM", "Zero hundred". Need to translate the spoken as and standard column.
+
+Row1: <td>0000</td><td>12:00 AM</td><td>Zero hundred</td>
+
+Translate "12:00 AM" to German time: "00:00" maybe? But we should keep format? The standard column shows 12-hour format with AM/PM. In German we might use "00:00" (24h) but they want standard time. Could translate to "00:00" but that's not standard 12h. Better to keep "12:00 AM" but translate AM to German? In German we sometimes use "vormittags" but not common. Could keep "AM". However we should translate the text "Zero hundred" to German: "Null hundert". Usually "null hundert". We'll translate.
+
+Row2: 0600 -> "6:00 AM" -> translate to "6:00 AM" maybe keep AM. Spoken: "Zero six hundred" -> "Null sechs hundert".
+
+Row3: 1200 -> "12:00 PM" -> keep. Spoken: "Twelve hundred" -> "Zwölf hundert".
+
+Row4: 1700 -> "5:00 PM" -> keep. Spoken: "Seventeen hundred" -> "Siebzehn hundert".
+
+Row5: 2100 -> "9:00 PM" -> keep. Spoken: "Twenty-one hundred" -> "Einundzwanzig hundert".
+
+Row6: 2359 -> "11:59 PM" -> keep. Spoken: "Twenty-three fifty-nine" -> "Dreiundzwanzig fünfundneunzig". Actually "twenty-three fifty-nine" spoken as "dreiundzwanzig Uhr fünfundneunzig"? In military speech: "dreiundzwanzig Uhr fünfundneunzig". But we can translate literally: "Dreiundzwanzig fünfundneunzig". We'll use "Dreiundzwanzig fünfundneunzig".
+
+Now <h2>Zulu Time Explained</h2> -> translate: "Zulu-Zeit erklärt"
+
+Paragraph: "Zulu time (the "Z" suffix, e.g. 1430Z) is simply UTC. Pilots file flight plans and log departures in Zulu so schedules never shift across zones. To read Zulu locally: take UTC and apply your own offset."
+
+Translate:
+
+"Zulu time (the "Z" suffix, e.g. 1430Z) is simply UTC." -> "Zulu-Zeit (das „Z“-Suffix, z. B. 1430Z) ist einfach UTC."
+
+"Pilots file flight plans and log departures in Zulu so schedules never shift across zones." -> "Piloten erstellen Flugpläne und protokollieren Abflüge in Zulu-Zeit, damit die Fahrpläne nicht zwischen den Zeitzonen wechseln."
+
+"To read Zulu locally: take UTC and apply your own offset." -> "Um Zulu-Zeit lokal zu lesen: Nimm UTC und wende deine eigene Zeitzonenverschiebung an."
+
+Note: Keep "UTC" unchanged.
+
+Next:
+
+<h2>Frequently Asked Questions</h2> -> translate: "Häufig gestellte Fragen"
+
+<div class="faq-section">
+{FAQ}
+</div>
+
+The {FAQ} placeholder likely gets replaced by script; we leave as is.
+
+<p>Find your zone's offset with <a href="/time-zone-converter.html">time zone converter</a>.</p>
+
+Translate: "Find your zone's offset with" -> "Finde den Offset deiner Zeitzone mit". "time zone converter" -> translate: "Zeitzonenrechner". Keep link.
+
+Now footer:
+
+<footer class="blog-footer">
+<a href="/privacy.html">Privacy</a>
+<a href="/about.html">About</a>
+<a href="/contact.html">Contact</a>
+<a href="/terms.html">Terms</a>
+<p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p>
+</footer>
+
+Translate link texts: "Privacy" -> "Datenschutz". "About" -> "Über". "Contact" -> "Kontakt". "Terms" -> "Bedingungen". Keep copyright line: "&copy; 2026 World Time Sync" keep brand.
+
+Now also need to translate any other visible text: The script inside converter-widget has comments? Not visible.
+
+The script inside <script> after converter: function cv(){...} not visible.
+
+Now also need to translate any title attributes? Already done.
+
+Check for any other visible text: The <div class="app-loading-text"> we translated.
+
+Also the <p class="app-loading-text"> we translated.
+
+Now also need to translate any placeholder text inside input? value="1700" is numeric, not translate.
+
+Now also need to translate any aria-label on the skip link? It has none.
+
+Now also need to translate any placeholder text in the <output>? It's dynamic.
+
+Now also need to translate any text inside the <noscript>? It has <link rel="stylesheet" href="/assets/blog.css"> no text.
+
+Now also need to translate any text inside the <script type="application/ld+json">? As discussed, we may keep unchanged. But we need to check if any visible text inside those JSON-LD is meant for search engines; but the rule says translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. JSON-LD is not an attribute, it's inside a script tag. So we keep unchanged.
+
+Now also need to translate any text inside the <script> that sets gtag? Not visible.
+
+Now also need to translate any text inside the <script> for ahrefs? Not visible.
+
+Now also need to translate any text inside the <div class="faq-section">{FAQ}</div> placeholder; we keep.
+
+Now also need to translate any text inside the <meta name="google-site-verification"> content? That's a verification token, not translate.
+
+Now also need to translate any text inside the <meta name="theme-color"> content? It's a hex color, not translate.
+
+Now also need to translate any text inside the <link rel="preload" href="/assets/blog.css">? Not.
+
+Now also need to translate any text inside the <link rel="icon">? Not.
+
+Now also need to translate any text inside the <link rel="stylesheet">? Not.
+
+Now also need to translate any text inside the <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>? Not.
+
+Now also need to translate any text inside the <script> that sets dataLayer? Not.
+
+Now also need to translate any text inside the <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>? Not.
+
+Now also need to translate any text inside the <script type="module" src="/assets/index-Dd7au40z.js" async></script>? Not.
+
+Now also need to translate any text inside the <script> that hides .blog-wrap? Not.
+
+Now also need to translate any text inside the <script> that loads ahrefs? Not.
+
+Now also need to translate any text inside the <noscript>? Already.
+
+Now also need to translate any text inside the <div class="blog-meta"> we did.
+
+Now also need to translate any text inside the <nav class="blog-breadcrumb"> we did.
+
+Now also need to translate any text inside the <article> maybe none.
+
+Now also need to translate any text inside the <footer> we did.
+
+Now also need to translate any text inside the <a href="#main-content" class="skip-link"> we did.
+
+Now also need to translate any text inside the <div id="root" role="application" aria-label="World Time Online Application"> we did partially.
+
+Now also need to translate any text inside the <div class="app-loading-spinner" role="status" aria-label="Loading application"> we did.
+
+Now also need to translate any text inside the <p class="app-loading-text"> we did.
+
+Now also need to translate any text inside the <main id="main-content"> none.
+
+Now also need to translate any text inside the <article class="blog-wrap"> none.
+
+Now also need to translate any text inside the <nav class="blog-breadcrumb"> we did.
+
+Now also need to translate any text inside the <h1> we did.
+
+Now also need to translate any text inside the <div class="blog-meta"> we did.
+
+Now also need to translate any text inside the <p> after blog-meta we did.
+
+Now also need to translate any text inside the <h2>Military Time Converter</h2> we did.
+
+Now also need to translate any text inside the <div class="converter-widget"> we did.
+
+Now also need to translate any text inside the <h2>24-hour ↔ 12-hour</h2> we did.
+
+Now also need to translate any text inside the <div class="converter-row"><label>Military (HHMM):</label> we did.
+
+Now also need to translate any text inside the <label>Standard:</label> we did.
+
+Now also need to translate any text inside the <h2>Military Time Chart</h2> we did.
+
+Now also need to translate any text inside the <thead><tr><th>24-hour</th><th>Standard</th><th>Spoken as</th></tr></thead> we did.
+
+Now also need to translate any text inside the <tbody> rows we did.
+
+Now also need to translate any text inside the <h2>Zulu Time Explained</h2> we did.
+
+Now also need to translate any text inside the <p> after that we did.
+
+Now also need to translate any text inside the <h2>Frequently Asked Questions</h2> we did.
+
+Now also need to translate any text inside the <div class="faq-section">{FAQ}</div> we left.
+
+Now also need to translate any text inside the <p>Find your zone's offset with <a href="/time-zone-converter.html">time zone converter</a>.</p> we did.
+
+Now also need to translate any text inside the <footer> we did.
+
+Now also need to translate any text inside the <script> that hides .blog-wrap? Not.
+
+Now also need to translate any text inside the <script> that loads ahrefs? Not.
+
+Now also need to translate any text inside the <noscript>? Not.
+
+Now also need to translate any text inside the <link rel="prefetch">? Not present.
+
+Now also need to translate any text inside the <meta name="title"> we did.
+
+Now also need to translate any text inside the <meta name="description"> we did.
+
+Now also need to translate any text inside the <meta name="keywords"> we did.
+
+Now also need to translate any text inside the <meta property="og:title"> we did.
+
+Now also need to translate any text inside the <meta property="og:description"> we did.
+
+Now also need to translate any text inside the <meta name="twitter:title"> we did.
+
+Now also need to translate any text inside the <link rel="canonical">? Not.
+
+Now also need to translate any text inside the <link rel="alternate" hreflang="x-default">? Not.
+
+Now also need to translate any text inside the <link rel="preload">? Not.
+
+Now also need to translate any text inside the <noscript><link rel="stylesheet">? Not.
+
+Now also need to translate any text inside the <link rel="icon">? Not.
+
+Now also need to translate any text inside the <link rel="stylesheet" href="/assets/index-ufePLcBr.css">? Not.
+
+Now also need to translate any text inside the <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>? Not.
+
+Now also need to translate any text inside the <script> that sets gtag? Not.
+
+Now also need to translate any text inside the <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>? Not.
+
+Now also need to translate any text inside the <script type="application/ld+json">? We'll keep unchanged.
+
+Now also need to translate any text inside the <script type="application/ld+json"> for BreadcrumbList? Keep unchanged.
+
+Now also need to translate any text inside the <script type="application/ld+json"> for FAQPage? Keep unchanged.
+
+Now also need to translate any text inside the <script type="module" src="/assets/index-Dd7au40z.js" async></script>? Not.
+
+Now also need to translate any text inside the <script> that hides .blog-wrap? Not.
+
+Now also need to translate any text inside the <script> that loads ahrefs? Not.
+
+Now also need to translate any text inside the <noscript>? Not.
+
+Now also need to translate any text inside the <div class="app-loading">? Not.
+
+Now also need to translate any text inside the <div class="app-loading-spinner">? Not.
+
+Now also need to translate any text inside the <p class="app-loading-text"> we did.
+
+Now also need to translate any text inside the <footer> we did.
+
+Now also need to translate any text inside the <a href="/privacy.html">Privacy</a> we did.
+
+Now also need to translate any text inside the <a href="/about.html">About</a> we did.
+
+Now also need to translate any text inside the <a href="/contact.html">Contact</a> we did.
+
+Now also need to translate any text inside the <a href="/terms.html">Terms</a> we did.
+
+Now also need to translate any text inside the <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p> we kept brand.
+
+Now also need to translate any text inside the <div class="blog-wrap">? Not.
+
+Now also need to translate any text inside the <nav class="blog-breadcrumb" aria-label="Breadcrumb"> we did.
+
+Now also need to translate any text inside the <a href="/">Home</a> we did.
+
+Now also need to translate any text inside the <a href="/#blog">Blog</a> we kept.
+
+Now also need to translate any text inside the <span aria-current="page">Military Time Converter — 24-Hour Clock Chart & Zulu Time</span> we did.
+
+Now also need to translate any text inside the <h1>Military Time Converter — 24-Hour Clock Chart & Zulu Time</h1> we did.
+
+Now also need to translate any text inside the <div class="blog-meta"> we did.
+
+Now also need to translate any text inside the <p> after blog-meta we did.
+
+Now also need to translate any text inside the <h2>Military Time Converter</h2> we did.
+
+Now also need to translate any text inside the <div class="converter-widget"> we did.
+
+Now also need to translate any text inside the <h2>24-hour ↔ 12-hour</h2> we did.
+
+Now also need to translate any text inside the <label>Military (HHMM):</label> we did.
+
+Now also need to translate any text inside the <label>Standard:</label> we did.
+
+Now also need to translate any text inside the <h2>Military Time Chart</h2> we did.
+
+Now also need to translate any text inside the <table> headers we did.
+
+Now also need to translate any text inside the <tbody> rows we did.
+
+Now also need to translate any text inside the <h2>Zulu Time Explained</h2> we did.
+
+Now also need to translate any text inside the <p> after that we did.
+
+Now also need to translate any text inside the <h2>Frequently Asked Questions</h2> we did.
+
+Now also need to translate any text inside the <div class="faq-section">{FAQ}</div> we left.
+
+Now also need to translate any text inside the <p>Find your zone's offset with <a href="/time-zone-converter.html">time zone converter</a>.</p> we did.
+
+Now also need to translate any text inside the <footer> we did.
+
+Now also need to translate any text inside the <script> that hides .blog-wrap? Not.
+
+Now also need to translate any text inside the <script> that loads ahrefs? Not.
+
+Now also need to translate any text inside the <noscript>? Not.
+
+Now also need to translate any text inside the <link rel="preload">? Not.
+
+Now also need to translate any text inside the <link rel="stylesheet">? Not.
+
+Now also need to translate any text inside the <meta name="google-site-verification">? Not.
+
+Now also need to translate any text inside the <meta name="theme-color">? Not.
+
+Now also need to translate any text inside the <meta name="author">? Not.
+
+Now also need to translate any text inside the <meta property="og:type">? Not.
+
+Now also need to translate any text inside the <meta property="og:url">? Not.
+
+Now also need to translate any text inside the <meta property="og:image">? Not.
+
+Now also need to translate any text inside the <meta name="twitter:card">? Not.
+
+Now also need to translate any text inside the <meta name="twitter:title"> we did.
+
+Now also need to translate any text inside the <meta name="twitter:description">? Not present.
+
+Now also need to translate any text inside the <link rel="canonical">? Not.
+
+Now also need to translate any text inside the <link rel="alternate" hreflang="x-default">? Not.
+
+Now also need to translate any text inside the <link rel="preload">? Not.
+
+Now also need to translate any text inside the <noscript><link rel="stylesheet">? Not.
+
+Now also need to translate any text inside the <link rel="icon">? Not.
+
+Now also need to translate any text inside the <link rel="stylesheet" href="/assets/index-ufePLcBr.css">? Not.
+
+Now also need to translate any text inside the <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>? Not.
+
+Now also need to translate any text inside the <script> that sets gtag? Not.
+
+Now also need to translate any text inside the <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>? Not.
+
+Now also need to translate any text inside the <script type="application/ld+json">? We'll keep unchanged.
+
+Now also need to translate any text inside the <script type="application/ld+json"> for BreadcrumbList? Keep unchanged.
+
+Now also need to translate any text inside the <script type="application/ld+json"> for FAQPage? Keep unchanged.
+
+Now also need to translate any text inside the <script type="module" src="/assets/index-Dd7au40z.js" async></script>? Not.
+
+Now also need to translate any text inside the <script> that hides .blog-wrap? Not.
+
+Now also need to translate any text inside the <script> that loads ahrefs? Not.
+
+Now also need to translate any text inside the <noscript>? Not.
+
+Now also need to translate any text inside the <div class="app-loading">? Not.
+
+Now also need to translate any text inside the <div class="app-loading-spinner">? Not.
+
+Now also need to translate any text inside the <p class="app-loading-text"> we did.
+
+Now also need to translate any text inside the <footer> we did.
+
+Now also need to translate any text inside the <a href="/privacy.html">Privacy</a> we did.
+
+Now also need to translate any text inside the <a href="/about.html">About</a> we did.
+
+Now also need to translate any text inside the <a href="/contact.html">Contact</a> we did.
+
+Now also need to translate any text inside the <a href="/terms.html">Terms</a> we did.
+
+Now also need to translate any text inside the <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p> we kept brand.
+
+Now also need to translate any text inside the <div class="blog-wrap">? Not.
+
+Now also need to translate any text inside the <nav class="blog-breadcrumb" aria-label="Breadcrumb"> we did.
+
+Now also need to translate any text inside the <a href="/">Home</a> we did.
+
+Now also need to translate any text inside the <a href="/#blog">Blog</a> we kept.
+
+Now also need to translate any text inside the <span aria-current="page">Military Time Converter — 24-Hour Clock Chart & Zulu Time</span> we did.
+
+Now also need to translate any text inside the <h1>Military Time Converter — 24-Hour Clock Chart & Zulu Time</h1> we did.
+
+Now also need to translate any text inside the <div class="blog-meta"> we did.
+
+Now also need to translate any text inside the <p> after blog-meta we did.
+
+Now also need to translate any text inside the <h2>Military Time Converter</h2> we did.
+
+Now also need to translate any text inside the <div class="converter-widget"> we did.
+
+Now also need to translate any text inside the <h2>24-hour ↔ 12-hour</h2> we did.
+
+Now also need to translate any text inside the <label>Military (HHMM):</label> we did.
+
+Now also need to translate any text inside the <label>Standard:</label> we did.
+
+Now also need to translate any text inside the <h2>Military Time Chart</h2> we did.
+
+Now also need to translate any text inside the <table> headers we did.
+
+Now also need to translate any text inside the <tbody> rows we did.
+
+Now also need to translate any text inside the <h2>Zulu Time Explained</h2> we did.
+
+Now also need to translate any text inside the <p> after that we did.
+
+Now also need to translate any text inside the <h2>Frequently Asked Questions</h2> we did.
+
+Now also need to translate any text inside the <div class="faq-section">{FAQ}</div> we left.
+
+Now also need to translate any text inside the <p>Find your zone's offset with <a href="/time-zone-converter.html">time zone converter</a>.</p> we did

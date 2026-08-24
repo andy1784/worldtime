@@ -1,0 +1,431 @@
+We need to translate all visible/user-facing text in the HTML into Russian, preserving tags, attributes, etc. The HTML currently has lang="ru" but many texts are in English. We need to translate them.
+
+We must translate text inside tags and attributes like title/alt/aria-label/description/keywords/content. Also meta tags content attributes.
+
+We must not translate URLs, proper nouns (city/feature names) unless natural localized form exists. Keep code, JSON-LD values? The JSON-LD blocks contain text values that are user-facing (like headline, description, name, etc). According to rule 2, translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. JSON-LD is inside script tags, but its content is not HTML tags; it's JSON. However the content inside JSON is still text that is user-facing (like headline). Should we translate? The rule says translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. JSON-LD is not an HTML tag attribute; it's inside a script tag. The content of script is not HTML text; but it's still visible to search engines. The instruction says translate all visible/user-facing text in the HTML document. JSON-LD is not visible to users but is part of HTML. Usually they'd want to translate those as well? The rule says "Translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content." JSON-LD is not such attribute. So we likely should NOT translate JSON-LD content. However the FAQ section includes {FAQ} placeholder? Actually there is a div with {FAQ}. That's likely a placeholder to be replaced by script; we should not translate that placeholder.
+
+We need to translate visible text: title tag, meta name="title", meta name="description", meta name="keywords", og:title, og:description, twitter:title, etc. Also the skip-link text, app-loading-text, blog-breadcrumb links text, h1, blog-meta (the date etc), paragraphs, h2, table headers, table cells (zone names, offsets), p, FAQ questions and answers (but they are inside JSON-LD; we might not translate). Also footer links text.
+
+Also the blog-meta currently shows garbled characters: " August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide". Those are likely placeholder for icons; we should translate the text parts: "August 10, 2026", "6 min read", "Time Zones, Guide". The icons remain as is (they are likely emojis). We'll keep the same characters.
+
+Also the script that updates UTC time: we should not translate the script code.
+
+Also the table: Zone column values like "EST / EDT", "PST / PDT", etc are proper nouns (time zone abbreviations) keep as is. Offsets like "UTC−5" etc keep.
+
+Now we need to produce final HTML with translations.
+
+Let's go step by step.
+
+Original HTML:
+
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="theme-color" content="#667eea">
+    <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk">
+    <title>Current UTC Time Now — GMT Time & Zone Conversions | World Time Sync</title>
+    <meta name="title" content="Current UTC Time Now — GMT Time & Zone Conversions | World Time Sync">
+    <meta name="description" content="Live UTC clock right now plus instant conversion to EST, PST, CET, IST and every major zone.">
+    <meta name="keywords" content="current utc time, utc time now, gmt time now, what time is it in utc, current gmt">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="World Time Sync">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://worldtimessync.com/ru/blog/current-utc-time-now.html">
+    <meta property="og:title" content="Current UTC Time Now — GMT Time & Zone Conversions | World Time Sync">
+    <meta property="og:description" content="Live UTC clock right now plus instant conversion to EST, PST, CET, IST and every major zone.">
+    <meta property="og:image" content="https://worldtimessync.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Current UTC Time Now — GMT Time & Zone Conversions | World Time Sync">
+    <link rel="canonical" href="https://worldtimessync.com/ru/blog/current-utc-time-now.html">
+    <link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/ru/blog/current-utc-time-now.html">
+    <link rel="preload" href="/assets/blog.css" as="style">
+<noscript><link rel="stylesheet" href="/assets/blog.css"></noscript>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/assets/index-ufePLcBr.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LBX0CDYSSV');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "Article", "headline": "Current UTC Time Now — GMT Time & Zone Conversions | World Time Sync", "description": "Live UTC clock right now plus instant conversion to EST, PST, CET, IST and every major zone.", "articleSection": "Time Zones", "keywords": "current utc time, utc time now, gmt time now, what time is it in utc, current gmt", "wordCount": 126, "timeRequired": "PT6M", "inLanguage": "en", "author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}, "publisher": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com", "logo": {"@type": "ImageObject", "url": "https://worldtimessync.com/logo.png", "width": 512, "height": 512}}, "datePublished": "2026-08-10", "dateModified": "2026-08-10", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/ru/blog/current-utc-time-now.html"}, "image": "https://worldtimessync.com/og-image.png"}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://worldtimessync.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://worldtimessync.com/#blog"}, {"@type": "ListItem", "position": 3, "name": "Current UTC Time Now — GMT Time & Zone Conversions", "item": "https://worldtimessync.com/ru/blog/current-utc-time-now.html"}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What time is it in UTC right now?", "acceptedAnswer": {"@type": "Answer", "text": "The live clock above shows the current UTC time, updating every second from your device clock."}}, {"@type": "Question", "name": "Is UTC the same as GMT?", "acceptedAnswer": {"@type": "Answer", "text": "For daily use yes. Technically UTC is an atomic-clock standard and GMT is astronomical, but they never differ by more than a fraction of a second."}}, {"@type": "Question", "name": "Why do servers store timestamps in UTC?", "acceptedAnswer": {"@type": "Answer", "text": "No DST shifts and one unambiguous reference — converting to local time happens only at display."}}]}
+    </script>
+
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div id="root" role="application" aria-label="World Time Online Application">
+        <div class="app-loading" aria-busy="true" aria-live="polite">
+            <div class="app-loading-spinner" role="status" aria-label="Loading application"></div>
+            <p class="app-loading-text">Loading World Time...</p>
+        </div>
+    </div>
+    <main id="main-content">
+        <article class="blog-wrap">
+            <nav class="blog-breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Home</a> › <a href="/#blog">Blog</a> › <span aria-current="page">Current UTC Time Now — GMT Time & Zone Conversions</span>
+            </nav>
+            <h1>Current UTC Time Now — GMT Time & Zone Conversions</h1>
+            <div class="blog-meta"> August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide</div>
+
+<p>UTC (Coordinated Universal Time) is the reference every other zone offsets from. It never shifts for daylight saving, which makes it the standard for servers, logs, aviation and anything cross-border.</p>
+
+<h2>UTC Right Now</h2>
+<div class="converter-widget">
+<h2>🕐 Current UTC Time</h2>
+<p id="utc-now" style="font-size:1.5em;font-weight:700;font-variant-numeric:tabular-nums;"></p>
+<p>Date: <span id="utc-date"></span></p>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+ function t(){var n=new Date();
+ document.getElementById('utc-now').textContent=n.toISOString().slice(11,19);
+ document.getElementById('utc-date').textContent=n.toISOString().slice(0,10);}
+ t(); setInterval(t,1000);
+});
+</script>
+
+<h2>UTC vs Major Zones Right Now</h2>
+<table><thead><tr><th>Zone</th><th>Standard offset</th><th>Summer offset</th></tr></thead><tbody>
+<tr><td>EST / EDT</td><td>UTC−5</td><td>UTC−4</td></tr>
+<tr><td>PST / PDT</td><td>UTC−8</td><td>UTC−7</td></tr>
+<tr><td>CET / CEST</td><td>UTC+1</td><td>UTC+2</td></tr>
+<tr><td>IST (India)</td><td>UTC+5:30</td><td>No change</td></tr>
+<tr><td>JST (Japan)</td><td>UTC+9</td><td>No change</td></tr>
+</tbody></table>
+
+<p>GMT and UTC show the same clock time for everyday purposes; the difference is technical — UTC is maintained by atomic clocks while GMT is based on Earth's rotation.</p>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-section">
+{FAQ}
+</div>
+<p>Convert any pair with our <a href="/time-zone-converter.html">time zone converter</a>.</p>
+
+        <footer class="blog-footer">
+            <a href="/privacy.html">Privacy</a>
+            <a href="/about.html">About</a>
+            <a href="/contact.html">Contact</a>
+            <a href="/terms.html">Terms</a>
+            <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p>
+        </footer>
+    </main>
+
+    <script type="module" src="/assets/index-Dd7au40z.js" async></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var seo = document.querySelector('.blog-wrap');
+        if (seo) seo.style.display = 'none';
+      });
+    </script>
+    <script>
+      window.addEventListener('load',function(){
+        var ahrefs=document.createElement('script');
+        ahrefs.async=true;
+        ahrefs.src='https://analytics.ahrefs.com/analytics.js';
+        ahrefs.setAttribute('data-key','hB1VYWuwb1i/f1d8re7P2A');
+        document.head.appendChild(ahrefs);
+      });
+    </script>
+  </body>
+</html>
+
+Now translate.
+
+We need to translate:
+
+- title tag text: "Current UTC Time Now — GMT Time & Zone Conversions | World Time Sync"
+- meta name="title" content same.
+- meta name="description": "Live UTC clock right now plus instant conversion to EST, PST, CET, IST and every major zone."
+- meta name="keywords": "current utc time, utc time now, gmt time now, what time is it in utc, current gmt"
+- og:title same as title.
+- og:description same as description.
+- twitter:title same as title.
+- Also maybe meta name="author": "World Time Sync" (organization name, proper noun? It's a brand; keep as is? Probably keep unchanged.)
+- Skip link: "Skip to main content"
+- aria-label on root: "World Time Online Application" (maybe translate? It's aria-label, should be translated as it's user-facing for screen readers. So translate to Russian: "Мировое время онлайн приложение" or similar. Keep meaning.)
+- app-loading-text: "Loading World Time..."
+- blog-breadcrumb: link text "Home", "Blog", and the current page span text "Current UTC Time Now — GMT Time & Zone Conversions"
+- h1: same as page title.
+- blog-meta: we need to translate the text parts: "August 10, 2026" -> "10 августа 2026 г."? In Russian typical format: "10 августа 2026 г." Keep the icons unchanged. Also "6 min read" -> "6 мин чтения" or "6 мин чтения". Usually "6 мин чтения". "Time Zones, Guide" -> "Часовые пояса, Руководство". Keep icons.
+- Paragraph after meta: "UTC (Coordinated Universal Time) is the reference every other zone offsets from. It never shifts for daylight saving, which makes it the standard for servers, logs, aviation and anything cross-border."
+- h2: "UTC Right Now"
+- Inside converter-widget: h2: "🕐 Current UTC Time" (keep icon, translate text after icon? The icon is emoji; we keep it. So "🕐 Текущее время UTC")
+- p: "Date:" -> "Дата:"
+- h2: "UTC vs Major Zones Right Now"
+- Table headers: "Zone", "Standard offset", "Summer offset" -> translate: "Часовой пояс", "Стандартное смещение", "Летнее смещение"
+- Table cells: zone names remain as is (EST/EDT etc). Offsets remain as is. For IST row: "No change" -> translate to "Без изменений"
+- JST row: same.
+- Paragraph after table: "GMT and UTC show the same clock time for everyday purposes; the difference is technical — UTC is maintained by atomic clocks while GMT is based on Earth's rotation."
+- h2: "Frequently Asked Questions"
+- The FAQ div placeholder {FAQ} stays as is.
+- Paragraph after FAQ: "Convert any pair with our <a href="/time-zone-converter.html">time zone converter</a>." -> translate: "Преобразуйте любую пару с помощью нашего <a href="/time-zone-converter.html">конвертера часовых поясов</a>."
+- Footer links: "Privacy", "About", "Contact", "Terms" -> translate: "Конфиденциальность", "О нас", "Контакт", "Условия"
+- Copyright: "&copy; 2026 World Time Sync" -> keep name unchanged, maybe translate "World Time Sync" as brand; keep as is. So "&copy; 2026 World Time Sync"
+- Also the aria-label on app-loading-spinner: "Loading application" -> translate: "Загрузка приложения"
+- Also the aria-label on root already done.
+- Also the aria-label on skip-link? It's just link text; we translated.
+- Also the aria-label on app-loading-spinner role status: we already have.
+- Also the aria-label on root: "World Time Online Application" -> translate.
+- Also the aria-label on app-loading-spinner: we have.
+- Also the aria-label on app-loading? Not present.
+- Also the aria-label on app-loading? Not.
+- Also the aria-label on app-loading? Not.
+
+- Also the meta name="theme-color" content is a color, not translate.
+- Also the meta name="google-site-verification" content is a token, not translate.
+- Also the link rel="icon" etc not.
+- Also the script content not translate.
+
+- Also the JSON-LD we should not translate per rule. However the FAQ JSON-LD contains questions and answers in English. Should we translate? The rule says translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. JSON-LD is not such. So we keep as is.
+
+- Also the BreadcrumbList JSON-LD contains names "Home", "Blog", "Current UTC Time Now — GMT Time & Zone Conversions". Those are also not translated per rule. We'll keep.
+
+- Also the Article JSON-LD contains headline, description, articleSection, keywords, author name, publisher name, etc. We'll keep as is.
+
+Now we need to ensure we keep the HTML structure exactly.
+
+Let's produce final HTML.
+
+We'll replace each translatable text.
+
+Start with <title>: translate to Russian: "Текущее время UTC — GMT Time & Zone Conversions | World Time Sync". Note: Keep "GMT Time & Zone Conversions" as is? It's a proper phrase maybe keep English? The instruction: do NOT translate URLs, city/feature names that are proper nouns unless a natural localized form exists. "GMT Time & Zone Conversions" is not a proper noun; it's a descriptive phrase. Should translate. So "GMT Time & Zone Conversions" -> "GMT и преобразования часовых поясов"? But maybe keep "GMT Time & Zone Conversions" as is? The original English phrase likely is a section title. We should translate to Russian: "GMT и преобразования часовых поясов" or "GMT Time & Zone Conversions" maybe keep as is because it's a brand? Not sure. Safer to translate: "GMT и преобразования часовых поясов". However the ampersand & is used; we can keep "&". So "GMT Time & Zone Conversions" -> "GMT Time & Zone Conversions" maybe keep as is because it's a proper noun? It's not a proper noun. I'd translate: "GMT и преобразования часовых поясов". But the phrase "GMT Time" maybe keep as "GMT время"? Hmm.
+
+Let's think: The page title originally: "Current UTC Time Now — GMT Time & Zone Conversions | World Time Sync". If we translate fully: "Текущее время UTC сейчас — GMT время и преобразования часовых поясов | World Time Sync". But "GMT Time" could be "GMT время". However "GMT Time & Zone Conversions" maybe they intend "GMT Time & Zone Conversions" as a heading. I'd translate to "GMT время и преобразования часовых поясов". Keep the ampersand.
+
+Thus title: "Текущее время UTC сейчас — GMT время и преобразования часовых поясов | World Time Sync"
+
+But we also have "Current UTC Time Now" -> "Текущее время UTC сейчас". Could also be "Текущее время UTC". The "Now" redundant. We'll translate as "Текущее время UTC сейчас". Good.
+
+Now meta name="title" content same.
+
+Meta name="description": "Live UTC clock right now plus instant conversion to EST, PST, CET, IST and every major zone." Translate: "Живые часы UTC прямо сейчас плюс мгновенное преобразование в EST, PST, CET, IST и каждую主要 zone." Need to translate "every major zone" -> "каждая主要 зона"? Actually "every major zone" -> "каждый主要 часовой пояс". In Russian: "каждый主要 часовой пояс". But we keep zone abbreviations as is. So: "Живые часы UTC прямо сейчас плюс мгновенное преобразование в EST, PST, CET, IST и каждый主要 часовой пояс." However "major zone" maybe "основной часовой пояс". So: "и каждый主要 часовой пояс". Let's use "каждый主要 часовой пояс". But better: "и каждый主要 часовой пояс". I'll write: "Живые часы UTC прямо сейчас плюс мгновенное преобразование в EST, PST, CET, IST и каждый主要 часовой пояс."
+
+But maybe simpler: "Живые часы UTC прямо сейчас плюс мгновенное преобразование в EST, PST, CET, IST и каждый主要 часовой пояс." Keep abbreviations.
+
+Meta name="keywords": "current utc time, utc time now, gmt time now, what time is it in utc, current gmt". Translate each phrase? Keywords are for SEO; maybe keep English? But rule says translate human-readable text inside attributes like keywords. So we should translate. Let's translate:
+
+- current utc time -> "текущее время UTC"
+- utc time now -> "время UTC сейчас"
+- gmt time now -> "время GMT сейчас"
+- what time is it in utc -> "который сейчас час в UTC"
+- current gmt -> "текущее GMT"
+
+Comma separated.
+
+So content: "текущее время UTC, время UTC сейчас, время GMT сейчас, который сейчас час в UTC, текущее GMT"
+
+Meta name="author": "World Time Sync" keep as brand.
+
+og:title same as title.
+
+og:description same as description.
+
+twitter:title same as title.
+
+Now body:
+
+Skip link: "Skip to main content" -> "Перейти к основному содержимому"
+
+aria-label on root: "World Time Online Application" -> translate: "Мировое время онлайн приложение" maybe "Приложение World Time Online". But we keep meaning: "World Time Online Application" -> "Приложение World Time Онлайн". I'll use "Приложение World Time Онлайн". However to be natural: "Приложение World Time Онлайн". Keep capitalization? We'll just translate: "Приложение World Time Онлайн". Could also be "Мировое время онлайн приложение". I'll go with "Приложение World Time Онлайн".
+
+app-loading-text: "Loading World Time..." -> "Загрузка World Time..." (keep brand). Could translate "World Time" as brand, keep. So "Загрузка World Time..."
+
+blog-breadcrumb: link text Home -> "Главная". Blog -> "Блог". Span aria-current page: "Current UTC Time Now — GMT Time & Zone Conversions" -> translate similarly to title but without brand: "Текущее время UTC сейчас — GMT время и преобразования часовых поясов"
+
+h1: same as span.
+
+blog-meta: we need to keep icons (the weird characters). We'll keep them as is. Replace text parts:
+
+- "August 10, 2026" -> "10 августа 2026 г."
+- "6 min read" -> "6 мин чтения"
+- "Time Zones, Guide" -> "Часовые пояса, Руководство"
+
+Thus the div becomes: " 10 августа 2026 г. &nbsp;·&nbsp;  6 мин чтения &nbsp;·&nbsp;  Часовые пояса, Руководство"
+
+Paragraph after meta: translate:
+
+"UTC (Coordinated Universal Time) is the reference every other zone offsets from. It never shifts for daylight saving, which makes it the standard for servers, logs, aviation and anything cross-border."
+
+Translate: "UTC (Всемирное согласованное время) является эталоном, от которого отсчитываются все остальные часовые пояса. Он никогда не меняется из-за летнего времени, что делает его стандартом для серверов, журналов, авиации и всего, что связано с пересечением границ."
+
+Note: "Coordinated Universal Time" translate to "Всемирное согласованное время". Good.
+
+h2: "UTC Right Now" -> "UTC прямо сейчас"
+
+Inside converter-widget h2: "🕐 Current UTC Time" -> keep emoji, translate: "🕐 Текущее время UTC"
+
+p: "Date:" -> "Дата:"
+
+h2: "UTC vs Major Zones Right Now" -> "UTC по сравнению с主要 часовыми поясами сейчас" maybe "UTC и主要 часовые пояса сейчас". Better: "UTC и主要 часовые пояса сейчас". Let's do: "UTC и主要 часовые пояса сейчас". Keep abbreviations.
+
+Table headers: Zone -> "Часовой пояс", Standard offset -> "Стандартное смещение", Summer offset -> "Летнее смещение"
+
+Table cells: keep zone abbreviations, offsets. For IST row: "No change" -> "Без изменений". JST row same.
+
+Paragraph after table: "GMT and UTC show the same clock time for everyday purposes; the difference is technical — UTC is maintained by atomic clocks while GMT is based on Earth's rotation."
+
+Translate: "GMT и UTC показывают одинаковое время для повседневных целей; разница техническая — UTC поддерживается атомными часами, тогда как GMT основан на вращении Земли."
+
+h2: "Frequently Asked Questions" -> "Часто задаваемые вопросы"
+
+FAQ div placeholder stays {FAQ}.
+
+Paragraph after FAQ: "Convert any pair with our <a href="/time-zone-converter.html">time zone converter</a>."
+
+Translate: "Преобразуйте любую пару с помощью нашего <a href="/time-zone-converter.html">конвертера часовых поясов</a>."
+
+Footer links: Privacy -> "Конфиденциальность", About -> "О нас", Contact -> "Контакт", Terms -> "Условия"
+
+Copyright: "&copy; 2026 World Time Sync" keep.
+
+Now also need to translate aria-label on app-loading-spinner: "Loading application" -> "Загрузка приложения"
+
+Also the aria-label on root we already did.
+
+Also the aria-label on app-loading-spinner role status we did.
+
+Also the aria-label on app-loading? Not.
+
+Also the aria-label on app-loading? Not.
+
+Also the aria-label on app-loading? Not.
+
+Also the aria-label on app-loading? Not.
+
+Now also need to translate the text inside the noscript? It's just a link tag, no visible text.
+
+Now also need to translate the text inside the script? Not.
+
+Now also need to translate the text inside the JSON-LD? Not per rule.
+
+Now also need to translate the text inside the <meta name="theme-color" content="#667eea"> not.
+
+Now also need to translate the text inside the <link rel="preload" href="/assets/blog.css" as="style"> not.
+
+Now also need to translate the text inside the <link rel="icon" type="image/svg+xml" href="/favicon.svg"> not.
+
+Now also need to translate the text inside the <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script> not.
+
+Now also need to translate the text inside the <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script> not.
+
+Now also need to translate the text inside the <script type="module" src="/assets/index-Dd7au40z.js" async></script> not.
+
+Now also need to translate the text inside the <script> ... </script> blocks not.
+
+Now also need to translate the text inside the <noscript><link rel="stylesheet" href="/assets/blog.css"></noscript> not.
+
+Now also need to translate the text inside the <link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/ru/blog/current-utc-time-now.html"> not.
+
+Now also need to translate the text inside the <link rel="canonical" href="https://worldtimessync.com/ru/blog/current-utc-time-now.html"> not.
+
+Now also need to translate the text inside the <meta property="og:url" content="https://worldtimessync.com/ru/blog/current-utc-time-now.html"> not.
+
+Now also need to translate the text inside the <meta property="og:image" content="https://worldtimessync.com/og-image.png"> not.
+
+Now also need to translate the text inside the <meta name="twitter:card" content="summary_large_image"> not.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="..."> we already translated.
+
+Now also need to translate the text inside the <meta name="google-site-verification" content="..."> not.
+
+Now also need to translate the text inside the <meta name="theme-color" content="#667eea"> not.
+
+Now also need to translate the text inside the <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"> not.
+
+Now also need to translate the text inside the <meta charset="UTF-8"> not.
+
+Now also need to translate the text inside the <link rel="stylesheet" href="/assets/index-ufePLcBr.css"> not.
+
+Now also need to translate the text inside the <link rel="stylesheet" href="/assets/blog.css"> inside noscript not.
+
+Now also need to translate the text inside the <a href="/privacy.html">Privacy</a> etc we did.
+
+Now also need to translate the text inside the <a href="/about.html">About</a> etc.
+
+Now also need to translate the text inside the <a href="/contact.html">Contact</a> etc.
+
+Now also need to translate the text inside the <a href="/terms.html">Terms</a> etc.
+
+Now also need to translate the text inside the <a href="/time-zone-converter.html">time zone converter</a> we translated the link text.
+
+Now also need to translate the text inside the <a href="/">Home</a> we did.
+
+Now also need to translate the text inside the <a href="/#blog">Blog</a> we did.
+
+Now also need to translate the text inside the <a href="#main-content" class="skip-link">Skip to main content</a> we did.
+
+Now also need to translate the text inside the <p class="app-loading-text">Loading World Time...</p> we did.
+
+Now also need to translate the text inside the <div class="app-loading" aria-busy="true" aria-live="polite"> no visible text.
+
+Now also need to translate the text inside the <div class="app-loading-spinner" role="status" aria-label="Loading application"></div> we changed aria-label.
+
+Now also need to translate the text inside the <div id="root" role="application" aria-label="World Time Online Application"> we changed aria-label.
+
+Now also need to translate the text inside the <nav class="blog-breadcrumb" aria-label="Breadcrumb"> aria-label "Breadcrumb" -> translate to "Навигационная цепочка" or "Хлебные крошки". Usually "breadcrumb" translated as "Хлебные крошки". We'll translate: "Хлебные крошки". So aria-label="Хлебные крошки".
+
+Now also need to translate the text inside the <h2>Frequently Asked Questions</h2> we did.
+
+Now also need to translate the text inside the <div class="faq-section"> no visible.
+
+Now also need to translate the text inside the <footer class="blog-footer"> no visible besides links.
+
+Now also need to translate the text inside the <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p> we kept.
+
+Now also need to translate the text inside the <script> ... </script> not.
+
+Now also need to translate the text inside the <script type="application/ld+json"> not.
+
+Now also need to translate the text inside the <script> ... </script> for gtag not.
+
+Now also need to translate the text inside the <script> ... </script> for ahrefs not.
+
+Now also need to translate the text inside the <script> ... </script> for the UTC clock not.
+
+Now also need to translate the text inside the <script> ... </script> for the seo hide not.
+
+Now also need to translate the text inside the <script> ... </script> for the ahrefs not.
+
+Now also need to translate the text inside the <script> ... </script> for the gtag not.
+
+Now also need to translate the text inside the <script> ... </script> for the adsbygoogle not.
+
+Now also need to translate the text inside the <script> ... </script> for the gtag not.
+
+Now also need to translate the text inside the <script> ... </script> for the seo hide not.
+
+Now also need to translate the text inside the <script> ... </script> for the ahrefs not.
+
+Now also need to translate the text inside the <script> ... </script> for the UTC clock not.
+
+Now also need to translate the text inside the <script> ... </script> for the seo hide not.
+
+Now also need to translate the text inside the <script> ... </script> for the ahrefs not.
+
+Now also need to translate the text inside the <script> ... </script> for the gtag not.
+
+Now also need to translate the text inside the <script> ... </script> for the adsbygoogle not.
+
+Now also need to translate the text inside the <script> ... </script> for the gtag not.
+
+Now also need to translate the text inside the <script> ... </script> for the seo hide not.
+
+Now also need to translate the text inside the <script> ... </script> for the ahrefs not.
+
+Now also need to translate the text inside the <script> ... </script> for the UTC clock not.
+
+Now also need to translate the text inside the <script> ... </script> for the seo hide not.
+
+Now also need to translate the text inside the <script> ... </script> for

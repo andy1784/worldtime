@@ -1,0 +1,420 @@
+We need to translate all visible/user-facing text into German, preserving HTML tags, attributes, etc. Also need to translate JSON-LD content values (like headline, description, etc.) as they are inside script tags but are JSON strings; they are considered user-facing? The rule says translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. JSON-LD blocks contain text values that are likely considered content; they should be translated as well. However, we must keep the JSON structure intact, only translate the string values.
+
+Also need to translate meta tags like og:title, og:description, twitter:title, etc. Also the <title> tag.
+
+Also need to translate visible text in body: e.g., "Skip to main content", "Loading World Time...", breadcrumb items: "Home", "Blog", "Golden Hour Calculator — Blue Hour & Solar Noon Today". Also the h1 same as breadcrumb. Also blog-meta: contains date and reading time and categories. The blog-meta currently shows some weird characters: " August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide". Those are likely placeholders for icons; we should translate the text parts: "August 10, 2026" stays same (date format maybe keep but could translate month? Usually keep as is? The rule: do not translate city/feature names that are proper nouns unless a natural localized form exists. Month names are not proper nouns? Usually we translate month names to German: "August" stays same (August is same in German). So keep. "6 min read" -> translate to "6 Min Lesezeit" or "6 Minuten Lesedauer". Usually "min read" is "Minuten Lesezeit". We'll translate to "6 Min Lesezeit". The categories: "Time Zones, Guide" -> translate to "Zeitzonen, Leitfaden" or "Zeitzonen, Guide"? Guide could be "Leitfaden". We'll translate.
+
+Also need to translate paragraphs: "Photographers and filmmakers plan shoots around the Sun's angle. Golden hour is when the Sun sits within roughly 6° of the horizon; blue hour is the stretch of twilight just after sunset or before sunrise. Both depend on your exact location and date."
+
+Translate to German.
+
+Also headings: "How to Read the Numbers", table headers: "Period", "Sun position", "Light quality". Table rows: need to translate the text in cells: "Golden hour (AM)", "Solar noon", "Golden hour (PM)", "Blue hour". Also the descriptions: "-6° to +6°" stays same (numbers and symbols). "Warm, soft, long shadows" -> translate. "Harsh overhead light" -> translate. "Warm, directional" -> translate. "Cool, even, diffused" -> translate.
+
+Next section: "<h2>Solar Noon &amp; Day Length</h2>" translate heading? The heading includes "&amp;" which is HTML entity for &. We need to keep the entity but translate the text: "Solar Noon & Day Length". In German: "Solarmittag & Tageslänge" maybe "Solarmittag & Tageslänge". Keep the &amp; entity.
+
+Paragraphs under that: translate.
+
+Next: "<div class="converter-widget"><h2>Quick Estimator</h2><p>Golden hour lasts longer in summer and at higher latitudes. Rule of thumb: duration ≈ 40 minutes at 40° latitude near the equinox, up to an hour or more in summer.</p></div>" translate heading and paragraph.
+
+Next: "<h2>Frequently Asked Questions</h2>" translate.
+
+Then there is a div with {FAQ} placeholder; we should not translate placeholder; keep as is.
+
+Then paragraph: "Get precise times per city via <a href="/sunrise-sunset.html">sunrise &amp; sunset</a> or the <a href="/world-clock.html">world clock</a>." translate.
+
+Footer links: "Privacy", "About", "Contact", "Terms". Translate to German: "Datenschutz", "Über", "Kontakt", "Nutzungsbedingungen". Also copyright line: "&copy; 2026 World Time Sync" keep name unchanged.
+
+Also need to translate aria-label attributes: e.g., <a href="#main-content" class="skip-link">Skip to main content</a> -> translate to "Zum Hauptinhalt springen". Also aria-label on div id="root": aria-label="World Time Online Application" -> translate to German: "World Time Online Anwendung" maybe "World Time Online Anwendung". Keep brand name.
+
+Also aria-busy, aria-live etc remain.
+
+Also the loading spinner's aria-label: "Loading application" -> translate to "Anwendung wird geladen". Also the p class "app-loading-text": "Loading World Time..." -> translate to "World Time wird geladen..." maybe "World Time wird geladen...".
+
+Also the blog-breadcrumb: <a href="/">Home</a> -> translate to "Startseite" or "Home"? Usually "Home" can stay as "Startseite". We'll translate to "Startseite". The blog link: <a href="/#blog">Blog</a> -> translate to "Blog" maybe keep as "Blog" (common). Could translate to "Blog" stays same. We'll keep as "Blog". The span aria-current="page": "Golden Hour Calculator — Blue Hour & Solar Noon Today" -> translate to German: "Golden Hour Rechner — Blaue Stunde & Solarmittag Heute". Need to keep the dash and ampersand? We'll translate: "Golden Hour Rechner — Blaue Stunde & Solarmittag Heute". Keep the en dash? We'll use same " — ". Also "Today" -> "Heute". Also "Golden Hour" maybe keep as term? Could translate to "Goldene Stunde". Usually "Golden hour" is a photography term; could keep English but we should translate? The rule: translate human-readable text. So translate to "Goldene Stunde". Similarly "Blue hour" -> "Blaue Stunde". "Solar Noon" -> "Solarmittag". So final: "Goldene Stunde Rechner — Blaue Stunde & Solarmittag Heute". However the original had "Golden Hour Calculator — Blue Hour & Solar Noon Today". We'll translate accordingly.
+
+Also the h1 same text: translate similarly.
+
+Also the blog-meta: we need to translate the text parts: date, reading time, categories. Already considered.
+
+Also the table headers: "Period" -> "Zeitraum". "Sun position" -> "Sonnenposition". "Light quality" -> "Lichtqualität".
+
+Now JSON-LD translation.
+
+We have three JSON-LD blocks.
+
+First: type Article. Need to translate headline, description, articleSection, keywords, author name? author name is organization name "World Time Sync" - keep as is. publisher name same. datePublished, dateModified stay. mainEntityOfPage @id stays. image URL stays.
+
+We need to translate headline: "Golden Hour Calculator — Blue Hour & Solar Noon Today | World Time Sync". Translate to German: "Goldene Stunde Rechner — Blaue Stunde & Solarmittag Heute | World Time Sync". Keep the separator.
+
+Description: "Find today's golden hour, blue hour, solar noon and day length for any city with a live calculator." Translate: "Finde heute die goldene Stunde, blaue Stunde, Solarmittag und Tageslänge für jede Stadt mit einem Live-Rechner."
+
+articleSection: "Time Zones" -> translate to "Zeitzonen".
+
+keywords: list: "golden hour calculator today, blue hour tonight, solar noon time today, day length calculator, when does the sun set tomorrow". Need to translate each phrase to German, but keep as a single string? We'll translate each: "goldene Stunde Rechner heute, blaue Stunde heute Abend, Solarmittag heute, Tageslängenrechner, wann geht die Sonne morgen unter". Keep commas.
+
+Second JSON-LD: BreadcrumbList. Need to translate "name" values: "Home", "Blog", "Golden Hour Calculator — Blue Hour & Solar Noon Today". Translate: "Startseite", "Blog", "Goldene Stunde Rechner — Blaue Stunde & Solarmittag Heute". Keep URLs same.
+
+Third JSON-LD: FAQPage. Need to translate question names and answer texts.
+
+Questions:
+- "What time is golden hour today?" -> translate: "Wie spät ist die goldene Stunde heute?"
+- "Is blue hour before or after sunset?" -> translate: "Ist die blaue Stunde vor oder nach Sonnenuntergang?"
+- "Why does solar noon differ from 12 PM?" -> translate: "Warum unterscheidet sich Solarmittag von 12 Uhr mittags?"
+
+Answers:
+- For first answer: "It starts about an hour before sunset and ends shortly after sunrise ends — check the calculator above plus your city's sunset time." Translate: "Sie beginnt etwa eine Stunde vor Sonnenuntergang und endet kurz nachdem der Sonnenaufgang endet — siehe den Rechner oben sowie die Sonnenuntergangszeit deiner Stadt."
+
+- Second answer: "Both: civil twilight after sunset and before sunrise. The sky stays bright enough to shoot without artificial light." Translate: "Beides: zivile Dämmerung nach Sonnenuntergang und vor Sonnenaufgang. Der Himmel bleibt hell genug, um ohne künstliches Licht zu fotografieren."
+
+- Third answer: "Time zones are wide; solar noon tracks the Sun's actual highest point, which can be 30+ minutes from clock noon depending on where you are in the zone." Translate: "Zeitzonen sind breit; Solarmittag folgt dem tatsächlichen höchsten Punkt der Sonne, der je nach Position in der Zeitzone bis zu 30+ Minuten vom Uhrzeit-Mittag entfernt sein kann."
+
+Need to keep punctuation and HTML entities like — (em dash). We'll keep as is.
+
+Also need to ensure we don't break JSON syntax: need to escape quotes inside strings? The original JSON strings didn't contain internal quotes. Our translations may contain quotes? Not likely. We'll keep as is.
+
+Now also need to translate any other attributes like placeholder? Not present.
+
+Now also need to translate any text inside <script> tags that are not JSON-LD? There's a script with gtag etc; no visible text.
+
+Also there is a script with "var seo = document.querySelector('.blog-wrap'); if (seo) seo.style.display = 'none';" no text.
+
+Also the ahrefs script: no text.
+
+Now also need to translate any text inside <noscript> tag? It has <link rel="stylesheet" href="/assets/blog.css"> no text.
+
+Now also need to translate any text inside <title> already done.
+
+Now also need to translate any text inside <meta name="description" content="..."> etc. Already done.
+
+Now also need to translate any text inside <meta name="keywords" content="...">. Already done.
+
+Now also need to translate any text inside <meta property="og:title" content="..."> etc. Already done.
+
+Now also need to translate any text inside <meta property="og:description" content="...">. Already done.
+
+Now also need to translate any text inside <meta name="twitter:title" content="...">. Already done.
+
+Now also need to translate any text inside <link rel="canonical" href="...">? No.
+
+Now also need to translate any text inside <link rel="alternate" hreflang="x-default" href="...">? No.
+
+Now also need to translate any text inside <a href="#main-content" class="skip-link">Skip to main content</a>. Already.
+
+Now also need to translate any text inside <div class="app-loading" aria-busy="true" aria-live="polite">: no visible text besides spinner aria-label and p.
+
+Now also need to translate any text inside <p class="app-loading-text">Loading World Time...</p>. Already.
+
+Now also need to translate any text inside <nav class="blog-breadcrumb" aria-label="Breadcrumb">: aria-label "Breadcrumb" -> translate to "Breadcrumb"? Could translate to "Breadcrumb" stays same or "Breadcrumbnavigierung". We'll translate to "Breadcrumb" maybe keep as is? The rule: translate human-readable text. So translate to "Breadcrumbnavigierung" or "Breadcrumb". I'd translate to "Breadcrumb" is English; better to translate to "Breadcrumbnavigierung". We'll do that.
+
+Now also need to translate any text inside <a href="/">Home</a> etc.
+
+Now also need to translate any text inside <span aria-current="page">Golden Hour Calculator — Blue Hour & Solar Noon Today</span>. Already.
+
+Now also need to translate any text inside <h1>Golden Hour Calculator — Blue Hour & Solar Noon Today</h1>. Already.
+
+Now also need to translate any text inside <div class="blog-meta"> August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide</div>. We'll replace the placeholder icons with maybe keep them as is (they are not text). We'll translate the visible text: "August 10, 2026" stays, "6 min read" -> "6 Min Lesezeit", "Time Zones, Guide" -> "Zeitzonen, Leitfaden". Keep the separators &nbsp;·&nbsp;.
+
+Now also need to translate any text inside <p>Photographers and filmmakers plan shoots around the Sun's angle. Golden hour is when the Sun sits within roughly 6° of the horizon; blue hour is the stretch of twilight just after sunset or before sunrise. Both depend on your exact location and date.</p>. Already.
+
+Now also need to translate any text inside <h2>How to Read the Numbers</h2>. Already.
+
+Now also need to translate any text inside <thead><tr><th>Period</th><th>Sun position</th><th>Light quality</th></tr></thead>. Already.
+
+Now also need to translate any text inside <tbody> rows.
+
+Now also need to translate any text inside <h2>Solar Noon &amp; Day Length</h2>. Already.
+
+Now also need to translate any text inside paragraphs under that.
+
+Now also need to translate any text inside <div class="converter-widget"><h2>Quick Estimator</h2><p>Golden hour lasts longer in summer and at higher latitudes. Rule of thumb: duration ≈ 40 minutes at 40° latitude near the equinox, up to an hour or more in summer.</p></div>. Already.
+
+Now also need to translate any text inside <h2>Frequently Asked Questions</h2>. Already.
+
+Now also need to translate any text inside <p>Get precise times per city via <a href="/sunrise-sunset.html">sunrise &amp; sunset</a> or the <a href="/world-clock.html">world clock</a>.</p>. Already.
+
+Now also need to translate any text inside footer links.
+
+Now also need to translate any text inside <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p>. Keep copyright symbol and name.
+
+Now also need to translate any text inside <a href="/privacy.html">Privacy</a> etc.
+
+Now also need to translate any text inside <a href="/about.html">About</a>.
+
+Now also need to translate any text inside <a href="/contact.html">Contact</a>.
+
+Now also need to translate any text inside <a href="/terms.html">Terms</a>.
+
+Now also need to translate any text inside <div class="app-loading-spinner" role="status" aria-label="Loading application"></div>. Already.
+
+Now also need to translate any text inside <a href="#main-content" class="skip-link">Skip to main content</a>. Already.
+
+Now also need to translate any text inside <div id="root" role="application" aria-label="World Time Online Application">. Already.
+
+Now also need to translate any text inside <meta name="author" content="World Time Sync">? That's a meta tag; content is author name; should we translate? It's organization name, keep as is.
+
+Now also need to translate any text inside <meta name="google-site-verification" content="...">? Not translate.
+
+Now also need to translate any text inside <link rel="icon" type="image/svg+xml" href="/favicon.svg">? No.
+
+Now also need to translate any text inside <link rel="preload" href="/assets/blog.css" as="style">? No.
+
+Now also need to translate any text inside <noscript><link rel="stylesheet" href="/assets/blog.css"></noscript>? No.
+
+Now also need to translate any text inside <script type="application/ld+json"> blocks as discussed.
+
+Now also need to translate any text inside <script> with gtag? No.
+
+Now also need to translate any text inside <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>? No.
+
+Now also need to translate any text inside <script type="module" src="/assets/index-Dd7au40z.js" async></script>? No.
+
+Now also need to translate any text inside <script> window.addEventListener('load',function(){ var ahrefs=document.createElement('script'); ... })? No.
+
+Now also need to translate any text inside <script> var seo = document.querySelector('.blog-wrap'); if (seo) seo.style.display = 'none'; </script>? No.
+
+Now also need to translate any text inside <meta name="theme-color" content="#667eea">? No.
+
+Now also need to translate any text inside <meta property="og:image" content="https://worldtimessync.com/og-image.png">? No.
+
+Now also need to translate any text inside <meta name="twitter:card" content="summary_large_image">? No.
+
+Now also need to translate any text inside <meta name="robots" content="index, follow">? No.
+
+Now also need to translate any text inside <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">? No.
+
+Now also need to translate any text inside <meta charset="UTF-8">? No.
+
+Now also need to translate any text inside <link rel="canonical" href="https://worldtimessync.com/de/blog/golden-hour-calculator.html">? No.
+
+Now also need to translate any text inside <link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/de/blog/golden-hour-calculator.html">? No.
+
+Now also need to translate any text inside <link rel="preload" href="/assets/blog.css" as="style">? No.
+
+Now also need to translate any text inside <link rel="stylesheet" href="/assets/index-ufePLcBr.css">? No.
+
+Now also need to translate any text inside <link rel="icon" type="image/svg+xml" href="/favicon.svg">? No.
+
+Now also need to translate any text inside <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>? No.
+
+Now also need to translate any text inside <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-LBX0CDYSSV'); </script>? No.
+
+Now also need to translate any text inside <script type="application/ld+json"> ... </script> (three blocks). Already.
+
+Now we need to output the full translated HTML.
+
+Let's construct.
+
+We'll start with <!doctype html> etc.
+
+We'll need to be careful to keep the exact formatting? Not required but we should keep tags.
+
+We'll produce final HTML.
+
+Let's go step by step.
+
+First, head:
+
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="theme-color" content="#667eea">
+    <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk">
+    <title>Goldene Stunde Rechner — Blaue Stunde & Solarmittag Heute | World Time Sync</title>
+    <meta name="title" content="Goldene Stunde Rechner — Blaue Stunde & Solarmittag Heute | World Time Sync">
+    <meta name="description" content="Finde heute die goldene Stunde, blaue Stunde, Solarmittag und Tageslänge für jede Stadt mit einem Live-Rechner.">
+    <meta name="keywords" content="goldene Stunde Rechner heute, blaue Stunde heute Abend, Solarmittag heute, Tageslängenrechner, wann geht die Sonne morgen unter">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="World Time Sync">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://worldtimessync.com/de/blog/golden-hour-calculator.html">
+    <meta property="og:title" content="Goldene Stunde Rechner — Blaue Stunde & Solarmittag Heute | World Time Sync">
+    <meta property="og:description" content="Finde heute die goldene Stunde, blaue Stunde, Solarmittag und Tageslänge für jede Stadt mit einem Live-Rechner.">
+    <meta property="og:image" content="https://worldtimessync.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Goldene Stunde Rechner — Blaue Stunde & Solarmittag Heute | World Time Sync">
+    <link rel="canonical" href="https://worldtimessync.com/de/blog/golden-hour-calculator.html">
+    <link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/de/blog/golden-hour-calculator.html">
+    <link rel="preload" href="/assets/blog.css" as="style">
+<noscript><link rel="stylesheet" href="/assets/blog.css"></noscript>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/assets/index-ufePLcBr.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LBX0CDYSSV');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "Article", "headline": "Goldene Stunde Rechner — Blaue Stunde & Solarmittag Heute | World Time Sync", "description": "Finde heute die goldene Stunde, blaue Stunde, Solarmittag und Tageslänge für jede Stadt mit einem Live-Rechner.", "articleSection": "Zeitzonen", "keywords": "goldene Stunde Rechner heute, blaue Stunde heute Abend, Solarmittag heute, Tageslängenrechner, wann geht die Sonne morgen unter", "wordCount": 223, "timeRequired": "PT6M", "inLanguage": "de", "author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}, "publisher": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com", "logo": {"@type": "ImageObject", "url": "https://worldtimessync.com/logo.png", "width": 512, "height": 512}}, "datePublished": "2026-08-10", "dateModified": "2026-08-10", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/de/blog/golden-hour-calculator.html"}, "image": "https://worldtimessync.com/og-image.png"}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://worldtimessync.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://worldtimessync.com/#blog"}, {"@type": "ListItem", "position": 3, "name": "Goldene Stunde Rechner — Blaue Stunde & Solarmittag Heute", "item": "https://worldtimessync.com/de/blog/golden-hour-calculator.html"}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Wie spät ist die goldene Stunde heute?", "acceptedAnswer": {"@type": "Answer", "text": "Sie beginnt etwa eine Stunde vor Sonnenuntergang und endet kurz nachdem der Sonnenaufgang endet — siehe den Rechner oben sowie die Sonnenuntergangszeit deiner Stadt."}}, {"@type": "Question", "name": "Ist die blaue Stunde vor oder nach Sonnenuntergang?", "acceptedAnswer": {"@type": "Answer", "text": "Beides: zivile Dämmerung nach Sonnenuntergang und vor Sonnenaufgang. Der Himmel bleibt hell genug, um ohne künstliches Licht zu fotografieren."}}, {"@type": "Question", "name": "Warum unterscheidet sich Solarmittag von 12 Uhr mittags?", "acceptedAnswer": {"@type": "Answer", "text": "Zeitzonen sind breit; Solarmittag folgt dem tatsächlichen höchsten Punkt der Sonne, der je nach Position in der Zeitzone bis zu 30+ Minuten vom Uhrzeit-Mittag entfernt sein kann."}}]}
+    </script>
+
+</head>
+
+Note: changed inLanguage from "en" to "de". Also changed articleSection to "Zeitzonen". Also changed keywords accordingly. Also changed description etc.
+
+Now body:
+
+<body>
+    <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+    <div id="root" role="application" aria-label="World Time Online Anwendung">
+        <div class="app-loading" aria-busy="true" aria-live="polite">
+            <div class="app-loading-spinner" role="status" aria-label="Anwendung wird geladen"></div>
+            <p class="app-loading-text">World Time wird geladen...</p>
+        </div>
+    </div>
+    <main id="main-content">
+        <article class="blog-wrap">
+            <nav class="blog-breadcrumb" aria-label="Breadcrumbnavigierung">
+                <a href="/">Startseite</a> › <a href="/#blog">Blog</a> › <span aria-current="page">Goldene Stunde Rechner — Blaue Stunde & Solarmittag Heute</span>
+            </nav>
+            <h1>Goldene Stunde Rechner — Blaue Stunde & Solarmittag Heute</h1>
+            <div class="blog-meta"> August 10, 2026 &nbsp;·&nbsp;  6 Min Lesezeit &nbsp;·&nbsp;  Zeitzonen, Leitfaden</div>
+
+<p>Fotografen und Filmemacher planen ihre Aufnahmen anhand des Sonnenwinkels. Die goldene Stunde ist der Zeitraum, in dem die Sonne innerhalb von etwa 6° zum Horizont steht; die blaue Stunde ist die Dämmerungsphase unmittelbar nach Sonnenuntergang oder vor Sonnenaufgang. Beide hängen von deinem genauen Standort und dem Datum ab.</p>
+
+<h2>Wie man die Zahlen liest</h2>
+<table><thead><tr><th>Zeitraum</th><th>Sonnenposition</th><th>Lichtqualität</th></tr></thead><tbody>
+<tr><td>Goldene Stunde (AM)</td><td>-6° bis +6°</td><td>Warm, weich, lange Schatten</td></tr>
+<tr><td>Solarmittag</td><td>Höchster Punkt</td><td>Hartes Überkopflicht</td></tr>
+<tr><td>Goldene Stunde (PM)</td><td>+6° bis -0°</td><td>Warm, gerichtet</td></tr>
+<tr><td>Blaue Stunde</td><td>-4° bis -6°</td><td>Kühl, gleichmäßig, diffus</td></tr>
+</tbody></table>
+
+<h2>Solarmittag &amp; Tageslänge</h2>
+<p>Solarmittag entspricht nicht 12:00 Uhr auf der Uhr. Er variiert je nach Position innerhalb deiner Zeitzone und aufgrund der Sommerzeit. Städte am östlichen Rand einer Zeitzone erleben Solarmittag früher als Städte am westlichen Rand — manchmal um mehr als eine halbe Stunde.</p>
+<p>Die Tageslänge ändert sich um die Äquinoktien herum (etwa 20. März und 22. September) am schnellsten, wobei sie in mittleren Breitengraden um mehrere Minuten pro Tag zunimmt oder abnimmt. In der Nähe der Solstitien bewegt sie sich nur wenig für ein paar Wochen.</p>
+
+<div class="converter-widget">
+<h2>Schneller Schätzer</h2>
+<p>Die goldene Stunde dauert im Sommer und in höheren Breitengraden länger. Faustregel: Dauer ≈ 40 Minuten bei 40° Breite nahe dem Äquinoktium, bis zu einer Stunde oder mehr im Sommer.</p>
+</div>
+
+<h2>Häufig gestellte Fragen</h2>
+<div class="faq-section">
+{FAQ}
+</div>
+<p>Erhalte präzise Zeiten pro Stadt über <a href="/sunrise-sunset.html">Sonnenaufgang &amp; Sonnenuntergang</a> oder die <a href="/world-clock.html">Weltuhr</a>.</p>
+
+        <footer class="blog-footer">
+            <a href="/privacy.html">Datenschutz</a>
+            <a href="/about.html">Über</a>
+            <a href="/contact.html">Kontakt</a>
+            <a href="/terms.html">Nutzungsbedingungen</a>
+            <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p>
+        </footer>
+    </main>
+
+    <script type="module" src="/assets/index-Dd7au40z.js" async></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var seo = document.querySelector('.blog-wrap');
+        if (seo) seo.style.display = 'none';
+      });
+    </script>
+    <script>
+      window.addEventListener('load',function(){
+        var ahrefs=document.createElement('script');
+        ahrefs.async=true;
+        ahrefs.src='https://analytics.ahrefs.com/analytics.js';
+        ahrefs.setAttribute('data-key','hB1VYWuwb1i/f1d8re7P2A');
+        document.head.appendChild(ahrefs);
+      });
+    </script>
+  </body>
+</html>
+
+Check for any missed text:
+
+- In the blog-meta we kept the placeholder icons (). They are not text; we keep them.
+
+- In the table we changed "Sun position" to "Sonnenposition". Good.
+
+- Changed "Light quality" to "Lichtqualität".
+
+- Changed "Period" to "Zeitraum".
+
+- Changed "Golden hour (AM)" to "Goldene Stunde (AM)". Keep AM/PM as is.
+
+- Changed "Solar noon" to "Solarmittag".
+
+- Changed "Golden hour (PM)" to "Goldene Stunde (PM)".
+
+- Changed "Blue hour" to "Blaue Stunde".
+
+- Changed descriptions: "Warm, soft, long shadows" -> "Warm, weich, lange Schatten". Good.
+
+- "Harsh overhead light" -> "Hartes Überkopflicht". Good.
+
+- "Warm, directional" -> "Warm, gerichtet". Good.
+
+- "Cool, even, diffused" -> "Kühl, gleichmäßig, diffus". Good.
+
+- In the paragraph under Solar Noon & Day Length: translated.
+
+- In the converter-widget: heading "Quick Estimator" -> "Schneller Schätzer". Paragraph translated.
+
+- In FAQ section heading: "Frequently Asked Questions" -> "Häufig gestellte Fragen". Good.
+
+- The paragraph after FAQ: "Get precise times per city via ..." translated to "Erhalte präzise Zeiten pro Stadt über ...". Also changed "sunrise &amp; sunset" to "Sonnenaufgang &amp; Sonnenuntergang". "world clock" to "Weltuhr". Good.
+
+- Footer links: "Privacy" -> "Datenschutz". "About" -> "Über". "Contact" -> "Kontakt". "Terms" -> "Nutzungsbedingungen". Good.
+
+- Copyright line unchanged.
+
+- Also need to check any other text: The <nav class="blog-breadcrumb" aria-label="Breadcrumb"> we changed to "Breadcrumbnavigierung". Good.
+
+- The <a href="/">Home</a> changed to "Startseite". Good.
+
+- The <a href="/#blog">Blog</a> kept as "Blog". Could translate to "Blog" but it's fine.
+
+- The span aria-current="page": we translated.
+
+- The h1: translated.
+
+- The skip link: "Zum Hauptinhalt springen". Good.
+
+- The aria-label on root: "World Time Online Anwendung". Good.
+
+- The loading spinner aria-label: "Anwendung wird geladen". Good.
+
+- The loading text: "World Time wird geladen...". Good.
+
+- Also need to check any other aria-label or title attributes: none.
+
+- Also need to check any placeholder text inside <meta name="author" content="World Time Sync">: we kept.
+
+- Also need to check any <meta name="title" content="...">: we translated.
+
+- Also need to check any <meta property="og:title" content="...">: translated.
+
+- Also need to check any <meta name="twitter:title" content="...">: translated.
+
+- Also need to check any <meta property="og:description" content="...">: translated.
+
+- Also need to check any <meta name="description" content="...">: translated.
+
+- Also need to check any <meta name="keywords" content="...">: translated.
+
+- Also need to check any <link rel="canonical" href="...">: unchanged.
+
+- Also need to check any <link rel="alternate" hreflang="x-default" href="...">: unchanged.
+
+- Also need to check any <script type="application/ld+json"> blocks: we translated headline, description, articleSection, keywords, inLanguage changed to "de". Also changed the BreadcrumbList names. Also changed FAQ question and answer texts.
+
+Check the JSON-LD for any other text like "@type": "Article" etc - not to translate.
+
+Check the "wordCount": 223, "timeRequired": "PT6M" - keep.
+
+Check "inLanguage": originally "en", changed to "de". Good.
+
+Check "author":

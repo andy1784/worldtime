@@ -1,0 +1,443 @@
+We need to translate visible/user-facing text into Italian, preserving HTML tags, attributes, etc. We must translate text inside tags and attributes like title/alt/aria-label/description/keywords/content. Also translate text in JSON-LD values (like headline, description, name, etc.)? The rules: translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. JSON-LD blocks are also content (they are inside script tags). The text inside JSON-LD is human-readable (like "What Is My Time Zone? — Detect Your Zone & UTC Offset | World Time Sync") should be translated. However note that the JSON-LD includes fields like "headline", "description", "name", etc. Those should be translated. Also the FAQ JSON-LD includes question names and answer texts; those should be translated.
+
+We must not translate URLs, city/feature names that are proper nouns unless a natural localized form exists, UTC offsets, IANA timezone IDs, or code. So IANA zone names like "America/New_York" remain unchanged. Also "UTC" remains unchanged. Also "World Time Sync" is a brand name; should we translate? It's a proper noun (organization name). Likely keep as is. The rule says do NOT translate city/feature names that are proper nouns unless a natural localized form exists. Organization name is also proper noun; we should keep unchanged.
+
+Also need to translate the visible text in the HTML: meta tags content attributes (title, description, keywords, og:title, og:description, twitter:title). Also the <title> tag content. Also the <meta name="title"> content. Also <meta name="description"> content. Also <meta name="keywords"> content. Also <meta property="og:title"> content. Also <meta property="og:description"> content. Also <meta name="twitter:title"> content. Also the <link rel="canonical"> href is a URL, keep unchanged. Also <link rel="alternate" hreflang="x-default"> href unchanged.
+
+Also the visible text in body: skip-link text "Skip to main content". Also the aria-label on div id="root": "World Time Online Application". Also the loading spinner aria-label: "Loading application". Also the p class "app-loading-text": "Loading World Time...". Also the breadcrumb nav: "Home", "Blog", and the span aria-current page text: "What Is My Time Zone? — Detect Your Zone & UTC Offset". Also the h1: same as breadcrumb. Also the blog-meta div: contains some weird characters ( August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide). Those are likely placeholder icons; we need to translate the text parts: "August 10, 2026", "6 min read", "Time Zones, Guide". The icons remain as is (they are likely emojis). We'll keep the emojis unchanged. So translate month name? August is a proper noun? Month names are not proper nouns? Usually translate month names. So "August" -> "agosto". "6 min read" -> "6 min di lettura" (Italian). "Time Zones, Guide" -> "Fusi orari, Guida". Keep commas.
+
+Then paragraph: "Your browser knows your time zone from your device settings. Below it reports the IANA zone name, the current UTC offset, and whether daylight saving is active right now." Translate.
+
+Then h2: "Your Detected Zone". Translate.
+
+Inside converter-widget: h2: "🌍 Your Time Zone". Keep emoji, translate "Your Time Zone" -> "Il tuo fuso orario". The emoji stays.
+
+Then p ids are empty initially; they will be filled by script; we don't translate.
+
+Then h2: "Reading the Result". Translate.
+
+Then ul items: translate each.
+
+First li: "<strong>IANA name</strong> like America/New_York is the canonical identifier — use it in code, never fixed offsets." Translate: "Il <strong>nome IANA</strong> come America/New_York è l'identificatore canonico — usalo nel codice, mai offset fissi." Keep IANA name unchanged.
+
+Second li: "<strong>Offset</strong> changes twice a year where DST applies; the zone name does not." Translate: "L'<strong>offset</strong> cambia due volte all'anno dove si applica l'ora legale; il nome del fuso non cambia."
+
+Third li: "If the result looks wrong, check your OS location settings — browsers follow them." Translate: "Se il risultato sembra sbagliato, controlla le impostazioni di posizione del tuo sistema operativo — i browser le seguono."
+
+Then h2: "Frequently Asked Questions". Translate: "Domande frequenti".
+
+Then we have a div class="faq-section" with {FAQ} placeholder; likely will be replaced by script; we keep as is.
+
+Then paragraph: "Browse zones via the <a href="/time-zone-map.html">time zone map</a>." Translate: "Esplora i fusi orari tramite la <a href="/time-zone-map.html">mappa dei fusi orari</a>." Keep href unchanged.
+
+Then footer links: "Privacy", "About", "Contact", "Terms". Translate: "Privacy" stays same? In Italian, "Privacy" is often used as is, but could translate to "Privacy". Usually keep same. "About" -> "Chi siamo" or "Informazioni". But "About" as a link might be kept as "About"? Usually translate. We'll translate to "Informazioni". "Contact" -> "Contatti". "Terms" -> "Condizioni". The copyright line: "&copy; 2026 World Time Sync". Keep symbol and year, translate "World Time Sync" unchanged.
+
+Now we need to translate JSON-LD blocks.
+
+First JSON-LD (type Article): need to translate headline, description, articleSection, keywords, author name, publisher name, logo? The logo URL unchanged. Also datePublished, dateModified unchanged. Also mainEntityOfPage @id unchanged (URL). Also image URL unchanged.
+
+Headline: "What Is My Time Zone? — Detect Your Zone & UTC Offset | World Time Sync". Translate: "Qual è il mio fuso orario? — Rileva il tuo fuso e l'offset UTC | World Time Sync". Keep "World Time Sync". Also note the dash and punctuation.
+
+Description: "Instantly detect your device's time zone, UTC offset and DST status with one click." Translate: "Rileva immediatamente il fuso orario del tuo dispositivo, l'offset UTC e lo stato DST con un clic."
+
+articleSection: "Time Zones" -> "Fusi orari".
+
+keywords: "what is my time zone, my time zone now, what timezone am i in, current utc offset". Translate each phrase: "qual è il mio fuso orario, il mio fuso orario adesso, in quale fuso orario mi trovo, offset utc corrente". Keep lowercase? We'll translate naturally.
+
+author name: "World Time Sync" unchanged.
+
+publisher name: "World Time Sync" unchanged.
+
+Second JSON-LD (BreadcrumbList): itemListElement names: "Home", "Blog", "What Is My Time Zone? — Detect Your Zone & UTC Offset". Translate: "Home" -> "Home"? Usually keep "Home" as is? In Italian breadcrumbs often "Home". Could translate to "Home" or "Inicio". Since it's a proper noun? Not really. We'll translate to "Home" maybe keep as "Home"? I'd translate to "Home" (still English) but maybe better "Home". However rule: do NOT translate city/feature names that are proper nouns unless a natural localized form exists. "Home" is not a proper noun; we can translate. So "Home" -> "Home"? Actually Italian often uses "Home" as well. But we can translate to "Home" (same). Safer to keep as "Home". But we could translate to "Home" (no change). I'd keep as "Home". "Blog" -> "Blog" (maybe keep). The third item: translate the headline as before: "Qual è il mio fuso orario? — Rileva il tuo fuso e l'offset UTC". Keep the item URL unchanged.
+
+Third JSON-LD (FAQPage): translate question names and answer texts.
+
+Question 1: "How does this page know my time zone?" -> "Come fa questa pagina a conoscere il mio fuso orario?"
+
+Answer text: "Your browser exposes the device-configured IANA zone through JavaScript — no data leaves your device." Translate: "Il tuo browser espone la zona IANA configurata sul dispositivo tramite JavaScript — nessun dato lascia il tuo dispositivo."
+
+Question 2: "My offset shows UTC−4 but I expected −5. Why?" -> "Il mio offset mostra UTC−4 ma mi aspettavo −5. Perché?" Keep the Unicode minus sign? We'll keep as is.
+
+Answer: "Daylight saving is probably active — Eastern shifts between EST (−5) and EDT (−4)." Translate: "L'ora legale è probabilmente attiva — l'ora orientale passa tra EST (−5) e EDT (−4)."
+
+Question 3: "Can a device be in the wrong time zone?" -> "Un dispositivo può trovarsi nel fuso orario sbagliato?"
+
+Answer: "Yes, if set manually or after travel without auto-update. Fix it in system settings." Translate: "Sì, se impostato manualmente o dopo un viaggio senza aggiornamento automatico. Correggilo nelle impostazioni di sistema."
+
+Now also need to translate any other visible text like the aria-label on the loading spinner: "Loading application" -> "Caricamento applicazione". The p class "app-loading-text": "Loading World Time..." -> "Caricamento World Time...". Keep "World Time" unchanged.
+
+The aria-label on div id="root": "World Time Online Application" -> "Applicazione Online World Time". Keep brand.
+
+The skip-link: "Skip to main content" -> "Vai al contenuto principale".
+
+Also the text inside the noscript link? Actually noscript contains a link element; not visible text.
+
+Also the text inside the script? Not visible.
+
+Now also need to translate the text inside the <div class="blog-meta">: we saw weird emojis; we need to translate the readable parts: "August 10, 2026" -> "10 agosto 2026" (Italian date format usually day month year). Keep the emojis before and after? The emojis are placeholders; we keep them. So we have:  August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide
+
+We need to translate "August 10, 2026" to "10 agosto 2026". Keep the surrounding emojis and spaces. Also "6 min read" -> "6 min di lettura". "Time Zones, Guide" -> "Fusi orari, Guida". Keep the emojis.
+
+Now also need to translate the text inside the <h2> inside converter-widget: "🌍 Your Time Zone". Keep emoji, translate "Your Time Zone" -> "Il tuo fuso orario". Good.
+
+Now also need to translate any placeholder like {FAQ} - keep as is.
+
+Now also need to translate any text inside the <script> that is not code? The script contains strings like "Not detected". That's a user-facing text (the fallback). Should translate: "Not detected" -> "Non rilevato". Also the string "Daylight saving: ACTIVE" and "Daylight saving: not active". Those are user-facing texts inserted into the page. Should translate: "Ora legale: ATTIVA" and "Ora legale: non attiva". Also the variable names etc remain code.
+
+Let's locate the script:
+
+```
+document.addEventListener('DOMContentLoaded',function(){
+ try{
+  var z=Intl.DateTimeFormat().resolvedOptions().timeZone||"unknown";
+  document.getElementById('tz-name').textContent=z;
+ }catch(e){document.getElementById('tz-name').textContent="Not detected";}
+ var n=new Date();
+ var off=-n.getTimezoneOffset();
+ var sign=off>=0?'+':'−';
+ var ah=Math.floor(Math.abs(off)/60),am=Math.abs(off)%60;
+ document.getElementById('tz-off').textContent="UTC"+sign+ah+(am?":"+String(am).padStart(2,'0'):"");
+ document.getElementById('tz-dst').textContent=(n.getTimezoneOffset()!==new Date(n.getFullYear(),0,1).getTimezoneOffset())?"Daylight saving: ACTIVE":"Daylight saving: not active";
+});
+```
+
+We need to translate "Not detected" -> "Non rilevato". Also "Daylight saving: ACTIVE" -> "Ora legale: ATTIVA". Also "Daylight saving: not active" -> "Ora legale: non attiva". Keep the rest.
+
+Now also check any other user-facing strings in scripts: maybe none.
+
+Now also need to translate the text inside the <noscript> tag? It contains a link element; no visible text.
+
+Now also need to translate the text inside the <link rel="preload">? No.
+
+Now also need to translate the text inside the <meta name="theme-color"> content? That's a color value, not translate.
+
+Now also need to translate the text inside the <meta name="google-site-verification"> content? That's a verification string, not translate.
+
+Now also need to translate the text inside the <meta name="author"> content? Already "World Time Sync" unchanged.
+
+Now also need to translate the text inside the <meta property="og:type"> content? "article" is a keyword, not translate.
+
+Now also need to translate the text inside the <meta property="og:url"> content? URL unchanged.
+
+Now also need to translate the text inside the <meta name="twitter:card"> content? "summary_large_image" not translate.
+
+Now also need to translate the text inside the <link rel="icon">? href unchanged.
+
+Now also need to translate the text inside the <script async src="...">? no.
+
+Now also need to translate the text inside the <script type="application/ld+json"> we already did.
+
+Now also need to translate the text inside the <script> that sets window.dataLayer etc? no.
+
+Now also need to translate the text inside the <script> for ahrefs? no.
+
+Now also need to translate the text inside the <script> that hides .blog-wrap? no.
+
+Now also need to translate the text inside the <script> that loads gtag? no.
+
+Now also need to translate the text inside the <script> that loads adsbygoogle? no.
+
+Now also need to translate the text inside the <script> that loads the module? no.
+
+Now also need to translate any text inside the <div class="app-loading-spinner" role="status" aria-label="Loading application"> we already did.
+
+Now also need to translate any text inside the <p class="app-loading-text"> we did.
+
+Now also need to translate any text inside the <nav class="blog-breadcrumb">: we have links "Home", "Blog", and the span with aria-current page text. We'll translate "Home" and "Blog"? We'll decide to keep as is? I'd translate to "Home" and "Blog" (they are same). But maybe better to translate to "Home" and "Blog" (no change). I'll keep them unchanged to avoid breaking expectations. However the rule says translate human-readable text inside tags. So we should translate. "Home" -> "Home"? In Italian, "Home" is often used as is, but there is a natural localized form "Home" (same). Could also be "Home". I'd keep as "Home". "Blog" -> "Blog". It's fine.
+
+Now also need to translate the text inside the <span aria-current="page">: we already translated the headline.
+
+Now also need to translate the text inside the <h1> same.
+
+Now also need to translate the text inside the <footer> links: "Privacy", "About", "Contact", "Terms". We'll translate as described.
+
+Now also need to translate the text inside the <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p>. Keep symbol and year, translate "World Time Sync" unchanged.
+
+Now also need to translate any text inside the <a href="/privacy.html">Privacy</a> etc.
+
+Now also need to translate the text inside the <a href="/about.html">About</a> -> "Informazioni". The href unchanged.
+
+Now also need to translate the text inside the <a href="/contact.html">Contact</a> -> "Contatti".
+
+Now also need to translate the text inside the <a href="/terms.html">Terms</a> -> "Condizioni".
+
+Now also need to translate any other visible text like the text inside the <div class="blog-wrap">? No.
+
+Now also need to translate the text inside the <div class="faq-section"> placeholder {FAQ} - keep.
+
+Now also need to translate the text inside the <script> that sets document.getElementById('tz-name').textContent="Not detected"; we changed.
+
+Now also need to translate the text inside the script for the offset and DST messages.
+
+Now also need to ensure we keep the HTML structure exactly.
+
+Now let's produce the final HTML with translations.
+
+We'll go through the original and replace.
+
+Original:
+
+```
+<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="theme-color" content="#667eea">
+    <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk">
+    <title>What Is My Time Zone? — Detect Your Zone & UTC Offset | World Time Sync</title>
+    <meta name="title" content="What Is My Time Zone? — Detect Your Zone & UTC Offset | World Time Sync">
+    <meta name="description" content="Instantly detect your device's time zone, UTC offset and DST status with one click.">
+    <meta name="keywords" content="what is my time zone, my time zone now, what timezone am i in, current utc offset">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="World Time Sync">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://worldtimessync.com/it/blog/what-is-my-time-zone.html">
+    <meta property="og:title" content="What Is My Time Zone? — Detect Your Zone & UTC Offset | World Time Sync">
+    <meta property="og:description" content="Instantly detect your device's time zone, UTC offset and DST status with one click.">
+    <meta property="og:image" content="https://worldtimessync.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="What Is My Time Zone? — Detect Your Zone & UTC Offset | World Time Sync">
+    <link rel="canonical" href="https://worldtimessync.com/it/blog/what-is-my-time-zone.html">
+    <link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/it/blog/what-is-my-time-zone.html">
+    <link rel="preload" href="/assets/blog.css" as="style">
+<noscript><link rel="stylesheet" href="/assets/blog.css"></noscript>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/assets/index-ufePLcBr.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LBX0CDYSSV');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "Article", "headline": "What Is My Time Zone? — Detect Your Zone & UTC Offset | World Time Sync", "description": "Instantly detect your device's time zone, UTC offset and DST status with one click.", "articleSection": "Time Zones", "keywords": "what is my time zone, my time zone now, what timezone am i in, current utc offset", "wordCount": 119, "timeRequired": "PT6M", "inLanguage": "en", "author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}, "publisher": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com", "logo": {"@type": "ImageObject", "url": "https://worldtimessync.com/logo.png", "width": 512, "height": 512}}, "datePublished": "2026-08-10", "dateModified": "2026-08-10", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/it/blog/what-is-my-time-zone.html"}, "image": "https://worldtimessync.com/og-image.png"}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://worldtimessync.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://worldtimessync.com/#blog"}, {"@type": "ListItem", "position": 3, "name": "What Is My Time Zone? — Detect Your Zone & UTC Offset", "item": "https://worldtimessync.com/it/blog/what-is-my-time-zone.html"}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How does this page know my time zone?", "acceptedAnswer": {"@type": "Answer", "text": "Your browser exposes the device-configured IANA zone through JavaScript — no data leaves your device."}}, {"@type": "Question", "name": "My offset shows UTC−4 but I expected −5. Why?", "acceptedAnswer": {"@type": "Answer", "text": "Daylight saving is probably active — Eastern shifts between EST (−5) and EDT (−4)."}}, {"@type": "Question", "name": "Can a device be in the wrong time zone?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, if set manually or after travel without auto-update. Fix it in system settings."}}]}
+    </script>
+
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div id="root" role="application" aria-label="World Time Online Application">
+        <div class="app-loading" aria-busy="true" aria-live="polite">
+            <div class="app-loading-spinner" role="status" aria-label="Loading application"></div>
+            <p class="app-loading-text">Loading World Time...</p>
+        </div>
+    </div>
+    <main id="main-content">
+        <article class="blog-wrap">
+            <nav class="blog-breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Home</a> › <a href="/#blog">Blog</a> › <span aria-current="page">What Is My Time Zone? — Detect Your Zone & UTC Offset</span>
+            </nav>
+            <h1>What Is My Time Zone? — Detect Your Zone & UTC Offset</h1>
+            <div class="blog-meta"> August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide</div>
+
+<p>Your browser knows your time zone from your device settings. Below it reports the IANA zone name, the current UTC offset, and whether daylight saving is active right now.</p>
+
+<h2>Your Detected Zone</h2>
+<div class="converter-widget">
+<h2>🌍 Your Time Zone</h2>
+<p id="tz-name" style="font-size:1.3em;font-weight:700;"></p>
+<p id="tz-off"></p>
+<p id="tz-dst"></p>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+ try{
+  var z=Intl.DateTimeFormat().resolvedOptions().timeZone||"unknown";
+  document.getElementById('tz-name').textContent=z;
+ }catch(e){document.getElementById('tz-name').textContent="Not detected";}
+ var n=new Date();
+ var off=-n.getTimezoneOffset();
+ var sign=off>=0?'+':'−';
+ var ah=Math.floor(Math.abs(off)/60),am=Math.abs(off)%60;
+ document.getElementById('tz-off').textContent="UTC"+sign+ah+(am?":"+String(am).padStart(2,'0'):"");
+ document.getElementById('tz-dst').textContent=(n.getTimezoneOffset()!==new Date(n.getFullYear(),0,1).getTimezoneOffset())?"Daylight saving: ACTIVE":"Daylight saving: not active";
+});
+</script>
+
+<h2>Reading the Result</h2>
+<ul>
+<li><strong>IANA name</strong> like America/New_York is the canonical identifier — use it in code, never fixed offsets.</li>
+<li><strong>Offset</strong> changes twice a year where DST applies; the zone name does not.</li>
+<li>If the result looks wrong, check your OS location settings — browsers follow them.</li>
+</ul>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-section">
+{FAQ}
+</div>
+<p>Browse zones via the <a href="/time-zone-map.html">time zone map</a>.</p>
+
+        <footer class="blog-footer">
+            <a href="/privacy.html">Privacy</a>
+            <a href="/about.html">About</a>
+            <a href="/contact.html">Contact</a>
+            <a href="/terms.html">Terms</a>
+            <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p>
+        </footer>
+    </main>
+
+    <script type="module" src="/assets/index-Dd7au40z.js" async></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var seo = document.querySelector('.blog-wrap');
+        if (seo) seo.style.display = 'none';
+      });
+    </script>
+    <script>
+      window.addEventListener('load',function(){
+        var ahrefs=document.createElement('script');
+        ahrefs.async=true;
+        ahrefs.src='https://analytics.ahrefs.com/analytics.js';
+        ahrefs.setAttribute('data-key','hB1VYWuwb1i/f1d8re7P2A');
+        document.head.appendChild(ahrefs);
+      });
+    </script>
+  </body>
+</html>
+```
+
+Now we need to produce the translated version.
+
+Let's do step by step.
+
+Head:
+
+- <title>: translate to Italian: "Qual è il mio fuso orario? — Rileva il tuo fuso e l'offset UTC | World Time Sync"
+
+- <meta name="title" content="...">: same translation.
+
+- <meta name="description" content="Instantly detect your device's time zone, UTC offset and DST status with one click.">
+  Translate: "Rileva immediatamente il fuso orario del tuo dispositivo, l'offset UTC e lo stato DST con un clic."
+
+- <meta name="keywords" content="what is my time zone, my time zone now, what timezone am i in, current utc offset">
+  Translate each phrase: "qual è il mio fuso orario, il mio fuso orario adesso, in quale fuso orario mi trovo, offset utc corrente"
+
+- <meta name="author" content="World Time Sync"> unchanged.
+
+- <meta property="og:title" content="What Is My Time Zone? — Detect Your Zone & UTC Offset | World Time Sync"> translate same as title.
+
+- <meta property="og:description" content="Instantly detect your device's time zone, UTC offset and DST status with one click.">
+  Translate same as description.
+
+- <meta name="twitter:title" content="What Is My Time Zone? — Detect Your Zone & UTC Offset | World Time Sync"> translate same.
+
+Now body:
+
+- Skip link: "Skip to main content" -> "Vai al contenuto principale"
+
+- aria-label on div id="root": "World Time Online Application" -> "Applicazione Online World Time"
+
+- aria-label on spinner: "Loading application" -> "Caricamento applicazione"
+
+- p class "app-loading-text": "Loading World Time..." -> "Caricamento World Time..."
+
+- Breadcrumb nav: <a href="/">Home</a> keep? We'll translate to "Home" (same). <a href="/#blog">Blog</a> keep "Blog". The span aria-current page: translate the headline: "Qual è il mio fuso orario? — Rileva il tuo fuso e l'offset UTC"
+
+- h1: same translation.
+
+- blog-meta: we need to translate the date and text.
+
+Original:  August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide
+
+We keep the emojis as is (they are the weird characters). We'll replace "August 10, 2026" with "10 agosto 2026". Replace "6 min read" with "6 min di lettura". Replace "Time Zones, Guide" with "Fusi orari, Guida". Keep the spacing and entities.
+
+Thus:  10 agosto 2026 &nbsp;·&nbsp;  6 min di lettura &nbsp;·&nbsp;  Fusi orari, Guida
+
+- Paragraph: "Your browser knows your time zone from your device settings. Below it reports the IANA zone name, the current UTC offset, and whether daylight saving is active right now."
+
+Translate: "Il tuo browser conosce il tuo fuso orario dalle impostazioni del dispositivo. Di seguito segnala il nome IANA del fuso, l'offset UTC corrente e se l'ora legale è attiva in questo momento."
+
+- h2: "Your Detected Zone" -> "Il tuo fuso rilevato"
+
+- Inside converter-widget: h2: "🌍 Your Time Zone" -> keep emoji, translate: "🌍 Il tuo fuso orario"
+
+- The script strings: "Not detected" -> "Non rilevato". "Daylight saving: ACTIVE" -> "Ora legale: ATTIVA". "Daylight saving: not active" -> "Ora legale: non attiva".
+
+- h2: "Reading the Result" -> "Lettura del risultato"
+
+- ul items:
+
+First li: "<strong>IANA name</strong> like America/New_York is the canonical identifier — use it in code, never fixed offsets."
+
+Translate: "<strong>Nome IANA</strong> come America/New_York è l'identificatore canonico — usalo nel codice, mai offset fissi."
+
+Second li: "<strong>Offset</strong> changes twice a year where DST applies; the zone name does not."
+
+Translate: "L'<strong>offset</strong> cambia due volte all'anno dove si applica l'ora legale; il nome del fuso non cambia."
+
+Third li: "If the result looks wrong, check your OS location settings — browsers follow them."
+
+Translate: "Se il risultato sembra sbagliato, controlla le impostazioni di posizione del tuo sistema operativo — i browser le seguono."
+
+- h2: "Frequently Asked Questions" -> "Domande frequenti"
+
+- The {FAQ} placeholder stays.
+
+- Paragraph: "Browse zones via the <a href="/time-zone-map.html">time zone map</a>."
+
+Translate: "Esplora i fusi orari tramite la <a href="/time-zone-map.html">mappa dei fusi orari</a>."
+
+- Footer links:
+
+"Privacy" -> keep "Privacy" (or translate to "Privacy"? We'll keep as is.)
+
+"About" -> "Informazioni"
+
+"Contact" -> "Contatti"
+
+"Terms" -> "Condizioni"
+
+- Copyright line: "&copy; 2026 World Time Sync" -> keep symbol and year, brand unchanged.
+
+Now JSON-LD translations.
+
+First JSON-LD (Article):
+
+- headline: translate as earlier: "Qual è il mio fuso orario? — Rileva il tuo fuso e l'offset UTC | World Time Sync"
+
+- description: "Rileva immediatamente il fuso orario del tuo dispositivo, l'offset UTC e lo stato DST con un clic."
+
+- articleSection: "Time Zones" -> "Fusi orari"
+
+- keywords: translate: "qual è il mio fuso orario, il mio fuso orario adesso, in quale fuso orario mi trovo, offset utc corrente"
+
+- author name: "World Time Sync" unchanged.
+
+- publisher name: "World Time Sync" unchanged.
+
+- logo URL unchanged.
+
+- datePublished, dateModified unchanged.
+
+- mainEntityOfPage @id unchanged.
+
+- image URL unchanged.
+
+Second JSON-LD (BreadcrumbList):
+
+- itemListElement[0].name: "Home" -> translate? We'll keep "Home" (maybe same). I'll keep "Home".
+
+- itemListElement[1].name: "Blog" -> keep "Blog".
+
+- itemListElement[2].name: "What Is My Time Zone? — Detect Your Zone & UTC Offset" -> translate to "Qual è il mio fuso orario? — Rileva il tuo fuso e l'offset UTC"
+
+Third JSON-LD (FAQPage):
+
+- Question 1 name: "How does this page know my time zone?" -> "Come fa questa pagina a conoscere il mio fuso orario?"
+
+- Answer text: "Your browser exposes the device-configured IANA zone through JavaScript — no data leaves your device." -> "Il tuo browser espone la zona IANA configurata sul dispositivo tramite JavaScript — nessun dato lascia il tuo dispositivo."
+
+- Question 2 name: "My offset shows UTC−4 but I expected −5. Why?" -> "Il mio offset mostra UTC−4 ma mi aspettavo −5. Perché?"
+
+- Answer text: "Daylight saving is probably active — Eastern shifts between EST (−5) and EDT (−4)." -> "L'ora legale è probabilmente attiva — l'ora orientale passa tra EST (−5) e EDT (−4)."
+
+- Question 3

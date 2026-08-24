@@ -1,0 +1,467 @@
+We need to translate visible/user-facing text into French, preserving HTML tags, attributes, JSON-LD blocks, CSS, etc. Also need to translate text inside tags and attributes like title/alt/aria-label/description/keywords/content. Also need to translate text inside meta tags like name="description", content attribute, etc. Also need to translate text inside JSON-LD values? The rule says: translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. JSON-LD blocks are to be kept exactly as-is (rule 1). So we must NOT translate JSON-LD content. So we leave the script type="application/ld+json" blocks unchanged.
+
+We need to translate visible text: title tag content, meta name="title" content, meta name="description" content, meta name="keywords" content, og:title, og:description, twitter:title, etc. Also the text inside HTML: skip-link text, app-loading-text, breadcrumb links text, h1, blog-meta text (including date and read time and categories), paragraphs, table headings, table data, etc. Also the FAQ section placeholder {FAQ}? Actually there is a div class="faq-section">{FAQ}</div>. That seems like a placeholder that will be replaced by script? It's not visible text; we leave as is. Also the footer links text: Privacy, About, Contact, Terms, copyright text.
+
+Also need to translate the text inside attributes like title, alt, aria-label, description, keywords, content. We have aria-label on skip-link? Actually skip-link has class but no aria-label. The app-loading-spinner has aria-label="Loading application". Need to translate that. Also the app-loading-text is visible text.
+
+Also there is aria-label on root div: aria-label="World Time Online Application". Need to translate? It's an attribute, should translate the human-readable text. So translate to French: "Application World Time en ligne"? But need to keep meaning. Probably "Application World Time en ligne". We'll translate.
+
+Also there is aria-label on app-loading-spinner: "Loading application" -> "Chargement de l'application".
+
+Also there is aria-busy="true" and aria-live="polite" remain.
+
+Also there is aria-current="page" on span; that's attribute but value is "page" not translate.
+
+Also there is aria-label on skip-link? Not present.
+
+Also there is aria-label on app-loading-spinner we handled.
+
+Also there is aria-label on root.
+
+Also there is aria-label on any other? Not.
+
+Also there is title attribute? Not present.
+
+Also there is alt attribute on images? Not present.
+
+Also there is description attribute? Not.
+
+Also there is keywords attribute? Not.
+
+Also there is content attribute in meta tags we need to translate.
+
+Also there is lang attribute on html: lang="fr" already French, keep.
+
+Now we need to translate all visible text.
+
+Let's go step by step.
+
+Original HTML:
+
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="theme-color" content="#667eea">
+    <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk">
+    <title>Daylight Saving Time Ends 2026 — Dates & Clock Changes | World Time Sync</title>
+    <meta name="title" content="Daylight Saving Time Ends 2026 — Dates & Clock Changes | World Time Sync">
+    <meta name="description" content="Exact 2026 dates when clocks change: US fall back Nov 1, Europe Oct 25. What it means for meetings.">
+    <meta name="keywords" content="daylight saving ends 2026 date, clock change october 2026, when do clocks go back 2026, fall back 2026">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="World Time Sync">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://worldtimessync.com/fr/blog/dst-ends-2026-dates.html">
+    <meta property="og:title" content="Daylight Saving Time Ends 2026 — Dates & Clock Changes | World Time Sync">
+    <meta property="og:description" content="Exact 2026 dates when clocks change: US fall back Nov 1, Europe Oct 25. What it means for meetings.">
+    <meta property="og:image" content="https://worldtimessync.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Daylight Saving Time Ends 2026 — Dates & Clock Changes | World Time Sync">
+    <link rel="canonical" href="https://worldtimessync.com/fr/blog/dst-ends-2026-dates.html">
+    <link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/fr/blog/dst-ends-2026-dates.html">
+    <link rel="preload" href="/assets/blog.css" as="style">
+<noscript><link rel="stylesheet" href="/assets/blog.css"></noscript>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/assets/index-ufePLcBr.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LBX0CDYSSV');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "Article", "headline": "Daylight Saving Time Ends 2026 — Dates & Clock Changes | World Time Sync", "description": "Exact 2026 dates when clocks change: US fall back Nov 1, Europe Oct 25. What it means for meetings.", "articleSection": "Time Zones", "keywords": "daylight saving ends 2026 date, clock change october 2026, when do clocks go back 2026, fall back 2026", "wordCount": 173, "timeRequired": "PT6M", "inLanguage": "en", "author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}, "publisher": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com", "logo": {"@type": "ImageObject", "url": "https://worldtimessync.com/logo.png", "width": 512, "height": 512}}, "datePublished": "2026-08-10", "dateModified": "2026-08-10", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/fr/blog/dst-ends-2026-dates.html"}, "image": "https://worldtimessync.com/og-image.png"}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://worldtimessync.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://worldtimessync.com/#blog"}, {"@type": "ListItem", "position": 3, "name": "Daylight Saving Time Ends 2026 — Dates & Clock Changes", "item": "https://worldtimessync.com/fr/blog/dst-ends-2026-dates.html"}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "When do clocks go back in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "US/Canada: November 1. UK/Europe: October 25 — one week earlier."}}, {"@type": "Question", "name": "Why do Europe and the US change on different dates?", "acceptedAnswer": {"@type": "Answer", "text": "Different legislation. The mismatch creates a 1-week window where transatlantic time gaps shrink by an hour."}}, {"@type": "Question", "name": "Which regions skip daylight saving?", "acceptedAnswer": {"@type": "Answer", "text": "Most of Asia and Africa, plus Arizona and Hawaii in the US, keep standard time all year."}}]}
+    </script>
+
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div id="root" role="application" aria-label="World Time Online Application">
+        <div class="app-loading" aria-busy="true" aria-live="polite">
+            <div class="app-loading-spinner" role="status" aria-label="Loading application"></div>
+            <p class="app-loading-text">Loading World Time...</p>
+        </div>
+    </div>
+    <main id="main-content">
+        <article class="blog-wrap">
+            <nav class="blog-breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Home</a> › <a href="/#blog">Blog</a> › <span aria-current="page">Daylight Saving Time Ends 2026 — Dates & Clock Changes</span>
+            </nav>
+            <h1>Daylight Saving Time Ends 2026 — Dates & Clock Changes</h1>
+            <div class="blog-meta"> August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide</div>
+
+<p>Two clock changes bracket every year and both scramble schedules for a week or so. Here are the 2026 dates that matter.</p>
+
+<h2>2026 Clock Change Dates</h2>
+<table><thead><tr><th>Region</th><th>Spring forward</th><th>Fall back</th></tr></thead><tbody>
+<tr><td>United States &amp; Canada</td><td>Mar 8</td><td>Nov 1</td></tr>
+<tr><td>UK &amp; EU (most)</td><td>Mar 29</td><td>Oct 25</td></tr>
+<tr><td>Australia (southern states)</td><td>Oct 4</td><td>Apr 5, 2027</td></tr>
+<tr><td>New Zealand</td><td>Sep 27</td><td>Apr 5, 2027</td></tr>
+</tbody></table>
+
+<h2>The October Mismatch Week</h2>
+<p>Europe falls back on <strong>October 25, 2026</strong>, but North America not until <strong>November 1</strong>. For one week the usual gaps shift by an hour: London–New York goes from 5 to 4 hours, Paris–San Francisco from 9 to 8. Meetings booked in absolute local times still work; meetings pinned to UTC need re-checking.</p>
+
+<h2>What Breaks During Transitions</h2>
+<ul>
+<li>Recurring calendar events pinned to UTC drift an hour for a week.</li>
+<li>Overnight shifts and flight times published in local time can double-book.</li>
+<li>Cron jobs and server logs show "duplicate" or "missing" hours.</li>
+</ul>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-section">
+{FAQ}
+</div>
+<p>Full worldwide table: <a href="/dst-2026-worldwide.html">DST 2026 worldwide</a>. Countdown: <a href="/dst-countdown.html">next DST change</a>.</p>
+
+        <footer class="blog-footer">
+            <a href="/privacy.html">Privacy</a>
+            <a href="/about.html">About</a>
+            <a href="/contact.html">Contact</a>
+            <a href="/terms.html">Terms</a>
+            <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p>
+        </footer>
+    </main>
+
+    <script type="module" src="/assets/index-Dd7au40z.js" async></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var seo = document.querySelector('.blog-wrap');
+        if (seo) seo.style.display = 'none';
+      });
+    </script>
+    <script>
+      window.addEventListener('load',function(){
+        var ahrefs=document.createElement('script');
+        ahrefs.async=true;
+        ahrefs.src='https://analytics.ahrefs.com/analytics.js';
+        ahrefs.setAttribute('data-key','hB1VYWuwb1i/f1d8re7P2A');
+        document.head.appendChild(ahrefs);
+      });
+    </script>
+  </body>
+</html>
+
+We need to translate visible text.
+
+Let's list all visible text nodes:
+
+- Skip to main content (inside <a>)
+- Loading application (aria-label on spinner)
+- Loading World Time... (p)
+- Home (breadcrumb link)
+- Blog (breadcrumb link)
+- Daylight Saving Time Ends 2026 — Dates & Clock Changes (breadcrumb span)
+- h1: Daylight Saving Time Ends 2026 — Dates & Clock Changes
+- blog-meta: contains some weird characters () maybe icons? Actually they are likely icons (calendar, clock, folder). We should not translate those icons; they are likely encoded as emojis? The characters are weird due to encoding. We should keep them as is. The text after icons: " August 10, 2026 &nbsp;·&nbsp; 6 min read &nbsp;·&nbsp; Time Zones, Guide". Need to translate month name? August is a proper noun? Month names are not proper nouns but we can translate to French: "août". The day stays numeric. The "·" separators remain. "6 min read" -> "6 min de lecture" or "6 min de lecture". Usually French: "6 min de lecture". "Time Zones, Guide" -> "Fuseaux horaires, Guide". Keep the icons unchanged.
+
+- Paragraph: "Two clock changes bracket every year and both scramble schedules for a week or so. Here are the 2026 dates that matter." Translate.
+
+- h2: "2026 Clock Change Dates" -> "Dates des changements d'heure 2026" or "Modifications d'heure 2026". Keep "Clock Change" maybe "Changement d'heure". We'll translate to French: "Dates des changements d'heure 2026".
+
+- Table headers: Region, Spring forward, Fall back. Translate: "Région", "Avance du printemps", "Retour à l'heure d'hiver". However "Spring forward" is the shift to DST (spring forward). In French: "Passage à l'heure d'été". "Fall back": "Retour à l'heure normale". But we need to keep meaning. Let's use: "Passage à l'heure d'été" and "Retour à l'heure d'hiver". However the table data includes dates like Mar 8, Nov 1 etc. Those remain.
+
+- Table data: "United States & Canada" -> keep as is? It's a proper noun region; we can translate to French: "États-Unis & Canada". Usually we keep "États-Unis". The ampersand maybe keep. We'll translate to French: "États-Unis & Canada". "UK & EU (most)" -> "Royaume-Uni & UE (majorité)". "Australia (southern states)" -> "Australie (États du sud)". "New Zealand" -> "Nouvelle-Zélande". Keep.
+
+- h2: "The October Mismatch Week" -> "La semaine d'octobre de désaccord" maybe "La semaine de désynchronisation d'octobre". Better: "La semaine d'octobre de décalage". We'll translate: "La semaine d'octobre de décalage".
+
+- Paragraph: "Europe falls back on <strong>October 25, 2026</strong>, but North America not until <strong>November 1</strong>. For one week the usual gaps shift by an hour: London–New York goes from 5 to 4 hours, Paris–San Francisco from 9 to 8. Meetings booked in absolute local times still work; meetings pinned to UTC need re-checking."
+
+Translate: "L'Europe repasse à l'heure d'hiver le <strong>25 octobre 2026</strong>, mais l'Amérique du Nord ne le fait que le <strong>1er novembre</strong>. Pendant une semaine, les écarts habituels changent d'une heure : Londres–New York passe de 5 à 4 heures, Paris–San Francisco de 9 à 8 heures. Les réunions programmées en heure locale absolue restent valables ; celles liées à l'UTC doivent être revérifiées."
+
+Note: "falls back" translation: "repasse à l'heure d'hiver". Could also be "revient à l'heure normale". We'll use "repasse à l'heure d'hiver". "North America" -> "l'Amérique du Nord". "usual gaps shift by an hour" -> "les écarts habituels changent d'une heure". "London–New York goes from 5 to 4 hours" -> "Londres–New York passe de 5 à 4 heures". "Paris–San Francisco from 9 to 8" -> "Paris–San Francisco de 9 à 8 heures". "Meetings booked in absolute local times still work; meetings pinned to UTC need re-checking." -> "Les réunions programmées en heure locale absolue restent valables ; celles liées à l'UTC doivent être revérifiées."
+
+- h2: "What Breaks During Transitions" -> "Ce qui ne fonctionne pas pendant les transitions" or "Ce qui peut être perturbé pendant les transitions". We'll use: "Ce qui peut être perturbé pendant les transitions".
+
+- List items:
+  - "Recurring calendar events pinned to UTC drift an hour for a week." -> "Les événements récurrents du calendrier liés à l'UTC décalent d'une heure pendant une semaine."
+  - "Overnight shifts and flight times published in local time can double-book." -> "Les quarts de nuit et les horaires de vol publiés en heure locale peuvent entraîner des doubles réservations."
+  - "Cron jobs and server logs show "duplicate" or "missing" hours." -> "Les tâches Cron et les journaux de serveur affichent des heures « en double » ou « manquantes »." Keep quotes.
+
+- h2: "Frequently Asked Questions" -> "Questions fréquemment posées".
+
+- The div class="faq-section">{FAQ}</div> placeholder remains unchanged.
+
+- Paragraph: "Full worldwide table: <a href="/dst-2026-worldwide.html">DST 2026 worldwide</a>. Countdown: <a href="/dst-countdown.html">next DST change</a>."
+
+Translate: "Table mondiale complète : <a href="/dst-2026-worldwide.html">DST 2026 mondial</a>. Décompte : <a href="/dst-countdown.html">prochain changement d'heure d'été</a>."
+
+But need to keep the link text translated? The visible text inside the <a> tags should be translated. So "DST 2026 worldwide" -> "DST 2026 mondial". "next DST change" -> "prochain changement d'heure d'été". Keep the href unchanged.
+
+- Footer links: "Privacy" -> "Confidentialité". "About" -> "À propos". "Contact" -> "Contact" (same). "Terms" -> "Conditions". Copyright: "&copy; 2026 World Time Sync" -> translate? The name "World Time Sync" is a brand, keep unchanged. So "&copy; 2026 World Time Sync". The preceding text maybe none.
+
+Also need to translate text inside attributes: title, alt, aria-label, description, keywords, content.
+
+We have:
+
+- title tag content: translate to French.
+- meta name="title" content: translate.
+- meta name="description" content: translate.
+- meta name="keywords" content: translate keywords (but keep proper nouns like "daylight saving ends 2026 date" maybe translate? Keywords are for SEO; we should translate them to French as they are human-readable. So translate each keyword phrase.
+
+- meta property="og:title": translate.
+- meta property="og:description": translate.
+- meta name="twitter:title": translate.
+
+- aria-label on root: "World Time Online Application" -> translate to French: "Application World Time en ligne". Could also be "Application World Time en ligne". We'll translate.
+
+- aria-label on app-loading-spinner: "Loading application" -> "Chargement de l'application".
+
+- Also there is aria-label on any other? Not.
+
+- Also there is aria-label on skip-link? Not.
+
+- Also there is aria-label on any img? Not.
+
+- Also there is title attribute? Not.
+
+- Also there is alt attribute? Not.
+
+- Also there is description attribute? Not.
+
+- Also there is content attribute in meta tags we already covered.
+
+Now also need to translate text inside the blog-meta weird characters? Those are likely icons; we keep them as is.
+
+Now also need to translate the text inside the <p> after the blog-meta? Already done.
+
+Now also need to translate the text inside the <h2> "The October Mismatch Week". Already.
+
+Now also need to translate the text inside the <h2> "What Breaks During Transitions". Already.
+
+Now also need to translate the text inside the <h2> "Frequently Asked Questions". Already.
+
+Now also need to translate the text inside the <p> under FAQ section? Actually there is just placeholder.
+
+Now also need to translate the text inside the <p> after FAQ: "Full worldwide table: ..." Already.
+
+Now also need to translate the text inside the footer links.
+
+Now also need to translate the text inside the <p> copyright? Already.
+
+Now also need to translate any text inside <script> tags? Not, except JSON-LD which we keep as-is.
+
+Now also need to translate any text inside <noscript>? Not.
+
+Now also need to translate any text inside <link> tags? Not.
+
+Now also need to translate any text inside <meta> tags like name="author" content="World Time Sync". That's a brand, keep unchanged.
+
+Now also need to translate any text inside <meta> name="theme-color" content="#667eea" not.
+
+Now also need to translate any text inside <meta> name="google-site-verification" content=... not.
+
+Now also need to translate any text inside <meta> property="og:type" content="article" not.
+
+Now also need to translate any text inside <meta> property="og:url" content=... not.
+
+Now also need to translate any text inside <meta> property="og:image" content=... not.
+
+Now also need to translate any text inside <meta> name="twitter:card" content="summary_large_image" not.
+
+Now also need to translate any text inside <link rel="canonical" href=... not.
+
+Now also need to translate any text inside <link rel="alternate" hreflang="x-default" href=... not.
+
+Now also need to translate any text inside <link rel="preload" href=... as="style" not.
+
+Now also need to translate any text inside <noscript><link rel="stylesheet" href=...> not.
+
+Now also need to translate any text inside <link rel="icon" type=... href=... not.
+
+Now also need to translate any text inside <link rel="stylesheet" href=... not.
+
+Now also need to translate any text inside <script async src=...> not.
+
+Now also need to translate any text inside <script> with gtag etc not.
+
+Now also need to translate any text inside <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script> not.
+
+Now also need to translate any text inside <script type="module" src="/assets/index-Dd7au40z.js" async></script> not.
+
+Now also need to translate any text inside <script> with document.addEventListener etc not.
+
+Now also need to translate any text inside <script> with window.addEventListener etc not.
+
+Now also need to translate any text inside the <div class="app-loading" aria-busy="true" aria-live="polite"> not.
+
+Now also need to translate any text inside the <nav class="blog-breadcrumb" aria-label="Breadcrumb"> attribute aria-label value "Breadcrumb" -> translate to French: "Fil d'Ariane". So we need to translate that attribute.
+
+Also need to translate any text inside the <a href="/">Home</a> etc we already did.
+
+Also need to translate any text inside the <span aria-current="page">Daylight Saving Time Ends 2026 — Dates & Clock Changes</span> we already translated the visible text; aria-current attribute stays "page".
+
+Also need to translate any text inside the <div class="blog-meta">... we already translated the visible text after icons.
+
+Also need to translate any text inside the <h1> we did.
+
+Also need to translate any text inside the <table> headers we did.
+
+Also need to translate any text inside the <th> elements we did.
+
+Also need to translate any text inside the <td> elements we did.
+
+Also need to translate any text inside the <strong> tags we kept the dates but we translated surrounding text; the strong content itself is a date, we keep as is (but we translated the month name inside? Actually we changed "October 25, 2026" to "25 octobre 2026". The strong tag contains the date; we need to translate the month name to French and adjust order. So we need to change the content inside strong accordingly. So we will replace "October 25, 2026" with "25 octobre 2026". Similarly "November 1" -> "1er novembre". Note: In French, we usually write "1er novembre". We'll keep the strong tag.
+
+Also need to translate any text inside the <li> elements we did.
+
+Also need to translate any text inside the <a href="/dst-2026-worldwide.html">DST 2026 worldwide</a> we did.
+
+Also need to translate any text inside the <a href="/dst-countdown.html">next DST change</a> we did.
+
+Also need to translate any text inside the footer <a> tags we did.
+
+Also need to translate any text inside the <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p> we keep brand.
+
+Now also need to translate any text inside the <meta name="author" content="World Time Sync"> keep brand.
+
+Now also need to translate any text inside the <meta name="google-site-verification" content=... not.
+
+Now also need to translate any text inside the <meta name="theme-color" content=... not.
+
+Now also need to translate any text inside the <meta name="viewport" content=... not.
+
+Now also need to translate any text inside the <meta charset="UTF-8"> not.
+
+Now also need to translate any text inside the <!doctype html> not.
+
+Now also need to translate any text inside the <html lang="fr"> not.
+
+Now also need to translate any text inside the <head> tags like <meta property="og:type" content="article"> not.
+
+Now also need to translate any text inside the <link rel="icon" type=... not.
+
+Now also need to translate any text inside the <link rel="stylesheet" href=... not.
+
+Now also need to translate any text inside the <script> tags not.
+
+Now also need to translate any text inside the <noscript> not.
+
+Now also need to translate any text inside the <div id="root" role="application" aria-label="World Time Online Application"> we translated aria-label.
+
+Now also need to translate any text inside the <div class="app-loading" aria-busy="true" aria-live="polite"> not.
+
+Now also need to translate any text inside the <div class="app-loading-spinner" role="status" aria-label="Loading application"> we translated aria-label.
+
+Now also need to translate any text inside the <p class="app-loading-text">Loading World Time...</p> we translated.
+
+Now also need to translate any text inside the <a href="#main-content" class="skip-link">Skip to main content</a> we translated.
+
+Now also need to translate any text inside the <nav class="blog-breadcrumb" aria-label="Breadcrumb"> we translated aria-label.
+
+Now also need to translate any text inside the <a href="/">Home</a> we translated.
+
+Now also need to translate any text inside the <a href="/#blog">Blog</a> we translated.
+
+Now also need to translate any text inside the <span aria-current="page">Daylight Saving Time Ends 2026 — Dates & Clock Changes</span> we translated.
+
+Now also need to translate any text inside the <h1> we did.
+
+Now also need to translate any text inside the <div class="blog-meta"> we did.
+
+Now also need to translate any text inside the <p> after blog-meta we did.
+
+Now also need to translate any text inside the <h2> "2026 Clock Change Dates" we did.
+
+Now also need to translate any text inside the <table> headers we did.
+
+Now also need to translate any text inside the <tbody> rows we did.
+
+Now also need to translate any text inside the <h2> "The October Mismatch Week" we did.
+
+Now also need to translate any text inside the <p> after that we did.
+
+Now also need to translate any text inside the <h2> "What Breaks During Transitions" we did.
+
+Now also need to translate any text inside the <ul> <li> we did.
+
+Now also need to translate any text inside the <h2> "Frequently Asked Questions" we did.
+
+Now also need to translate any text inside the <div class="faq-section">{FAQ}</div> we keep as is.
+
+Now also need to translate any text inside the <p> after FAQ we did.
+
+Now also need to translate any text inside the <footer class="blog-footer"> we did.
+
+Now also need to translate any text inside the <a href="/privacy.html">Privacy</a> we did.
+
+Now also need to translate any text inside the <a href="/about.html">About</a> we did.
+
+Now also need to translate any text inside the <a href="/contact.html">Contact</a> we did.
+
+Now also need to translate any text inside the <a href="/terms.html">Terms</a> we did.
+
+Now also need to translate any text inside the <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p> we did.
+
+Now also need to translate any text inside the <script type="module" src="/assets/index-Dd7au40z.js" async></script> not.
+
+Now also need to translate any text inside the <script> with document.addEventListener not.
+
+Now also need to translate any text inside the <script> with window.addEventListener not.
+
+Now also need to translate any text inside the <script> with gtag not.
+
+Now also need to translate any text inside the <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script> not.
+
+Now also need to translate any text inside the <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script> not.
+
+Now also need to translate any text inside the <link rel="preload" href="/assets/blog.css" as="style"> not.
+
+Now also need to translate any text inside the <noscript><link rel="stylesheet" href="/assets/blog.css"></noscript> not.
+
+Now also need to translate any text inside the <link rel="icon" type="image/svg+xml" href="/favicon.svg"> not.
+
+Now also need to translate any text inside the <link rel="stylesheet" href="/assets/index-ufePLcBr.css"> not.
+
+Now also need to translate any text inside the <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk"> not.
+
+Now also need to translate any text inside the <meta name="theme-color" content="#667eea"> not.
+
+Now also need to translate any text inside the <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"> not.
+
+Now also need to translate any text inside the <meta charset="UTF-8"> not.
+
+Now also need to translate any text inside the <title> and meta tags.
+
+Now also need to translate any text inside the <meta property="og:type" content="article"> not.
+
+Now also need to translate any text inside the <meta property="og:url" content=... not.
+
+Now also need to translate any text inside the <meta property="og:title" content=... we will translate.
+
+Now also need to translate any text inside the <meta property="og:description" content=... we will translate.
+
+Now also need to translate any text inside the <meta property="og:image" content=... not.
+
+Now also need to translate any text inside the <meta name="twitter:card" content="summary_large_image"> not.
+
+Now also need to translate any text inside the <meta name="twitter:title" content=... we will translate.
+
+Now also need to translate any text inside the <link rel="canonical" href=... not.
+
+Now also need to translate any text inside the <link rel="alternate" hreflang="x-default" href=... not.
+
+Now also need to translate any text inside the <meta name="robots" content="index, follow"> not.
+
+Now also need to translate any text inside the <meta name="author" content="World Time Sync"> keep.
+
+Now also need to translate any text inside the <meta name="google-site-verification" content=... not.
+
+Now also need to translate any text inside the <meta name="google-site-verification" content=... not.
+
+Now also need to translate any text inside the <meta name="google-site-verification" content=... not.
+
+Now also need to translate any text inside the <meta name="google-site-verification" content=... not.
+
+Now also need to translate any

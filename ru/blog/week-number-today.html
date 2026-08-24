@@ -1,0 +1,379 @@
+We need to translate visible/user-facing text into Russian, preserving HTML tags, attributes, etc. The HTML currently has lang="ru" already, but many texts are in English. Need to translate them.
+
+We must translate:
+
+- <title> tag content
+- meta name="title" content
+- meta name="description" content
+- meta name="keywords" content
+- meta property="og:title" content
+- meta property="og:description" content
+- meta name="twitter:title" content
+- Possibly meta name="theme-color" content is a color, not translate.
+- <a href="#main-content" class="skip-link">Skip to main content</a> -> translate "Skip to main content"
+- <div class="app-loading" aria-busy="true" aria-live="polite">: inside <p class="app-loading-text">Loading World Time...</p> -> translate "Loading World Time..."
+- <nav class="blog-breadcrumb" aria-label="Breadcrumb">: aria-label "Breadcrumb" translate? It's an attribute, should translate? According to rule: translate attributes like title/alt/aria-label/description/keywords/content. So aria-label should be translated. So change to Russian "Хлебные крошки" or "Навигация". Usually "Breadcrumb" translated as "Хлебные крошки". We'll translate.
+- Inside nav: <a href="/">Home</a> -> translate "Home" to "Главная" or "Дом". Usually "Home" as navigation is "Главная". We'll translate.
+- <a href="/#blog">Blog</a> -> translate "Blog" to "Блог" (same but keep as is? It's a proper noun? It's generic; translate to Russian "Блог").
+- <span aria-current="page">Week Number Today — Current ISO Week & Leap Year Guide</span> -> translate the text inside. Keep the dash and ampersand? Should translate to Russian: "Номер недели сегодня — Текущая ISO неделя и руководство по високосному году". But need to keep the meaning. We'll translate.
+- <h1>Week Number Today — Current ISO Week & Leap Year Guide</h1> -> translate similarly.
+- <div class="blog-meta"> August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide</div> There's some garbled characters (maybe icons). We need to translate the readable parts: "August 10, 2026" -> Russian date format: "10 августа 2026 г." or "10 августа 2026". Keep style? Usually "10 августа 2026". "6 min read" -> "6 мин чтения". "Time Zones, Guide" -> "Часовые пояса, Руководство". Also need to keep the icons? The garbled characters likely are placeholder for icons; we should keep them as is (they are not translatable). So we replace the text parts but keep the weird characters.
+
+- <p>The ISO 8601 system numbers weeks Monday-through-Sunday; week 1 is the week containing the first Thursday of January. Europe uses it widely for planning, payroll and manufacturing schedules; North America less so, which causes confusion in international teams.</p> -> translate fully.
+
+- <h2>This Week at a Glance</h2> -> translate.
+
+- Inside converter-widget: <h2>📅 Current Week Info</h2> -> translate "Current Week Info" to "Текущая информация о неделе". Keep the emoji.
+
+- <p>ISO week: <strong id="wn">…</strong></p> -> keep label "ISO week:" translate? It's a label; should translate to "ISO неделя:" maybe. The text inside strong is dynamic; we keep as is.
+
+- <p>Quarter: <span id="qtr"></span> · Day of year: <span id="doy"></span> · Days left in year: <span id="dly"></span></p> -> translate labels: "Quarter:" -> "Квартал:", "Day of year:" -> "День года:", "Days left in year:" -> "Дней осталось в году:".
+
+- <h2>Leap Years</h2> -> translate to "Високосные годы".
+
+- Paragraph after: "A year is a leap year if it divides by 4, except centuries — those must divide by 400. So 2000 was a leap year but 1900 wasn't, and 2100 won't be. The next leap years after 2024 are <strong>2028, 2032, 2036</strong>. Leap years shift weekday-based calendars like ISO weeks by a day after February." -> translate fully, keep strong numbers.
+
+- <h2>Frequently Asked Questions</h2> -> translate to "Часто задаваемые вопросы".
+
+- Inside FAQ section: there is placeholder {FAQ} which will be replaced later? We need to translate the content inside? The placeholder is not text; we leave as is.
+
+- <p>Plan across zones with the <a href="/meeting-planner.html">meeting planner</a>.</p> -> translate "Plan across zones with the" -> "Планируйте встречи Across zones"? Better: "Планируйте встречи Across zones"? Actually phrase: "Plan across zones with the meeting planner." Translate: "Планируйте встречи в разных часовых поясах с помощью планировщика встреч." But we need to keep link text "meeting planner" translate? It's a link text; should translate to Russian: "планировщик встреч". Keep href same.
+
+- Footer links: <a href="/privacy.html">Privacy</a> -> translate to "Конфиденциальность". <a href="/about.html">About</a> -> "О нас". <a href="/contact.html">Contact</a> -> "Контакты". <a href="/terms.html">Terms</a> -> "Условия". The copyright line: "&copy; 2026 World Time Sync" -> translate? The company name stays; we can keep "World Time Sync". The text before? It's just the symbol and year and name. No translation needed.
+
+- Also need to translate any aria-label attributes: we already handled Breadcrumb. Also there is aria-label on <div class="app-loading" aria-busy="true" aria-live="polite">: aria-busy and aria-live are not translatable. There's also <div class="app-loading-spinner" role="status" aria-label="Loading application"> -> aria-label should translate: "Loading application" -> "Загрузка приложения". Also there is <a href="#main-content" class="skip-link">Skip to main content</a> we already.
+
+- Also there is <meta name="author" content="World Time Sync">: content is a proper noun (company) keep.
+
+- <meta property="og:type" content="article">: content "article" maybe translate? It's a schema type; keep as is? It's not user-facing? It's metadata; but rule says translate content attributes. However "article" is a generic term; could translate to "статья". But it's a value for og:type; changing might break. Safer to keep as is because it's a standardized value. The rule says translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. It doesn't say we must not translate standardized values, but translating could break. I'd keep as is.
+
+- Similarly <meta name="robots" content="index, follow">: keep.
+
+- <link rel="canonical" href="...">: href is URL, keep.
+
+- <link rel="alternate" hreflang="x-default" href="...">: keep.
+
+- In JSON-LD blocks: we must translate human-readable text inside values like headline, description, name, etc. But we must keep JSON structure intact. We need to translate those values. However note that the JSON-LD is inside <script type="application/ld+json">. According to rule, we should translate visible/user-facing text inside attributes like content, but also inside JSON-LD? The JSON-LD is not visible to users directly but is structured data; still it's text content. The rule says translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. JSON-LD values are not attributes but content inside script tag. However they are still text; I'd translate them as they are human-readable. But caution: translating may affect SEO; but the instruction says translate all visible/user-facing text. JSON-LD is not visible but is data for search engines; still it's text. I'd translate.
+
+We need to translate:
+
+First JSON-LD (Article):
+- "headline": "Week Number Today — Current ISO Week & Leap Year Guide | World Time Sync"
+- "description": "See this week's ISO week number, the quarter, days left in the year, and when the next leap year falls."
+- "articleSection": "Time Zones"
+- "keywords": "week number today, current week number, iso week calendar, leap year next, what week is it"
+- "author": {"@type": "Organization", "name": "World Time Sync"} -> name keep.
+- "publisher": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com", "logo": {"@type": "ImageObject", "url": "https://worldtimessync.com/logo.png", "width": 512, "height": 512}} -> name keep.
+- "datePublished": "2026-08-10" keep.
+- "dateModified": same.
+- "mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/ru/blog/week-number-today.html"} keep.
+- "image": "https://worldtimessync.com/og-image.png" keep.
+
+Second JSON-LD (BreadcrumbList):
+- itemListElement[0].name: "Home" -> translate to "Главная".
+- itemListElement[1].name: "Blog" -> translate to "Блог".
+- itemListElement[2].name: "Week Number Today — Current ISO Week & Leap Year Guide" -> translate as earlier.
+
+Third JSON-LD (FAQPage):
+- Each Question name: translate.
+- Each Answer text: translate.
+
+Let's translate each.
+
+Now also need to translate any other visible text: The <noscript><link rel="stylesheet" href="/assets/blog.css"></noscript> no text.
+
+Now proceed to produce final HTML with translations.
+
+We must keep all tags exactly.
+
+Let's go through the HTML line by line.
+
+I'll produce final output.
+
+But careful: The blog-meta contains weird characters: " August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide". The weird characters likely represent icons (maybe calendar, clock, folder). We should keep them as is, only translate the readable parts.
+
+Thus replace "August 10, 2026" with "10 августа 2026". Replace "6 min read" with "6 мин чтения". Replace "Time Zones, Guide" with "Часовые пояса, Руководство". Keep the weird characters and spaces.
+
+Now translate the paragraph after h1.
+
+Paragraph: "The ISO 8601 system numbers weeks Monday-through-Sunday; week 1 is the week containing the first Thursday of January. Europe uses it widely for planning, payroll and manufacturing schedules; North America less so, which causes confusion in international teams."
+
+Translate Russian: "Система ISO 8601 нумерует недели с понедельника по воскресенье; первая неделя — это неделя, содержащая первый четверг января. Европа широко использует её для планирования, выплаты зарплаты и производственных графиков; Северная Америка использует её реже, что вызывает путаницу в международных командах."
+
+Now h2: "This Week at a Glance" -> translate: "Текущая неделя в обзоре" or "Эта неделя на glance". Better: "Текущая неделя в обзоре". We'll use "Текущая неделя в обзоре".
+
+Inside converter-widget: h2: "📅 Current Week Info" -> translate to "📅 Текущая информация о неделе". Keep emoji.
+
+Labels: "ISO week:" -> "ISO неделя:" (maybe "ISO неделя:").
+
+"Quarter:" -> "Квартал:".
+
+"Day of year:" -> "День года:".
+
+"Days left in year:" -> "Дней осталось в году:".
+
+Now h2: "Leap Years" -> "Високосные годы".
+
+Paragraph after: translate.
+
+Original: "A year is a leap year if it divides by 4, except centuries — those must divide by 400. So 2000 was a leap year but 1900 wasn't, and 2100 won't be. The next leap years after 2024 are <strong>2028, 2032, 2036</strong>. Leap years shift weekday-based calendars like ISO weeks by a day after February."
+
+Translate: "Год является високосным, если делится на 4, за исключением столетий — они должны делиться на 400. Так, 2000 год был високосным, а 1900 — нет, и 2100 год также не будет високосным. Следующие високосные годы после 2024 — <strong>2028, 2032, 2036</strong>. Високосные годы сдвигают календари, основанные на днях недели, такие как ISO недели, на один день после февраля."
+
+Now h2: "Frequently Asked Questions" -> "Часто задаваемые вопросы".
+
+Inside FAQ section placeholder {FAQ} we leave.
+
+Paragraph after FAQ: "Plan across zones with the <a href="/meeting-planner.html">meeting planner</a>." Translate: "Планируйте встречи в разных часовых поясах с помощью <a href="/meeting-planner.html">планировщика встреч</a>."
+
+Now footer links translation.
+
+Now also need to translate aria-label attributes:
+
+- nav aria-label="Breadcrumb" -> "Хлебные крошки".
+- div class="app-loading-spinner" aria-label="Loading application" -> "Загрузка приложения".
+- a class="skip-link": text "Skip to main content" -> "Перейти к основному содержимому".
+- p class="app-loading-text": "Loading World Time..." -> "Загрузка World Time...". Keep "World Time" as brand.
+
+Now also need to translate any title attributes? None.
+
+Now translate meta tags.
+
+<title>: "Week Number Today — Current ISO Week & Leap Year Guide | World Time Sync" -> translate to "Номер недели сегодня — Текущая ISO неделя и руководство по високосному году | World Time Sync". Keep the pipe and brand.
+
+meta name="title" content same as title -> translate similarly.
+
+meta name="description": "See this week's ISO week number, the quarter, days left in the year, and when the next leap year falls." -> translate: "Посмотрите номер этой недели по ISO, квартал, оставшиеся дни года и когда наступает следующий високосный год."
+
+meta name="keywords": "week number today, current week number, iso week calendar, leap year next, what week is it" -> translate: "номер недели сегодня, текущий номер недели, календарь ISO недели, следующий високосный год, какой номер недели". Keep commas.
+
+meta property="og:title": same as title -> translate similarly.
+
+meta property="og:description": same as description -> translate similarly.
+
+meta name="twitter:title": same as title -> translate similarly.
+
+Now JSON-LD translations.
+
+First JSON-LD (Article):
+
+- headline: translate same as title: "Номер недели сегодня — Текущая ISO неделя и руководство по високосному году | World Time Sync"
+- description: translate as meta description.
+- articleSection: "Time Zones" -> translate to "Часовые пояса".
+- keywords: same as meta keywords -> translate.
+
+- author name: keep "World Time Sync".
+- publisher name: keep.
+- (logo etc unchanged)
+
+Second JSON-LD (BreadcrumbList):
+
+- itemListElement[0].name: "Home" -> "Главная".
+- itemListElement[1].name: "Blog" -> "Блог".
+- itemListElement[2].name: "Week Number Today — Current ISO Week & Leap Year Guide" -> translate: "Номер недели сегодня — Текущая ISO неделя и руководство по високосному году".
+
+Third JSON-LD (FAQPage):
+
+We need to translate each question name and answer text.
+
+Question 1: "What week number is it?" -> translate: "Какой номер недели?" (or "Какой номер недели сейчас?"). We'll use "Какой номер недели?".
+
+Answer text: "The live widget above computes the current ISO 8601 week number from your device date." -> translate: "Живой виджет выше вычисляет текущий номер недели ISO 8601 на основе даты вашего устройства."
+
+Question 2: "When does week 1 start?" -> translate: "Когда начинается первая неделя?".
+
+Answer: "ISO week 1 is the first week containing a Thursday — so it can begin in late December of the previous year." -> translate: "Первая неделя ISO — это первая неделя, содержащая четверг — поэтому она может начинаться в конце декабря предыдущего года."
+
+Question 3: "Is 2026 a leap year?" -> translate: "Является ли 2026 год високосным?".
+
+Answer: "No. 2026 divided by 4 leaves a remainder. The next leap years are 2028, 2032 and 2036." -> translate: "Нет. 2026, делённая на 4, оставляет остаток. Следующие високосные годы — 2028, 2032 и 2036."
+
+Make sure to keep JSON syntax: quotes escaped properly. We'll replace the text inside quotes.
+
+Now also need to translate any other text: maybe the text inside <script> that is not JSON-LD? There's a script for widget; we should not translate code. The script contains variable names and strings like "Q"+... but those are code; we should not translate. The script also has text like "Q"+... but that's code. We'll leave script untouched.
+
+Now also need to translate any text inside <noscript>? none.
+
+Now also need to translate any text inside <link rel="preload" ...> none.
+
+Now also need to translate any text inside <meta name="theme-color" content="#667eea"> none.
+
+Now also need to translate any text inside <link rel="icon"... none.
+
+Now also need to translate any text inside <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script> none.
+
+Now also need to translate any text inside <script> window.dataLayer... none.
+
+Now also need to translate any text inside <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script> none.
+
+Now also need to translate any text inside <script type="module" src="/assets/index-Dd7au40z.js" async></script> none.
+
+Now also need to translate any text inside <script> document.addEventListener('DOMContentLoaded', function() { var seo = document.querySelector('.blog-wrap'); if (seo) seo.style.display = 'none'; }); none.
+
+Now also need to translate any text inside <script> window.addEventListener('load',function(){ var ahrefs=document.createElement('script'); ahrefs.async=true; ahrefs.src='https://analytics.ahrefs.com/analytics.js'; ahrefs.setAttribute('data-key','hB1VYWuwb1i/f1d8re7P2A'); document.head.appendChild(ahrefs); }); none.
+
+Now also need to translate any text inside <div class="app-loading" aria-busy="true" aria-live="polite">: we already translated inner p and spinner aria-label.
+
+Now also need to translate any text inside <div class="app-loading-spinner" role="status" aria-label="Loading application"> we changed.
+
+Now also need to translate any text inside <p class="app-loading-text">Loading World Time...</p> we changed.
+
+Now also need to translate any text inside <a href="#main-content" class="skip-link">Skip to main content</a> we changed.
+
+Now also need to translate any text inside <nav class="blog-breadcrumb" aria-label="Breadcrumb"> we changed aria-label and inner links.
+
+Now also need to translate any text inside <span aria-current="page">Week Number Today — Current ISO Week & Leap Year Guide</span> we changed.
+
+Now also need to translate any text inside <h1>Week Number Today — Current ISO Week & Leap Year Guide</h1> we changed.
+
+Now also need to translate any text inside <div class="blog-meta">... we changed.
+
+Now also need to translate any text inside <p>The ISO 8601 system numbers weeks Monday-through-Sunday; week 1 is the week containing the first Thursday of January. Europe uses it widely for planning, payroll and manufacturing schedules; North America less so, which causes confusion in international teams.</p> we changed.
+
+Now also need to translate any text inside <h2>This Week at a Glance</h2> we changed.
+
+Now also need to translate any text inside <h2>📅 Current Week Info</h2> we changed.
+
+Now also need to translate any text inside <p>ISO week: <strong id="wn">…</strong></p> we changed label.
+
+Now also need to translate any text inside <p>Quarter: <span id="qtr"></span> · Day of year: <span id="doy"></span> · Days left in year: <span id="dly"></span></p> we changed labels.
+
+Now also need to translate any text inside <h2>Leap Years</h2> we changed.
+
+Now also need to translate paragraph after Leap Years we changed.
+
+Now also need to translate any text inside <h2>Frequently Asked Questions</h2> we changed.
+
+Now also need to translate any text inside <p>Plan across zones with the <a href="/meeting-planner.html">meeting planner</a>.</p> we changed.
+
+Now also need to translate footer links.
+
+Now also need to translate any text inside <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p> we keep.
+
+Now also need to translate any text inside <noscript><link rel="stylesheet" href="/assets/blog.css"></noscript> none.
+
+Now also need to translate any text inside <link rel="preload" href="/assets/blog.css" as="style"> none.
+
+Now also need to translate any text inside <link rel="stylesheet" href="/assets/index-ufePLcBr.css"> none.
+
+Now also need to translate any text inside <link rel="icon" type="image/svg+xml" href="/favicon.svg"> none.
+
+Now also need to translate any text inside <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk"> none.
+
+Now also need to translate any text inside <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"> none.
+
+Now also need to translate any text inside <meta name="theme-color" content="#667eea"> none.
+
+Now also need to translate any text inside <meta property="og:image" content="https://worldtimessync.com/og-image.png"> none.
+
+Now also need to translate any text inside <meta name="twitter:card" content="summary_large_image"> none.
+
+Now also need to translate any text inside <link rel="canonical" href="https://worldtimessync.com/ru/blog/week-number-today.html"> none.
+
+Now also need to translate any text inside <link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/ru/blog/week-number-today.html"> none.
+
+Now also need to translate any text inside <script type="application/ld+json"> blocks as discussed.
+
+Now we need to output the full HTML with translations.
+
+Let's construct.
+
+I'll write the final HTML.
+
+Be careful to keep the exact formatting? Not required but keep tags.
+
+I'll produce.
+
+Let's go step by step.
+
+Start:
+
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="theme-color" content="#667eea">
+    <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk">
+    <title>Номер недели сегодня — Текущая ISO неделя и руководство по високосному году | World Time Sync</title>
+    <meta name="title" content="Номер недели сегодня — Текущая ISO неделя и руководство по високосному году | World Time Sync">
+    <meta name="description" content="Посмотрите номер этой недели по ISO, квартал, оставшиеся дни года и когда наступает следующий високосный год.">
+    <meta name="keywords" content="номер недели сегодня, текущий номер недели, календарь ISO недели, следующий високосный год, какой номер недели">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="World Time Sync">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://worldtimessync.com/ru/blog/week-number-today.html">
+    <meta property="og:title" content="Номер недели сегодня — Текущая ISO неделя и руководство по високосному году | World Time Sync">
+    <meta property="og:description" content="Посмотрите номер этой недели по ISO, квартал, оставшиеся дни года и когда наступает следующий високосный год.">
+    <meta property="og:image" content="https://worldtimessync.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Номер недели сегодня — Текущая ISO неделя и руководство по високосному году | World Time Sync">
+    <link rel="canonical" href="https://worldtimessync.com/ru/blog/week-number-today.html">
+    <link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/ru/blog/week-number-today.html">
+    <link rel="preload" href="/assets/blog.css" as="style">
+<noscript><link rel="stylesheet" href="/assets/blog.css"></noscript>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/assets/index-ufePLcBr.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LBX0CDYSSV');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "Article", "headline": "Номер недели сегодня — Текущая ISO неделя и руководство по високосному году | World Time Sync", "description": "Посмотрите номер этой недели по ISO, квартал, оставшиеся дни года и когда наступает следующий високосный год.", "articleSection": "Часовые пояса", "keywords": "номер недели сегодня, текущий номер недели, календарь ISO недели, следующий високосный год, какой номер недели", "wordCount": 157, "timeRequired": "PT6M", "inLanguage": "en", "author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}, "publisher": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com", "logo": {"@type": "ImageObject", "url": "https://worldtimessync.com/logo.png", "width": 512, "height": 512}}, "datePublished": "2026-08-10", "dateModified": "2026-08-10", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/ru/blog/week-number-today.html"}, "image": "https://worldtimessync.com/og-image.png"}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://worldtimessync.com/"}, {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://worldtimessync.com/#blog"}, {"@type": "ListItem", "position": 3, "name": "Номер недели сегодня — Текущая ISO неделя и руководство по високосному году", "item": "https://worldtimessync.com/ru/blog/week-number-today.html"}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Какой номер недели?", "acceptedAnswer": {"@type": "Answer", "text": "Живой виджет выше вычисляет текущий номер недели ISO 8601 на основе даты вашего устройства."}}, {"@type": "Question", "name": "Когда начинается первая неделя?", "acceptedAnswer": {"@type": "Answer", "text": "Первая неделя ISO — это первая неделя, содержащая четверг — поэтому она может начинаться в конце декабря предыдущего года."}}, {"@type": "Question", "name": "Является ли 2026 год високосным?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. 2026, делённая на 4, оставляет остаток. Следующие високосные годы — 2028, 2032 и 2036."}}]}
+    </script>
+
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Перейти к основному содержимому</a>
+    <div id="root" role="application" aria-label="World Time Online Application">
+        <div class="app-loading" aria-busy="true" aria-live="polite">
+            <div class="app-loading-spinner" role="status" aria-label="Загрузка приложения"></div>
+            <p class="app-loading-text">Загрузка World Time...</p>
+        </div>
+    </div>
+    <main id="main-content">
+        <article class="blog-wrap">
+            <nav class="blog-breadcrumb" aria-label="Хлебные крошки">
+                <a href="/">Главная</a> › <a href="/#blog">Блог</a> › <span aria-current="page">Номер недели сегодня — Текущая ISO неделя и руководство по високосному году</span>
+            </nav>
+            <h1>Номер недели сегодня — Текущая ISO неделя и руководство по високосному году</h1>
+            <div class="blog-meta"> 10 августа 2026 &nbsp;·&nbsp;  6 мин чтения &nbsp;·&nbsp;  Часовые пояса, Руководство</div>
+
+<p>Система ISO 8601 нумерует недели с понедельника по воскресенье; первая неделя — это неделя, содержащая первый четверг января. Европа широко использует её для планирования, выплаты зарплаты и производственных графиков; Северная Америка использует её реже, что вызывает путаницу в международных командах.</p>
+
+<h2>Текущая неделя в обзоре</h2>
+<div class="converter-widget">
+<h2>📅 Текущая информация о неделе</h2>
+<p>ISO неделя: <strong id="wn">…</strong></p>
+<p>Квартал: <span id="qtr"></span> · День года: <span id="doy"></span> · Дней осталось в году: <span id="dly"></span></p>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+ var n=new Date();
+ var d=new Date(Date.UTC(n.getFullYear(),n.getMonth(),n.getDate()));
+ var day=d.getUTCDay()||7;
+ d.setUTCDate(d.getUTCDate()+4-day);
+ var y0=new Date(Date.UTC(d.getUTCFullYear(),0,1));
+ var wk=Math.ceil(((d-y0)/86400000+1)/7);
+ document.getElementById('wn').textContent=wk+" ("+d.getUTCFullYear()+")";
+ document.getElementById('qtr').textContent="Q"+(Math.floor(n.getMonth()/3)+1);
+ var start=Date.UTC(n.getFullYear(),0,1);
+ var doy=Math.floor((Date.UTC(n.getFullYear(),n.getMonth(),n.getDate())-start)/86400000)+1;
+ var end=Date.UTC(n.getFullYear(),11,31);
+ document.getElementById('doy').textContent=doy;
+ document.getElementById('dly').textContent=Math.floor((end-start)/86400000)+1-doy;
+});
+</script>
+
+<h2>Високосные годы</h2>
+<p>Год является високосным, если делится на 4, за исключением столетий — они должны делиться на 400. Так, 2000 год был високосным, а 1900 — нет, и 

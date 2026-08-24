@@ -1,0 +1,268 @@
+Wait need to translate correctly.
+
+Original: "If one office is 2 of 20 people, rotating may just push your minority into every bad slot. Alternatives: let the small office stay async, hold two smaller calls, or split the meeting into a recording plus a live Q&amp;A at their chosen time."
+
+Translate: "Si un bureau représente 2 personnes sur 20, la rotation pourrait simplement placer votre minorité dans chaque créneau défavorable. Alternatives : laissez le petit bureau travailler en asynchrone, organisez deux appels plus petits, ou séparez la réunion en un enregistrement plus une séance de questions-réponses en direct à leur heure préférée."
+
+Need to keep Q&amp;A as is? It's HTML entity; we can keep as is.
+
+<h2>Frequently Asked Questions</h2> translate: "Questions fréquemment posées".
+
+<div class="faq-section">
+{FAQ}
+</div>
+
+We should not translate {FAQ} placeholder; keep as is.
+
+<p>Find your overlap window: <a href="/meeting-planner.html">Meeting Planner</a>.</p>
+
+Translate: "Trouvez votre fenêtre de chevauchement : <a href=\"/meeting-planner.html\">Planificateur de réunion</a>."
+
+Now footer:
+
+<footer class="blog-footer">
+    <a href="/privacy.html">Privacy</a>
+    <a href="/about.html">About</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/terms.html">Terms</a>
+    <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p>
+</footer>
+
+Translate link texts: Privacy -> "Confidentialité". About -> "À propos". Contact -> "Contact". Terms -> "Conditions". Keep copyright line: "&copy; 2026 World Time Sync" unchanged (brand). Could translate "World Time Sync" stays.
+
+Now after footer, there are scripts:
+
+<script type="module" src="/assets/index-Dd7au40z.js" async></script> unchanged.
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var seo = document.querySelector('.blog-wrap');
+    if (seo) seo.style.display = 'none';
+  });
+</script> unchanged (code).
+
+<script>
+  window.addEventListener('load',function(){
+    var ahrefs=document.createElement('script');
+    ahrefs.async=true;
+    ahrefs.src='https://analytics.ahrefs.com/analytics.js';
+    ahrefs.setAttribute('data-key','hB1VYWuwb1i/f1d8re7P2A');
+    document.head.appendChild(ahrefs);
+  });
+</script> unchanged.
+
+Now we need to ensure we didn't miss any text inside attributes like title, alt, aria-label, description, keywords, content.
+
+We already updated many.
+
+Check each:
+
+- <a href="#main-content" class="skip-link">Skip to main content</a> changed to "Aller au contenu principal". No other attributes.
+
+- <div id="root" role="application" aria-label="World Time Online Application"> changed aria-label to "Application World Time en ligne". Good.
+
+- <div class="app-loading-spinner" role="status" aria-label="Loading application"> changed to "Chargement de l'application".
+
+- <p class="app-loading-text">Loading World Time...</p> changed to "Chargement de World Time...".
+
+- <nav class="blog-breadcrumb" aria-label="Breadcrumb"> changed to "Fil d'Ariane".
+
+- <a href="/">Home</a> changed to "Accueil".
+
+- <a href="/#blog">Blog</a> keep "Blog". Could translate to "Blog" (same). We'll keep.
+
+- <span aria-current="page">Fair Meeting Rotation Across Time Zones — Scheduling Playbook</span> changed to "Rotation équitable des réunions entre fuseaux horaires — Guide de planification".
+
+- <h1>Fair Meeting Rotation Across Time Zones — Scheduling Playbook</h1> changed similarly.
+
+- <div class="blog-meta"> August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide</div> changed to  10 août 2026 &nbsp;·&nbsp;  6 min de lecture &nbsp;·&nbsp;  Fuseaux horaires, Guide
+
+- <p>When a team spans Asia, Europe and the Americas, no single time works for everyone. The standard fix is a rotation: the same weekly call alternates between slots so each region periodically takes the awkward hour. What separates a working rotation from a resentful calendar is fairness bookkeeping.</p> changed as earlier.
+
+- <h2>A Simple Three-Slot Rotation</h2> changed to "Une rotation simple à trois créneaux".
+
+- Table headers: Slot -> "Créneau". UTC unchanged. Who's uncomfortable -> "Qui est inconfortable". Good.
+
+- Row 1: <td>A — morning Americas</td> changed to "A — matin Amériques". <td>Asia-Pacific evening</td> changed to "soir Asie-Pacifique".
+
+- Row 2: <td>B — afternoon Europe</td> changed to "B — après-midi Europe". <td>US West very early</td> changed to "Côte ouest des États-Unis très tôt".
+
+- Row 3: <td>C — Asia-Pacific friendly</td> changed to "C — Asie-Pacifique amical". <td>Americas late night</td> changed to "Amériques, nuit tardive".
+
+- <p>Cycle A → B → C → A weekly. Nobody suffers two weeks running.</p> changed to "Cycle A → B → C → A chaque semaine. Personne ne subit deux semaines consécutives."
+
+- <h2>Making It Stick</h2> changed to "Le rendre efficace".
+
+- List items:
+
+1) <li>Publish the whole rotation in the invite description up front — surprises breed objections.</li> changed to "Publiez la rotation complète dans la description de l'invitation à l'avance — les surprises engendrent des objections."
+
+2) <li>Set separate reminders per slot in each attendee's local zone; a tool like our <a href="/world-clock.html">world clock</a> helps people internalize their own slot.</li> changed to "Définissez des rappels distincts pour chaque créneau dans le fuseau horaire local de chaque participant ; un outil comme notre <a href=\"/world-clock.html\">horloge mondiale</a> aide les personnes à s'approprier leur propre créneau."
+
+Note: need to escape quotes inside attribute? We are outputting HTML, we must keep the attribute value with double quotes. Inside we changed the link text but kept href unchanged. The surrounding attribute uses double quotes; we used single quotes inside the JS? Actually it's plain HTML: <a href="/world-clock.html">world clock</a>. We changed inner text to "horloge mondiale". So we produce: <a href="/world-clock.html">horloge mondiale</a>. Good.
+
+3) <li>Track attendance quality, not just presence: someone dialing in from bed isn't "attending".</li> changed to "Suivez la qualité de la participation, pas seulement la présence : quelqu'un qui se connecte depuis son lit n'est pas réellement « présent »."
+
+We need to keep the quotes around attending? In original: isn't "attending". We changed to n'est pas réellement « présent ». Use French guillemets? Could keep double quotes but we changed to French guillemets. It's okay as it's still visible text. Should we keep the double quotes? The rule says translate text; we can change punctuation to French style. It's fine.
+
+4) <li>Record every session regardless of slot, and keep decisions in writing so missing one never blocks anyone.</li> changed to "Enregistrez chaque session indépendamment du créneau, et consignez les décisions par écrit afin que l'absence d'une personne ne bloque jamais personne."
+
+- <h2>When Not to Rotate</h2> changed to "Quand ne pas faire de rotation".
+
+- <p>If one office is 2 of 20 people, rotating may just push your minority into every bad slot. Alternatives: let the small office stay async, hold two smaller calls, or split the meeting into a recording plus a live Q&amp;A at their chosen time.</p> changed to "Si un bureau représente 2 personnes sur 20, la rotation pourrait simplement placer votre minorité dans chaque créneau défavorable. Alternatives : laissez le petit bureau travailler en asynchrone, organisez deux appels plus petits, ou séparez la réunion en un enregistrement plus une séance de questions-réponses en direct à leur heure préférée."
+
+We need to keep Q&amp;A as is (HTML entity). We kept "questions-réponses en direct". That's fine.
+
+- <h2>Frequently Asked Questions</h2> changed to "Questions fréquemment posées".
+
+- <div class="faq-section">{FAQ}</div> keep placeholder.
+
+- <p>Find your overlap window: <a href="/meeting-planner.html">Meeting Planner</a>.</p> changed to "Trouvez votre fenêtre de chevauchement : <a href=\"/meeting-planner.html\">Planificateur de réunion</a>."
+
+- Footer links: Privacy -> "Confidentialité". About -> "À propos". Contact -> "Contact". Terms -> "Conditions". Copyright unchanged.
+
+Now we need to ensure we didn't miss any text inside attributes like title, alt, etc. Already done.
+
+Check also <meta name="description" content="..."> we translated.
+
+Check <meta name="keywords"> we translated.
+
+Check <meta name="title"> we translated.
+
+Check <meta property="og:title"> we translated.
+
+Check <meta property="og:description"> we translated.
+
+Check <meta name="twitter:title"> we translated.
+
+Check any other aria-label: we did root, app-loading-spinner, blog-breadcrumb.
+
+Check any other title attributes: none.
+
+Check any alt attributes: none.
+
+Check any placeholder text inside input? none.
+
+Now ensure we didn't inadvertently translate inside JSON-LD. We left them unchanged.
+
+Now output final HTML.
+
+Let's construct.
+
+We'll need to be careful with escaping quotes inside HTML attributes when we changed link text; we just changed inner text, not attribute.
+
+Now produce final HTML<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="theme-color" content="#667eea">
+    <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk">
+    <title>Rotation équitable des réunions entre fuseaux horaires — Guide de planification | World Time Sync</title>
+    <meta name="title" content="Rotation équitable des réunions entre fuseaux horaires — Guide de planification | World Time Sync">
+    <meta name="description" content="Comment faire tourner équitablement les heures de réunion récurrentes entre les régions afin que la même équipe ne prenne toujours pas le créneau de nuit.">
+    <meta name="keywords" content="rappel de réunion fuseau horaire, rotation des heures de réunion, planning équitable de réunion équipe globale, heures de réunion alternatives">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="World Time Sync">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://worldtimessync.com/fr/blog/fair-meeting-rotation-timezones.html">
+    <meta property="og:title" content="Rotation équitable des réunions entre fuseaux horaires — Guide de planification | World Time Sync">
+    <meta property="og:description" content="Comment faire tourner équitablement les heures de réunion récurrentes entre les régions afin que la même équipe ne prenne toujours pas le créneau de nuit.">
+    <meta property="og:image" content="https://worldtimessync.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rotation équitable des réunions entre fuseaux horaires — Guide de planification | World Time Sync">
+    <link rel="canonical" href="https://worldtimessync.com/fr/blog/fair-meeting-rotation-timezones.html">
+    <link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/fr/blog/fair-meeting-rotation-timezones.html">
+    <link rel="preload" href="/assets/blog.css" as="style">
+<noscript><link rel="stylesheet" href="/assets/blog.css"></noscript>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/assets/index-ufePLcBr.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LBX0CDYSSV');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "Article", "headline": "Fair Meeting Rotation Across Time Zones — Scheduling Playbook | World Time Sync", "description": "How to rotate recurring meeting times fairly across regions so the same team doesn't always take the night slot.", "articleSection": "Time Zones", "keywords": "timezone meeting reminder, rotating meeting times, fair meeting schedule global team, alternate meeting times", "wordCount": 222, "timeRequired": "PT6M", "inLanguage": "en", "author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}, "publisher": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com", "logo": {"@type": "ImageObject", "url": "https://worldtimessync.com/logo.png", "width": 512, "height": 512}}, "datePublished": "2026-08-10", "dateModified": "2026-08-10", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/fr/blog/fair-meeting-rotation-timezones.html"}, "image": "https://worldtimessync.com/og-image.png"}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://worldtimessync.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://worldtimessync.com/#blog"}, {"@type": "ListItem", "position": 3, "name": "Fair Meeting Rotation Across Time Zones — Scheduling Playbook", "item": "https://worldtimessync.com/fr/blog/fair-meeting-rotation-timezones.html"}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is fair meeting rotation?", "acceptedAnswer": {"@type": "Answer", "text": "Alternating a recurring call between time slots so each region periodically absorbs the inconvenient hour instead of the same team always doing it."}}, {"@type": "Question", "name": "How often should times rotate?", "acceptedAnswer": {"@type": "Answer", "text": "Weekly cycles work for most teams; biweekly suits lower-stakes syncs. The key is publishing the pattern ahead of time."}}, {"@type": "Question", "name": "Do DST changes break rotations?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — fixed UTC slots drift relative to local clocks when either side changes. Re-check slots each March and October."}}]}
+    </script>
+
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+    <div id="root" role="application" aria-label="Application World Time en ligne">
+        <div class="app-loading" aria-busy="true" aria-live="polite">
+            <div class="app-loading-spinner" role="status" aria-label="Chargement de l'application"></div>
+            <p class="app-loading-text">Chargement de World Time...</p>
+        </div>
+    </div>
+    <main id="main-content">
+        <article class="blog-wrap">
+            <nav class="blog-breadcrumb" aria-label="Fil d'Ariane">
+                <a href="/">Accueil</a> › <a href="/#blog">Blog</a> › <span aria-current="page">Rotation équitable des réunions entre fuseaux horaires — Guide de planification</span>
+            </nav>
+            <h1>Rotation équitable des réunions entre fuseaux horaires — Guide de planification</h1>
+            <div class="blog-meta"> 10 août 2026 &nbsp;·&nbsp;  6 min de lecture &nbsp;·&nbsp;  Fuseaux horaires, Guide</div>
+
+<p>Lorsqu'une équipe s'étend sur l'Asie, l'Europe et les Amériques, aucun horaire unique ne convient à tous. La solution standard consiste à faire une rotation : le même appel hebdomadaire alterne entre les créneaux afin que chaque région prenne périodiquement l'heure inconvenante. Ce qui distingue une rotation efficace d'un calendrier source de ressentiment, c'est la comptabilité de l'équité.</p>
+
+<h2>Une rotation simple à trois créneaux</h2>
+<table><thead><tr><th>Créneau</th><th>UTC</th><th>Qui est inconfortable</th></tr></thead><tbody>
+<tr><td>A — matin Amériques</td><td>14:00</td><td>soir Asie-Pacifique</td></tr>
+<tr><td>B — après-midi Europe</td><td>09:00</td><td>Côte ouest des États-Unis très tôt</td></tr>
+<tr><td>C — Asie-Pacifique amical</td><td>23:00</td><td>Amériques, nuit tardive</td></tr>
+</tbody></table>
+<p>Cycle A → B → C → A chaque semaine. Personne ne subit deux semaines consécutives.</p>
+
+<h2>Le rendre efficace</h2>
+<ol>
+<li>Publiez la rotation complète dans la description de l'invitation à l'avance — les surprises engendrent des objections.</li>
+<li>Définissez des rappels distincts pour chaque créneau dans le fuseau horaire local de chaque participant ; un outil comme notre <a href="/world-clock.html">horloge mondiale</a> aide les personnes à s'approprier leur propre créneau.</li>
+<li>Suivez la qualité de la participation, pas seulement la présence : quelqu'un qui se connecte depuis son lit n'est pas réellement « présent ».</li>
+<li>Enregistrez chaque session indépendamment du créneau, et consignez les décisions par écrit afin que l'absence d'une personne ne bloque jamais personne.</li>
+</ol>
+
+<h2>Quand ne pas faire de rotation</h2>
+<p>Si un bureau représente 2 personnes sur 20, la rotation pourrait simplement placer votre minorité dans chaque créneau défavorable. Alternatives : laissez le petit bureau travailler en asynchrone, organisez deux appels plus petits, ou séparez la réunion en un enregistrement plus une séance de questions-réponses en direct à leur heure préférée.</p>
+
+<h2>Questions fréquemment posées</h2>
+<div class="faq-section">
+{FAQ}
+</div>
+<p>Trouvez votre fenêtre de chevauchement : <a href="/meeting-planner.html">Planificateur de réunion</a>.</p>
+
+        <footer class="blog-footer">
+            <a href="/privacy.html">Confidentialité</a>
+            <a href="/about.html">À propos</a>
+            <a href="/contact.html">Contact</a>
+            <a href="/terms.html">Conditions</a>
+            <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p>
+        </footer>
+    </main>
+
+    <script type="module" src="/assets/index-Dd7au40z.js" async></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var seo = document.querySelector('.blog-wrap');
+        if (seo) seo.style.display = 'none';
+      });
+    </script>
+    <script>
+      window.addEventListener('load',function(){
+        var ahrefs=document.createElement('script');
+        ahrefs.async=true;
+        ahrefs.src='https://analytics.ahrefs.com/analytics.js';
+        ahrefs.setAttribute('data-key','hB1VYWuwb1i/f1d8re7P2A');
+        document.head.appendChild(ahrefs);
+      });
+    </script>
+  </body>
+</html>

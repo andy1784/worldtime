@@ -1,0 +1,496 @@
+We need to translate visible/user-facing text into Russian, preserving HTML tags, attributes, etc. Also need to translate JSON-LD content values (like headline, description, etc.) as they are inside JSON strings but they are user-facing? The rule says translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. JSON-LD blocks are not HTML tags but they are script type application/ld+json. The content inside JSON is data, but likely considered user-facing (like headline, description). The instruction says translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. JSON-LD is not an HTML tag attribute; it's inside a script tag. Should we translate? The rule says keep JSON-LD blocks exactly as-is. It says: "Keep ALL HTML tags, attributes, href/lang values, JSON-LD blocks, and CSS exactly as-is." So we must NOT modify JSON-LD blocks. So we leave them unchanged, even if they contain English text. Good.
+
+Thus we only translate visible text in HTML: title tag, meta name="title", meta name="description", meta name="keywords", og:title, og:description, twitter:title, maybe also aria-label, etc. Also visible text in body: skip-link text, app-loading-text, breadcrumb links text, h1, blog-meta text (date, read time, categories), paragraphs, table headings, table cells, list items, converter-widget heading, live UK time check? The script generates text but not in HTML; we don't translate script content. FAQ section placeholder {FAQ} - not actual content; we leave as is. Footer links text, copyright.
+
+Also need to translate the blog-meta: " August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide". Those appear as garbled due to encoding? Actually they are icons maybe. The text includes month name, "August". Need to translate month to Russian: "августа". Also "6 min read" -> "6 мин чтения" or "6 мин чтения". Usually "6 мин чтения". Also "Time Zones, Guide" -> "Часовые пояса, Руководство". Also need to translate the paragraph text: "The UK follows British Summer Time (BST, UTC+1) from late March to late October, then returns to GMT (UTC+0). In 2026 the switch dates are:" translate to Russian.
+
+Also table headings: Change, Date, Effect. Table cells: "Clocks go forward", "Clocks go back", dates, effect strings.
+
+List items: "London–New York:", "London–India:", "London–Sydney:" and their explanations.
+
+Converter-widget heading: "Live UK Time Check". Also maybe the script will fill but not needed.
+
+FAQ section heading: "Frequently Asked Questions". Also the placeholder {FAQ} remains.
+
+Footer links: Privacy, About, Contact, Terms.
+
+Copyright: "&copy; 2026 World Time Sync" translate? The name "World Time Sync" is a proper noun, keep as is. The year stays. So translate nothing? The phrase is just copyright symbol and year and name; we keep as is.
+
+Also need to translate the skip-link: "Skip to main content". Also app-loading-text: "Loading World Time...".
+
+Also the breadcrumb: "Home", "Blog", and the current page text (span) which is the same as h1? It currently says "UK Summer Time 2026 — BST Dates & Clock Changes". Should translate that as well.
+
+Also the nav aria-label: "Breadcrumb" attribute value should be translated? It's an attribute (aria-label). According to rule, translate attributes like title/alt/aria-label/description/keywords/content. So we need to translate aria-label="Breadcrumb" to Russian: "Арианна"? Actually "Breadcrumb" translates to "Хлебные крошки". So we need to change aria-label value.
+
+Also the skip-link class? Not needed.
+
+Also the app-loading div has aria-busy="true" and aria-live="polite" - those are not translatable.
+
+Also the app-loading-spinner has role="status" aria-label="Loading application". Need to translate aria-label.
+
+Also the main content has id="main-content". No.
+
+Also the article class etc.
+
+Also the h1 text.
+
+Also the blog-meta includes icons but we need to translate the text parts.
+
+Also the paragraph after h1.
+
+Also the h2 "UK Clock Changes 2026".
+
+Also the table headings.
+
+Also the h2 "What Stays Constant vs What Shifts".
+
+Also the list items.
+
+Also the converter-widget h2.
+
+Also the h2 "Frequently Asked Questions".
+
+Also the paragraph after FAQ: "Worldwide table: <a href="/dst-2026-worldwide.html">DST 2026 worldwide</a>." Need to translate "Worldwide table:" and maybe the link text "DST 2026 worldwide". The link text is user-facing; translate? Probably translate to Russian: "Всемирная таблица: DST 2026 по всему миру". But we need to keep the href unchanged. The link text should be translated.
+
+Also the footer links: Privacy, About, Contact, Terms. Should translate to Russian: "Конфиденциальность", "О нас", "Контакты", "Условия". However note that these are likely proper names of pages; but we translate the link text as it's visible.
+
+Also the copyright line: keep as is.
+
+Now also need to translate the meta tags: title, name="title", name="description", name="keywords", og:title, og:description, twitter:title. Also maybe the og:image? No.
+
+Also the link rel="canonical" href etc - not translate.
+
+Also the link rel="alternate" hreflang="x-default" href - not translate.
+
+Also the link rel="preload" href - not translate.
+
+Also the noscript link rel="stylesheet" href - not translate.
+
+Also the link rel="icon" - not translate.
+
+Also the link rel="stylesheet" href - not translate.
+
+Also the script tags content - not translate except maybe we shouldn't touch.
+
+Now also need to translate the text inside the <noscript>?? Actually noscript contains a link tag; not visible.
+
+Now also need to translate the text inside the <title> tag: "UK Summer Time 2026 — BST Dates & Clock Changes | World Time Sync". Translate to Russian: "Летнее время в Великобритании 2026 — даты BST и изменение часов | World Time Sync". Keep the pipe and name.
+
+Similarly meta name="title" same content.
+
+Meta name="description": "UK BST 2026: clocks went forward March 29 and go back October 25. GMT vs BST explained." Translate: "БСТ Великобритании 2026: часы переведены вперёд 29 марта и назад 25 октября. Разница между GMT и БСТ объяснена."
+
+Meta name="keywords": "summer time uk 2026, when do clocks go forward uk, bst 2026 dates, gmt to bst change". Translate keywords? Usually keep as is? But rule says translate keywords attribute. So translate to Russian: "летнее время в Великобритании 2026, когда переводят часы вперёд в Великобритании, даты БСТ 2026, переход от GMT к БСТ". Keep commas.
+
+Og:title same as title.
+
+Og:description same as description.
+
+Twitter:title same as title.
+
+Also maybe the og:url not translate.
+
+Now also need to translate the aria-label attributes we identified: aria-label="Breadcrumb" -> "Хлебные крошки". aria-label="Loading application" -> "Загрузка приложения". Also the skip-link has no aria-label.
+
+Also the app-loading div has aria-label? No.
+
+Also the app-loading-spinner role="status" aria-label="Loading application". Already.
+
+Also maybe there is other aria-label: none.
+
+Now also need to translate the text inside the <noscript>?? Not needed.
+
+Now also need to translate the text inside the <p class="app-loading-text">: "Loading World Time..." -> "Загрузка World Time...". Keep "World Time" as proper noun? It's a name; keep unchanged.
+
+Now also need to translate the text inside the <a href="#main-content" class="skip-link">: "Skip to main content" -> "Перейти к основному содержимому".
+
+Now also need to translate the breadcrumb links: <a href="/">Home</a> -> "Главная". <a href="/#blog">Blog</a> -> "Блог". The current page span: <span aria-current="page">UK Summer Time 2026 — BST Dates & Clock Changes</span> -> translate same as h1.
+
+Now also need to translate the h1: same.
+
+Now blog-meta: The garbled icons likely represent calendar, clock, folder. We'll keep the icons as is (they are likely emoji or something). We need to translate the text after them: "August 10, 2026" -> "10 августа 2026 г."? Usually Russian format: "10 августа 2026". Keep the year. Also "6 min read" -> "6 мин чтения". Also "Time Zones, Guide" -> "Часовые пояса, Руководство". Also need to keep the separators &nbsp;·&nbsp;.
+
+Now paragraph after h1: translate.
+
+Now h2 "UK Clock Changes 2026" -> "Изменения часов в Великобритании 2026".
+
+Now table headings: Change -> "Изменение". Date -> "Дата". Effect -> "Эффект".
+
+Now table cells:
+
+- "Clocks go forward" -> "Часы переводятся вперёд".
+- "Clocks go back" -> "Часы переводятся назад".
+- Date strings: "Sunday, March 29 at 01:00 GMT" -> need to translate day and month but keep format? Should translate to Russian: "Воскресенье, 29 марта в 01:00 GMT". Similarly "Sunday, October 25 at 02:00 BST" -> "Воскресенье, 25 октября в 02:00 БСТ". Note: Keep abbreviations GMT, BST as is.
+
+- Effect strings: "GMT → BST (+1)" -> "GMT → БСТ (+1)". "BST → GMT (−1)" -> "БСТ → GMT (−1)". Keep arrows.
+
+Now paragraph after table: "Both switches happen at 01:00 UTC — the same moment as the rest of the EU, which keeps European time gaps stable all year." Translate: "Оба перехода происходят в 01:00 по UTC — тот же момент, что и в остальной части ЕС, что сохраняет разницы во времени в Европе стабильными круглый год."
+
+Now h2 "What Stays Constant vs What Shifts" -> "Что остаётся постоянным, а что меняется".
+
+Now list items:
+
+- "<strong>London–New York:</strong> normally 5 hours apart; becomes <strong>4 hours</strong> for the week between Oct 25 and Nov 1 (Europe falls back first)." Translate: "<strong>Лондон–Нью‑Йорк:</strong> обычно разница 5 часов; становится <strong>4 часа</strong> на неделю с 25 октября по 1 ноября (Европа переходит на зимнее время первой)." Need to keep the en dash? We'll keep as is.
+
+- "<strong>London–India:</strong> 5:30 in winter, 4:30 in summer." Translate: "<strong>Лондон–Индия:</strong> 5:30 зимой, 4:30 летом."
+
+- "<strong>London–Sydney:</strong> swings between 9–11 hours because both countries observe DST in opposite seasons." Translate: "<strong>Лондон–Сидней:</strong> колеблется от 9 до 11 часов, поскольку обе страны наблюдают летнее время в противоположные сезоны."
+
+Now converter-widget h2: "Live UK Time Check" -> "Проверка текущего времени в Великобритании". Could also be "Прямой эфир времени Великобритании". But "Live UK Time Check" -> "Проверка времени в Великобритании". We'll use "Проверка времени в Великобритании". Or "Прямой проверка времени UK"? Let's choose "Проверка времени в Великобритании".
+
+Now the script inside converter-widget: not translate.
+
+Now h2 "Frequently Asked Questions" -> "Часто задаваемые вопросы".
+
+Now the FAQ section placeholder {FAQ} remains.
+
+Now paragraph after FAQ: "Worldwide table: <a href="/dst-2026-worldwide.html">DST 2026 worldwide</a>." Translate: "Всемирная таблица: <a href="/dst-2026-worldwide.html">DST 2026 по всему миру</a>."
+
+Now footer links:
+
+- <a href="/privacy.html">Privacy</a> -> "Конфиденциальность"
+- <a href="/about.html">About</a> -> "О нас"
+- <a href="/contact.html">Contact</a> -> "Контакты"
+- <a href="/terms.html">Terms</a> -> "Условия"
+
+Now copyright line: "&copy; 2026 World Time Sync" keep.
+
+Now also need to translate any other visible text like the text inside the <noscript>?? Not.
+
+Now also need to translate the text inside the <link rel="preload" href="/assets/blog.css" as="style">? No.
+
+Now also need to translate the text inside the <link rel="stylesheet" href="/assets/index-ufePLcBr.css">? No.
+
+Now also need to translate the text inside the <script> tags? Not.
+
+Now also need to translate the text inside the <meta name="theme-color" content="#667eea">? No.
+
+Now also need to translate the text inside the <meta name="google-site-verification" content="...">? No.
+
+Now also need to translate the text inside the <meta property="og:image" content="...">? No.
+
+Now also need to translate the text inside the <meta name="twitter:card" content="summary_large_image">? No.
+
+Now also need to translate the text inside the <link rel="canonical" href="...">? No.
+
+Now also need to translate the text inside the <link rel="alternate" hreflang="x-default" href="...">? No.
+
+Now also need to translate the text inside the <link rel="preload" href="/assets/blog.css" as="style">? No.
+
+Now also need to translate the text inside the <noscript><link rel="stylesheet" href="/assets/blog.css"></noscript>? No.
+
+Now also need to translate the text inside the <link rel="icon" type="image/svg+xml" href="/favicon.svg">? No.
+
+Now also need to translate the text inside the <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>? No.
+
+Now also need to translate the text inside the <script> window.dataLayer... etc? No.
+
+Now also need to translate the text inside the <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>? No.
+
+Now also need to translate the text inside the <script type="module" src="/assets/index-Dd7au40z.js" async></script>? No.
+
+Now also need to translate the text inside the <script> document.addEventListener('DOMContentLoaded', function() { var seo = document.querySelector('.blog-wrap'); if (seo) seo.style.display = 'none'; });? No.
+
+Now also need to translate the text inside the <script> window.addEventListener('load',function(){ var ahrefs=document.createElement('script'); ahrefs.async=true; ahrefs.src='https://analytics.ahrefs.com/analytics.js'; ahrefs.setAttribute('data-key','hB1VYWuwb1i/f1d8re7P2A'); document.head.appendChild(ahrefs); });? No.
+
+Now also need to translate the text inside the <div class="app-loading" aria-busy="true" aria-live="polite">? Not.
+
+Now also need to translate the text inside the <div class="app-loading-spinner" role="status" aria-label="Loading application"> -> we already will translate aria-label.
+
+Now also need to translate the text inside the <p class="app-loading-text"> -> we will translate.
+
+Now also need to translate the text inside the <nav class="blog-breadcrumb" aria-label="Breadcrumb"> -> translate aria-label.
+
+Now also need to translate the text inside the <a href="/">Home</a> etc.
+
+Now also need to translate the text inside the <span aria-current="page">UK Summer Time 2026 — BST Dates & Clock Changes</span>.
+
+Now also need to translate the text inside the <h1>UK Summer Time 2026 — BST Dates & Clock Changes</h1>.
+
+Now also need to translate the text inside the <div class="blog-meta"> August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide</div>. We'll replace the text parts.
+
+Now also need to translate the text inside the <p>The UK follows British Summer Time (BST, UTC+1) from late March to late October, then returns to GMT (UTC+0). In 2026 the switch dates are:</p>.
+
+Now also need to translate the text inside the <h2>UK Clock Changes 2026</h2>.
+
+Now also need to translate the table headings and cells.
+
+Now also need to translate the paragraph after table.
+
+Now also need to translate the <h2>What Stays Constant vs What Shifts</h2>.
+
+Now also need to translate the list items.
+
+Now also need to translate the <div class="converter-widget"><h2>Live UK Time Check</h2>... </div>.
+
+Now also need to translate the <h2>Frequently Asked Questions</h2>.
+
+Now also need to translate the <div class="faq-section">{FAQ}</div> (keep placeholder).
+
+Now also need to translate the <p>Worldwide table: <a href="/dst-2026-worldwide.html">DST 2026 worldwide</a>.</p>.
+
+Now also need to translate the footer.
+
+Now also need to translate any other text like the text inside the <a href="#main-content" class="skip-link">.
+
+Now also need to translate the text inside the <div class="app-loading" aria-busy="true" aria-live="polite">? Not.
+
+Now also need to translate the text inside the <div class="app-loading-spinner" role="status" aria-label="Loading application">.
+
+Now also need to translate the text inside the <p class="app-loading-text">.
+
+Now also need to translate the text inside the <noscript>?? Not.
+
+Now also need to translate the text inside the <link rel="preload" href="/assets/blog.css" as="style">? Not.
+
+Now also need to translate the text inside the <link rel="stylesheet" href="/assets/index-ufePLcBr.css">? Not.
+
+Now also need to translate the text inside the <script> tags? Not.
+
+Now also need to translate the text inside the <meta name="title" content="...">? Yes.
+
+Now also need to translate the text inside the <meta name="description" content="...">? Yes.
+
+Now also need to translate the text inside the <meta name="keywords" content="...">? Yes.
+
+Now also need to translate the text inside the <meta property="og:title" content="...">? Yes.
+
+Now also need to translate the text inside the <meta property="og:description" content="...">? Yes.
+
+Now also need to translate the text inside the <meta name="twitter:title" content="...">? Yes.
+
+Now also need to translate the text inside the <link rel="canonical" href="...">? No.
+
+Now also need to translate the text inside the <link rel="alternate" hreflang="x-default" href="...">? No.
+
+Now also need to translate the text inside the <link rel="preload" href="/assets/blog.css" as="style">? No.
+
+Now also need to translate the text inside the <noscript><link rel="stylesheet" href="/assets/blog.css"></noscript>? No.
+
+Now also need to translate the text inside the <link rel="icon" type="image/svg+xml" href="/favicon.svg">? No.
+
+Now also need to translate the text inside the <link rel="stylesheet" href="/assets/index-ufePLcBr.css">? No.
+
+Now also need to translate the text inside the <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>? No.
+
+Now also need to translate the text inside the <script> window.dataLayer = window.dataLayer || []; ... </script>? No.
+
+Now also need to translate the text inside the <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>? No.
+
+Now also need to translate the text inside the <script type="application/ld+json"> blocks? No, keep as-is.
+
+Now also need to translate the text inside the <script type="module" src="/assets/index-Dd7au40z.js" async></script>? No.
+
+Now also need to translate the text inside the <script> document.addEventListener('DOMContentLoaded', function() { var seo = document.querySelector('.blog-wrap'); if (seo) seo.style.display = 'none'; });? No.
+
+Now also need to translate the text inside the <script> window.addEventListener('load',function(){ var ahrefs=document.createElement('script'); ahrefs.async=true; ahrefs.src='https://analytics.ahrefs.com/analytics.js'; ahrefs.setAttribute('data-key','hB1VYWuwb1i/f1d8re7P2A'); document.head.appendChild(ahrefs); });? No.
+
+Now also need to translate the text inside the <a href="/privacy.html">Privacy</a> etc.
+
+Now also need to translate the text inside the <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p>? Keep as is.
+
+Now also need to translate the text inside the <div class="app-loading" aria-busy="true" aria-live="polite">? Not.
+
+Now also need to translate the text inside the <div class="app-loading-spinner" role="status" aria-label="Loading application">.
+
+Now also need to translate the text inside the <p class="app-loading-text">.
+
+Now also need to translate the text inside the <nav class="blog-breadcrumb" aria-label="Breadcrumb">.
+
+Now also need to translate the text inside the <a href="/">Home</a>.
+
+Now also need to translate the text inside the <a href="/#blog">Blog</a>.
+
+Now also need to translate the text inside the <span aria-current="page">UK Summer Time 2026 — BST Dates & Clock Changes</span>.
+
+Now also need to translate the text inside the <h1>UK Summer Time 2026 — BST Dates & Clock Changes</h1>.
+
+Now also need to translate the text inside the <div class="blog-meta"> August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide</div>.
+
+Now also need to translate the text inside the <p>The UK follows British Summer Time (BST, UTC+1) from late March to late October, then returns to GMT (UTC+0). In 2026 the switch dates are:</p>.
+
+Now also need to translate the text inside the <h2>UK Clock Changes 2026</h2>.
+
+Now also need to translate the table headings.
+
+Now also need to translate the table cells.
+
+Now also need to translate the paragraph after table.
+
+Now also need to translate the <h2>What Stays Constant vs What Shifts</h2>.
+
+Now also need to translate the list items.
+
+Now also need to translate the <div class="converter-widget"><h2>Live UK Time Check</h2>... </div>.
+
+Now also need to translate the <h2>Frequently Asked Questions</h2>.
+
+Now also need to translate the <div class="faq-section">{FAQ}</div>.
+
+Now also need to translate the <p>Worldwide table: <a href="/dst-2026-worldwide.html">DST 2026 worldwide</a>.</p>.
+
+Now also need to translate the footer.
+
+Now also need to translate the text inside the <a href="#main-content" class="skip-link">.
+
+Now also need to translate the text inside the <div class="app-loading" aria-busy="true" aria-live="polite">? Not.
+
+Now also need to translate the text inside the <div class="app-loading-spinner" role="status" aria-label="Loading application">.
+
+Now also need to translate the text inside the <p class="app-loading-text">.
+
+Now also need to translate the text inside the <noscript>?? Not.
+
+Now also need to translate the text inside the <link rel="preload" href="/assets/blog.css" as="style">? Not.
+
+Now also need to translate the text inside the <link rel="stylesheet" href="/assets/index-ufePLcBr.css">? Not.
+
+Now also need to translate the text inside the <script> tags? Not.
+
+Now also need to translate the text inside the <meta name="theme-color" content="#667eea">? Not.
+
+Now also need to translate the text inside the <meta name="google-site-verification" content="...">? Not.
+
+Now also need to translate the text inside the <meta property="og:image" content="...">? Not.
+
+Now also need to translate the text inside the <meta name="twitter:card" content="summary_large_image">? Not.
+
+Now also need to translate the text inside the <link rel="canonical" href="...">? Not.
+
+Now also need to translate the text inside the <link rel="alternate" hreflang="x-default" href="...">? Not.
+
+Now also need to translate the text inside the <link rel="preload" href="/assets/blog.css" as="style">? Not.
+
+Now also need to translate the text inside the <noscript><link rel="stylesheet" href="/assets/blog.css"></noscript>? Not.
+
+Now also need to translate the text inside the <link rel="icon" type="image/svg+xml" href="/favicon.svg">? Not.
+
+Now also need to translate the text inside the <link rel="stylesheet" href="/assets/index-ufePLcBr.css">? Not.
+
+Now also need to translate the text inside the <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>? Not.
+
+Now also need to translate the text inside the <script> window.dataLayer = window.dataLayer || []; ... </script>? Not.
+
+Now also need to translate the text inside the <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>? Not.
+
+Now also need to translate the text inside the <script type="application/ld+json"> blocks? Not.
+
+Now also need to translate the text inside the <script type="module" src="/assets/index-Dd7au40z.js" async></script>? Not.
+
+Now also need to translate the text inside the <script> document.addEventListener('DOMContentLoaded', function() { var seo = document.querySelector('.blog-wrap'); if (seo) seo.style.display = 'none'; });? Not.
+
+Now also need to translate the text inside the <script> window.addEventListener('load',function(){ var ahrefs=document.createElement('script'); ahrefs.async=true; ahrefs.src='https://analytics.ahrefs.com/analytics.js'; ahrefs.setAttribute('data-key','hB1VYWuwb1i/f1d8re7P2A'); document.head.appendChild(ahrefs); });? Not.
+
+Now also need to translate the text inside the <a href="/privacy.html">Privacy</a> etc.
+
+Now also need to translate the text inside the <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p>? Keep.
+
+Now also need to translate the text inside the <div class="app-loading" aria-busy="true" aria-live="polite">? Not.
+
+Now also need to translate the text inside the <div class="app-loading-spinner" role="status" aria-label="Loading application">.
+
+Now also need to translate the text inside the <p class="app-loading-text">.
+
+Now also need to translate the text inside the <nav class="blog-breadcrumb" aria-label="Breadcrumb">.
+
+Now also need to translate the text inside the <a href="/">Home</a>.
+
+Now also need to translate the text inside the <a href="/#blog">Blog</a>.
+
+Now also need to translate the text inside the <span aria-current="page">UK Summer Time 2026 — BST Dates & Clock Changes</span>.
+
+Now also need to translate the text inside the <h1>UK Summer Time 2026 — BST Dates & Clock Changes</h1>.
+
+Now also need to translate the text inside the <div class="blog-meta"> August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide</div>.
+
+Now also need to translate the text inside the <p>The UK follows British Summer Time (BST, UTC+1) from late March to late October, then returns to GMT (UTC+0). In 2026 the switch dates are:</p>.
+
+Now also need to translate the text inside the <h2>UK Clock Changes 2026</h2>.
+
+Now also need to translate the table headings.
+
+Now also need to translate the table cells.
+
+Now also need to translate the paragraph after table.
+
+Now also need to translate the <h2>What Stays Constant vs What Shifts</h2>.
+
+Now also need to translate the list items.
+
+Now also need to translate the <div class="converter-widget"><h2>Live UK Time Check</h2>... </div>.
+
+Now also need to translate the <h2>Frequently Asked Questions</h2>.
+
+Now also need to translate the <div class="faq-section">{FAQ}</div>.
+
+Now also need to translate the <p>Worldwide table: <a href="/dst-2026-worldwide.html">DST 2026 worldwide</a>.</p>.
+
+Now also need to translate the footer.
+
+Now also need to translate the text inside the <a href="#main-content" class="skip-link">.
+
+Now also need to translate the text inside the <div class="app-loading" aria-busy="true" aria-live="polite">? Not.
+
+Now also need to translate the text inside the <div class="app-loading-spinner" role="status" aria-label="Loading application">.
+
+Now also need to translate the text inside the <p class="app-loading-text">.
+
+Now also need to translate the text inside the <noscript>?? Not.
+
+Now also need to translate the text inside the <link rel="preload" href="/assets/blog.css" as="style">? Not.
+
+Now also need to translate the text inside the <link rel="stylesheet" href="/assets/index-ufePLcBr.css">? Not.
+
+Now also need to translate the text inside the <script> tags? Not.
+
+Now also need to translate the text inside the <meta name="theme-color" content="#667eea">? Not.
+
+Now also need to translate the text inside the <meta name="google-site-verification" content="...">? Not.
+
+Now also need to translate the text inside the <meta property="og:image" content="...">? Not.
+
+Now also need to translate the text inside the <meta name="twitter:card" content="summary_large_image">? Not.
+
+Now also need to translate the text inside the <link rel="canonical" href="...">? Not.
+
+Now also need to translate the text inside the <link rel="alternate" hreflang="x-default" href="...">? Not.
+
+Now also need to translate the text inside the <link rel="preload" href="/assets/blog.css" as="style">? Not.
+
+Now also need to translate the text inside the <noscript><link rel="stylesheet" href="/assets/blog.css"></noscript>? Not.
+
+Now also need to translate the text inside the <link rel="icon" type="image/svg+xml" href="/favicon.svg">? Not.
+
+Now also need to translate the text inside the <link rel="stylesheet" href="/assets/index-ufePLcBr.css">? Not.
+
+Now also need to translate the text inside the <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>? Not.
+
+Now also need to translate the text inside the <script> window.dataLayer = window.dataLayer || []; ... </script>? Not.
+
+Now also need to translate the text inside the <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>? Not.
+
+Now also need to translate the text inside the <script type="application/ld+json"> blocks? Not.
+
+Now also need to translate the text inside the <script type="module" src="/assets/index-Dd7au40z.js" async></script>? Not.
+
+Now also need to translate the text inside the <script> document.addEventListener('DOMContentLoaded', function() { var seo = document.querySelector('.blog-wrap'); if (seo) seo.style.display = 'none'; });? Not.
+
+Now also need to translate the text inside the <script> window.addEventListener('load',function(){ var ahrefs=document.createElement('script'); ahrefs.async=true; ahrefs.src='https://analytics.ahrefs.com/analytics.js'; ahrefs.setAttribute('data-key','hB1VYWuwb1i/f1d8re7P2A'); document.head.appendChild(ahrefs); });? Not.
+
+Now also need to translate the text inside the <a href="/privacy.html">Privacy</a> etc.
+
+Now also need to translate the text inside the <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p>? Keep.
+
+Now we need to produce final HTML with translations.
+
+Let's go through each piece and produce final.
+
+First, the <!doctype html> and <html lang="ru"> stays.
+
+<head>:
+
+<meta charset="UTF-8"> unchanged.
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"> unchanged.
+
+<meta name="theme-color" content

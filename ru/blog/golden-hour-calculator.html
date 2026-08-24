@@ -1,0 +1,567 @@
+We need to translate visible/user-facing text into Russian, preserving HTML tags, attributes, etc. The page currently has some Russian meta tags but content is English. Need to translate all visible text: title, meta description, keywords, og:title, og:description, twitter:title, etc. Also JSON-LD values: headline, description, articleSection, keywords, author name, publisher name, etc. Also breadcrumb names, FAQ question and answer texts. Also visible body text: skip link text, app-loading text, breadcrumb links, h1, blog-meta date, paragraphs, table headers and cells, h2 headings, p texts, converter-widget h2 and p, FAQ section placeholder {FAQ}? Actually there is a {FAQ} placeholder; we need to translate the FAQ content inside that placeholder? The placeholder likely will be replaced by script; but we should translate the FAQ items that are defined in JSON-LD FAQPage. Those are already in JSON-LD; we need to translate those as well. Also the visible FAQ section maybe will be filled by script; but we should translate the FAQ items in JSON-LD.
+
+Also translate the footer links: Privacy, About, Contact, Terms, copyright text.
+
+Also translate the alt/aria-label attributes: e.g., skip-link text, app-loading-spinner aria-label, app-loading-text, etc.
+
+Also translate the meta tags: name="title", property="og:title", etc.
+
+Also translate the JSON-LD fields: headline, description, articleSection, keywords, author name, publisher name, logo? No need to translate logo URL. Also datePublished etc remain as is.
+
+Also translate the breadcrumb JSON-LD: names "Home", "Blog", "Golden Hour Calculator — Blue Hour & Solar Noon Today". Also maybe the item URLs remain same.
+
+Also translate the FAQPage JSON-LD: question names and answer texts.
+
+Also translate any other visible text: The blog-meta currently shows garbled characters " August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide". Those are likely icons that failed to decode; but we need to translate the text parts: "August 10, 2026", "6 min read", "Time Zones, Guide". The icons maybe are supposed to be calendar, clock, folder. We should keep the icons as is (they are likely encoded incorrectly). We'll translate the readable parts.
+
+Also translate the table headers: "Period", "Sun position", "Light quality". Table cells: "Golden hour (AM)", "-6° to +6°", "Warm, soft, long shadows", etc. Also "Solar noon", "Highest point", "Harsh overhead light". "Golden hour (PM)", "+6° to -0°", "Warm, directional". "Blue hour", "-4° to -6°", "Cool, even, diffused".
+
+Also translate the h2: "How to Read the Numbers", "Solar Noon & Day Length", "Quick Estimator", "Frequently Asked Questions".
+
+Also translate paragraphs: The first paragraph after h1: "Photographers and filmmakers plan shoots around the Sun's angle. Golden hour is when the Sun sits within roughly 6° of the horizon; blue hour is the stretch of twilight just after sunset or before sunrise. Both depend on your exact location and date."
+
+Also the paragraph under Solar Noon & Day Length: two paragraphs.
+
+Also the Quick Estimator paragraph: "Golden hour lasts longer in summer and at higher latitudes. Rule of thumb: duration ≈ 40 minutes at 40° latitude near the equinox, up to an hour or more in summer."
+
+Also the line after FAQ: "Get precise times per city via <a href="/sunrise-sunset.html">sunrise &amp; sunset</a> or the <a href="/world-clock.html">world clock</a>."
+
+Also the skip link: "Skip to main content"
+
+Also the app-loading-text: "Loading World Time..."
+
+Also the aria-label on app-loading-spinner: "Loading application"
+
+Also the aria-label on the div role="application": "World Time Online Application"
+
+Also the aria-label on the skip-link? It's just class skip-link; maybe no aria-label.
+
+Also the aria-busy and aria-live attributes remain.
+
+Also the meta name="theme-color" content stays same.
+
+Also the meta name="google-site-verification" content stays.
+
+Also the meta name="author" content: "World Time Sync" translate? It's a proper noun organization name; we should not translate proper nouns unless a natural localized form exists. "World Time Sync" is a brand; keep as is.
+
+Also the meta property="og:site_name"? Not present.
+
+Also the meta name="twitter:site"? Not present.
+
+Also the JSON-LD "author": {"@type": "Organization", "name": "World Time Sync", "url": ...} keep name as is.
+
+Also "publisher": {"@type": "Organization", "name": "World Time Sync", ...} keep.
+
+Also "mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/ru/blog/golden-hour-calculator.html"} keep.
+
+Also "image": "https://worldtimessync.com/og-image.png" keep.
+
+Also the BreadcrumbList item names: "Home", "Blog", "Golden Hour Calculator — Blue Hour & Solar Noon Today". Translate the latter? It's the page title; we should translate it to Russian as per rules: translate visible text. So "Golden Hour Calculator — Blue Hour & Solar Noon Today" becomes Russian translation. We'll need to translate that phrase.
+
+Also the FAQ JSON-LD: question names and answer texts.
+
+Now we need to produce the full HTML with translated text.
+
+Let's translate each piece.
+
+We'll keep the HTML structure exactly.
+
+First, <title> and meta tags.
+
+Original title: "Golden Hour Calculator — Blue Hour & Solar Noon Today | World Time Sync"
+
+Translate: "Калькулятор золотого часа — синий час и солнечный полдень сегодня | World Time Sync"
+
+But need to keep the pipe and brand. "Golden Hour Calculator" -> "Калькулятор золотого часа". "Blue Hour" -> "синий час". "Solar Noon" -> "солнечный полдень". "Today" -> "сегодня". Keep the em dash — maybe same.
+
+Thus: "Калькулятор золотого часа — синий час и солнечный полдень сегодня | World Time Sync"
+
+Meta name="title" content same as title.
+
+Meta name="description": "Find today's golden hour, blue hour, solar noon and day length for any city with a live calculator."
+
+Translate: "Найдите сегодняшний золотой час, синий час, солнечный полдень и продолжительность дня для любого города с помощью живого калькулятора."
+
+Meta name="keywords": "golden hour calculator today, blue hour tonight, solar noon time today, day length calculator, when does the sun set tomorrow"
+
+Translate each term? Usually keywords stay in English? But rule says translate visible text; keywords meta is not visible to users but is an attribute; we should translate it as it's a meta attribute content. So translate: "калькулятор золотого часа сегодня, синий час сегодня вечером, время солнечного полдня сегодня, калькулятор продолжительности дня, когда заходит солнце завтра"
+
+But need to keep commas. Let's produce: "калькулятор золотого часа сегодня, синий час сегодня вечером, время солнечного полдня сегодня, калькулятор продолжительности дня, когда заходит солнце завтра"
+
+Meta property="og:title": same as title.
+
+Meta property="og:description": same as description.
+
+Meta name="twitter:title": same as title.
+
+Now JSON-LD Article:
+
+{
+"@context": "https://schema.org",
+"@type": "Article",
+"headline": "Golden Hour Calculator — Blue Hour & Solar Noon Today | World Time Sync",
+"description": "Find today's golden hour, blue hour, solar noon and day length for any city with a live calculator.",
+"articleSection": "Time Zones",
+"keywords": "golden hour calculator today, blue hour tonight, solar noon time today, day length calculator, when does the sun set tomorrow",
+"wordCount": 223,
+"timeRequired": "PT6M",
+"inLanguage": "en",
+"author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"},
+"publisher": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com", "logo": {"@type": "ImageObject", "url": "https://worldtimessync.com/logo.png", "width": 512, "height": 512}},
+"datePublished": "2026-08-10",
+"dateModified": "2026-08-10",
+"mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/ru/blog/golden-hour-calculator.html"},
+"image": "https://worldtimessync.com/og-image.png"
+}
+
+We need to translate headline, description, articleSection, keywords, author name? Keep as is. publisher name keep. Also maybe "Time Zones" translate to "Часовые пояса". Also "inLanguage": "en" stays.
+
+Thus:
+
+headline: "Калькулятор золотого часа — синий час и солнечный полдень сегодня | World Time Sync"
+
+description: same as meta description translated.
+
+articleSection: "Часовые пояса"
+
+keywords: translate as earlier.
+
+Now BreadcrumbList JSON-LD:
+
+itemListElement: [
+{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://worldtimessync.com/"},
+{"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://worldtimessync.com/#blog"},
+{"@type": "ListItem", "position": 3, "name": "Golden Hour Calculator — Blue Hour & Solar Noon Today", "item": "https://worldtimessync.com/ru/blog/golden-hour-calculator.html"}
+]
+
+Translate names: "Home" -> "Главная" or "Дом"? Usually "Home" as "Главная". We'll use "Главная". "Blog" -> "Блог". The third name: translate the phrase as earlier: "Калькулятор золотого часа — синий час и солнечный полдень сегодня". Keep the item URL same.
+
+Now FAQPage JSON-LD:
+
+mainEntity: [
+{
+"@type": "Question",
+"name": "What time is golden hour today?",
+"acceptedAnswer": {"@type": "Answer", "text": "It starts about an hour before sunset and ends shortly after sunrise ends — check the calculator above plus your city's sunset time."}
+},
+{
+"@type": "Question",
+"name": "Is blue hour before or after sunset?",
+"acceptedAnswer": {"@type": "Answer", "text": "Both: civil twilight after sunset and before sunrise. The sky stays bright enough to shoot without artificial light."}
+},
+{
+"@type": "Question",
+"name": "Why does solar noon differ from 12 PM?",
+"acceptedAnswer": {"@type": "Answer", "text": "Time zones are wide; solar noon tracks the Sun's actual highest point, which can be 30+ minutes from clock noon depending on where you are in the zone."}
+}
+]
+
+Translate questions and answers.
+
+Question 1: "What time is golden hour today?" -> "Во сколько сегодня золотой час?"
+
+Answer 1: "It starts about an hour before sunset and ends shortly after sunrise ends — check the calculator above plus your city's sunset time."
+
+Translate: "Он начинается примерно за час до заката и заканчивается вскоре после окончания восхода — проверьте калькулятор выше и время заката в вашем городе."
+
+But note "sunrise ends" maybe odd; but we translate literally: "Он начинается примерно за час до заката и заканчивается вскоре после окончания восхода — проверьте калькулятор выше и время заката в вашем городе."
+
+Question 2: "Is blue hour before or after sunset?" -> "Синий час до или после заката?"
+
+Answer 2: "Both: civil twilight after sunset and before sunrise. The sky stays bright enough to shoot without artificial light."
+
+Translate: "И то, и другое: гражданские сумерки после заката и перед рассветом. Небо остаётся достаточно ярким, чтобы снимать без искусственного света."
+
+Question 3: "Why does solar noon differ from 12 PM?" -> "Почему солнечный полдень отличается от 12 часов дня?"
+
+Answer 3: "Time zones are wide; solar noon tracks the Sun's actual highest point, which can be 30+ minutes from clock noon depending on where you are in the zone."
+
+Translate: "Часовые пояса широки; солнечный полдень отслеживает фактическую высшую точку Солнца, которая может отличаться от часового полудня на 30+ минут в зависимости от вашего положения в зоне."
+
+Now body visible text.
+
+Skip link: <a href="#main-content" class="skip-link">Skip to main content</a> -> translate: "Перейти к основному содержимому"
+
+App-loading spinner aria-label: "Loading application" -> "Загрузка приложения"
+
+App-loading-text: <p class="app-loading-text">Loading World Time...</p> -> translate: "Загрузка World Time..."
+
+Now inside main content.
+
+Breadcrumb nav: <a href="/">Home</a> › <a href="/#blog">Blog</a> › <span aria-current="page">Golden Hour Calculator — Blue Hour & Solar Noon Today</span>
+
+Translate "Home" -> "Главная". "Blog" -> "Блог". The span text: translate phrase as earlier: "Калькулятор золотого часа — синий час и солнечный полдень сегодня"
+
+Now h1: same as title without brand? Actually h1: "Golden Hour Calculator — Blue Hour & Solar Noon Today". Translate: "Калькулятор золотого часа — синий час и солнечный полдень сегодня"
+
+Now blog-meta:  August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide
+
+We need to translate the readable parts: "August 10, 2026" -> "10 августа 2026 г."? In Russian usually "10 августа 2026". Keep maybe "10 августа 2026". "6 min read" -> "6 мин чтения". "Time Zones, Guide" -> "Часовые пояса, Руководство". The icons remain as is (the garbled). We'll keep them unchanged.
+
+Thus:  10 августа 2026 &nbsp;·&nbsp;  6 мин чтения &nbsp;·&nbsp;  Часовые пояса, Руководство
+
+Now first paragraph after h1:
+
+"Photographers and filmmakers plan shoots around the Sun's angle. Golden hour is when the Sun sits within roughly 6° of the horizon; blue hour is the stretch of twilight just after sunset or before sunrise. Both depend on your exact location and date."
+
+Translate: "Фотографы и кинематографисты планируют съёмки вокруг угла Солнца. Золотой час — это когда Солнце находится примерно в 6° от горизонта; синий час — это период сумерек сразу после заката или перед рассветом. Оба зависят от вашего точного местоположения и даты."
+
+Now h2: "How to Read the Numbers" -> "Как читать числа"
+
+Table headers: <th>Period</th> -> "Период". <th>Sun position</th> -> "Положение Солнца". <th>Light quality</th> -> "Качество света".
+
+Table rows:
+
+<tr><td>Golden hour (AM)</td><td>-6° to +6°</td><td>Warm, soft, long shadows</td></tr>
+
+Translate: "Золотой час (утро)" maybe "Золотой час (AM)" keep AM? Could translate as "Золотой час (утро)". We'll translate: "Золотой час (утро)". Keep the degree symbols.
+
+Second cell: "-6° to +6°" stays.
+
+Third cell: "Warm, soft, long shadows" -> "Теплый, мягкий, длинные тени"
+
+Next row: Solar noon.
+
+<td>Solar noon</td> -> "Солнечный полдень"
+
+<td>Highest point</td> -> "Высшая точка"
+
+<td>Harsh overhead light</td> -> "Жёсткий верхний свет"
+
+Next: Golden hour (PM)
+
+<td>Golden hour (PM)</td> -> "Золотой час (вечер)" maybe "Золотой час (PM)". We'll translate: "Золотой час (вечер)"
+
+<td>+6° to -0°</td> stays.
+
+<td>Warm, directional</td> -> "Теплый, направленный"
+
+Next: Blue hour
+
+<td>Blue hour</td> -> "Синий час"
+
+<td>-4° to -6°</td> stays.
+
+<td>Cool, even, diffused</td> -> "Холодный, ровный, рассеянный"
+
+Now h2: "Solar Noon &amp; Day Length" -> note the &amp; is HTML entity for &. We need to keep the entity. Translate: "Солнечный полдень &amp; продолжительность day"? Actually we translate the text but keep the entity. So: "Солнечный полдень &amp; продолжительность дня". But original had "Solar Noon &amp; Day Length". We'll translate to "Солнечный полдень &amp; продолжительность дня". Keep &amp;.
+
+Now paragraphs under that:
+
+First paragraph: "Solar noon is not 12:00 on the clock. It shifts with your position inside your time zone and with daylight saving time. Cities on the eastern edge of a zone see solar noon earlier than cities on the western edge — sometimes by more than half an hour."
+
+Translate: "Солнечный полдень не является 12:00 на часах. Он смещается в зависимости от вашего положения внутри часового пояса и с учётом летнего времени. Города на восточном крае зоны видят солнечный полдень раньше, чем города на западном крае — иногда более чем на полчаса."
+
+Second paragraph: "Day length changes fastest around the equinoxes (roughly March 20 and September 22), gaining or losing several minutes per day at mid-latitudes. Near the solstices it barely moves for a couple of weeks."
+
+Translate: "Продолжительность дня меняется наиболее быстро вокруг равноденствий (примерно 20 марта и 22 сентября), увеличиваясь или уменьшаясь на несколько минут в день в средних широтах. Близко к солнцестояниям она почти не меняется в течение пары недель."
+
+Now converter-widget:
+
+<h2>Quick Estimator</h2> -> translate: "Быстрая оценка"
+
+Paragraph: "Golden hour lasts longer in summer and at higher latitudes. Rule of thumb: duration ≈ 40 minutes at 40° latitude near the equinox, up to an hour or more in summer."
+
+Translate: "Золотой час длится дольше летом и на более высоких широтах. Правило thumb: продолжительность ≈ 40 минут при широте 40° около равноденствия, до часа и более летом."
+
+Note "Rule of thumb" is idiom; we can translate as "Правило thumb" maybe keep as "Правило большого пальца"? Usually "правило thumb" not used; we can say "Ориентировочно: продолжительность ≈ 40 минут при широте 40° около равноденствия, до часа и более летом." We'll translate: "Ориентировочно: продолжительность ≈ 40 минут при широте 40° около равноденствия, до часа и более летом."
+
+Now h2: "Frequently Asked Questions" -> translate: "Часто задаваемые вопросы"
+
+Then <div class="faq-section">{FAQ}</div> - we leave placeholder as is; the FAQ will be injected via script; but we already translated JSON-LD FAQ. We'll keep placeholder unchanged.
+
+Now paragraph after FAQ: "Get precise times per city via <a href="/sunrise-sunset.html">sunrise &amp; sunset</a> or the <a href="/world-clock.html">world clock</a>."
+
+Translate: "Получите точные времена для любого города через <a href="/sunrise-sunset.html">восход и закат</a> или <a href="/world-clock.html">мировые часы</a>."
+
+Note we need to keep the href values unchanged.
+
+Now footer:
+
+<a href="/privacy.html">Privacy</a> -> translate: "Конфиденциальность"
+
+<a href="/about.html">About</a> -> "О нас"
+
+<a href="/contact.html">Contact</a> -> "Контакты"
+
+<a href="/terms.html">Terms</a> -> "Условия"
+
+Copyright: <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p> -> translate? The brand name stays; we can keep as is. The text is just copyright line; we could translate "© 2026 World Time Sync" remains same; no translation needed.
+
+Now also need to translate any aria-label attributes we missed: The div role="application" aria-label="World Time Online Application". Translate: "Приложение World Time Online". Keep brand.
+
+Also the app-loading-spinner role="status" aria-label="Loading application" we already translated.
+
+Also the skip-link maybe has no aria-label.
+
+Also the meta name="author" content="World Time Sync" keep.
+
+Now also need to translate the meta name="theme-color" content stays.
+
+Now also need to translate any title attributes? None.
+
+Now also need to translate any placeholder text inside SVG? none.
+
+Now also need to translate the text inside <noscript><link rel="stylesheet" href="/assets/blog.css"></noscript> - no text.
+
+Now also need to translate the text inside <link rel="icon" type="image/svg+xml" href="/favicon.svg"> - none.
+
+Now also need to translate the text inside <script> tags? Not visible.
+
+Now also need to translate the text inside the JSON-LD "articleSection": "Time Zones" we translated.
+
+Now also need to translate the JSON-LD "keywords": we translated.
+
+Now also need to translate the JSON-LD "author" name? Keep.
+
+Now also need to translate the JSON-LD "publisher" name? Keep.
+
+Now also need to translate the JSON-LD "mainEntityOfPage" "@id": keep.
+
+Now also need to translate the JSON-LD "image": keep.
+
+Now also need to translate the JSON-LD "breadcrumbList" item names we translated.
+
+Now also need to translate the JSON-LD "FAQPage" question names and answer texts we translated.
+
+Now also need to ensure we didn't miss any visible text like the text inside the <div class="app-loading"> maybe there is only spinner and p.
+
+Now also need to translate the text inside the <div class="blog-meta"> we did.
+
+Now also need to translate the text inside the <p> after the table? Already done.
+
+Now also need to translate the text inside the <div class="converter-widget"> h2 and p we did.
+
+Now also need to translate the text inside the <footer> we did.
+
+Now also need to translate the text inside the <a> tags in footer we did.
+
+Now also need to translate the text inside the <nav class="blog-breadcrumb"> we did.
+
+Now also need to translate the text inside the <h1> we did.
+
+Now also need to translate the text inside the <h2> "How to Read the Numbers" we did.
+
+Now also need to translate the text inside the <h2> "Solar Noon &amp; Day Length" we did.
+
+Now also need to translate the text inside the <h2> "Quick Estimator" we did.
+
+Now also need to translate the text inside the <h2> "Frequently Asked Questions" we did.
+
+Now also need to translate the text inside the <p> after FAQ we did.
+
+Now also need to translate the text inside the <a> tags in that paragraph we did.
+
+Now also need to translate the text inside the <p> inside the app-loading we did.
+
+Now also need to translate the text inside the <span aria-current="page"> we did.
+
+Now also need to translate the text inside the <a href="/">Home</a> we did.
+
+Now also need to translate the text inside the <a href="/#blog">Blog</a> we did.
+
+Now also need to translate the text inside the <a href="#main-content" class="skip-link"> we did.
+
+Now also need to translate the text inside the <div class="app-loading-text"> we did.
+
+Now also need to translate the text inside the <div class="app-loading-spinner" aria-label> we did.
+
+Now also need to translate the text inside the <div role="application" aria-label> we did.
+
+Now also need to translate the text inside the <meta name="title"> we did.
+
+Now also need to translate the text inside the <meta name="description"> we did.
+
+Now also need to translate the text inside the <meta name="keywords"> we did.
+
+Now also need to translate the text inside the <meta property="og:title"> we did.
+
+Now also need to translate the text inside the <meta property="og:description"> we did.
+
+Now also need to translate the text inside the <meta name="twitter:title"> we did.
+
+Now also need to translate the text inside the <title> we did.
+
+Now also need to translate the text inside the <link rel="canonical" href="..."> none.
+
+Now also need to translate the text inside the <link rel="alternate" hreflang="x-default" href="..."> none.
+
+Now also need to translate the text inside the <link rel="preload" href="/assets/blog.css" as="style"> none.
+
+Now also need to translate the text inside the <noscript><link rel="stylesheet" href="/assets/blog.css"></noscript> none.
+
+Now also need to translate the text inside the <link rel="icon" type="image/svg+xml" href="/favicon.svg"> none.
+
+Now also need to translate the text inside the <link rel="stylesheet" href="/assets/index-ufePLcBr.css"> none.
+
+Now also need to translate the text inside the <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script> none.
+
+Now also need to translate the text inside the <script> window.dataLayer... none.
+
+Now also need to translate the text inside the <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script> none.
+
+Now also need to translate the text inside the <script type="application/ld+json"> blocks we already translated.
+
+Now also need to translate the text inside the <script type="module" src="/assets/index-Dd7au40z.js" async></script> none.
+
+Now also need to translate the text inside the <script> document.addEventListener... none.
+
+Now also need to translate the text inside the <script> window.addEventListener... none.
+
+Now also need to translate the text inside the <div class="blog-wrap"> maybe none.
+
+Now also need to translate the text inside the <div class="faq-section">{FAQ}</div> we keep placeholder.
+
+Now also need to translate the text inside the <p> inside the converter-widget we did.
+
+Now also need to translate the text inside the <table> we did.
+
+Now also need to translate the text inside the <thead> <tr> <th> we did.
+
+Now also need to translate the text inside the <tbody> <tr> <td> we did.
+
+Now also need to translate the text inside the <p> after the table we did.
+
+Now also need to translate the text inside the <p> after the converter-widget we did.
+
+Now also need to translate the text inside the <footer> we did.
+
+Now also need to translate the text inside the <a> tags in footer we did.
+
+Now also need to translate the text inside the <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p> we keep.
+
+Now also need to translate the text inside the <meta name="author" content="World Time Sync"> keep.
+
+Now also need to translate the text inside the <meta property="og:url" content="https://worldtimessync.com/ru/blog/golden-hour-calculator.html"> keep.
+
+Now also need to translate the text inside the <meta property="og:image" content="https://worldtimessync.com/og-image.png"> keep.
+
+Now also need to translate the text inside the <meta name="twitter:card" content="summary_large_image"> keep.
+
+Now also need to translate the text inside the <meta name="twitter:title" we did.
+
+Now also need to translate the text inside the <meta name="twitter:description"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:image"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:site"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:creator"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:label1"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:data1"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:label2"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:data2"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:player"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:player:width"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:player:height"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:player:stream"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:player:stream:content_type"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:player:stream:width"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:player:stream:height"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:app:name:iphone"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:app:id:iphone"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:app:url:iphone"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:app:name:ipad"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:app:id:ipad"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:app:url:ipad"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:app:name:googleplay"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:app:id:googleplay"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:app:url:googleplay"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:app:country"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:app:name:iphone"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:app:id:iphone"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:app:url:iphone"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:app:name:ipad"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:app:id:ipad"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:app:url:ipad"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:app:name:googleplay"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:app:id:googleplay"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:app:url:googleplay"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:app:country"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:card" we did.
+
+Now also need to translate the text inside the <meta name="twitter:site"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:creator"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:image:alt"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:image:width"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:image:height"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:image:src"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:player"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:player:width"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:player:height"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:player:stream"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:player:stream:content_type"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:player:stream:width"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:player:stream:height"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:app:name:iphone"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:app:id:iphone"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:app:url:iphone"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:app:name:ipad"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:app:id:ipad"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:app:url:ipad"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:app:name:googleplay"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:app:id:googleplay"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:app:url:googleplay"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:app:country"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:card" we did.
+
+Now also need to translate the text inside the <meta name="twitter:site"? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:creator"? Not present.
+
+Now also need to translate the text inside the

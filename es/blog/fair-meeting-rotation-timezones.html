@@ -1,0 +1,384 @@
+We need to translate visible/user-facing text into Spanish, preserving HTML tags, attributes, attributes, etc. The document currently has lang="es" but many texts are in English. We need to translate them to Spanish.
+
+We must translate text inside tags and attributes like title/alt/aria-label/description/keywords/content. Also meta tags content values need translation if they are human-readable.
+
+We must not translate URLs, proper nouns (city/feature names) unless natural localized form exists. Keep code, JSON-LD values? The JSON-LD blocks contain text values that are user-facing (like headline, description, name, etc). According to rule 2, we translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. JSON-LD is inside script tag, not HTML tags, but its content is text; however it's JSON-LD data, likely considered not user-facing? The rule says translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. JSON-LD is not an attribute; it's inside a script tag. Should we translate its content? Usually for SEO, you would translate JSON-LD as well if it's visible to search engines. But the rule may restrict to tags/attributes. However the JSON-LD contains fields like "headline", "description", "name", etc. Those are user-facing for search results. The instruction says translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. It does not explicitly mention JSON-LD. But to be safe, we might translate the content values inside JSON-LD as they are analogous to meta description etc. However the rule says "inside tags and attributes like title/alt/aria-label/description/keywords/content." JSON-LD is not an attribute; it's inside a script tag, but the content is text. The rule may not require translating JSON-LD. However many similar tasks expect translating JSON-LD as well. Let's examine the given HTML: there are multiple JSON-LD blocks. The first is Article with headline, description, etc. The second is BreadcrumbList with names. The third is FAQPage with questions and answers.
+
+If we don't translate those, the page will have English JSON-LD while visible content is Spanish, which may be inconsistent but maybe acceptable per rules. The instruction: "Translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content." JSON-LD is not an attribute; it's inside a script tag, which is a tag but its content is not an attribute. The phrase "inside tags and attributes like ..." suggests we consider the content of tags (like <title>, <meta name="description" content="...">) and also attribute values like title, alt, etc. JSON-LD is inside a <script> tag, but its content is not meant to be displayed to users; it's structured data. Usually you would translate it for SEO, but the rule may not require it. However the example includes meta tags with name="description" etc, which we must translate. The JSON-LD also contains description etc. I'd lean to translate JSON-LD as well because it's human-readable text (for search engines). But the rule says "inside tags and attributes like title/alt/aria-label/description/keywords/content." The JSON-LD is inside a script tag, not an attribute. However the script tag's content is not an attribute, but it's still inside a tag. The phrase "inside tags" could refer to the inner text of any tag. So we should translate the text inside <script> tags if it's human-readable. But the script contains JSON, which is machine-readable but also includes human-readable strings. Translating those strings would break JSON validity if we translate keys? We only translate the values, not keys. That's doable.
+
+Thus we need to translate string values in JSON-LD: headline, description, articleSection, keywords, name, etc. Also in BreadcrumbList: name values. In FAQ: question name and answer text.
+
+We must keep the JSON structure intact, only translate the string values.
+
+Also need to translate visible text in body: e.g., "Skip to main content", "Loading World Time...", "Home", "Blog", "Fair Meeting Rotation Across Time Zones — Scheduling Playbook" (the breadcrumb current page), the h1, the blog-meta text (which includes weird characters  August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide). Those  are likely placeholders for icons? They appear as garbage due to encoding? Actually they might be emojis that didn't render. We should keep them as is? They are not text; they are likely icons. We should not translate them. The visible text includes "August 10, 2026", "6 min read", "Time Zones, Guide". We'll translate those to Spanish: "10 de agosto de 2026", "6 min de lectura", "Zonas horarias, Guía". Keep the icons unchanged.
+
+Also translate paragraphs, headings, list items, table cells, etc.
+
+Let's go through the HTML.
+
+First, head:
+
+- <title>Fair Meeting Rotation Across Time Zones — Scheduling Playbook | World Time Sync</title> -> translate to Spanish: "Rotación justa de reuniones entre zonas horarias — Guía de programación | World Time Sync". Keep the dash? Use same em dash. Keep "World Time Sync" as brand name (proper noun). So title: "Rotación justa de reuniones entre zonas horarias — Guía de programación | World Time Sync".
+
+- <meta name="title" content="Fair Meeting Rotation Across Time Zones — Scheduling Playbook | World Time Sync"/> -> translate content similarly.
+
+- <meta name="description" content="How to rotate recurring meeting times fairly across regions so the same team doesn't always take the night slot."> -> translate: "Cómo rotar los horarios de las reuniones recurrentes de forma justa entre regiones para que el mismo equipo no siempre tenga el turno de noche."
+
+- <meta name="keywords" content="timezone meeting reminder, rotating meeting times, fair meeting schedule global team, alternate meeting times"> -> translate keywords? Keywords are for SEO; we should translate them to Spanish: "recordatorio de reunión de zona horaria, horarios de reunión rotativos, horario justo de reunión para equipo global, horarios alternos de reunión". Keep commas.
+
+- <meta name="author" content="World Time Sync"> -> author is a proper noun, keep as is.
+
+- <meta property="og:title" content="Fair Meeting Rotation Across Time Zones — Scheduling Playbook | World Time Sync"> -> translate similarly.
+
+- <meta property="og:description" content="How to rotate recurring meeting times fairly across regions so the same team doesn't always take the night slot."> -> translate same as description.
+
+- <meta name="twitter:title" content="Fair Meeting Rotation Across Time Zones — Scheduling Playbook | World Time Sync"> -> translate.
+
+- <link rel="canonical" href="..."> href unchanged.
+
+- <link rel="alternate" hreflang="x-default" href="..."> unchanged.
+
+Now body:
+
+- <a href="#main-content" class="skip-link">Skip to main content</a> -> translate: "Ir al contenido principal".
+
+- Inside <div id="root">: <div class="app-loading" aria-busy="true" aria-live="polite">: aria-busy and aria-live are attributes; we don't translate attribute names, but their values? aria-busy="true" is a boolean; keep. aria-live="polite" keep.
+
+- <div class="app-loading-spinner" role="status" aria-label="Loading application"> -> translate aria-label: "Cargando aplicación".
+
+- <p class="app-loading-text">Loading World Time...</p> -> translate: "Cargando World Time...". Keep "World Time" as brand? It's the site name; keep.
+
+- <nav class="blog-breadcrumb" aria-label="Breadcrumb"> -> aria-label value: "Breadcrumb" translate to "Ruta de navegación" or "Migaja de pan"? Usually "Breadcrumb" translated as "Ruta de navegación". We'll use "Ruta de navegación".
+
+- Inside nav: <a href="/">Home</a> -> translate "Inicio". Keep href.
+
+- ‹? Actually the separator is › (HTML entity). Keep.
+
+- <a href="/#blog">Blog</a> -> translate "Blog" maybe keep as "Blog" (commonly used). Could translate to "Blog" or "Bitácora". Usually keep "Blog". We'll keep as "Blog".
+
+- <span aria-current="page">Fair Meeting Rotation Across Time Zones — Scheduling Playbook</span> -> translate the text inside span: "Rotación justa de reuniones entre zonas horarias — Guía de programación". Keep aria-current attribute.
+
+- <h1>Fair Meeting Rotation Across Time Zones — Scheduling Playbook</h1> -> translate same as above.
+
+- <div class="blog-meta"> August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide</div> -> We need to translate the readable parts: "August 10, 2026" -> "10 de agosto de 2026". "6 min read" -> "6 min de lectura". "Time Zones, Guide" -> "Zonas horarias, Guía". Keep the weird symbols (, , ) as they are (likely icons). Also keep the &nbsp; entities and · (middle dot). So final: " 10 de agosto de 2026 &nbsp;·&nbsp;  6 min de lectura &nbsp;·&nbsp;  Zonas horarias, Guía". Ensure spaces.
+
+- Paragraph after: <p>When a team spans Asia, Europe and the Americas, no single time works for everyone. The standard fix is a rotation: the same weekly call alternates between slots so each region periodically takes the awkward hour. What separates a working rotation from a resentful calendar is fairness bookkeeping.</p> -> translate to Spanish. Keep proper nouns: Asia, Europe, Americas. Translate: "Cuando un equipo abarca Asia, Europa y las Américas, ningún horario funciona para todos. La solución estándar es una rotación: la misma llamada semanal alterna entre horarios para que cada región tome periódicamente la hora incómoda. Lo que separa una rotación funcional de un calendario resentido es la contabilidad de la equidad."
+
+Need to ensure "fairness bookkeeping" translation: "contabilidad de la equidad" or "registro de la equidad". We'll use "contabilidad de la equidad".
+
+- <h2>A Simple Three-Slot Rotation</h2> -> translate: "Una rotación simple de tres horarios".
+
+- Table: <thead><tr><th>Slot</th><th>UTC</th><th>Who's uncomfortable</th></tr></thead> -> translate header texts: "Slot" -> "Horario". "UTC" stays UTC (abbreviation). "Who's uncomfortable" -> "Quién está incómodo" or "Quién resulta incómodo". We'll translate: "Quién está incómodo". Keep the apostrophe? We'll use "Quién está incómodo".
+
+- tbody rows:
+
+<tr><td>A — morning Americas</td><td>14:00</td><td>Asia-Pacific evening</td></tr>
+
+Translate cell texts: "A — morning Americas" -> "A — mañana América". Keep the em dash. "morning" -> "mañana". "Americas" -> "América" (maybe "Américas"? The region is Americas plural; but "morning Americas" likely means morning in the Americas. We'll translate "mañana en América". However original phrase "A — morning Americas" maybe means Slot A is morning for the Americas. We'll translate: "A — mañana América". Could also be "A — mañana en las Américas". Let's think: The table likely shows slot label, UTC time, who's uncomfortable. Slot A — morning Americas (i.e., morning time for the Americas). So translate: "A — mañana América". We'll keep the em dash.
+
+Second cell: UTC unchanged.
+
+Third cell: "Asia-Pacific evening" -> "tarde Asia-Pacífico". Keep hyphen? We'll translate: "tarde Asia-Pacífico".
+
+Second row: <td>B — afternoon Europe</td><td>09:00</td><td>US West very early</td></tr>
+
+Translate: "B — tarde Europa". "US West very early" -> "muy temprano en el oeste de EE. UU." Keep "US" as abbreviation; could translate to "EE. UU." We'll use "muy temprano en el oeste de EE. UU."
+
+Third row: <td>C — Asia-Pacific friendly</td><td>23:00</td><td>Americas late night</td></tr>
+
+Translate: "C — Asia-Pacífico amigable". "Americas late night" -> "noche tardía en América". Could be "noche tardía en las Américas". We'll use "noche tardía en América".
+
+- After table: <p>Cycle A → B → C → A weekly. Nobody suffers two weeks running.</p> -> translate: "El ciclo A → B → C → A se repite semanalmente. Nadie sufre dos semanas seguidas."
+
+Note: keep the arrow symbols.
+
+- <h2>Making It Stick</h2> -> translate: "Hacer que funcione".
+
+- <ol> list items:
+
+<li>Publish the whole rotation in the invite description up front — surprises breed objections.</li> -> translate: "Publicar la rotación completa en la descripción de la invitación con antelación — las sorpresas generan objeciones."
+
+<li>Set separate reminders per slot in each attendee's local zone; a tool like our <a href="/world-clock.html">world clock</a> helps people internalize their own slot.</li> -> translate: "Establecer recordatorios separados por horario en la zona local de cada asistente; una herramienta como nuestro <a href="/world-clock.html">reloj mundial</a> ayuda a las personas a internalizar su propio horario."
+
+Note: translate "world clock" to "reloj mundial". Keep href.
+
+<li>Track attendance quality, not just presence: someone dialing in from bed isn't "attending".</li> -> translate: "Seguir la calidad de la asistencia, no solo la presencia: alguien que se conecta desde la cama no está 'asistiendo'."
+
+<li>Record every session regardless of slot, and keep decisions in writing so missing one never blocks anyone.</li> -> translate: "Grabar cada sesión independientemente del horario y mantener las decisiones por escrito para que perderse una nunca bloquee a nadie."
+
+- <h2>When Not to Rotate</h2> -> translate: "Cuándo no rotar".
+
+- Paragraph: <p>If one office is 2 of 20 people, rotating may just push your minority into every bad slot. Alternatives: let the small office stay async, hold two smaller calls, or split the meeting into a recording plus a live Q&amp;A at their chosen time.</p> -> translate: "Si una oficina representa 2 de 20 personas, rotar podría simplemente poner a tu minoría en cada horario desfavorable. Alternativas: permitir que la oficina pequeña se mantenga asíncrona, realizar dos llamadas más pequeñas o dividir la reunión en una grabación más una sesión en vivo de preguntas y respuestas (Q&amp;A) a su hora elegida."
+
+We need to keep Q&amp;A as is (HTML entity). Translate "live Q&amp;A" to "sesión en vivo de preguntas y respuestas (Q&amp;A)". Keep the entity.
+
+- <h2>Frequently Asked Questions</h2> -> translate: "Preguntas frecuentes".
+
+- <div class="faq-section"> {FAQ} </div> -> The placeholder {FAQ} likely is replaced by script? We'll keep as is; not translate.
+
+- After that: <p>Find your overlap window: <a href="/meeting-planner.html">Meeting Planner</a>.</p> -> translate: "Encuentra tu ventana de superposición: <a href="/meeting-planner.html">Planificador de reuniones</a>."
+
+- Footer: <a href="/privacy.html">Privacy</a> -> translate: "Privacidad". Keep href.
+
+- <a href="/about.html">About</a> -> translate: "Acerca de".
+
+- <a href="/contact.html">Contact</a> -> translate: "Contacto".
+
+- <a href="/terms.html">Terms</a> -> translate: "Términos".
+
+- <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p> -> translate? The copyright line usually stays in English? The name "World Time Sync" is brand; we keep. The year unchanged. The text is just the copyright symbol and year and brand. No translation needed.
+
+Now we need to translate JSON-LD.
+
+First JSON-LD (type Article):
+
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Fair Meeting Rotation Across Time Zones — Scheduling Playbook | World Time Sync",
+  "description": "How to rotate recurring meeting times fairly across regions so the same team doesn't always take the night slot.",
+  "articleSection": "Time Zones",
+  "keywords": "timezone meeting reminder, rotating meeting times, fair meeting schedule global team, alternate meeting times",
+  "wordCount": 222,
+  "timeRequired": "PT6M",
+  "inLanguage": "en",
+  "author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"},
+  "publisher": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com", "logo": {"@type": "ImageObject", "url": "https://worldtimessync.com/logo.png", "width": 512, "height": 512}},
+  "datePublished": "2026-08-10",
+  "dateModified": "2026-08-10",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/es/blog/fair-meeting-rotation-timezones.html"},
+  "image": "https://worldtimessync.com/og-image.png"
+}
+
+We need to translate string values: headline, description, articleSection, keywords, author.name, publisher.name, maybe logo? No. Also maybe "inLanguage": "en" should stay as language code; not translate.
+
+Translate:
+
+- headline: "Rotación justa de reuniones entre zonas horarias — Guía de programación | World Time Sync"
+
+- description: "Cómo rotar los horarios de las reuniones recurrentes de forma justa entre regiones para que el mismo equipo no siempre tenga el turno de noche."
+
+- articleSection: "Zonas horarias"
+
+- keywords: translate to Spanish: "recordatorio de reunión de zona horaria, horarios de reunión rotativos, horario justo de reunión para equipo global, horarios alternos de reunión"
+
+- author.name: "World Time Sync" (keep)
+
+- publisher.name: "World Time Sync" (keep)
+
+- Also maybe "mainEntityOfPage": "@id": URL unchanged.
+
+- "image": URL unchanged.
+
+Second JSON-LD (BreadcrumbList):
+
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://worldtimessync.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://worldtimessync.com/#blog"},
+    {"@type": "ListItem", "position": 3, "name": "Fair Meeting Rotation Across Time Zones — Scheduling Playbook", "item": "https://worldtimessync.com/es/blog/fair-meeting-rotation-timezones.html"}
+  ]
+}
+
+Translate name values:
+
+- "Home" -> "Inicio"
+
+- "Blog" -> keep "Blog" (or "Blog").
+
+- "Fair Meeting Rotation Across Time Zones — Scheduling Playbook" -> "Rotación justa de reuniones entre zonas horarias — Guía de programación"
+
+Third JSON-LD (FAQPage):
+
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is fair meeting rotation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Alternating a recurring call between time slots so each region periodically absorbs the inconvenient hour instead of the same team always doing it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often should times rotate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Weekly cycles work for most teams; biweekly suits lower-stakes syncs. The key is publishing the pattern ahead of time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do DST changes break rotations?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — fixed UTC slots drift relative to local clocks when either side changes. Re-check slots each March and October."
+      }
+    }
+  ]
+}
+
+Translate:
+
+Question names:
+
+- "What is fair meeting rotation?" -> "¿Qué es la rotación justa de reuniones?"
+
+- "How often should times rotate?" -> "¿Con qué frecuencia deben rotar los horarios?"
+
+- "Do DST changes break rotations?" -> "¿Los cambios de horario de verano rompen las rotaciones?" (DST = horario de verano). Keep "DST"? Could translate to "cambios de horario de verano". We'll translate full sentence.
+
+Answer texts:
+
+- First answer: "Alternating a recurring call between time slots so each region periodically absorbs the inconvenient hour instead of the same team always doing it." -> translate: "Alternar una llamada recurrente entre franjas horarias para que cada región asuma periódicamente la hora inconveniente en lugar de que siempre sea el mismo equipo quien lo haga."
+
+- Second answer: "Weekly cycles work for most teams; biweekly suits lower-stakes syncs. The key is publishing the pattern ahead of time." -> translate: "Los ciclos semanales funcionan para la mayoría de los equipos; los ciclos quincenales son adecuados para sincronizaciones de menor importancia. Lo clave es publicar el patrón con antelación."
+
+- Third answer: "Yes — fixed UTC slots drift relative to local clocks when either side changes. Re-check slots each March and October." -> translate: "Sí — los horarios fijos en UTC se desplazan respecto a los relojes locales cuando cualquiera de las partes cambia. Vuelva a verificar los horarios cada marzo y octubre."
+
+Note: keep em dash.
+
+Now also need to translate any other attributes like placeholder text in input? None.
+
+Check for any other visible text: The <div class="app-loading" aria-busy="true" aria-live="polite">: we already handled aria-label inside spinner. Also there is <p class="app-loading-text">Loading World Time...</p> done.
+
+Check for any other text: The <noscript><link rel="stylesheet" href="/assets/blog.css"></noscript> no text.
+
+Check for any other visible text inside SVG? Not present.
+
+Now we need to output the full HTML with translations.
+
+We must be careful to keep the exact formatting, including spaces, line breaks? Not required but we should keep similar.
+
+Let's construct the translated HTML.
+
+We'll go step by step.
+
+First, the doctype and html tag: <!doctype html> <html lang="es"> (already Spanish, keep).
+
+Head:
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="theme-color" content="#667eea">
+<meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk">
+<title>Rotación justa de reuniones entre zonas horarias — Guía de programación | World Time Sync</title>
+<meta name="title" content="Rotación justa de reuniones entre zonas horarias — Guía de programación | World Time Sync">
+<meta name="description" content="Cómo rotar los horarios de las reuniones recurrentes de forma justa entre regiones para que el mismo equipo no siempre tenga el turno de noche.">
+<meta name="keywords" content="recordatorio de reunión de zona horaria, horarios de reunión rotativos, horario justo de reunión para equipo global, horarios alternos de reunión">
+<meta name="robots" content="index, follow">
+<meta name="author" content="World Time Sync">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://worldtimessync.com/es/blog/fair-meeting-rotation-timezones.html">
+<meta property="og:title" content="Rotación justa de reuniones entre zonas horarias — Guía de programación | World Time Sync">
+<meta property="og:description" content="Cómo rotar los horarios de las reuniones recurrentes de forma justa entre regiones para que el mismo equipo no siempre tenga el turno de noche.">
+<meta property="og:image" content="https://worldtimessync.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Rotación justa de reuniones entre zonas horarias — Guía de programación | World Time Sync">
+<link rel="canonical" href="https://worldtimessync.com/es/blog/fair-meeting-rotation-timezones.html">
+<link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/es/blog/fair-meeting-rotation-timezones.html">
+<link rel="preload" href="/assets/blog.css" as="style">
+<noscript><link rel="stylesheet" href="/assets/blog.css"></noscript>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/assets/index-ufePLcBr.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LBX0CDYSSV');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "Rotación justa de reuniones entre zonas horarias — Guía de programación | World Time Sync", "description": "Cómo rotar los horarios de las reuniones recurrentes de forma justa entre regiones para que el mismo equipo no siempre tenga el turno de noche.", "articleSection": "Zonas horarias", "keywords": "recordatorio de reunión de zona horaria, horarios de reunión rotativos, horario justo de reunión para equipo global, horarios alternos de reunión", "wordCount": 222, "timeRequired": "PT6M", "inLanguage": "en", "author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}, "publisher": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com", "logo": {"@type": "ImageObject", "url": "https://worldtimessync.com/logo.png", "width": 512, "height": 512}}, "datePublished": "2026-08-10", "dateModified": "2026-08-10", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/es/blog/fair-meeting-rotation-timezones.html"}, "image": "https://worldtimessync.com/og-image.png"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://worldtimessync.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://worldtimessync.com/#blog"}, {"@type": "ListItem", "position": 3, "name": "Rotación justa de reuniones entre zonas horarias — Guía de programación", "item": "https://worldtimessync.com/es/blog/fair-meeting-rotation-timezones.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Qué es la rotación justa de reuniones?", "acceptedAnswer": {"@type": "Answer", "text": "Alternar una llamada recurrente entre franjas horarias para que cada región asuma periódicamente la hora inconveniente en lugar de que siempre sea el mismo equipo quien lo haga."}}, {"@type": "Question", "name": "¿Con qué frecuencia deben rotar los horarios?", "acceptedAnswer": {"@type": "Answer", "text": "Los ciclos semanales funcionan para la mayoría de los equipos; los ciclos quincenales son adecuados para sincronizaciones de menor importancia. Lo clave es publicar el patrón con antelación."}}, {"@type": "Question", "name": "¿Los cambios de horario de verano rompen las rotaciones?", "acceptedAnswer": {"@type": "Answer", "text": "Sí — los horarios fijos en UTC se desplazan respecto a los relojes locales cuando cualquiera de las partes cambia. Vuelva a verificar los horarios cada marzo y octubre."}}]}
+</script>
+
+Now body:
+
+<body>
+    <a href="#main-content" class="skip-link">Ir al contenido principal</a>
+    <div id="root" role="application" aria-label="World Time Online Application">
+        <div class="app-loading" aria-busy="true" aria-live="polite">
+            <div class="app-loading-spinner" role="status" aria-label="Cargando aplicación"></div>
+            <p class="app-loading-text">Cargando World Time...</p>
+        </div>
+    </div>
+    <main id="main-content">
+        <article class="blog-wrap">
+            <nav class="blog-breadcrumb" aria-label="Ruta de navegación">
+                <a href="/">Inicio</a> › <a href="/#blog">Blog</a> › <span aria-current="page">Rotación justa de reuniones entre zonas horarias — Guía de programación</span>
+            </nav>
+            <h1>Rotación justa de reuniones entre zonas horarias — Guía de programación</h1>
+            <div class="blog-meta"> 10 de agosto de 2026 &nbsp;·&nbsp;  6 min de lectura &nbsp;·&nbsp;  Zonas horarias, Guía</div>
+
+<p>Cuando un equipo abarca Asia, Europa y las Américas, ningún horario funciona para todos. La solución estándar es una rotación: la misma llamada semanal alterna entre horarios para que cada región tome periódicamente la hora incómoda. Lo que separa una rotación funcional de un calendario resentido es la contabilidad de la equidad.</p>
+
+<h2>Una rotación simple de tres horarios</h2>
+<table><thead><tr><th>Horario</th><th>UTC</th><th>Quién está incómodo</th></tr></thead><tbody>
+<tr><td>A — mañana América</td><td>14:00</td><td>tarde Asia-Pacífico</td></tr>
+<tr><td>B — tarde Europa</td><td>09:00</td><td>muy temprano en el oeste de EE. UU.</td></tr>
+<tr><td>C — Asia-Pacífico amigable</td><td>23:00</td><td>noche tardía en América</td></tr>
+</tbody></table>
+<p>El ciclo A → B → C → A se repite semanalmente. Nadie sufre dos semanas seguidas.</p>
+
+<h2>Hacer que funcione</h2>
+<ol>
+<li>Publicar la rotación completa en la descripción de la invitación con antelación — las sorpresas generan objeciones.</li>
+<li>Establecer recordatorios separados por horario en la zona local de cada asistente; una herramienta como nuestro <a href="/world-clock.html">reloj mundial</a> ayuda a las personas a internalizar su propio horario.</li>
+<li>Seguir la calidad de la asistencia, no solo la presencia: alguien que se conecta desde la cama no está "asistiendo".</li>
+<li>Grabar cada sesión independientemente del horario y mantener las decisiones por escrito para que perderse una nunca bloquee a nadie.</li>
+</ol>
+
+<h2>Cuándo no rotar</h2>
+<p>Si una oficina representa 2 de 20 personas, rotar podría simplemente poner a tu minoría en cada horario desfavorable. Alternativas: permitir que la oficina pequeña se mantenga asíncrona, realizar dos llamadas más pequeñas o dividir la reunión en una grabación más una sesión en vivo de preguntas y respuestas (Q&amp;A) a su hora elegida.</p>
+
+<h2>Preguntas frecuentes</h2>
+<div class="faq-section">
+{FAQ}
+</div>
+<p>Encuentra tu ventana de superposición: <a href="/meeting-planner.html">Planificador de reuniones</a>.</p>
+
+        <footer class="blog-footer">
+            <a href="/privacy.html">Privacidad</a>
+            <a href="/about.html">Acerca de</a>
+            <a href="/contact.html">Contacto</a>
+            <a href="/terms.html">Términos</a>
+            <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p>
+        </footer>
+    </main>
+
+    <script type="module" src="/assets/index-Dd7au40z.js" async></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var seo = document.querySelector('.blog-wrap');
+        if (seo) seo.style.display = 'none';
+      });
+    </script>
+    <script>
+      window.addEventListener('load',function(){
+        var ahrefs=document.createElement('script');
+        ahrefs.async=true;
+        ahrefs.src='https://analytics.ahrefs.com/analytics.js';
+        ahrefs.setAttribute('data-key','hB1VYWuwb1i/f1d8re7P2A');
+        document.head.appendChild(ahrefs);
+      });
+    </script>
+  </body>
+</html>
+
+Check for any missed translations:
+
+- In the blog-meta we kept the weird symbols. Ensure we didn't accidentally translate them. They remain as is.
+
+- In the table header "Quién está

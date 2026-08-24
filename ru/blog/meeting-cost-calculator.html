@@ -1,0 +1,462 @@
+We need to translate all visible/user-facing text into Russian, preserving HTML tags, attributes, etc. Also need to translate text inside attributes like title, alt, aria-label, description, keywords, content (meta tags). Also need to translate JSON-LD values (like headline, description, name, etc.) but keep JSON structure unchanged.
+
+We must not translate URLs, proper nouns (city/feature names) unless natural localized form exists. Also not translate UTC offsets, IANA timezone IDs, or code.
+
+We need to output full translated HTML.
+
+Let's go through the HTML.
+
+First, <html lang="ru"> already Russian. Keep.
+
+<head>:
+
+<meta charset="UTF-8"> unchanged.
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"> unchanged.
+
+<meta name="theme-color" content="#667eea"> unchanged.
+
+<meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk"> unchanged.
+
+<title>Meeting Cost Calculator — What Your Standup Really Costs | World Time Sync</title>
+
+We need to translate the title text (visible/user-facing). Should translate to Russian. Keep the pipe and site name? The site name "World Time Sync" is a proper noun (brand) - we should not translate. So translate: "Meeting Cost Calculator — What Your Standup Really Costs" to Russian. Let's think: "Калькулятор стоимости встреч — Что на самом деле стоит ваш стендап". Or "Калькулятор стоимости встреч — Настоящая стоимость вашего стендапа". Keep the dash and pipe.
+
+Thus title becomes: "Калькулятор стоимости встреч — Что на самом деле стоит ваш стендап | World Time Sync"
+
+But need to keep the same punctuation: " — " (em dash). We'll keep.
+
+<meta name="title" content="Meeting Cost Calculator — What Your Standup Really Costs | World Time Sync"> translate content similarly.
+
+So content becomes: "Калькулятор стоимости встреч — Что на самом деле стоит ваш стендап | World Time Sync"
+
+<meta name="description" content="Calculate the real salary cost of any meeting across time zones — plus ways to cut wasted hours.">
+
+Translate: "Рассчитайте реальную стоимость зарплаты любого совещания в разных часовых поясах — плюс способы сократить потраченное впустую время."
+
+But need to keep meaning. Let's craft: "Рассчитайте реальную стоимость зарплаты любого совещания в разных часовых поясах — плюс способы сократить потраченное впустую время."
+
+Check: "Calculate the real salary cost of any meeting across time zones — plus ways to cut wasted hours." Could be "Рассчитайте реальную стоимость зарплаты любого совещания в разных часовых поясах — плюс способы сократить потраченное впустую время." Good.
+
+<meta name="keywords" content="meeting cost calculator, cost of meetings, how much does a meeting cost, salary meeting waste calculator">
+
+Translate keywords? They are for SEO; but they are user-facing? The rule says translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. So we should translate keywords content as well. However keywords are often kept in English for SEO; but rule says translate. We'll translate each phrase to Russian.
+
+"meeting cost calculator" -> "калькулятор стоимости встреч"
+"cost of meetings" -> "стоимость встреч"
+"how much does a meeting cost" -> "сколько стоит встреча"
+"salary meeting waste calculator" -> "калькулятор потерь зарплаты на встречах"
+
+But need to keep same format: comma-separated. So content becomes: "калькулятор стоимости встреч, стоимость встреч, сколько стоит встреча, калькулятор потерь зарплаты на встречах"
+
+But maybe better: "калькулятор стоимости встреч, стоимость встреч, сколько стоит встреча, калькулятор потерь зарплаты на встречах". Good.
+
+<meta name="robots" content="index, follow"> unchanged (not translatable).
+
+<meta name="author" content="World Time Sync"> author is a proper noun (brand) - do not translate.
+
+<meta property="og:type" content="article"> unchanged.
+
+<meta property="og:url" content="https://worldtimessync.com/ru/blog/meeting-cost-calculator.html"> URL unchanged.
+
+<meta property="og:title" content="Meeting Cost Calculator — What Your Standup Really Costs | World Time Sync"> translate similarly to title.
+
+So og:title content becomes: "Калькулятор стоимости встреч — Что на самом деле стоит ваш стендап | World Time Sync"
+
+<meta property="og:description" content="Calculate the real salary cost of any meeting across time zones — plus ways to cut wasted hours."> translate same as description.
+
+So: "Рассчитайте реальную стоимость зарплаты любого совещания в разных часовых поясах — плюс способы сократить потраченное впустую время."
+
+<meta property="og:image" content="https://worldtimessync.com/og-image.png"> unchanged.
+
+<meta name="twitter:card" content="summary_large_image"> unchanged.
+
+<meta name="twitter:title" content="Meeting Cost Calculator — What Your Standup Really Costs | World Time Sync"> translate same as title.
+
+So: "Калькулятор стоимости встреч — Что на самом деле стоит ваш стендап | World Time Sync"
+
+<link rel="canonical" href="https://worldtimessync.com/ru/blog/meeting-cost-calculator.html"> unchanged.
+
+<link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/ru/blog/meeting-cost-calculator.html"> unchanged.
+
+<link rel="preload" href="/assets/blog.css" as="style"> unchanged.
+
+<noscript><link rel="stylesheet" href="/assets/blog.css"></noscript> unchanged.
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"> unchanged.
+
+<link rel="stylesheet" href="/assets/index-ufePLcBr.css"> unchanged.
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script> unchanged.
+
+<script> ... gtag ... unchanged.
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script> unchanged.
+
+Now JSON-LD blocks.
+
+First JSON-LD:
+
+{"@context": "https://schema.org", "@type": "Article", "headline": "Meeting Cost Calculator — What Your Standup Really Costs | World Time Sync", "description": "Calculate the real salary cost of any meeting across time zones — plus ways to cut wasted hours.", "articleSection": "Time Zones", "keywords": "meeting cost calculator, cost of meetings, how much does a meeting cost, salary meeting waste calculator", "wordCount": 179, "timeRequired": "PT6M", "inLanguage": "en", "author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}, "publisher": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com", "logo": {"@type": "ImageObject", "url": "https://worldtimessync.com/logo.png", "width": 512, "height": 512}}, "datePublished": "2026-08-10", "dateModified": "2026-08-10", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/ru/blog/meeting-cost-calculator.html"}, "image": "https://worldtimessync.com/og-image.png"}
+
+We need to translate human-readable text values: headline, description, articleSection, keywords, author.name, publisher.name, maybe logo? No. Also maybe "inLanguage": "en" should stay as language code (not translate). Also "wordCount": number unchanged. "timeRequired": "PT6M" unchanged. datePublished unchanged.
+
+Translate headline: same as title translation: "Калькулятор стоимости встреч — Что на самом деле стоит ваш стендап | World Time Sync"
+
+Description: same as earlier: "Рассчитайте реальную стоимость зарплаты любого совещания в разных часовых поясах — плюс способы сократить потраченное впустую время."
+
+articleSection: "Time Zones" -> translate to Russian: "Часовые пояса". Keep as string.
+
+keywords: same as meta keywords translation: "калькулятор стоимости встреч, стоимость встреч, сколько стоит встреча, калькулятор потерь зарплаты на встречах"
+
+author.name: "World Time Sync" (brand) unchanged.
+
+publisher.name: same unchanged.
+
+Now second JSON-LD: BreadcrumbList.
+
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://worldtimessync.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://worldtimessync.com/#blog"}, {"@type": "ListItem", "position": 3, "name": "Meeting Cost Calculator — What Your Standup Really Costs", "item": "https://worldtimessync.com/ru/blog/meeting-cost-calculator.html"}]}
+
+Translate name values: "Home" -> "Главная" or "Дом"? Usually "Home" as breadcrumb: "Главная". We'll use "Главная". "Blog" -> "Блог". The third name: translate the title without site name: "Meeting Cost Calculator — What Your Standup Really Costs" -> "Калькулятор стоимости встреч — Что на самом деле стоит ваш стендап". Keep same punctuation.
+
+Third JSON-LD: FAQPage.
+
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do you calculate the cost of a meeting?", "acceptedAnswer": {"@type": "Answer", "text": "Multiply each attendee's hourly rate (salary ÷ 2080) by minutes attended, then by frequency across the year."}}, {"@type": "Question", "name": "Is meeting time really 'wasted' money?", "acceptedAnswer": {"@type": "Answer", "text": "Not always — decisions and alignment have value. The calculator shows what you're spending so you can judge whether the outcome is worth it."}}, {"@type": "Question", "name": "What's a cheap fix for expensive standups?", "acceptedAnswer": {"@type": "Answer", "text": "Cap them at 10 minutes, or switch to a written thread twice a week."}}]}
+
+We need to translate question names and answer texts.
+
+First question: "How do you calculate the cost of a meeting?" -> Russian: "Как вы рассчитываете стоимость встречи?" Could be "Как рассчитать стоимость встречи?" but keep natural. We'll translate: "Как рассчитать стоимость встречи?" Might be better: "Как вы рассчитываете стоимость встречи?" We'll choose "Как рассчитать стоимость встречи?" (imperative). Keep question mark.
+
+Answer text: "Multiply each attendee's hourly rate (salary ÷ 2080) by minutes attended, then by frequency across the year."
+
+Translate: "Умножьте часовую ставку каждого участника (зарплата ÷ 2080) на количество минут участия, затем умножьте на частоту в течение года."
+
+But need to keep the formula (salary ÷ 2080) maybe keep as is. We'll translate surrounding text.
+
+Second question: "Is meeting time really 'wasted' money?" -> Russian: "Действительно ли время встречи — это 'потраченные впустую' деньги?" Keep quotes maybe. We'll translate: "Действительно ли время встречи — это 'потраченные впустую' деньги?" Keep single quotes? We'll keep as is.
+
+Answer text: "Not always — decisions and alignment have value. The calculator shows what you're spending so you can judge whether the outcome is worth it."
+
+Translate: "Не всегда — решения и согласование имеют ценность. Калькулятор показывает, сколько вы тратите, чтобы вы могли оценить, стоит ли результат того."
+
+Third question: "What's a cheap fix for expensive standups?" -> Russian: "Какое недорогое решение для дорогих стендапов?" Could be "Какой недорогой способ сократить дорогие стендапы?" We'll translate: "Какое недорогое решение для дорогих стендапов?" Keep apostrophe? We'll use "Какое недорогое решение для дорогих стендапов?"
+
+Answer text: "Cap them at 10 minutes, or switch to a written thread twice a week."
+
+Translate: "Ограничьте их 10 минутами, либо перейдите на письменную дискуссию два раза в неделю."
+
+Now after head, we have body.
+
+<body>:
+
+<a href="#main-content" class="skip-link">Skip to main content</a> translate: "Перейти к основному содержанию"
+
+<div id="root" role="application" aria-label="World Time Online Application"> aria-label translate? It's an attribute aria-label, should translate. So "World Time Online Application" -> maybe "Приложение World Time Online". Keep brand? "World Time Online" maybe part of brand? Not sure. It's likely a description. We'll translate: "Приложение World Time Online". Keep brand? "World Time Online" maybe also a brand; but we can treat as proper noun? Not sure. Safer to translate only generic words: "World Time Online Application" -> "Приложение World Time Online". Keep "World Time Online" as is.
+
+Inside that div: <div class="app-loading" aria-busy="true" aria-live="polite"> aria-live value "polite" is not translatable (it's a keyword). Keep.
+
+<div class="app-loading-spinner" role="status" aria-label="Loading application"> aria-label translate: "Загрузка приложения"
+
+<p class="app-loading-text">Loading World Time...</p> translate: "Загрузка World Time..." Keep brand.
+
+Now main content.
+
+<main id="main-content"> unchanged.
+
+<article class="blog-wrap"> unchanged.
+
+<nav class="blog-breadcrumb" aria-label="Breadcrumb"> aria-label translate: "Навигация по крошкам" or "Хлебные крошки". Usually "Breadcrumb" translated as "Хлебные крошки". We'll use "Хлебные крошки".
+
+Inside nav: <a href="/">Home</a> translate to Russian: "Главная". The link href unchanged.
+
+Then " › " separator is just text? It's inside the nav as literal text between elements. It's user-facing? It's a separator; we should translate? It's not inside a tag, it's just text. According to rules, translate all visible/user-facing text inside tags and attributes. This text is not inside a tag; it's directly in the nav element as a text node. Should we translate? It's a visual separator; but it's not meaningful; but it's visible. Usually we keep as is because it's just a symbol. But rule says translate all visible/user-facing text. The separator " › " is a character; translating it doesn't make sense. We'll keep as is.
+
+Next <a href="/#blog">Blog</a> translate: "Блог". href unchanged.
+
+Then " › " again.
+
+Then <span aria-current="page">Meeting Cost Calculator — What Your Standup Really Costs</span> translate the content inside span: "Калькулятор стоимости встреч — Что на самом деле стоит ваш стендап". Keep aria-current attribute unchanged.
+
+Now <h1>Meeting Cost Calculator — What Your Standup Really Costs</h1> translate similarly: "Калькулятор стоимости встреч — Что на самом деле стоит ваш стендап"
+
+Now <div class="blog-meta"> August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide</div>
+
+We see some garbled characters due to encoding issue. The original likely had icons (maybe calendar, clock, folder). We need to translate the visible text: "August 10, 2026", "6 min read", "Time Zones, Guide". Also the separators "&nbsp;·&nbsp;" are just middle dot; keep.
+
+We need to translate month name to Russian: "August" -> "августа". Date format: "August 10, 2026" in Russian usually "10 августа 2026 г." but we can keep similar style: "10 августа 2026". We'll translate to "10 августа 2026". Keep the same formatting? We'll replace.
+
+"6 min read" -> "6 мин чтения" or "6 мин чтения". Usually "6 мин чтения". We'll use "6 мин чтения".
+
+"Time Zones, Guide" -> "Часовые пояса, Руководство". Keep comma.
+
+Now the div may have had icons before each; we keep them as is (they were garbled). We'll keep the same characters? The original had some weird characters due to encoding; but we should output the same bytes? Since we are to output translated HTML, we should keep the original characters (they were likely meant to be icons but got corrupted). However we cannot guess; we should keep them as they appear in source: they are "" (four replacement chars) before August, then "" before 6 min, then "" before Time Zones. Those are likely placeholder for icons; we should keep them unchanged. So we keep the exact same sequence of characters.
+
+Thus <div class="blog-meta"> August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide</div> becomes: <div class="blog-meta"> 10 августа 2026 &nbsp;·&nbsp;  6 мин чтения &nbsp;·&nbsp;  Часовые пояса, Руководство</div>
+
+Now paragraph:
+
+<p>Every recurring call with several salaried attendees burns real money every week. A daily 15-minute standup with 8 people earning $80k each costs roughly <strong>$46,000 per year</strong>. Here's the math and a quick calculator.</p>
+
+Translate: "Каждый повторяющийся звонок с несколькими сотрудниками на зарплате тратит реальные деньги каждую неделю. Ежедневный 15-минутный стендап с 8 людьми, зарабатывающими по $80 000 каждый, стоит примерно <strong>46 000 $ в год</strong>. Вот математика и быстрый калькулятор."
+
+Need to keep the $46,000 per year inside <strong>. We'll translate the surrounding text but keep the number and $ sign? The number is inside <strong>. Should we translate "per year"? The phrase inside <strong> is "$46,000 per year". We should translate "per year" to Russian: "в год". Keep the $ and number. So <strong>$46,000 per year</strong> becomes <strong>$46,000 в год</strong>. Keep the space? We'll keep as "$46,000 в год". Ensure no extra spaces.
+
+Now <h2>Quick Calculator</h2> translate: "Быстрый калькулятор"
+
+Now <div class="converter-widget">:
+
+<h2>💰 Annual Meeting Cost</h2> translate: "💰 Годовая стоимость встречи". Keep emoji.
+
+Now each converter-row:
+
+<div class="converter-row"><label>Average salary ($/yr):</label><input type="number" id="sal" value="80000"></div>
+
+Translate label: "Средняя зарплата ($/год):" Keep the ($/yr) maybe translate to ($/год). We'll keep the parentheses.
+
+So label becomes: "Средняя зарплата ($/год):"
+
+Next: <div class="converter-row"><label>Attendees:</label><input type="number" id="att" value="8" min="1"></div>
+
+Label: "Участники:" (Attendees). Keep.
+
+Next: <div class="converter-row"><label>Minutes per session:</label><input type="number" id="mins" value="15"></div>
+
+Label: "Минут на сессию:" (Minutes per session). Could be "Минут на сессию:" or "Продолжительность сессии (мин):". We'll translate literally: "Минут на сессию:".
+
+Next: <div class="converter-row"><label>Sessions per week:</label><input type="number" id="freq" value="5"></div>
+
+Label: "Сессий в неделю:".
+
+Next: <div class="converter-row"><label><strong>Annual cost:</strong></label><output id="cost" style="font-weight:700;"></output></div>
+
+Label: "<strong>Годовая стоимость:</strong>" (keep strong). So label becomes: "<strong>Годовая стоимость:</strong>"
+
+Now the script inside remains unchanged (code). We should not translate code. Keep as is.
+
+Now <h2>Where the Cost Hides in Distributed Teams</h2> translate: "Где скрываются расходы в распределённых командах"
+
+Now <ul> items:
+
+<li><strong>Inconvenient hours</strong> — a 9 PM call costs more than the same hour at noon: fatigue tax on top of salary.</li>
+
+Translate: "<strong>Неудобное время</strong> — звонок в 9 ч. вечера стоит больше, чем тот же час в полдень: налог за усталость поверх зарплаты."
+
+We need to keep the " — " em dash. Keep "9 PM" maybe translate to "9 ч. вечера". Keep "noon" as "полдень". Keep "fatigue tax" as "налог за усталость". Keep "on top of salary" as "поверх зарплаты". Keep the colon.
+
+Next li: <li><strong>Ramp-up time</strong> — people join 2–3 minutes early; that's part of the bill.</li>
+
+Translate: "<strong>Время на подготовку</strong> — люди присоединяются за 2–3 минуты до начала; это часть счёта."
+
+Next li: <li><strong>Context switching</strong> — a 30-min call can eat an hour of focus work around it.</li>
+
+Translate: "<strong>Переключение контекста</strong> — звонок продолжительностью 30 минут может поглотить час концентрированной работы вокруг него."
+
+Now <h2>Cutting the Bill Without Cutting Alignment</h2> translate: "Сокращаем расходы, не жертвуя согласованностью"
+
+Now <ol> items:
+
+<li>Shorten default invites to 25 or 50 minutes.</li>
+
+Translate: "Сокращайте длительность встреч по умолчанию до 25 или 50 минут."
+
+<li>Replace status meetings with written updates.</li>
+
+Translate: "Заменяйте статусовые встречи письменными обновлениями."
+
+<li>Schedule inside the overlap window only — use the <a href="/business-hours-overlap.html">overlap guide</a>.</li>
+
+Translate: "Планируйте только внутри окна пересечения — используйте <a href=\"/business-hours-overlap.html\">руководство по пересечению рабочего времени</a>."
+
+Note: keep href unchanged. Translate link text: "overlap guide" -> "руководство по пересечению рабочего времени". Could also be "руководство по совпадению часов". We'll use "руководство по пересечению рабочего времени".
+
+<li>Rotate who takes the painful hour so no region always pays it.</li>
+
+Translate: "Чередуйте, кто берет на себя неудобный час, чтобы никакой регион постоянно не платил за него."
+
+Now <h2>Frequently Asked Questions</h2> translate: "Часто задаваемые вопросы"
+
+Now <div class="faq-section"> {FAQ} </div>
+
+The placeholder {FAQ} likely will be replaced by script; we keep as is.
+
+Now <p>Schedule smarter with the <a href="/meeting-planner.html">meeting planner</a>.</p>
+
+Translate: "Планируйте встречи умнее с помощью <a href=\"/meeting-planner.html\">планировщика встреч</a>."
+
+Now footer:
+
+<footer class="blog-footer">
+    <a href="/privacy.html">Privacy</a>
+    <a href="/about.html">About</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/terms.html">Terms</a>
+    <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p>
+</footer>
+
+Translate link texts: Privacy -> "Конфиденциальность". About -> "О нас". Contact -> "Контакты". Terms -> "Условия". Keep href unchanged.
+
+The copyright line: "&copy; 2026 World Time Sync" translate? The name is brand, keep. So "&copy; 2026 World Time Sync". No translation needed.
+
+Now after main, we have scripts:
+
+<script type="module" src="/assets/index-Dd7au40z.js" async></script> unchanged.
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var seo = document.querySelector('.blog-wrap');
+    if (seo) seo.style.display = 'none';
+  });
+</script> unchanged (code).
+
+<script>
+  window.addEventListener('load',function(){
+    var ahrefs=document.createElement('script');
+    ahrefs.async=true;
+    ahrefs.src='https://analytics.ahrefs.com/analytics.js';
+    ahrefs.setAttribute('data-key','hB1VYWuwb1i/f1d8re7P2A');
+    document.head.appendChild(ahrefs);
+  });
+</script> unchanged.
+
+Now we need to ensure we didn't miss any text inside attributes like title, alt, aria-label, description, keywords, content. We've done many.
+
+Check for any other attributes: maybe there is an aria-label on the skip-link? It has class skip-link but no aria-label. The <a href="#main-content" class="skip-link">Skip to main content</a> we translated.
+
+Check for any other aria-label: we did on app-loading-spinner, root.
+
+Check for any other title attributes: none.
+
+Check for any alt attributes on images: none.
+
+Check for any meta name="description" etc done.
+
+Check for any meta name="keywords" done.
+
+Check for any meta property="og:title", og:description done.
+
+Check for any meta name="twitter:title" done.
+
+Check for any meta name="theme-color" content is color, not translate.
+
+Check for any link rel="preload" etc.
+
+Now check the JSON-LD for any other translatable strings: we translated headline, description, articleSection, keywords, author.name, publisher.name, breadcrumb names, FAQ question names and answer texts.
+
+Check if any other fields like "inLanguage": "en" should stay.
+
+Check if any "url" fields: those are URLs, keep.
+
+Check if any "item": URLs, keep.
+
+Check if any "@id": URL, keep.
+
+Now check if any text inside <script> tags that is not code but maybe JSON-LD we already handled.
+
+Now check the <div class="blog-meta"> we kept the weird characters.
+
+Now check the <p> after the FAQ: we translated.
+
+Now check the <footer> links.
+
+Now check the <p> inside the loading text: we translated.
+
+Now check the <p class="app-loading-text"> we translated.
+
+Now check the <div class="app-loading" aria-busy="true" aria-live="polite">: aria-live value "polite" is a keyword, not translate.
+
+Now check the <div class="app-loading-spinner" role="status" aria-label="Loading application"> we translated.
+
+Now check the <div id="root" role="application" aria-label="World Time Online Application"> we translated.
+
+Now check the <a href="#main-content" class="skip-link"> we translated.
+
+Now check the <nav class="blog-breadcrumb" aria-label="Breadcrumb"> we translated.
+
+Now check the <span aria-current="page"> we kept attribute, translated content.
+
+Now check the <h1> we translated.
+
+Now check the <div class="blog-meta"> we translated.
+
+Now check the <p> after h1: we translated.
+
+Now check the <h2>Quick Calculator</h2> we translated.
+
+Now check the <div class="converter-widget"> <h2>💰 Annual Meeting Cost</h2> we translated.
+
+Now check the labels we translated.
+
+Now check the <output> no text.
+
+Now check the <h2>Where the Cost Hides in Distributed Teams</h2> we translated.
+
+Now check the <ul> items we translated.
+
+Now check the <h2>Cutting the Bill Without Cutting Alignment</h2> we translated.
+
+Now check the <ol> items we translated.
+
+Now check the <h2>Frequently Asked Questions</h2> we translated.
+
+Now check the <div class="faq-section"> {FAQ} </div> we kept.
+
+Now check the <p>Schedule smarter with the <a href="/meeting-planner.html">meeting planner</a>.</p> we translated.
+
+Now check the footer links we translated.
+
+Now check the <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p> we kept.
+
+Now check any other text: maybe there is a hidden text in the SVG favicon? Not needed.
+
+Now ensure we didn't accidentally translate inside code like the script that calculates cost. That script contains variable names and strings like '$'+Math.round(v).toLocaleString(); The string '$' is a dollar sign, not translatable. The code also contains comments? None. We'll keep as is.
+
+Now check the script that sets seo.style.display = 'none'; no text.
+
+Now check the ahrefs script: no text.
+
+Now final step: produce the full HTML with translations.
+
+We must ensure we keep the exact same formatting (line breaks, spaces) as much as possible, but not required. We'll output the translated HTML.
+
+Let's craft the final HTML.
+
+We'll go line by line.
+
+Start:
+
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="theme-color" content="#667eea">
+    <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk">
+    <title>Калькулятор стоимости встреч — Что на самом деле стоит ваш стендап | World Time Sync</title>
+    <meta name="title" content="Калькулятор стоимости встреч — Что на самом деле стоит ваш стендап | World Time Sync">
+    <meta name="description" content="Рассчитайте реальную стоимость зарплаты любого совещания в разных часовых поясах — плюс способы сократить потраченное впустую время.">
+    <meta name="keywords" content="калькулятор стоимости встреч, стоимость встреч, сколько стоит встреча, калькулятор потерь зарплаты на встречах">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="World Time Sync">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://worldtimessync.com/ru/blog/meeting-cost-calculator.html">
+    <meta property="og:title" content="Калькулятор стоимости встреч — Что на самом деле стоит ваш стендап | World Time Sync">
+    <meta property="og:description" content="Рассчитайте реальную стоимость зарплаты любого совещания в разных часовых поясах — плюс способы сократить потраченное впустую время.">
+    <meta property="og:image" content="https://worldtimessync.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Калькулятор стоимости встреч — Что на самом деле стоит ваш стендап | World Time Sync">
+    <link rel="canonical" href="https://worldtimessync.com/ru/blog/meeting-cost-calculator.html">
+    <link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/ru/blog/meeting-cost-calculator.html">
+    <link rel="preload" href="/assets/blog.css" as="style">
+<noscript><link rel="stylesheet" href="/assets/blog.css"></noscript>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/assets/index-ufePLcBr.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LBX0CDYSSV');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "Article", "headline": "Калькулятор стоимости встреч — Что на самом деле стоит ваш стендап | World Time Sync", "description": "Рассчитайте реальную стоимость зарплаты любого совещания в разных часовых поясах — плюс способы сократить потраченное впустую время.", "articleSection": "Часовые пояса", "keywords": "калькулятор стоимости встреч, стоимость встреч, сколько стоит встреча, калькулятор потерь зарплаты на встречах", "wordCount": 179, "timeRequired":

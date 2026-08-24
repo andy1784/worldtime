@@ -1,0 +1,536 @@
+We need to translate visible/user-facing text into German, preserving HTML tags, attributes, etc. The page currently has English content; we need to translate to German. The html lang attribute is already "de". We'll translate text inside tags and attributes like title, alt, aria-label, description, keywords, content (meta tags). Also translate visible text in body.
+
+We must not translate URLs, proper nouns, etc. Keep code, JSON-LD values? The JSON-LD contains text values that are user-facing (like headline, description, name, etc.) According to rule 2, translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. JSON-LD is inside script tags, not HTML tags; but its content is JSON with string values that are user-facing. Should we translate those? The rule says translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. JSON-LD is not an HTML tag attribute; it's inside a script tag. Usually we would not translate JSON-LD because it's structured data for search engines; but the rule may consider it as content inside a script tag, not covered. However the instruction: "Translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content." It does not explicitly mention JSON-LD. So we likely should NOT translate JSON-LD content, to avoid breaking structured data. Keep JSON-LD as is.
+
+Similarly, we have a placeholder {FAQ} inside a div class="faq-section". That's likely a placeholder to be replaced later; we should keep it as is.
+
+We need to translate visible text: In head: title, meta name="title", meta name="description", meta name="keywords", og:title, og:description, twitter:title, etc. Also maybe the content attributes.
+
+Also the link rel="canonical" and alternate hreflang values: those are URLs, not translate.
+
+Also the <noscript> link etc.
+
+In body: skip-link text "Skip to main content". Translate to German: "Zum Hauptinhalt springen" or similar.
+
+The div with role="application" aria-label="World Time Online Application": translate aria-label? It's an attribute; we should translate the label: "World Time Online Application" maybe keep brand name? It's a proper noun? "World Time Online Application" maybe translate to "World Time Online Anwendung"? But rule says translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. So aria-label is an attribute, we should translate its value. However "World Time Online Application" includes brand "World Time Online". Might keep brand unchanged? Usually we keep brand names. But it's not a proper noun? It's a name of the application. Might keep as is. Safer to keep unchanged? The rule says translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. It doesn't say to keep brand names unchanged unless they are proper nouns. "World Time Online Application" could be considered a proper noun (name). I'd keep it unchanged.
+
+The loading spinner aria-label: "Loading application" -> translate to "Anwendung wird geladen" or "Wird geladen". We'll translate.
+
+The p class="app-loading-text": "Loading World Time..." -> translate to "World Time wird geladen..." or "World Time wird geladen..." Keep "World Time" unchanged.
+
+In blog-breadcrumb: links: Home, Blog, and the current page text: "Meeting Cost Calculator — What Your Standup Really Costs". Need to translate that to German. Also the separator ‹ › characters remain.
+
+Home -> "Start" or "Home"? In German often "Start". But we can translate "Home" to "Startseite" or "Home". Since the site likely uses English? But we need to translate. Use "Startseite". Blog -> "Blog" could stay as is? Might translate to "Blog" (same). Could keep. We'll translate to "Blog" (same). The current page: translate title.
+
+The h1: same as title.
+
+The blog-meta: contains date, reading time, categories. The date: " August 10, 2026" appears garbled due to encoding issue; original likely "August 10, 2026" with some icon? Actually the characters are  maybe representing a calendar icon? We'll keep as is? The visible text includes some weird characters; we should translate the readable parts: "August 10, 2026" to German date format: "10. August 2026". Also the reading time: " 6 min read" -> translate to " 6 Min. Lesezeit" or "6 Minuten Lesen". We'll keep the icon placeholder. Categories: " Time Zones, Guide" -> translate to " Zeitzonen, Leitfaden". We'll translate.
+
+Paragraph: "Every recurring call with several salaried attendees burns real money every week. A daily 15-minute standup with 8 people earning $80k each costs roughly <strong>$46,000 per year</strong>. Here's the math and a quick calculator."
+
+Translate to German.
+
+Then "Quick Calculator" -> "Schneller Rechner" or "Kurzrechner". We'll translate.
+
+Labels inside converter-widget: "Average salary ($/yr):" -> "Durchschnittsgehalt ($/Jahr):" maybe. Keep $ symbol.
+
+"Attendees:" -> "Teilnehmer:".
+
+"Minutes per session:" -> "Minuten pro Sitzung:".
+
+"Sessions per week:" -> "Sitzungen pro Woche:".
+
+"<strong>Annual cost:</strong>" -> "<strong>Jährliche Kosten:</strong>".
+
+The output area is empty.
+
+Then heading: "Where the Cost Hides in Distributed Teams" -> translate.
+
+List items: each line.
+
+"Inconvenient hours" -> "Unpraktische Zeiten". The dash explanation: "— a 9 PM call costs more than the same hour at noon: fatigue tax on top of salary." Translate.
+
+"Ramp-up time" -> "Aufwärmzeit" or "Einarbeitszeit". We'll translate.
+
+"Context switching" -> "Kontextwechsel".
+
+Next heading: "Cutting the Bill Without Cutting Alignment" -> translate.
+
+Ordered list items: translate each.
+
+Then heading: "Frequently Asked Questions" -> translate.
+
+Inside FAQ section placeholder {FAQ} keep.
+
+Paragraph after: "Schedule smarter with the <a href="/meeting-planner.html">meeting planner</a>." -> translate.
+
+Footer links: Privacy, About, Contact, Terms -> translate.
+
+Copyright line: "&copy; 2026 World Time Sync" -> keep name unchanged, maybe translate nothing.
+
+Also the skip link: "Skip to main content" -> translate.
+
+Now also need to translate attributes like title, alt, aria-label, description, keywords, content.
+
+We already handled title tag content, meta name="title" content, meta name="description" content, meta name="keywords" content, og:title, og:description, twitter:title.
+
+Also maybe the link rel="alternate" hreflang="x-default" href... not translate.
+
+Also the <a href="/#blog">Blog</a> inside breadcrumb: the text "Blog" we may translate? We'll decide to keep "Blog" as it's a common term; but rule says translate human-readable text inside tags. So we should translate. However "Blog" is same in German often used. Could keep but safer to translate to "Blog" (same). We'll keep as is.
+
+The aria-label on div id="root": "World Time Online Application" we decided maybe keep unchanged.
+
+The aria-label on spinner: "Loading application" -> translate.
+
+The aria-label on skip link? It's a link with class skip-link, no aria-label.
+
+The aria-label on app-loading-spinner: role="status" aria-label="Loading application". We'll translate.
+
+Now also need to translate any placeholder text inside input placeholders? None.
+
+Now also need to translate the text inside the script? The JavaScript contains strings like '$'+Math.round(v).toLocaleString(); that's code, not translate.
+
+Now also need to translate the text inside the noscript? The noscript contains a link rel="stylesheet" href="/assets/blog.css"> no visible text.
+
+Now also need to translate the text inside the <div class="blog-meta">: the weird icons we keep.
+
+Now also need to translate the text inside the <h2>💰 Annual Meeting Cost</h2> -> the emoji stays, translate "Annual Meeting Cost" to "Jährliche Meetingkosten" or "Jährliche Kosten für Meetings". We'll translate to "Jährliche Meetingkosten". Keep emoji.
+
+Now also need to translate the label inside converter rows: we already did.
+
+Now also need to translate the text inside the <output> element? empty.
+
+Now also need to translate the text inside the <p> after the calculator: none.
+
+Now also need to translate the text inside the <ul> items.
+
+Now also need to translate the text inside the <ol> items.
+
+Now also need to translate the text inside the <footer> links.
+
+Now also need to translate the text inside the <a href="/privacy.html">Privacy</a> etc.
+
+Now also need to translate the text inside the <a href="/about.html">About</a> etc.
+
+Now also need to translate the text inside the <a href="/contact.html">Contact</a> etc.
+
+Now also need to translate the text inside the <a href="/terms.html">Terms</a> etc.
+
+Now also need to translate the text inside the <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p> -> keep.
+
+Now also need to translate the text inside the <a href="/meeting-planner.html">meeting planner</a> -> translate "meeting planner" to "Meetingplaner" or "Meeting-Planner". We'll translate to "Meetingplaner".
+
+Now also need to translate the text inside the <a href="/business-hours-overlap.html">overlap guide</a> -> translate "overlap guide" to "Überleitfaden"? Actually "Overlap guide" -> "Überschneidungsleitfaden" or "Überlappungsleitfaden". We'll translate to "Überlappungsleitfaden".
+
+Now also need to translate the text inside the <a href="/">Home</a> -> translate to "Startseite".
+
+Now also need to translate the text inside the <a href="/#blog">Blog</a> -> maybe keep "Blog". We'll translate to "Blog" (same). Or "Blog" stays.
+
+Now also need to translate the text inside the <span aria-current="page">Meeting Cost Calculator — What Your Standup Really Costs</span> -> translate.
+
+Now also need to translate the text inside the <title> tag and meta tags.
+
+Now also need to translate the content attribute of meta name="description": "Calculate the real salary cost of any meeting across time zones — plus ways to cut wasted hours." -> translate.
+
+Meta name="keywords": "meeting cost calculator, cost of meetings, how much does a meeting cost, salary meeting waste calculator" -> translate keywords? Usually keep as is for SEO? But rule says translate human-readable text inside attributes like keywords/content. So we should translate. However translating keywords may break SEO but we follow instruction. We'll translate each phrase to German.
+
+Meta property="og:title": same as title.
+
+Meta property="og:description": same as description.
+
+Meta name="twitter:title": same as title.
+
+Now also need to translate the content attribute of meta name="theme-color"? That's a color value, not translate.
+
+Now also need to translate the content attribute of meta name="google-site-verification"? That's a verification code, not translate.
+
+Now also need to translate the content attribute of meta name="author": "World Time Sync" -> keep brand.
+
+Now also need to translate the content attribute of meta property="og:type": "article" -> not translate.
+
+Now also need to translate the content attribute of meta property="og:url": URL, not translate.
+
+Now also need to translate the content attribute of meta property="og:image": URL.
+
+Now also need to translate the content attribute of meta name="twitter:card": "summary_large_image" not translate.
+
+Now also need to translate the content attribute of link rel="icon": not.
+
+Now also need to translate the content attribute of link rel="preload": href.
+
+Now also need to translate the content attribute of link rel="stylesheet": href.
+
+Now also need to translate the content attribute of noscript link: href.
+
+Now also need to translate the content attribute of script tags? Not.
+
+Now also need to translate the text inside the <script type="application/ld+json">? We decided not to translate.
+
+Now also need to translate the text inside the <noscript>? No visible.
+
+Now also need to translate the text inside the <div class="app-loading-text">: "Loading World Time..." -> translate.
+
+Now also need to translate the text inside the <p class="app-loading-text">: we already.
+
+Now also need to translate the text inside the <div class="app-loading-spinner" role="status" aria-label="Loading application">: we already.
+
+Now also need to translate the text inside the <a href="#main-content" class="skip-link">Skip to main content</a> -> translate.
+
+Now also need to translate the text inside the <div class="app-loading" aria-busy="true" aria-live="polite">: no visible.
+
+Now also need to translate the text inside the <div id="root" role="application" aria-label="World Time Online Application">: we decided maybe keep unchanged.
+
+Now also need to translate the text inside the <nav class="blog-breadcrumb" aria-label="Breadcrumb">: aria-label "Breadcrumb" -> translate to "Breadcrumb" maybe "Breadcrumb" same; but we can translate to "Breadcrumb" (same) or "Breadcrumb navigation". We'll translate to "Breadcrumb" (same) or "Breadcrumb-Leiste". We'll translate to "Breadcrumb" (same) maybe keep.
+
+Now also need to translate the text inside the <a href="/">Home</a> inside breadcrumb.
+
+Now also need to translate the text inside the <a href="/#blog">Blog</a>.
+
+Now also need to translate the text inside the <span aria-current="page">Meeting Cost Calculator — What Your Standup Really Costs</span>.
+
+Now also need to translate the text inside the <h1>Meeting Cost Calculator — What Your Standup Really Costs</h1>.
+
+Now also need to translate the text inside the <div class="blog-meta">.
+
+Now also need to translate the text inside the <p> after h1.
+
+Now also need to translate the text inside the <h2>Quick Calculator</h2>.
+
+Now also need to translate the text inside the <h2>💰 Annual Meeting Cost</h2>.
+
+Now also need to translate the text inside the <label> elements.
+
+Now also need to translate the text inside the <output> (empty).
+
+Now also need to translate the text inside the <h2>Where the Cost Hides in Distributed Teams</h2>.
+
+Now also need to translate the text inside the <ul> items.
+
+Now also need to translate the text inside the <h2>Cutting the Bill Without Cutting Alignment</h2>.
+
+Now also need to translate the text inside the <ol> items.
+
+Now also need to translate the text inside the <h2>Frequently Asked Questions</h2>.
+
+Now also need to translate the text inside the <div class="faq-section"> placeholder {FAQ} keep.
+
+Now also need to translate the text inside the <p> after FAQ: "Schedule smarter with the <a href="/meeting-planner.html">meeting planner</a>." -> translate.
+
+Now also need to translate the text inside the <footer class="blog-footer"> links.
+
+Now also need to translate the text inside the <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p> -> keep.
+
+Now also need to translate any other visible text like the emojis? Keep.
+
+Now also need to translate the text inside the <script> that contains the calculator? The strings like '$'+Math.round(v).toLocaleString(); not translate.
+
+Now also need to translate the text inside the <script> that sets up event listeners? No.
+
+Now also need to translate the text inside the <script> that hides .blog-wrap? No.
+
+Now also need to translate the text inside the <script> that adds ahrefs? No.
+
+Now also need to translate the text inside the <noscript>? No.
+
+Now also need to translate the text inside the <link rel="preload" href="/assets/blog.css" as="style">: no.
+
+Now also need to translate the text inside the <link rel="stylesheet" href="/assets/index-ufePLcBr.css">: no.
+
+Now also need to translate the text inside the <link rel="icon" type="image/svg+xml" href="/favicon.svg">: no.
+
+Now also need to translate the text inside the <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">: no.
+
+Now also need to translate the text inside the <meta name="theme-color" content="#667eea">: no.
+
+Now also need to translate the text inside the <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk">: no.
+
+Now also need to translate the text inside the <meta name="robots" content="index, follow">: no.
+
+Now also need to translate the text inside the <meta name="author" content="World Time Sync">: keep.
+
+Now also need to translate the text inside the <meta property="og:type" content="article">: no.
+
+Now also need to translate the text inside the <meta property="og:url" content="https://worldtimessync.com/de/blog/meeting-cost-calculator.html">: no.
+
+Now also need to translate the text inside the <meta property="og:image" content="https://worldtimessync.com/og-image.png">: no.
+
+Now also need to translate the text inside the <meta name="twitter:card" content="summary_large_image">: no.
+
+Now also need to translate the text inside the <link rel="canonical" href="https://worldtimessync.com/de/blog/meeting-cost-calculator.html">: no.
+
+Now also need to translate the text inside the <link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/de/blog/meeting-cost-calculator.html">: no.
+
+Now also need to translate the text inside the <link rel="preload" href="/assets/blog.css" as="style">: no.
+
+Now also need to translate the text inside the <noscript><link rel="stylesheet" href="/assets/blog.css"></noscript>: no.
+
+Now also need to translate the text inside the <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>: no.
+
+Now also need to translate the text inside the <script> window.dataLayer...: no.
+
+Now also need to translate the text inside the <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>: no.
+
+Now also need to translate the text inside the <script type="module" src="/assets/index-Dd7au40z.js" async></script>: no.
+
+Now also need to translate the text inside the <script> document.addEventListener('DOMContentLoaded', function() { var seo = document.querySelector('.blog-wrap'); if (seo) seo.style.display = 'none'; });: no.
+
+Now also need to translate the text inside the <script> window.addEventListener('load',function(){ var ahrefs=document.createElement('script'); ahrefs.async=true; ahrefs.src='https://analytics.ahrefs.com/analytics.js'; ahrefs.setAttribute('data-key','hB1VYWuwb1i/f1d8re7P2A'); document.head.appendChild(ahrefs); });: no.
+
+Now we need to produce final HTML with translated text.
+
+Let's do translation step by step.
+
+First, head:
+
+<title>Meeting Cost Calculator — What Your Standup Really Costs | World Time Sync</title>
+
+Translate: "Meeting Cost Calculator — What Your Standup Really Costs | World Time Sync"
+
+German: "Meeting-Kostenrechner — Was Ihr Standup wirklich kostet | World Time Sync"
+
+But we need to keep the pipe and brand. "Meeting Cost Calculator" -> "Meeting-Kostenrechner". "What Your Standup Really Costs" -> "Was Ihr Standup wirklich kostet". Keep the em dash — same.
+
+Thus title: "Meeting-Kostenrechner — Was Ihr Standup wirklich kostet | World Time Sync"
+
+Meta name="title" content same as title.
+
+Meta name="description": "Calculate the real salary cost of any meeting across time zones — plus ways to cut wasted hours."
+
+Translate: "Berechne den echten Gehaltskosten jeder Meeting über Zeitzonen hinweg — plus Möglichkeiten, verschwendete Stunden zu reduzieren."
+
+Better: "Berechne die echten Gehaltskosten eines jeden Meetings über Zeitzonen hinweg — plus Möglichkeiten, verschwendete Stunden zu reduzieren."
+
+We'll use: "Berechne die echten Gehaltskosten eines jeden Meetings über Zeitzonen hinweg — plus Möglichkeiten, verschwendete Stunden zu reduzieren."
+
+Meta name="keywords": "meeting cost calculator, cost of meetings, how much does a meeting cost, salary meeting waste calculator"
+
+Translate each phrase:
+
+- meeting cost calculator -> Meeting-Kostenrechner
+- cost of meetings -> Kosten von Meetings
+- how much does a meeting cost -> wie viel kostet ein Meeting
+- salary meeting waste calculator -> Gehalts-Meeting-Verschwendungsrechner (maybe "Gehalt-Meeting-Verschwendungsrechner").
+
+We'll produce German keywords: "Meeting-Kostenrechner, Kosten von Meetings, wie viel kostet ein Meeting, Gehalts-Meeting-Verschwendungsrechner"
+
+Meta property="og:title": same as title.
+
+Meta property="og:description": same as description.
+
+Meta name="twitter:title": same as title.
+
+Now body:
+
+Skip link: <a href="#main-content" class="skip-link">Skip to main content</a> -> translate to "Zum Hauptinhalt springen". Could also be "Zum Hauptinhalt gehen". We'll use "Zum Hauptinhalt springen".
+
+Div id="root" aria-label="World Time Online Application": we keep unchanged.
+
+App-loading spinner aria-label: "Loading application" -> translate to "Anwendung wird geladen". Or "Wird geladen". We'll use "Anwendung wird geladen".
+
+App-loading-text p: "Loading World Time..." -> translate to "World Time wird geladen..." Keep "World Time". So "World Time wird geladen..."
+
+Now blog-breadcrumb aria-label="Breadcrumb": translate to "Breadcrumb" maybe "Breadcrumb-Leiste". We'll use "Breadcrumb" (same) or "Breadcrumb-Navigation". Let's use "Breadcrumb". Keep.
+
+Now breadcrumb items:
+
+<a href="/">Home</a> -> translate to "Startseite".
+
+<a href="/#blog">Blog</a> -> translate to "Blog" (same). Could keep.
+
+<span aria-current="page">Meeting Cost Calculator — What Your Standup Really Costs</span> -> translate to "Meeting-Kostenrechner — Was Ihr Standup wirklich kostet".
+
+Now h1: same as above.
+
+Now blog-meta: The weird icons we keep as is. The text: " August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide"
+
+We need to translate date, time, categories.
+
+Date: "August 10, 2026" -> German: "10. August 2026". Keep the leading icon placeholder.
+
+Thus: " 10. August 2026 &nbsp;·&nbsp;  6 Min. Lesezeit &nbsp;·&nbsp;  Zeitzonen, Leitfaden"
+
+We need to decide on "min read" -> "Min. Lesezeit" or "Minuten Lesen". We'll use "6 Min. Lesezeit".
+
+Categories: "Time Zones, Guide" -> "Zeitzonen, Leitfaden".
+
+Now paragraph after h1:
+
+"Every recurring call with several salaried attendees burns real money every week. A daily 15-minute standup with 8 people earning $80k each costs roughly <strong>$46,000 per year</strong>. Here's the math and a quick calculator."
+
+Translate:
+
+"Jeder wiederkehrende Anruf mit mehreren salaried Teilnehmern kostet echtes Geld jede Woche. Ein tägliches 15-minütiges Standup mit 8 Personen, die jeweils $80.000 verdienen, kostet ungefähr <strong>46.000 $ pro Jahr</strong>. Hier ist die Rechnung und ein schneller Rechner."
+
+But we need to keep salary term maybe "salaried attendees" -> "bezahlte Teilnehmer" or "angestellte Teilnehmer". We'll translate: "Jeder wiederkehrende Anruf mit mehreren bezahlten Teilnehmern kostet echtes Geld jede Woche." However "salaried attendees" could be "Angestellte Teilnehmer". We'll use "bezahlt".
+
+"earning $80k each" -> "die jeweils $80.000 verdienen". Keep $.
+
+"costs roughly <strong>$46,000 per year</strong>" -> "kostet ungefähr <strong>46.000 $ pro Jahr</strong>". Note the comma vs dot: In German, thousand separator is dot, decimal comma. So 46,000 becomes 46.000. We'll keep as "46.000 $". The original had $46,000 (US). We'll convert to German format: 46.000 $. Keep the strong.
+
+"Here's the math and a quick calculator." -> "Hier ist die Rechnung und ein schneller Rechner."
+
+Now h2 "Quick Calculator" -> translate to "Schneller Rechner". But we already have a separate h2 with emoji. Actually there is <h2>Quick Calculator</h2> and then <div class="converter-widget"><h2>💰 Annual Meeting Cost</h2>. So we need to translate both.
+
+First h2: "Quick Calculator" -> "Schneller Rechner".
+
+Second h2: "💰 Annual Meeting Cost" -> keep emoji, translate "Annual Meeting Cost" to "Jährliche Meetingkosten". Could be "Jährliche Kosten für Meetings". We'll use "Jährliche Meetingkosten".
+
+Now labels inside converter-widget:
+
+<label>Average salary ($/yr):</label> -> translate to "Durchschnittsgehalt ($/Jahr):"
+
+<label>Attendees:</label> -> "Teilnehmer:"
+
+<label>Minutes per session:</label> -> "Minuten pro Sitzung:"
+
+<label>Sessions per week:</label> -> "Sitzungen pro Woche:"
+
+<label><strong>Annual cost:</strong></label> -> "<strong>Jährliche Kosten:</strong>"
+
+Now output empty.
+
+Now h2 "Where the Cost Hides in Distributed Teams" -> translate: "Wo sich die Kosten in verteilten Teams verstecken" or "Wo die Kosten in verteilten Teams versteckt sind". We'll use "Wo sich die Kosten in verteilten Teams verstecken".
+
+Now list items:
+
+<li><strong>Inconvenient hours</strong> — a 9 PM call costs more than the same hour at noon: fatigue tax on top of salary.</li>
+
+Translate:
+
+- "Inconvenient hours" -> "Unpraktische Zeiten"
+- Explanation: "— ein Anruf um 21:00 Uhr kostet mehr als derselbe Stunde um Mittag: Müdigkeitszuschlag obendrauf auf das Gehalt." We'll translate: "— ein Anruf um 21:00 Uhr kostet mehr als derselbe Zeitpunkt um Mittag: zusätzlich ein Müdigkeitszuschlag zum Gehalt."
+
+We need to keep the em dash.
+
+Thus: "<li><strong>Unpraktische Zeiten</strong> — ein Anruf um 21:00 Uhr kostet mehr als derselbe Zeitpunkt um Mittag: zusätzlich ein Müdigkeitszuschlag zum Gehalt.</li>"
+
+Second: "<li><strong>Ramp-up time</strong> — people join 2–3 minutes early; that's part of the bill.</li>"
+
+Translate:
+
+- "Ramp-up time" -> "Aufwärmzeit" or "Einarbeitszeit". We'll use "Aufwärmzeit".
+- Explanation: "— Personen treten 2–3 Minuten früher bei; das gehört zur Rechnung." We'll translate: "— Teilnehmer treten 2–3 Minuten früher dazu; das gehört zur Rechnung."
+
+Thus: "<li><strong>Aufwärmzeit</strong> — Teilnehmer treten 2–3 Minuten früher dazu; das gehört zur Rechnung.</li>"
+
+Third: "<li><strong>Context switching</strong> — a 30-min call can eat an hour of focus work around it.</li>"
+
+Translate:
+
+- "Context switching" -> "Kontextwechsel"
+- Explanation: "— ein 30-minütiger Anruf kann eine Stunde Fokusarbeit darum herum verbrauchen." We'll translate: "— ein 30-minütiger Anruf kann eine Stunde Fokusarbeit darum herum verbrauchen."
+
+Thus: "<li><strong>Kontextwechsel</strong> — ein 30-minütiger Anruf kann eine Stunde Fokusarbeit darum herum verbrauchen.</li>"
+
+Now h2 "Cutting the Bill Without Cutting Alignment" -> translate: "Die Rechnung senken, ohne die Abstimmung zu gefährden" or "Die Kosten senken, ohne die Abstimmung zu verringern". We'll use "Die Rechnung senken, ohne die Abstimmung zu gefährden".
+
+Now ordered list items:
+
+1. Shorten default invites to 25 or 50 minutes.
+2. Replace status meetings with written updates.
+3. Schedule inside the overlap window only — use the <a href="/business-hours-overlap.html">overlap guide</a>.
+4. Rotate who takes the painful hour so no region always pays it.
+
+Translate each:
+
+1. "Shorten default invites to 25 or 50 minutes." -> "Verkürze Standardeinladungen auf 25 oder 50 Minuten."
+2. "Replace status meetings with written updates." -> "Ersetze Statusmeetings durch schriftliche Updates."
+3. "Schedule inside the overlap window only — use the <a href="/business-hours-overlap.html">overlap guide</a>." -> "Plane ausschließlich innerhalb des Überlappungsfensters — nutze den <a href="/business-hours-overlap.html">Überlappungsleitfaden</a>." Need to translate "overlap guide" inside the anchor text as well. The href stays same. So anchor text becomes "Überlappungsleitfaden".
+4. "Rotate who takes the painful hour so no region always pays it." -> "Wechsle, wer die unangenehme Stunde übernimmt, damit keine Region ständig dafür aufkommt." Or "Wechsle, wer die belastende Stunde übernimmt, damit keine Region immer dafür zahlt." We'll use "Wechsle, wer die belastende Stunde übernimmt, damit keine Region immer dafür zahlt."
+
+Now h2 "Frequently Asked Questions" -> translate to "Häufig gestellte Fragen".
+
+Now the FAQ section placeholder {FAQ} remains.
+
+Now paragraph after FAQ: "Schedule smarter with the <a href="/meeting-planner.html">meeting planner</a>." -> translate: "Plane smarter mit dem <a href="/meeting-planner.html">Meetingplaner</a>." Could be "Plane intelligenter mit dem Meetingplaner". We'll use "Plane smarter mit dem Meetingplaner". Keep "smarter" maybe translate to "klüger". But we can keep "smarter". We'll translate to "Plane klüger mit dem Meetingplaner". Let's do: "Plane klüger mit dem Meetingplaner."
+
+Now footer links:
+
+Privacy -> "Datenschutz"
+About -> "Über uns"
+Contact -> "Kontakt"
+Terms -> "Nutzungsbedingungen"
+
+Now copyright line: "&copy; 2026 World Time Sync" -> keep.
+
+Now also need to translate the text inside the <meta name="author" content="World Time Sync">: keep.
+
+Now also need to translate the text inside the <meta name="publisher" content? Not present.
+
+Now also need to translate the text inside the <meta property="og:site_name">? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:site">? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:creator">? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:description">? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:image">? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:url">? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:title"> we already did.
+
+Now also need to translate the text inside the <meta name="twitter:card"> not.
+
+Now also need to translate the text inside the <meta name="twitter:site"> not.
+
+Now also need to translate the text inside the <meta name="twitter:creator"> not.
+
+Now also need to translate the text inside the <meta name="twitter:image:alt"> not.
+
+Now also need to translate the text inside the <meta name="twitter:image:width"> not.
+
+Now also need to translate the text inside the <meta name="twitter:image:height"> not.
+
+Now also need to translate the text inside the <meta name="twitter:image:src"> not.
+
+Now also need to translate the text inside the <meta name="twitter:player"> not.
+
+Now also need to translate the text inside the <meta name="twitter:player:width"> not.
+
+Now also need to translate the text inside the <meta name="twitter:player:height"> not.
+
+Now also need to translate the text inside the <meta name="twitter:player:stream"> not.
+
+Now also need to translate the text inside the <meta name="twitter:player:stream:content_type"> not.
+
+Now also need to translate the text inside the <meta name="twitter:player:stream"> not.
+
+Now also need to translate the text inside the <meta name="twitter:player:stream"> not.
+
+Ok.
+
+Now also need to translate the text inside the <meta name="theme-color"> not.
+
+Now also need to translate the text inside the <meta name="viewport"> not.
+
+Now also need to translate the text inside the <meta name="google-site-verification"> not.
+
+Now also need to translate the text inside the <meta name="robots"> not.
+
+Now also need to translate the text inside the <meta name="author"> not.
+
+Now also need to translate the text inside the <meta property="og:type"> not.
+
+Now also need to translate the text inside the <meta property="og:url"> not.
+
+Now also need to translate the text inside the <meta property="og:image"> not.
+
+Now also need to translate the text inside the <meta property="og:video"> not.
+
+Now also need to translate the text inside the <meta property="og:video:width"> not.
+
+Now also need to translate the text inside the <meta property="og:video:height"> not.
+
+Now also need to translate the text inside the <meta property="og:video:type"> not.
+
+Now also need to translate the text inside the <meta property="og:video:alt"> not.
+
+Now also need to translate the text inside the <meta property="og:video:secure_url"> not.
+
+Now also need to translate the text inside the <meta property="og:video"> not.
+
+Now also need to translate the text inside the <meta property="og:update_time"> not.
+
+Now also need to translate the

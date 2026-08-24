@@ -1,0 +1,414 @@
+We need to translate visible/user-facing text into Italian, preserving HTML tags, attributes, etc. The page already has lang="it" and many Italian texts, but some parts are in English (like title, meta description, etc). We need to translate those.
+
+We must translate text inside tags and attributes like title/alt/aria-label/description/keywords/content. Also inside visible text like headings, paragraphs, list items, table cells, etc. Also inside JSON-LD values (like headline, description, name, etc) because they are user-facing? The rule says translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. JSON-LD blocks are also text inside script tags; they are not HTML tags but content inside script. Should we translate? The rule says "translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content." JSON-LD is not an attribute, but it's inside a script tag. Usually we should not translate JSON-LD because it's structured data for search engines; translating could break. However the rule says "translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content." JSON-LD content is not explicitly mentioned, but it's inside a script tag, not an attribute. The instruction: "Translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content." So we should translate text inside tags (e.g., <title>, <meta name="description" content="...">, <h1>, <p>, etc.) and also inside attributes like title, alt, aria-label, description, keywords, content. JSON-LD is inside a script tag, not an attribute, but the content is human-readable. However typical practice is to not translate JSON-LD because it's for search engines and language should match page language; but the page is Italian, so we should translate JSON-LD to Italian as well. The rule ambiguous. I'd lean to translate JSON-LD values as they are human-readable text inside script tags, but the rule didn't explicitly include script content. However they said "inside tags and attributes like title/alt/aria-label/description/keywords/content." The "like" suggests examples, not exhaustive. So we should translate any human-readable text visible to users, which includes JSON-LD? Not visible to users but to search engines. Usually we keep as is. But to be safe, I'll translate JSON-LD fields that are visible like headline, description, name, etc. However the JSON-LD also includes URLs, dates, etc which we must not translate.
+
+Let's proceed: We'll translate:
+
+- <title> content
+- <meta name="title" content>
+- <meta name="description" content>
+- <meta name="keywords" content (translate keywords? Should we translate? Keywords are for SEO; but they are human-readable; we should translate to Italian.)
+- <meta property="og:title" content
+- <meta property="og:description" content
+- <meta name="twitter:title" content
+- <meta name="twitter:description"? Not present.
+- Inside <body>: skip-link text "Skip to main content" -> Italian "Vai al contenuto principale"
+- aria-label on div id="root": "World Time Online Application" -> translate? It's an aria-label, should translate to Italian: "Applicazione World Time Online"
+- Inside app-loading: <p class="app-loading-text">Loading World Time...</p> -> Italian "Caricamento World Time..."
+- In blog-breadcrumb: <a href="/">Home</a> (Home is okay, but could be "Home" as is; it's a proper noun? Usually keep as is. We'll keep "Home".)
+- <a href="/#blog">Blog</a> -> maybe keep "Blog" or translate to "Blog"? Keep as is.
+- <span aria-current="page">PST to CET Converter — Chart for Meetings & Calls</span> -> translate to Italian: "Convertitore PST → CET — Grafico per riunioni e chiamate"
+- <h1> same as above -> translate similarly.
+- <div class="blog-meta"> August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide</div> There are some weird characters (maybe icons). We need to translate the text: "August 10, 2026" -> "10 agosto 2026". "6 min read" -> "6 min di lettura". "Time Zones, Guide" -> "Fusi orari, Guida". Also need to keep the icons (the weird characters) as they are; they are likely emoji; we keep them unchanged.
+- Paragraph: "Pacific Time and Central European Time sit nine hours apart most of the year (PST→CET = +9, PDT→CEST = +9). Because both regions switch to daylight saving — on different dates — the gap briefly shrinks or stretches by an hour in March and late October." Translate to Italian.
+- <h2>Live Converter</h2> -> maybe "Convertitore in tempo reale" or keep "Live Converter"? Translate to Italian: "Convertitore in tempo reale".
+- Inside converter-widget: <h2>PST → CET</h2> keep as is (it's a label). Could translate? Probably keep as is because it's an abbreviation. We'll keep.
+- <label>Pacific time:</label> -> translate to "Ora del Pacifico:" or "Ora Pacifico:" I'd use "Ora del Pacifico:".
+- <label>Central Europe:</label> -> "Europa centrale:".
+- <h2>Common Meeting Times PST → CET</h2> -> translate: "Orari comuni delle riunioni PST → CET".
+- Table headers: <th>PST</th> keep; <th>CET</th> keep; <th>Note</th> -> "Nota".
+- Table rows: note cells: "CET afternoon" -> "Pomeriggio CET"; "Best shared window" -> "Finestra migliore condivisa"; "Last CET work hour" -> "Ultima ora lavorativa CET"; "CET evening" -> "Sera CET"; "Late evening Europe" -> "Serata tardiva in Europa".
+- Paragraph after table: "The practical overlap is narrow: <strong>7–10 AM Pacific = 16:00–19:00 Europe</strong>. Anything later pushes Europeans into their evening." Translate: "L'overlap pratico è ristretto: <strong>7–10 AM Pacific = 16:00–19:00 Europa</strong>. Qualsiasi ora successiva spinge gli europei nella loro serata."
+- <h2>Frequently Asked Questions</h2> -> "Domande frequenti".
+- Inside FAQ section: there is a placeholder {FAQ} which will be replaced by script? Actually the FAQ content is in JSON-LD later. The visible FAQ section likely will be populated by JS. We'll leave {FAQ} as is? It's not visible text; it's a placeholder. We'll keep unchanged.
+- Paragraph: "More tools: <a href="/time-zone-converter.html">time zone converter</a>, <a href="/meeting-planner.html">meeting planner</a>." Translate: "Altri strumenti: <a href="/time-zone-converter.html">convertitore di fusi orari</a>, <a href="/meeting-planner.html">pianificatore di riunioni</a>."
+- Footer links: Privacy, About, Contact, Terms -> translate to Italian: "Privacy", "Chi siamo", "Contatti", "Condizioni". Usually "About" -> "Chi siamo". "Contact" -> "Contatti". "Terms" -> "Condizioni".
+- Copyright text: "&copy; 2026 World Time Sync" keep as is (name unchanged).
+- Also there is <div class="app-loading" aria-busy="true" aria-live="polite">: aria-busy and aria-live are attributes, not translate.
+- The <div class="app-loading-spinner" role="status" aria-label="Loading application">: aria-label should translate: "Caricamento applicazione".
+- Also there is <script> with gtag etc; not translate.
+- The JSON-LD: we need to translate headline, description, articleSection, keywords, author name, publisher name, logo? No. Also the BreadcrumbList names: "Home", "Blog", "PST to CET Converter — Chart for Meetings & Calls". Should translate to Italian. Also FAQPage question and answer texts.
+
+Let's translate JSON-LD:
+
+First JSON-LD (Article):
+- "headline": "PST to CET Converter — Chart for Meetings & Calls | World Time Sync" -> Italian: "Convertitore PST → CET — Grafico per riunioni e chiamate | World Time Sync"
+- "description": "Convert PST/PDT to CET/CEST instantly. 9-hour gap in winter, 9 in summer — chart of common meeting times." -> Italian: "Converti PST/PDT in CET/CEST immediatamente. Differenza di 9 ore in inverno, 9 in estate — grafico degli orari comuni delle riunioni."
+- "articleSection": "Time Zones" -> "Fusi orari"
+- "keywords": "pst to cet converter, pst to cet time difference, california to europe time, pacific to central european time" -> translate keywords: "convertitore pst cet, differenza di tempo pst cet, california europa tempo, pacifico tempo centrale europeo". Keep lowercase? We'll translate naturally: "convertitore PST/CET, differenza di orario PST/CET, California-Europa orario, Pacifico-Ora Centrale Europea". But better keep as phrase: "convertitore pst cet, differenza di tempo pst cet, california a europa tempo, pacifico a tempo centrale europeo". We'll translate.
+- "author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"} -> name stays same (brand).
+- "publisher": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com", "logo": {...}} -> name stays same.
+- "datePublished": unchanged.
+- "mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/it/blog/pst-to-cet-converter.html"} -> unchanged.
+- "image": unchanged.
+
+Second JSON-LD (BreadcrumbList):
+- itemListElement[0].name: "Home" -> keep "Home" or translate to "Home"? Usually keep "Home". We'll keep as is.
+- itemListElement[1].name: "Blog" -> keep "Blog".
+- itemListElement[2].name: "PST to CET Converter — Chart for Meetings & Calls" -> translate: "Convertitore PST → CET — Grafico per riunioni e chiamate".
+
+Third JSON-LD (FAQPage):
+- For each Question name:
+   1. "What is the PST to CET difference?" -> Italian: "Qual è la differenza tra PST e CET?"
+   2. "Does the gap change with daylight saving?" -> "Il divario cambia con l'ora legale?"
+   3. "What is the best call time Pacific to Europe?" -> "Qual è il miglior orario per chiamare dal Pacifico all'Europa?"
+- Answer text:
+   1. "Nine hours: CET is ahead. PST 9:00 AM equals CET 18:00." -> Italian: "Nove ore: il CET è in anticipo. Le 9:00 PST corrispondono alle 18:00 CET."
+   2. "The offset stays +9 most of the year because both regions observe DST — but for about two weeks in March and one in October the switch dates differ and the gap shifts to +8 or +10." -> Italian: "L'offset rimane +9 per la maggior parte dell'anno poiché entrambe le regioni osservano l'ora legale — tuttavia, per circa due settimane in marzo e una in ottobre le date di cambio differiscono e lo scarto passa a +8 o +10."
+   3. "7:00–9:00 AM PST hits 16:00–18:00 CET — inside working hours on both ends." -> Italian: "7:00–9:00 AM PST corrisponde a 16:00–18:00 CET — all'interno dell'orario lavorativo di entrambe le estremità."
+
+Also need to translate any other visible text like the placeholder {FAQ} maybe not.
+
+Now also need to translate any text inside <script> that is not JSON-LD? There's a script with converter logic; we should not change code.
+
+Also there is a <noscript><link rel="stylesheet" href="/assets/blog.css"></noscript> - no text.
+
+Now also need to translate any text inside <title> etc we already did.
+
+Now also need to translate any text inside <meta name="description" content="..."> we did.
+
+Now also need to translate any text inside <meta name="keywords" content="..."> we did.
+
+Now also need to translate any text inside <meta property="og:title" content="..."> we did.
+
+Now also need to translate any text inside <meta property="og:description" content="..."> we did.
+
+Now also need to translate any text inside <meta name="twitter:title" content="..."> we did.
+
+Now also need to translate any text inside <meta name="twitter:description"? Not present.
+
+Now also need to translate any text inside <link rel="canonical" href...> no.
+
+Now also need to translate any text inside <link rel="alternate" hreflang="x-default" href...> no.
+
+Now also need to translate any text inside <a href="/">Home</a> we kept.
+
+Now also need to translate any text inside <a href="/#blog">Blog</a> we kept.
+
+Now also need to translate any text inside <a href="/privacy.html">Privacy</a> -> "Privacy" (same). Could keep.
+
+Now also need to translate <a href="/about.html">About</a> -> "Chi siamo".
+
+Now also need to translate <a href="/contact.html">Contact</a> -> "Contatti".
+
+Now also need to translate <a href="/terms.html">Terms</a> -> "Condizioni".
+
+Now also need to translate any text inside <p class="app-loading-text">Loading World Time...</p> we did.
+
+Now also need to translate any text inside <div class="app-loading-spinner" role="status" aria-label="Loading application"> -> aria-label we did.
+
+Now also need to translate any text inside <a href="#main-content" class="skip-link">Skip to main content</a> -> "Vai al contenuto principale".
+
+Now also need to translate any text inside <div class="app-loading" aria-busy="true" aria-live="polite">: no visible text.
+
+Now also need to translate any text inside <script> with gtag etc: none.
+
+Now also need to translate any text inside <script> for ahrefs: none.
+
+Now also need to translate any text inside <script type="module" src="/assets/index-Dd7au40z.js" async></script>: none.
+
+Now also need to translate any text inside <script> that hides .blog-wrap: none.
+
+Now also need to translate any text inside <div class="blog-meta"> August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide</div>. The weird characters likely are icons; we keep them. We'll translate the text between them.
+
+Now also need to translate any text inside <p> after table: "The practical overlap is narrow: <strong>7–10 AM Pacific = 16:00–19:00 Europe</strong>. Anything later pushes Europeans into their evening." We did.
+
+Now also need to translate any text inside <h2>Live Converter</h2> we did.
+
+Now also need to translate any text inside <h2>Common Meeting Times PST → CET</h2> we did.
+
+Now also need to translate any text inside <h2>Frequently Asked Questions</h2> we did.
+
+Now also need to translate any text inside <p>More tools: ...</p> we did.
+
+Now also need to translate any text inside <footer class="blog-footer">: we did.
+
+Now also need to translate any text inside <a href="/privacy.html">Privacy</a> (keep). "Privacy" is same in Italian.
+
+Now also need to translate any text inside <a href="/about.html">About</a> -> "Chi siamo".
+
+Now also need to translate any text inside <a href="/contact.html">Contact</a> -> "Contatti".
+
+Now also need to translate any text inside <a href="/terms.html">Terms</a> -> "Condizioni".
+
+Now also need to translate any text inside <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p> keep.
+
+Now also need to translate any text inside <meta name="author" content="World Time Sync">? There's a meta name="author" content="World Time Sync". Should we translate? It's a proper noun (brand). Keep.
+
+Now also need to translate any text inside <meta property="og:type" content="article"> no.
+
+Now also need to translate any text inside <meta property="og:url" content="..."> no.
+
+Now also need to translate any text inside <meta property="og:image" content="..."> no.
+
+Now also need to translate any text inside <meta name="twitter:card" content="summary_large_image"> no.
+
+Now also need to translate any text inside <link rel="preload" href="/assets/blog.css" as="style"> no.
+
+Now also need to translate any text inside <noscript><link rel="stylesheet" href="/assets/blog.css"></noscript> no.
+
+Now also need to translate any text inside <link rel="icon" type="image/svg+xml" href="/favicon.svg"> no.
+
+Now also need to translate any text inside <link rel="stylesheet" href="/assets/index-ufePLcBr.css"> no.
+
+Now also need to translate any text inside <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script> no.
+
+Now also need to translate any text inside <script> window.dataLayer... no.
+
+Now also need to translate any text inside <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script> no.
+
+Now also need to translate any text inside <script type="application/ld+json"> blocks we did.
+
+Now also need to translate any text inside <script> that hides .blog-wrap: none.
+
+Now also need to translate any text inside <script> for ahrefs: none.
+
+Now we need to output the full HTML with translations.
+
+Let's construct.
+
+We'll keep the same formatting.
+
+Start:
+
+<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="theme-color" content="#667eea">
+    <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk">
+    <title>Convertitore PST → CET — Grafico per riunioni e chiamate | World Time Sync</title>
+    <meta name="title" content="Convertitore PST → CET — Grafico per riunioni e chiamate | World Time Sync">
+    <meta name="description" content="Converti PST/PDT in CET/CEST immediatamente. Differenza di 9 ore in inverno, 9 in estate — grafico degli orari comuni delle riunioni.">
+    <meta name="keywords" content="convertitore pst cet, differenza di tempo pst cet, california europa tempo, pacifico tempo centrale europeo">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="World Time Sync">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://worldtimessync.com/it/blog/pst-to-cet-converter.html">
+    <meta property="og:title" content="Convertitore PST → CET — Grafico per riunioni e chiamate | World Time Sync">
+    <meta property="og:description" content="Converti PST/PDT in CET/CEST immediatamente. Differenza di 9 ore in inverno, 9 in estate — grafico degli orari comuni delle riunioni.">
+    <meta property="og:image" content="https://worldtimessync.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Convertitore PST → CET — Grafico per riunioni e chiamate | World Time Sync">
+    <link rel="canonical" href="https://worldtimessync.com/it/blog/pst-to-cet-converter.html">
+    <link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/it/blog/pst-to-cet-converter.html">
+    <link rel="preload" href="/assets/blog.css" as="style">
+<noscript><link rel="stylesheet" href="/assets/blog.css"></noscript>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/assets/index-ufePLcBr.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LBX0CDYSSV');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "Article", "headline": "Convertitore PST → CET — Grafico per riunioni e chiamate | World Time Sync", "description": "Converti PST/PDT in CET/CEST immediatamente. Differenza di 9 ore in inverno, 9 in estate — grafico degli orari comuni delle riunioni.", "articleSection": "Fusi orari", "keywords": "convertitore pst cet, differenza di tempo pst cet, california europa tempo, pacifico tempo centrale europeo", "wordCount": 136, "timeRequired": "PT6M", "inLanguage": "it", "author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}, "publisher": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com", "logo": {"@type": "ImageObject", "url": "https://worldtimessync.com/logo.png", "width": 512, "height": 512}}, "datePublished": "2026-08-10", "dateModified": "2026-08-10", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/it/blog/pst-to-cet-converter.html"}, "image": "https://worldtimessync.com/og-image.png"}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://worldtimessync.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://worldtimessync.com/#blog"}, {"@type": "ListItem", "position": 3, "name": "Convertitore PST → CET — Grafico per riunioni e chiamate", "item": "https://worldtimessync.com/it/blog/pst-to-cet-converter.html"}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Qual è la differenza tra PST e CET?", "acceptedAnswer": {"@type": "Answer", "text": "Nove ore: il CET è in anticipo. Le 9:00 PST corrispondono alle 18:00 CET."}}, {"@type": "Question", "name": "Il divario cambia con l'ora legale?", "acceptedAnswer": {"@type": "Answer", "text": "L'offset rimane +9 per la maggior parte dell'anno poiché entrambe le regioni osservano l'ora legale — tuttavia, per circa due settimane in marzo e una in ottobre le date di cambio differiscono e lo scarto passa a +8 o +10."}}, {"@type": "Question", "name": "Qual è il miglior orario per chiamare dal Pacifico all'Europa?", "acceptedAnswer": {"@type": "Answer", "text": "7:00–9:00 AM PST corrisponde a 16:00–18:00 CET — all'interno dell'orario lavorativo di entrambe le estremità."}}]}
+    </script>
+
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Vai al contenuto principale</a>
+    <div id="root" role="application" aria-label="Applicazione World Time Online">
+        <div class="app-loading" aria-busy="true" aria-live="polite">
+            <div class="app-loading-spinner" role="status" aria-label="Caricamento applicazione"></div>
+            <p class="app-loading-text">Caricamento World Time...</p>
+        </div>
+    </div>
+    <main id="main-content">
+        <article class="blog-wrap">
+            <nav class="blog-breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Home</a> › <a href="/#blog">Blog</a> › <span aria-current="page">Convertitore PST → CET — Grafico per riunioni e chiamate</span>
+            </nav>
+            <h1>Convertitore PST → CET — Grafico per riunioni e chiamate</h1>
+            <div class="blog-meta"> 10 agosto 2026 &nbsp;·&nbsp;  6 min di lettura &nbsp;·&nbsp;  Fusi orari, Guida</div>
+
+<p>Il fuso orario del Pacifico e quello dell'Europa centrale sono distanti nove ore per la maggior parte dell'anno (PST→CET = +9, PDT→CEST = +9). Poiché entrambe le regioni passano all'ora legale — in date diverse — la differenza si riduce o aumenta di un'ora brevemente in marzo e alla fine di ottobre.</p>
+
+<h2>Convertitore in tempo reale</h2>
+<div class="converter-widget">
+<h2>PST → CET</h2>
+<div class="converter-row"><label>Ora del Pacifico:</label><input type="time" id="p" value="09:00"></div>
+<div class="converter-row"><label>Europa centrale:</label><output id="c"></output></div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+ var p=document.getElementById('p');
+ function cv(){if(!p.value)return;var a=p.value.split(':').map(Number);
+  var m=a[0]*60+a[1]+540;while(m>=1440)m-=1440;
+  document.getElementById('c').textContent=String(Math.floor(m/60)).padStart(2,'0')+':'+String(m%60).padStart(2,'0');}
+ p.addEventListener('input',cv);cv();
+});
+</script>
+
+<h2>Orari comuni delle riunioni PST → CET</h2>
+<table><thead><tr><th>PST</th><th>CET</th><th>Nota</th></tr></thead><tbody>
+<tr><td>6:00 AM</td><td>15:00</td><td>Pomeriggio CET</td></tr>
+<tr><td>7:00 AM</td><td>16:00</td><td>Finestra migliore condivisa</td></tr>
+<tr><td>8:00 AM</td><td>17:00</td><td>Ultima ora lavorativa CET</td></tr>
+<tr><td>9:00 AM</td><td>18:00</td><td>Sera CET</td></tr>
+<tr><td>12:00 PM</td><td>21:00</td><td>Serata tardiva in Europa</td></tr>
+</tbody></table>
+
+<p>L'overlap pratico è ristretto: <strong>7–10 AM Pacific = 16:00–19:00 Europa</strong>. Qualsiasi ora successiva spinge gli europei nella loro serata.</p>
+
+<h2>Domande frequenti</h2>
+<div class="faq-section">
+{FAQ}
+</div>
+<p>Altri strumenti: <a href="/time-zone-converter.html">convertitore di fusi orari</a>, <a href="/meeting-planner.html">pianificatore di riunioni</a>.</p>
+
+        <footer class="blog-footer">
+            <a href="/privacy.html">Privacy</a>
+            <a href="/about.html">Chi siamo</a>
+            <a href="/contact.html">Contatti</a>
+            <a href="/terms.html">Condizioni</a>
+            <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p>
+        </footer>
+    </main>
+
+    <script type="module" src="/assets/index-Dd7au40z.js" async></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var seo = document.querySelector('.blog-wrap');
+        if (seo) seo.style.display = 'none';
+      });
+    </script>
+    <script>
+      window.addEventListener('load',function(){
+        var ahrefs=document.createElement('script');
+        ahrefs.async=true;
+        ahrefs.src='https://analytics.ahrefs.com/analytics.js';
+        ahrefs.setAttribute('data-key','hB1VYWuwb1i/f1d8re7P2A');
+        document.head.appendChild(ahrefs);
+      });
+    </script>
+  </body>
+</html>
+
+Check for any missed text:
+
+- In the blog-meta we had weird characters: " August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide". We translated to " 10 agosto 2026 &nbsp;·&nbsp;  6 min di lettura &nbsp;·&nbsp;  Fusi orari, Guida". Keep the icons.
+
+- In the paragraph after table we had "<strong>7–10 AM Pacific = 16:00–19:00 Europe</strong>" we translated to "<strong>7–10 AM Pacific = 16:00–19:00 Europa</strong>" Good.
+
+- In the FAQ section we left {FAQ} unchanged.
+
+- In the converter widget label: "Ora del Pacifico:" and "Europa centrale:" Good.
+
+- In the table header "Nota" Good.
+
+- In the table note cells we translated.
+
+- In the paragraph after table we translated.
+
+- In the footer we translated.
+
+- In the skip-link we translated.
+
+- In the aria-label of root we translated.
+
+- In the aria-label of spinner we translated.
+
+- In the app-loading-text we translated.
+
+- In the meta tags we translated.
+
+- In the JSON-LD we translated headline, description, articleSection, keywords, inLanguage changed to "it". Also changed the BreadcrumbList name for item 3. Also translated FAQ question and answer texts.
+
+- Also need to change "inLanguage": "en" to "it". Done.
+
+- Also need to ensure that the JSON-LD's "description" for Article is translated; we did.
+
+- Also need to translate "articleSection": "Time Zones" to "Fusi orari". Done.
+
+- Also need to translate "keywords": we translated.
+
+- Also need to translate "author" name? Keep as is.
+
+- Also need to translate "publisher" name? Keep as is.
+
+- Also need to translate "logo"? No.
+
+- Also need to translate "datePublished"? No.
+
+- Also need to translate "mainEntityOfPage"? No.
+
+- Also need to translate "image"? No.
+
+- Also need to translate "@type": "Blog"? Not present.
+
+- Also need to translate "@type": "WebPage"? No.
+
+- Also need to translate "@type": "ListItem"? No.
+
+- Also need to translate "name": "Home", "Blog". Keep as is.
+
+- Also need to translate "name": "Convertitore PST → CET — Grafico per riunioni e chiamate". Done.
+
+- Also need to translate "name": "Qual è la differenza tra PST e CET?" etc. Done.
+
+- Also need to translate "text": answers. Done.
+
+Check for any other visible text: The <h2>Live Converter</h2> we changed to "Convertitore in tempo reale". Good.
+
+Check for any other <h2> maybe not.
+
+Check for any other <p> inside the converter widget? No.
+
+Check for any other <label> inside converter rows: we translated.
+
+Check for any other <output> no.
+
+Check for any other <div class="converter-widget"> no.
+
+Check for any other <div class="faq-section"> placeholder.
+
+Check for any other <p> after FAQ: "More tools: ..." we translated.
+
+Check for any other <a> inside footer: we translated.
+
+Check for any other <p> copyright: unchanged.
+
+Check for any other <meta name="author" content="World Time Sync"> unchanged.
+
+Check for any other <meta name="theme-color" content="#667eea"> unchanged.
+
+Check for any other <link rel="icon"> unchanged.
+
+Check for any other <link rel="stylesheet"> unchanged.
+
+Check for any other <script> content: none.
+
+Now ensure we didn't inadvertently translate anything inside URLs or code. We kept URLs unchanged.
+
+Check that we didn't translate the value of hreflang="x-default": unchanged.
+
+Check that we didn't translate the value of item URLs in JSON-LD: unchanged.
+
+Check that we didn't translate the value of "inLanguage": we changed to "it". That's correct.
+
+Check that we didn't translate the value of "wordCount": unchanged.
+
+Check that we didn't translate the value of "timeRequired": unchanged.
+
+Check

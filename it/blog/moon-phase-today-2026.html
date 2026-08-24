@@ -1,0 +1,473 @@
+We need to translate visible/user-facing text into Italian, preserving HTML tags, attributes, etc. The page currently has lang="it" already, but many texts are in English. We need to translate them.
+
+We must translate text inside tags and attributes like title, alt, aria-label, description, keywords, content. Also visible text in body.
+
+We must not translate URLs, proper nouns (city/feature names) unless natural localized form exists. Also not translate UTC offsets, IANA timezone IDs, code.
+
+We need to output full HTML with translations.
+
+Let's go through the HTML.
+
+First, <!doctype html> unchanged.
+
+<html lang="it"> stays.
+
+<head>:
+
+<meta charset="UTF-8"> unchanged.
+
+<meta name="viewport"... unchanged.
+
+<meta name="theme-color"... unchanged.
+
+<meta name="google-site-verification"... unchanged.
+
+<title>Moon Phase Today — Current Moon Phase & 2026 Calendar | World Time Sync</title> -> translate? Title is user-facing; should translate to Italian. Keep brand name "World Time Sync" maybe unchanged? It's a proper noun (organization). Should we translate? Usually keep brand as is. So translate rest: "Fase della Luna Oggi — Fase Corrente della Luna & Calendario 2026 | World Time Sync". Use appropriate punctuation. The dash — maybe keep. Use Italian.
+
+Similarly <meta name="title" content="..."> same translation.
+
+<meta name="description" content="See today's moon phase, illumination percentage and the full 2026 lunar calendar with all full moon dates."> translate: "Vedi la fase della luna di oggi, la percentuale di illuminazione e il calendario lunare completo del 2026 con tutte le date della luna piena."
+
+<meta name="keywords" content="moon phase today, current moon phase, moon phases 2026, full moon calendar 2026, next full moon date 2026"> translate keywords? They are for SEO; but rule says translate only human-readable text inside attributes like keywords/content. So we should translate the content. Provide Italian keywords: "fase della luna oggi, fase corrente della luna, fasi della luna 2026, calendario della luna piena 2026, prossima data della luna piena 2026". Keep commas.
+
+<meta name="robots" content="index, follow"> unchanged (not translate).
+
+<meta name="author" content="World Time Sync"> keep as is (organization).
+
+<meta property="og:type" content="article"> unchanged.
+
+<meta property="og:url" content="https://worldtimessync.com/it/blog/moon-phase-today-2026.html"> unchanged (URL).
+
+<meta property="og:title" content="Moon Phase Today — Current Moon Phase & 2026 Calendar | World Time Sync"> translate similarly.
+
+<meta property="og:description" content="See today's moon phase, illumination percentage and the full 2026 lunar calendar with all full moon dates."> translate.
+
+<meta property="og:image" content="https://worldtimessync.com/og-image.png"> unchanged.
+
+<meta name="twitter:card" content="summary_large_image"> unchanged.
+
+<meta name="twitter:title" content="Moon Phase Today — Current Moon Phase & 2026 Calendar | World Time Sync"> translate.
+
+<link rel="canonical" href="..."> unchanged.
+
+<link rel="alternate" hreflang="x-default" href="..."> unchanged.
+
+<link rel="preload" href="/assets/blog.css" as="style"> unchanged.
+
+<noscript>... unchanged.
+
+<link rel="icon"... unchanged.
+
+<link rel="stylesheet"... unchanged.
+
+<script async src="...gtag..."></script> unchanged.
+
+<script>... gtag... unchanged.
+
+<script async src="...adsbygoogle..."></script> unchanged.
+
+<script type="application/ld+json"> JSON-LD blocks: we must keep them exactly as-is? The rule says keep ALL HTML tags, attributes, href/lang values, JSON-LD blocks, and CSS exactly as-is. So we must NOT translate JSON-LD content. So leave those blocks unchanged, even though they contain English text. So we must not modify the JSON-LD.
+
+Thus we keep the two JSON-LD blocks unchanged.
+
+Now body:
+
+<a href="#main-content" class="skip-link">Skip to main content</a> -> translate: "Vai al contenuto principale".
+
+<div id="root" role="application" aria-label="World Time Online Application"> -> aria-label is attribute; translate? It's human-readable text inside attribute. Should translate to Italian: "Applicazione World Time Online". Keep role etc.
+
+Inside that div: <div class="app-loading" aria-busy="true" aria-live="polite"> unchanged attributes.
+
+<div class="app-loading-spinner" role="status" aria-label="Loading application"> -> translate aria-label: "Caricamento applicazione".
+
+<p class="app-loading-text">Loading World Time...</p> -> translate: "Caricamento World Time...".
+
+Now <main id="main-content">.
+
+<article class="blog-wrap">.
+
+<nav class="blog-breadcrumb" aria-label="Breadcrumb"> -> translate aria-label: "Breadcrumb" maybe "Breadcrumb" is a UI term; could translate to "Briciole di pane". Usually "Breadcrumb" translated as "Briciole di pane". We'll translate: "Briciole di pane".
+
+Inside nav: <a href="/">Home</a> -> "Home" is a proper noun? Usually keep as "Home" maybe translate to "Home"? In Italian sites often keep "Home". But it's user-facing text; we could translate to "Home" or "Home". I'd keep as "Home" because it's a common UI term; but rule says translate only human-readable text; "Home" is human-readable. Could translate to "Home" (same) or "Home". I'd translate to "Home" (maybe "Home" is okay). However many Italian sites keep "Home". I'd translate to "Home" (no change). But to be safe, translate to "Home"? Actually Italian word for home is "Home" as loanword; but we could use "Home". I'd keep as "Home". Next: <a href="/#blog">Blog</a> -> translate to "Blog" (maybe keep). Could translate to "Blog". I'd keep as "Blog". Next: <span aria-current="page">Moon Phase Today — Current Moon Phase & 2026 Calendar</span> -> translate the text inside span: "Fase della Luna Oggi — Fase Corrente della Luna & Calendario 2026". Keep the & maybe as "&". Could also use "e". But original uses &; we keep as is.
+
+Now <h1>Moon Phase Today — Current Moon Phase & 2026 Calendar</h1> -> translate similarly.
+
+<div class="blog-meta"> August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide</div>
+
+We see some weird characters () maybe placeholder for icons? They are not text; they are likely emojis or icons encoded incorrectly. We should keep them as-is. The text: "August 10, 2026" -> translate to Italian date format: "10 agosto 2026". Keep the same formatting? Usually Italian: "10 agosto 2026". We'll keep the surrounding symbols.
+
+"6 min read" -> translate to "6 min di lettura" or "6 minuti di lettura". Usually "6 min read" -> "6 min di lettura". We'll translate.
+
+"Time Zones, Guide" -> translate to "Fusi orari, Guida". Keep comma.
+
+Thus the div becomes:  10 agosto 2026 &nbsp;·&nbsp;  6 min di lettura &nbsp;·&nbsp;  Fusi orari, Guida
+
+Now <p>The Moon goes through eight phases in a repeating cycle that lasts about 29.5 days. Below is a live look at where the cycle stands right now, plus every full moon date for 2026.</p> translate.
+
+Translate: "La Luna attraversa otto fasi in un ciclo ripetuto che dura circa 29,5 giorni. Qui sotto è disponibile un'anteprima in tempo reale della posizione attuale nel ciclo, oltre a tutte le date della luna piena del 2026."
+
+Make sure to keep punctuation.
+
+<h2>Today's Moon Phase (Live)</h2> -> translate: "Fase della Luna di oggi (in tempo reale)". Could be "Fase della Luna di oggi (Live)". We'll translate: "Fase della Luna di oggi (in tempo reale)".
+
+<div class="converter-widget">
+<h2>Current Moon Phase</h2> -> translate: "Fase Corrente della Luna".
+
+<p id="mp-name" style="font-size:1.4em;font-weight:700;">Calculating…</p> -> translate: "Calcolo in corso…" maybe "Calcolo…". Keep the ellipsis.
+
+<p>Illumination: <span id="mp-illum">…</span>% · Moon age: <span id="mp-age">…</span> days</p> -> translate: "Illuminazione: <span id="mp-illum">…</span>% · Età della Luna: <span id="mp-age">…</span> giorni". Use Italian.
+
+Now the script inside is code; we must keep it exactly as-is (do not translate). So leave script unchanged.
+
+<h2>Full Moon Calendar 2026</h2> -> translate: "Calendario della Luna Piena 2026".
+
+<table> ... we need to translate the header cells and the content inside cells that are human-readable: Month, Full Moon Date (UTC), Traditional Name. Also month names (January etc) are proper nouns? Month names are not proper nouns; they are common nouns; we should translate them to Italian. However rule says: Do NOT translate URLs, city/feature names that are proper nouns unless a natural localized form exists, UTC offsets, IANA timezone IDs, or code. Month names are not city/feature names; they are common nouns; we should translate. So "January" -> "Gennaio". "February" -> "Febbraio". etc.
+
+Full Moon Date (UTC) -> translate to "Data della Luna Piena (UTC)". Keep UTC as is.
+
+Traditional Name -> translate to "Nome tradizionale".
+
+Inside cells: month names translate. Dates like "Jan 3" -> we should translate month abbreviation to Italian? "Jan" abbreviation is English; we could translate to "Gen 3". Usually Italian uses "Gen". So translate month abbreviations accordingly. Also "Feb 1" -> "Feb 1"? Italian abbreviation "Feb" same; but we could keep "Feb". It's same. "Mar" -> "Mar". "Apr" -> "Apr". "May" -> "Mag". "Jun" -> "Giu". "Jul" -> "Lug". "Aug" -> "Ago". "Sep" -> "Set". "Oct" -> "Ott". "Nov" -> "Nov". "Dec" -> "Dic". Also keep day number.
+
+Also note there is an entity &amp; in "May 1 &amp; May 31". We need to keep the &amp; as is; but translate surrounding text: "May 1 & May 31" -> "Mag 1 & Mag 31". Keep &amp;.
+
+Traditional Name column values: "Wolf Moon", "Snow Moon", etc. These are proper names? They are traditional names for full moons; could be considered proper nouns; but we could translate? The rule says do NOT translate city/feature names that are proper nouns unless a natural localized form exists. These are not city/feature names; they are traditional names; maybe we should keep them as is? However they are English names; there may be Italian equivalents? Usually they are kept in English. I'd keep them unchanged to be safe. But we could translate: "Luna del Lupo", etc. However not sure if natural localized form exists. I'd keep them as is.
+
+Now <h2>How the Cycle Works</h2> -> translate: "Come funziona il ciclo".
+
+Paragraph after: "A synodic month runs 29 days, 12 hours and 44 minutes. Half the cycle the Moon waxes (grows from new to full), half it wanes. Because the calendar month averages 30.4 days, some months fit two full moons — the second one is called a blue moon. May 2026 is one of those months."
+
+Translate: "Un mese sinodico dura 29 giorni, 12 ore e 44 minuti. Metà del ciclo la Luna cresce (da nuova a piena), l'altra metà cala. Poiché il mese medio del calendario è di 30,4 giorni, alcuni mesi possono contenere due lune piene — la seconda è chiamata luna blu. Maggio 2026 è uno di quei mesi."
+
+Note: "blue moon" -> "luna blu". Keep lowercase? We'll translate.
+
+Now <h2>Frequently Asked Questions</h2> -> translate: "Domande frequenti".
+
+<div class="faq-section">
+{FAQ}
+</div> The {FAQ} placeholder likely is replaced by script; we keep as-is.
+
+Now <p>Check local times on our <a href="/">world clock</a> or plan outdoor shoots with <a href="/sunrise-sunset.html">sunrise &amp; sunset times</a>.</p> translate: "Controlla l'ora locale sul nostro <a href="/">orologio mondiale</a> oppure pianifica le riprese all'aperto con gli <a href="/sunset-sunrise.html">orari di alba e tramonto</a>." Note we need to keep href values unchanged. The link text translate.
+
+Now footer:
+
+<footer class="blog-footer">
+    <a href="/privacy.html">Privacy</a>
+    <a href="/about.html">About</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/terms.html">Terms</a>
+    <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p>
+</footer>
+
+Translate link texts: Privacy -> "Privacy" (same). About -> "Chi siamo" or "About". Usually "About" translated to "Chi siamo". Contact -> "Contatti". Terms -> "Termini". Keep the copyright line: "&copy; 2026 World Time Sync" keep organization name unchanged.
+
+Now also need to translate any aria-label attributes we missed: we already did for root, app-loading-spinner, nav breadcrumb.
+
+Also there is aria-label on the skip link? No.
+
+Also there is aria-label on the app-loading div? No.
+
+Also there is aria-label on the app-loading-spinner we did.
+
+Also there is aria-label on the root we did.
+
+Also there is aria-label on the blog-breadcrumb we did.
+
+Also there is aria-label on the skip link? No.
+
+Also there is aria-label on the app-loading? No.
+
+Also there is aria-label on the converter-widget? No.
+
+Also there is aria-label on the FAQ? No.
+
+Also there is aria-label on the blog-meta? No.
+
+Also there is aria-label on the table? No.
+
+Also there is aria-label on the footer? No.
+
+Also there is aria-label on the article? No.
+
+Now also need to translate any placeholder text inside script? No, we keep script unchanged.
+
+Now also need to translate any text inside the <noscript> tag? It contains <link rel="stylesheet" href="/assets/blog.css"> no text.
+
+Now also need to translate any text inside the <script> tags? No.
+
+Now also need to translate any text inside the JSON-LD? No, keep as-is.
+
+Now also need to translate any text inside the <style>? none.
+
+Now also need to translate any text inside the <title> etc we did.
+
+Now also need to translate any text inside the <meta name="description" etc we did.
+
+Now also need to translate any text inside the <meta name="keywords" etc we did.
+
+Now also need to translate any text inside the <meta property="og:title" etc we did.
+
+Now also need to translate any text inside the <meta property="og:description" etc we did.
+
+Now also need to translate any text inside the <meta name="twitter:title" etc we did.
+
+Now also need to translate any text inside the <link rel="canonical" etc none.
+
+Now also need to translate any text inside the <link rel="alternate" etc none.
+
+Now also need to translate any text inside the <link rel="preload" etc none.
+
+Now also need to translate any text inside the <link rel="icon" etc none.
+
+Now also need to translate any text inside the <link rel="stylesheet" etc none.
+
+Now also need to translate any text inside the <script async src="..."> none.
+
+Now also need to translate any text inside the <script> gtag etc none.
+
+Now also need to translate any text inside the <script async src="...adsbygoogle"> none.
+
+Now also need to translate any text inside the <script type="module" src="/assets/index-Dd7au40z.js" async></script> none.
+
+Now also need to translate any text inside the <script> after that (the one that hides .blog-wrap) none.
+
+Now also need to translate any text inside the <script> for ahrefs none.
+
+Now also need to translate any text inside the <noscript> etc none.
+
+Now also need to translate any text inside the <a href="#main-content" class="skip-link"> we did.
+
+Now also need to translate any text inside the <div class="app-loading-text"> we did.
+
+Now also need to translate any text inside the <p class="app-loading-text"> we did.
+
+Now also need to translate any text inside the <div class="blog-meta"> we did.
+
+Now also need to translate any text inside the <p> after blog-meta we did.
+
+Now also need to translate any text inside the <h2>Today's Moon Phase (Live)</h2> we did.
+
+Now also need to translate any text inside the <div class="converter-widget"> <h2>Current Moon Phase</h2> we did.
+
+Now also need to translate any text inside the <p id="mp-name"> we did.
+
+Now also need to translate any text inside the <p>Illumination: ... we did.
+
+Now also need to translate any text inside the <h2>Full Moon Calendar 2026</h2> we did.
+
+Now also need to translate any text inside the <thead> <th>Month</th> etc we did.
+
+Now also need to translate any text inside the <tbody> cells month names we did.
+
+Now also need to translate any text inside the <td> for Full Moon Date (UTC) we kept UTC but we translated the label; cell content we translated month abbreviations.
+
+Now also need to translate any text inside the <td> for Traditional Name we kept as is.
+
+Now also need to translate any text inside the <h2>How the Cycle Works</h2> we did.
+
+Now also need to translate any text inside the <p> after that we did.
+
+Now also need to translate any text inside the <h2>Frequently Asked Questions</h2> we did.
+
+Now also need to translate any text inside the <div class="faq-section"> {FAQ} we keep.
+
+Now also need to translate any text inside the <p>Check local times on our ... we did.
+
+Now also need to translate any text inside the <footer> links we did.
+
+Now also need to translate any text inside the <p style="...">&copy; 2026 World Time Sync</p> we kept.
+
+Now also need to ensure we didn't miss any text inside attributes like placeholder? none.
+
+Now also need to ensure we didn't translate any code inside script; we kept them unchanged.
+
+Now also need to ensure we didn't translate any URLs inside href or src; we kept them unchanged.
+
+Now also need to ensure we didn't translate any UTC offsets etc; none.
+
+Now also need to ensure we didn't translate any IANA timezone IDs; none.
+
+Now also need to ensure we didn't translate any city/feature names that are proper nouns; we didn't have any.
+
+Now also need to ensure we didn't translate any JSON-LD blocks; we kept them unchanged.
+
+Now also need to ensure we didn't translate any CSS; none.
+
+Now we need to output the full HTML with translations.
+
+Let's construct the final HTML.
+
+We'll go through line by line.
+
+Start:
+
+<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="theme-color" content="#667eea">
+    <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk">
+    <title>Fase della Luna Oggi — Fase Corrente della Luna & Calendario 2026 | World Time Sync</title>
+    <meta name="title" content="Fase della Luna Oggi — Fase Corrente della Luna & Calendario 2026 | World Time Sync">
+    <meta name="description" content="Vedi la fase della luna di oggi, la percentuale di illuminazione e il calendario lunare completo del 2026 con tutte le date della luna piena.">
+    <meta name="keywords" content="fase della luna oggi, fase corrente della luna, fasi della luna 2026, calendario della luna piena 2026, prossima data della luna piena 2026">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="World Time Sync">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://worldtimessync.com/it/blog/moon-phase-today-2026.html">
+    <meta property="og:title" content="Fase della Luna Oggi — Fase Corrente della Luna & Calendario 2026 | World Time Sync">
+    <meta property="og:description" content="Vedi la fase della luna di oggi, la percentuale di illuminazione e il calendario lunare completo del 2026 con tutte le date della luna piena.">
+    <meta property="og:image" content="https://worldtimessync.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fase della Luna Oggi — Fase Corrente della Luna & Calendario 2026 | World Time Sync">
+    <link rel="canonical" href="https://worldtimessync.com/it/blog/moon-phase-today-2026.html">
+    <link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/it/blog/moon-phase-today-2026.html">
+    <link rel="preload" href="/assets/blog.css" as="style">
+<noscript><link rel="stylesheet" href="/assets/blog.css"></noscript>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/assets/index-ufePLcBr.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LBX0CDYSSV');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "Article", "headline": "Moon Phase Today — Current Moon Phase & 2026 Calendar | World Time Sync", "description": "See today's moon phase, illumination percentage and the full 2026 lunar calendar with all full moon dates.", "articleSection": "Time Zones", "keywords": "moon phase today, current moon phase, moon phases 2026, full moon calendar 2026, next full moon date 2026", "wordCount": 225, "timeRequired": "PT6M", "inLanguage": "en", "author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}, "publisher": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com", "logo": {"@type": "ImageObject", "url": "https://worldtimessync.com/logo.png", "width": 512, "height": 512}}, "datePublished": "2026-08-10", "dateModified": "2026-08-10", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/it/blog/moon-phase-today-2026.html"}, "image": "https://worldtimessync.com/og-image.png"}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://worldtimessync.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://worldtimessync.com/#blog"}, {"@type": "ListItem", "position": 3, "name": "Moon Phase Today — Current Moon Phase & 2026 Calendar", "item": "https://worldtimessync.com/it/blog/moon-phase-today-2026.html"}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the moon phase right now?", "acceptedAnswer": {"@type": "Answer", "text": "The live calculator above computes the current phase and illumination from the mean synodic cycle — accurate to within a few hours."}}, {"@type": "Question", "name": "When is the next full moon in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "See the table above; each date is listed by month. Dates are given in UTC."}}, {"@type": "Question", "name": "Why do months have different numbers of full moons?", "acceptedAnswer": {"@type": "Answer", "text": "The lunar cycle (29.53 days) is shorter than most calendar months, so occasionally two full moons land in one month — the second is a blue moon."}}]}
+    </script>
+
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Vai al contenuto principale</a>
+    <div id="root" role="application" aria-label="Applicazione World Time Online">
+        <div class="app-loading" aria-busy="true" aria-live="polite">
+            <div class="app-loading-spinner" role="status" aria-label="Caricamento applicazione"></div>
+            <p class="app-loading-text">Caricamento World Time...</p>
+        </div>
+    </div>
+    <main id="main-content">
+        <article class="blog-wrap">
+            <nav class="blog-breadcrumb" aria-label="Briciole di pane">
+                <a href="/">Home</a> › <a href="/#blog">Blog</a> › <span aria-current="page">Fase della Luna Oggi — Fase Corrente della Luna & Calendario 2026</span>
+            </nav>
+            <h1>Fase della Luna Oggi — Fase Corrente della Luna & Calendario 2026</h1>
+            <div class="blog-meta"> 10 agosto 2026 &nbsp;·&nbsp;  6 min di lettura &nbsp;·&nbsp;  Fusi orari, Guida</div>
+
+<p>La Luna attraversa otto fasi in un ciclo ripetuto che dura circa 29,5 giorni. Qui sotto è disponibile un'anteprima in tempo reale della posizione attuale nel ciclo, oltre a tutte le date della luna piena del 2026.</p>
+
+<h2>Fase della Luna di oggi (in tempo reale)</h2>
+<div class="converter-widget">
+<h2>Fase Corrente della Luna</h2>
+<p id="mp-name" style="font-size:1.4em;font-weight:700;">Calcolo in corso…</p>
+<p>Illuminazione: <span id="mp-illum">…</span>% · Età della Luna: <span id="mp-age">…</span> giorni</p>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+ var synodic=29.530588853;
+ var known=new Date(Date.UTC(2000,0,6,18,14)); // known new moon Jan 6 2000
+ var now=new Date();
+ var age=((now-known)/86400000)%synodic;
+ if(age<0)age+=synodic;
+ var illum=Math.round((1-Math.cos(2*Math.PI*age/synodic))*100);
+ var names=[[1.85,"New Moon"],[5.54,"Waxing Crescent"],[9.23,"First Quarter"],[12.92,"Waxing Gibbous"],[16.61,"Full Moon"],[20.30,"Waning Gibbous"],[23.99,"Last Quarter"],[27.68,"Waning Crescent"],[30,"New Moon"]];
+ var name="New Moon";
+ for(var i=0;i<names.length;i++){if(age<=names[i][0]){name=names[i][1];break;}}
+ document.getElementById('mp-name').textContent=name;
+ document.getElementById('mp-illum').textContent=illum;
+ document.getElementById('mp-age').textContent=age.toFixed(1);
+});
+</script>
+
+<h2>Calendario della Luna Piena 2026</h2>
+<table><thead><tr><th>Mese</th><th>Data della Luna Piena (UTC)</th><th>Nome tradizionale</th></tr></thead><tbody>
+<tr><td>Gennaio</td><td>Gen 3</td><td>Wolf Moon</td></tr>
+<tr><td>Febbraio</td><td>Feb 1</td><td>Snow Moon</td></tr>
+<tr><td>Marzo</td><td>Mar 3</td><td>Worm Moon</td></tr>
+<tr><td>Aprile</td><td>Apr 2</td><td>Pink Moon</td></tr>
+<tr><td>Maggio</td><td>Mag 1 &amp; Mag 31</td><td>Flower Moon / Blue Moon</td></tr>
+<tr><td>Giugno</td><td>Giu 29</td><td>Strawberry Moon</td></tr>
+<tr><td>Luglio</td><td>Lug 29</td><td>Buck Moon</td></tr>
+<tr><td>Agosto</td><td>Ago 28</td><td>Sturgeon Moon</td></tr>
+<tr><td>Settembre</td><td>Set 26</td><td>Harvest Moon</td></tr>
+<tr><td>Ottobre</td><td>Ott 26</td><td>Hunter's Moon</td></tr>
+<tr><td>Novembre</td><td>Nov 24</td><td>Beaver Moon</td></tr>
+<tr><td>Dicembre</td><td>Dic 24</td><td>Cold Moon</td></tr>
+</tbody></table>
+
+<h2>Come funziona il ciclo</h2>
+<p>Un mese sinodico dura 29 giorni, 12 ore e 44 minuti. Metà del ciclo la Luna cresce (da nuova a piena), l'altra metà cala. Poiché il mese medio del calendario è di 30,4 giorni, alcuni mesi possono contenere due lune piene — la seconda è chiamata luna blu. Maggio 2026 è uno di quei mesi.</p>
+
+<h2>Domande frequenti</h2>
+<div class="faq-section">
+{FAQ}
+</div>
+<p>Controlla l'ora locale sul nostro <a href="/">orologio mondiale</a> oppure pianifica le riprese all'aperto con gli <a href="/sunrise-sunset.html">orari di alba e tramonto</a>.</p>
+
+        <footer class="blog-footer">
+            <a href="/privacy.html">Privacy</a>
+            <a href="/about.html">Chi siamo</a>
+            <a href="/contact.html">Contatti</a>
+            <a href="/terms.html">Termini</a>
+            <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p>
+        </footer>
+    </main>
+
+    <script type="module" src="/assets/index-Dd7au40z.js" async></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var seo = document.querySelector('.blog-wrap');
+        if (seo) seo.style.display = 'none';
+      });
+    </script>
+    <script>
+      window.addEventListener('load',function(){
+        var ahrefs=document.createElement('script');
+        ahrefs.async=true;
+        ahrefs.src='https://analytics.ahrefs.com/analytics.js';
+        ahrefs.setAttribute('data-key','hB1VYWuwb1i/f1d8re7P2A');
+        document.head.appendChild(ahrefs);
+      });
+    </script>
+  </body>
+</html>
+
+Check for any missed text: The blog-meta had weird characters  and . We kept them. The text inside we translated.
+
+Check the "Home" and "Blog" in breadcrumb: we kept as is. Could translate to "Home" and "Blog" but it's okay.
+
+Check the link text "orologio mondiale" we used.
+
+Check the link text "orari di alba e tramonto" we used.
+
+Check the footer links: "Chi siamo", "Contatti", "Termini". Good.
+
+Check the copyright line: we kept "World Time Sync".
+
+Check the script inside converter-widget: we left unchanged.
+
+Check the script after that: unchanged.
+
+Check the script that hides .blog-wrap: unchanged.
+
+Check the ahrefs script: unchanged.
+
+Now ensure we didn't accidentally translate any attribute values like href, src, etc. We didn't.
+
+Check the <meta name="google-site-verification" content="..."> unchanged.
+
+Check the <link rel="icon" type="image/svg+xml" href="/favicon.svg"> unchanged.
+
+Check the <link rel="stylesheet" href="/assets/index-ufePLcBr.css"> unchanged.
+
+Check the <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script> unchanged.
+
+Check the <script async src="https://pagead2.goog

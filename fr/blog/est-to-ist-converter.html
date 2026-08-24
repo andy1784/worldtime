@@ -1,0 +1,325 @@
+We need to translate visible/user-facing text into French, preserving HTML tags, attributes, etc. Also need to translate JSON-LD content values (like headline, description, name, etc.) but keep JSON structure. Also need to translate alt/title/aria-label etc. Also need to translate text inside tags like <p>, <h1>, <h2>, <li>, etc. Also need to translate text inside attributes like title, alt, aria-label, description, keywords, content (meta tags). Also need to translate text inside JSON-LD values (like "headline", "description", "name", "text").
+
+We must not translate URLs, proper nouns like city/feature names unless a natural localized form exists. So "Eastern Time", "India Standard Time", "EST", "IST", "EDT", "UTC", "GMT" remain as is? Probably keep them as they are proper nouns/abbreviations. Also "World Time Sync" is a brand name, keep unchanged. "Home", "Blog", "Privacy", "About", "Contact", "Terms" maybe translate? Those are navigation links; they are user-facing text. Should translate to French: "Accueil", "Blog", "Confidentialité", "À propos", "Contact", "Conditions". However "Home" as a link may be translated. The instruction: translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. So yes, translate those.
+
+Also need to translate the blog-meta text: " August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide". There are some weird characters (maybe icons). We need to translate the readable parts: "August 10, 2026" -> "10 août 2026". "6 min read" -> "6 min de lecture". "Time Zones, Guide" -> "Fuseaux horaires, Guide". Also need to keep the icons? The weird characters likely represent icons; we should keep them as is (they are not translatable). So we keep the same characters.
+
+Also need to translate the table headings: "EST (winter)", "EDT (summer)", "IST". Should we translate "(winter)" and "(summer)"? Probably yes: "(hiver)" and "(été)". Keep EST/EDT/IST unchanged.
+
+Also need to translate the table data: times like "8:00 AM" etc remain same (time format). The IST times like "18:30 / 17:30" remain same.
+
+Also need to translate the paragraph after table: "So <strong>12 PM EST = 10:30 PM IST</strong> (or 9:30 PM when EDT applies). Noon calls from New York land late at night in Bangalore." Translate: "Ainsi <strong>12 PM EST = 22:30 IST</strong> (ou 21:30 IST lorsque l'EDT s'applique). Les appels de midi depuis New York arrivent tard dans la nuit à Bangalore." Need to keep the strong tag. Also "New York" and "Bangalore" are proper nouns, keep unchanged.
+
+Also need to translate heading <h2>Key Conversions</h2> -> "Conversions clés". <h2>Finding the US–India Overlap</h2> -> "Trouver le chevauchement États‑Unis–Inde". Might need to keep the en dash? We'll translate.
+
+Also need to translate paragraph: "The only shared working window is Indian late afternoon against US early morning:" -> "La seule fenêtre de travail commune est l'après-midi tardif en Inde par rapport au matin tôt aux États‑Unis:" maybe.
+
+Also need to translate list items: "<strong>8:00–9:30 AM EST</strong> = 18:30–20:00 IST — evening India" -> translate: "<strong>8:00–9:30 AM EST</strong> = 18:30–20:00 IST — soirée en Inde". Also second list item: "Anything past 11 AM ET pushes India past 21:30" -> "Tout ce qui dépasse 11 h HE pousse l'Inde au-delà de 21:30". Note ET vs EST/EDT? Keep ET.
+
+Also need to translate FAQ section: The placeholder {FAQ} likely will be replaced by script? Actually there is a JSON-LD FAQ later. The visible FAQ section maybe empty; we just keep {FAQ} as is? It's inside a div class="faq-section". The content is {FAQ} which is likely a placeholder for some script; we should not translate that as it's not visible text? It's inside the HTML as literal text {FAQ}. It's not inside a tag that is visible? It's inside a div, so it's visible text. But it's likely a placeholder that will be replaced by JS. We should keep it unchanged as per instruction: translate only human-readable text. {FAQ} is not human-readable? It's a placeholder; maybe we should keep as is.
+
+Also need to translate the link text: "Pair guide: <a href="/blog/gmt-to-ist-converter.html">GMT to IST</a>. Plan recurring calls: <a href="/meeting-planner.html">meeting planner</a>." -> "Guide associé : <a href="/blog/gmt-to-ist-converter.html">GMT vers IST</a>. Planifier les appels récurrents : <a href="/meeting-planner.html">planificateur de réunion</a>." Need to translate "Pair guide" maybe "Guide associé". "Plan recurring calls" -> "Planifier les appels récurrents". Also "meeting planner" -> "planificateur de réunion". Keep the href unchanged.
+
+Also need to translate footer links: "Privacy" -> "Confidentialité", "About" -> "À propos", "Contact" -> "Contact" (maybe same), "Terms" -> "Conditions". Also the copyright text: "&copy; 2026 World Time Sync" -> keep same but maybe translate "World Time Sync" unchanged. So "&copy; 2026 World Time Sync". Keep.
+
+Also need to translate any title attributes etc. There's a skip-link: <a href="#main-content" class="skip-link">Skip to main content</a> -> translate: "Passer au contenu principal". Also need to translate aria-label on div id="root": aria-label="World Time Online Application" -> translate to French: "Application World Time en ligne". Also need to translate aria-label on spinner: aria-label="Loading application" -> "Chargement de l'application". Also need to translate p class="app-loading-text": "Loading World Time..." -> "Chargement de l'heure mondiale...".
+
+Also need to translate any meta tags: <title> and meta name="title", property og:title, twitter:title etc. Need to translate the content. Also meta description, og:description, twitter:title? Actually twitter:title same as og:title. Also meta name="keywords" content: need to translate keywords? Keywords are for SEO; but they are human-readable? The instruction says translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. So yes, translate keywords content. However keywords are likely English terms; we should translate them to French? Eg "12pm est to ist, est to ist converter, eastern time to india time, est ist time difference". Translate to French: "12pm est vers ist, convertisseur est vers ist, heure orientale vers heure indienne, différence d'heure est-ist". But need to keep proper nouns? "EST", "IST", "Eastern", "India" maybe keep as is? The instruction says do NOT translate city/feature names that are proper nouns unless a natural localized form exists. "Eastern Time" maybe considered a proper noun? It's a time zone name; maybe keep as is? However "Eastern" is a direction; but "Eastern Time" is a proper name of a time zone. I'd keep "Eastern Time" unchanged. "India Time" maybe keep as "India Time"? Could translate to "heure de l'Inde"? Not sure. Safer to keep the original terms as they are proper nouns. The instruction: "Do NOT translate URLs, city/feature names that are proper nouns unless a natural localized form exists, UTC offsets, IANA timezone IDs, or code." Time zone names like "Eastern Time", "India Standard Time" are feature names? They are proper nouns; we should not translate them unless a natural localized form exists. In French, we often say "heure de l'Est" and "heure normale de l'Inde". But there is a localized form: "heure normale de l'Inde" (IST). However the instruction says unless a natural localized form exists. There is a natural localized form: "heure normale de l'Inde". But the abbreviation IST remains. Might be safer to keep as is because it's ambiguous. Many translators keep time zone names unchanged. I'll keep them unchanged.
+
+Thus keywords: translate the descriptive words but keep the abbreviations. For "12pm est to ist" -> "12pm est vers ist". "est to ist converter" -> "convertisseur est vers ist". "eastern time to india time" -> "heure orientale vers heure de l'Inde"? Might be considered translation. I'll translate "eastern time" to "heure de l'Est" (natural localized form). "india time" to "heure de l'Inde". "est ist time difference" -> "différence d'heure est-ist". Let's do that.
+
+Also need to translate meta name="description" content and og:description etc. Translate: "EST to IST (+10:30) conversion chart: what 12 PM Eastern means in India plus best US-India call times." -> French: "Tableau de conversion EST vers IST (+10:30) : ce que 12 PM heure de l'Est signifie en Inde ainsi que les meilleurs moments pour les appels États‑Unis–Inde." Need to keep the "+10:30". Also "US-India" maybe keep as "États‑Unis–Inde". Also "call times" -> "moments d'appel". Also "what 12 PM Eastern means in India" -> "ce que 12 PM heure de l'Est signifie en Inde". Also need to keep the en dash? We'll use appropriate.
+
+Also need to translate the JSON-LD blocks: there are three JSON-LD scripts. Need to translate the values of fields like "headline", "description", "articleSection", "keywords", "author.name", "publisher.name", "logo"? Actually logo URL not translate. Also "name" in BreadcrumbList items: "Home", "Blog", "12PM EST to IST — EST-IST Conversion Guide". Need to translate those. Also FAQ: "name": "What is 12 PM EST in IST?" etc. Need to translate question names and answer texts.
+
+Also need to translate "articleSection": "Time Zones" -> "Fuseaux horaires". Also "inLanguage": "en" should stay as language code; not translate.
+
+Also need to translate "datePublished" and "dateModified": keep as is.
+
+Also need to translate "mainEntityOfPage": maybe not needed.
+
+Also need to translate "image": keep URL.
+
+Now also need to translate any alt attributes? There's none.
+
+Also need to translate any placeholder like {FAQ}? We'll keep.
+
+Now we need to output the full HTML with translations.
+
+Let's go step by step.
+
+Original HTML:
+
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="theme-color" content="#667eea">
+    <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk">
+    <title>12PM EST to IST — EST-IST Conversion Guide | World Time Sync</title>
+    <meta name="title" content="12PM EST to IST — EST-IST Conversion Guide | World Time Sync">
+    <meta name="description" content="EST to IST (+10:30) conversion chart: what 12 PM Eastern means in India plus best US-India call times.">
+    <meta name="keywords" content="12pm est to ist, est to ist converter, eastern time to india time, est ist time difference">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="World Time Sync">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://worldtimessync.com/fr/blog/est-to-ist-converter.html">
+    <meta property="og:title" content="12PM EST to IST — EST-IST Conversion Guide | World Time Sync">
+    <meta property="og:description" content="EST to IST (+10:30) conversion chart: what 12 PM Eastern means in India plus best US-India call times.">
+    <meta property="og:image" content="https://worldtimessync.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="12PM EST to IST — EST-IST Conversion Guide | World Time Sync">
+    <link rel="canonical" href="https://worldtimessync.com/fr/blog/est-to-ist-converter.html">
+    <link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/fr/blog/est-to-ist-converter.html">
+    <link rel="preload" href="/assets/blog.css" as="style">
+<noscript><link rel="stylesheet" href="/assets/blog.css"></noscript>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/assets/index-ufePLcBr.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LBX0CDYSSV');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "Article", "headline": "12PM EST to IST — EST-IST Conversion Guide | World Time Sync", "description": "EST to IST (+10:30) conversion chart: what 12 PM Eastern means in India plus best US-India call times.", "articleSection": "Time Zones", "keywords": "12pm est to ist, est to ist converter, eastern time to india time, est ist time difference", "wordCount": 138, "timeRequired": "PT6M", "inLanguage": "en", "author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}, "publisher": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com", "logo": {"@type": "ImageObject", "url": "https://worldtimessync.com/logo.png", "width": 512, "height": 512}}, "datePublished": "2026-08-10", "dateModified": "2026-08-10", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/fr/blog/est-to-ist-converter.html"}, "image": "https://worldtimessync.com/og-image.png"}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://worldtimessync.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://worldtimessync.com/#blog"}, {"@type": "ListItem", "position": 3, "name": "12PM EST to IST — EST-IST Conversion Guide", "item": "https://worldtimessync.com/fr/blog/est-to-ist-converter.html"}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is 12 PM EST in IST?", "acceptedAnswer": {"@type": "Answer", "text": "22:30 IST (10:30 PM). During daylight saving, 12 PM EDT is 21:30 IST."}}, {"@type": "Question", "name": "Why does EST-IST have a half-hour offset?", "acceptedAnswer": {"@type": "Answer", "text": "Because IST runs on UTC+5:30 — set as a national compromise in 1947 — while EST is UTC−5."}}, {"@type": "Question", "name": "What is the best time for US-India meetings?", "acceptedAnswer": {"@type": "Answer", "text": "8:00–9:30 AM Eastern, which is early evening 18:30–20:00 in India."}}]}
+    </script>
+
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div id="root" role="application" aria-label="World Time Online Application">
+        <div class="app-loading" aria-busy="true" aria-live="polite">
+            <div class="app-loading-spinner" role="status" aria-label="Loading application"></div>
+            <p class="app-loading-text">Loading World Time...</p>
+        </div>
+    </div>
+    <main id="main-content">
+        <article class="blog-wrap">
+            <nav class="blog-breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Home</a> › <a href="/#blog">Blog</a> › <span aria-current="page">12PM EST to IST — EST-IST Conversion Guide</span>
+            </nav>
+            <h1>12PM EST to IST — EST-IST Conversion Guide</h1>
+            <div class="blog-meta"> August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide</div>
+
+<p>Eastern Time and India Standard Time are <strong>10 hours 30 minutes</strong> apart (EST) — or 9:30 during EDT. The half-hour remainder comes from IST's unusual UTC+5:30 base.</p>
+
+<h2>Key Conversions</h2>
+<table><thead><tr><th>EST (winter)</th><th>EDT (summer)</th><th>IST</th></tr></thead><tbody>
+<tr><td>8:00 AM</td><td>8:00 AM</td><td>18:30 / 17:30</td></tr>
+<tr><td>10:00 AM</td><td>10:00 AM</td><td>20:30 / 19:30</td></tr>
+<tr><td>12:00 PM</td><td>12:00 PM</td><td>22:30 / 21:30</td></tr>
+<tr><td>2:00 PM</td><td>2:00 PM</td><td>00:30 / 23:30</td></tr>
+</tbody></table>
+
+<p>So <strong>12 PM EST = 10:30 PM IST</strong> (or 9:30 PM when EDT applies). Noon calls from New York land late at night in Bangalore.</p>
+
+<h2>Finding the US–India Overlap</h2>
+<p>The only shared working window is Indian late afternoon against US early morning:</p>
+<ul>
+<li><strong>8:00–9:30 AM EST</strong> = 18:30–20:00 IST — evening India</li>
+<li>Anything past 11 AM ET pushes India past 21:30</li>
+</ul>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-section">
+{FAQ}
+</div>
+<p>Pair guide: <a href="/blog/gmt-to-ist-converter.html">GMT to IST</a>. Plan recurring calls: <a href="/meeting-planner.html">meeting planner</a>.</p>
+
+        <footer class="blog-footer">
+            <a href="/privacy.html">Privacy</a>
+            <a href="/about.html">About</a>
+            <a href="/contact.html">Contact</a>
+            <a href="/terms.html">Terms</a>
+            <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p>
+        </footer>
+    </main>
+
+    <script type="module" src="/assets/index-Dd7au40z.js" async></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var seo = document.querySelector('.blog-wrap');
+        if (seo) seo.style.display = 'none';
+      });
+    </script>
+    <script>
+      window.addEventListener('load',function(){
+        var ahrefs=document.createElement('script');
+        ahrefs.async=true;
+        ahrefs.src='https://analytics.ahrefs.com/analytics.js';
+        ahrefs.setAttribute('data-key','hB1VYWuwb1i/f1d8re7P2A');
+        document.head.appendChild(ahrefs);
+      });
+    </script>
+  </body>
+</html>
+
+Now we need to translate.
+
+Let's produce translated HTML.
+
+We'll go through each piece.
+
+1. <title> and meta name="title", og:title, twitter:title: need translation.
+
+Original: "12PM EST to IST — EST-IST Conversion Guide | World Time Sync"
+
+Translate: "12 PM EST vers IST — Guide de conversion EST-IST | World Time Sync"
+
+But need to keep the pipe and brand. Also "12PM" maybe keep as "12 PM". The original had "12PM". We'll translate to "12 PM". Also "Conversion Guide" -> "Guide de conversion". Also "EST-IST Conversion Guide" -> "Guide de conversion EST-IST". Also the dash: " — " keep.
+
+Thus: "12 PM EST vers IST — Guide de conversion EST-IST | World Time Sync"
+
+Check: "12PM EST to IST — EST-IST Conversion Guide | World Time Sync" becomes "12 PM EST vers IST — Guide de conversion EST-IST | World Time Sync". Good.
+
+Now meta name="title" same content.
+
+Meta property og:title same.
+
+Meta name twitter:title same.
+
+Now meta name="description": original: "EST to IST (+10:30) conversion chart: what 12 PM Eastern means in India plus best US-India call times."
+
+Translate: "Tableau de conversion EST vers IST (+10:30) : ce que 12 PM heure de l'Est signifie en Inde ainsi que les meilleurs moments pour les appels États‑Unis–Inde."
+
+Need to keep the colon? We'll use colon after chart? Original had colon after chart. We'll keep colon or maybe use colon. We'll produce: "Tableau de conversion EST vers IST (+10:30) : ce que 12 PM heure de l'Est signifie en Inde ainsi que les meilleurs moments pour les appels États‑Unis–Inde."
+
+Now meta name="keywords": original: "12pm est to ist, est to ist converter, eastern time to india time, est ist time difference"
+
+Translate: "12pm est vers ist, convertisseur est vers ist, heure de l'Est vers heure de l'Inde, différence d'heure est-ist"
+
+Check: "eastern time" -> "heure de l'Est". "india time" -> "heure de l'Inde". "est ist time difference" -> "différence d'heure est-ist". Keep abbreviations.
+
+Now meta name="author": content "World Time Sync" unchanged.
+
+Now meta property og:description: same as description, translate similarly.
+
+Now meta property og:image unchanged.
+
+Now meta name="twitter:card": unchanged.
+
+Now link rel="canonical": href unchanged.
+
+Now link rel="alternate": href unchanged.
+
+Now noscript link: unchanged.
+
+Now link rel="icon": unchanged.
+
+Now link rel="stylesheet": unchanged.
+
+Now script tags: unchanged.
+
+Now JSON-LD first block:
+
+We need to translate:
+
+- "headline": same as title -> translate to French.
+- "description": same as meta description -> translate.
+- "articleSection": "Time Zones" -> "Fuseaux horaires"
+- "keywords": same as meta keywords -> translate.
+- "author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"} -> name unchanged.
+- "publisher": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com", "logo": {...}} -> name unchanged.
+- "datePublished": unchanged.
+- "dateModified": unchanged.
+- "mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/fr/blog/est-to-ist-converter.html"} -> unchanged.
+- "image": unchanged.
+
+Now second JSON-LD BreadcrumbList:
+
+- itemListElement[0].name: "Home" -> translate to "Accueil"
+- itemListElement[1].name: "Blog" -> keep? "Blog" is often kept as is in French; but could translate to "Blog" (same). We'll keep "Blog" as it's a proper noun? Might be kept as is. The instruction: translate human-readable text. "Blog" is an English word but used as a category; many French sites keep "Blog". I'd keep as "Blog". However we could translate to "Journal" but not natural. I'd keep "Blog".
+- itemListElement[2].name: "12PM EST to IST — EST-IST Conversion Guide" -> translate similar to title but without the brand? The original breadcrumb name is exactly that phrase. So translate: "12 PM EST vers IST — Guide de conversion EST-IST". Keep the same formatting.
+
+Now third JSON-LD FAQPage:
+
+We need to translate each question name and answer text.
+
+First question:
+"name": "What is 12 PM EST in IST?" -> translate: "Quelle est l'heure 12 PM EST en IST ?" Or "Quelle est 12 PM EST en IST ?" Better: "Quelle est l'heure 12 PM EST en IST ?" We'll keep the punctuation.
+
+Answer text: "22:30 IST (10:30 PM). During daylight saving, 12 PM EDT is 21:30 IST." Translate: "22:30 IST (22:30). Pendant l'heure d'été, 12 PM EDT correspond à 21:30 IST." Wait original: "22:30 IST (10:30 PM)." The parentheses show 10:30 PM in 12-hour format. In French we might keep same format? Could translate to "22:30 IST (22:30)"? But better to keep the meaning: "22:30 IST (22:30)" is redundant. Maybe keep as "22:30 IST (22:30)"? Actually original: "22:30 IST (10:30 PM)". In French we could say "22:30 IST (22:30)" but that's weird. Perhaps we keep the same format but translate the PM to "heure du soir"? Could say "22:30 IST (22:30)". However the instruction: translate only human-readable text. The parenthetical "(10:30 PM)" is human-readable; we should translate "10:30 PM" to French time format: "22:30" (24-hour) or "22:30". But we could keep as "22:30". However we might keep the same format but translate "PM" to "après-midi"? Actually 10:30 PM is "22:30". So we could translate to "22:30 IST (22:30)". That seems odd but okay. Alternatively we could keep the original because it's a time representation; but the instruction says translate human-readable text. I'd translate "10:30 PM" to "22:30". So answer becomes: "22:30 IST (22:30). Pendant l'heure d'été, 12 PM EDT correspond à 21:30 IST." But we also need to translate "During daylight saving" -> "Pendant l'heure d'été". "12 PM EDT is 21:30 IST." -> "12 PM EDT correspond à 21:30 IST." Keep the time.
+
+Second question:
+"name": "Why does EST-IST have a half-hour offset?" -> translate: "Pourquoi EST‑IST présente-t-il un décalage d'une demi-heure ?" Or "Pourquoi EST‑IST a-t-il un décalage d'une demi-heure ?" We'll use: "Pourquoi EST‑IST a-t-il un décalage d'une demi-heure ?"
+
+Answer text: "Because IST runs on UTC+5:30 — set as a national compromise in 1947 — while EST is UTC−5." Translate: "Parce que l'IST fonctionne sur UTC+5:30 — fixé comme un compromis national en 1947 — tandis que l'EST est UTC−5." Keep the dashes.
+
+Third question:
+"name": "What is the best time for US-India meetings?" -> translate: "Quel est le meilleur moment pour les réunions États‑Unis–Inde ?"
+
+Answer text: "8:00–9:30 AM Eastern, which is early evening 18:30–20:00 in India." Translate: "8:00–9:30 AM heure de l'Est, ce qui correspond au début de soirée 18:30–20:00 en Inde." Keep the time ranges.
+
+Now body content.
+
+Skip-link: <a href="#main-content" class="skip-link">Skip to main content</a> -> translate: "Passer au contenu principal"
+
+Div id="root" aria-label: "World Time Online Application" -> translate: "Application World Time en ligne"
+
+App-loading-spinner aria-label: "Loading application" -> translate: "Chargement de l'application"
+
+p class="app-loading-text": "Loading World Time..." -> translate: "Chargement de l'heure mondiale..."
+
+Now main content.
+
+Breadcrumb nav: <a href="/">Home</a> -> translate to "Accueil". <a href="/#blog">Blog</a> -> keep "Blog". <span aria-current="page">12PM EST to IST — EST-IST Conversion Guide</span> -> translate: "12 PM EST vers IST — Guide de conversion EST-IST"
+
+Now h1: same as above -> translate: "12 PM EST vers IST — Guide de conversion EST-IST"
+
+Now blog-meta div: contains icons and text. We need to translate the readable parts.
+
+Original: " August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide"
+
+We keep the icon characters as is. Translate:
+
+- "August 10, 2026" -> "10 août 2026"
+- "6 min read" -> "6 min de lecture"
+- "Time Zones, Guide" -> "Fuseaux horaires, Guide"
+
+Thus: " 10 août 2026 &nbsp;·&nbsp;  6 min de lecture &nbsp;·&nbsp;  Fuseaux horaires, Guide"
+
+Now paragraph after meta:
+
+Original: "<p>Eastern Time and India Standard Time are <strong>10 hours 30 minutes</strong> apart (EST) — or 9:30 during EDT. The half-hour remainder comes from IST's unusual UTC+5:30 base.</p>"
+
+Translate: "L'heure de l'Est et l'heure normale de l'Inde sont séparées de <strong>10 heures 30 minutes</strong> (EST) — ou 9:30 pendant l'EDT. Le reste d'une demi-heure provient de la base inhabituelle UTC+5:30 de l'IST."
+
+Note: "Eastern Time" -> "heure de l'Est". "India Standard Time" -> "heure normale de l'Inde". Keep EST/EDT/IST abbreviations. Also "IST's" -> "de l'IST". Also "UTC+5:30 base" -> "base UTC+5:30". Keep.
+
+Now h2: "Key Conversions" -> "Conversions clés"
+
+Table headings: "<th>EST (winter)</th>" -> translate "(winter)" to "(hiver)". So "<th>EST (hiver)</th>". Similarly "<th>EDT (summer)</th>" -> "<th>EDT (été)</th>". "<th>IST</th>" unchanged.
+
+Table data: times remain same.
+
+Now paragraph after table:
+
+Original: "<p>So <strong>12 PM EST = 10:30 PM IST</strong> (or 9:30 PM when EDT applies). Noon calls from New York land late at night in Bangalore.</p>"
+
+Translate: "Ainsi <strong>12 PM EST = 22:30 IST</strong> (ou 21:30 IST lorsque l'EDT s'applique). Les appels de midi depuis New York arrivent tard dans la nuit à Bangalore."
+
+Note: "10:30 PM IST" -> "22:30 IST". "9:30 PM" -> "21:30". Also "Noon calls" -> "Les appels de midi". "land late at night" -> "arrivent tard dans la nuit". Keep New York, Bangalore.
+
+Now h2: "Finding the US–India Overlap" -> translate: "Trouver le chevauchement États‑Unis–Inde"
+
+Paragraph: "<p>The only shared working window is Indian late afternoon against US early morning:</p>"
+
+Translate: "<p>La seule fenêtre de travail commune est l'après-midi tardif en Inde par rapport au matin tôt aux États‑Unis :</p>"
+
+Note: keep colon.
+
+Now list items:
+
+First li: "<li><strong>8:00–9:30 AM EST</strong> = 18:30–20:00 IST — evening India</li>"
+
+Translate: "<li><strong>8:00–9:30 AM EST</strong> = 18:30–20:00 IST —

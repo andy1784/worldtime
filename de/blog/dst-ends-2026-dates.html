@@ -1,0 +1,356 @@
+We need to translate visible/user-facing text into German, preserving HTML tags, attributes, etc. Also need to translate JSON-LD content values (like headline, description, etc.) as they are inside JSON strings but they are user-facing? The rule says translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. JSON-LD blocks are data; but they contain fields like "headline", "description", "name", "text". Those are user-facing content (they appear in search results). Should we translate them? The instruction: "Translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content." JSON-LD is not HTML tags, but it's inside <script type="application/ld+json">. The content is JSON; the values are strings that are meant for search engines. Should we translate? The rule says "inside tags and attributes like title/alt/aria-label/description/keywords/content." JSON-LD is not an attribute, but it's content of a script tag. The content is not visible to users directly but is machine-readable. However, the instruction says translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. It does not explicitly say to translate JSON-LD. But many similar tasks require translating JSON-LD values as they are user-facing (for SEO). However, the rule says "Keep ALL HTML tags, attributes, href/lang values, JSON-LD blocks, and CSS exactly as-is." That's a key: "Keep ALL HTML tags, attributes, href/lang values, JSON-LD blocks, and CSS exactly as-is." So we must NOT modify JSON-LD blocks. So we leave JSON-LD unchanged.
+
+Thus we only translate visible text in HTML: inside tags, attributes like title, alt, aria-label, description, keywords, content (meta tags). Also text inside elements like <p>, <h1>, <h2>, <li>, <td>, <th>, etc. Also inside <a> text, etc. Also inside <div class="blog-meta"> etc. Also inside <footer> links.
+
+We must also translate the text inside the <noscript>? It's a link tag; but the content is just a link element, no visible text. So ignore.
+
+We need to translate the visible text in the HTML, but keep the lang attribute? The html lang is "de" already; we keep as is.
+
+We need to translate meta tags: <title>, <meta name="title" content="...">, <meta name="description" content="...">, <meta name="keywords" content="...">, <meta property="og:title" content="...">, <meta property="og:description" content="...">, <meta name="twitter:title" content="...">. Also maybe <meta name="author" content="World Time Sync"> - author is a proper noun? It's organization name; we should not translate proper nouns unless a natural localized form exists. "World Time Sync" is a brand; keep as is.
+
+Also <meta name="theme-color" content="#667eea"> - not text.
+
+Also <link rel="canonical" href="..."> - keep.
+
+Also <link rel="alternate" hreflang="x-default" href="..."> - keep.
+
+Also <link rel="preload" href="/assets/blog.css" as="style"> - keep.
+
+Also <noscript><link rel="stylesheet" href="/assets/blog.css"></noscript> - keep.
+
+Also <link rel="icon" type="image/svg+xml" href="/favicon.svg"> - keep.
+
+Also <link rel="stylesheet" href="/assets/index-ufePLcBr.css"> - keep.
+
+Also the text inside <a href="#main-content" class="skip-link">Skip to main content</a> - translate.
+
+Also the text inside <div class="app-loading-text">Loading World Time...</p> - translate.
+
+Also the breadcrumb: <nav class="blog-breadcrumb" aria-label="Breadcrumb"> - aria-label attribute should be translated? It's an attribute; we should translate its value if it's human-readable. The rule says translate attributes like title/alt/aria-label/description/keywords/content. So we need to translate aria-label="Breadcrumb" to German: "Breadcrumb" maybe "Breadcrumb" is English; German could be "Breadcrumb" not translated? Usually "Breadcrumb" is kept as term, but we can translate to "Breadcrumb navigation" or "Breadcrumb". However, typical translation: "Breadcrumb" -> "Breadcrumb" (same) or "Breadcrumbpfad". But we need to decide. The instruction: translate human-readable text inside attributes. So we should translate "Breadcrumb" to German. What is the natural translation? "Breadcrumb" as a UI term often left untranslated, but we can translate to "Breadcrumbpfad" or "Breadcrumb-Navigation". I'd choose "Breadcrumbpfad". However, we need to be consistent with the rest of the site language (German). The page is German (lang="de"). So we should translate.
+
+Also the <span aria-current="page">Daylight Saving Time Ends 2026 — Dates & Clock Changes</span> - the text inside span should be translated.
+
+Also the <h1> heading.
+
+Also the <div class="blog-meta"> August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide</div> - there are some weird characters (maybe icons). The visible text: "August 10, 2026", "6 min read", "Time Zones, Guide". Also there are some placeholder icons (maybe emojis). We need to translate the text parts: "August" stays as month name; in German, "August" is same. "10, 2026" -> "10. August 2026"? In German date format usually "10. August 2026". But we should translate the phrase "August 10, 2026" to German: "10. August 2026". Also "6 min read" -> "6 Min Lesezeit" or "6 Minuten Lesedauer". Usually "6 min read" translates to "6 Min Lesezeit". We'll use "6 Min Lesezeit". "Time Zones, Guide" -> "Zeitzonen, Leitfaden" or "Zeitzonen, Guide". "Guide" could be "Leitfaden". We'll translate.
+
+Also the <p> after h1: "Two clock changes bracket every year and both scramble schedules for a week or so. Here are the 2026 dates that matter." Translate.
+
+Also the <h2> "2026 Clock Change Dates" -> translate.
+
+Also table headers: <th>Region</th>, <th>Spring forward</th>, <th>Fall back</th>. Translate.
+
+Also table data: "United States & Canada" -> keep proper nouns; "&" maybe keep as is. "UK & EU (most)" -> keep. "Australia (southern states)" -> translate "southern states" maybe "südliche Staaten". But "Australia" proper noun; "southern states" translate. "New Zealand" proper noun.
+
+Also the dates: "Mar 8", "Nov 1", etc. Keep as is (month abbreviations are language-neutral? In German, month abbreviations are same? Usually "Mär" for March, but we keep as given? The instruction: do not translate UTC offsets, IANA timezone IDs, or code. Month abbreviations could be considered code? Not sure. Safer to keep as is because they are part of the data. However, the visible text is meant for users; translating month abbreviations to German would be "Mär 8", "Nov 1" (Nov is same), "Mär 29", "Okt 25", "Okt 4", "Apr 5, 2027", "Sep 27". But the rule says keep JSON-LD blocks exactly as-is, but not about month abbreviations. However, we are to translate human-readable text. So we should translate month names to German abbreviations. But the original uses English month abbreviations. Should we translate? The instruction: "Do NOT translate URLs, city/feature names that are proper nouns unless a natural localized form exists, UTC offsets, IANA timezone IDs, or code." Month abbreviations are not listed as prohibited. So we should translate them. However, we must be careful: the text inside <td> is visible. So we should translate month abbreviations to German: "Mär" for March, "Nov" for November (same), "Okt" for October, "Apr" for April, "Sep" for September. Also keep day numbers.
+
+Thus "Mar 8" -> "Mär 8". "Nov 1" -> "Nov 1". "Mar 29" -> "Mär 29". "Oct 25" -> "Okt 25". "Oct 4" -> "Okt 4". "Apr 5, 2027" -> "Apr 5, 2027" (Apr same). "Sep 27" -> "Sep 27". Also note the year 2027 after April 5; keep.
+
+Also the <h2> "The October Mismatch Week" -> translate.
+
+Also the paragraph after that: "Europe falls back on <strong>October 25, 2026</strong>, but North America not until <strong>November 1</strong>. For one week the usual gaps shift by an hour: London–New York goes from 5 to 4 hours, Paris–San Francisco from 9 to 8. Meetings booked in absolute local times still work; meetings pinned to UTC need re-checking."
+
+We need to translate visible text, keep <strong> tags. Translate: "Europe falls back on" -> "Europe stellt die Uhr zurück am" or "Europe stellt die Umstellung zurück"? Actually "falls back" in DST context: "die Uhr wird zurückgestellt". So "Europe stellt die Uhr zurück am". But we need to keep the date inside strong. So phrase: "Europe stellt die Uhr zurück am <strong>October 25, 2026</strong>, aber Nordamerika nicht bis <strong>November 1</strong>. Für eine Woche verschieben sich die üblichen Zeitdifferenzen um eine Stunde: London–New York geht von 5 auf 4 Stunden, Paris–San Francisco von 9 auf 8 Stunden. Meetings, die in absoluter lokaler Zeit gebucht sind, funktionieren weiterhin; Meetings, die an UTC gebunden sind, müssen überprüft werden."
+
+But we also need to translate month names inside strong? The strong contains the date; we should translate month names to German as well? The date is visible; we should translate month names. So "October 25, 2026" -> "25. Oktober 2026". "November 1" -> "1. November 2026". However, the strong tag currently contains just "October 25, 2026". We'll translate the whole string inside strong to German date format. Also keep the strong tags.
+
+Thus: <strong>25. Oktober 2026</strong> and <strong>1. November 2026</strong>.
+
+Also "North America" maybe "Nordamerika". Keep.
+
+Also "London–New York" keep city names.
+
+Also "Paris–San Francisco".
+
+Also "Meetings booked in absolute local times still work; meetings pinned to UTC need re-checking." -> translate.
+
+Next <h2> "What Breaks During Transitions" -> translate.
+
+Then list items: translate each.
+
+Then <h2> "Frequently Asked Questions" -> translate.
+
+Then <div class="faq-section">{FAQ}</div> - this is placeholder; we keep as is? The {FAQ} is likely a placeholder for dynamic content; we should not translate placeholder. Keep as is.
+
+Then <p> "Full worldwide table: <a href="/dst-2026-worldwide.html">DST 2026 worldwide</a>. Countdown: <a href="/dst-countdown.html">next DST change</a>." Translate.
+
+Then footer links: "Privacy", "About", "Contact", "Terms". Translate.
+
+Also copyright line: "&copy; 2026 World Time Sync" - keep "World Time Sync" as is.
+
+Also the text inside <p class="app-loading-text">Loading World Time...</p> -> translate.
+
+Also the text inside <a href="/">Home</a> etc in breadcrumb: we need to translate "Home", "Blog". Also the current page span text we already translate.
+
+Also the <a href="/#blog">Blog</a> - translate "Blog".
+
+Also the <nav class="blog-breadcrumb" aria-label="Breadcrumb"> - we need to translate aria-label value.
+
+Also the <div class="app-loading" aria-busy="true" aria-live="polite"> - aria-busy and aria-live values are not translatable (true, polite). Keep.
+
+Also the <div class="app-loading-spinner" role="status" aria-label="Loading application"> - aria-label value "Loading application" should be translated.
+
+Also the <p class="app-loading-text">Loading World Time...</p> - translate.
+
+Also the <meta name="author" content="World Time Sync"> - keep.
+
+Also the <meta name="copyright"? Not present.
+
+Also the <meta name="description" etc we need to translate.
+
+Also the <meta name="keywords" content="daylight saving ends 2026 date, clock change october 2026, when do clocks go back 2026, fall back 2026"> - translate keywords to German? The rule says translate human-readable text inside attributes like keywords/content. So we should translate the keywords attribute value. However, keywords are for SEO; but we must follow rule. So translate each keyword phrase to German. But we must keep proper nouns like "daylight saving" maybe translate to "Sommerzeit". "ends 2026 date" -> "Ende 2026 Datum". "clock change october 2026" -> "Uhrzeitänderung Oktober 2026". "when do clocks go back 2026" -> "wann werden die Uhren 2026 zurückgestellt". "fall back 2026" -> "Uhr zurückstellen 2026". However, we need to keep commas separating. Also we should keep the same format.
+
+But note: the keywords attribute is inside a meta tag; we must translate the content value. We'll do that.
+
+Also the <meta name="title" content="Daylight Saving Time Ends 2026 — Dates & Clock Changes | World Time Sync"> - translate.
+
+Also the <meta property="og:title" content="..."> - translate.
+
+Also <meta property="og:description" content="..."> - translate.
+
+Also <meta name="twitter:title" content="..."> - translate.
+
+Also <meta name="title" (duplicate) we already have.
+
+Also <meta name="theme-color" content="#667eea"> - not text.
+
+Also <link rel="canonical" href="..."> - not text.
+
+Also <link rel="alternate" hreflang="x-default" href="..."> - not text.
+
+Also <link rel="preload" href="/assets/blog.css" as="style"> - not text.
+
+Also <noscript><link rel="stylesheet" href="/assets/blog.css"></noscript> - not text.
+
+Also <link rel="icon" type="image/svg+xml" href="/favicon.svg"> - not text.
+
+Also <link rel="stylesheet" href="/assets/index-ufePLcBr.css"> - not text.
+
+Also the script tags content (JSON-LD) we keep exactly as-is.
+
+Also the <script> with gtag etc - not visible.
+
+Also the <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script> - not visible.
+
+Also the <script type="module" src="/assets/index-Dd7au40z.js" async></script> - not visible.
+
+Also the <script> with DOMContentLoaded etc - not visible.
+
+Also the <script> with window.addEventListener load etc - not visible.
+
+Now we need to produce the full HTML with translations.
+
+Let's go step by step.
+
+First, the <!doctype html> and <html lang="de"> remain.
+
+<head>:
+
+- <meta charset="UTF-8"> unchanged.
+
+- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"> unchanged.
+
+- <meta name="theme-color" content="#667eea"> unchanged.
+
+- <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk"> unchanged.
+
+- <title>Daylight Saving Time Ends 2026 — Dates & Clock Changes | World Time Sync</title> -> translate.
+
+We need to translate the title: "Daylight Saving Time Ends 2026 — Dates & Clock Changes | World Time Sync". Translate to German: "Sommerzeit endet 2026 — Datum & Uhrzeitänderungen | World Time Sync". However, we need to keep the separator " — " (em dash) and "|". Also "World Time Sync" stays. "Daylight Saving Time" -> "Sommerzeit". "Ends" -> "endet". "Dates & Clock Changes" -> "Datum & Uhrzeitänderungen". Could also be "Termine & Uhrzeitänderungen". But "Dates" as in dates -> "Termine" or "Datum". I'd use "Datum & Uhrzeitänderungen". So title: "Sommerzeit endet 2026 — Datum & Uhrzeitänderungen | World Time Sync". Ensure the spaces around em dash? Keep as original: " — ". We'll keep.
+
+- <meta name="title" content="Daylight Saving Time Ends 2026 — Dates & Clock Changes | World Time Sync"> -> translate content similarly: "Sommerzeit endet 2026 — Datum & Uhrzeitänderungen | World Time Sync".
+
+- <meta name="description" content="Exact 2026 dates when clocks change: US fall back Nov 1, Europe Oct 25. What it means for meetings."> -> translate.
+
+We need to translate: "Exact 2026 dates when clocks change: US fall back Nov 1, Europe Oct 25. What it means for meetings."
+
+German: "Genau die 2026er Termine, wenn die Uhren umgestellt werden: USA stellen zurück am 1. November, Europa am 25. Oktober. Was das für Meetings bedeutet."
+
+But we need to keep the month abbreviations? We are translating the content, so we should translate month names to German. So "Nov 1" -> "1. November". "Oct 25" -> "25. Oktober". Also "US fall back" -> "USA stellen zurück". "Europe" -> "Europa". Also "What it means for meetings." -> "Was das für Meetings bedeutet."
+
+Thus content: "Genau die 2026er Termine, wenn die Uhren umgestellt werden: USA stellen zurück am 1. November, Europa am 25. Oktober. Was das für Meetings bedeutet."
+
+Check punctuation: original ends with a period. We'll keep.
+
+- <meta name="keywords" content="daylight saving ends 2026 date, clock change october 2026, when do clocks go back 2026, fall back 2026"> -> translate.
+
+We need to translate each phrase.
+
+Let's translate:
+
+1. "daylight saving ends 2026 date" -> "Sommerzeit endet 2026 Datum". Could also be "Sommerzeitende 2026 Datum". But keep simple: "Sommerzeit endet 2026 Datum".
+
+2. "clock change october 2026" -> "Uhrzeitänderung Oktober 2026". Could be "Uhränderung Oktober 2026". I'll use "Uhrzeitänderung Oktober 2026".
+
+3. "when do clocks go back 2026" -> "wann werden die Uhren 2026 zurückgestellt". Could be "wann werden die Uhren im Jahr 2026 zurückgestellt". Keep short: "wann werden die Uhren 2026 zurückgestellt".
+
+4. "fall back 2026" -> "Uhr zurückstellen 2026". Could be "Uhr zurückstellen 2026". Keep.
+
+Now combine with commas and space: "Sommerzeit endet 2026 Datum, Uhrzeitänderung Oktober 2026, wann werden die Uhren 2026 zurückgestellt, Uhr zurückstellen 2026".
+
+Check if we need to keep the original ordering; yes.
+
+- <meta name="robots" content="index, follow"> unchanged.
+
+- <meta name="author" content="World Time Sync"> unchanged.
+
+- <meta property="og:type" content="article"> unchanged.
+
+- <meta property="og:url" content="https://worldtimessync.com/de/blog/dst-ends-2026-dates.html"> unchanged (URL).
+
+- <meta property="og:title" content="Daylight Saving Time Ends 2026 — Dates & Clock Changes | World Time Sync"> -> translate content: same as title: "Sommerzeit endet 2026 — Datum & Uhrzeitänderungen | World Time Sync".
+
+- <meta property="og:description" content="Exact 2026 dates when clocks change: US fall back Nov 1, Europe Oct 25. What it means for meetings."> -> translate same as description: "Genau die 2026er Termine, wenn die Uhren umgestellt werden: USA stellen zurück am 1. November, Europa am 25. Oktober. Was das für Meetings bedeutet."
+
+- <meta property="og:image" content="https://worldtimessync.com/og-image.png"> unchanged.
+
+- <meta name="twitter:card" content="summary_large_image"> unchanged.
+
+- <meta name="twitter:title" content="Daylight Saving Time Ends 2026 — Dates & Clock Changes | World Time Sync"> -> translate: "Sommerzeit endet 2026 — Datum & Uhrzeitänderungen | World Time Sync".
+
+- <link rel="canonical" href="https://worldtimessync.com/de/blog/dst-ends-2026-dates.html"> unchanged.
+
+- <link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/de/blog/dst-ends-2026-dates.html"> unchanged.
+
+- <link rel="preload" href="/assets/blog.css" as="style"> unchanged.
+
+- <noscript><link rel="stylesheet" href="/assets/blog.css"></noscript> unchanged.
+
+- <link rel="icon" type="image/svg+xml" href="/favicon.svg"> unchanged.
+
+- <link rel="stylesheet" href="/assets/index-ufePLcBr.css"> unchanged.
+
+Now body:
+
+- <a href="#main-content" class="skip-link">Skip to main content</a> -> translate: "Zum Hauptinhalt springen". Could be "Zum Hauptinhalt gehen". I'll use "Zum Hauptinhalt springen".
+
+- <div id="root" role="application" aria-label="World Time Online Application"> -> aria-label value "World Time Online Application" should be translated? It's an attribute aria-label; we should translate. So translate to German: "World Time Online Anwendung". Keep "World Time" maybe brand? It's part of the name; but it's a description. Could translate to "World Time Online Anwendung". We'll translate: "World Time Online Anwendung". Keep the brand? Might be okay.
+
+- Inside <div class="app-loading" aria-busy="true" aria-live="polite">: aria-busy and aria-live values not translated.
+
+- <div class="app-loading-spinner" role="status" aria-label="Loading application"> -> aria-label translate: "Anwendung wird geladen". Could be "Wird geladen". I'll use "Anwendung wird geladen".
+
+- <p class="app-loading-text">Loading World Time...</p> -> translate: "World Time wird geladen...". Keep ellipsis. So "World Time wird geladen...".
+
+Now main content:
+
+- <nav class="blog-breadcrumb" aria-label="Breadcrumb"> -> translate aria-label: "Breadcrumbpfad" or "Breadcrumb-Navigation". I'll use "Breadcrumbpfad".
+
+- Inside: <a href="/">Home</a> -> translate: "Startseite". Could be "Home". But translate to German: "Startseite". We'll use "Startseite".
+
+- The separator " › " remains.
+
+- <a href="/#blog">Blog</a> -> translate: "Blog" could stay as is, but we can translate to "Blog" (same) or "Blog". I'll keep "Blog" as it's a common term; but to be safe, translate to "Blog" (no change). However, we could translate to "Blog" (same). I'll keep "Blog".
+
+- <span aria-current="page">Daylight Saving Time Ends 2026 — Dates & Clock Changes</span> -> translate the text: "Sommerzeit endet 2026 — Datum & Uhrzeitänderungen". Keep the span.
+
+- <h1>Daylight Saving Time Ends 2026 — Dates & Clock Changes</h1> -> translate: "Sommerzeit endet 2026 — Datum & Uhrzeitänderungen".
+
+- <div class="blog-meta"> August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide</div>
+
+We need to translate the visible text parts, keep the weird icon characters (they are likely emojis). We'll keep them as is.
+
+So we have: "August 10, 2026" -> translate to "10. August 2026". Keep the leading icons? The string shows some weird characters before August; they are likely placeholder for calendar icon. We'll keep them unchanged.
+
+Then "6 min read" -> translate to "6 Min Lesezeit". Keep the leading icon.
+
+Then "Time Zones, Guide" -> translate to "Zeitzonen, Leitfaden". Keep leading icon.
+
+Thus the div content: keep the icons exactly as they appear (they are three weird characters). We'll not modify them.
+
+So final:  10. August 2026 &nbsp;·&nbsp;  6 Min Lesezeit &nbsp;·&nbsp;  Zeitzonen, Leitfaden
+
+But note the original had " August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide". There are four weird chars before August, three before 6 min read, three before Time Zones. We'll keep those.
+
+Thus:  10. August 2026 &nbsp;·&nbsp;  6 Min Lesezeit &nbsp;·&nbsp;  Zeitzonen, Leitfaden
+
+- <p>Two clock changes bracket every year and both scramble schedules for a week or so. Here are the 2026 dates that matter.</p> -> translate.
+
+"Two clock changes bracket every year and both scramble schedules for a week or so." -> "Jährlich finden zwei Uhrzeitänderungen statt, die jeweils den Zeitplan für etwa eine Woche durcheinanderbringen."
+
+"Here are the 2026 dates that matter." -> "Hier sind die relevanten Termine für 2026."
+
+Combine: "Jährlich finden zwei Uhrzeitänderungen statt, die jeweils den Zeitplan für etwa eine Woche durcheinanderbringen. Hier sind die relevanten Termine für 2026."
+
+- <h2>2026 Clock Change Dates</h2> -> translate: "Uhrzeitänderungstermine 2026". Could be "Datum der Uhrzeitänderungen 2026". I'll use "Uhrzeitänderungstermine 2026".
+
+- Table: <thead><tr><th>Region</th><th>Spring forward</th><th>Fall back</th></tr></thead>
+
+Translate headers:
+
+Region -> "Region" (same). Spring forward -> "Uhr vorstellen" (spring forward). Fall back -> "Uhr zurückstellen". So:
+
+<th>Region</th> stays Region.
+
+<th>Spring forward</th> -> <th>Uhr vorstellen</th>
+
+<th>Fall back</th> -> <th>Uhr zurückstellen</th>
+
+- Table body rows:
+
+<tr><td>United States &amp; Canada</td><td>Mar 8</td><td>Nov 1</td></tr>
+
+Translate text inside td:
+
+"United States &amp; Canada" -> keep proper nouns; translate "United States" to "Vereinigte Staaten"? It's a proper noun; but we could translate to "Vereinigte Staaten". However, rule says do NOT translate city/feature names that are proper nouns unless a natural localized form exists. "United States" is a proper noun; natural localized form exists: "Vereinigte Staaten". So we should translate. Similarly "Canada" is proper noun; localized form "Kanada". So we should translate to "Vereinigte Staaten & Kanada". Keep the &amp; as is.
+
+Thus td: "Vereinigte Staaten & Kanada".
+
+Next td: "Mar 8" -> translate month: "Mär 8". Keep day.
+
+Next td: "Nov 1" -> "Nov 1" (Nov same). Could keep as "Nov 1". We'll keep.
+
+Second row: <td>UK &amp; EU (most)</td><td>Mar 29</td><td>Oct 25</td>
+
+Translate "UK &amp; EU (most)" -> "UK & EU (meist)". "UK" proper noun; localized form "Vereinigtes Königreich". But "UK" is abbreviation; natural localized form exists? Could translate to "Vereinigtes Königreich & EU (meist)". However, "UK" is often kept as is. The rule says do NOT translate city/feature names that are proper nouns unless a natural localized form exists. "UK" is a proper noun abbreviation; natural localized form is "Vereinigtes Königreich". So we should translate. "EU" is also proper noun; localized form "EU" (same) or "Europäische Union". Usually keep "EU". I'd translate to "Vereinigtes Königreich & EU (meist)". Keep parentheses.
+
+Thus td: "Vereinigtes Königreich & EU (meist)".
+
+Next td: "Mar 29" -> "Mär 29".
+
+Next td: "Oct 25" -> "Okt 25".
+
+Third row: <td>Australia (southern states)</td><td>Oct 4</td><td>Apr 5, 2027</td>
+
+Translate "Australia (southern states)" -> "Australien (südliche Staaten)". "Australia" -> "Australien". "southern states" -> "südliche Staaten". Keep parentheses.
+
+Thus td: "Australien (südliche Staaten)".
+
+Next td: "Oct 4" -> "Okt 4".
+
+Next td: "Apr 5, 2027" -> "Apr 5, 2027" (Apr same). Keep.
+
+Fourth row: <td>New Zealand</td><td>Sep 27</td><td>Apr 5, 2027</td>
+
+Translate "New Zealand" -> "Neuseeland". (Proper noun with localized form). So td: "Neuseeland".
+
+Next td: "Sep 27" -> "Sep 27" (Sep same). Keep.
+
+Next td: "Apr 5, 2027" -> same.
+
+- After table: <h2>The October Mismatch Week</h2> -> translate: "Die Oktober-Mismatch-Woche". Could be "Die Woche des Oktober-Mismatches". I'll translate: "Die Oktober-Mismatch-Woche". Keep hyphen.
+
+- Paragraph: <p>Europe falls back on <strong>October 25, 2026</strong>, but North America not until <strong>November 1</strong>. For one week the usual gaps shift by an hour: London–New York goes from 5 to 4 hours, Paris–San Francisco from 9 to 8. Meetings booked in absolute local times still work; meetings pinned to UTC need re-checking.</p>
+
+Translate:
+
+"Europe falls back on" -> "Europe stellt die Uhr zurück am". But we need to keep the strong tag content translated.
+
+Thus: "Europe stellt die Uhr zurück am <strong>25. Oktober 2026</strong>, aber Nordamerika nicht bis <strong>1. November 2026</strong>. Für eine Woche verschieben sich die üblichen Zeitdifferenzen um eine Stunde: London–New York geht von 5 auf 4 Stunden, Paris–San Francisco von 9 auf 8 Stunden. Meetings, die in absoluter lokaler Zeit gebucht sind, funktionieren weiterhin; Meetings, die an UTC gebunden sind, müssen überprüft werden."
+
+Check punctuation: original had a period after the second strong? Actually original: "Europe falls back on <strong>October 25, 2026</strong>, but North America not until <strong>November 1</strong>. For one week the usual gaps shift by an hour: London–New York goes from 5 to 4 hours, Paris–San Francisco from 9 to 8. Meetings booked in absolute local times still work; meetings pinned to UTC need re-checking."
+
+We'll keep similar punctuation.
+
+Thus final: "Europe stellt die Uhr zurück am <strong>25. Oktober 2026</strong>, aber Nordamerika nicht bis <strong>1. November 2026</strong>. Für eine Woche verschieben sich die üblichen Zeitdifferenzen um eine Stunde: London–New York geht von 5 auf 4 Stunden, Paris–San Francisco von 9 auf 8 Stunden. Meetings, die in absoluter lokaler Zeit gebucht sind, funktionieren weiterhin; Meetings, die an UTC gebunden sind, müssen überprüft werden."
+
+Note: "Europe" is a proper noun? Could translate to "Europa". Usually translate. So "Europa stellt die Uhr zurück am". Similarly "North America" -> "Nordamerika". We'll translate.
+
+Thus: "Europa stellt die Uhr zurück am <strong>25. Oktober 2026</strong>, aber Nordamerika nicht bis <strong>1. November 2026</strong>. Für eine Woche verschieben sich die üblichen Zeitdifferenzen um eine Stunde: London–New York geht von 5 auf 4 Stunden, Paris–San Francisco von 9 auf 8 Stunden. Meetings, die in absoluter lokaler Zeit gebucht sind, funktionieren weiterhin; Meetings, die an UTC gebunden sind, müssen überprüft werden."
+
+- <h2>What Breaks During Transitions</h2> -> translate: "Was funktioniert während der Übergänge nicht?" or "Was bricht während der Übergänge?" I'll use "Was funktioniert während der Übergänge nicht?" But original heading: "What Breaks During Transitions". Could be "Was funktioniert während der Übergänge nicht?" Another option: "Was während der Übergänge nicht funktioniert". I'll choose "Was während der Übergänge nicht funktioniert".
+
+- List items:
+
+<li>Recurring calendar events pinned to UTC drift an hour for a week.</li>
+

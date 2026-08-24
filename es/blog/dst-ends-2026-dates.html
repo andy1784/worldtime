@@ -1,0 +1,478 @@
+We need to translate visible/user-facing text into Spanish, preserving HTML tags, attributes, etc. The HTML currently has lang="es" already, but many texts are in English. We need to translate them.
+
+We must translate text inside tags and attributes like title, alt, aria-label, description, keywords, content (meta). Also visible text in body: e.g., "Skip to main content", "Loading World Time...", breadcrumb items, headings, paragraphs, table cells, list items, FAQ content, footer links, copyright.
+
+We must not translate URLs, proper nouns like region names (United States & Canada, UK & EU (most), Australia (southern states), New Zealand) unless a natural localized form exists. Usually we keep them as is. Also keep numbers, dates, etc.
+
+We need to translate meta tags: title, name="title", name="description", name="keywords", og:title, og:description, twitter:title, etc. Also JSON-LD fields: headline, description, articleSection, keywords, name (in Organization), etc. Also BreadcrumbList names, FAQ question names and answer texts.
+
+We must keep the HTML structure unchanged.
+
+Let's go step by step.
+
+First, the <head>:
+
+- <title>Daylight Saving Time Ends 2026 — Dates & Clock Changes | World Time Sync</title>
+
+Translate: "Daylight Saving Time Ends 2026 — Dates & Clock Changes | World Time Sync" into Spanish. Likely: "Finaliza el horario de verano 2026 — Fechas y cambios de reloj | World Time Sync". Keep the pipe and brand name unchanged. "Daylight Saving Time" could be "horario de verano". "Ends" -> "Finaliza". "Dates & Clock Changes" -> "Fechas y cambios de reloj". Keep the em dash? We'll keep same dash.
+
+- <meta name="title" content="Daylight Saving Time Ends 2026 — Dates & Clock Changes | World Time Sync"> same translation.
+
+- <meta name="description" content="Exact 2026 dates when clocks change: US fall back Nov 1, Europe Oct 25. What it means for meetings."> Translate: "Exactas fechas de 2026 cuando cambian los relojes: EE. UU. atrasa el 1 de noviembre, Europa el 25 de octubre. Qué significa para las reuniones." Need to keep proper nouns: US, Europe. Could translate "US fall back" as "EE. UU. atrasa". "fall back" is phrase; we can translate as "atrasa". Keep date format.
+
+- <meta name="keywords" content="daylight saving ends 2026 date, clock change october 2026, when do clocks go back 2026, fall back 2026"> Translate keywords: "horario de verano finaliza 2026 fecha, cambio de reloj octubre 2026, ¿cuándo se atrasan los relojes 2026?, atraso 2026". Keep proper nouns? Not needed. We'll translate.
+
+- <meta property="og:title" content="Daylight Saving Time Ends 2026 — Dates & Clock Changes | World Time Sync"> same as title.
+
+- <meta property="og:description" content="Exact 2026 dates when clocks change: US fall back Nov 1, Europe Oct 25. What it means for meetings."> same as description.
+
+- <meta name="twitter:title" content="Daylight Saving Time Ends 2026 — Dates & Clock Changes | World Time Sync"> same.
+
+- <link rel="canonical" href="..."> keep.
+
+- <link rel="alternate" hreflang="x-default" href="..."> keep.
+
+Now JSON-LD blocks.
+
+First JSON-LD (Article):
+
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "Daylight Saving Time Ends 2026 — Dates & Clock Changes | World Time Sync",
+ "description": "Exact 2026 dates when clocks change: US fall back Nov 1, Europe Oct 25. What it means for meetings.",
+ "articleSection": "Time Zones",
+ "keywords": "daylight saving ends 2026 date, clock change october 2026, when do clocks go back 2026, fall back 2026",
+ "wordCount": 173,
+ "timeRequired": "PT6M",
+ "inLanguage": "en",
+ "author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"},
+ "publisher": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com", "logo": {"@type": "ImageObject", "url": "https://worldtimessync.com/logo.png", "width": 512, "height": 512}},
+ "datePublished": "2026-08-10",
+ "dateModified": "2026-08-10",
+ "mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/es/blog/dst-ends-2026-dates.html"},
+ "image": "https://worldtimessync.com/og-image.png"
+}
+
+We need to translate headline, description, articleSection, keywords, author name? The organization name "World Time Sync" is a brand, keep as is. The URL keep. InLanguage maybe should stay "en"? The page is Spanish now? But rule: we translate only human-readable text; inLanguage is a language code, not translate. Keep as is.
+
+Translate:
+
+- headline: same as title translation.
+
+- description: same as meta description translation.
+
+- articleSection: "Time Zones" -> "Zonas horarias".
+
+- keywords: translate as earlier.
+
+- author name: keep "World Time Sync".
+
+- publisher name: keep.
+
+- logo alt? Not present.
+
+Second JSON-LD (BreadcrumbList):
+
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+   {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://worldtimessync.com/"},
+   {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://worldtimessync.com/#blog"},
+   {"@type": "ListItem", "position": 3, "name": "Daylight Saving Time Ends 2026 — Dates & Clock Changes", "item": "https://worldtimessync.com/es/blog/dst-ends-2026-dates.html"}
+ ]
+}
+
+Translate names: "Home" -> "Inicio". "Blog" -> "Blog" (could stay same but translate? "Blog" is often kept; but we can translate to "Blog" or "Bitácora". Usually keep as "Blog". We'll keep "Blog". The third name: translate the headline: "Daylight Saving Time Ends 2026 — Dates & Clock Changes" -> same as before.
+
+Third JSON-LD (FAQPage):
+
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+   {"@type": "Question", "name": "When do clocks go back in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "US/Canada: November 1. UK/Europe: October 25 — one week earlier."}},
+   {"@type": "Question", "name": "Why do Europe and the US change on different dates?", "acceptedAnswer": {"@type": "Answer", "text": "Different legislation. The mismatch creates a 1-week window where transatlantic time gaps shrink by an hour."}},
+   {"@type": "Question", "name": "Which regions skip daylight saving?", "acceptedAnswer": {"@type": "Answer", "text": "Most of Asia and Africa, plus Arizona and Hawaii in the US, keep standard time all year."}}
+ ]
+}
+
+Translate question names and answer texts.
+
+- Q1: "When do clocks go back in 2026?" -> "¿Cuándo se atrasan los relojes en 2026?"
+
+- Answer1: "US/Canada: November 1. UK/Europe: October 25 — one week earlier." -> translate: "EE. UU./Canadá: 1 de noviembre. Reino Unido/Europa: 25 de octubre — una semana antes." Keep US/Canada as EE. UU./Canadá. UK/Europe as Reino Unido/Europa.
+
+- Q2: "Why do Europe and the US change on different dates?" -> "¿Por qué Europa y EE. UU. cambian en fechas diferentes?"
+
+- Answer2: "Different legislation. The mismatch creates a 1-week window where transatlantic time gaps shrink by an hour." -> "Diferente legislación. El desajuste crea una ventana de 1 semana donde las brechas horarias transatlánticas se reducen en una hora."
+
+- Q3: "Which regions skip daylight saving?" -> "¿Qué regiones omiten el horario de verano?"
+
+- Answer3: "Most of Asia and Africa, plus Arizona and Hawaii in the US, keep standard time all year." -> "La mayor parte de Asia y África, además de Arizona y Hawái en EE. UU., mantienen el horario estándar todo el año."
+
+Now body content.
+
+Visible text:
+
+- <a href="#main-content" class="skip-link">Skip to main content</a> -> translate: "Saltar al contenido principal".
+
+- Inside <div class="app-loading" aria-busy="true" aria-live="polite">: there's a <p class="app-loading-text">Loading World Time...</p>. Translate: "Cargando World Time...". Keep brand.
+
+- Breadcrumb: <nav class="blog-breadcrumb" aria-label="Breadcrumb">: <a href="/">Home</a> › <a href="/#blog">Blog</a> › <span aria-current="page">Daylight Saving Time Ends 2026 — Dates & Clock Changes</span>
+
+Translate "Home" -> "Inicio". "Blog" maybe keep "Blog". The span: translate the headline as before.
+
+- <h1>Daylight Saving Time Ends 2026 — Dates & Clock Changes</h1> -> translate.
+
+- <div class="blog-meta"> August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide</div>
+
+We see weird characters (maybe icons). The visible text: "August 10, 2026", "6 min read", "Time Zones, Guide". Need to translate month? Keep date format but translate month to Spanish: "10 de agosto de 2026". "6 min read" -> "6 min de lectura". "Time Zones, Guide" -> "Zonas horarias, Guía". The icons remain as is (they are likely emoji or icons). We'll keep the weird characters as they are (they are not translatable). We'll replace the text parts.
+
+- <p>Two clock changes bracket every year and both scramble schedules for a week or so. Here are the 2026 dates that matter.</p> -> translate: "Dos cambios de reloj ocurren cada año y ambos desorganizan los horarios durante una semana o así. Aquí están las fechas de 2026 que importan."
+
+- <h2>2026 Clock Change Dates</h2> -> "Fechas de cambio de reloj 2026"
+
+- Table headers: <th>Region</th> -> "Región". <th>Spring forward</th> -> "Adelante de primavera" (commonly "Primavera adelante" but phrase "Spring forward" is used; we can translate as "Adelante de primavera" or "Primavera en adelante". Usually "adelantar el reloj". But we keep meaning: "Adelante de primavera". Similarly "Fall back" -> "Atrasar de otoño". We'll translate: "Adelante de primavera" and "Atrasar de otoño". Keep the ampersand in region names.
+
+- Table cells: "United States &amp; Canada" keep as is (but note it's HTML entity &amp;). We'll keep same. "Mar 8" -> "8 de mar". "Nov 1" -> "1 de nov". "UK &amp; EU (most)" keep. "Mar 29" -> "29 de mar". "Oct 25" -> "25 de oct". "Australia (southern states)" keep. "Oct 4" -> "4 de oct". "Apr 5, 2027" -> "5 de abr de 2027". "New Zealand" keep. "Sep 27" -> "27 de sep". "Apr 5, 2027" same.
+
+- <h2>The October Mismatch Week</h2> -> "La semana de desajuste de octubre"
+
+- Paragraph: "Europe falls back on <strong>October 25, 2026</strong>, but North America not until <strong>November 1</strong>. For one week the usual gaps shift by an hour: London–New York goes from 5 to 4 hours, Paris–San Francisco from 9 to 8. Meetings booked in absolute local times still work; meetings pinned to UTC need re-checking."
+
+Translate: "Europa atrasa el <strong>25 de octubre de 2026</strong>, pero América del Norte no hasta el <strong>1 de noviembre</strong>. Durante una semana las brechas habituales se desplazan una hora: Londres–Nueva York pasa de 5 a 4 horas, París–San Francisco de 9 a 8. Las reuniones programadas en hora local absoluta siguen funcionando; las reuniones fijadas a UTC necesitan ser revisadas."
+
+Note: "North America" maybe keep as "América del Norte". "London–New York" keep as is (city names). "Paris–San Francisco" keep.
+
+- <h2>What Breaks During Transitions</h2> -> "Qué se rompe durante las transiciones"
+
+- List items:
+
+<li>Recurring calendar events pinned to UTC drift an hour for a week.</li> -> "Los eventos del calendario recurrentes fijados a UTC se desvían una hora durante una semana."
+
+<li>Overnight shifts and flight times published in local time can double-book.</li> -> "Los turnos nocturnos y los horarios de vuelo publicados en hora local pueden causar reservas dobles."
+
+<li>Cron jobs and server logs show "duplicate" or "missing" hours.</li> -> "Los trabajos cron y los registros del servidor muestran horas "duplicadas" o "faltantes"."
+
+Note keep quotes.
+
+- <h2>Frequently Asked Questions</h2> -> "Preguntas frecuentes"
+
+- <div class="faq-section"> {FAQ} </div> The placeholder {FAQ} likely will be replaced by script; we keep as is.
+
+- Paragraph after: "Full worldwide table: <a href="/dst-2026-worldwide.html">DST 2026 worldwide</a>. Countdown: <a href="/dst-countdown.html">next DST change</a>."
+
+Translate: "Tabla mundial completa: <a href="/dst-2026-worldwide.html">DST 2026 mundial</a>. Cuenta regresiva: <a href="/dst-countdown.html">próximo cambio de DST</a>."
+
+Note: Keep the link paths unchanged.
+
+- Footer links: <a href="/privacy.html">Privacy</a> -> "Privacidad". <a href="/about.html">About</a> -> "Acerca de". <a href="/contact.html">Contact</a> -> "Contacto". <a href="/terms.html">Terms</a> -> "Términos". Copyright: "&copy; 2026 World Time Sync" keep brand; maybe translate "© 2026 World Time Sync" unchanged.
+
+Now also need to translate any aria-label attributes: we have aria-label="Skip to main content"? Actually the skip link has class but not aria-label. The <div id="root" role="application" aria-label="World Time Online Application"> -> translate aria-label: "Aplicación World Time Online". Also <div class="app-loading" aria-busy="true" aria-live="polite">: aria-live value is a keyword, not translate. aria-busy boolean.
+
+The <div class="app-loading-spinner" role="status" aria-label="Loading application"> -> translate aria-label: "Cargando aplicación".
+
+Also the <nav class="blog-breadcrumb" aria-label="Breadcrumb"> -> translate: "Ruta de navegación".
+
+Also the <span aria-current="page"> is okay.
+
+Also the <main id="main-content"> maybe no aria.
+
+Also the <article class="blog-wrap"> no.
+
+Also the <footer class="blog-footer"> no.
+
+Also the <script> tags content not translate.
+
+Now also need to translate any title attributes? None.
+
+Now also need to translate any alt attributes? None.
+
+Now also need to translate any placeholder text inside <noscript>? <noscript><link rel="stylesheet" href="/assets/blog.css"></noscript> no text.
+
+Now also need to translate any content inside <meta name="theme-color">? No.
+
+Now also need to translate any content inside <meta name="google-site-verification">? No.
+
+Now also need to translate any content inside <meta name="author">? It's "World Time Sync". Keep.
+
+Now also need to translate any content inside <meta property="og:image">? No.
+
+Now also need to translate any content inside <meta name="twitter:card">? No.
+
+Now also need to translate any content inside <link rel="icon">? No.
+
+Now also need to translate any content inside <link rel="preload">? No.
+
+Now also need to translate any content inside <script type="application/ld+json"> we already did.
+
+Now also need to translate any content inside <script> that is not JSON-LD? No.
+
+Now also need to translate any text inside <noscript>? No.
+
+Now also need to translate any text inside <style>? None.
+
+Now also need to translate any text inside <title> we did.
+
+Now also need to translate any text inside <h1>, <h2>, <p>, <li>, <th>, <td>, etc.
+
+Now also need to translate any text inside <div class="blog-meta"> we did.
+
+Now also need to translate any text inside <footer> links we did.
+
+Now also need to translate any text inside <p class="app-loading-text"> we did.
+
+Now also need to translate any text inside <a href="#main-content" class="skip-link"> we did.
+
+Now also need to translate any text inside <div class="app-loading">? No.
+
+Now also need to translate any text inside <div class="app-loading-spinner">? No.
+
+Now also need to translate any text inside <nav class="blog-breadcrumb"> we did.
+
+Now also need to translate any text inside <span aria-current="page"> we did.
+
+Now also need to translate any text inside <article class="blog-wrap">? No.
+
+Now also need to translate any text inside <div class="faq-section"> placeholder {FAQ} we keep.
+
+Now also need to translate any text inside <script> that contains document.addEventListener etc? No.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? No.
+
+Now also need to translate any text inside <script> that creates ahrefs script? No.
+
+Now also need to translate any text inside <script type="module" src="...">? No.
+
+Now also need to translate any text inside <noscript>? No.
+
+Now also need to translate any text inside <meta name="keywords"> we did.
+
+Now also need to translate any meta name="description" we did.
+
+Now also need to translate any meta property="og:description" we did.
+
+Now also need to translate any meta name="twitter:title" we did.
+
+Now also need to translate any meta property="og:title" we did.
+
+Now also need to translate any meta name="title" we did.
+
+Now also need to translate any meta property="og:image"? No.
+
+Now also need to translate any meta property="og:url"? No.
+
+Now also need to translate any meta property="og:type"? No.
+
+Now also need to translate any meta name="theme-color"? No.
+
+Now also need to translate any meta name="viewport"? No.
+
+Now also need to translate any meta charset? No.
+
+Now also need to translate any link rel="canonical"? No.
+
+Now also need to translate any link rel="alternate"? No.
+
+Now also need to translate any link rel="preload"? No.
+
+Now also need to translate any link rel="icon"? No.
+
+Now also need to translate any link rel="stylesheet"? No.
+
+Now also need to translate any script src? No.
+
+Now also need to translate any script async src? No.
+
+Now also need to translate any script type="application/ld+json" content we did.
+
+Now also need to translate any script type="application/ld+json" for BreadcrumbList we did.
+
+Now also need to translate any script type="application/ld+json" for FAQPage we did.
+
+Now also need to translate any script type="application/ld+json" for Article we did.
+
+Now also need to translate any script type="application/ld+json" for any other? No.
+
+Now also need to translate any text inside <title> we did.
+
+Now also need to translate any text inside <meta name="author"? Already.
+
+Now also need to translate any text inside <meta name="generator"? Not present.
+
+Now also need to translate any text inside <meta name="rating"? Not present.
+
+Now also need to translate any text inside <meta name="robots"? Not.
+
+Now also need to translate any text inside <meta name="distribution"? Not.
+
+Now also need to translate any text inside <meta name="rating"? Not.
+
+Now also need to translate any text inside <meta name="revisit-after"? Not.
+
+Now also need to translate any text inside <meta name="classification"? Not.
+
+Now also need to translate any text inside <meta name="language"? Not.
+
+Now also need to translate any text inside <meta name="copyright"? Not.
+
+Now also need to translate any text inside <meta name="distribution"? Not.
+
+Now also need to translate any text inside <meta name="rating"? Not.
+
+Now also need to translate any text inside <meta name="subject"? Not.
+
+Now also need to translate any text inside <meta name="audience"? Not.
+
+Now also need to translate any text inside <meta name="category"? Not.
+
+Now also need to translate any text inside <meta name="rating"? Not.
+
+Now also need to translate any text inside <meta name="revisit-after"? Not.
+
+Now also need to translate any text inside <meta name="classification"? Not.
+
+Now also need to translate any text inside <meta name="rating"? Not.
+
+Ok.
+
+Now we need to output the full HTML with translations.
+
+Let's construct.
+
+First, the <!doctype html> and <html lang="es"> remain.
+
+Now head:
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="theme-color" content="#667eea">
+<meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk">
+<title>Finaliza el horario de verano 2026 — Fechas y cambios de reloj | World Time Sync</title>
+<meta name="title" content="Finaliza el horario de verano 2026 — Fechas y cambios de reloj | World Time Sync">
+<meta name="description" content="Exactas fechas de 2026 cuando cambian los relojes: EE. UU. atrasa el 1 de noviembre, Europa el 25 de octubre. Qué significa para las reuniones.">
+<meta name="keywords" content="horario de verano finaliza 2026 fecha, cambio de reloj octubre 2026, ¿cuándo se atrasan los relojes 2026?, atraso 2026">
+<meta name="robots" content="index, follow">
+<meta name="author" content="World Time Sync">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://worldtimessync.com/es/blog/dst-ends-2026-dates.html">
+<meta property="og:title" content="Finaliza el horario de verano 2026 — Fechas y cambios de reloj | World Time Sync">
+<meta property="og:description" content="Exactas fechas de 2026 cuando cambian los relojes: EE. UU. atrasa el 1 de noviembre, Europa el 25 de octubre. Qué significa para las reuniones.">
+<meta property="og:image" content="https://worldtimessync.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Finaliza el horario de verano 2026 — Fechas y cambios de reloj | World Time Sync">
+<link rel="canonical" href="https://worldtimessync.com/es/blog/dst-ends-2026-dates.html">
+<link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/es/blog/dst-ends-2026-dates.html">
+<link rel="preload" href="/assets/blog.css" as="style">
+<noscript><link rel="stylesheet" href="/assets/blog.css"></noscript>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/assets/index-ufePLcBr.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LBX0CDYSSV');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "Finaliza el horario de verano 2026 — Fechas y cambios de reloj | World Time Sync", "description": "Exactas fechas de 2026 cuando cambian los relojes: EE. UU. atrasa el 1 de noviembre, Europa el 25 de octubre. Qué significa para las reuniones.", "articleSection": "Zonas horarias", "keywords": "horario de verano finaliza 2026 fecha, cambio de reloj octubre 2026, ¿cuándo se atrasan los relojes 2026?, atraso 2026", "wordCount": 173, "timeRequired": "PT6M", "inLanguage": "en", "author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}, "publisher": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com", "logo": {"@type": "ImageObject", "url": "https://worldtimessync.com/logo.png", "width": 512, "height": 512}}, "datePublished": "2026-08-10", "dateModified": "2026-08-10", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/es/blog/dst-ends-2026-dates.html"}, "image": "https://worldtimessync.com/og-image.png"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://worldtimessync.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://worldtimessync.com/#blog"}, {"@type": "ListItem", "position": 3, "name": "Finaliza el horario de verano 2026 — Fechas y cambios de reloj", "item": "https://worldtimessync.com/es/blog/dst-ends-2026-dates.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cuándo se atrasan los relojes en 2026?", "acceptedAnswer": {"@type": "Answer", "text": "EE. UU./Canadá: 1 de noviembre. Reino Unido/Europa: 25 de octubre — una semana antes."}}, {"@type": "Question", "name": "¿Por qué Europa y EE. UU. cambian en fechas diferentes?", "acceptedAnswer": {"@type": "Answer", "text": "Diferente legislación. El desajuste crea una ventana de 1 semana donde las brechas horarias transatlánticas se reducen en una hora."}}, {"@type": "Question", "name": "¿Qué regiones omiten el horario de verano?", "acceptedAnswer": {"@type": "Answer", "text": "La mayor parte de Asia y África, además de Arizona y Hawái en EE. UU., mantienen el horario estándar todo el año."}}]}
+</script>
+
+Now body.
+
+<body>
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    <div id="root" role="application" aria-label="Aplicación World Time Online">
+        <div class="app-loading" aria-busy="true" aria-live="polite">
+            <div class="app-loading-spinner" role="status" aria-label="Cargando aplicación"></div>
+            <p class="app-loading-text">Cargando World Time...</p>
+        </div>
+    </div>
+    <main id="main-content">
+        <article class="blog-wrap">
+            <nav class="blog-breadcrumb" aria-label="Ruta de navegación">
+                <a href="/">Inicio</a> › <a href="/#blog">Blog</a> › <span aria-current="page">Finaliza el horario de verano 2026 — Fechas y cambios de reloj</span>
+            </nav>
+            <h1>Finaliza el horario de verano 2026 — Fechas y cambios de reloj</h1>
+            <div class="blog-meta"> 10 de agosto de 2026 &nbsp;·&nbsp;  6 min de lectura &nbsp;·&nbsp;  Zonas horarias, Guía</div>
+
+<p>Dos cambios de reloj ocurren cada año y ambos desorganizan los horarios durante una semana o así. Aquí están las fechas de 2026 que importan.</p>
+
+<h2>Fechas de cambio de reloj 2026</h2>
+<table><thead><tr><th>Región</th><th>Adelante de primavera</th><th>Atrasar de otoño</th></tr></thead><tbody>
+<tr><td>United States &amp; Canada</td><td>8 de mar</td><td>1 de nov</td></tr>
+<tr><td>UK &amp; EU (most)</td><td>29 de mar</td><td>25 de oct</td></tr>
+<tr><td>Australia (southern states)</td><td>4 de oct</td><td>5 de abr de 2027</td></tr>
+<tr><td>New Zealand</td><td>27 de sep</td><td>5 de abr de 2027</td></tr>
+</tbody></table>
+
+<h2>La semana de desajuste de octubre</h2>
+<p>Europa atrasa el <strong>25 de octubre de 2026</strong>, pero América del Norte no hasta el <strong>1 de noviembre</strong>. Durante una semana las brechas habituales se desplazan una hora: Londres–Nueva York pasa de 5 a 4 horas, París–San Francisco de 9 a 8. Las reuniones programadas en hora local absoluta siguen funcionando; las reuniones fijadas a UTC necesitan ser revisadas.</p>
+
+<h2>Qué se rompe durante las transiciones</h2>
+<ul>
+<li>Los eventos del calendario recurrentes fijados a UTC se desvían una hora durante una semana.</li>
+<li>Los turnos nocturnos y los horarios de vuelo publicados en hora local pueden causar reservas dobles.</li>
+<li>Los trabajos cron y los registros del servidor muestran horas "duplicadas" o "faltantes".</li>
+</ul>
+
+<h2>Preguntas frecuentes</h2>
+<div class="faq-section">
+{FAQ}
+</div>
+<p>Tabla mundial completa: <a href="/dst-2026-worldwide.html">DST 2026 mundial</a>. Cuenta regresiva: <a href="/dst-countdown.html">próximo cambio de DST</a>.</p>
+
+        <footer class="blog-footer">
+            <a href="/privacy.html">Privacidad</a>
+            <a href="/about.html">Acerca de</a>
+            <a href="/contact.html">Contacto</a>
+            <a href="/terms.html">Términos</a>
+            <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p>
+        </footer>
+    </main>
+
+    <script type="module" src="/assets/index-Dd7au40z.js" async></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var seo = document.querySelector('.blog-wrap');
+        if (seo) seo.style.display = 'none';
+      });
+    </script>
+    <script>
+      window.addEventListener('load',function(){
+        var ahrefs=document.createElement('script');
+        ahrefs.async=true;
+        ahrefs.src='https://analytics.ahrefs.com/analytics.js';
+        ahrefs.setAttribute('data-key','hB1VYWuwb1i/f1d8re7P2A');
+        document.head.appendChild(ahrefs);
+      });
+    </script>
+  </body>
+</html>
+
+Now need to ensure we didn't miss any text: The <div class="blog-meta"> had weird icons before each segment. We kept them as is. The icons are likely emojis: calendar, clock, folder. We left them unchanged.
+
+Check that we translated "6 min read" to "6 min de lectura". Good.
+
+Check that we kept the ampersand in region names as &amp; (HTML entity). Good.
+
+Check that we kept the date format: "8 de mar" etc. Should we keep "Mar" abbreviation? We translated to "mar". That's fine.
+
+Check that we kept "Apr 5, 2027" translation: "5 de abr de 2027". Good.
+
+Check that we kept "Sep 27": "27 de sep". Good.
+
+Check that we kept "Oct 4": "4 de oct". Good.
+
+Check that we kept "Mar 8": "8 de mar". Good.
+
+Check that we kept "Mar 29

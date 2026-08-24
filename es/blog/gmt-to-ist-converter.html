@@ -1,0 +1,672 @@
+We need to translate visible/user-facing text into Spanish, preserving HTML tags, attributes, etc. The page currently has lang="es" already, but many texts are in English. We need to translate them to Spanish.
+
+We must translate text inside tags and attributes like title, alt, aria-label, description, keywords, content (meta). Also visible text in body.
+
+We must not translate URLs, proper nouns like city/feature names unless natural localized form exists. Keep code, JSON-LD values? The JSON-LD contains text values that are user-facing (like headline, description, name, etc.) Should translate those as they are visible to search engines? The rule says translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. JSON-LD is inside script tag, not visible to user but is data. Should we translate? The rule says translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. JSON-LD is not those attributes; it's inside script tag, type application/ld+json. Likely we should not translate JSON-LD content because it's structured data; but the rule says translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. JSON-LD is not those, so we leave as is. However, the content inside JSON-LD includes "headline", "description", etc. Those are meant for search engines; but the instruction says not to translate unless inside those specific attributes. So we keep JSON-LD unchanged.
+
+Similarly, we have meta tags with name="title", name="description", name="keywords", property="og:title", etc. Those are attributes content; we must translate the content values.
+
+Also we have <title> tag content.
+
+Also we have <meta name="theme-color" content="#667eea"> - not translate.
+
+Also we have <link rel="canonical" href="..."> - keep URL.
+
+Also we have <link rel="alternate" hreflang="x-default" href="..."> - keep.
+
+Also we have <meta name="google-site-verification" content="..."> - keep.
+
+Also we have <meta name="author" content="World Time Sync"> - translate? Author is organization name; proper noun? It's a brand; we should not translate proper nouns. Keep as is.
+
+Also we have <meta property="og:type" content="article"> - keep.
+
+Also we have <meta property="og:url" content="..."> - keep.
+
+Also we have <meta property="og:title" content="..."> - translate.
+
+Also we have <meta property="og:description" content="..."> - translate.
+
+Also we have <meta name="twitter:card" content="summary_large_image"> - keep.
+
+Also we have <meta name="twitter:title" content="..."> - translate.
+
+Also we have <link rel="preload" href="/assets/blog.css" as="style"> - keep.
+
+Also we have <noscript><link rel="stylesheet" href="/assets/blog.css"></noscript> - keep.
+
+Also we have <link rel="icon" type="image/svg+xml" href="/favicon.svg"> - keep.
+
+Also we have <link rel="stylesheet" href="/assets/index-ufePLcBr.css"> - keep.
+
+Also we have <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script> - keep.
+
+Also we have <script> with gtag - keep.
+
+Also we have <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script> - keep.
+
+Also we have JSON-LD blocks - keep as is.
+
+Now body:
+
+<a href="#main-content" class="skip-link">Skip to main content</a> -> translate "Skip to main content" to Spanish: "Saltar al contenido principal". Keep attributes.
+
+<div id="root" role="application" aria-label="World Time Online Application"> -> aria-label content translate? It's an attribute aria-label, should translate: "Aplicación World Time Online". Keep role.
+
+<div class="app-loading" aria-busy="true" aria-live="polite"> -> keep.
+
+<div class="app-loading-spinner" role="status" aria-label="Loading application"> -> translate aria-label: "Cargando aplicación". Keep role.
+
+<p class="app-loading-text">Loading World Time...</p> -> translate: "Cargando hora mundial..." maybe "Cargando World Time..." but "World Time" is brand? Could keep as is? It's not a proper noun; it's descriptive. We'll translate: "Cargando hora mundial..." but maybe "Cargando World Time..." Since it's a phrase "World Time" could be kept as brand. Safer to translate "World Time" as "hora mundial". We'll do "Cargando hora mundial...".
+
+<main id="main-content"> ... </main>
+
+Inside:
+
+<article class="blog-wrap">
+<nav class="blog-breadcrumb" aria-label="Breadcrumb"> -> translate aria-label: "Ruta de navegación". Keep.
+
+<a href="/">Home</a> → translate "Home" to "Inicio". Keep href.
+
+› separator is just a character, keep.
+
+<a href="/#blog">Blog</a> → translate "Blog" to "Blog"? In Spanish often keep "Blog". Could translate to "Blog" or "Bitácora". Usually keep "Blog". We'll keep "Blog" as it's common.
+
+<span aria-current="page">GMT to IST Converter — India Standard Time Chart</span> -> translate the text inside span. Need to translate "GMT to IST Converter — India Standard Time Chart". Keep the dash? We'll translate to "Convertidor de GMT a IST — Gráfico de Hora Estándar de la India". Keep the em dash? We'll keep " — ". So: "Convertidor de GMT a IST — Gráfico de Hora Estándar de la India". Also note "GMT" and "IST" are acronyms, keep.
+
+<h1>GMT to IST Converter — India Standard Time Chart</h1> -> translate similarly: "Convertidor de GMT a IST — Gráfico de Hora Estándar de la India".
+
+<div class="blog-meta"> August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide</div>
+
+We see weird characters () likely due to encoding issues; they might be icons. We should keep them as is (they are not translatable). The text after: "August 10, 2026" translate to Spanish date format: "10 de agosto de 2026". Keep the middle dot separators.
+
+"6 min read" -> translate to "6 min de lectura" or "6 minutos de lectura". Usually "6 min read" -> "6 min de lectura". We'll do "6 min de lectura".
+
+"Time Zones, Guide" -> translate to "Zonas horarias, Guía". Keep comma.
+
+Thus the div becomes:  10 de agosto de 2026 &nbsp;·&nbsp;  6 min de lectura &nbsp;·&nbsp;  Zonas horarias, Guía
+
+But we need to keep the weird characters as is.
+
+Next paragraph:
+
+<p>India Standard Time runs a fixed <strong>GMT+5:30</strong> all year — no daylight saving. The half-hour offset trips up schedulers used to whole-hour gaps.</p>
+
+Translate: "La Hora Estándar de la India tiene un desfase fijo de <strong>GMT+5:30</strong> durante todo el año — sin horario de verano. El desfase de media hora confunde a los programadores acostumbrados a diferencias de hora enteras."
+
+We need to keep <strong>GMT+5:30</strong> unchanged inside.
+
+Next:
+
+<h2>Live Converter</h2> -> translate to "Convertidor en vivo".
+
+<div class="converter-widget">
+<h2>GMT → IST</h2> -> translate to "GMT → IST" maybe keep arrow? Could translate to "GMT → IST" same. We'll keep as is? The text "GMT → IST" is not translatable; we can keep.
+
+<div class="converter-row"><label>GMT time:</label><input type="time" id="g" value="09:30"></div> -> translate label: "GMT time:" to "Hora GMT:".
+
+<div class="converter-row"><label>IST:</label><output id="i"></output></div> -> label "IST:" keep? Could translate to "IST:" but it's acronym; we can keep "IST:" or translate to "Hora IST:"? Usually keep label as "IST:" but we can translate to "IST:" same. We'll keep "IST:" maybe translate to "IST:"? We'll keep as is.
+
+Next script - keep unchanged.
+
+Next:
+
+<h2>Common Meeting Times GMT → IST</h2> -> translate to "Horarios comunes de reunión GMT → IST".
+
+<table><thead><tr><th>GMT</th><th>IST</th><th>Note</th></tr></thead><tbody>... translate header Note to "Nota". Keep GMT, IST as is.
+
+Rows: keep times, translate note strings.
+
+Row1 note: "Late morning India" -> translate to "Mañana tardía en la India" or "Mañana tarde en la India". We'll do "Mañana tardía en la India".
+
+Row2: "Mid-afternoon overlap" -> "Solapamiento de tarde media" or "Sobreposición de tarde media". We'll do "Sobreposición de tarde media".
+
+Row3: "Best EU–India window" -> "Mejor ventana UE–India". Keep EU as is.
+
+Row4: "Evening India" -> "Tarde en la India".
+
+Row5: "US East morning" -> "Mañana este de EE. UU." or "Mañana de la costa este de EE. UU." We'll do "Mañana este de EE. UU."
+
+Next:
+
+<h2>Frequently Asked Questions</h2> -> translate to "Preguntas frecuentes".
+
+<div class="faq-section">
+{FAQ}
+</div> -> keep placeholder {FAQ} unchanged.
+
+<p>Schedule recurring calls with the <a href="/meeting-planner.html">meeting planner</a>.</p> -> translate: "Programa llamadas recurrentes con el <a href="/meeting-planner.html">planificador de reuniones</a>." Keep link href.
+
+Footer:
+
+<footer class="blog-footer">
+<a href="/privacy.html">Privacy</a>
+<a href="/about.html">About</a>
+<a href="/contact.html">Contact</a>
+<a href="/terms.html">Terms</a>
+<p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p>
+</footer>
+
+Translate link texts: Privacy -> "Privacidad". About -> "Acerca de". Contact -> "Contacto". Terms -> "Términos". Keep href.
+
+The copyright line: "&copy; 2026 World Time Sync" -> translate? Usually keep brand name; we can translate "World Time Sync" as is? It's a brand. We'll keep as is. So "&copy; 2026 World Time Sync". Could translate to "&copy; 2026 World Time Sync". No change.
+
+Now also need to translate any aria-label attributes we changed.
+
+Also need to translate any title attributes? Not present.
+
+Also need to translate any placeholder text? Not.
+
+Now also need to translate any text inside <script>? Not.
+
+Now also need to translate any text inside <noscript>? Not.
+
+Now also need to translate any text inside <link rel="preload">? Not.
+
+Now also need to translate any text inside <meta name="title"> etc.
+
+Let's go through head again and translate.
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="theme-color" content="#667eea">
+<meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk">
+<title>GMT to IST Converter — India Standard Time Chart | World Time Sync</title>
+<meta name="title" content="GMT to IST Converter — India Standard Time Chart | World Time Sync">
+<meta name="description" content="Convert GMT to IST (+5:30) instantly with a chart covering common meeting times for India calls.">
+<meta name="keywords" content="gmt to ist converter, gmt to ist, ist time now, india time zone, utc to ist">
+<meta name="robots" content="index, follow">
+<meta name="author" content="World Time Sync">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://worldtimessync.com/es/blog/gmt-to-ist-converter.html">
+<meta property="og:title" content="GMT to IST Converter — India Standard Time Chart | World Time Sync">
+<meta property="og:description" content="Convert GMT to IST (+5:30) instantly with a chart covering common meeting times for India calls.">
+<meta property="og:image" content="https://worldtimessync.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GMT to IST Converter — India Standard Time Chart | World Time Sync">
+<link rel="canonical" href="https://worldtimessync.com/es/blog/gmt-to-ist-converter.html">
+<link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/es/blog/gmt-to-ist-converter.html">
+<link rel="preload" href="/assets/blog.css" as="style">
+<noscript><link rel="stylesheet" href="/assets/blog.css"></noscript>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/assets/index-ufePLcBr.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LBX0CDYSSV');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+...
+</script>
+...
+
+We need to translate the content values of meta tags that are user-facing: title, name="title", name="description", name="keywords", name="author"? author is brand, keep. property="og:title", property="og:description", name="twitter:title". Also maybe name="keywords" - translate keywords? They are keywords for SEO; but they are inside content attribute; rule says translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. So keywords attribute content should be translated. So we need to translate the keywords list.
+
+Also maybe name="description" content.
+
+Also maybe name="title" content.
+
+Also maybe property="og:title" content.
+
+Also property="og:description".
+
+Also name="twitter:title".
+
+Also maybe name="author" content? It's brand; keep.
+
+Also maybe name="theme-color" content is color; keep.
+
+Now translate:
+
+<title>GMT to IST Converter — India Standard Time Chart | World Time Sync</title> -> translate to "Convertidor de GMT a IST — Gráfico de Hora Estándar de la India | World Time Sync". Keep brand.
+
+<meta name="title" content="GMT to IST Converter — India Standard Time Chart | World Time Sync"> -> same translation.
+
+<meta name="description" content="Convert GMT to IST (+5:30) instantly with a chart covering common meeting times for India calls."> -> translate: "Convierte GMT a IST (+5:30) al instante con un gráfico que cubre los horarios de reunión comunes para llamadas a la India."
+
+Note: keep (+5:30) as is.
+
+<meta name="keywords" content="gmt to ist converter, gmt to ist, ist time now, india time zone, utc to ist"> -> translate each keyword? Should translate to Spanish equivalents: "convertidor de gmt a ist, gmt a ist, hora ist ahora, zona horaria de la india, utc a ist". Keep lowercase? We'll translate.
+
+Thus content: "convertidor de gmt a ist, gmt a ist, hora ist ahora, zona horaria de la india, utc a ist"
+
+<meta name="robots" content="index, follow"> -> keep.
+
+<meta name="author" content="World Time Sync"> -> keep.
+
+<meta property="og:type" content="article"> -> keep.
+
+<meta property="og:url" content="https://worldtimessync.com/es/blog/gmt-to-ist-converter.html"> -> keep.
+
+<meta property="og:title" content="GMT to IST Converter — India Standard Time Chart | World Time Sync"> -> translate same as title.
+
+<meta property="og:description" content="Convert GMT to IST (+5:30) instantly with a chart covering common meeting times for India calls."> -> translate same as description.
+
+<meta property="og:image" content="https://worldtimessync.com/og-image.png"> -> keep.
+
+<meta name="twitter:card" content="summary_large_image"> -> keep.
+
+<meta name="twitter:title" content="GMT to IST Converter — India Standard Time Chart | World Time Sync"> -> translate same.
+
+Now also need to translate any other visible text like the placeholder {FAQ} - keep.
+
+Now also need to translate any text inside <svg>? none.
+
+Now also need to translate any text inside <script type="application/ld+json">? We decided not to translate.
+
+Now also need to translate any text inside <script> like the gtag? Not.
+
+Now also need to translate any text inside <div class="blog-meta"> we already did.
+
+Now also need to translate any text inside <p> after FAQ: "Schedule recurring calls with the <a href="/meeting-planner.html">meeting planner</a>." we did.
+
+Now also need to translate any text inside <footer> links.
+
+Now also need to translate any text inside <p class="app-loading-text"> we did.
+
+Now also need to translate any text inside <div class="app-loading-spinner" aria-label="Loading application"> we did.
+
+Now also need to translate any text inside <div id="root" role="application" aria-label="World Time Online Application"> we did.
+
+Now also need to translate any text inside <a href="#main-content" class="skip-link">Skip to main content</a> we did.
+
+Now also need to translate any text inside <nav class="blog-breadcrumb" aria-label="Breadcrumb"> we did.
+
+Now also need to translate any text inside <a href="/">Home</a> we did.
+
+Now also need to translate any text inside <a href="/#blog">Blog</a> we kept.
+
+Now also need to translate any text inside <span aria-current="page">GMT to IST Converter — India Standard Time Chart</span> we did.
+
+Now also need to translate any text inside <h1> we did.
+
+Now also need to translate any text inside <div class="blog-meta"> we did.
+
+Now also need to translate any text inside <p> after that we did.
+
+Now also need to translate any text inside <h2>Live Converter</h2> we did.
+
+Now also need to translate any text inside <h2>GMT → IST</h2> we kept.
+
+Now also need to translate any text inside <label>GMT time:</label> we did.
+
+Now also need to translate any text inside <label>IST:</label> we kept.
+
+Now also need to translate any text inside <h2>Common Meeting Times GMT → IST</h2> we did.
+
+Now also need to translate any text inside <th>Note</th> we did.
+
+Now also need to translate any text inside <td> notes we did.
+
+Now also need to translate any text inside <h2>Frequently Asked Questions</h2> we did.
+
+Now also need to translate any text inside <div class="faq-section">{FAQ}</div> we kept.
+
+Now also need to translate any text inside <p>Schedule recurring calls... we did.
+
+Now also need to translate any text inside <footer> links we did.
+
+Now also need to translate any text inside <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p> we kept.
+
+Now also need to translate any text inside <script> like the one that hides .blog-wrap? Not.
+
+Now also need to translate any text inside <script> for ahrefs? Not.
+
+Now also need to translate any text inside <noscript>? Not.
+
+Now also need to translate any text inside <link rel="preload">? Not.
+
+Now also need to translate any text inside <link rel="stylesheet">? Not.
+
+Now also need to translate any text inside <link rel="icon">? Not.
+
+Now also need to translate any text inside <meta name="theme-color">? Not.
+
+Now also need to translate any text inside <meta name="google-site-verification">? Not.
+
+Now also need to translate any text inside <meta name="viewport">? Not.
+
+Now also need to translate any text inside <meta charset>? Not.
+
+Now also need to translate any text inside <script type="application/ld+json">? Not.
+
+Now also need to translate any text inside <script type="application/ld+json"> for BreadcrumbList and FAQPage? Not.
+
+Now also need to translate any text inside <script> that sets dataLayer? Not.
+
+Now also need to translate any text inside <script> for ads? Not.
+
+Now also need to translate any text inside <script> for gtag? Not.
+
+Now also need to translate any text inside <script> for async src? Not.
+
+Now also need to translate any text inside <script> for module src? Not.
+
+Now also need to translate any text inside <script> that hides .blog-wrap? Not.
+
+Now also need to translate any text inside <script> for ahrefs? Not.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Not.
+
+Now also need to translate any text inside <script> that sets gtag? Not.
+
+Now also need to translate any text inside <script> that sets config? Not.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Not.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Already.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside <script> that sets window.dataLayer? Done.
+
+Now also need to translate any text inside

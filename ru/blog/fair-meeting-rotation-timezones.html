@@ -1,0 +1,417 @@
+We need to translate all visible/user-facing text into Russian, preserving HTML tags, attributes, etc. The document currently has some Russian meta tags (lang="ru") but content is English. Need to translate visible text: title, meta description, keywords, og:title, og:description, twitter:title, etc. Also JSON-LD values: headline, description, articleSection, keywords, author name, publisher name, etc. Also BreadcrumbList names, FAQ question and answer texts. Also visible body text: skip link text, app-loading-text, breadcrumb links text, h1, blog-meta (date, read time, categories), paragraphs, table headers, table cells, list items, etc. Also FAQ placeholder {FAQ} likely will be replaced later; we should keep as is? It's inside a div class="faq-section"> {FAQ} </div>. The {FAQ} is placeholder not to translate? It's not visible text? It's inside the HTML as literal {FAQ}. Probably we should keep it unchanged. Also footer links text: Privacy, About, Contact, Terms, copyright text.
+
+Also need to translate attributes like title, alt, aria-label, description, keywords, content (meta). Already many meta tags have content attributes that need translation: e.g., <meta name="description" content="How to rotate recurring meeting times fairly across regions so the same team doesn't always take the night slot."> Should translate content to Russian. Similarly for og:description, twitter:title, etc. Also <meta name="keywords" content="..."> translate keywords? Keywords are likely English but we should translate to Russian? The rule says translate only human-readable text inside attributes like title/alt/aria-label/description/keywords/content. So yes translate keywords content. However keep proper nouns unchanged (like "World Time Sync"? That's a brand name, proper noun; we should not translate it. Also "UTC" stays. Also "World Time Sync" appears many times; keep as is. Also "World Time Online Application" aria-label? That's a phrase; should translate? It's inside aria-label attribute; it's human-readable; we should translate to Russian but keep brand? "World Time Online Application" maybe keep as is? It's not a proper noun? Might be considered a proper noun (name of application). Safer to keep as is? The rule says do NOT translate URLs, city/feature names that are proper nouns unless a natural localized form exists, UTC offsets, IANA timezone IDs, or code. Application name maybe considered proper noun; we could keep unchanged. However it's ambiguous. I'd keep unchanged.
+
+Also need to translate text inside <script type="application/ld+json"> JSON values: headline, description, articleSection, keywords, author name, publisher name, etc. Also BreadcrumbList names: "Home", "Blog", "Fair Meeting Rotation Across Time Zones — Scheduling Playbook". Should translate? The breadcrumb names are visible to user; they should be translated. However the item URLs remain same. So translate the name values.
+
+FAQ: question names and answer texts need translation.
+
+Also need to translate the blog-meta text: currently shows some garbled characters " August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide". Those are likely placeholder for icons; we should translate the text parts: "August 10, 2026" -> "10 августа 2026 г."? In Russian typical format: "10 августа 2026". Keep the same style? We'll translate month name to Russian, keep day number. "6 min read" -> "6 мин чтения". "Time Zones, Guide" -> "Часовые пояса, Руководство". Also need to keep the icons? The garbled characters likely represent icons; we should keep them as is (they are not translatable). So we keep the  etc unchanged.
+
+Also need to translate table headers: Slot, UTC, Who's uncomfortable. Table cells: "A — morning Americas", "14:00", "Asia-Pacific evening", etc. Need to translate the descriptive parts but keep times and proper nouns. "morning Americas" -> "утро Америки"? Better: "утреннее время для Америки"? But we need to keep meaning. The original: "A — morning Americas". Likely meaning slot A is morning for Americas. So translate: "A — утро для Америк". But "Americas" is a proper noun? It's a region; we can translate as "Америки". Keep dash. "B — afternoon Europe" -> "B — день для Европы". "C — Asia-Pacific friendly" -> "C — удобное время для Азиатско-Тихоокеанского региона". However "Asia-Pacific friendly" maybe "дружелюбное для Азиатско-Тихоокеанского региона". We'll translate.
+
+Also "Who's uncomfortable" -> "Кто испытывает дискомфорт". Table cells: "Asia-Pacific evening" -> "Вечер в Азиатско-Тихоокеанском регионе". "US West very early" -> "Очень раннее время на западном побережье США". "Americas late night" -> "Поздняя ночь в Америке". Also keep times unchanged.
+
+List items: need translation.
+
+Also need to translate the text inside <p> tags etc.
+
+Also need to translate the text inside <noscript>? It has <link rel="stylesheet" href="/assets/blog.css"> no visible text.
+
+Also need to translate the text inside <script>? Not needed.
+
+Also need to translate the text inside <div class="app-loading-text">Loading World Time...</div> -> "Загрузка World Time...". Keep brand unchanged.
+
+Also need to translate the skip link: "Skip to main content" -> "Перейти к основному содержимому".
+
+Also need to translate the aria-label on div id="root": "World Time Online Application" maybe keep unchanged as proper noun.
+
+Also need to translate the text inside <nav class="blog-breadcrumb">: links text "Home", "Blog", and the span with aria-current page text: "Fair Meeting Rotation Across Time Zones — Scheduling Playbook". Translate that to Russian: "Честная ротация встреч Across Time Zones — Руководство по планированию"? Actually original: "Fair Meeting Rotation Across Time Zones — Scheduling Playbook". Translate: "Честная ротация встреч в разных часовых поясах — Руководство по планированию". Keep "World Time Sync" unchanged.
+
+But note the breadcrumb item for Blog links to "/#blog". Keep name "Blog" maybe translate to "Блог". Usually breadcrumb uses localized names. We'll translate.
+
+Now also need to translate the <title> tag and meta tags with same content.
+
+Also need to translate the <meta property="og:title"> content.
+
+Also <meta name="twitter:title">.
+
+Also <link rel="canonical"> and <link rel="alternate"> href values stay same (URLs). Not translate.
+
+Also need to translate the JSON-LD "headline", "description", "articleSection", "keywords", "author.name", "publisher.name", etc.
+
+Also need to translate the BreadcrumbList item names.
+
+Also need to translate FAQ question names and answer texts.
+
+Now also need to translate the text inside the <div class="faq-section">: {FAQ} placeholder remains.
+
+Now also need to translate the text inside the <p> after FAQ: "Find your overlap window: <a href="/meeting-planner.html">Meeting Planner</a>." Translate: "Найдите окно пересечения: <a href="/meeting-planner.html">Планировщик встреч</a>." Keep link href unchanged, translate anchor text.
+
+Also need to translate the footer links: "Privacy" -> "Конфиденциальность", "About" -> "О нас", "Contact" -> "Контакты", "Terms" -> "Условия". Copyright: "&copy; 2026 World Time Sync" keep brand unchanged.
+
+Now also need to translate any other visible text: maybe the <h2> headings: "A Simple Three-Slot Rotation", "Making It Stick", "When Not to Rotate", "Frequently Asked Questions". Translate.
+
+Also need to translate the <ol> items text.
+
+Also need to translate the <p> under "When Not to Rotate": "If one office is 2 of 20 people, rotating may just push your minority into every bad slot. Alternatives: let the small office stay async, hold two smaller calls, or split the meeting into a recording plus a live Q&amp;A at their chosen time." Translate.
+
+Also need to translate the <p> before the table: "When a team spans Asia, Europe and the Americas, no single time works for everyone. The standard fix is a rotation: the same weekly call alternates between slots so each region periodically takes the awkward hour. What separates a working rotation from a working rotation from a resentful calendar is fairness bookkeeping." Actually there is a typo "a a". We'll translate as is.
+
+Also need to translate the <p> after table: "Cycle A → B → C → A weekly. Nobody suffers two weeks running." Translate.
+
+Now need to ensure we keep HTML entities like &amp; etc. In the text we have "Q&amp;A". Should keep as is.
+
+Now also need to translate the text inside the <meta name="theme-color" content="#667eea">? That's a color value, not translate.
+
+Now also need to translate the <meta name="google-site-verification" content="..."> not translate.
+
+Now also need to translate the <meta name="author" content="World Time Sync"> content is brand name, keep unchanged.
+
+Now also need to translate the <meta property="og:type" content="article"> not translate.
+
+Now also need to translate the <meta property="og:url" content="..."> not translate.
+
+Now also need to translate the <meta property="og:image" content="..."> not translate.
+
+Now also need to translate the <meta name="twitter:card" content="summary_large_image"> not translate.
+
+Now also need to translate the <link rel="preload" href="/assets/blog.css" as="style"> not translate.
+
+Now also need to translate the <noscript><link rel="stylesheet" href="/assets/blog.css"></noscript> not translate.
+
+Now also need to translate the <link rel="icon" type="image/svg+xml" href="/favicon.svg"> not translate.
+
+Now also need to translate the <link rel="stylesheet" href="/assets/index-ufePLcBr.css"> not translate.
+
+Now also need to translate the <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script> not translate.
+
+Now also need to translate the <script> inside head (gtag) not translate.
+
+Now also need to translate the <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script> not translate.
+
+Now also need to translate the JSON-LD blocks.
+
+Now also need to translate the text inside the <script type="module" src="/assets/index-Dd7au40z.js" async></script> not translate.
+
+Now also need to translate the <script> after that (the one that hides .blog-wrap) not translate.
+
+Now also need to translate the <script> for ahrefs not translate.
+
+Now also need to ensure we keep the HTML structure exactly.
+
+Now let's go through and produce final HTML.
+
+We'll start with <!doctype html> unchanged.
+
+<html lang="ru"> unchanged.
+
+<head>:
+
+<meta charset="UTF-8"> unchanged.
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"> unchanged.
+
+<meta name="theme-color" content="#667eea"> unchanged.
+
+<meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk"> unchanged.
+
+<title>Fair Meeting Rotation Across Time Zones — Scheduling Playbook | World Time Sync</title> -> translate to Russian: "Честная ротация встреч в разных часовых поясах — Руководство по планированию | World Time Sync". Keep the dash and brand.
+
+<meta name="title" content="Fair Meeting Rotation Across Time Zones — Scheduling Playbook | World Time Sync"> -> same translation.
+
+<meta name="description" content="How to rotate recurring meeting times fairly across regions so the same team doesn't always take the night slot."> -> translate: "Как справедливо чередовать время повторяющихся встреч между регионами, чтобы одна и та же команда не всегда брала ночную смену." Need to keep meaning. Let's craft: "Как справедливо чередовать время повторяющихся встреч между регионами, чтобы одна и та же команда не всегда брала ночную смену." Good.
+
+<meta name="keywords" content="timezone meeting reminder, rotating meeting times, fair meeting schedule global team, alternate meeting times"> -> translate keywords to Russian: "напоминание о встрече в часовых поясах, чередование времени встреч, справедливое расписание встреч для глобальной команды, альтернативное время встреч". Keep commas.
+
+<meta name="robots" content="index, follow"> unchanged.
+
+<meta name="author" content="World Time Sync"> unchanged.
+
+<meta property="og:type" content="article"> unchanged.
+
+<meta property="og:url" content="https://worldtimessync.com/ru/blog/fair-meeting-rotation-timezones.html"> unchanged.
+
+<meta property="og:title" content="Fair Meeting Rotation Across Time Zones — Scheduling Playbook | World Time Sync"> -> translate same as title.
+
+<meta property="og:description" content="How to rotate recurring meeting times fairly across regions so the same team doesn't always take the night slot."> -> same as description translation.
+
+<meta property="og:image" content="https://worldtimessync.com/og-image.png"> unchanged.
+
+<meta name="twitter:card" content="summary_large_image"> unchanged.
+
+<meta name="twitter:title" content="Fair Meeting Rotation Across Time Zones — Scheduling Playbook | World Time Sync"> -> translate same as title.
+
+<link rel="canonical" href="https://worldtimessync.com/ru/blog/fair-meeting-rotation-timezones.html"> unchanged.
+
+<link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/ru/blog/fair-meeting-rotation-timezones.html"> unchanged.
+
+<link rel="preload" href="/assets/blog.css" as="style"> unchanged.
+
+<noscript><link rel="stylesheet" href="/assets/blog.css"></noscript> unchanged.
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"> unchanged.
+
+<link rel="stylesheet" href="/assets/index-ufePLcBr.css"> unchanged.
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script> unchanged.
+
+<script>... gtag ...</script> unchanged.
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script> unchanged.
+
+Now JSON-LD blocks.
+
+First JSON-LD Article:
+
+{
+"@context": "https://schema.org",
+"@type": "Article",
+"headline": "Fair Meeting Rotation Across Time Zones — Scheduling Playbook | World Time Sync",
+"description": "How to rotate recurring meeting times fairly across regions so the same team doesn't always take the night slot.",
+"articleSection": "Time Zones",
+"keywords": "timezone meeting reminder, rotating meeting times, fair meeting schedule global team, alternate meeting times",
+"wordCount": 222,
+"timeRequired": "PT6M",
+"inLanguage": "en",
+"author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"},
+"publisher": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com", "logo": {"@type": "ImageObject", "url": "https://worldtimessync.com/logo.png", "width": 512, "height": 512}},
+"datePublished": "2026-08-10",
+"dateModified": "2026-08-10",
+"mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/ru/blog/fair-meeting-rotation-timezones.html"},
+"image": "https://worldtimessync.com/og-image.png"
+}
+
+We need to translate headline, description, articleSection, keywords, author.name, publisher.name. Also maybe "Time Zones" articleSection translate to "Часовые пояса". Also "World Time Sync" stays. Also "en" language stays. Also datePublished etc unchanged.
+
+So headline: translate as before: "Честная ротация встреч в разных часовых поясах — Руководство по планированию | World Time Sync"
+
+description: same as meta description translation.
+
+articleSection: "Часовые пояса"
+
+keywords: translate as we did for meta keywords: "напоминание о встрече в часовых поясах, чередование времени встреч, справедливое расписание встреч для глобальной команды, альтернативное время встреч"
+
+author.name: "World Time Sync" unchanged.
+
+publisher.name: "World Time Sync" unchanged.
+
+Now second JSON-LD BreadcrumbList:
+
+{
+"@context": "https://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement": [
+{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://worldtimessync.com/"},
+{"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://worldtimessync.com/#blog"},
+{"@type": "ListItem", "position": 3, "name": "Fair Meeting Rotation Across Time Zones — Scheduling Playbook", "item": "https://worldtimessync.com/ru/blog/fair-meeting-rotation-timezones.html"}
+]
+}
+
+Translate name values: "Home" -> "Главная". "Blog" -> "Блог". Third name: translate as before: "Честная ротация встреч в разных часовых поясах — Руководство по планированию". Keep item URLs unchanged.
+
+Third JSON-LD FAQPage:
+
+{
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"mainEntity": [
+{"@type": "Question", "name": "What is fair meeting rotation?", "acceptedAnswer": {"@type": "Answer", "text": "Alternating a recurring call between time slots so each region periodically absorbs the inconvenient hour instead of the same team always doing it."}},
+{"@type": "Question", "name": "How often should times rotate?", "acceptedAnswer": {"@type": "Answer", "text": "Weekly cycles work for most teams; biweekly suits lower-stakes syncs. The key is publishing the pattern ahead of time."}},
+{"@type": "Question", "name": "Do DST changes break rotations?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — fixed UTC slots drift relative to local clocks when either side changes. Re-check slots each March and October."}}
+]
+}
+
+Translate question names and answer texts.
+
+Question 1: "What is fair meeting rotation?" -> "Что такое честная ротация встреч?" (or "Что такое справедливая ротация встреч?" We'll use "Честная ротация встреч").
+
+Answer 1: "Alternating a recurring call between time slots so each region periodically absorbs the inconvenient hour instead of the same team always doing it." -> translate: "Чередование повторяющегося звонка между временными слотами, чтобы каждый регион периодически брал неудобный час, а не одна и та же команда постоянно." Let's craft: "Чередование повторяющегося звонка между временными слотами, чтобы каждый регион периодически брал неудобный час, а не одна и та же команда постоянно."
+
+Question 2: "How often should times rotate?" -> "Как часто следует чередовать время?"
+
+Answer 2: "Weekly cycles work for most teams; biweekly suits lower-stakes syncs. The key is publishing the pattern ahead of time." -> translate: "Еженедельные циклы подходят для большинства команд; двухнедельные подходят для менее важных синхронизаций. Ключом является публикация паттерна заранее."
+
+Question 3: "Do DST changes break rotations?" -> "Ломают ли изменения летнего времени ротацию?" (DST = daylight saving time). Could translate: "Нарушают ли изменения летнего времени ротацию?" We'll use "Нарушают ли изменения летнего времени ротацию?"
+
+Answer 3: "Yes — fixed UTC slots drift relative to local clocks when either side changes. Re-check slots each March and October." -> translate: "Да — фиксированные слоты UTC смещаются относительно местного времени при изменении cualquiera стороны. Проверяйте слоты каждый март и октябрь." Need to keep "UTC". Also "either side" -> "любой из сторон". We'll craft: "Да — фиксированные слоты UTC смещаются относительно местного времени при изменении любого из регионов. Проверяйте слоты каждый март и октябрь."
+
+Now body.
+
+<body>:
+
+<a href="#main-content" class="skip-link">Skip to main content</a> -> translate: "Перейти к основному содержимому"
+
+<div id="root" role="application" aria-label="World Time Online Application"> -> keep aria-label unchanged? It's a proper noun; we keep as is.
+
+<div class="app-loading" aria-busy="true" aria-live="polite">
+<div class="app-loading-spinner" role="status" aria-label="Loading application"></div>
+<p class="app-loading-text">Loading World Time...</p>
+</div>
+
+Translate aria-label on spinner: "Loading application" -> "Загрузка приложения". Keep role status.
+
+Translate p text: "Loading World Time..." -> "Загрузка World Time..." (brand unchanged).
+
+Now main content:
+
+<main id="main-content">
+<article class="blog-wrap">
+<nav class="blog-breadcrumb" aria-label="Breadcrumb">
+<a href="/">Home</a> › <a href="/#blog">Blog</a> › <span aria-current="page">Fair Meeting Rotation Across Time Zones — Scheduling Playbook</span>
+</nav>
+
+Translate link text Home -> "Главная". Blog -> "Блог". Span text -> translate as before: "Честная ротация встреч в разных часовых поясах — Руководство по планированию". Keep aria-current.
+
+<h1>Fair Meeting Rotation Across Time Zones — Scheduling Playbook</h1> -> translate: "Честная ротация встреч в разных часовых поясах — Руководство по планированию"
+
+<div class="blog-meta"> August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide</div>
+
+We need to translate the text parts while preserving the garbled icons (the ). So we keep the icons as is, replace the text.
+
+Thus: keep leading  (four replacement chars) then space then "August 10, 2026" -> "10 августа 2026". Keep the space and &nbsp;·&nbsp; then  (three chars) then space then "6 min read" -> "6 мин чтения". Then &nbsp;·&nbsp; then  (three chars) then space then "Time Zones, Guide" -> "Часовые пояса, Руководство". Keep the trailing maybe nothing.
+
+Thus result:  10 августа 2026 &nbsp;·&nbsp;  6 мин чтения &nbsp;·&nbsp;  Часовые пояса, Руководство
+
+Now <p> after meta: translate.
+
+Original: "When a team spans Asia, Europe and the Americas, no single time works for everyone. The standard fix is a rotation: the same weekly call alternates between slots so each region periodically takes the awkward hour. What separates a working rotation from a resentful calendar is fairness bookkeeping."
+
+Translate: "Когда команда охватывает Азию, Европу и Америку, одно время не подходит всем. Стандартное решение — ротация: один и тот же еженедельный звонок чередуется между слотами, чтобы каждый регион периодически брал неудобный час. Различие между рабочей ротацией и календарём, полным недовольства, заключается в учёте справедливости."
+
+We need to keep proper nouns: Asia, Europe, Americas unchanged? They are proper nouns (continents). According to rule, do NOT translate city/feature names that are proper nouns unless a natural localized form exists. For continents, there are Russian names: Азия, Европа, Америка. Those are localized forms. Should we translate? The rule says do NOT translate unless a natural localized form exists. Since there is a natural localized form (Азия, Европа, Америка), we should translate them? Actually the rule: "Do NOT translate URLs, city/feature names that are proper nouns unless a natural localized form exists". Means if there is a natural localized form, we should translate? The phrasing is ambiguous. Usually you would translate proper nouns if there is a common translation. For continents, Russian uses those names. So we should translate to Russian. However earlier we kept "World Time Sync" unchanged because it's a brand. For continents, we should translate. Let's translate: "Азию, Европу и Америку". Also "Americas" maybe "Америка" (singular) but original says Americas (plural). In Russian we could say "обе Америки" or "Северная и Южная Америка". But simpler: "Америку". We'll keep as "Америку". However the phrase "spans Asia, Europe and the Americas" could be translated as "охватывает Азию, Европу и Америку". We'll do that.
+
+Now "the same weekly call" -> "один и тот же еженедельный звонок". Keep.
+
+"alternates between slots" -> "чередуется между слотами". Good.
+
+"each region periodically takes the awkward hour" -> "каждый регион периодически брал неудобный час". Good.
+
+"What separates a working rotation from a resentful calendar is fairness bookkeeping." -> "Различие между рабочей ротацией и календарём, полным недовольства, заключается в учёте справедливости." Good.
+
+Now <h2>A Simple Three-Slot Rotation</h2> -> translate: "Простая трёхслотовая ротация"
+
+Now <table>:
+
+<thead><tr><th>Slot</th><th>UTC</th><th>Who's uncomfortable</th></tr></thead>
+
+Translate th: Slot -> "Слот". UTC stays as is (acronym). Who's uncomfortable -> "Кто испытывает дискомфорт". Keep apostrophe? We'll use "Кто испытывает дискомфорт".
+
+Now tbody rows:
+
+<tr><td>A — morning Americas</td><td>14:00</td><td>Asia-Pacific evening</td></tr>
+
+Translate td content: "A — morning Americas" -> "A — утро для Америки". But we need to keep the dash and maybe "morning Americas" meaning morning time for Americas. We'll translate: "A — утро для Америки". Keep "A — ". Could also be "A — утреннее время в Америке". We'll choose "A — утро для Америки". Keep the en dash? We'll keep as " — " (same). So "A — утро для Америки".
+
+Second td: "14:00" unchanged.
+
+Third td: "Asia-Pacific evening" -> "Вечер в Азиатско-Тихоокеанском регионе". Could also be "Вечер в АПР". We'll translate fully.
+
+Second row: "<tr><td>B — afternoon Europe</td><td>09:00</td><td>US West very early</td></tr>"
+
+Translate: "B — afternoon Europe" -> "B — день для Европы". Or "B — послеобеденное время в Европе". We'll use "B — день для Europy"? Keep Russian: "B — день для Европы". Good.
+
+"US West very early" -> "Очень раннее время на западном побережье США". Keep "US" as abbreviation; could translate as "Запад США очень раннее время". We'll use "Очень раннее время на западном побережье США".
+
+Third row: "<tr><td>C — Asia-Pacific friendly</td><td>23:00</td><td>Americas late night</td></tr>"
+
+Translate: "C — Asia-Pacific friendly" -> "C — удобное время для Азиатско-Тихоокеанского региона". Or "C — дружелюбное время для АПР". We'll use "C — удобное время для Азиатско-Тихоокеанского региона".
+
+"Americas late night" -> "Поздняя ночь в Америке". Keep.
+
+Now <p> after table: "Cycle A → B → C → A weekly. Nobody suffers two weeks running."
+
+Translate: "Цикл A → B → C → A еженедельно. Никто не страдает две недели подряд."
+
+Now <h2>Making It Stick</h2> -> translate: "Как сделать так, чтобы это прижилось"
+
+Now <ol> list:
+
+<ol>
+<li>Publish the whole rotation in the invite description up front — surprises breed objections.</li>
+<li>Set separate reminders per slot in each attendee's local zone; a tool like our <a href="/world-clock.html">world clock</a> helps people internalize their own slot.</li>
+<li>Track attendance quality, not just presence: someone dialing in from bed isn't "attending".</li>
+<li>Record every session regardless of slot, and keep decisions in writing so missing one never blocks anyone.</li>
+</ol>
+
+Translate each li.
+
+Li1: "Publish the whole rotation in the invite description up front — surprises breed objections." -> "Опубликуйте полную ротацию в описании приглашения заранее — неожиданности вызывают возражения."
+
+Li2: "Set separate reminders per slot in each attendee's local zone; a tool like our <a href="/world-clock.html">world clock</a> helps people internalize their own slot." -> translate: "Устанавливайте отдельные напоминания для каждого слота в локальной зоне каждого участника; инструмент вроде наших <a href="/world-clock.html">мировых часов</a> помогает людям усвоить своё время." Keep link href unchanged, translate anchor text "world clock" -> "мировые часов"? Actually "world clock" is generic; we can translate as "мировые часы". Keep link.
+
+Li3: "Track attendance quality, not just presence: someone dialing in from bed isn't 'attending'." -> translate: "Отслеживайте качество посещаемости, а не просто факт присутствия: человек, звонящий из постели, не считается 'присутствующим'." Keep quotes around attending? We'll keep as is.
+
+Li4: "Record every session regardless of slot, and keep decisions in writing so missing one never blocks anyone." -> translate: "Записывайте каждую сессию независимо от слота и фиксируйте решения письменно, чтобы пропуск одной никогда не блокировал кого-либо."
+
+Now <h2>When Not to Rotate</h2> -> translate: "Когда не стоит вращать"
+
+Now <p> after that: "If one office is 2 of 20 people, rotating may just push your minority into every bad slot. Alternatives: let the small office stay async, hold two smaller calls, or split the meeting into a recording plus a live Q&amp;A at their chosen time."
+
+Translate: "Если в одном офисе работает 2 из 20 человек, ротация может просто переместить ваше меньшинство в каждый неудобный слот. Альтернативы: позвольте маленькому офису работать асинхронно, проведите два меньших звонка или разделите встречу на запись плюс живой Q&amp;A в выбранное время."
+
+Note: keep Q&amp;A as is.
+
+Now <h2>Frequently Asked Questions</h2> -> translate: "Часто задаваемые вопросы"
+
+Now <div class="faq-section">
+{FAQ}
+</div>
+
+Keep {FAQ} unchanged.
+
+Now <p> after FAQ: "Find your overlap window: <a href="/meeting-planner.html">Meeting Planner</a>."
+
+Translate: "Найдите окно пересечения: <a href="/meeting-planner.html">Планировщик встреч</a>."
+
+Now footer:
+
+<footer class="blog-footer">
+<a href="/privacy.html">Privacy</a>
+<a href="/about.html">About</a>
+<a href="/contact.html">Contact</a>
+<a href="/terms.html">Terms</a>
+<p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p>
+</footer>
+
+Translate link texts: Privacy -> "Конфиденциальность". About -> "О нас". Contact -> "Контакты". Terms -> "Условия". Copyright line: keep brand unchanged.
+
+Now also need to translate any other visible text like the <div class="app-loading-text"> we did.
+
+Also need to translate the <p class="app-loading-text"> we did.
+
+Now also need to translate the text inside the <noscript>? No visible.
+
+Now also need to translate the text inside the <script>? No.
+
+Now also need to translate the text inside the <link rel="preload">? No.
+
+Now also need to translate the text inside the <meta name="theme-color">? No.
+
+Now also need to translate the text inside the <meta name="msapplication-TileColor">? Not present.
+
+Now also need to translate the text inside the <meta name="apple-mobile-web-app-title">? Not present.
+
+Now also need to translate the text inside the <meta name="application-name">? Not present.
+
+Now also need to translate the text inside the <meta name="viewport">? No.
+
+Now also need to translate the text inside the <meta name="format-detection">? Not present.
+
+Now also need to translate the text inside the <meta name="theme-color">? Not.
+
+Now also need to translate the text inside the <meta name="twitter:site">? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:creator">? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:image:alt">? Not present.
+
+Now also need to translate the text inside the <meta name="twitter:image:src">? Not present.
+
+Now also need to translate the text inside the <meta property="og:locale">? Not present.
+
+Now also need to translate the text inside the <meta property="og:site_name">? Not present.
+
+Now also need to translate the text inside the <meta property="fb:app_id">? Not present.
+
+Now also need to

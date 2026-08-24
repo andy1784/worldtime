@@ -1,0 +1,429 @@
+We need to translate all visible/user-facing text in the HTML into French, preserving tags, attributes, etc. The HTML currently has lang="fr" already, but content is English. We need to translate text inside tags and attributes like title, alt, aria-label, description, keywords, content (meta tags). Also text visible: e.g., "Skip to main content", "Loading World Time...", "Home", "Blog", "GMT to IST Converter — India Standard Time Chart", meta title, meta description, meta keywords, og:title, og:description, twitter:title, etc. Also JSON-LD blocks: need to translate the values inside them (like headline, description, name, etc.) but keep JSON structure. Also FAQ JSON-LD: translate question names and answer texts.
+
+Also need to translate text inside <p>, <h1>, <h2>, <label>, <output>? Actually output is dynamic; we leave as is. The label "GMT time:" and "IST:" need translation. Also table headers: "GMT", "IST", "Note". Table cells: times and notes like "Late morning India", etc. Need to translate notes.
+
+Also the FAQ section placeholder {FAQ} maybe will be replaced later; but we need to translate the surrounding text? It says <div class="faq-section">{FAQ}</div>. The {FAQ} is placeholder; we leave as is.
+
+Also the link text: "Schedule recurring calls with the <a href="/meeting-planner.html">meeting planner</a>." Need to translate that sentence.
+
+Footer links: "Privacy", "About", "Contact", "Terms". Also copyright text.
+
+Also the meta tags: name="title", content="GMT to IST Converter — India Standard Time Chart | World Time Sync". Need to translate to French, but keep brand name? "World Time Sync" is a proper noun; keep as is. The title: "GMT to IST Converter — India Standard Time Chart | World Time Sync". Translate: "Convertisseur GMT vers IST — Tableau de l'heure normale de l'Inde | World Time Sync". However need to keep the dash? Use same dash? Keep as is. Also "GMT to IST Converter" maybe "Convertisseur GMT vers IST". "India Standard Time Chart" => "Tableau de l'heure normale de l'Inde". Keep "IST". Also "World Time Sync" unchanged.
+
+Meta description: "Convert GMT to IST (+5:30) instantly with a chart covering common meeting times for India calls." Translate: "Convertissez GMT en IST (+5:30) instantanément avec un tableau couvrant les heures de réunion courantes pour les appels vers l'Inde."
+
+Meta keywords: list of keywords; translate? Keywords are for SEO; but we need to translate human-readable text inside attributes like keywords. So translate each keyword? Probably translate the phrase but keep same meaning? The instruction: translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. So we should translate the keywords attribute content into French. So "gmt to ist converter, gmt to ist, ist time now, india time zone, utc to ist" translate to French: "convertisseur gmt vers ist, gmt vers ist, heure ist maintenant, fuseau horaire de l'inde, utc vers ist". Keep lowercase? We'll translate.
+
+og:title same as title. og:description same as description. twitter:title same.
+
+JSON-LD: need to translate headline, description, articleSection, keywords, author name? Author name is organization name "World Time Sync" keep. Publisher name same. datePublished etc unchanged. In FAQ: question names and answer texts translate.
+
+Also need to translate text inside <h1>, <h2>, <p>, <label>, table cells, etc.
+
+Also need to translate the text inside <div class="blog-meta"> August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide</div>. There are some weird characters (maybe icons). We need to translate the visible text: "August 10, 2026", "6 min read", "Time Zones, Guide". The icons remain. So translate to French: "10 août 2026", "6 min de lecture", "Fuseaux horaires, Guide". Keep the separators and icons.
+
+Also the text inside <p> after the meta: "India Standard Time runs a fixed <strong>GMT+5:30</strong> all year — no daylight saving. The half-hour offset trips up schedulers used to whole-hour gaps." Translate: "L'heure normale de l'Inde fonctionne avec un décalage fixe <strong>GMT+5:30</strong> toute l'année — pas d'heure d'été. Le décalage d'une demi-heure perturbe les planificateurs habitués aux écarts d'une heure entière."
+
+Also the <h2>Live Converter</h2> maybe keep "Live Converter" or translate? It's visible text; translate to French: "Convertisseur en direct". However the heading might be kept as is? We'll translate.
+
+Inside converter widget: <h2>GMT → IST</h2> maybe keep as is? It's a label; we could translate to "GMT → IST" but arrow is same. Could keep. But we should translate the text: maybe "GMT → IST" remains same; it's not language-specific. We'll keep.
+
+Label "GMT time:" translate to "Heure GMT :". Label "IST:" translate to "IST :".
+
+The output id="i" will be filled by script; we leave.
+
+Next <h2>Common Meeting Times GMT → IST</h2> translate: "Heures de réunion courantes GMT → IST". Keep arrow.
+
+Table headers: "GMT", "IST", "Note". Keep GMT, IST as abbreviations; "Note" translate to "Remarque".
+
+Table rows: times remain same; notes translate:
+
+- "Late morning India" => "Fin de matinée en Inde"
+- "Mid-afternoon overlap" => "Chevauchement de mi-après-midi"
+- "Best EU–India window" => "Meilleure fenêtre UE–Inde"
+- "Evening India" => "Soirée en Inde"
+- "US East morning" => "Matin côte Est des États-Unis"
+
+Also need to translate the FAQ heading: <h2>Frequently Asked Questions</h2> => "Questions fréquemment posées".
+
+The FAQ section placeholder {FAQ} remains.
+
+The paragraph after: "Schedule recurring calls with the <a href="/meeting-planner.html">meeting planner</a>." Translate: "Planifiez des appels récurrents avec le <a href="/meeting-planner.html">planificateur de réunion</a>."
+
+Footer links: "Privacy" => "Confidentialité". "About" => "À propos". "Contact" => "Contact". "Terms" => "Conditions". Copyright: "&copy; 2026 World Time Sync" keep same but maybe translate "World Time Sync" unchanged; we can keep as is.
+
+Also need to translate any aria-label attributes: e.g., <a href="#main-content" class="skip-link">Skip to main content</a> => translate to "Aller au contenu principal". Also aria-label on div: <div class="app-loading" aria-busy="true" aria-live="polite"> no text. The spinner has aria-label="Loading application" => translate to "Chargement de l'application". The p class="app-loading-text">Loading World Time...</p> => translate to "Chargement de l'heure mondiale...".
+
+Also the nav breadcrumb: <nav class="blog-breadcrumb" aria-label="Breadcrumb"> => aria-label="Breadcrumb" translate to "Fil d'Ariane". Also the links inside: Home => "Accueil". Blog => "Blog". The current page span: GMT to IST Converter — India Standard Time Chart => translate as earlier.
+
+Also the <h1> already translated.
+
+Also need to translate any title attributes? Not present.
+
+Also need to translate any alt attributes? Not present.
+
+Also need to translate any description/content in meta tags: we already did.
+
+Also need to translate any JSON-LD values: we will translate headline, description, articleSection, keywords, author name? author name is organization; keep. Publisher name same. In FAQ: question names and answer texts.
+
+Also need to translate "Time Zones" in articleSection => "Fuseaux horaires". Also "Guide" maybe part of keywords? Actually articleSection: "Time Zones". We'll translate.
+
+Also need to translate "wordCount": 86 (number) keep. "timeRequired": "PT6M" keep. "inLanguage": "en" maybe should stay as language code; not translate.
+
+Also need to translate "mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/fr/blog/gmt-to-ist-converter.html"} keep.
+
+Also need to translate "image": URL unchanged.
+
+Now the JSON-LD for BreadcrumbList: itemListElement names: "Home", "Blog", "GMT to IST Converter — India Standard Time Chart". Translate those names: "Accueil", "Blog", "Convertisseur GMT vers IST — Tableau de l'heure normale de l'Inde". Keep URLs same.
+
+FAQ JSON-LD: need to translate question names and answer texts.
+
+Question 1: "What is 9 AM GMT in IST?" => translate to French: "Quelle est 9 h GMT en IST ?" but need to keep format? We'll translate: "Quelle est 9 h GMT en IST ?" Could also be "Quelle est 9 h GMT en IST ?" Keep the same punctuation.
+
+Answer text: "9:00 AM GMT equals 2:30 PM IST. Add 5 hours 30 minutes, always." Translate: "9 h 00 GMT équivaut à 14 h 30 IST. Ajoutez 5 heures 30 minutes, toujours."
+
+Question 2: "Does India observe daylight saving?" => "L'Inde observe-t-elle l'heure d'été ?" Answer: "No — IST stays at GMT+5:30 throughout the year." => "Non — l'IST reste à GMT+5:30 toute l'année."
+
+Question 3: "Why is IST offset by half an hour?" => "Pourquoi l'IST présente-t-elle un décalage d'une demi-heure ?" Answer: "The +5:30 offset was standardized in 1947 as a compromise between earlier regional times." => "Le décalage +5:30 a été normalisé en 1947 comme un compromis entre les heures régionales précédentes."
+
+Need to ensure we keep JSON syntax: double quotes around keys and values; we must escape any internal quotes? The original JSON had no internal quotes besides the JSON structure. Our translated strings may contain quotes? They contain apostrophes? For example "l'IST" includes an apostrophe which is fine inside a JSON string as long as we keep the string delimited by double quotes; apostrophe doesn't need escaping. However we have a sentence with a double quote? Not.
+
+Now also need to translate any text inside <script> tags that is not JSON-LD? There's a script for converter; we should not translate code. The script contains strings like "GMT time:" inside label? Actually that's in HTML label; we already translated. The script itself: var g=document.getElementById('g'); function cv(){if(!g.value)return;var p=g.value.split(':').map(Number); var m=p[0]*60+p[1]+330;while(m>=1440)m-=1440; document.getElementById('i').textContent=String(Math.floor(m/60)).padStart(2,'0')+':'+String(m%60).padStart(2,'0');} This contains no user-facing text. So leave.
+
+Also the script for SEO hiding etc.
+
+Now also need to translate the text inside <noscript><link rel="stylesheet" href="/assets/blog.css"></noscript> no text.
+
+Now also need to translate the text inside <link rel="preload" href="/assets/blog.css" as="style"> no.
+
+Now also need to translate any placeholder like {FAQ} we leave.
+
+Now also need to translate any text inside <svg>? none.
+
+Now we need to output the full HTML with translations.
+
+Let's go through the HTML line by line and produce final.
+
+Original:
+
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="theme-color" content="#667eea">
+    <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk">
+    <title>GMT to IST Converter — India Standard Time Chart | World Time Sync</title>
+    <meta name="title" content="GMT to IST Converter — India Standard Time Chart | World Time Sync">
+    <meta name="description" content="Convert GMT to IST (+5:30) instantly with a chart covering common meeting times for India calls.">
+    <meta name="keywords" content="gmt to ist converter, gmt to ist, ist time now, india time zone, utc to ist">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="World Time Sync">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://worldtimessync.com/fr/blog/gmt-to-ist-converter.html">
+    <meta property="og:title" content="GMT to IST Converter — India Standard Time Chart | World Time Sync">
+    <meta property="og:description" content="Convert GMT to IST (+5:30) instantly with a chart covering common meeting times for India calls.">
+    <meta property="og:image" content="https://worldtimessync.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GMT to IST Converter — India Standard Time Chart | World Time Sync">
+    <link rel="canonical" href="https://worldtimessync.com/fr/blog/gmt-to-ist-converter.html">
+    <link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/fr/blog/gmt-to-ist-converter.html">
+    <link rel="preload" href="/assets/blog.css" as="style">
+<noscript><link rel="stylesheet" href="/assets/blog.css"></noscript>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/assets/index-ufePLcBr.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LBX0CDYSSV');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "Article", "headline": "GMT to IST Converter — India Standard Time Chart | World Time Sync", "description": "Convert GMT to IST (+5:30) instantly with a chart covering common meeting times for India calls.", "articleSection": "Time Zones", "keywords": "gmt to ist converter, gmt to ist, ist time now, india time zone, utc to ist", "wordCount": 86, "timeRequired": "PT6M", "inLanguage": "en", "author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}, "publisher": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com", "logo": {"@type": "ImageObject", "url": "https://worldtimessync.com/logo.png", "width": 512, "height": 512}}, "datePublished": "2026-08-10", "dateModified": "2026-08-10", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/fr/blog/gmt-to-ist-converter.html"}, "image": "https://worldtimessync.com/og-image.png"}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://worldtimessync.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://worldtimessync.com/#blog"}, {"@type": "ListItem", "position": 3, "name": "GMT to IST Converter — India Standard Time Chart", "item": "https://worldtimessync.com/fr/blog/gmt-to-ist-converter.html"}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is 9 AM GMT in IST?", "acceptedAnswer": {"@type": "Answer", "text": "9:00 AM GMT equals 2:30 PM IST. Add 5 hours 30 minutes, always."}}, {"@type": "Question", "name": "Does India observe daylight saving?", "acceptedAnswer": {"@type": "Answer", "text": "No — IST stays at GMT+5:30 throughout the year."}}, {"@type": "Question", "name": "Why is IST offset by half an hour?", "acceptedAnswer": {"@type": "Answer", "text": "The +5:30 offset was standardized in 1947 as a compromise between earlier regional times."}}]}
+    </script>
+
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div id="root" role="application" aria-label="World Time Online Application">
+        <div class="app-loading" aria-busy="true" aria-live="polite">
+            <div class="app-loading-spinner" role="status" aria-label="Loading application"></div>
+            <p class="app-loading-text">Loading World Time...</p>
+        </div>
+    </div>
+    <main id="main-content">
+        <article class="blog-wrap">
+            <nav class="blog-breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Home</a> › <a href="/#blog">Blog</a> › <span aria-current="page">GMT to IST Converter — India Standard Time Chart</span>
+            </nav>
+            <h1>GMT to IST Converter — India Standard Time Chart</h1>
+            <div class="blog-meta"> August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide</div>
+
+<p>India Standard Time runs a fixed <strong>GMT+5:30</strong> all year — no daylight saving. The half-hour offset trips up schedulers used to whole-hour gaps.</p>
+
+<h2>Live Converter</h2>
+<div class="converter-widget">
+<h2>GMT → IST</h2>
+<div class="converter-row"><label>GMT time:</label><input type="time" id="g" value="09:30"></div>
+<div class="converter-row"><label>IST:</label><output id="i"></output></div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+ var g=document.getElementById('g');
+ function cv(){if(!g.value)return;var p=g.value.split(':').map(Number);
+  var m=p[0]*60+p[1]+330;while(m>=1440)m-=1440;
+  document.getElementById('i').textContent=String(Math.floor(m/60)).padStart(2,'0')+':'+String(m%60).padStart(2,'0');}
+ g.addEventListener('input',cv);cv();
+});
+</script>
+
+<h2>Common Meeting Times GMT → IST</h2>
+<table><thead><tr><th>GMT</th><th>IST</th><th>Note</th></tr></thead><tbody>
+<tr><td>06:00</td><td>11:30</td><td>Late morning India</td></tr>
+<tr><td>09:00</td><td>14:30</td><td>Mid-afternoon overlap</td></tr>
+<tr><td>10:00</td><td>15:30</td><td>Best EU–India window</td></tr>
+<tr><td>13:00</td><td>18:30</td><td>Evening India</td></tr>
+<tr><td>16:00</td><td>21:30</td><td>US East morning</td></tr>
+</tbody></table>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-section">
+{FAQ}
+</div>
+<p>Schedule recurring calls with the <a href="/meeting-planner.html">meeting planner</a>.</p>
+
+        <footer class="blog-footer">
+            <a href="/privacy.html">Privacy</a>
+            <a href="/about.html">About</a>
+            <a href="/contact.html">Contact</a>
+            <a href="/terms.html">Terms</a>
+            <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p>
+        </footer>
+    </main>
+
+    <script type="module" src="/assets/index-Dd7au40z.js" async></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var seo = document.querySelector('.blog-wrap');
+        if (seo) seo.style.display = 'none';
+      });
+    </script>
+    <script>
+      window.addEventListener('load',function(){
+        var ahrefs=document.createElement('script');
+        ahrefs.async=true;
+        ahrefs.src='https://analytics.ahrefs.com/analytics.js';
+        ahrefs.setAttribute('data-key','hB1VYWuwb1i/f1d8re7P2A');
+        document.head.appendChild(ahrefs);
+      });
+    </script>
+  </body>
+</html>
+
+Now we need to produce translated version.
+
+Let's translate each piece.
+
+1. <title>: "GMT to IST Converter — India Standard Time Chart | World Time Sync" => French: "Convertisseur GMT vers IST — Tableau de l'heure normale de l'Inde | World Time Sync"
+
+2. meta name="title": same content => translate similarly.
+
+3. meta name="description": "Convert GMT to IST (+5:30) instantly with a chart covering common meeting times for India calls." => French: "Convertissez GMT en IST (+5:30) instantanément avec un tableau couvrant les heures de réunion courantes pour les appels vers l'Inde."
+
+4. meta name="keywords": "gmt to ist converter, gmt to ist, ist time now, india time zone, utc to ist" => translate each phrase: "convertisseur gmt vers ist, gmt vers ist, heure ist maintenant, fuseau horaire de l'inde, utc vers ist". Keep lowercase? We'll keep as is.
+
+5. meta name="author": content="World Time Sync" => keep.
+
+6. meta property="og:title": same as title => translate.
+
+7. meta property="og:description": same as description => translate.
+
+8. meta name="twitter:title": same as title => translate.
+
+9. In body:
+
+- Skip link: <a href="#main-content" class="skip-link">Skip to main content</a> => translate to "Aller au contenu principal". Keep href and class.
+
+- aria-label on div id="root": "World Time Online Application" => translate? It's an aria-label; should be translated: "Application World Time En Ligne". But maybe keep brand? "World Time Online Application" is descriptive; translate to French: "Application World Time En Ligne". We'll translate.
+
+- aria-label on spinner: "Loading application" => translate to "Chargement de l'application".
+
+- p class="app-loading-text": "Loading World Time..." => translate to "Chargement de l'heure mondiale...".
+
+- nav aria-label="Breadcrumb": translate to "Fil d'Ariane".
+
+- Breadcrumb links: Home => "Accueil". Blog => "Blog" (keep as is? It's a section name; could translate to "Blog" but it's same; we can keep "Blog". Usually keep as is. We'll keep "Blog". The current page span: translate the text: "GMT to IST Converter — India Standard Time Chart" => "Convertisseur GMT vers IST — Tableau de l'heure normale de l'Inde". Keep aria-current="page".
+
+- h1: same as above.
+
+- div.blog-meta: content: " August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide". Translate visible text: "August 10, 2026" => "10 août 2026". "6 min read" => "6 min de lecture". "Time Zones, Guide" => "Fuseaux horaires, Guide". Keep icons and separators.
+
+- p after meta: "India Standard Time runs a fixed <strong>GMT+5:30</strong> all year — no daylight saving. The half-hour offset trips up schedulers used to whole-hour gaps." => translate: "L'heure normale de l'Inde fonctionne avec un décalage fixe <strong>GMT+5:30</strong> toute l'année — pas d'heure d'été. Le décalage d'une demi-heure perturbe les planificateurs habitués aux écarts d'une heure entière."
+
+- h2 "Live Converter" => translate to "Convertisseur en direct". However we might keep "Live Converter" as it's a UI term; but instruction says translate all visible text. We'll translate.
+
+- Inside converter-widget: h2 "GMT → IST" maybe keep as is (it's just label). Could translate to "GMT → IST" same. We'll keep.
+
+- label "GMT time:" => translate to "Heure GMT :". Note the colon and space; we keep.
+
+- label "IST:" => translate to "IST :".
+
+- h2 "Common Meeting Times GMT → IST" => translate to "Heures de réunion courantes GMT → IST".
+
+- Table headers: "GMT", "IST", "Note" => keep GMT, IST; "Note" => "Remarque".
+
+- Table cells notes: translate as earlier.
+
+- h2 "Frequently Asked Questions" => translate to "Questions fréquemment posées".
+
+- The {FAQ} placeholder stays.
+
+- p after FAQ: "Schedule recurring calls with the <a href="/meeting-planner.html">meeting planner</a>." => translate: "Planifiez des appels récurrents avec le <a href="/meeting-planner.html">planificateur de réunion</a>."
+
+- Footer links: "Privacy" => "Confidentialité". "About" => "À propos". "Contact" => "Contact". "Terms" => "Conditions".
+
+- Copyright: "&copy; 2026 World Time Sync" => keep same; maybe add space? Keep.
+
+Now JSON-LD translations.
+
+First JSON-LD (Article):
+
+- headline: translate to French: "Convertisseur GMT vers IST — Tableau de l'heure normale de l'Inde | World Time Sync"
+
+- description: translate: "Convertissez GMT en IST (+5:30) instantanément avec un tableau couvrant les heures de réunion courantes pour les appels vers l'Inde."
+
+- articleSection: "Time Zones" => translate to "Fuseaux horaires"
+
+- keywords: same as meta keywords; translate: "convertisseur gmt vers ist, gmt vers ist, heure ist maintenant, fuseau horaire de l'inde, utc vers ist"
+
+- author name: "World Time Sync" keep.
+
+- publisher name: same.
+
+- datePublished etc unchanged.
+
+- mainEntityOfPage @id unchanged.
+
+- image unchanged.
+
+Second JSON-LD (BreadcrumbList):
+
+- itemListElement[0].name: "Home" => "Accueil"
+
+- itemListElement[1].name: "Blog" => "Blog" (keep)
+
+- itemListElement[2].name: "GMT to IST Converter — India Standard Time Chart" => translate: "Convertisseur GMT vers IST — Tableau de l'heure normale de l'Inde"
+
+Third JSON-LD (FAQPage):
+
+We need to translate each question name and answer text.
+
+Question 1 name: "What is 9 AM GMT in IST?" => French: "Quelle est 9 h GMT en IST ?" Could also be "Quelle est 9 h GMT en IST ?" We'll keep the same format: "Quelle est 9 h GMT en IST ?" Note the space before ? maybe not needed; but we can keep as "Quelle est 9 h GMT en IST ?" We'll keep a space before ? as typical French typography includes a narrow space; but we can just put a space.
+
+Answer text: "9:00 AM GMT equals 2:30 PM IST. Add 5 hours 30 minutes, always." => French: "9 h 00 GMT équivaut à 14 h 30 IST. Ajoutez 5 heures 30 minutes, toujours."
+
+Question 2 name: "Does India observe daylight saving?" => French: "L'Inde observe-t-elle l'heure d'été ?" Answer: "No — IST stays at GMT+5:30 throughout the year." => French: "Non — l'IST reste à GMT+5:30 toute l'année."
+
+Question 3 name: "Why is IST offset by half an hour?" => French: "Pourquoi l'IST présente-t-elle un décalage d'une demi-heure ?" Answer: "The +5:30 offset was standardized in 1947 as a compromise between earlier regional times." => French: "Le décalage +5:30 a été normalisé en 1947 comme un compromis entre les heures régionales précédentes."
+
+Make sure to keep JSON syntax: double quotes around keys and values; we need to escape any internal double quotes? There are none.
+
+Now also need to translate any other text like the text inside <script> for the converter? Not needed.
+
+Now also need to translate any text inside <noscript>? none.
+
+Now also need to translate any text inside <link rel="preload">? none.
+
+Now also need to translate any text inside <meta name="theme-color">? no.
+
+Now also need to translate any text inside <meta name="google-site-verification">? no.
+
+Now also need to translate any text inside <link rel="icon">? no.
+
+Now also need to translate any text inside <link rel="stylesheet">? no.
+
+Now also need to translate any text inside <script async src="...">? no.
+
+Now also need to translate any text inside <script type="application/ld+json">? we did.
+
+Now also need to translate any text inside <script> for gtag? no.
+
+Now also need to translate any text inside <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?...">? no.
+
+Now also need to translate any text inside <script type="module" src="/assets/index-Dd7au40z.js">? no.
+
+Now also need to translate any text inside the script that hides .blog-wrap? no.
+
+Now also need to translate any text inside the script that creates ahrefs? no.
+
+Now also need to translate any text inside <div class="app-loading">? we already translated aria-label and p text.
+
+Now also need to translate any text inside <div id="root">? we translated aria-label.
+
+Now also need to translate any text inside <a href="/privacy.html">Privacy</a> etc done.
+
+Now also need to translate any text inside <footer class="blog-footer">? we did.
+
+Now also need to translate any text inside <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p> keep.
+
+Now also need to translate any text inside <div class="converter-row"><label>GMT time:</label>... we did.
+
+Now also need to translate any text inside <output id="i"></output> none.
+
+Now also need to translate any text inside <h2>Live Converter</h2> we changed to "Convertisseur en direct". However note that there is also an <h2> inside converter-widget: <h2>GMT → IST</h2>. We'll keep that as is.
+
+Now also need to translate any text inside <h2>Common Meeting Times GMT → IST</h2> we changed.
+
+Now also need to translate any text inside <h2>Frequently Asked Questions</h2> we changed.
+
+Now also need to translate any text inside <div class="faq-section">{FAQ}</div> we keep placeholder.
+
+Now also need to translate any text inside <p>Schedule recurring calls with the <a href="/meeting-planner.html">meeting planner</a>.</p> we changed.
+
+Now also need to translate any text inside <nav class="blog-breadcrumb" aria-label="Breadcrumb"> we changed aria-label and links.
+
+Now also need to translate any text inside <div class="blog-meta"> we changed.
+
+Now also need to translate any text inside <p>India Standard Time runs... we changed.
+
+Now also need to translate any text inside <h1> we changed.
+
+Now also need to translate any text inside <nav class="blog-breadcrumb"> we changed.
+
+Now also need to translate any text inside <article class="blog-wrap">? none.
+
+Now also need to translate any text inside <main id="main-content">? none.
+
+Now also need to translate any text inside <div id="root">? we did.
+
+Now also need to translate any text inside <a href="#main-content" class="skip-link"> we did.
+
+Now also need to translate any text inside <div class="app-loading-spinner" role="status" aria-label="Loading application"> we did.
+
+Now also need to translate any text inside <p class="app-loading-text">Loading World Time...</p> we did.
+
+Now also need to translate any text inside <meta name="google-site-verification">? no.
+
+Now also need to translate any text inside <meta name="theme-color">? no.
+
+Now also need to translate any text inside <link rel="canonical">? no.
+
+Now also need to translate any text inside <link rel="alternate">? no.
+
+Now also need to translate any text inside <link rel="preload">? no.
+
+Now also need to translate any text inside <noscript><link rel="stylesheet" href="/assets/blog.css"></noscript> none.
+
+Now also need to translate any text inside <link rel="icon">? none.
+
+Now also need to translate any text inside <link rel="stylesheet" href="/assets/index-ufePLcBr.css"> none.
+
+Now also need to translate any text inside <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX

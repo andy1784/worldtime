@@ -1,0 +1,436 @@
+We need to translate all visible/user-facing text into French, preserving HTML tags, attributes, etc. The page currently has lang="fr" but content is English. We need to translate.
+
+We must translate text inside tags and attributes like title, alt, aria-label, description, keywords, content (meta). Also inside JSON-LD values (like headline, description, name, text). Also inside visible text: e.g., "Skip to main content", "Loading World Time...", "Home", "Blog", "How Many Time Zones Are There? — By Country & Worldwide", etc. Also inside blog-meta: there are some weird characters () maybe placeholder for calendar icon? Those are not text; they are likely emojis? They appear as  (replacement characters). We should keep them as is? They are not readable text; they are likely icons. We should not translate them; they are not actual characters. We'll keep them unchanged.
+
+Also need to translate the FAQ placeholder {FAQ}? That's likely a template token; we should not translate it; keep as is.
+
+Also need to translate the text inside <p> tags, headings, list items, table cells, etc.
+
+Also need to translate the text inside <title> and meta tags.
+
+Also need to translate the JSON-LD fields: headline, description, articleSection, keywords, author name, publisher name, etc. Also the "name" in BreadcrumbList items: "Home", "Blog", "How Many Time Zones Are There? — By Country & Worldwide". Also FAQ: question names and answer texts.
+
+Also need to translate the text inside <noscript>? It has a link rel stylesheet; no visible text.
+
+Also need to translate the text inside <a> tags: e.g., href="/privacy.html">Privacy</a> etc.
+
+Also need to translate the text inside <p class="app-loading-text">Loading World Time...</p>.
+
+Also need to translate the text inside <div class="app-loading">? It has aria-label etc; we need to translate aria-label values: "Loading application". Also the aria-busy attribute stays true.
+
+Also need to translate the text inside <a href="#main-content" class="skip-link">Skip to main content</a>.
+
+Also need to translate the text inside <nav class="blog-breadcrumb" aria-label="Breadcrumb">: the aria-label "Breadcrumb". Also the text inside: Home, Blog, and the current page span.
+
+Also need to translate the text inside <h1>.
+
+Also need to translate the text inside <div class="blog-meta">: includes date, reading time, categories. The weird icons we keep.
+
+Also need to translate the text inside <p> after h1: "In theory Earth has ..." etc.
+
+Also need to translate the table headers: Country, Zones, Why.
+
+Also need to translate the table cell contents: e.g., "France", "12", "Overseas territories worldwide". Also "Russia", "11", "Vast east-west span". Also "United States", "9–11", "Mainland 4/6 with Alaska/Hawaii + territories". Also "Australia", "3 (+external)", "Plus mixed DST adoption". Also "China", "1", "Spans 5 geographic zones but uses Beijing time nationally".
+
+Also need to translate the heading <h2>Why Half-Hour Offsets Exist</h2>.
+
+Also need to translate the paragraph after that.
+
+Also need to translate the heading <h2>Frequently Asked Questions</h2>.
+
+Also need to translate the FAQ section placeholder {FAQ} - keep as is.
+
+Also need to translate the paragraph after FAQ: "Explore them visually on our <a href="/time-zone-map.html">time zone map</a>."
+
+Also need to translate the footer links: Privacy, About, Contact, Terms.
+
+Also need to translate the copyright text: "&copy; 2026 World Time Sync". The entity &copy; is the copyright symbol; we keep as is, but maybe translate "World Time Sync"? It's a brand name; keep as is.
+
+Also need to translate any other visible text: maybe inside <script>? No.
+
+Also need to translate the text inside <meta name="description" content="..."> etc.
+
+Also need to translate the JSON-LD "articleSection": "Time Zones". Also "keywords": list.
+
+Also need to translate the "inLanguage": "en" - that's a language code; keep as is.
+
+Also need to translate the "datePublished": "2026-08-10" - keep.
+
+Also need to translate the "mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/fr/blog/how-many-time-zones.html"} - keep.
+
+Also need to translate the "image": "https://worldtimessync.com/og-image.png" - keep.
+
+Also need to translate the BreadcrumbList items: "Home", "Blog", "How Many Time Zones Are There? — By Country & Worldwide". Also the URLs remain same.
+
+Also need to translate the FAQPage: question names and answer texts.
+
+Now we need to produce the full HTML with translated text.
+
+Let's do translation to French.
+
+We'll go step by step.
+
+First, <title>: "How Many Time Zones Are There? — By Country & Worldwide | World Time Sync"
+
+Translate: "Combien de fuseaux horaires existent-ils ? — Par pays & dans le monde | World Time Sync"
+
+But need to keep the pipe and brand. Also the dash — is an em dash; we keep.
+
+"Combien de fuseaux horaires existent-ils ? — Par pays & dans le monde | World Time Sync"
+
+Alternatively "Combien de fuseaux horaires y a-t-il ?" but "How many time zones are there?" could be "Combien de fuseaux horaires y a-t-il ?" We'll choose that.
+
+Let's decide: "Combien de fuseaux horaires y a-t-il ? — Par pays & dans le monde | World Time Sync"
+
+Now meta name="title" content same as title; translate similarly.
+
+Meta name="description": "24 time zones officially — but France has 12 and Russia 11. Country-by-country breakdown."
+
+Translate: "24 fuseaux horaires officiellement — mais la France en a 12 et la Russie 11. Répartition par pays."
+
+Meta name="keywords": "how many time zones are there, how many time zones in usa, how many time zones in russia, how many time zones in the world"
+
+Translate: "combien de fuseaux horaires y a-t-il, combien de fuseaux horaires aux états-unis, combien de fuseaux horaires en russie, combien de fuseaux horaires dans le monde"
+
+But need to keep lowercase? We'll translate.
+
+Meta name="author": content "World Time Sync" - brand, keep.
+
+Meta property="og:title": same as title; translate.
+
+Meta property="og:description": same as description; translate.
+
+Meta name="twitter:title": same as title; translate.
+
+Link rel="canonical": href unchanged.
+
+Link rel="alternate" hreflang="x-default": href unchanged.
+
+Now inside <noscript>: no text.
+
+Now inside <div class="app-loading" aria-busy="true" aria-live="polite">: we have aria-label on spinner: "Loading application". Need to translate to French: "Chargement de l'application". Also the <p class="app-loading-text">Loading World Time...</p> translate to "Chargement de l'heure mondiale..." maybe "Chargement de l'heure mondiale..." but "World Time" could be "Heure mondiale". So "Chargement de l'heure mondiale...".
+
+Now skip link: <a href="#main-content" class="skip-link">Skip to main content</a> translate to "Aller au contenu principal".
+
+Now nav aria-label="Breadcrumb": translate to "Fil d'Ariane". Also the text inside: Home => "Accueil". Blog => "Blog". The current page span: we need to translate the page title: "How Many Time Zones Are There? — By Country & Worldwide" => French translation as earlier: "Combien de fuseaux horaires y a-t-il ? — Par pays & dans le monde". Keep the span with aria-current="page".
+
+Now h1: same as title without brand? Actually h1: "How Many Time Zones Are There? — By Country & Worldwide". Translate: "Combien de fuseaux horaires y a-t-il ? — Par pays & dans le monde".
+
+Now blog-meta: contains weird icons then date, reading time, categories.
+
+We need to translate the date format? The date is "August 10, 2026". In French: "10 août 2026". Keep the icons before and after? The icons are  before date and  before 6 min read and  before categories. We'll keep them as is.
+
+So we need to translate "August 10, 2026" to "10 août 2026". Also "6 min read" to "6 min de lecture". Also "Time Zones, Guide" to "Fuseaux horaires, Guide". Keep the icons.
+
+Thus blog-meta content:  10 août 2026 &nbsp;·&nbsp;  6 min de lecture &nbsp;·&nbsp;  Fuseaux horaires, Guide
+
+Now paragraph after h1: "In theory Earth has <strong>24 time zones</strong>, one per hour of the day. In practice there are <strong>38</strong>, because several sit on half-hour or quarter-hour offsets like India (+5:30) and Nepal (+5:45). And counting countries rather than offsets produces bigger numbers still."
+
+Translate: "En théorie, la Terre possède <strong>24 fuseaux horaires</strong>, un pour chaque heure de la journée. En pratique, il y en a <strong>38</strong>, car plusieurs se situent sur des décalages d'une demi-heure ou d'un quart d'heure comme l'Inde (+5:30) et le Népal (+5:45). Et le comptage par pays plutôt que par décalage donne des nombres encore plus élevés."
+
+Need to keep the strong tags.
+
+Now h2: "Countries With the Most Time Zones" => "Pays ayant le plus de fuseaux horaires"
+
+Table headers: Country => "Pays", Zones => "Fuseaux", Why => "Pourquoi"
+
+Table rows:
+
+France: "France", "12", "Overseas territories worldwide" => "Territoires outre-mer dans le monde"
+
+Russia: "Russie", "11", "Vast east-west span" => "Étendue est-ouest vaste"
+
+United States: "États-Unis", "9–11", "Mainland 4/6 with Alaska/Hawaii + territories" => "Continentale 4/6 avec l'Alaska/Hawaï + territoires". Need to keep the en dash? We'll keep "9–11". Translate: "Continentale 4/6 avec l'Alaska/Hawaï + territoires". Could also be "4/6 continentaux avec l'Alaska/Hawaï + territoires". We'll keep simple.
+
+Australia: "Australie", "3 (+external)", "Plus mixed DST adoption" => "Plus d'adoption mixte de l'heure d'été". Actually "Plus mixed DST adoption" => "Adoption mixte de l'heure d'été". So "Adoption mixte de l'heure d'été". Keep the "(+external)" maybe "(+externes)". We'll translate: "3 (+externes)". So "Australie", "3 (+externes)", "Adoption mixte de l'heure d'été".
+
+China: "Chine", "1", "Spans 5 geographic zones but uses Beijing time nationally" => "Couvre 5 zones géographiques mais utilise l'heure de Pékin à l'échelle nationale". So "Chine", "1", "Couvre 5 zones géographiques mais utilise l'heure de Pékin à l'échelle nationale".
+
+Now h2: "Why Half-Hour Offsets Exist" => "Pourquoi les décalages d'une demi-heure existent"
+
+Paragraph after: "Offsets like +5:30 (India), +3:30 (Iran), +9:30 (parts of Australia) and +5:45 (Nepal) trace to local solar noon: a single whole-hour grid didn't line up with where midday actually fell for some countries, so they split the difference."
+
+Translate: "Des décalages comme +5:30 (Inde), +3:30 (Iran), +9:30 (parties de l'Australie) et +5:45 (Népal) correspondent au midi solaire local : une grille d'heure unique ne correspondait pas à l'endroit où midi tombait réellement pour certains pays, donc ils ont partagé la différence."
+
+Now h2: "Frequently Asked Questions" => "Questions fréquemment posées"
+
+Now the FAQ section placeholder {FAQ} stays.
+
+Now paragraph after FAQ: "Explore them visually on our <a href="/time-zone-map.html">time zone map</a>."
+
+Translate: "Explorez-les visuellement sur notre <a href="/time-zone-map.html">carte des fuseaux horaires</a>."
+
+Now footer links: Privacy => "Confidentialité", About => "À propos", Contact => "Contact", Terms => "Conditions". Keep the order.
+
+Copyright: "&copy; 2026 World Time Sync" => keep "&copy; 2026 World Time Sync". Could translate brand? Keep as is.
+
+Now we need to translate JSON-LD.
+
+First JSON-LD Article:
+
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "How Many Time Zones Are There? — By Country & Worldwide | World Time Sync",
+ "description": "24 time zones officially — but France has 12 and Russia 11. Country-by-country breakdown.",
+ "articleSection": "Time Zones",
+ "keywords": "how many time zones are there, how many time zones in usa, how many time zones in russia, how many time zones in the world",
+ "wordCount": 145,
+ "timeRequired": "PT6M",
+ "inLanguage": "en",
+ "author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"},
+ "publisher": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com", "logo": {"@type": "ImageObject", "url": "https://worldtimessync.com/logo.png", "width": 512, "height": 512}},
+ "datePublished": "2026-08-10",
+ "dateModified": "2026-08-10",
+ "mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/fr/blog/how-many-time-zones.html"},
+ "image": "https://worldtimessync.com/og-image.png"
+}
+
+We need to translate headline, description, articleSection, keywords, author name, publisher name.
+
+Headline: translate as earlier: "Combien de fuseaux horaires y a-t-il ? — Par pays & dans le monde | World Time Sync"
+
+Description: "24 fuseaux horaires officiellement — mais la France en a 12 et la Russie 11. Répartition par pays."
+
+articleSection: "Time Zones" => "Fuseaux horaires"
+
+keywords: translate list: "combien de fuseaux horaires y a-t-il, combien de fuseaux horaires aux états-unis, combien de fuseaux horaires en russie, combien de fuseaux horaires dans le monde"
+
+author name: "World Time Sync" keep.
+
+publisher name: "World Time Sync" keep.
+
+Now second JSON-LD BreadcrumbList:
+
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+   {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://worldtimessync.com/"},
+   {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://worldtimessync.com/#blog"},
+   {"@type": "ListItem", "position": 3, "name": "How Many Time Zones Are There? — By Country & Worldwide", "item": "https://worldtimessync.com/fr/blog/how-many-time-zones.html"}
+ ]
+}
+
+Translate name values: Home => "Accueil". Blog => "Blog". The third name: translate as earlier: "Combien de fuseaux horaires y a-t-il ? — Par pays & dans le monde". Keep item URLs unchanged.
+
+Third JSON-LD FAQPage:
+
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+   {"@type": "Question", "name": "How many time zones does the world have?", "acceptedAnswer": {"@type": "Answer", "text": "38 distinct UTC offsets, though the theoretical model is 24."}},
+   {"@type": "Question", "name": "How many time zones does the USA have?", "acceptedAnswer": {"@type": "Answer", "text": "Six on common maps (Eastern through Hawaii-Aleutian), more counting territories."}},
+   {"@type": "Question", "name": "How many time zones does Russia have?", "acceptedAnswer": {"@type": "Answer", "text": "Eleven, spanning UTC+2 to UTC+12."}}
+ ]
+}
+
+Translate question names and answer texts.
+
+Question 1: "How many time zones does the world have?" => "Combien de fuseaux horaires le monde possède-t-il ?" or "Combien de fuseaux horaires y a-t-il dans le monde ?" We'll use "Combien de fuseaux horaires le monde possède-t-il ?" but better: "Combien de fuseaux horaires y a-t-il dans le monde ?" Let's choose that.
+
+Answer text: "38 distinct UTC offsets, though the theoretical model is 24." => "38 décalages UTC distincts, bien que le modèle théorique en compte 24."
+
+Question 2: "How many time zones does the USA have?" => "Combien de fuseaux horaires les États-Unis possèdent-ils ?" or "Combien de fuseaux horaires y a-t-il aux États-Unis ?" We'll use "Combien de fuseaux horaires y a-t-il aux États-Unis ?"
+
+Answer text: "Six on common maps (Eastern through Hawaii-Aleutian), more counting territories." => "Six sur les cartes courantes (de l'Est à l'Hawaii-Aleutian), davantage en comptant les territoires."
+
+Question 3: "How many time zones does Russia have?" => "Combien de fuseaux horaires la Russie possède-t-elle ?" or "Combien de fuseaux horaires y a-t-il en Russie ?" We'll use "Combien de fuseaux horaires y a-t-il en Russie ?"
+
+Answer text: "Eleven, spanning UTC+2 to UTC+12." => "Onze, couvrant de UTC+2 à UTC+12."
+
+Now we need to ensure we keep the JSON structure exactly, only changing the string values.
+
+Also need to translate any other attributes like aria-label, title, alt, etc.
+
+We have:
+
+- <a href="#main-content" class="skip-link">Skip to main content</a> => aria-label? Not present. We'll translate inner text.
+
+- <div class="app-loading" aria-busy="true" aria-live="polite">: no aria-label.
+
+- <div class="app-loading-spinner" role="status" aria-label="Loading application"> => translate aria-label to "Chargement de l'application".
+
+- <p class="app-loading-text">Loading World Time...</p> => translate.
+
+- <nav class="blog-breadcrumb" aria-label="Breadcrumb"> => translate to "Fil d'Ariane".
+
+- Inside nav: <a href="/">Home</a> => translate to "Accueil". <a href="/#blog">Blog</a> => keep "Blog" (maybe translate to "Blog" is same). The span: <span aria-current="page">How Many Time Zones Are There? — By Country & Worldwide</span> => translate inner text.
+
+- <h1>How Many Time Zones Are There? — By Country & Worldwide</h1> => translate.
+
+- <div class="blog-meta"> August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide</div> => translate date and min read and categories.
+
+- <p>In theory Earth has <strong>24 time zones</strong>, ...</p> => translate.
+
+- <h2>Countries With the Most Time Zones</h2> => translate.
+
+- Table headers: <th>Country</th> etc => translate.
+
+- Table cells: translate as above.
+
+- <h2>Why Half-Hour Offsets Exist</h2> => translate.
+
+- <p>Offsets like +5:30 (India), ...</p> => translate.
+
+- <h2>Frequently Asked Questions</h2> => translate.
+
+- <div class="faq-section">{FAQ}</div> => keep placeholder.
+
+- <p>Explore them visually on our <a href="/time-zone-map.html">time zone map</a>.</p> => translate.
+
+- Footer links: translate.
+
+- <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p> => keep.
+
+Now also need to translate any placeholder text inside <script>? No.
+
+Now also need to translate the text inside <meta name="theme-color" content="#667eea">? No.
+
+Now also need to translate the text inside <link rel="icon" type="image/svg+xml" href="/favicon.svg">? No.
+
+Now also need to translate the text inside <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>? No.
+
+Now also need to translate the text inside <script> window.dataLayer... etc? No.
+
+Now also need to translate the text inside <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>? No.
+
+Now also need to translate the text inside <script type="module" src="/assets/index-Dd7au40z.js" async></script>? No.
+
+Now also need to translate the text inside <script> document.addEventListener('DOMContentLoaded', function() { var seo = document.querySelector('.blog-wrap'); if (seo) seo.style.display = 'none'; });</script>? No.
+
+Now also need to translate the text inside <script> window.addEventListener('load',function(){ var ahrefs=document.createElement('script'); ahrefs.async=true; ahrefs.src='https://analytics.ahrefs.com/analytics.js'; ahrefs.setAttribute('data-key','hB1VYWuwb1i/f1d8re7P2A'); document.head.appendChild(ahrefs); });</script>? No.
+
+Now we need to output the full HTML with translations.
+
+Let's construct.
+
+We'll start with <!doctype html> etc.
+
+We'll keep the lang attribute as "fr" (already).
+
+Now produce the head.
+
+We'll need to be careful with escaping of quotes inside JSON-LD; we just replace the values.
+
+Let's write the head:
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="theme-color" content="#667eea">
+    <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk">
+    <title>Combien de fuseaux horaires y a-t-il ? — Par pays & dans le monde | World Time Sync</title>
+    <meta name="title" content="Combien de fuseaux horaires y a-t-il ? — Par pays & dans le monde | World Time Sync">
+    <meta name="description" content="24 fuseaux horaires officiellement — mais la France en a 12 et la Russie 11. Répartition par pays.">
+    <meta name="keywords" content="combien de fuseaux horaires y a-t-il, combien de fuseaux horaires aux états-unis, combien de fuseaux horaires en russie, combien de fuseaux horaires dans le monde">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="World Time Sync">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://worldtimessync.com/fr/blog/how-many-time-zones.html">
+    <meta property="og:title" content="Combien de fuseaux horaires y a-t-il ? — Par pays & dans le monde | World Time Sync">
+    <meta property="og:description" content="24 fuseaux horaires officiellement — mais la France en a 12 et la Russie 11. Répartition par pays.">
+    <meta property="og:image" content="https://worldtimessync.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Combien de fuseaux horaires y a-t-il ? — Par pays & dans le monde | World Time Sync">
+    <link rel="canonical" href="https://worldtimessync.com/fr/blog/how-many-time-zones.html">
+    <link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/fr/blog/how-many-time-zones.html">
+    <link rel="preload" href="/assets/blog.css" as="style">
+<noscript><link rel="stylesheet" href="/assets/blog.css"></noscript>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/assets/index-ufePLcBr.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LBX0CDYSSV');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "Article", "headline": "Combien de fuseaux horaires y a-t-il ? — Par pays & dans le monde | World Time Sync", "description": "24 fuseaux horaires officiellement — mais la France en a 12 et la Russie 11. Répartition par pays.", "articleSection": "Fuseaux horaires", "keywords": "combien de fuseaux horaires y a-t-il, combien de fuseaux horaires aux états-unis, combien de fuseaux horaires en russie, combien de fuseaux horaires dans le monde", "wordCount": 145, "timeRequired": "PT6M", "inLanguage": "en", "author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}, "publisher": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com", "logo": {"@type": "ImageObject", "url": "https://worldtimessync.com/logo.png", "width": 512, "height": 512}}, "datePublished": "2026-08-10", "dateModified": "2026-08-10", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/fr/blog/how-many-time-zones.html"}, "image": "https://worldtimessync.com/og-image.png"}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://worldtimessync.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://worldtimessync.com/#blog"}, {"@type": "ListItem", "position": 3, "name": "Combien de fuseaux horaires y a-t-il ? — Par pays & dans le monde", "item": "https://worldtimessync.com/fr/blog/how-many-time-zones.html"}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Combien de fuseaux horaires y a-t-il dans le monde ?", "acceptedAnswer": {"@type": "Answer", "text": "38 décalages UTC distincts, bien que le modèle théorique en compte 24."}}, {"@type": "Question", "name": "Combien de fuseaux horaires y a-t-il aux États-Unis ?", "acceptedAnswer": {"@type": "Answer", "text": "Six sur les cartes courantes (de l'Est à l'Hawaii-Aleutian), davantage en comptant les territoires."}}, {"@type": "Question", "name": "Combien de fuseaux horaires y a-t-il en Russie ?", "acceptedAnswer": {"@type": "Answer", "text": "Onze, couvrant de UTC+2 à UTC+12."}}]}
+    </script>
+</head>
+
+Now body.
+
+We need to translate the skip link, loading spinner aria-label, loading text, etc.
+
+Let's write body:
+
+<body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+    <div id="root" role="application" aria-label="World Time Online Application">
+        <div class="app-loading" aria-busy="true" aria-live="polite">
+            <div class="app-loading-spinner" role="status" aria-label="Chargement de l'application"></div>
+            <p class="app-loading-text">Chargement de l'heure mondiale...</p>
+        </div>
+    </div>
+    <main id="main-content">
+        <article class="blog-wrap">
+            <nav class="blog-breadcrumb" aria-label="Fil d'Ariane">
+                <a href="/">Accueil</a> › <a href="/#blog">Blog</a> › <span aria-current="page">Combien de fuseaux horaires y a-t-il ? — Par pays & dans le monde</span>
+            </nav>
+            <h1>Combien de fuseaux horaires y a-t-il ? — Par pays & dans le monde</h1>
+            <div class="blog-meta"> 10 août 2026 &nbsp;·&nbsp;  6 min de lecture &nbsp;·&nbsp;  Fuseaux horaires, Guide</div>
+
+<p>En théorie, la Terre possède <strong>24 fuseaux horaires</strong>, un pour chaque heure de la journée. En pratique, il y en a <strong>38</strong>, car plusieurs se situent sur des décalages d'une demi-heure ou d'un quart d'heure comme l'Inde (+5:30) et le Népal (+5:45). Et le comptage par pays plutôt que par décalage donne des nombres encore plus élevés.</p>
+
+<h2>Pays ayant le plus de fuseaux horaires</h2>
+<table><thead><tr><th>Pays</th><th>Fuseaux</th><th>Pourquoi</th></tr></thead><tbody>
+<tr><td>France</td><td>12</td><td>Territoires outre-mer dans le monde</td></tr>
+<tr><td>Russie</td><td>11</td><td>Étendue est-ouest vaste</td></tr>
+<tr><td>États-Unis</td><td>9–11</td><td>Continentale 4/6 avec l'Alaska/Hawaï + territoires</td></tr>
+<tr><td>Australie</td><td>3 (+externes)</td><td>Adoption mixte de l'heure d'été</td></tr>
+<tr><td>Chine</td><td>1</td><td>Couvre 5 zones géographiques mais utilise l'heure de Pékin à l'échelle nationale</td></tr>
+</tbody></table>
+
+<h2>Pourquoi les décalages d'une demi-heure existent</h2>
+<p>Des décalages comme +5:30 (Inde), +3:30 (Iran), +9:30 (parties de l'Australie) et +5:45 (Népal) correspondent au midi solaire local : une grille d'heure unique ne correspondait pas à l'endroit où midi tombait réellement pour certains pays, donc ils ont partagé la différence.</p>
+
+<h2>Questions fréquemment posées</h2>
+<div class="faq-section">
+{FAQ}
+</div>
+<p>Explorez-les visuellement sur notre <a href="/time-zone-map.html">carte des fuseaux horaires</a>.</p>
+
+        <footer class="blog-footer">
+            <a href="/privacy.html">Confidentialité</a>
+            <a href="/about.html">À propos</a>
+            <a href="/contact.html">Contact</a>
+            <a href="/terms.html">Conditions</a>
+            <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p>
+        </footer>
+    </main>
+
+    <script type="module" src="/assets/index-Dd7au40z.js" async></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var seo = document.querySelector('.blog-wrap');
+        if (seo) seo.style.display = 'none';
+      });
+    </script>
+    <script>
+      window.addEventListener('load',function(){
+        var ahrefs=document.createElement('script');
+        ahrefs.async=true;
+        ahrefs.src='https://analytics.ahrefs.com/analytics.js';
+        ahrefs.setAttribute('data-key','hB1VYWuwb1i/f1d8re7P2A');
+        document.head.appendChild(ahrefs);
+      });
+    </script>
+  </body>
+</html>
+
+Now we need to ensure we didn't miss any text.
+
+Check for any other visible text: The <div class="app-loading" aria-busy="true" aria-live="polite"> has no visible text besides spinner and p.
+
+The <div id="root" role="application" aria-label="World Time Online Application">: aria-label is not visible but is an attribute; we need to translate aria-label content? According to rule (2): translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. So we need to translate aria-label values as well. Indeed we missed translating aria-label on the root div: "World Time Online Application". Should translate to French: "Application Heure mondiale en ligne" or "Application Heure en ligne mondiale"? Let's think: "World

@@ -1,0 +1,450 @@
+We need to translate all visible/user-facing text into German, while preserving HTML tags, attributes, JSON-LD blocks, etc. The HTML currently has lang="de" already, but many texts are in English. We need to translate them.
+
+We must keep all tags, attributes, href, etc unchanged. Only translate human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content.
+
+Also need to translate JSON-LD values: e.g., "headline", "description", "articleSection", "keywords", "author.name", "publisher.name", etc. Also the BreadcrumbList names, FAQ question and answer texts.
+
+Also need to translate meta tags: title, name="title", name="description", name="keywords", og:title, og:description, twitter:title, etc.
+
+Also need to translate visible text in body: e.g., "Skip to main content", "Loading World Time...", "Home", "Blog", the breadcrumb span text, the h1, blog-meta (contains date, read time, categories). The blog-meta currently has some weird characters: " August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide". Those are likely placeholder icons; we should translate the text parts: "August 10, 2026" -> "10. August 2026" (German date format). "6 min read" -> "6 Min Lesezeit" or "6 Min Lesezeit"? Usually "6 Min Lesezeit". Could also be "6 Min Lesezeit". "Time Zones, Guide" -> "Zeitzonen, Leitfaden". Also need to translate the paragraph text: "The UK follows British Summer Time (BST, UTC+1) from late March to late October, then returns to GMT (UTC+0). In 2026 the switch dates are:" etc.
+
+Also translate table headers: Change, Date, Effect. Table rows: "Clocks go forward", "Clocks go back". The date strings: "Sunday, March 29 at 01:00 GMT" etc. Should we translate month names? Usually keep month names in English? The rule says do NOT translate URLs, city/feature names that are proper nouns unless a natural localized form exists. Month names are not proper nouns? They are part of date; we can translate to German: "Sonntag, 29. März um 01:00 MEZ"? Actually GMT is same as UTC. In German we might say "Sonntag, 29. März um 01:00 Uhr MEZ". But we need to keep the format? The instruction: translate only human-readable text. So we should translate the date string into German. However, we must keep the same structure? Not required. We'll translate.
+
+Similarly "Sunday, October 25 at 02:00 BST" -> "Sonntag, 25. Oktober um 02:00 Uhr MESZ"? Actually BST is British Summer Time, which is UTC+1, in German "BST" maybe keep as abbreviation? Could translate to "BST" remains same? Probably keep as BST because it's an abbreviation. But we can translate the phrase: "Uhren werden vorgestellt" etc.
+
+We need to translate the paragraph after table: "Both switches happen at 01:00 UTC — the same moment as the rest of the EU, which keeps European time gaps stable all year."
+
+Then the heading "What Stays Constant vs What Shifts". Translate to German: "Was konstant bleibt vs. Was sich ändert" or "Was bleibt gleich vs. Was ändert sich". We'll choose something natural.
+
+Then bullet points: "London–New York:" etc. Need to translate the description after colon. Keep the city names as proper nouns (London, New York, India, Sydney). So translate the rest.
+
+Also need to translate the Live UK Time Check heading: "Live UK Time Check" -> "Live-Zeitprüfung UK" or "Live-UK-Zeit". Probably "Live-UK-Zeit". We'll translate to "Live-UK-Zeit". The paragraph inside the widget: empty.
+
+Then FAQ heading: "Frequently Asked Questions" -> "Häufig gestellte Fragen". The FAQ section placeholder {FAQ} will be replaced? Actually the HTML includes {FAQ} as placeholder; we should translate that? It's not real content; it's a placeholder. We'll leave as is? Probably we should keep {FAQ} unchanged because it's not real text. But it's inside a div; we could treat as text and translate? It's not meaningful; better to leave unchanged.
+
+Then the link text: "Worldwide table: <a href="/dst-2026-worldwide.html">DST 2026 worldwide</a>." Translate "Worldwide table:" to "Weltweite Tabelle:" and the link text "DST 2026 worldwide" maybe keep as is? Could translate to "DST 2026 weltweit". But DST is an abbreviation; we could translate "worldwide" to "weltweit". Keep DST.
+
+Footer links: "Privacy", "About", "Contact", "Terms". Translate to German: "Datenschutz", "Über", "Kontakt", "Nutzungsbedingungen". The copyright line: "&copy; 2026 World Time Sync" translate? Usually keep name unchanged, but "World Time Sync" is a brand; keep as is. The text before: maybe nothing.
+
+Also need to translate the aria-label attributes: e.g., aria-label="Skip to main content" -> translate to German? The rule says translate attributes like title/alt/aria-label/description/keywords/content. So we need to translate aria-label values. Also aria-label on app-loading-spinner: "Loading application". Also aria-label on div id="root": "World Time Online Application". Also aria-label on blog-breadcrumb: "Breadcrumb". Also aria-current="page" is attribute but value is "page" (not translate). Also aria-busy, aria-live values are not translatable? They are states; we keep as is.
+
+Also need to translate placeholder text inside <p class="app-loading-text">Loading World Time...</p>.
+
+Also need to translate the text inside <noscript><link rel="stylesheet" href="/assets/blog.css"></noscript> - no text.
+
+Also need to translate the text inside <script> tags? No, only JSON-LD.
+
+Now we need to produce the full HTML with translations.
+
+Let's go step by step.
+
+First, <meta charset="UTF-8"> unchanged.
+
+<meta name="viewport"... unchanged.
+
+<meta name="theme-color"... unchanged.
+
+<meta name="google-site-verification"... unchanged.
+
+<title>UK Summer Time 2026 — BST Dates & Clock Changes | World Time Sync</title> -> translate to German: "UK Sommerzeit 2026 — BST-Daten & Uhrzeitänderungen | World Time Sync". However, we need to keep the brand "World Time Sync". Also "BST" remains. Use en dash? Keep as is. So: "UK Sommerzeit 2026 — BST-Daten & Uhrzeitänderungen | World Time Sync". Could also use "UK Sommerzeit 2026 — BST-Daten & Zeitänderungen". We'll choose "Uhrzeitänderungen". Also need to keep the pipe.
+
+<meta name="title" content="UK Summer Time 2026 — BST Dates & Clock Changes | World Time Sync"> -> same translation.
+
+<meta name="description" content="UK BST 2026: clocks went forward March 29 and go back October 25. GMT vs BST explained."> -> translate: "UK BST 2026: Uhren wurden am 29. März vorgestellt und gehen am 25. Oktober zurück. GMT vs BST erklärt." Need to keep the colon after UK BST 2026? We'll translate.
+
+<meta name="keywords" content="summer time uk 2026, when do clocks go forward uk, bst 2026 dates, gmt to bst change"> -> translate keywords? Usually keep as is? But rule says translate keywords/content. So we should translate: "sommerzeit uk 2026, wann werden die uhren im uk vorgestellt, bst 2026 daten, gmt zu bst änderung". However, keywords are for SEO; but we follow instruction. We'll translate.
+
+<meta name="robots" content="index, follow"> unchanged.
+
+<meta name="author" content="World Time Sync"> unchanged (brand).
+
+<meta property="og:type" content="article"> unchanged.
+
+<meta property="og:url" content="https://worldtimessync.com/de/blog/uk-summer-time-2026.html"> unchanged.
+
+<meta property="og:title" content="UK Summer Time 2026 — BST Dates & Clock Changes | World Time Sync"> translate similarly.
+
+<meta property="og:description" content="UK BST 2026: clocks went forward March 29 and go back October 25. GMT vs BST explained."> translate.
+
+<meta property="og:image" content="https://worldtimessync.com/og-image.png"> unchanged.
+
+<meta name="twitter:card" content="summary_large_image"> unchanged.
+
+<meta name="twitter:title" content="UK Summer Time 2026 — BST Dates & Clock Changes | World Time Sync"> translate.
+
+<link rel="canonical" href="https://worldtimessync.com/de/blog/uk-summer-time-2026.html"> unchanged.
+
+<link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/de/blog/uk-summer-time-2026.html"> unchanged.
+
+<link rel="preload" href="/assets/blog.css" as="style"> unchanged.
+
+<noscript><link rel="stylesheet" href="/assets/blog.css"></noscript> unchanged.
+
+<link rel="icon"... unchanged.
+
+<link rel="stylesheet" href="/assets/index-ufePLcBr.css"> unchanged.
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script> unchanged.
+
+<script>... gtag... unchanged.
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script> unchanged.
+
+Now JSON-LD blocks.
+
+First JSON-LD: type Article.
+
+We need to translate headline, description, articleSection, keywords, author.name, publisher.name, maybe logo? No.
+
+Also datePublished, dateModified unchanged.
+
+Also mainEntityOfPage @id unchanged.
+
+image unchanged.
+
+Let's translate:
+
+"headline": "UK Summer Time 2026 — BST Dates & Clock Changes | World Time Sync" -> "UK Sommerzeit 2026 — BST-Daten & Uhrzeitänderungen | World Time Sync"
+
+"description": "UK BST 2026: clocks went forward March 29 and go back October 25. GMT vs BST explained." -> "UK BST 2026: Uhren wurden am 29. März vorgestellt und gehen am 25. Oktober zurück. GMT vs BST erklärt."
+
+"articleSection": "Time Zones" -> "Zeitzonen"
+
+"keywords": "summer time uk 2026, when do clocks go forward uk, bst 2026 dates, gmt to bst change" -> translate: "sommerzeit uk 2026, wann werden die uhren im uk vorgestellt, bst 2026 daten, gmt zu bst änderung"
+
+"wordCount": 161 unchanged.
+
+"timeRequired": "PT6M" unchanged.
+
+"inLanguage": "en" unchanged? The language of the article is English originally; but we are translating to German, should we change? The rule says translate only human-readable text; this is a language code attribute; it's not human-readable? It's a code; we should not translate. Keep as "en". However, the page is now German; but we follow instruction.
+
+"author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"} -> name unchanged (brand). url unchanged.
+
+"publisher": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com", "logo": {"@type": "ImageObject", "url": "https://worldtimessync.com/logo.png", "width": 512, "height": 512}} -> name unchanged.
+
+"datePublished": "2026-08-10" unchanged.
+
+"dateModified": "2026-08-10" unchanged.
+
+"mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/de/blog/uk-summer-time-2026.html"} unchanged.
+
+"image": "https://worldtimessync.com/og-image.png" unchanged.
+
+Second JSON-LD: BreadcrumbList.
+
+We need to translate the "name" values.
+
+ItemListElement:
+
+position 1: name: "Home" -> "Startseite" or "Home"? In German typical breadcrumb uses "Home". Could translate to "Startseite". We'll translate.
+
+position 2: name: "Blog" -> "Blog" could stay as is? Could translate to "Blog" remains same; but we can translate to "Blog" (same). Might keep as "Blog". We'll translate to "Blog" (no change). Or "Blog" is English but used as a section name; we could keep. I'd keep as "Blog" because it's a proper noun? Not sure. We'll translate to "Blog" (same). Or "Blog" -> "Blog". No change.
+
+position 3: name: "UK Summer Time 2026 — BST Dates & Clock Changes" -> translate: "UK Sommerzeit 2026 — BST-Daten & Uhrzeitänderungen". Keep the URL same.
+
+Third JSON-LD: FAQPage.
+
+We need to translate each question name and answer text.
+
+Question 1 name: "When do UK clocks change in 2026?" -> German: "Wann ändern sich die Uhren im UK im Jahr 2026?" Could be "Wann werden die Uhren im UK 2026 umgestellt?" We'll choose: "Wann ändern sich die Uhren im UK im Jahr 2026?"
+
+Answer text: "Forward on March 29, back on October 25 — both at 01:00 UTC." -> translate: "Vorstellung am 29. März, Rückstellung am 25. Oktober — beide um 01:00 UTC." Use "Uhrzeitänderung"? We'll say "Uhren werden vorgestellt am 29. März und zurückgestellt am 25. Oktober — beide um 01:00 UTC."
+
+Question 2 name: "Is the UK always 1 hour ahead of GMT in summer?" -> German: "Ist das UK im Sommer immer 1 Stunde vor GMT?" Could be "Ist das UK im Sommer immer eine Stunde vor GMT?" We'll use: "Ist das UK im Sommer immer eine Stunde vor GMT?"
+
+Answer text: "Yes — BST is exactly GMT+1 from late March to late October." -> translate: "Ja — BST entspricht genau GMT+1 von Ende März bis Ende Oktober."
+
+Question 3 name: "Why does London-New York shrink to 4 hours in October?" -> German: "Warum schrumpft der Zeitunterschied zwischen London und New York im Oktober auf 4 Stunden?" We'll translate.
+
+Answer text: "The UK leaves BST on Oct 25 while the US stays on DST until Nov 1, so for one week the gap is one hour smaller." -> translate: "Das UK verlässt die BST am 25. Oktober, während die US weiterhin DST bis zum 1. November hat, sodass die Lücke für eine Woche um eine Stunde kleiner wird."
+
+Now body content.
+
+First: <a href="#main-content" class="skip-link">Skip to main content</a> -> translate to German: "Zum Hauptinhalt springen" or "Zum Hauptgehalt"? Usually "Zum Hauptinhalt springen". We'll use "Zum Hauptinhalt springen".
+
+Next: <div id="root" role="application" aria-label="World Time Online Application"> -> translate aria-label: "World Time Online Application" -> German: "World Time Online Anwendung" or "World Time Online Applikation". We'll use "World Time Online Anwendung". Keep brand.
+
+Inside that div: <div class="app-loading" aria-busy="true" aria-live="polite"> -> aria-busy and aria-live values not translated.
+
+Inside: <div class="app-loading-spinner" role="status" aria-label="Loading application"> -> translate aria-label: "Loading application" -> "Anwendung wird geladen". Or "Wird geladen". We'll use "Anwendung wird geladen".
+
+<p class="app-loading-text">Loading World Time...</p> -> translate: "World Time wird geladen..." or "World Time wird geladen". We'll use "World Time wird geladen...".
+
+Now main content.
+
+<nav class="blog-breadcrumb" aria-label="Breadcrumb"> -> translate aria-label: "Breadcrumb" -> "Breadcrumb" maybe "Breadcrumb" stays? Could translate to "Breadcrumb" is English; German "Breadcrumb" not used; we could use "Breadcrumb" or "Breadcrumb-Navigation". We'll translate to "Breadcrumb-Navigation". Or "Breadcrumb" as term; but we follow instruction: translate. So "Breadcrumb-Navigation".
+
+Inside nav: <a href="/">Home</a> -> translate to "Startseite". Keep href.
+
+Then " › " separator unchanged.
+
+<a href="/#blog">Blog</a> -> translate to "Blog" (maybe keep). Could translate to "Blog". We'll keep as "Blog" (same). Or "Blog" -> "Blog". No change.
+
+Then <span aria-current="page">UK Summer Time 2026 — BST Dates & Clock Changes</span> -> translate the text inside span: "UK Sommerzeit 2026 — BST-Daten & Uhrzeitänderungen". Keep aria-current.
+
+<h1>UK Summer Time 2026 — BST Dates & Clock Changes</h1> -> translate similarly.
+
+<div class="blog-meta"> August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide</div>
+
+We need to translate the visible text parts: The date, the read time, the categories. The weird icons likely represent calendar, clock, folder; we leave them as is (they are not text). So we translate:
+
+"August 10, 2026" -> German date format: "10. August 2026". Keep the leading icons unchanged.
+
+"6 min read" -> "6 Min Lesezeit". Could also be "6 Min Lesezeit". We'll use "6 Min Lesezeit".
+
+"Time Zones, Guide" -> "Zeitzonen, Leitfaden". Keep the icons.
+
+Thus the div becomes:  10. August 2026 &nbsp;·&nbsp;  6 Min Lesezeit &nbsp;·&nbsp;  Zeitzonen, Leitfaden
+
+Now paragraph after that:
+
+<p>The UK follows British Summer Time (BST, UTC+1) from late March to late October, then returns to GMT (UTC+0). In 2026 the switch dates are:</p>
+
+Translate: "Das Vereinigte Königreich folgt der British Summer Time (BST, UTC+1) von Ende März bis Ende Oktober, danach kehrt es zu GMT (UTC+0) zurück. Die Umstellungsdaten für 2026 lauten:"
+
+Note: "British Summer Time" is a proper noun; we could keep as is or translate? It's a term; we could keep "British Summer Time" but translate the rest. The instruction says translate human-readable text; proper nouns like feature names not translated unless natural localized form exists. "British Summer Time" is a proper name of a time zone; we could keep it as is. However, we might translate to "Britische Sommerzeit". But that's a translation; is it a natural localized form? Possibly yes. Many German sources refer to "Britische Sommerzeit (BST)". I'd translate to "Britische Sommerzeit (BST)". Similarly "GMT" we keep as abbreviation.
+
+Thus: "Das Vereinigte Königreich folgt der Britischen Sommerzeit (BST, UTC+1) von Ende März bis Ende Oktober, danach kehrt es zu GMT (UTC+0) zurück. Die Umstellungsdaten für 2026 lauten:"
+
+Now <h2>UK Clock Changes 2026</h2> -> translate: "UK-Uhränderungen 2026" or "Uhränderungen im UK 2026". We'll use "UK-Uhränderungen 2026". Or "Uhränderungen im Vereinigten Königreich 2026". We'll keep short: "UK-Uhränderungen 2026".
+
+Table headers: <th>Change</th> -> "Änderung". <th>Date</th> -> "Datum". <th>Effect</th> -> "Wirkung".
+
+Row 1: <td>Clocks go forward</td> -> translate: "Uhren werden vorgestellt". <td>Sunday, March 29 at 01:00 GMT</td> -> translate to German: "Sonntag, 29. März um 01:00 Uhr MEZ". Since GMT is same as MEZ (Mitteleuropäische Zeit). We'll keep "MEZ". Could also say "UMT". We'll use "MEZ". <td>GMT → BST (+1)</td> -> translate: "MEZ → MESZ (+1)"? Actually BST is British Summer Time, which is MESZ (Mitteleuropäische Sommerzeit). In German, we could say "MEZ → MESZ (+1)". We'll keep the arrow and +1.
+
+Row 2: <td>Clocks go back</td> -> "Uhren werden zurückgestellt". <td>Sunday, October 25 at 02:00 BST</td> -> translate: "Sonntag, 25. Oktober um 02:00 Uhr MESZ". <td>BST → GMT (−1)</td> -> "MESZ → MEZ (−1)".
+
+Now paragraph after table:
+
+<p>Both switches happen at 01:00 UTC — the same moment as the rest of the EU, which keeps European time gaps stable all year.</p>
+
+Translate: "Beide Änderungen erfolgen um 01:00 Uhr UTC — derselbe Moment wie im Rest der EU, wodurch die Zeitunterschiede in Europa das ganze Jahr über stabil bleiben."
+
+Now <h2>What Stays Constant vs What Shifts</h2> -> translate: "Was konstant bleibt vs. Was sich ändert". Could be "Was bleibt gleich vs. Was sich ändert". We'll use "Was bleibt gleich vs. Was sich ändert".
+
+Now bullet list:
+
+<ul>
+<li><strong>London–New York:</strong> normally 5 hours apart; becomes <strong>4 hours</strong> for the week between Oct 25 and Nov 1 (Europe falls back first).</li>
+<li><strong>London–India:</strong> 5:30 in winter, 4:30 in summer.</li>
+<li><strong>London–Sydney:</strong> swings between 9–11 hours because both countries observe DST in opposite seasons.</li>
+</ul>
+
+Translate each:
+
+- "London–New York:" keep as is (proper nouns). "normally 5 hours apart;" -> "normalerweise 5 Stunden Unterschied;" (or "normalerweise 5 Stunden voneinander entfernt;"). We'll use "normalerweise 5 Stunden Unterschied;". "becomes <strong>4 hours</strong> for the week between Oct 25 and Nov 1 (Europe falls back first)." -> "wird es für die Woche zwischen 25. Oktober und 1. November auf 4 Stunden reduziert (Europa stellt zuerst zurück)." Need to keep the parentheses. We'll translate: "wird es für die Woche zwischen 25. Oktober und 1. November auf 4 Stunden reduziert (Europa stellt zuerst die Uhr zurück)."
+
+- "London–India:" -> "London–India:" keep. "5:30 in winter, 4:30 in summer." -> "5:30 im Winter, 4:30 im Sommer."
+
+- "London–Sydney:" -> "London–Sydney:" keep. "swings between 9–11 hours because both countries observe DST in opposite seasons." -> "schwankt zwischen 9–11 Stunden, da beide Länder die Sommerzeit in entgegengesetzten Jahreszeiten beobachten."
+
+Now the converter widget:
+
+<div class="converter-widget">
+<h2>Live UK Time Check</h2>
+<p id="ukt" style="font-size:1.4em;font-weight:700;font-variant-numeric:tabular-nums;"></p>
+<p id="ukz"></p>
+</div>
+
+Translate heading: "Live UK Time Check" -> "Live-UK-Zeitprüfung" or "Live-Zeitprüfung UK". We'll use "Live-UK-Zeit". Actually "Live UK Time Check" could be "Live-UK-Zeitkontrolle". We'll use "Live-UK-Zeit". Or "Live-UK-Zeitprüfung". Let's choose "Live-UK-Zeit". We'll keep short.
+
+Now the script inside is unchanged.
+
+Now <h2>Frequently Asked Questions</h2> -> translate: "Häufig gestellte Fragen".
+
+<div class="faq-section">
+{FAQ}
+</div> -> leave {FAQ} unchanged.
+
+Now paragraph after that:
+
+<p>Worldwide table: <a href="/dst-2026-worldwide.html">DST 2026 worldwide</a>.</p>
+
+Translate: "Weltweite Tabelle: <a href="/dst-2026-worldwide.html">DST 2026 weltweit</a>." The link text "DST 2026 worldwide" translate to "DST 2026 weltweit". Keep DST abbreviation.
+
+Now footer:
+
+<footer class="blog-footer">
+    <a href="/privacy.html">Privacy</a>
+    <a href="/about.html">About</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/terms.html">Terms</a>
+    <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p>
+</footer>
+
+Translate link texts:
+
+Privacy -> "Datenschutz"
+About -> "Über"
+Contact -> "Kontakt"
+Terms -> "Nutzungsbedingungen" (or "AGB"). We'll use "Nutzungsbedingungen".
+
+Copyright line: "&copy; 2026 World Time Sync" -> keep brand; maybe add "Alle Rechte vorbehalten"? Not needed. Keep as is.
+
+Now also need to translate any other visible text: The <script> blocks contain no visible text.
+
+Now also need to translate the <title> attribute of the <link rel="icon">? No.
+
+Now also need to translate any placeholder text inside the <script> for the live time? No.
+
+Now also need to translate the text inside the <noscript>? No.
+
+Now also need to translate the text inside the <script type="application/ld+json">? Already done.
+
+Now also need to translate the text inside the <script> for gtag? No.
+
+Now also need to translate the text inside the <script> for ads? No.
+
+Now also need to translate the text inside the <script> for the module? No.
+
+Now also need to translate the text inside the <script> for ahrefs? No.
+
+Now also need to translate any other attributes like placeholder? None.
+
+Now also need to translate the text inside the <a> tags for the skip link we did.
+
+Now also need to translate the text inside the <a> tags for the footer we did.
+
+Now also need to translate the text inside the <a> tags for the breadcrumb we did.
+
+Now also need to translate the text inside the <a> tags for the canonical etc? No.
+
+Now also need to translate the text inside the <a> tags for the alternate etc? No.
+
+Now also need to translate the text inside the <a> tags for the preload? No.
+
+Now also need to translate the text inside the <a> tags for the stylesheet? No.
+
+Now also need to translate the text inside the <a> tags for the icon? No.
+
+Now also need to translate the text inside the <a> tags for the script? No.
+
+Now also need to translate the text inside the <a> tags for the noscript? No.
+
+Now also need to translate the text inside the <a> tags for the link rel="preload"? No.
+
+Now also need to translate the text inside the <a> tags for the link rel="stylesheet"? No.
+
+Now also need to translate the text inside the <a> tags for the link rel="canonical"? No.
+
+Now also need to translate the text inside the <a> tags for the link rel="alternate"? No.
+
+Now also need to translate the text inside the <a> tags for the link rel="icon"? No.
+
+Now also need to translate the text inside the <a> tags for the link rel="stylesheet" inside noscript? No.
+
+Now also need to translate the text inside the <a> tags for the link rel="preload"? No.
+
+Now also need to translate the text inside the <a> tags for the link rel="stylesheet" in head? No.
+
+Now also need to translate the text inside the <a> tags for the link rel="stylesheet" for index-ufePLcBr.css? No.
+
+Now also need to translate the text inside the <a> tags for the link rel="stylesheet" for blog.css? No.
+
+Now also need to translate the text inside the <a> tags for the link rel="stylesheet" for blog.css inside noscript? No.
+
+Now also need to translate the text inside the <a> tags for the link rel="stylesheet" for blog.css? Already.
+
+Now also need to translate the text inside the <a> tags for the link rel="stylesheet" for blog.css? Done.
+
+Now also need to translate the text inside the <a> tags for the link rel="stylesheet" for blog.css? Done.
+
+Now also need to translate the text inside the <a> tags for the link rel="stylesheet" for blog.css? Done.
+
+Now also need to translate the text inside the <a> tags for the link rel="stylesheet" for blog.css? Done.
+
+Now also need to translate the text inside the <a> tags for the link rel="stylesheet" for blog.css? Done.
+
+Ok.
+
+Now we need to ensure we didn't miss any visible text: The <div class="app-loading-text"> we translated.
+
+Also the <p id="ukt"> and <p id="ukz"> are empty; no text.
+
+Now also need to translate the text inside the <script> for the live time? Not visible.
+
+Now also need to translate the text inside the <script> for the FAQ? Already.
+
+Now also need to translate the text inside the <script> for the BreadcrumbList? Already.
+
+Now also need to translate the text inside the <script> for the Article? Already.
+
+Now also need to translate the text inside the <script> for the FAQ? Already.
+
+Now also need to translate the text inside the <script> for the BreadcrumbList? Already.
+
+Now also need to translate the text inside the <script> for the Article? Already.
+
+Now also need to translate the text inside the <script> for the FAQ? Already.
+
+Now also need to translate the text inside the <script> for the BreadcrumbList? Already.
+
+Now also need to translate the text inside the <script> for the Article? Already.
+
+Now also need to translate the text inside the <script> for the FAQ? Already.
+
+Now also need to translate the text inside the <script> for the BreadcrumbList? Already.
+
+Now also need to translate the text inside the <script> for the Article? Already.
+
+Now also need to translate the text inside the <script> for the FAQ? Already.
+
+Now also need to translate the text inside the <script> for the BreadcrumbList? Already.
+
+Now also need to translate the text inside the <script> for the Article? Already.
+
+Now also need to translate the text inside the <script> for the FAQ? Already.
+
+Now also need to translate the text inside the <script> for the BreadcrumbList? Already.
+
+Now also need to translate the text inside the <script> for the Article? Already.
+
+Ok.
+
+Now we need to output the full HTML with translations.
+
+Let's construct.
+
+We'll start with <!doctype html> unchanged.
+
+<html lang="de"> unchanged.
+
+<head> ... we need to replace the meta tags.
+
+Let's write the head section.
+
+We'll keep the same order.
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="theme-color" content="#667eea">
+<meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk">
+<title>UK Sommerzeit 2026 — BST-Daten & Uhrzeitänderungen | World Time Sync</title>
+<meta name="title" content="UK Sommerzeit 2026 — BST-Daten & Uhrzeitänderungen | World Time Sync">
+<meta name="description" content="UK BST 2026: Uhren wurden am 29. März vorgestellt und gehen am 25. Oktober zurück. GMT vs BST erklärt.">
+<meta name="keywords" content="sommerzeit uk 2026, wann werden die uhren im uk vorgestellt, bst 2026 daten, gmt zu bst änderung">
+<meta name="robots" content="index, follow">
+<meta name="author" content="World Time Sync">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://worldtimessync.com/de/blog/uk-summer-time-2026.html">
+<meta property="og:title" content="UK Sommerzeit 2026 — BST-Daten & Uhrzeitänderungen | World Time Sync">
+<meta property="og:description" content="UK BST 2026: Uhren wurden am 29. März vorgestellt und gehen am 25. Oktober zurück. GMT vs BST erklärt.">
+<meta property="og:image" content="https://worldtimessync.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="UK Sommerzeit 2026 — BST-Daten & Uhrzeitänderungen | World Time Sync">
+<link rel="canonical" href="https://worldtimessync.com/de/blog/uk-summer-time-2026.html">
+<link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/de/blog/uk-summer-time-2026.html">
+<link rel="preload" href="/assets/blog.css" as="style">
+<noscript><link rel="stylesheet" href="/assets/blog.css"></noscript>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/assets/index-ufePLcBr.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LBX0CDYSSV');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type":

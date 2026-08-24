@@ -1,0 +1,367 @@
+We need to translate visible/user-facing text into Italian, preserving HTML tags, attributes, etc. The HTML currently has lang="it" already, but content is English. We need to translate text inside tags and attributes like title, alt, aria-label, description, keywords, content, etc. Also translate visible text in body.
+
+We must not translate URLs, proper nouns, etc. Also keep JSON-LD content? The JSON-LD contains text values that are user-facing? According to rule 2, translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. JSON-LD is inside script tags, not visible to user, but its content may be considered data; but rule says we should not translate JSON-LD blocks? It says keep JSON-LD blocks exactly as-is. So we must not modify JSON-LD content. So we leave the script type="application/ld+json" unchanged.
+
+Thus we need to translate:
+
+- <title>Military Time Converter — 24-Hour Clock Chart & Zulu Time | World Time Sync</title>
+- <meta name="title" content="Military Time Converter — 24-Hour Clock Chart & Zulu Time | World Time Sync">
+- <meta name="description" content="Convert military time to standard time instantly. Full 24-hour chart plus Zulu (Z) time explained.">
+- <meta name="keywords" content="military time converter, military time chart, zulu time, 24 hour clock converter, what is 1700 military time">
+- <meta property="og:title" content="Military Time Converter — 24-Hour Clock Chart & Zulu Time | World Time Sync">
+- <meta property="og:description" content="Convert military time to standard time instantly. Full 24-hour chart plus Zulu (Z) time explained.">
+- <meta name="twitter:title" content="Military Time Converter — 24-Hour Clock Chart & Zulu Time | World Time Sync">
+- Also maybe <meta name="author" content="World Time Sync">? That's organization name, proper noun? It's a brand; keep as is? Probably keep unchanged.
+
+- In body: <a href="#main-content" class="skip-link">Skip to main content</a> -> translate to Italian: "Vai al contenuto principale" or "Salta al contenuto principale". Usually "Salta al contenuto principale". We'll translate.
+
+- <div class="app-loading" aria-busy="true" aria-live="polite">: aria-label? Not present. Inside: <div class="app-loading-spinner" role="status" aria-label="Loading application"></div> -> translate aria-label: "Caricamento applicazione". Also <p class="app-loading-text">Loading World Time...</p> -> translate: "Caricamento World Time..." maybe "Caricamento World Time..." Keep brand.
+
+- <nav class="blog-breadcrumb" aria-label="Breadcrumb"> -> translate aria-label: "Breadcrumb" maybe "Breadcrumb" is okay but we can translate to "Breadcrumb" or "Percorso". Usually "Breadcrumb" remains; but we can translate to "Breadcrumb" is not Italian. Better to translate to "Breadcrumb" as "Breadcrumb" is a term; but we can translate to "Breadcrumb" maybe "Breadcrumb". I'd translate to "Breadcrumb" as "Breadcrumb" is not Italian; but we can use "Breadcrumb" as is? The rule says translate human-readable text inside attributes like aria-label. So we should translate "Breadcrumb" to Italian: "Breadcrumb" could be "Breadcrumb" (same) but maybe "Breadcrumb" is not translated. I'd translate to "Breadcrumb" as "Breadcrumb" is an English term; but we can translate to "Breadcrumb" as "Breadcrumb". I'd choose "Breadcrumb" as "Breadcrumb" (maybe keep). However to be safe, translate to "Breadcrumb" as "Breadcrumb" (maybe "Breadcrumb" is not translated). I'd translate to "Breadcrumb" as "Breadcrumb". Actually Italian often uses "Breadcrumb" unchanged. I'd keep as is.
+
+But we have visible text inside nav: <a href="/">Home</a> › <a href="/#blog">Blog</a> › <span aria-current="page">Military Time Converter — 24-Hour Clock Chart & Zulu Time</span>
+
+We need to translate "Home", "Blog", and the span text (the page title). "Home" -> "Home" maybe "Home" is okay but could be "Home". In Italian, "Home" often stays as "Home". But we can translate to "Home" as "Home". I'd translate to "Home" as "Home". However "Home" could be "Home" (same). I'd translate to "Home" as "Home". Actually Italian uses "Home" for homepage link often. I'd keep "Home". "Blog" -> "Blog". Keep.
+
+The span text: "Military Time Converter — 24-Hour Clock Chart & Zulu Time" -> translate to Italian: "Convertitore di tempo militare — Grafico dell'orologio 24 ore e ora Zulu". Need to keep the dash and ampersand? We'll translate.
+
+- <h1>Military Time Converter — 24-Hour Clock Chart & Zulu Time</h1> -> translate similarly.
+
+- <div class="blog-meta"> August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide</div>
+
+We see weird characters (maybe icons). The visible text: "August 10, 2026", "6 min read", "Time Zones, Guide". Need to translate month? Keep month name in English? Usually translate to Italian: "10 agosto 2026". "6 min read" -> "6 min di lettura" or "6 minuti di lettura". We'll translate to "6 min di lettura". "Time Zones, Guide" -> "Fusi orari, Guida". Keep punctuation.
+
+- <p>Military time uses a 24-hour clock: hours run from 00 (midnight) to 23 (11 PM), and no AM/PM marker is needed. It removes ambiguity in aviation, medicine, logistics and anything else where mixing up morning and evening matters.</p>
+
+Translate to Italian.
+
+- <h2>Military Time Converter</h2> -> translate.
+
+- Inside converter widget: <h2>24-hour ↔ 12-hour</h2> -> translate maybe "24 ore ↔ 12 ore". Keep symbol.
+
+- <div class="converter-row"><label>Military (HHMM):</label><input type="text" id="mil-in" value="1700" maxlength="4"></div> -> translate label: "Militare (HHMM):" maybe "Militare (HHMM):" or "Ora militare (HHMM):". We'll translate to "Militare (HHMM):".
+
+- <div class="converter-row"><label>Standard:</label><output id="std-out">5:00 PM</output></div> -> translate label: "Standard:" -> "Standard:" maybe "Ora standard:". We'll translate to "Ora standard:".
+
+- The output value will be generated by JS; we don't need to translate static value.
+
+- <h2>Military Time Chart</h2> -> translate.
+
+- Table headers: <th>24-hour</th><th>Standard</th><th>Spoken as</th> -> translate: "24 ore", "Standard", "Detto come". We'll translate.
+
+- Table rows: values like "0000", "12:00 AM", "Zero hundred". Need to translate spoken as and maybe standard time? Standard time includes AM/PM; we should translate AM/PM to Italian? Usually in Italian we use "AM"/"PM" still? Could translate to "a.m." and "p.m." but better keep as is? The rule says translate human-readable text. The AM/PM is part of time format; but it's language-specific. I'd translate to "a.m." and "p.m."? However the original text is English; we should translate to Italian equivalents: "12:00 AM" -> "12:00 a.m."? In Italian, they often use "12:00" with "di notte" or "di mattina". But to keep simple, we can translate "AM" to "a.m." and "PM" to "p.m." (lowercase with periods). We'll do that.
+
+- Spoken as: "Zero hundred" -> "Zero cento"? In Italian military time they say "zero zero cento"? Actually they say "zero zero cento"? But we can translate literally: "Zero cento". However "Zero hundred" is not idiomatic Italian; but we translate: "Zero cento". Similarly "Zero six hundred" -> "Zero sei cento". "Twelve hundred" -> "Dodici cento". "Seventeen hundred" -> "Diciassette cento". "Twenty-one hundred" -> "Ventuno cento". "Twenty-three fifty-nine" -> "Ventitré cinquantanove". We'll translate.
+
+- <h2>Zulu Time Explained</h2> -> translate.
+
+- Paragraph: "Zulu time (the "Z" suffix, e.g. 1430Z) is simply UTC. Pilots file flight plans and log departures in Zulu so schedules never shift across zones. To read Zulu locally: take UTC and apply your own offset."
+
+Translate.
+
+- <h2>Frequently Asked Questions</h2> -> translate.
+
+- Inside FAQ section: there is a placeholder {FAQ} which will be replaced by script? Actually the FAQ content is in JSON-LD earlier. The visible FAQ section likely gets filled by JS. We'll leave {FAQ} as is? It's not visible text; it's a placeholder. We'll keep unchanged.
+
+- <p>Find your zone's offset with <a href="/time-zone-converter.html">time zone converter</a>.</p> -> translate: "Trova l'offset del tuo fuso orario con il <a href="/time-zone-converter.html">convertitore di fuso orario</a>."
+
+- Footer links: Privacy, About, Contact, Terms -> translate to Italian: "Privacy", "Chi siamo", "Contatti", "Condizioni". Usually "About" -> "Chi siamo". "Contact" -> "Contatti". "Terms" -> "Condizioni". Keep hrefs.
+
+- Copyright line: "&copy; 2026 World Time Sync" -> keep brand, maybe translate "World Time Sync" unchanged.
+
+Now also need to translate attributes like title, alt, aria-label, description, keywords, content.
+
+We already handled title, meta tags, og:title, og:description, twitter:title.
+
+Also need to translate <meta name="author" content="World Time Sync">? It's a brand; keep.
+
+Also maybe <meta name="theme-color" content="#667eea"> not text.
+
+Now also need to translate any placeholder text inside <input> like placeholder? Not present.
+
+Also need to translate any aria-label attributes: we have aria-label on <div class="app-loading-spinner">: "Loading application" -> translate to "Caricamento applicazione". Also maybe other aria-label: <nav class="blog-breadcrumb" aria-label="Breadcrumb"> -> translate to "Breadcrumb" maybe "Breadcrumb" as earlier. We'll translate to "Breadcrumb" as "Breadcrumb"? I'd translate to "Breadcrumb" as "Breadcrumb". But maybe better to translate to "Breadcrumb" as "Breadcrumb". I'll keep as "Breadcrumb" because it's a UI term; but to follow rule, translate: "Breadcrumb" -> "Breadcrumb" (maybe "Breadcrumb" is not translated). I'd translate to "Breadcrumb" as "Breadcrumb". Actually Italian often uses "Breadcrumb" unchanged. I'll keep as "Breadcrumb". But we need to decide. I'll translate to "Breadcrumb" as "Breadcrumb". Hmm.
+
+Also there is aria-current="page" attribute; value is "page" not translate.
+
+Also there is role="application" aria-label="World Time Online Application" on <div id="root">. Need to translate that aria-label: "World Time Online Application" -> translate to "Applicazione World Time Online"? Keep brand? Probably translate to "Applicazione World Time Online". We'll translate.
+
+Also there is role="status" aria-label on spinner we already did.
+
+Also there is <a href="#main-content" class="skip-link">Skip to main content</a> we translated.
+
+Also there is <div class="app-loading-text">Loading World Time...</p> we translated.
+
+Also there is <script> with some strings? Not visible.
+
+Now also need to translate any text inside <noscript>? <noscript><link rel="stylesheet" href="/assets/blog.css"></noscript> no text.
+
+Now also need to translate any text inside <svg>? none.
+
+Now also need to translate any text inside JSON-LD? We must keep JSON-LD blocks exactly as-is, per rule. So we will not modify the content inside <script type="application/ld+json">.
+
+Now also need to translate any text inside <script> that is not JSON-LD? Eg the converter script has strings like "Military (HHMM):" inside label? Actually that's in HTML label, not script. The script has variable names, not visible.
+
+Now also need to translate any text inside <style>? none.
+
+Now we need to output the full HTML with translations.
+
+Let's go through the HTML and replace.
+
+Original:
+
+<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="theme-color" content="#667eea">
+    <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk">
+    <title>Military Time Converter — 24-Hour Clock Chart & Zulu Time | World Time Sync</title>
+    <meta name="title" content="Military Time Converter — 24-Hour Clock Chart & Zulu Time | World Time Sync">
+    <meta name="description" content="Convert military time to standard time instantly. Full 24-hour chart plus Zulu (Z) time explained.">
+    <meta name="keywords" content="military time converter, military time chart, zulu time, 24 hour clock converter, what is 1700 military time">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="World Time Sync">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://worldtimessync.com/it/blog/military-time-converter.html">
+    <meta property="og:title" content="Military Time Converter — 24-Hour Clock Chart & Zulu Time | World Time Sync">
+    <meta property="og:description" content="Convert military time to standard time instantly. Full 24-hour chart plus Zulu (Z) time explained.">
+    <meta property="og:image" content="https://worldtimessync.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Military Time Converter — 24-Hour Clock Chart & Zulu Time | World Time Sync">
+    <link rel="canonical" href="https://worldtimessync.com/it/blog/military-time-converter.html">
+    <link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/it/blog/military-time-converter.html">
+    <link rel="preload" href="/assets/blog.css" as="style">
+<noscript><link rel="stylesheet" href="/assets/blog.css"></noscript>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/assets/index-ufePLcBr.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LBX0CDYSSV');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "Article", "headline": "Military Time Converter — 24-Hour Clock Chart & Zulu Time | World Time Sync", "description": "Convert military time to standard time instantly. Full 24-hour chart plus Zulu (Z) time explained.", "articleSection": "Time Zones", "keywords": "military time converter, military time chart, zulu time, 24 hour clock converter, what is 1700 military time", "wordCount": 148, "timeRequired": "PT6M", "inLanguage": "en", "author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}, "publisher": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com", "logo": {"@type": "ImageObject", "url": "https://worldtimessync.com/logo.png", "width": 512, "height": 512}}, "datePublished": "2026-08-10", "dateModified": "2026-08-10", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/it/blog/military-time-converter.html"}, "image": "https://worldtimessync.com/og-image.png"}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://worldtimessync.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://worldtimessync.com/#blog"}, {"@type": "ListItem", "position": 3, "name": "Military Time Converter — 24-Hour Clock Chart & Zulu Time", "item": "https://worldtimessync.com/it/blog/military-time-converter.html"}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is 1700 military time?", "acceptedAnswer": {"@type": "Answer", "text": "1700 is 5:00 PM in standard 12-hour notation. Subtract 1200 from any value above 1259."}}, {"@type": "Question", "name": "Is Zulu time the same as GMT?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — Zulu (Z) equals UTC/GMT +0. The letter comes from the NATO phonetic alphabet word for zero offset."}}, {"@type": "Question", "name": "How do you say 0000?", "acceptedAnswer": {"@type": "Answer", "text": "'Zero hundred' or 'midnight'. 2400 also denotes midnight at the end of a day in some conventions."}}]}
+    </script>
+
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div id="root" role="application" aria-label="World Time Online Application">
+        <div class="app-loading" aria-busy="true" aria-live="polite">
+            <div class="app-loading-spinner" role="status" aria-label="Loading application"></div>
+            <p class="app-loading-text">Loading World Time...</p>
+        </div>
+    </div>
+    <main id="main-content">
+        <article class="blog-wrap">
+            <nav class="blog-breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Home</a> › <a href="/#blog">Blog</a> › <span aria-current="page">Military Time Converter — 24-Hour Clock Chart & Zulu Time</span>
+            </nav>
+            <h1>Military Time Converter — 24-Hour Clock Chart & Zulu Time</h1>
+            <div class="blog-meta"> August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide</div>
+
+<p>Military time uses a 24-hour clock: hours run from 00 (midnight) to 23 (11 PM), and no AM/PM marker is needed. It removes ambiguity in aviation, medicine, logistics and anything else where mixing up morning and evening matters.</p>
+
+<h2>Military Time Converter</h2>
+<div class="converter-widget">
+<h2>24-hour ↔ 12-hour</h2>
+<div class="converter-row"><label>Military (HHMM):</label><input type="text" id="mil-in" value="1700" maxlength="4"></div>
+<div class="converter-row"><label>Standard:</label><output id="std-out">5:00 PM</output></div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+ var i=document.getElementById('mil-in'),o=document.getElementById('std-out');
+ function cv(){var v=i.value.replace(/\D/g,'');if(v.length<3)return;var h=+v.slice(0,-2),m=+v.slice(-2);if(h>23||m>59)return;
+ var ap=h<12?'AM':'PM';var h12=h%12;if(h12===0)h12=12;o.textContent=h12+':'+String(m).padStart(2,'0')+' '+ap;}
+ i.addEventListener('input',cv);cv();
+});
+</script>
+
+<h2>Military Time Chart</h2>
+<table><thead><tr><th>24-hour</th><th>Standard</th><th>Spoken as</th></tr></thead><tbody>
+<tr><td>0000</td><td>12:00 AM</td><td>Zero hundred</td></tr>
+<tr><td>0600</td><td>6:00 AM</td><td>Zero six hundred</td></tr>
+<tr><td>1200</td><td>12:00 PM</td><td>Twelve hundred</td></tr>
+<tr><td>1700</td><td>5:00 PM</td><td>Seventeen hundred</td></tr>
+<tr><td>2100</td><td>9:00 PM</td><td>Twenty-one hundred</td></tr>
+<tr><td>2359</td><td>11:59 PM</td><td>Twenty-three fifty-nine</td></tr>
+</tbody></table>
+
+<h2>Zulu Time Explained</h2>
+<p>Zulu time (the "Z" suffix, e.g. 1430Z) is simply UTC. Pilots file flight plans and log departures in Zulu so schedules never shift across zones. To read Zulu locally: take UTC and apply your own offset.</p>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-section">
+{FAQ}
+</div>
+<p>Find your zone's offset with <a href="/time-zone-converter.html">time zone converter</a>.</p>
+
+        <footer class="blog-footer">
+            <a href="/privacy.html">Privacy</a>
+            <a href="/about.html">About</a>
+            <a href="/contact.html">Contact</a>
+            <a href="/terms.html">Terms</a>
+            <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p>
+        </footer>
+    </main>
+
+    <script type="module" src="/assets/index-Dd7au40z.js" async></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var seo = document.querySelector('.blog-wrap');
+        if (seo) seo.style.display = 'none';
+      });
+    </script>
+    <script>
+      window.addEventListener('load',function(){
+        var ahrefs=document.createElement('script');
+        ahrefs.async=true;
+        ahrefs.src='https://analytics.ahrefs.com/analytics.js';
+        ahrefs.setAttribute('data-key','hB1VYWuwb1i/f1d8re7P2A');
+        document.head.appendChild(ahrefs);
+      });
+    </script>
+  </body>
+</html>
+
+Now we need to translate.
+
+Let's produce translated HTML.
+
+Step by step:
+
+<head>:
+
+<title>: translate to Italian: "Convertitore di tempo militare — Grafico dell'orologio 24 ore e ora Zulu | World Time Sync"
+
+Keep the dash and ampersand? We'll use " — " same.
+
+<meta name="title" content="...">: same translation.
+
+<meta name="description" content="Convert military time to standard time instantly. Full 24-hour chart plus Zulu (Z) time explained." -> translate: "Converti il tempo militare in tempo standard all'istante. Grafico completo delle 24 ore più spiegazione dell'ora Zulu (Z)."
+
+But need to keep meaning. Let's craft: "Converti il tempo militare in tempo standard all'istante. Grafico completo delle 24 ore e spiegazione dell'ora Zulu (Z)."
+
+<meta name="keywords" content="military time converter, military time chart, zulu time, 24 hour clock converter, what is 1700 military time"> translate keywords to Italian? Keywords are for SEO; but rule says translate human-readable text inside attributes like keywords/content. So we should translate. However keywords often stay in English for SEO; but we follow rule. So translate each phrase:
+
+- "military time converter" -> "convertitore di tempo militare"
+- "military time chart" -> "grafico del tempo militare"
+- "zulu time" -> "ora Zulu"
+- "24 hour clock converter" -> "convertitore di orologio 24 ore"
+- "what is 1700 military time" -> "cos'è l'ora militare 1700"
+
+We'll keep commas.
+
+Thus content: "convertitore di tempo militare, grafico del tempo militare, ora Zulu, convertitore di orologio 24 ore, cos'è l'ora militare 1700"
+
+Note: keep the apostrophe? We'll use "cos'è". Keep same.
+
+<meta name="author" content="World Time Sync"> keep as is (brand).
+
+<meta property="og:title" content="Military Time Converter — 24-Hour Clock Chart & Zulu Time | World Time Sync"> translate similarly to title.
+
+<meta property="og:description" content="Convert military time to standard time instantly. Full 24-hour chart plus Zulu (Z) time explained." translate same as description.
+
+<meta name="twitter:title" content="Military Time Converter — 24-Hour Clock Chart & Zulu Time | World Time Sync"> translate.
+
+Now body:
+
+<a href="#main-content" class="skip-link">Skip to main content</a> -> translate: "Vai al contenuto principale" (common). I'll use "Vai al contenuto principale".
+
+<div id="root" role="application" aria-label="World Time Online Application"> -> translate aria-label: "Applicazione World Time Online". Keep brand order? Could be "Applicazione World Time Online". We'll do that.
+
+<div class="app-loading-spinner" role="status" aria-label="Loading application"></div> -> translate aria-label: "Caricamento applicazione"
+
+<p class="app-loading-text">Loading World Time...</p> -> translate: "Caricamento World Time..." (keep brand). Could be "Caricamento World Time...".
+
+<nav class="blog-breadcrumb" aria-label="Breadcrumb"> -> translate aria-label: maybe "Breadcrumb" as "Breadcrumb". I'll translate to "Breadcrumb" as "Breadcrumb"? Actually Italian "Breadcrumb" is often "Breadcrumb". I'll keep as "Breadcrumb". But to follow rule, translate to "Breadcrumb" as "Breadcrumb". I'll keep as "Breadcrumb". I'm uncertain. I'll translate to "Breadcrumb" as "Breadcrumb". Let's just keep as "Breadcrumb" (no change). But we need to decide. I'll change to "Breadcrumb" as "Breadcrumb". Actually I'll translate to "Breadcrumb" as "Breadcrumb". I'll output "Breadcrumb". That's same. So no change.
+
+Inside nav: <a href="/">Home</a> -> keep "Home". <a href="/#blog">Blog</a> -> keep "Blog". <span aria-current="page">Military Time Converter — 24-Hour Clock Chart & Zulu Time</span> -> translate the span text: "Convertitore di tempo militare — Grafico dell'orologio 24 ore e ora Zulu"
+
+<h1>Military Time Converter — 24-Hour Clock Chart & Zulu Time</h1> -> translate similarly.
+
+<div class="blog-meta"> August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide</div>
+
+We need to translate the visible text: "August 10, 2026" -> "10 agosto 2026". "6 min read" -> "6 min di lettura". "Time Zones, Guide" -> "Fusi orari, Guida". Keep the weird icons (they are likely emojis). We'll keep them as is.
+
+Thus: " 10 agosto 2026 &nbsp;·&nbsp;  6 min di lettura &nbsp;·&nbsp;  Fusi orari, Guida"
+
+Now paragraph: translate.
+
+Original: "Military time uses a 24-hour clock: hours run from 00 (midnight) to 23 (11 PM), and no AM/PM marker is needed. It removes ambiguity in aviation, medicine, logistics and anything else where mixing up morning and evening matters."
+
+Italian: "Il tempo militare utilizza un orologio a 24 ore: le ore vanno da 00 (mezzanotte) a 23 (11 p.m.), e non è necessario alcun indicatore AM/PM. Elimina l'ambiguità nell'aviazione, nella medicina, nella logistica e in qualsiasi altra situazione in cui confondere mattina e sera potrebbe causare problemi."
+
+We need to decide about AM/PM translation. We'll use "a.m." and "p.m." with periods. So "11 p.m.".
+
+Now <h2>Military Time Converter</h2> -> translate: "Convertitore di tempo militare"
+
+Inside converter widget: <h2>24-hour ↔ 12-hour</h2> -> translate: "24 ore ↔ 12 ore" (keep symbol). Could be "24 ore ↔ 12 ore". We'll keep.
+
+<label>Military (HHMM):</label> -> translate: "Militare (HHMM):" maybe "Ora militare (HHMM):". We'll use "Militare (HHMM):".
+
+<label>Standard:</label> -> translate: "Standard:" maybe "Ora standard:". We'll use "Ora standard:".
+
+Now <h2>Military Time Chart</h2> -> translate: "Grafico del tempo militare"
+
+Table headers: <th>24-hour</th> -> "24 ore". <th>Standard</th> -> "Standard". Could keep "Standard" or translate to "Ora standard". We'll translate to "Standard" maybe keep as is? I'll translate to "Standard" as "Standard". But better to translate to "Ora standard". Let's do "Ora standard". <th>Spoken as</th> -> "Detto come".
+
+Now rows:
+
+<td>0000</td><td>12:00 AM</td><td>Zero hundred</td>
+
+Translate time: "12:00 a.m." (lowercase with periods). So "12:00 a.m."
+
+Spoken as: "Zero hundred" -> "Zero cento". Could be "Zero cento". We'll use "Zero cento".
+
+Next: 0600 -> "6:00 a.m." spoken as "Zero sei cento". We'll translate: "Zero sei cento".
+
+1200 -> "12:00 p.m." spoken as "Dodici cento".
+
+1700 -> "5:00 p.m." spoken as "Diciassette cento".
+
+2100 -> "9:00 p.m." spoken as "Ventuno cento".
+
+2359 -> "11:59 p.m." spoken as "Ventitré cinquantanove".
+
+Now <h2>Zulu Time Explained</h2> -> translate: "Ora Zulu spiegata"
+
+Paragraph: "Zulu time (the "Z" suffix, e.g. 1430Z) is simply UTC. Pilots file flight plans and log departures in Zulu so schedules never shift across zones. To read Zulu locally: take UTC and apply your own offset."
+
+Translate: "L'ora Zulu (il suffisso "Z", ad esempio 1430Z) è semplicemente l'UTC. I piloti presentano i piani di volo e registrano le partenze in Zulu così gli orari non cambiano tra i fusi. Per leggere l'ora Zulu a livello locale: prendi l'UTC e applica il tuo offset."
+
+Now <h2>Frequently Asked Questions</h2> -> translate: "Domande frequenti"
+
+<div class="faq-section">{FAQ}</div> keep placeholder.
+
+<p>Find your zone's offset with <a href="/time-zone-converter.html">time zone converter</a>.</p> -> translate: "Trova l'offset del tuo fuso orario con il <a href="/time-zone-converter.html">convertitore di fuso orario</a>."
+
+Footer: links:
+
+<a href="/privacy.html">Privacy</a> -> translate to "Privacy" (maybe "Privacy" stays). Could keep as "Privacy". We'll keep.
+
+<a href="/about.html">About</a> -> translate to "Chi siamo"
+
+<a href="/contact.html">Contact</a> -> translate to "Contatti"
+
+<a href="/terms.html">Terms</a> -> translate to "Condizioni"
+
+Copyright line: "&copy; 2026 World Time Sync" -> keep brand.
+
+Now also need to translate any other visible text like maybe inside <script>? Not needed.
+
+Now also need to translate any text inside <noscript>? none.
+
+Now also need to translate any text inside <link rel="preload"...>? none.
+
+Now also need to translate

@@ -1,0 +1,439 @@
+We need to translate visible/user-facing text into German, preserving HTML tags, attributes, etc. The HTML currently has lang="de" already, but many texts are in English. We need to translate them to German.
+
+We must translate text inside tags and attributes like title, alt, aria-label, description, keywords, content (meta tags). Also inside visible text: e.g., <title>, meta name="title", meta name="description", meta name="keywords", og:title, og:description, twitter:title, etc. Also inside body: skip-link text, aria-label on div#root, app-loading-text, breadcrumb links text, h1, blog-meta (contains emojis and text), paragraphs, table headers, table cells, list items, etc. Also inside FAQ JSON-LD: need to translate question and answer text. Also inside JSON-LD for article: headline, description, articleSection, keywords, author name, publisher name, etc. Also inside BreadcrumbList JSON-LD: name fields. Also inside FAQPage JSON-LD: question name and answer text.
+
+We must not translate URLs, city/feature names that are proper nouns unless a natural localized form exists, UTC offsets, IANA timezone IDs, or code. So keep things like "World Time Sync", "World Time Online Application", "World Time", "World Clock", etc? Those are brand names; likely keep as is. Also "UTC" stays. Also "Asia-Pacific", "Americas", "Europe" are region names; keep as is. Also "Meeting Planner" maybe a page name; but it's a link text; we could translate? It's a proper noun? Probably keep as is? The instruction: "Do NOT translate URLs, city/feature names that are proper nouns unless a natural localized form exists". "Meeting Planner" is not a city/feature; it's a page title; we could translate to German: "Meeting-Planer". But it's also a link href="/meeting-planner.html". The text inside the anchor should be translated? Usually we translate UI text. I'd translate to German: "Meeting-Planer". However, the href remains same.
+
+Also "Privacy", "About", "Contact", "Terms" in footer: translate to German: "Datenschutz", "Über", "Kontakt", "Nutzungsbedingungen". Also copyright line: keep year and brand.
+
+Also "Skip to main content" -> "Zum Hauptinhalt springen" or "Zum Hauptinhalt gehen". Usually "Skip to main content" translates to "Zum Hauptinhalt springen". We'll use that.
+
+Also app-loading-text: "Loading World Time..." -> "Wird World Time geladen..." maybe "World Time wird geladen..." Keep brand.
+
+Also aria-label on div#root: "World Time Online Application" -> translate? It's an aria-label describing the application; could translate to German: "World Time Online Anwendung". Keep brand? Might keep "World Time Online" as brand, translate "Application" to "Anwendung". So "World Time Online Anwendung". We'll do that.
+
+Also app-loading-spinner aria-label: "Loading application" -> "Wird Anwendung geladen". Keep.
+
+Now blog-breadcrumb links: Home -> "Start" or "Home"? In German site, Home often "Start". We'll translate to "Start". Blog -> "Blog" maybe keep as is? Could translate to "Blog" stays same. We'll keep "Blog". The current page title: "Fair Meeting Rotation Across Time Zones — Scheduling Playbook" translate to German: "Faire Meeting-Rotation über Zeitzonen — Spielplan für die Planung". Need to keep the dash? Use em dash. Could be "Faire Meeting-Rotation über Zeitzonen — Scheduling Playbook". But "Scheduling Playbook" maybe translate to "Planungs-Handbuch". Let's think: "Scheduling Playbook" is a term; maybe translate to "Planungs-Handbuch". We'll produce: "Faire Meeting-Rotation über Zeitzonen — Planungs-Handbuch". Keep the em dash.
+
+Now blog-meta: contains emojis and text: " August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide". The emojis are placeholders; we should keep them as is? They are not translatable. The text: "August 10, 2026" -> "10. August 2026" (German date). "6 min read" -> "6 Min Lesezeit" or "6 Minuten Lesedauer". Usually "6 min read" -> "6 Min Lesezeit". We'll use "6 Min Lesezeit". "Time Zones, Guide" -> "Zeitzonen, Leitfaden". Keep emojis.
+
+Now paragraphs: translate.
+
+First paragraph: "When a team spans Asia, Europe and the Americas, no single time works for everyone. The standard fix is a rotation: the same weekly call alternates between slots so each region periodically takes the awkward hour. What separates a working rotation from a resentful calendar is fairness bookkeeping."
+
+Translate: "Wenn ein Team Asien, Europa und Amerika umfasst, funktioniert keine einzelne Zeit für alle. Der Standardansatz ist eine Rotation: Der gleiche wöchentliche Anruf wechselt zwischen den Slots, sodass jede Region regelmäßig die unbequeme Stunde übernimmt. Was eine funktionierende Rotation von einem verärgernden Kalender unterscheidet, ist die faire Buchführung."
+
+Need to keep proper nouns: Asia, Europe, Americas -> keep as is. "awkward hour" -> "unbequeme Stunde". "fairness bookkeeping" -> "faire Buchführung". Could also "faire Buchführung". We'll use that.
+
+Next h2: "A Simple Three-Slot Rotation" -> "Eine einfache Drei-Slot-Rotation". Keep hyphen.
+
+Table headers: Slot, UTC, Who's uncomfortable -> translate: Slot (maybe keep), UTC (keep), Wer ist unbequem? or "Wer ist betroffen?" We'll translate: "Wer ist unbequem?" Could be "Wer ist unbequem?" We'll use that.
+
+Table rows:
+
+Slot A — morning Americas: translate: "A — Morgen Amerika" maybe "A — Morgen (Amerika)". Keep "morning" as "Morgen". "Americas" -> "Amerika". So "A — Morgen Amerika". UTC: 14:00 keep. Who's uncomfortable: "Asia-Pacific evening" -> "Abend in Asien-Pazifik". Keep hyphen? We'll use "Abend Asien-Pazifik".
+
+Slot B — afternoon Europe: "B — Nachmittag Europa". UTC 09:00. Who's uncomfortable: "US West very early" -> "Sehr früh US-West". Could translate: "Sehr früh an der US-Westküste". We'll use "Sehr früh US-West".
+
+Slot C — Asia-Pacific friendly: "C — Asien-Pazifik freundlich". UTC 23:00. Who's uncomfortable: "Americas late night" -> "Späte Nacht in Amerika". We'll use "Späte Nacht Amerika".
+
+Paragraph after table: "Cycle A → B → C → A weekly. Nobody suffers two weeks running." Translate: "Wöchentlich wechseln A → B → C → A. Niemand muss zwei Wochen hintereinander leiden." Or "Niemand leidet zwei Wochen hintereinander." We'll use: "Wöchentlich wechselt der Zyklus A → B → C → A. Niemand muss zwei Wochen hintereinander leiden."
+
+Next h2: "Making It Stick" -> "Durchhalten machen" maybe "Es durchhalten". Better: "So bleibt es bestehen". We'll use: "So bleibt es bestehen".
+
+Ordered list items:
+
+1. "Publish the whole rotation in the invite description up front — surprises breed objections." Translate: "Veröffentliche die komplette Rotation bereits in der Beschreibungsfeld der Einladung — Überraschungen führen zu Einwänden."
+
+2. "Set separate reminders per slot in each attendee's local zone; a tool like our <a href="/world-clock.html">world clock</a> helps people internalize their own slot." Translate: "Setze separate Erinnerungen pro Slot in der jeweiligen Zeitzone jedes Teilnehmers; ein Tool wie unser <a href="/world-clock.html">Weltuhr</a> hilft den Teilnehmern, ihren eigenen Slot zu verinnerlichen."
+
+Note: keep the anchor text "world clock" translate to "Weltuhr". Keep href.
+
+3. "Track attendance quality, not just presence: someone dialing in from bed isn't 'attending'." Translate: "Verfolge die Teilnahmequalität, nicht nur die Anwesenheit: jemand, der vom Bett aus einwählt, nimmt nicht wirklich teil."
+
+4. "Record every session regardless of slot, and keep decisions in writing so missing one never blocks anyone." Translate: "Nimm jede Sitzung unabhängig vom Slot auf und halte Entscheidungen schriftlich fest, damit das Verpassen einer Sitzung niemanden blockiert."
+
+Next h2: "When Not to Rotate" -> "Wann nicht rotieren". Could be "Wann man nicht rotieren sollte". We'll use: "Wann nicht rotieren".
+
+Paragraph: "If one office is 2 of 20 people, rotating may just push your minority into every bad slot. Alternatives: let the small office stay async, hold two smaller calls, or split the meeting into a recording plus a live Q&amp;A at their chosen time."
+
+Translate: "Wenn ein Büro nur 2 von 20 Personen ausmacht, führt eine Rotation möglicherweise nur dazu, dass die Minderheit ständig den ungünstigen Slot bekommt. Alternativen: Lass das kleine Büro asynchron arbeiten, halte zwei kleinere Anrufe ab oder teile das Meeting in eine Aufzeichnung sowie eine Live-Frage-und-Antwort-Runde zur gewünschten Zeit dieses Büros auf."
+
+Need to keep "&amp;" as is.
+
+Next h2: "Frequently Asked Questions" -> "Häufig gestellte Fragen". Keep.
+
+Then we have <div class="faq-section">{FAQ}</div>. This is placeholder; we should not translate the placeholder {FAQ}. Keep as is.
+
+Paragraph after: "Find your overlap window: <a href="/meeting-planner.html">Meeting Planner</a>." Translate: "Finde dein Überlappungsfenster: <a href="/meeting-planner.html">Meeting-Planer</a>." Keep anchor text translated.
+
+Footer links: Privacy -> "Datenschutz". About -> "Über". Contact -> "Kontakt". Terms -> "Nutzungsbedingungen". Copyright line: "&copy; 2026 World Time Sync" keep brand.
+
+Now we need to translate JSON-LD.
+
+First JSON-LD (Article):
+
+- "@context": keep.
+- "@type": "Article".
+- "headline": "Fair Meeting Rotation Across Time Zones — Scheduling Playbook | World Time Sync". Translate headline: "Faire Meeting-Rotation über Zeitzonen — Planungs-Handbuch | World Time Sync". Keep brand.
+- "description": "How to rotate recurring meeting times fairly across regions so the same team doesn't always take the night slot." Translate: "Wie man wiederkehrende Meetingzeiten fair über Regionen rotiert, damit dasselbe Team nicht ständig den Nachtzug bekommt." Better: "Wie man wiederkehrende Meetingzeiten fair über Regionen rotiert, damit dasselbe Team nicht ständig den Nacht-Schicht bekommt." We'll use: "Wie man wiederkehrende Meetingzeiten fair über Regionen rotiert, damit dasselbe Team nicht ständig den Nacht-Slot hat."
+- "articleSection": "Time Zones" -> translate to "Zeitzonen".
+- "keywords": "timezone meeting reminder, rotating meeting times, fair meeting schedule global team, alternate meeting times". Translate each? Keep as list? We'll translate: "Zeitzonen-Meeting-Erinnerung, rotierende Meetingzeiten, faire Meetingplanung globales Team, alternative Meetingzeiten". Keep commas.
+- "wordCount": 222 keep number.
+- "timeRequired": "PT6M" keep.
+- "inLanguage": "en" should stay? The page is German but the article language maybe English originally; but we should not change language code? It's metadata; we could change to "de". However instruction: translate only human-readable text. "inLanguage" is a attribute value; it's a language code, not human-readable? It's a code; we should not translate. Keep as "en".
+- "author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"} -> name keep brand.
+- "publisher": similar.
+- "datePublished": "2026-08-10" keep.
+- "dateModified": same.
+- "mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/de/blog/fair-meeting-rotation-timezones.html"} keep.
+- "image": "https://worldtimessync.com/og-image.png" keep.
+
+Second JSON-LD (BreadcrumbList):
+
+- itemListElement[0].name: "Home" -> translate to "Start".
+- itemListElement[1].name: "Blog" -> keep "Blog".
+- itemListElement[2].name: "Fair Meeting Rotation Across Time Zones — Scheduling Playbook" -> translate to same as headline: "Faire Meeting-Rotation über Zeitzonen — Planungs-Handbuch".
+
+Third JSON-LD (FAQPage):
+
+We need to translate each question name and answer text.
+
+Question 1: "What is fair meeting rotation?" -> "Was ist faire Meeting-Rotation?" Keep hyphen? We'll use "Was ist faire Meeting-Rotation?"
+
+Answer text: "Alternating a recurring call between time slots so each region periodically absorbs the inconvenient hour instead of the same team always doing it." Translate: "Das Abwechseln eines wiederkehrenden Anrufs zwischen Zeitfenstern, sodass jede Region regelmäßig die unbequeme Stunde übernimmt, anstatt dass dasselbe Team ständig danach greift." We'll produce: "Das Abwechseln eines wiederkehrenden Anrufs zwischen Zeitfenstern, sodass jede Region regelmäßig die unbequeme Stunde übernimmt, anstatt dass dasselbe Team ständig danach greift."
+
+Question 2: "How often should times rotate?" -> "Wie oft sollten die Zeiten rotieren?" Answer: "Weekly cycles work for most teams; biweekly suits lower-stakes syncs. The key is publishing the pattern ahead of time." Translate: "Wöchentliche Zyklen funktionieren für die meisten Teams; zweiwöchentliche Zyklen eignen sich für weniger wichtige Synchronisationen. Der Schlüssel besteht darin, das Muster im Voraus zu veröffentlichen."
+
+Question 3: "Do DST changes break rotations?" -> "Brechen DST-Änderungen die Rotationen?" Answer: "Yes — fixed UTC slots drift relative to local clocks when either side changes. Re-check slots each March and October." Translate: "Ja — feste UTC-Slots verschieben sich relativ zu den lokalen Uhren, wenn sich eine Seite ändert. Überprüfe die Slots jeweils im März und Oktober."
+
+Make sure to keep punctuation.
+
+Now also need to translate any other attributes like title on <a>? There's none. Also aria-label on app-loading-spinner we already did. Also maybe there is a title attribute on any tag? Not seen.
+
+Also need to translate text inside <noscript>? It has <link rel="stylesheet" href="/assets/blog.css"> no text.
+
+Also need to translate text inside <script>? Not.
+
+Now also need to translate the text inside the <div class="app-loading" aria-busy="true" aria-live="polite">? It contains a spinner and a p tag with class app-loading-text. We translated that.
+
+Also need to translate any placeholder like {FAQ}? Keep as is.
+
+Now also need to translate the text inside the <meta name="title" content="..."> and <meta name="description" content="..."> and <meta name="keywords" content="..."> and og:title, og:description, twitter:title. We'll translate those.
+
+Let's go through each.
+
+<head>:
+
+<title>Fair Meeting Rotation Across Time Zones — Scheduling Playbook | World Time Sync</title> -> translate as earlier.
+
+<meta name="title" content="Fair Meeting Rotation Across Time Zones — Scheduling Playbook | World Time Sync"> -> same translation.
+
+<meta name="description" content="How to rotate recurring meeting times fairly across regions so the same team doesn't always take the night slot." -> translate.
+
+<meta name="keywords" content="timezone meeting reminder, rotating meeting times, fair meeting schedule global team, alternate meeting times"> -> translate.
+
+<meta property="og:title" content="Fair Meeting Rotation Across Time Zones — Scheduling Playbook | World Time Sync"> -> translate.
+
+<meta property="og:description" content="How to rotate recurring meeting times fairly across regions so the same team doesn't always take the night slot." -> translate.
+
+<meta name="twitter:title" content="Fair Meeting Rotation Across Time Zones — Scheduling Playbook | World Time Sync"> -> translate.
+
+Also maybe <meta name="theme-color" content="#667eea"> not text.
+
+Now also need to translate the text inside the <link rel="alternate" hreflang="x-default" href="...">? No.
+
+Now also need to translate any text inside <a> tags: we have skip-link, home, blog, breadcrumb span, footer links, etc.
+
+Also the <a href="/world-clock.html">world clock</a> inside list item 2.
+
+Also the <a href="/meeting-planner.html">Meeting Planner</a> after FAQ.
+
+Also the <a href="/">Home</a> etc.
+
+Now also need to translate the text inside the <span aria-current="page">Fair Meeting Rotation Across Time Zones — Scheduling Playbook</span> -> translate.
+
+Now also need to translate any text inside <th> tags: we did.
+
+Now also need to translate any text inside <td> tags: we did.
+
+Now also need to translate any text inside <p> tags: we did.
+
+Now also need to translate any text inside <li> tags: we did.
+
+Now also need to translate any text inside <h1>, <h2>: we did.
+
+Now also need to translate any text inside <footer> links: we did.
+
+Now also need to translate any text inside <p class="app-loading-text">: we did.
+
+Now also need to translate any text inside <div class="app-loading">? No.
+
+Now also need to translate any text inside <noscript>? No.
+
+Now also need to translate any text inside <script type="application/ld+json">: we did.
+
+Now also need to translate any text inside <script>? Not.
+
+Now also need to translate any text inside <div class="faq-section">{FAQ}</div> -> keep placeholder.
+
+Now also need to translate any text inside the <div class="blog-meta">: we did.
+
+Now also need to translate any text inside the <div class="blog-wrap">? No.
+
+Now also need to translate any text inside the <div id="root" role="application" aria-label="World Time Online Application">: we did.
+
+Now also need to translate any text inside the <div class="app-loading-spinner" role="status" aria-label="Loading application">: we did.
+
+Now also need to translate any text inside the <a href="#main-content" class="skip-link">Skip to main content</a>: we did.
+
+Now also need to translate any text inside the <nav class="blog-breadcrumb" aria-label="Breadcrumb">: the aria-label "Breadcrumb" -> translate to "Breadcrumb" maybe "Breadcrumb" stays? Could translate to "Breadcrumb navigation" but we can translate to "Breadcrumb". Usually "Breadcrumb" is kept. We'll translate to "Breadcrumb" maybe "Breadcrumbpfad". Safer to translate to "Breadcrumbpfad". We'll translate aria-label to "Breadcrumbpfad".
+
+Now also need to translate any text inside the <div class="blog-footer">? No.
+
+Now also need to translate any text inside the <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p> -> keep.
+
+Now also need to translate any text inside the <div class="app-loading">? No.
+
+Now also need to translate any text inside the <div class="app-loading-spinner">? No.
+
+Now also need to translate any text inside the <div class="app-loading-text">? Done.
+
+Now also need to translate any text inside the <div class="blog-meta">? Done.
+
+Now also need to translate any text inside the <div class="faq-section">? placeholder.
+
+Now also need to translate any text inside the <div class="blog-wrap">? No.
+
+Now also need to translate any text inside the <article class="blog-wrap">? No.
+
+Now also need to translate any text inside the <main id="main-content">? No.
+
+Now also need to translate any text inside the <div id="root">? Already.
+
+Now also need to translate any text inside the <div class="app-loading">? No.
+
+Now also need to translate any text inside the <div class="app-loading-spinner">? No.
+
+Now also need to translate any text inside the <div class="app-loading-text">? Done.
+
+Now also need to translate any text inside the <div class="blog-breadcrumb">? Done.
+
+Now also need to translate any text inside the <nav class="blog-breadcrumb">? Already.
+
+Now also need to translate any text inside the <a href="/">Home</a> etc.
+
+Now also need to translate any text inside the <a href="/#blog">Blog</a> -> keep "Blog" maybe translate to "Blog"? We'll keep as "Blog". Could translate to "Blog" stays same.
+
+Now also need to translate any text inside the <span aria-current="page">Fair Meeting Rotation Across Time Zones — Scheduling Playbook</span> -> done.
+
+Now also need to translate any text inside the <h1>Fair Meeting Rotation Across Time Zones — Scheduling Playbook</h1> -> done.
+
+Now also need to translate any text inside the <div class="blog-meta"> August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide</div> -> done.
+
+Now also need to translate any text inside the <p>When a team spans Asia, Europe and the Americas, no single time works for everyone....</p> -> done.
+
+Now also need to translate any text inside the <h2>A Simple Three-Slot Rotation</h2> -> done.
+
+Now also need to translate any text inside the <table> headers and cells -> done.
+
+Now also need to translate any text inside the <p>Cycle A → B → C → A weekly. Nobody suffers two weeks running.</p> -> done.
+
+Now also need to translate any text inside the <h2>Making It Stick</h2> -> done.
+
+Now also need to translate any text inside the <ol> items -> done.
+
+Now also need to translate any text inside the <h2>When Not to Rotate</h2> -> done.
+
+Now also need to translate any text inside the <p>If one office is 2 of 20 people, rotating may just push your minority into every bad slot....</p> -> done.
+
+Now also need to translate any text inside the <h2>Frequently Asked Questions</h2> -> done.
+
+Now also need to translate any text inside the <div class="faq-section">{FAQ}</div> -> keep.
+
+Now also need to translate any text inside the <p>Find your overlap window: <a href="/meeting-planner.html">Meeting Planner</a>.</p> -> done.
+
+Now also need to translate any text inside the <footer class="blog-footer"> links -> done.
+
+Now also need to translate any text inside the <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p> -> keep.
+
+Now also need to translate any text inside the <div class="app-loading" aria-busy="true" aria-live="polite">? No.
+
+Now also need to translate any text inside the <div class="app-loading-spinner" role="status" aria-label="Loading application"> -> done.
+
+Now also need to translate any text inside the <p class="app-loading-text">Loading World Time...</p> -> done.
+
+Now also need to translate any text inside the <a href="#main-content" class="skip-link">Skip to main content</a> -> done.
+
+Now also need to translate any text inside the <nav class="blog-breadcrumb" aria-label="Breadcrumb"> -> we changed aria-label to "Breadcrumbpfad". Also the links inside.
+
+Now also need to translate any text inside the <div id="root" role="application" aria-label="World Time Online Application"> -> changed to "World Time Online Anwendung".
+
+Now also need to translate any text inside the <div class="app-loading">? No.
+
+Now also need to translate any text inside the <div class="app-loading-spinner">? No.
+
+Now also need to translate any text inside the <div class="app-loading-text">? Done.
+
+Now also need to translate any text inside the <div class="blog-meta">? Done.
+
+Now also need to translate any text inside the <div class="faq-section">? placeholder.
+
+Now also need to translate any text inside the <div class="blog-wrap">? No.
+
+Now also need to translate any text inside the <article class="blog-wrap">? No.
+
+Now also need to translate any text inside the <main id="main-content">? No.
+
+Now also need to translate any text inside the <div id="root">? Done.
+
+Now also need to translate any text inside the <div class="app-loading">? No.
+
+Now also need to translate any text inside the <div class="app-loading-spinner">? No.
+
+Now also need to translate any text inside the <div class="app-loading-text">? Done.
+
+Now also need to translate any text inside the <div class="blog-breadcrumb">? Done.
+
+Now also need to translate any text inside the <nav class="blog-breadcrumb">? Done.
+
+Now also need to translate any text inside the <a href="/">Home</a> -> "Start".
+
+Now also need to translate any text inside the <a href="/#blog">Blog</a> -> keep "Blog".
+
+Now also need to translate any text inside the <span aria-current="page">Fair Meeting Rotation Across Time Zones — Scheduling Playbook</span> -> translated.
+
+Now also need to translate any text inside the <a href="/privacy.html">Privacy</a> -> "Datenschutz".
+
+Now also need to translate any text inside the <a href="/about.html">About</a> -> "Über".
+
+Now also need to translate any text inside the <a href="/contact.html">Contact</a> -> "Kontakt".
+
+Now also need to translate any text inside the <a href="/terms.html">Terms</a> -> "Nutzungsbedingungen".
+
+Now also need to translate any text inside the <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p> -> keep.
+
+Now also need to translate any text inside the <meta name="author" content="World Time Sync">? Not present; we have meta name="author" in head? Actually there is <meta name="author" content="World Time Sync">. Yes there is. We need to translate that content? It's a brand name; keep as is.
+
+Now also need to translate any text inside the <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk"> -> keep.
+
+Now also need to translate any text inside the <link rel="canonical" href="...">? No.
+
+Now also need to translate any text inside the <link rel="alternate" hreflang="x-default" href="...">? No.
+
+Now also need to translate any text inside the <link rel="preload" href="/assets/blog.css" as="style">? No.
+
+Now also need to translate any text inside the <noscript><link rel="stylesheet" href="/assets/blog.css"></noscript>? No.
+
+Now also need to translate any text inside the <link rel="icon" type="image/svg+xml" href="/favicon.svg">? No.
+
+Now also need to translate any text inside the <link rel="stylesheet" href="/assets/index-ufePLcBr.css">? No.
+
+Now also need to translate any text inside the <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>? No.
+
+Now also need to translate any text inside the <script> window.dataLayer... etc? No.
+
+Now also need to translate any text inside the <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>? No.
+
+Now also need to translate any text inside the <script type="module" src="/assets/index-Dd7au40z.js" async></script>? No.
+
+Now also need to translate any text inside the <script> document.addEventListener('DOMContentLoaded', function() { var seo = document.querySelector('.blog-wrap'); if (seo) seo.style.display = 'none'; });? No.
+
+Now also need to translate any text inside the <script> window.addEventListener('load',function(){ var ahrefs=document.createElement('script'); ahrefs.async=true; ahrefs.src='https://analytics.ahrefs.com/analytics.js'; ahrefs.setAttribute('data-key','hB1VYWuwb1i/f1d8re7P2A'); document.head.appendChild(ahrefs); });? No.
+
+Now also need to translate any text inside the <div class="app-loading" aria-busy="true" aria-live="polite">? No.
+
+Now also need to translate any text inside the <div class="app-loading-spinner" role="status" aria-label="Loading application"> -> done.
+
+Now also need to translate any text inside the <p class="app-loading-text">Loading World Time...</p> -> done.
+
+Now also need to translate any text inside the <a href="#main-content" class="skip-link">Skip to main content</a> -> done.
+
+Now also need to translate any text inside the <nav class="blog-breadcrumb" aria-label="Breadcrumb"> -> done.
+
+Now also need to translate any text inside the <a href="/">Home</a> -> "Start".
+
+Now also need to translate any text inside the <a href="/#blog">Blog</a> -> keep.
+
+Now also need to translate any text inside the <span aria-current="page">Fair Meeting Rotation Across Time Zones — Scheduling Playbook</span> -> done.
+
+Now also need to translate any text inside the <h1>Fair Meeting Rotation Across Time Zones — Scheduling Playbook</h1> -> done.
+
+Now also need to translate any text inside the <div class="blog-meta"> August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide</div> -> done.
+
+Now also need to translate any text inside the <p>When a team spans Asia, Europe and the Americas, no single time works for everyone....</p> -> done.
+
+Now also need to translate any text inside the <h2>A Simple Three-Slot Rotation</h2> -> done.
+
+Now also need to translate any text inside the <table>... done.
+
+Now also need to translate any text inside the <p>Cycle A → B → C → A weekly. Nobody suffers two weeks running.</p> -> done.
+
+Now also need to translate any text inside the <h2>Making It Stick</h2> -> done.
+
+Now also need to translate any text inside the <ol>... done.
+
+Now also need to translate any text inside the <h2>When Not to Rotate</h2> -> done.
+
+Now also need to translate any text inside the <p>If one office is 2 of 20 people, rotating may just push your minority into every bad slot....</p> -> done.
+
+Now also need to translate any text inside the <h2>Frequently Asked Questions</h2> -> done.
+
+Now also need to translate any text inside the <div class="faq-section">{FAQ}</div> -> keep.
+
+Now also need to translate any text inside the <p>Find your overlap window: <a href="/meeting-planner.html">Meeting Planner</a>.</p> -> done.
+
+Now also need to translate any text inside the <footer class="blog-footer">... done.
+
+Now also need to translate any text inside the <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p> -> keep.
+
+Now also need to translate any text inside the <div class="app-loading" aria-busy="true" aria-live="polite">? No.
+
+Now also need to translate any text inside the <div class="app-loading-spinner" role="status" aria-label="Loading application"> -> done.
+
+Now also need to translate any text inside the <p class="app-loading-text">Loading World Time...</p> -> done.
+
+Now also need to translate any text inside the <a href="#main-content" class="skip-link">Skip to main content</a> -> done.
+
+Now also need to translate any text inside the <nav class="blog-breadcrumb" aria-label="Breadcrumb"> -> done.
+
+Now also need to translate any text inside the <a href="/">Home</a> -> done.
+
+Now also need to translate any text inside the <a href="/#blog">Blog</a> -> done.
+
+Now also need to translate any text inside the <span aria-current="page">Fair Meeting Rotation Across Time Zones — Scheduling Playbook</span> -> done.
+
+Now also need to translate any text inside the <h1>Fair Meeting Rotation Across Time Zones — Scheduling Playbook</h1> -> done.
+
+Now also need to translate any text inside the <div class="blog-meta"> August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide</div> -> done.
+
+Now also need to translate any text inside the <p>When a team spans Asia, Europe and the Americas, no single time works for everyone....</p> -> done.
+
+Now also need to translate any text inside the <h2>A Simple Three-Slot Rotation</h2> -> done.
+
+Now also need to translate any text inside the <table>... done.
+
+Now also need to translate any text inside the <p>Cycle A → B → C → A weekly. Nobody suffers two weeks running.</p> -> done.
+
+Now also need to translate any text inside the <h2>Making It Stick</h2> -> done.
+
+Now also need to translate any text inside the <ol>... done.
+
+Now also need to translate any text inside the <h2>When Not to Rotate</h2> -> done.
+
+Now also need to translate any text inside the <p>If one office is 2 of 20 people, rotating may just push your minority into every bad slot....</p> -> done.
+
+Now also need to translate any text inside the <h2>Frequently Asked Questions</h2> -> done.
+
+Now also need to translate any text inside the <div class="faq-section">{FAQ}</div> -> keep.
+
+Now also need to translate any text inside the <p>Find your overlap window: <a href="/meeting-planner.html">Meeting Planner</a>.</p> -> done.
+
+Now also need to translate any text inside the <footer class="blog-footer">... done.
+
+Now also need to translate any text inside the <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p> -> keep.
+
+Now also need to translate any text inside the <div class="app-loading" aria-busy="true" aria-live="polite">? No.
+
+Now also

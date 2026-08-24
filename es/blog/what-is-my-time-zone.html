@@ -1,0 +1,514 @@
+We need to translate all visible/user-facing text in HTML into Spanish, preserving tags, attributes, etc. The HTML currently has lang="es" already, but many texts are in English. Need to translate them.
+
+We must translate text inside tags and attributes like title/alt/aria-label/description/keywords/content. Also inside visible text nodes.
+
+We must not translate URLs, proper nouns (city/feature names) unless natural localized form exists. Keep code, JSON-LD values? The JSON-LD blocks contain text values that are user-facing? They are structured data; but rule says translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. JSON-LD is inside script tags, not visible; but its content is data, not visible. Should we translate? The rule says translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. JSON-LD is not those attributes; it's inside script tag, not visible. Likely we should not translate JSON-LD content because it's machine-readable. However, the content includes English strings like headline, description, etc. Those are meant for search engines; but they are user-facing? Possibly they appear in SERPs. But rule says only translate text inside tags and attributes like title/alt/aria-label/description/keywords/content. JSON-LD is not those. So we keep JSON-LD as is.
+
+Also need to translate the blog-meta div which contains some weird characters ( etc). Those appear to be placeholder icons? Actually they are likely emojis that didn't render. The text: " August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide". The weird characters likely are icons (calendar, clock, folder). We should translate the readable parts: "August 10, 2026" to Spanish date format? Usually "10 de agosto de 2026". Keep the icons unchanged. Also "6 min read" -> "6 min de lectura". "Time Zones, Guide" -> "Zonas horarias, Guía". Keep the separators.
+
+Also need to translate other visible texts: title tag, meta title, meta description, meta keywords, og:title, og:description, twitter:title, etc. Those are attributes content; we must translate them.
+
+Also translate the skip-link text: "Skip to main content". Should be "Saltar al contenido principal". Also aria-label on root: "World Time Online Application" -> translate? It's aria-label, should translate to Spanish: "Aplicación World Time Online". But keep brand name? Possibly keep "World Time Online" as is. We'll translate the rest.
+
+Also the loading text: "Loading World Time..." -> "Cargando World Time...".
+
+The breadcrumb: "Home", "Blog", and the current page span: "What Is My Time Zone? — Detect Your Zone & UTC Offset". Need to translate that to Spanish: "¿Cuál es mi zona horaria? — Detecta tu zona y desplazamiento UTC". Keep the dash? Use same punctuation.
+
+The h1: same as breadcrumb current page text, translate.
+
+The paragraph: "Your browser knows your time zone from your device settings. Below it reports the IANA zone name, the current UTC offset, and whether daylight saving is active right now." Translate.
+
+The h2: "Your Detected Zone" -> "Tu zona detectada". The converter-widget h2: "🌍 Your Time Zone" -> "🌍 Tu zona horaria". Keep emoji.
+
+The paragraphs with IDs are dynamically filled; we leave them empty.
+
+The h2: "Reading the Result" -> "Lectura del resultado".
+
+The ul items: translate.
+
+The FAQ section: there is a placeholder {FAQ} which will be replaced by script? We need to translate the FAQ content inside the JSON-LD? Actually the FAQ section likely will be filled by script; but we have the FAQ JSON-LD already. The visible FAQ section currently contains "{FAQ}". That's placeholder; we should translate? It's not real text. We'll leave as is? Probably we should keep placeholder.
+
+The link text: "Browse zones via the" then link "time zone map". Translate: "Explora zonas horarias mediante el mapa de zonas horarias". Keep link.
+
+Footer links: "Privacy", "About", "Contact", "Terms". Translate: "Privacidad", "Acerca de", "Contacto", "Términos". The copyright: "&copy; 2026 World Time Sync" keep as is, maybe translate "World Time Sync" stays.
+
+Also need to translate the meta tags: title, name="title", name="description", name="keywords", og:title, og:description, twitter:title.
+
+Also the link rel="canonical" href stays same.
+
+Also the link rel="alternate" hreflang="x-default" href stays same.
+
+Also the <noscript><link rel="stylesheet"...> no text.
+
+Also the script tags: we should not modify.
+
+Now also need to translate the aria-label on the loading spinner: "Loading application" -> "Cargando aplicación". Also the div class="app-loading" aria-busy="true" aria-live="polite": no text.
+
+Also the skip-link href and class unchanged.
+
+Also the <a href="#main-content" class="skip-link">Skip to main content</a> translate.
+
+Also the <div id="root" role="application" aria-label="World Time Online Application"> translate aria-label.
+
+Also the <div class="app-loading-spinner" role="status" aria-label="Loading application"> translate.
+
+Also the <p class="app-loading-text">Loading World Time...</p> translate.
+
+Also the <nav class="blog-breadcrumb" aria-label="Breadcrumb"> translate aria-label to "Ruta de navegación".
+
+Also the breadcrumb links: Home, Blog. Keep as is? Usually "Home" could be "Inicio". Since it's a link, we should translate visible text. So "Home" -> "Inicio". "Blog" -> "Blog" maybe keep as is? Could translate to "Blog" same. We'll translate to "Blog" (same). The current page span text we already translated.
+
+Also the <h2>🌍 Your Time Zone</h2> we translated.
+
+Also the <h2>Your Detected Zone</h2> we translated.
+
+Also the <h2>Reading the Result</h2> translated.
+
+Also the <h2>Frequently Asked Questions</h2> translate to "Preguntas frecuentes".
+
+Also the <div class="faq-section"> {FAQ} </div> we leave placeholder.
+
+Also the <p>Browse zones via the <a href="/time-zone-map.html">time zone map</a>.</p> translate.
+
+Also the footer links: translate.
+
+Now also need to translate the <meta name="description" content="Instantly detect your device's time zone, UTC offset and DST status with one click."> to Spanish.
+
+Also <meta name="keywords" content="what is my time zone, my time zone now, what timezone am i in, current utc offset"> translate keywords? Should translate but keep as comma-separated. Translate each phrase: "what is my time zone" -> "¿cuál es mi zona horaria", "my time zone now" -> "mi zona horaria ahora", "what timezone am i in" -> "¿en qué zona horaria estoy", "current utc offset" -> "desplazamiento UTC actual". Keep lowercase? We'll translate.
+
+Also <meta property="og:title" content="What Is My Time Zone? — Detect Your Zone & UTC Offset | World Time Sync"> translate.
+
+Also <meta property="og:description" content="Instantly detect your device's time zone, UTC offset and DST status with one click."> translate.
+
+Also <meta name="twitter:title" content="What Is My Time Zone? — Detect Your Zone & UTC Offset | World Time Sync"> translate.
+
+Also <title> and <meta name="title"> same.
+
+Also the JSON-LD: we should not translate per rule. But note that the "inLanguage": "en" maybe should be changed to "es"? That's a language code; it's not user-facing text but attribute value. The rule says do NOT translate URLs, city/feature names that are proper nouns unless a natural localized form exists, UTC offsets, IANA timezone IDs, or code. Language code is like a code; we should not translate. Keep as "en". However, the page is Spanish; but we follow rule.
+
+Now also need to translate the text inside the <script> that writes to the page? The script contains strings like "Not detected", "UTC"+sign..., "Daylight saving: ACTIVE", "Daylight saving: not active". Those are visible text produced by script. Should we translate them? They are inside script but will be inserted into DOM. According to rule, we should translate human-readable text inside tags and attributes; script content is not a tag or attribute, but the resulting text is visible. However, the instruction says translate all visible/user-facing text in the HTML document. The script generates visible text; we should translate those strings. But we must be careful not to break the script. We'll translate the strings: "Not detected" -> "No detectado". "UTC"+sign... we keep the format; the prefix "UTC" stays. The sign variable is plus or minus; we keep. The text after is just the offset; we keep. The strings "Daylight saving: ACTIVE" and "Daylight saving: not active" translate to "Horario de verano: ACTIVO" and "Horario de verano: inactivo". Use Spanish.
+
+Also the catch block sets textContent="Not detected". We'll translate.
+
+Also the var n=new Date(); etc no text.
+
+Now also the script that sets seo.style.display = 'none'; no text.
+
+Now also the script that creates ahrefs script; no text.
+
+Now also the <noscript> content: none.
+
+Now also the <div class="app-loading"> has aria-busy and aria-live; no text.
+
+Now also the <div class="app-loading-spinner" role="status" aria-label="Loading application"> we translated.
+
+Now also the <p class="app-loading-text">Loading World Time...</p> translate.
+
+Now also the <a href="#main-content" class="skip-link">Skip to main content</a> translate.
+
+Now also the <div id="root" role="application" aria-label="World Time Online Application"> translate aria-label.
+
+Now also the <nav class="blog-breadcrumb" aria-label="Breadcrumb"> translate.
+
+Now also the breadcrumb links: Home, Blog.
+
+Now also the <span aria-current="page">What Is My Time Zone? — Detect Your Zone & UTC Offset</span> translate.
+
+Now also the <h1>What Is My Time Zone? — Detect Your Zone & UTC Offset</h1> translate.
+
+Now also the <div class="blog-meta"> August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide</div> translate the readable parts.
+
+Now also the <p>Your browser knows your time zone from your device settings. Below it reports the IANA zone name, the current UTC offset, and whether daylight saving is active right now.</p> translate.
+
+Now also the <h2>Your Detected Zone</h2> translate.
+
+Now also the <div class="converter-widget"><h2>🌍 Your Time Zone</h2> ... </div> translate h2.
+
+Now also the <h2>Reading the Result</h2> translate.
+
+Now also the <ul> items translate.
+
+Now also the <h2>Frequently Asked Questions</h2> translate.
+
+Now also the <div class="faq-section">{FAQ}</div> leave.
+
+Now also the <p>Browse zones via the <a href="/time-zone-map.html">time zone map</a>.</p> translate.
+
+Now also the footer: <a href="/privacy.html">Privacy</a> etc.
+
+Now also the <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p> keep.
+
+Now also need to translate the <meta name="author" content="World Time Sync">? That's author name; it's a proper noun? It's organization name; we should not translate proper nouns. Keep as is.
+
+Now also the <meta property="og:url" content="https://worldtimessync.com/es/blog/what-is-my-time-zone.html"> keep.
+
+Now also the <link rel="canonical" href="..."> keep.
+
+Now also the <link rel="alternate" hreflang="x-default" href="..."> keep.
+
+Now also the <link rel="preload" href="/assets/blog.css" as="style"> keep.
+
+Now also the <noscript><link rel="stylesheet" href="/assets/blog.css"></noscript> keep.
+
+Now also the <link rel="icon" type="image/svg+xml" href="/favicon.svg"> keep.
+
+Now also the <link rel="stylesheet" href="/assets/index-ufePLcBr.css"> keep.
+
+Now also the <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script> keep.
+
+Now also the <script> block for gtag; keep.
+
+Now also the <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script> keep.
+
+Now also the JSON-LD blocks; keep as is.
+
+Now also the <script type="module" src="/assets/index-Dd7au40z.js" async></script> keep.
+
+Now also the <script> block for seo; keep.
+
+Now also the <script> block for ahrefs; keep.
+
+Now we need to output the full translated HTML.
+
+Let's construct.
+
+We'll go through the original and replace.
+
+Original:
+
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="theme-color" content="#667eea">
+    <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk">
+    <title>What Is My Time Zone? — Detect Your Zone & UTC Offset | World Time Sync</title>
+    <meta name="title" content="What Is My Time Zone? — Detect Your Zone & UTC Offset | World Time Sync">
+    <meta name="description" content="Instantly detect your device's time zone, UTC offset and DST status with one click.">
+    <meta name="keywords" content="what is my time zone, my time zone now, what timezone am i in, current utc offset">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="World Time Sync">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://worldtimessync.com/es/blog/what-is-my-time-zone.html">
+    <meta property="og:title" content="What Is My Time Zone? — Detect Your Zone & UTC Offset | World Time Sync">
+    <meta property="og:description" content="Instantly detect your device's time zone, UTC offset and DST status with one click.">
+    <meta property="og:image" content="https://worldtimessync.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="What Is My Time Zone? — Detect Your Zone & UTC Offset | World Time Sync">
+    <link rel="canonical" href="https://worldtimessync.com/es/blog/what-is-my-time-zone.html">
+    <link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/es/blog/what-is-my-time-zone.html">
+    <link rel="preload" href="/assets/blog.css" as="style">
+<noscript><link rel="stylesheet" href="/assets/blog.css"></noscript>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/assets/index-ufePLcBr.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LBX0CDYSSV');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "Article", "headline": "What Is My Time Zone? — Detect Your Zone & UTC Offset | World Time Sync", "description": "Instantly detect your device's time zone, UTC offset and DST status with one click.", "articleSection": "Time Zones", "keywords": "what is my time zone, my time zone now, what timezone am i in, current utc offset", "wordCount": 119, "timeRequired": "PT6M", "inLanguage": "en", "author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}, "publisher": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com", "logo": {"@type": "ImageObject", "url": "https://worldtimessync.com/logo.png", "width": 512, "height": 512}}, "datePublished": "2026-08-10", "dateModified": "2026-08-10", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/es/blog/what-is-my-time-zone.html"}, "image": "https://worldtimessync.com/og-image.png"}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://worldtimessync.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://worldtimessync.com/#blog"}, {"@type": "ListItem", "position": 3, "name": "What Is My Time Zone? — Detect Your Zone & UTC Offset", "item": "https://worldtimessync.com/es/blog/what-is-my-time-zone.html"}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How does this page know my time zone?", "acceptedAnswer": {"@type": "Answer", "text": "Your browser exposes the device-configured IANA zone through JavaScript — no data leaves your device."}}, {"@type": "Question", "name": "My offset shows UTC−4 but I expected −5. Why?", "acceptedAnswer": {"@type": "Answer", "text": "Daylight saving is probably active — Eastern shifts between EST (−5) and EDT (−4)."}}, {"@type": "Question", "name": "Can a device be in the wrong time zone?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, if set manually or after travel without auto-update. Fix it in system settings."}}]}
+    </script>
+
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div id="root" role="application" aria-label="World Time Online Application">
+        <div class="app-loading" aria-busy="true" aria-live="polite">
+            <div class="app-loading-spinner" role="status" aria-label="Loading application"></div>
+            <p class="app-loading-text">Loading World Time...</p>
+        </div>
+    </div>
+    <main id="main-content">
+        <article class="blog-wrap">
+            <nav class="blog-breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Home</a> › <a href="/#blog">Blog</a> › <span aria-current="page">What Is My Time Zone? — Detect Your Zone & UTC Offset</span>
+            </nav>
+            <h1>What Is My Time Zone? — Detect Your Zone & UTC Offset</h1>
+            <div class="blog-meta"> August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide</div>
+
+<p>Your browser knows your time zone from your device settings. Below it reports the IANA zone name, the current UTC offset, and whether daylight saving is active right now.</p>
+
+<h2>Your Detected Zone</h2>
+<div class="converter-widget">
+<h2>🌍 Your Time Zone</h2>
+<p id="tz-name" style="font-size:1.3em;font-weight:700;"></p>
+<p id="tz-off"></p>
+<p id="tz-dst"></p>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+ try{
+  var z=Intl.DateTimeFormat().resolvedOptions().timeZone||"unknown";
+  document.getElementById('tz-name').textContent=z;
+ }catch(e){document.getElementById('tz-name').textContent="Not detected";}
+ var n=new Date();
+ var off=-n.getTimezoneOffset();
+ var sign=off>=0?'+':'−';
+ var ah=Math.floor(Math.abs(off)/60),am=Math.abs(off)%60;
+ document.getElementById('tz-off').textContent="UTC"+sign+ah+(am?":"+String(am).padStart(2,'0'):"");
+ document.getElementById('tz-dst').textContent=(n.getTimezoneOffset()!==new Date(n.getFullYear(),0,1).getTimezoneOffset())?"Daylight saving: ACTIVE":"Daylight saving: not active";
+});
+</script>
+
+<h2>Reading the Result</h2>
+<ul>
+<li><strong>IANA name</strong> like America/New_York is the canonical identifier — use it in code, never fixed offsets.</li>
+<li><strong>Offset</strong> changes twice a year where DST applies; the zone name does not.</li>
+<li>If the result looks wrong, check your OS location settings — browsers follow them.</li>
+</ul>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-section">
+{FAQ}
+</div>
+<p>Browse zones via the <a href="/time-zone-map.html">time zone map</a>.</p>
+
+        <footer class="blog-footer">
+            <a href="/privacy.html">Privacy</a>
+            <a href="/about.html">About</a>
+            <a href="/contact.html">Contact</a>
+            <a href="/terms.html">Terms</a>
+            <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p>
+        </footer>
+    </main>
+
+    <script type="module" src="/assets/index-Dd7au40z.js" async></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var seo = document.querySelector('.blog-wrap');
+        if (seo) seo.style.display = 'none';
+      });
+    </script>
+    <script>
+      window.addEventListener('load',function(){
+        var ahrefs=document.createElement('script');
+        ahrefs.async=true;
+        ahrefs.src='https://analytics.ahrefs.com/analytics.js';
+        ahrefs.setAttribute('data-key','hB1VYWuwb1i/f1d8re7P2A');
+        document.head.appendChild(ahrefs);
+      });
+    </script>
+  </body>
+</html>
+
+Now we need to translate.
+
+Let's do step by step.
+
+Head:
+
+<title>What Is My Time Zone? — Detect Your Zone & UTC Offset | World Time Sync</title>
+Translate: "¿Cuál es mi zona horaria? — Detecta tu zona y desplazamiento UTC | World Time Sync"
+
+But need to keep the pipe and brand. Use same punctuation.
+
+<meta name="title" content="What Is My Time Zone? — Detect Your Zone & UTC Offset | World Time Sync">
+Translate content similarly.
+
+<meta name="description" content="Instantly detect your device's time zone, UTC offset and DST status with one click.">
+Translate: "Detecta al instante la zona horaria de tu dispositivo, el desplazamiento UTC y el estado de horario de verano con un solo clic."
+
+But need to keep "DST" maybe translate to "horario de verano". We'll translate fully.
+
+<meta name="keywords" content="what is my time zone, my time zone now, what timezone am i in, current utc offset">
+Translate each phrase: "what is my time zone" -> "¿cuál es mi zona horaria", "my time zone now" -> "mi zona horaria ahora", "what timezone am i in" -> "¿en qué zona horario estoy"? Actually "what timezone am i in" -> "¿en qué zona horaria estoy". "current utc offset" -> "desplazamiento UTC actual". Keep lowercase? We'll keep as is but translate.
+
+So content: "¿cuál es mi zona horaria, mi zona horaria ahora, ¿en qué zona horaria estoy, desplazamiento UTC actual"
+
+But need to keep commas and spaces.
+
+<meta name="robots" content="index, follow"> keep.
+
+<meta name="author" content="World Time Sync"> keep.
+
+<meta property="og:type" content="article"> keep.
+
+<meta property="og:url" content="https://worldtimessync.com/es/blog/what-is-my-time-zone.html"> keep.
+
+<meta property="og:title" content="What Is My Time Zone? — Detect Your Zone & UTC Offset | World Time Sync"> translate similarly.
+
+<meta property="og:description" content="Instantly detect your device's time zone, UTC offset and DST status with one click."> translate same as description.
+
+<meta property="og:image" content="https://worldtimessync.com/og-image.png"> keep.
+
+<meta name="twitter:card" content="summary_large_image"> keep.
+
+<meta name="twitter:title" content="What Is My Time Zone? — Detect Your Zone & UTC Offset | World Time Sync"> translate.
+
+<link rel="canonical" href="https://worldtimessync.com/es/blog/what-is-my-time-zone.html"> keep.
+
+<link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/es/blog/what-is-my-time-zone.html"> keep.
+
+<link rel="preload" href="/assets/blog.css" as="style"> keep.
+
+<noscript><link rel="stylesheet" href="/assets/blog.css"></noscript> keep.
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"> keep.
+
+<link rel="stylesheet" href="/assets/index-ufePLcBr.css"> keep.
+
+Scripts unchanged.
+
+Now body:
+
+<a href="#main-content" class="skip-link">Skip to main content</a> -> translate: "Saltar al contenido principal"
+
+<div id="root" role="application" aria-label="World Time Online Application"> -> translate aria-label: "Aplicación World Time Online"
+
+<div class="app-loading" aria-busy="true" aria-live="polite"> unchanged.
+
+<div class="app-loading-spinner" role="status" aria-label="Loading application"> -> translate aria-label: "Cargando aplicación"
+
+<p class="app-loading-text">Loading World Time...</p> -> translate: "Cargando World Time..."
+
+Now main content:
+
+<nav class="blog-breadcrumb" aria-label="Breadcrumb"> -> translate aria-label: "Ruta de navegación"
+
+Inside:
+
+<a href="/">Home</a> -> translate to "Inicio"
+
+<a href="/#blog">Blog</a> -> maybe keep "Blog" (same). Could translate to "Blog" (same). We'll keep as "Blog".
+
+<span aria-current="page">What Is My Time Zone? — Detect Your Zone & UTC Offset</span> -> translate: "¿Cuál es mi zona horaria? — Detecta tu zona y desplazamiento UTC"
+
+<h1>What Is My Time Zone? — Detect Your Zone & UTC Offset</h1> -> same translation.
+
+<div class="blog-meta"> August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide</div>
+
+We need to translate the readable parts: "August 10, 2026" -> "10 de agosto de 2026". "6 min read" -> "6 min de lectura". "Time Zones, Guide" -> "Zonas horarias, Guía". Keep the weird icons () unchanged. So final: " 10 de agosto de 2026 &nbsp;·&nbsp;  6 min de lectura &nbsp;·&nbsp;  Zonas horarias, Guía"
+
+Now paragraph:
+
+<p>Your browser knows your time zone from your device settings. Below it reports the IANA zone name, the current UTC offset, and whether daylight saving is active right now.</p>
+
+Translate: "Tu navegador conoce tu zona horaria desde la configuración de tu dispositivo. Debajo muestra el nombre de la zona IANA, el desplazamiento UTC actual y si el horario de verano está activo actualmente."
+
+But need to keep "IANA" as is. "UTC" as is. "daylight saving" -> "horario de verano". We'll translate.
+
+Now <h2>Your Detected Zone</h2> -> translate: "Tu zona detectada"
+
+Now <div class="converter-widget"><h2>🌍 Your Time Zone</h2> ... </div>
+
+Translate h2: "🌍 Tu zona horaria"
+
+Now the script inside: we need to translate strings.
+
+Original script:
+
+document.addEventListener('DOMContentLoaded',function(){
+ try{
+  var z=Intl.DateTimeFormat().resolvedOptions().timeZone||"unknown";
+  document.getElementById('tz-name').textContent=z;
+ }catch(e){document.getElementById('tz-name').textContent="Not detected";}
+ var n=new Date();
+ var off=-n.getTimezoneOffset();
+ var sign=off>=0?'+':'−';
+ var ah=Math.floor(Math.abs(off)/60),am=Math.abs(off)%60;
+ document.getElementById('tz-off').textContent="UTC"+sign+ah+(am?":"+String(am).padStart(2,'0'):"");
+ document.getElementById('tz-dst').textContent=(n.getTimezoneOffset()!==new Date(n.getFullYear(),0,1).getTimezoneOffset())?"Daylight saving: ACTIVE":"Daylight saving: not active";
+});
+
+We need to translate "Not detected" -> "No detectado". Also "Daylight saving: ACTIVE" -> "Horario de verano: ACTIVO". "Daylight saving: not active" -> "Horario de verano: inactivo". Keep the rest.
+
+Now <h2>Reading the Result</h2> -> translate: "Lectura del resultado"
+
+Now <ul> items:
+
+<li><strong>IANA name</strong> like America/New_York is the canonical identifier — use it in code, never fixed offsets.</li>
+
+Translate: "<strong>Nombre IANA</strong> como America/New_York es el identificador canónico — úsalo en código, nunca desplazamientos fijos."
+
+But need to keep "IANA" maybe translate to "IANA" as proper noun? We'll translate to "Nombre IANA". Keep "America/New_York" as is.
+
+Second: "<strong>Offset</strong> changes twice a year where DST applies; the zone name does not."
+
+Translate: "<strong>Desplazamiento</strong> cambia dos veces al año donde se aplica el horario de verano; el nombre de la zona no cambia."
+
+Third: "If the result looks wrong, check your OS location settings — browsers follow them."
+
+Translate: "Si el resultado parece incorrecto, verifica la configuración de ubicación de tu sistema operativo — los navegadores la siguen."
+
+Now <h2>Frequently Asked Questions</h2> -> translate: "Preguntas frecuentes"
+
+Now <div class="faq-section">{FAQ}</div> leave as is.
+
+Now <p>Browse zones via the <a href="/time-zone-map.html">time zone map</a>.</p> translate: "Explora zonas horarias mediante el <a href="/time-zone-map.html">mapa de zonas horarias</a>."
+
+Now footer links:
+
+<a href="/privacy.html">Privacy</a> -> "Privacidad"
+
+<a href="/about.html">About</a> -> "Acerca de"
+
+<a href="/contact.html">Contact</a> -> "Contacto"
+
+<a href="/terms.html">Terms</a> -> "Términos"
+
+Now the copyright line: <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p> keep.
+
+Now also need to translate the <meta name="title" content...> we did.
+
+Now also need to translate the <meta property="og:title"> etc.
+
+Now also need to translate the JSON-LD? We decided not to.
+
+Now also need to translate the text inside the script that sets seo.style.display = 'none'; no text.
+
+Now also need to translate the ahrefs script: none.
+
+Now also need to ensure we didn't miss any visible text: The <meta name="theme-color" content="#667eea"> no.
+
+The <meta name="google-site-verification"> no.
+
+Now also the <link rel="preload"> etc.
+
+Now also the <noscript> content: none.
+
+Now also the <div class="app-loading"> has aria-busy and aria-live; no text.
+
+Now also the <div class="app-loading-spinner"> we translated aria-label.
+
+Now also the <p class="app-loading-text"> we translated.
+
+Now also the <a href="#main-content" class="skip-link"> we translated.
+
+Now also the <div id="root"> aria-label we translated.
+
+Now also the <nav class="blog-breadcrumb"> aria-label we translated.
+
+Now also the <span aria-current="page"> we translated.
+
+Now also the <h1> we translated.
+
+Now also the <div class="blog-meta"> we translated.
+
+Now also the paragraph after meta we translated.
+
+Now also the <h2>Your Detected Zone</h2> we translated.
+
+Now also the <div class="converter-widget"><h2>🌍 Your Time Zone</h2> we translated.
+
+Now also the script strings we translated.
+
+Now also the <h2>Reading the Result</h2> we translated.
+
+Now also the <ul> items we translated.
+
+Now also the <h2>Frequently Asked Questions</h2> we translated.
+
+Now also the <div class="faq-section">{FAQ}</div> we left.
+
+Now also the <p>Browse zones via the <a href="/time-zone-map.html">time zone map</a>.</p>

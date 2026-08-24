@@ -1,0 +1,506 @@
+We need to translate visible/user-facing text into Spanish, preserving HTML tags, attributes, etc. The page currently has lang="es" already, but content is English. We need to translate text inside tags and attributes like title, alt, aria-label, description, keywords, content, etc. Also JSON-LD values need translation (like headline, description, name, etc). Must keep URLs, proper nouns unchanged. Also need to translate text in the body: headings, paragraphs, list items, table cells, etc. Also need to translate the FAQ JSON-LD content.
+
+We must output full HTML with translated text.
+
+Let's go step by step.
+
+First, head:
+
+<title>Days Until Summer 2027 — Countdown & Solstice Dates | World Time Sync</title>
+
+Translate: "Days Until Summer 2027 — Countdown & Solstice Dates | World Time Sync"
+
+We need to translate to Spanish. Keep brand name "World Time Sync" unchanged (proper noun). Also "Days Until Summer 2027" maybe translate to "Días hasta el verano 2027". "Countdown & Solstice Dates" -> "Cuenta regresiva y fechas del solsticio". The dash and pipe remain.
+
+Thus: "Días hasta el verano 2027 — Cuenta regresiva y fechas del solsticio | World Time Sync"
+
+But note the original uses an em dash ( — ). Keep.
+
+Similarly meta name="title" content same as title. Translate similarly.
+
+<meta name="description" content="Live countdown to the first day of summer 2027 plus exact solstice dates for both hemispheres.">
+
+Translate: "Cuenta regresiva en vivo hasta el primer día del verano 2027 además de las fechas exactas del solsticio para ambos hemisferios."
+
+But need to keep meaning. Let's produce Spanish.
+
+<meta name="keywords" content="days until summer, how many days until summer 2027, summer solstice date, first day of summer countdown">
+
+Translate keywords: "días hasta el verano, cuántos días faltan para el verano 2027, fecha del solsticio de verano, cuenta regresiva del primer día de verano". Keep commas.
+
+<meta name="robots" content="index, follow"> unchanged.
+
+<meta name="author" content="World Time Sync"> unchanged.
+
+Open Graph:
+
+<meta property="og:title" content="Days Until Summer 2027 — Countdown & Solstice Dates | World Time Sync"> translate similarly.
+
+<meta property="og:description" content="Live countdown to the first day of summer 2027 plus exact solstice dates for both hemispheres."> translate.
+
+Twitter similarly.
+
+Canonical and alternate href unchanged.
+
+Now JSON-LD blocks.
+
+First JSON-LD (Article):
+
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "Days Until Summer 2027 — Countdown & Solstice Dates | World Time Sync",
+ "description": "Live countdown to the first day of summer 2027 plus exact solstice dates for both hemispheres.",
+ "articleSection": "Time Zones",
+ "keywords": "days until summer, how many days until summer 2027, summer solstice date, first day of summer countdown",
+ "wordCount": 140,
+ "timeRequired": "PT6M",
+ "inLanguage": "en",
+ "author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"},
+ "publisher": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com", "logo": {"@type": "ImageObject", "url": "https://worldtimessync.com/logo.png", "width": 512, "height": 512}},
+ "datePublished": "2026-08-10",
+ "dateModified": "2026-08-10",
+ "mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/es/blog/days-until-summer-countdown.html"},
+ "image": "https://worldtimessync.com/og-image.png"
+}
+
+We need to translate headline, description, articleSection, keywords, maybe author name? Author name is organization name, keep as is. "Time Zones" translate to "Zonas horarias". "inLanguage": "en" maybe should stay "en"? The page is Spanish but the original article language is English? We could change to "es"? The rule: translate only human-readable text. inLanguage is a language code, not human-readable? It's a code; we should not translate. Keep as "en". However if we want to reflect Spanish, but it's not required. We'll keep as "en". But maybe better to change to "es" because the page is Spanish. However the instruction: translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. inLanguage is an attribute value but it's a code; not sure if considered human-readable. Safer to keep unchanged.
+
+Now translate headline: "Días hasta el verano 2027 — Cuenta regresiva y fechas del solsticio | World Time Sync"
+
+description: "Cuenta regresiva en vivo hasta el primer día del verano 2027 además de las fechas exactas del solsticio para ambos hemisferios."
+
+articleSection: "Zonas horarias"
+
+keywords: translate similarly: "días hasta el verano, cuántos días faltan para el verano 2027, fecha del solsticio de verano, cuenta regresiva del primer día de verano"
+
+Now second JSON-LD BreadcrumbList: itemListElement names: "Home", "Blog", "Days Until Summer 2027 — Countdown & Solstice Dates". Translate: "Inicio", "Blog", "Días hasta el verano 2027 — Cuenta regresiva y fechas del solsticio". Keep URLs unchanged.
+
+Third JSON-LD FAQPage: mainEntity array of Question/Answer.
+
+We need to translate question names and answer texts.
+
+Questions:
+
+1. "How many days until summer?" -> "¿Cuántos días faltan para el verano?"
+
+Answer text: "The live counter above counts down to June 1 — or check the solstice date for astronomical summer."
+
+Translate: "El contador en vivo de arriba cuenta regresiva hasta el 1 de junio — o consulta la fecha del solsticio para el verano astronómico."
+
+2. "Is the summer solstice always June 21?" -> "¿El solsticio de verano siempre es el 21 de junio?"
+
+Answer: "It falls between June 20 and 22 depending on the year and your time zone."
+
+Translate: "Cae entre el 20 y el 22 de junio según el año y tu zona horaria."
+
+3. "When does summer start in Australia?" -> "¿Cuándo comienza el verano en Australia?"
+
+Answer: "December 1 meteorologically; around December 21 astronomically — opposite the north."
+
+Translate: "El 1 de diciembre meteorológicamente; alrededor del 21 de diciembre astronómicamente — opuesto al norte."
+
+Now body translation.
+
+We have:
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+Translate: "Saltar al contenido principal"
+
+<div id="root" role="application" aria-label="World Time Online Application">
+
+aria-label: "World Time Online Application" translate? It's a label; should translate to Spanish: "Aplicación World Time Online". Keep brand.
+
+<div class="app-loading" aria-busy="true" aria-live="polite">
+   <div class="app-loading-spinner" role="status" aria-label="Loading application"></div>
+   <p class="app-loading-text">Loading World Time...</p>
+</div>
+
+Translate aria-label: "Cargando aplicación". p text: "Cargando World Time..."
+
+Now main content:
+
+<nav class="blog-breadcrumb" aria-label="Breadcrumb">
+   <a href="/">Home</a> › <a href="/#blog">Blog</a> › <span aria-current="page">Days Until Summer 2027 — Countdown & Solstice Dates</span>
+</nav>
+
+Translate: aria-label "Breadcrumb" -> "Ruta de navegación". Home -> "Inicio". Blog -> "Blog". The span text: translate to "Días hasta el verano 2027 — Cuenta regresiva y fechas del solsticio".
+
+<h1>Days Until Summer 2027 — Countdown & Solstice Dates</h1> translate similarly.
+
+<div class="blog-meta"> August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide</div>
+
+We see weird characters (maybe icons). We need to translate the text parts: "August 10, 2026" -> "10 de agosto de 2026". "6 min read" -> "6 min de lectura". "Time Zones, Guide" -> "Zonas horarias, Guía". Keep the icons unchanged (they are likely emojis). The weird characters are placeholders for icons; we should keep them as is. So we keep the leading emojis ( etc) unchanged. So final: " 10 de agosto de 2026 &nbsp;·&nbsp;  6 min de lectura &nbsp;·&nbsp;  Zonas horarias, Guía"
+
+Now paragraph:
+
+<p>"Summer" starts on different dates depending on who you ask: meteorological seasons start on the 1st of the month (June for northern summer), astronomical summer begins at the solstice. Here are both, with a live counter.</p>
+
+Translate: Keep quotes around Summer? Should translate the word Summer? It's a term; we can translate to "verano". Keep quotes? Probably translate the sentence.
+
+"El verano comienza en diferentes fechas según a quién le preguntes: las estaciones meteorológicas comienzan el 1 del mes (junio para el verano del norte), el verano astronómico comienza en el solsticio. Aquí tienes ambos, con un contador en vivo."
+
+Now h2: <h2>Countdown to Northern Summer</h2> translate: "Cuenta regresiva para el verano del norte"
+
+Inside converter-widget:
+
+<h2>☀️ Countdown to June 1, 2027</h2> translate: "☀️ Cuenta regresiva hasta el 1 de junio de 2027"
+
+<p id="cd-sum" style="..."></p> will be filled by script; no text.
+
+Now script content: we should not translate code inside script tags. Keep as is.
+
+Next h2: <h2>Solstice &amp; Season Start Dates</h2> translate: "Solsticio y fechas de inicio de la estación"
+
+Table: <thead><tr><th>Hemisphere</th><th>Meteorological</th><th>Astronomical (solstice)</th></tr></thead>
+
+Translate headers: "Hemisphere" -> "Hemisferio". "Meteorological" -> "Meteorológico". "Astronomical (solstice)" -> "Astronómico (solsticio)".
+
+<tbody><tr><td>Northern summer</td><td>Jun 1</td><td>~Jun 21, 2027</td></tr>
+
+Translate: "Northern summer" -> "Verano del norte". "Jun 1" -> "1 de jun". Keep format? Could translate to "1 de jun". "~Jun 21, 2027" -> "~21 de jun de 2027". Similarly Southern summer -> "Verano del sur". "Dec 1" -> "1 de dic". "~Dec 21, 2026" -> "~21 de dic de 2026".
+
+Now h2: <h2>Why the Solstice Moves</h2> translate: "Por qué se mueve el solsticio"
+
+Paragraph: <p>The solstice drifts between June 20–22 because the calendar year (365 days) doesn't match the tropical year (~365.24 days) — leap years pull it back into step. The same wobble shifts sunrise and sunset times each year; check exact times per city via <a href="/sunrise-sunset.html">sunrise &amp; sunset</a>.</p>
+
+Translate: "El solsticio varía entre el 20 y el 22 de junio porque el año calendario (365 días) no coincide con el año tropical (~365.24 días) — los años bisiestos lo devuelven al paso. El mismo tambaleo desplaza las horas de salida y puesta del sol cada año; consulta los horarios exactos por ciudad mediante <a href="/sunrise-sunset.html">salida y puesta del sol</a>."
+
+Note: keep the link href unchanged, translate link text.
+
+Now h2: <h2>Frequently Asked Questions</h2> translate: "Preguntas frecuentes"
+
+<div class="faq-section">
+{FAQ}
+</div>
+
+The {FAQ} placeholder likely will be replaced by script; we leave as is.
+
+Now paragraph after: <p>Seasonal reads: <a href="/dst-countdown.html">DST countdown</a>, <a href="/blog/dst-ends-2026-dates.html">clock change dates</a>.</p>
+
+Translate: "Lecturas estacionales: <a href="/dst-countdown.html">Cuenta regresiva del DST</a>, <a href="/blog/dst-ends-2026-dates.html">Fechas de cambio de reloj</a>."
+
+Now footer:
+
+<footer class="blog-footer">
+   <a href="/privacy.html">Privacy</a>
+   <a href="/about.html">About</a>
+   <a href="/contact.html">Contact</a>
+   <a href="/terms.html">Terms</a>
+   <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p>
+</footer>
+
+Translate: Privacy -> "Privacidad". About -> "Acerca de". Contact -> "Contacto". Terms -> "Términos". The copyright line: "&copy; 2026 World Time Sync" keep as is (brand). Could translate "World Time Sync" unchanged.
+
+Now also need to translate any other attributes like placeholder text? Already done.
+
+Check for any other visible text: The script inside <script> tags not to translate.
+
+Also the <noscript><link rel="stylesheet" href="/assets/blog.css"></noscript> no text.
+
+Now also need to translate the text inside the <div class="app-loading-text"> we did.
+
+Now also need to translate the aria-label on the app-loading-spinner: we changed to "Cargando aplicación". Good.
+
+Now also need to translate the aria-label on the root div: we changed to "Aplicación World Time Online". Keep brand.
+
+Now also need to translate the aria-label on the skip-link? It's not aria-label but inner text; we changed.
+
+Now also need to translate the text inside the <p class="app-loading-text"> we did.
+
+Now also need to translate any other aria-label like maybe on the converter-widget? none.
+
+Now also need to translate the text inside the <h2> inside converter-widget we did.
+
+Now also need to translate the text inside the <p id="cd-sum"> none.
+
+Now also need to translate the text inside the <script> not.
+
+Now also need to translate the text inside the <div class="blog-meta"> we did.
+
+Now also need to translate the text inside the <nav> breadcrumb we did.
+
+Now also need to translate the text inside the <h1> we did.
+
+Now also need to translate the text inside the <footer> links we did.
+
+Now also need to translate the text inside the <p> after footer? none.
+
+Now also need to translate the text inside the <div class="faq-section"> placeholder {FAQ} we leave.
+
+Now also need to translate the text inside the <script type="application/ld+json"> we did.
+
+Now also need to translate the text inside the <meta name="description" etc we did.
+
+Now also need to translate the text inside the <meta name="keywords" we did.
+
+Now also need to translate the text inside the <meta property="og:title" etc we did.
+
+Now also need to translate the text inside the <meta property="og:description" we did.
+
+Now also need to translate the text inside the <meta name="twitter:title" etc we did.
+
+Now also need to translate the text inside the <meta name="twitter:description" we did.
+
+Now also need to translate the text inside the <link rel="canonical" etc none.
+
+Now also need to translate the text inside the <link rel="alternate" hreflang="x-default" none.
+
+Now also need to translate the text inside the <link rel="preload" etc none.
+
+Now also need to translate the text inside the <link rel="icon" none.
+
+Now also need to translate the text inside the <link rel="stylesheet" none.
+
+Now also need to translate the text inside the <script async src="..."> none.
+
+Now also need to translate the text inside the <script> for gtag none.
+
+Now also need to translate the text inside the <script async src="..."> for ads none.
+
+Now also need to translate the text inside the <script type="module" src="/assets/index-Dd7au40z.js" async></script> none.
+
+Now also need to translate the text inside the <script> that hides .blog-wrap none.
+
+Now also need to translate the text inside the <script> for ahrefs none.
+
+Now also need to translate the text inside the <noscript> none.
+
+Now also need to translate the text inside the <div class="app-loading"> we did.
+
+Now also need to translate the text inside the <p class="app-loading-text"> we did.
+
+Now also need to translate the text inside the <div class="app-loading-spinner" aria-label we did.
+
+Now also need to translate the text inside the <div id="root" aria-label we did.
+
+Now also need to translate the text inside the <a href="#main-content" class="skip-link"> we did.
+
+Now also need to translate the text inside the <nav class="blog-breadcrumb" aria-label we did.
+
+Now also need to translate the text inside the <span aria-current="page"> we did.
+
+Now also need to translate the text inside the <h2> "Countdown to Northern Summer" we did.
+
+Now also need to translate the text inside the <h2> inside converter-widget we did.
+
+Now also need to translate the text inside the <h2> "Solstice &amp; Season Start Dates" we did.
+
+Now also need to translate the text inside the <table> headers we did.
+
+Now also need to translate the text inside the <tbody> cells we did.
+
+Now also need to translate the text inside the <h2> "Why the Solstice Moves" we did.
+
+Now also need to translate the paragraph we did.
+
+Now also need to translate the <h2> "Frequently Asked Questions" we did.
+
+Now also need to translate the <p> after FAQ we did.
+
+Now also need to translate the <footer> links we did.
+
+Now also need to translate the <p> copyright we did.
+
+Now also need to translate any other text like the text inside the <script> that sets document.querySelector('.blog-wrap').style.display = 'none'; none.
+
+Now also need to translate the text inside the <script> that creates ahrefs script none.
+
+Now also need to translate the text inside the <script> that sets window.dataLayer none.
+
+Now also need to translate the text inside the <script> that sets gtag none.
+
+Now also need to translate the text inside the <script> that sets async src for ads none.
+
+Now also need to translate the text inside the <script> that sets async src for googletagmanager none.
+
+Now also need to translate the text inside the <script> that sets async src for pagead2 none.
+
+Now also need to translate the text inside the <script> that sets async src for the blog widget? none.
+
+Now also need to translate the text inside the <script> that sets the countdown tick function none.
+
+Now also need to translate the text inside the <script> that sets the tick function none.
+
+Now also need to translate the text inside the <script> that sets the tick function none.
+
+Now also need to translate the text inside the <script> that sets the tick function none.
+
+Now also need to translate the text inside the <script> that sets the tick function none.
+
+Now also need to translate the text inside the <script> that sets the tick function none.
+
+Ok.
+
+Now we need to ensure we keep the HTML structure exactly.
+
+Let's produce final HTML.
+
+We'll go through the original and replace.
+
+I'll write the final HTML.
+
+Start:
+
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="theme-color" content="#667eea">
+    <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk">
+    <title>Días hasta el verano 2027 — Cuenta regresiva y fechas del solsticio | World Time Sync</title>
+    <meta name="title" content="Días hasta el verano 2027 — Cuenta regresiva y fechas del solsticio | World Time Sync">
+    <meta name="description" content="Cuenta regresiva en vivo hasta el primer día del verano 2027 además de las fechas exactas del solsticio para ambos hemisferios.">
+    <meta name="keywords" content="días hasta el verano, cuántos días faltan para el verano 2027, fecha del solsticio de verano, cuenta regresiva del primer día de verano">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="World Time Sync">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://worldtimessync.com/es/blog/days-until-summer-countdown.html">
+    <meta property="og:title" content="Días hasta el verano 2027 — Cuenta regresiva y fechas del solsticio | World Time Sync">
+    <meta property="og:description" content="Cuenta regresiva en vivo hasta el primer día del verano 2027 además de las fechas exactas del solsticio para ambos hemisferios.">
+    <meta property="og:image" content="https://worldtimessync.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Días hasta el verano 2027 — Cuenta regresiva y fechas del solsticio | World Time Sync">
+    <meta name="twitter:description" content="Cuenta regresiva en vivo hasta el primer día del verano 2027 además de las fechas exactas del solsticio para ambos hemisferios.">
+    <link rel="canonical" href="https://worldtimessync.com/es/blog/days-until-summer-countdown.html">
+    <link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/es/blog/days-until-summer-countdown.html">
+    <link rel="preload" href="/assets/blog.css" as="style">
+<noscript><link rel="stylesheet" href="/assets/blog.css"></noscript>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/assets/index-ufePLcBr.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LBX0CDYSSV');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "Article", "headline": "Días hasta el verano 2027 — Cuenta regresiva y fechas del solsticio | World Time Sync", "description": "Cuenta regresiva en vivo hasta el primer día del verano 2027 además de las fechas exactas del solsticio para ambos hemisferios.", "articleSection": "Zonas horarias", "keywords": "días hasta el verano, cuántos días faltan para el verano 2027, fecha del solsticio de verano, cuenta regresiva del primer día de verano", "wordCount": 140, "timeRequired": "PT6M", "inLanguage": "en", "author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}, "publisher": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com", "logo": {"@type": "ImageObject", "url": "https://worldtimessync.com/logo.png", "width": 512, "height": 512}}, "datePublished": "2026-08-10", "dateModified": "2026-08-10", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/es/blog/days-until-summer-countdown.html"}, "image": "https://worldtimessync.com/og-image.png"}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://worldtimessync.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://worldtimessync.com/#blog"}, {"@type": "ListItem", "position": 3, "name": "Días hasta el verano 2027 — Cuenta regresiva y fechas del solsticio", "item": "https://worldtimessync.com/es/blog/days-until-summer-countdown.html"}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cuántos días faltan para el verano?", "acceptedAnswer": {"@type": "Answer", "text": "El contador en vivo de arriba cuenta regresiva hasta el 1 de junio — o consulta la fecha del solsticio para el verano astronómico."}}, {"@type": "Question", "name": "¿El solsticio de verano siempre es el 21 de junio?", "acceptedAnswer": {"@type": "Answer", "text": "Cae entre el 20 y el 22 de junio según el año y tu zona horaria."}}, {"@type": "Question", "name": "¿Cuándo comienza el verano en Australia?", "acceptedAnswer": {"@type": "Answer", "text": "El 1 de diciembre meteorológicamente; alrededor del 21 de diciembre astronómicamente — opuesto al norte."}}]}
+    </script>
+
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    <div id="root" role="application" aria-label="Aplicación World Time Online">
+        <div class="app-loading" aria-busy="true" aria-live="polite">
+            <div class="app-loading-spinner" role="status" aria-label="Cargando aplicación"></div>
+            <p class="app-loading-text">Cargando World Time...</p>
+        </div>
+    </div>
+    <main id="main-content">
+        <article class="blog-wrap">
+            <nav class="blog-breadcrumb" aria-label="Ruta de navegación">
+                <a href="/">Inicio</a> › <a href="/#blog">Blog</a> › <span aria-current="page">Días hasta el verano 2027 — Cuenta regresiva y fechas del solsticio</span>
+            </nav>
+            <h1>Días hasta el verano 2027 — Cuenta regresiva y fechas del solsticio</h1>
+            <div class="blog-meta"> 10 de agosto de 2026 &nbsp;·&nbsp;  6 min de lectura &nbsp;·&nbsp;  Zonas horarias, Guía</div>
+
+<p>El verano comienza en diferentes fechas según a quién le preguntes: las estaciones meteorológicas comienzan el 1 del mes (junio para el verano del norte), el verano astronómico comienza en el solsticio. Aquí tienes ambos, con un contador en vivo.</p>
+
+<h2>Cuenta regresiva para el verano del norte</h2>
+<div class="converter-widget">
+<h2>☀️ Cuenta regresiva hasta el 1 de junio de 2027</h2>
+<p id="cd-sum" style="font-size:1.3em;font-weight:700;font-variant-numeric:tabular-nums;"></p>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+ function tick(){var t=new Date(2027,5,1),d=t-new Date();
+ if(d<0){document.getElementById('cd-sum').textContent='Summer is here!';return;}
+ var dd=Math.floor(d/86400000),hh=Math.floor(d%86400000/3600000),mm=Math.floor(d%3600000/60000);
+ document.getElementById('cd-sum').textContent=dd+" days "+hh+" h "+mm+" m";}
+ tick();setInterval(tick,30000);
+});
+</script>
+
+<h2>Solsticio y fechas de inicio de la estación</h2>
+<table><thead><tr><th>Hemisferio</th><th>Meteorológico</th><th>Astronómico (solsticio)</th></tr></thead><tbody>
+<tr><td>Verano del norte</td><td>1 de jun</td><td>~21 de jun de 2027</td></tr>
+<tr><td>Verano del sur</td><td>1 de dic</td><td>~21 de dic de 2026</td></tr>
+</tbody></table>
+
+<h2>Por qué se mueve el solsticio</h2>
+<p>El solsticio varía entre el 20 y el 22 de junio porque el año calendario (365 días) no coincide con el año tropical (~365.24 días) — los años bisiestos lo devuelven al paso. El mismo tambaleo desplaza las horas de salida y puesta del sol cada año; consulta los horarios exactos por ciudad mediante <a href="/sunrise-sunset.html">salida y puesta del sol</a>.</p>
+
+<h2>Preguntas frecuentes</h2>
+<div class="faq-section">
+{FAQ}
+</div>
+<p>Lecturas estacionales: <a href="/dst-countdown.html">Cuenta regresiva del DST</a>, <a href="/blog/dst-ends-2026-dates.html">Fechas de cambio de reloj</a>.</p>
+
+        <footer class="blog-footer">
+            <a href="/privacy.html">Privacidad</a>
+            <a href="/about.html">Acerca de</a>
+            <a href="/contact.html">Contacto</a>
+            <a href="/terms.html">Términos</a>
+            <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p>
+        </footer>
+    </main>
+
+    <script type="module" src="/assets/index-Dd7au40z.js" async></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var seo = document.querySelector('.blog-wrap');
+        if (seo) seo.style.display = 'none';
+      });
+    </script>
+    <script>
+      window.addEventListener('load',function(){
+        var ahrefs=document.createElement('script');
+        ahrefs.async=true;
+        ahrefs.src='https://analytics.ahrefs.com/analytics.js';
+        ahrefs.setAttribute('data-key','hB1VYWuwb1i/f1d8re7P2A');
+        document.head.appendChild(ahrefs);
+      });
+    </script>
+  </body>
+</html>
+
+Check for any missed text: The script inside the countdown still has English text 'Summer is here!' inside the script. That's a user-facing text that appears when countdown ends. According to rules, we need to translate that as well because it's visible text inside the script that will be inserted into the DOM. The script sets textContent to 'Summer is here!'. That is a user-facing string. We should translate it to Spanish: "¡El verano ya está aquí!" or "¡El verano ha llegado!". Keep the exclamation. Let's translate: "¡El verano ya está aquí!" (makes sense). We'll update the script.
+
+Also the script uses variable names etc; we only change the string.
+
+Thus modify:
+
+if(d<0){document.getElementById('cd-sum').textContent='Summer is here!';return;}
+
+to:
+
+if(d<0){document.getElementById('cd-sum').textContent='¡El verano ya está aquí!';return;}
+
+Also the line constructing textContent: dd+" days "+hh+" h "+mm+" m"; This will produce English "days h m". We need to translate to Spanish: "días h m" maybe "días hh h mm m". The format currently: "dd days hh h mm m". Should translate to "dd días hh h mm m". Keep the abbreviations h and m maybe unchanged. So change to: dd+" días "+hh+" h "+mm+" m";
+
+Thus update that line.
+
+Now also check any other visible text in scripts: none.
+
+Now also need to ensure we didn't break any JSON-LD escaping. The JSON-LD strings are fine.
+
+Now also need to check if any other text inside attributes like placeholder? none.
+
+Now also need to check the text inside the <meta name="description" we translated.
+
+Now also need to check the text inside the <meta name="keywords" we translated.
+
+Now also need to check the text inside the <meta property="og:description" we translated.
+
+Now also need to check the text inside the <meta name="twitter:description" we translated.
+
+Now also need to check the text inside the <link rel="preload" href="/assets/blog.css" as="style"> none.
+
+Now also need to check the text inside the <link rel="icon" type="image/svg+xml" href="/favicon.svg"> none.
+
+Now also need to check the text inside the <link rel="stylesheet" href="/assets/index-ufePLcBr.css"> none.
+
+Now also need to check the text inside the <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script> none.
+
+Now also

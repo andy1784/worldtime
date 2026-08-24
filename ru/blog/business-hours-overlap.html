@@ -1,0 +1,390 @@
+We need to translate visible/user-facing text into Russian, preserving HTML tags, attributes, etc. Also need to translate JSON-LD content values (like headline, description, etc.) as they are inside JSON strings but they are user-facing? According to rule 2: translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. JSON-LD blocks are not HTML tags but they are script tags with type application/ld+json. The content inside them is JSON strings; they are not directly visible but could be considered metadata for search engines. The rule says translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. JSON-LD values are inside script tags, not directly visible but they are content of the script tag. Should we translate them? Likely yes, because they are descriptive metadata for SEO; but the rule says "inside tags and attributes like title/alt/aria-label/description/keywords/content". The JSON-LD is inside a script tag, not an attribute. However the content of the script tag is not visible to users but is machine-readable. The instruction may intend to translate visible text only, not JSON-LD. But the example includes meta tags with name="description" etc. Those we should translate. JSON-LD may be considered not user-facing. However the FAQ JSON-LD contains questions and answers that are also visible in the FAQ section (the {FAQ} placeholder). The actual FAQ content is not in HTML; it's placeholder {FAQ} which will be replaced by script? Actually there is a div class="faq-section">{FAQ}</div>. The FAQ content is likely injected via JS. The JSON-LD contains the same Q&A. Should we translate that? Probably yes, because it's user-facing content (the FAQ). But it's inside JSON-LD; still it's content that will be used for rich results. The instruction says translate only human-readable text inside tags and attributes like title/alt/aria-label/description/keywords/content. JSON-LD values are not inside those attributes, but they are inside script tag content. Might be ambiguous. Safer to translate them as well, because they are user-facing (the FAQ). Also the blog meta line has garbled characters: " August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide". Those are likely encoding issues; they should be translated? Actually they are probably meant to be icons or something; but they appear as garbage due to encoding. We should keep them as-is? They are not readable text; they are likely meant to be icons (maybe calendar, clock, folder). Since they are not proper text, we should not attempt to translate them; just keep as is. However they are inside the HTML; they are visible but garbled. We should preserve them exactly.
+
+Now we need to translate all visible text: title tag, meta title, meta description, meta keywords, og:title, og:description, twitter:title, etc. Also the breadcrumb text, h1, blog-meta date etc (but the garbled parts remain). Also paragraphs, list items, table cells, etc. Also the FAQ section placeholder {FAQ} should stay as is (maybe it's replaced later). The FAQ JSON-LD we need to translate questions and answers.
+
+Also the skip link text: "Skip to main content". Translate.
+
+Also the aria-label on div id="root": "World Time Online Application". Translate? It's an aria-label attribute; should translate.
+
+Also the app-loading-spinner aria-label: "Loading application". Translate.
+
+Also the app-loading-text: "Loading World Time...". Translate.
+
+Also the footer links: Privacy, About, Contact, Terms. Translate.
+
+Also the copyright text: "&copy; 2026 World Time Sync". Keep the name unchanged? The name "World Time Sync" is a proper noun; we should not translate proper nouns unless a natural localized form exists. So keep as is.
+
+Also the blog-meta: after translation, we need to translate the readable parts: "August 10, 2026", "6 min read", "Time Zones, Guide". The garbled icons remain.
+
+Also the h2 headings: "Overlap of Popular Pairs", "Best Time to Call London", "Check Any Pair Live", "Frequently Asked Questions". Also the table headers: Pair, Gap, Shared hours (9–17 both). Also the table data: need to translate the text inside cells, but keep times and numbers as is. Eg "London – New York" keep city names; "5 h" keep; "14:00–17:00 London / 9:00–12:00 NY" keep times and city abbreviations. Also "London – Dubai": keep. "3–4 h". "12:00–17:00 London side". "New York – Singapore": keep. "12–13 h". "None — needs evening/early calls". Need to translate "None — needs evening/early calls". Also "London – Singapore": "7–8 h". "None standard — 16:00 London = midnight SG". Translate "None standard —". Also "Dubai – Singapore": "4 h". "13:00–17:00 Dubai / 17:00–21:00 SG edge". Keep.
+
+Also the list items under "Best Time to Call London": translate the sentences.
+
+Also the converter-widget h2: "Check Any Pair Live". Also p: "Open the <a href="/meeting-planner.html">Meeting Planner</a> — it draws the exact overlap grid for up to 8 cities and generates a shareable link." Translate.
+
+Also the FAQ section heading: "Frequently Asked Questions". The placeholder {FAQ} stays.
+
+Also the related link: "Related: <a href="/remote-team-solutions.html">remote team solutions</a>." Translate "Related:" and keep link text? The link text "remote team solutions" maybe translate? It's a link to a page; the anchor text is user-facing; we should translate it? Usually we translate link text if it's descriptive. So translate to Russian: "удаленные команды решения" maybe "решения для удаленных команд". But we need to keep the href unchanged. So translate the visible text inside the anchor.
+
+Also the footer links: Privacy, About, Contact, Terms. Translate to Russian: "Конфиденциальность", "О нас", "Контакты", "Условия". Also the copyright line: keep as is.
+
+Also the skip link: "Skip to main content" -> "Перейти к основному содержимому".
+
+Also the aria-label on root: "World Time Online Application" -> translate? It's describing the application; maybe keep brand name? "World Time Online Application" is not a proper noun; we can translate: "Приложение World Time Online". But the brand "World Time Online" maybe part of the site name; we could keep as is? The instruction says do NOT translate city/feature names that are proper nouns unless a natural localized form exists. "World Time Online Application" is not a city/feature name; it's a description. I'd translate: "Приложение World Time Online". However the brand "World Time Online" might be a proper noun (the site name). Safer to keep "World Time Online" unchanged and translate "Application": "Приложение World Time Online". So final: "Приложение World Time Online".
+
+Also the app-loading-spinner aria-label: "Loading application" -> "Загрузка приложения".
+
+Also app-loading-text: "Loading World Time..." -> "Загрузка World Time...". Keep "World Time" unchanged.
+
+Now JSON-LD: need to translate headline, description, articleSection, keywords, author name? author name is organization name "World Time Sync" - keep. publisher name same. datePublished etc unchanged. image URL unchanged. For BreadcrumbList: name values: "Home", "Blog", "Business Hours Overlap Tool — Find Your Team's Shared Hours". Translate those. For FAQPage: question names and answer texts translate.
+
+Also note that the JSON-LD is inside a script tag; we must keep the JSON structure intact, just replace the string values with translated Russian strings, ensuring proper escaping of quotes etc. Also need to keep the same formatting? Not required but we can keep similar.
+
+Now let's go through the HTML and produce translated version.
+
+We'll need to be careful with the garbled meta blog-meta: we keep the garbled characters as is.
+
+Let's start.
+
+Original HTML:
+
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="theme-color" content="#667eea">
+    <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk">
+    <title>Business Hours Overlap Tool — Find Your Team's Shared Hours | World Time Sync</title>
+    <meta name="title" content="Business Hours Overlap Tool — Find Your Team's Shared Hours | World Time Sync">
+    <meta name="description" content="Find overlapping business hours between cities like London, New York, Dubai and Singapore.">
+    <meta name="keywords" content="business hours overlap tool, best time to call london, team overlap hours, working hours between countries, call london time">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="World Time Sync">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://worldtimessync.com/ru/blog/business-hours-overlap.html">
+    <meta property="og:title" content="Business Hours Overlap Tool — Find Your Team's Shared Hours | World Time Sync">
+    <meta property="og:description" content="Find overlapping business hours between cities like London, New York, Dubai and Singapore.">
+    <meta property="og:image" content="https://worldtimessync.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Business Hours Overlap Tool — Find Your Team's Shared Hours | World Time Sync">
+    <link rel="canonical" href="https://worldtimessync.com/ru/blog/business-hours-overlap.html">
+    <link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/ru/blog/business-hours-overlap.html">
+    <link rel="preload" href="/assets/blog.css" as="style">
+<noscript><link rel="stylesheet" href="/assets/blog.css"></noscript>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/assets/index-ufePLcBr.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LBX0CDYSSV');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "Article", "headline": "Business Hours Overlap Tool — Find Your Team's Shared Hours | World Time Sync", "description": "Find overlapping business hours between cities like London, New York, Dubai and Singapore.", "articleSection": "Time Zones", "keywords": "business hours overlap tool, best time to call london, team overlap hours, working hours between countries, call london time", "wordCount": 193, "timeRequired": "PT6M", "inLanguage": "en", "author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}, "publisher": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com", "logo": {"@type": "ImageObject", "url": "https://worldtimessync.com/logo.png", "width": 512, "height": 512}}, "datePublished": "2026-08-10", "dateModified": "2026-08-10", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/ru/blog/business-hours-overlap.html"}, "image": "https://worldtimessync.com/og-image.png"}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://worldtimessync.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://worldtimessync.com/#blog"}, {"@type": "ListItem", "position": 3, "name": "Business Hours Overlap Tool — Find Your Team's Shared Hours", "item": "https://worldtimessync.com/ru/blog/business-hours-overlap.html"}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the best time to call London from the US?", "acceptedAnswer": {"@type": "Answer", "text": "East Coast: 9 AM–12 PM ET (2–5 PM London). West Coast: before 11:30 AM PT."}}, {"@type": "Question", "name": "Do London and New York share business hours?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — about three hours: 2 PM–5 PM London overlaps 9 AM–12 PM New York."}}, {"@type": "Question", "name": "How do teams with zero overlap collaborate?", "acceptedAnswer": {"@type": "Answer", "text": "Rotate occasional early/late calls fairly, record decisions in writing, and use async status updates."}}]}
+    </script>
+
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div id="root" role="application" aria-label="World Time Online Application">
+        <div class="app-loading" aria-busy="true" aria-live="polite">
+            <div class="app-loading-spinner" role="status" aria-label="Loading application"></div>
+            <p class="app-loading-text">Loading World Time...</p>
+        </div>
+    </div>
+    <main id="main-content">
+        <article class="blog-wrap">
+            <nav class="blog-breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Home</a> › <a href="/#blog">Blog</a> › <span aria-current="page">Business Hours Overlap Tool — Find Your Team's Shared Hours</span>
+            </nav>
+            <h1>Business Hours Overlap Tool — Find Your Team's Shared Hours</h1>
+            <div class="blog-meta"> August 10, 2026 &nbsp;·&nbsp;  6 min read &nbsp;·&nbsp;  Time Zones, Guide</div>
+
+<p>The practical overlap between two offices is where both local clocks sit inside roughly 9 AM–5 PM. For distant pairs that window can be one hour or none at all — which is when you either move meetings to someone's evening or switch part of the work to async updates.</p>
+
+<h2>Overlap of Popular Pairs</h2>
+<table><thead><tr><th>Pair</th><th>Gap</th><th>Shared hours (9–17 both)</th></tr></thead><tbody>
+<tr><td>London – New York</td><td>5 h</td><td>14:00–17:00 London / 9:00–12:00 NY</td></tr>
+<tr><td>London – Dubai</td><td>3–4 h</td><td>12:00–17:00 London side</td></tr>
+<tr><td>New York – Singapore</td><td>12–13 h</td><td>None — needs evening/early calls</td></tr>
+<tr><td>London – Singapore</td><td>7–8 h</td><td>None standard — 16:00 London = midnight SG</td></tr>
+<tr><td>Dubai – Singapore</td><td>4 h</td><td>13:00–17:00 Dubai / 17:00–21:00 SG edge</td></tr>
+</tbody></table>
+
+<h2>Best Time to Call London</h2>
+<p>London works 9 AM–5 PM GMT/BST. That means:</p>
+<ul>
+<li>From New York: 9 AM–12 PM your time hits their afternoon.</li>
+<li>From San Francisco: 9 AM–11:30 AM Pacific overlaps London's late day.</li>
+<li>From Sydney: only early-morning Sydney (~6–8 AM) reaches London's afternoon.</li>
+</ul>
+
+<div class="converter-widget">
+<h2>Check Any Pair Live</h2>
+<p>Open the <a href="/meeting-planner.html">Meeting Planner</a> — it draws the exact overlap grid for up to 8 cities and generates a shareable link.</p>
+</div>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-section">
+{FAQ}
+</div>
+<p>Related: <a href="/remote-team-solutions.html">remote team solutions</a>.</p>
+
+        <footer class="blog-footer">
+            <a href="/privacy.html">Privacy</a>
+            <a href="/about.html">About</a>
+            <a href="/contact.html">Contact</a>
+            <a href="/terms.html">Terms</a>
+            <p style="margin-top:8px;color:#444;font-size:0.75rem">&copy; 2026 World Time Sync</p>
+        </footer>
+    </main>
+
+    <script type="module" src="/assets/index-Dd7au40z.js" async></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var seo = document.querySelector('.blog-wrap');
+        if (seo) seo.style.display = 'none';
+      });
+    </script>
+    <script>
+      window.addEventListener('load',function(){
+        var ahrefs=document.createElement('script');
+        ahrefs.async=true;
+        ahrefs.src='https://analytics.ahrefs.com/analytics.js';
+        ahrefs.setAttribute('data-key','hB1VYWuwb1i/f1d8re7P2A');
+        document.head.appendChild(ahrefs);
+      });
+    </script>
+  </body>
+</html>
+
+Now translate.
+
+We'll produce final HTML with translations.
+
+Let's translate each piece.
+
+Title tag: "Business Hours Overlap Tool — Find Your Team's Shared Hours | World Time Sync"
+
+Translate: "Инструмент пересечения рабочего времени — Найдите общие часы вашей команды | World Time Sync"
+
+But need to keep the pipe and brand. "World Time Sync" unchanged.
+
+Meta name="title": same as title.
+
+Meta name="description": "Find overlapping business hours between cities like London, New York, Dubai and Singapore."
+
+Translate: "Найдите пересечение рабочего времени между городами, такими как Лондон, Нью-Йорк, Дубай и Сингапур."
+
+Meta name="keywords": "business hours overlap tool, best time to call london, team overlap hours, working hours between countries, call london time"
+
+Translate each phrase: "инструмент пересечения рабочего времени, лучшее время для звонка в Лондон, часы пересечения команды, рабочие часы между странами, звонок в лондонское время". Keep lowercase? We'll translate naturally.
+
+Meta name="author": "World Time Sync" unchanged.
+
+Meta property="og:title": same as title.
+
+Meta property="og:description": same as description.
+
+Meta name="twitter:title": same as title.
+
+Link rel canonical etc unchanged.
+
+Now JSON-LD Article:
+
+- headline: same as title -> translate.
+- description: same as meta description -> translate.
+- articleSection: "Time Zones" -> translate to "Часовые пояса".
+- keywords: same as meta keywords -> translate.
+- wordCount: 193 unchanged.
+- timeRequired: "PT6M" unchanged.
+- inLanguage: "en" unchanged (language code).
+- author name: "World Time Sync" unchanged.
+- publisher name: same.
+- logo URL unchanged.
+- datePublished, dateModified unchanged.
+- mainEntityOfPage @id unchanged.
+- image URL unchanged.
+
+Now BreadcrumbList:
+
+- name "Home" -> "Главная"
+- name "Blog" -> "Блог"
+- name "Business Hours Overlap Tool — Find Your Team's Shared Hours" -> translate same as headline but without brand? Actually it's the same as the article title without the brand? The original: "Business Hours Overlap Tool — Find Your Team's Shared Hours". Translate: "Инструмент пересечения рабочего времени — Найдите общие часы вашей команды". Keep the dash.
+
+Now FAQPage:
+
+Question 1 name: "What is the best time to call London from the US?" -> translate: "Какое лучшее время для звонка в Лондон из США?"
+
+Answer text: "East Coast: 9 AM–12 PM ET (2–5 PM London). West Coast: before 11:30 AM PT."
+
+Translate: "Восточное побережье: 9–12 ET (14–17 Лондон). Западное побережье: до 11:30 PT."
+
+But need to keep time abbreviations ET, PT. Also "London" unchanged. We'll translate: "Восточное побережье: 9 AM–12 PM ET (2–5 PM London). Западное побережье: до 11:30 AM PT." Keep AM/PM? Could keep as is. We'll translate the descriptive parts.
+
+Question 2 name: "Do London and New York share business hours?" -> translate: "Делятся ли Лондон и Нью-Йорк рабочими часами?"
+
+Answer text: "Yes — about three hours: 2 PM–5 PM London overlaps 9 AM–12 PM New York."
+
+Translate: "Да — примерно три часа: 14:00–17:00 Лондон пересекается с 9:00–12:00 Нью-Йорк."
+
+Question 3 name: "How do teams with zero overlap collaborate?" -> translate: "Как команды без пересечения сотрудничают?"
+
+Answer text: "Rotate occasional early/late calls fairly, record decisions in writing, and use async status updates."
+
+Translate: "Честно чередуйте occasional ранние/поздние звонки, фиксируйте решения письменно и используйте асинхронные обновления статуса."
+
+But "occasional" is English; maybe translate: "Честно чередуйте occasional ранние/поздние звонки" not good. Better: "Честно чередуйте occasional ранние/поздние звонки" -> maybe keep "occasional" as is? Could translate "временными". Let's translate fully: "Честно чередуйте время от времени ранние/поздние звонки, фиксируйте решения письменно и используйте асинхронные обновления статуса."
+
+Now body:
+
+Skip link: "Skip to main content" -> "Перейти к основному содержимому".
+
+Div id="root" aria-label: "World Time Online Application" -> translate: "Приложение World Time Online". Keep brand.
+
+App-loading-spinner aria-label: "Loading application" -> "Загрузка приложения".
+
+App-loading-text: "Loading World Time..." -> "Загрузка World Time...".
+
+Now main content:
+
+Blog-breadcrumb aria-label: "Breadcrumb" -> "Хлебные крошки". Keep.
+
+Links: Home -> "Главная". Blog -> "Блог". Span aria-current page: same as the breadcrumb item name: "Business Hours Overlap Tool — Find Your Team's Shared Hours" -> translate as earlier.
+
+H1: same as title without brand: "Business Hours Overlap Tool — Find Your Team's Shared Hours" -> translate.
+
+Blog-meta: keep garbled icons, then translate date, "6 min read", "Time Zones, Guide". So we need to translate: "August 10, 2026" -> "10 августа 2026 г." maybe keep format? Usually Russian: "10 августа 2026". We'll keep "10 августа 2026". "6 min read" -> "6 мин чтения". "Time Zones, Guide" -> "Часовые пояса, Руководство". Keep the garbled icons before each.
+
+Thus: " 10 августа 2026 &nbsp;·&nbsp;  6 мин чтения &nbsp;·&nbsp;  Часовые пояса, Руководство"
+
+Now paragraph after meta: "The practical overlap between two offices is where both local clocks sit inside roughly 9 AM–5 PM. For distant pairs that window can be one hour or none at all — which is when you either move meetings to someone's evening or switch part of the work to async updates."
+
+Translate: "Практическое пересечение двух офисов — это когда локальные часы обоих офисов находятся примерно в диапазоне 9:00–17:00. Для удалённых пар это окно может составлять один час или вовсе отсутствовать — тогда вы либо переносите встречи на вечер кому‑то, либо переводите часть работы на асинхронные обновления."
+
+Need to keep times format: 9 AM–5 PM. We'll keep as is? Could translate to 9:00–17:00 but original uses AM/PM. We'll keep same.
+
+Now h2: "Overlap of Popular Pairs" -> "Пересечение популярных пар".
+
+Table headers: Pair -> "Пара". Gap -> "Разница". Shared hours (9–17 both) -> "Общие часы (9–17 оба)". Keep the parentheses.
+
+Table rows: keep city names and times.
+
+Row 1: London – New York ; 5 h ; 14:00–17:00 London / 9:00–12:00 NY
+
+Translate? The text "London – New York" keep. "5 h" keep. "14:00–17:00 London / 9:00–12:00 NY" keep.
+
+Row 2: London – Dubai ; 3–4 h ; 12:00–17:00 London side
+
+Keep.
+
+Row 3: New York – Singapore ; 12–13 h ; None — needs evening/early calls
+
+Translate "None — needs evening/early calls" -> "Нет — требуются вечерние/ранние звонки". Keep dash.
+
+Row 4: London – Singapore ; 7–8 h ; None standard — 16:00 London = midnight SG
+
+Translate "None standard —" -> "Нет стандартного —". Keep rest.
+
+Row 5: Dubai – Singapore ; 4 h ; 13:00–17:00 Dubai / 17:00–21:00 SG edge
+
+Keep.
+
+Now h2: "Best Time to Call London" -> "Лучшее время для звонка в Лондон".
+
+Paragraph: "London works 9 AM–5 PM GMT/BST. That means:" -> translate: "Лондон работает с 9:00 до 17:00 по GMT/BST. Это означает:"
+
+List items:
+
+- From New York: 9 AM–12 PM your time hits their afternoon.
+
+Translate: "Из Нью-Йорка: 9:00–12:00 ваше время попадает в их afternoon." Keep "afternoon" maybe translate? Could translate "послеобеденное время". But original uses "their afternoon". We'll translate: "Из Нью-Йорка: 9:00–12:00 ваше время попадает в их послеобеденное время."
+
+- From San Francisco: 9 AM–11:30 AM Pacific overlaps London's late day.
+
+Translate: "Из Сан‑Франциско: 9:00–11:30 Тихоокеанское время пересекается с поздним днём Лондона."
+
+- From Sydney: only early-morning Sydney (~6–8 AM) reaches London's afternoon.
+
+Translate: "Из Сиднея: только раннее утро Сиднея (~6:00–8:00) достигает послеобеденного времени Лондона."
+
+Now converter-widget h2: "Check Any Pair Live" -> "Проверьте любую пару в реальном времени".
+
+Paragraph: "Open the <a href="/meeting-planner.html">Meeting Planner</a> — it draws the exact overlap grid for up to 8 cities and generates a shareable link."
+
+Translate: "Откройте <a href="/meeting-planner.html">Планировщик встреч</a> — он строит точное пересечение сетки для до 8 городов и генерирует shareable ссылку." Keep "shareable link" maybe translate to "совместно используемую ссылку". We'll translate: "генерирует совместно используемую ссылку."
+
+Now h2: "Frequently Asked Questions" -> "Часто задаваемые вопросы".
+
+Div class="faq-section": {FAQ} unchanged.
+
+Paragraph after: "Related: <a href="/remote-team-solutions.html">remote team solutions</a>." Translate: "Связано: <a href="/remote-team-solutions.html">решения для удалённых команд</a>."
+
+Now footer:
+
+Links: Privacy -> "Конфиденциальность". About -> "О нас". Contact -> "Контакты". Terms -> "Условия".
+
+Copyright line: "&copy; 2026 World Time Sync" keep.
+
+Now also need to translate any other attributes like aria-label on nav? Already did.
+
+Also the aria-label on blog-breadcrumb: "Breadcrumb" we translated.
+
+Also the aria-label on app-loading-spinner done.
+
+Also the aria-label on root done.
+
+Also the aria-label on skip link? No.
+
+Also the aria-label on any other elements? Not.
+
+Now also need to translate the text inside the script tags for JSON-LD as discussed.
+
+Now we must ensure we don't break JSON syntax. We'll replace the values with translated strings, ensuring proper escaping of quotes inside strings. The original strings have no internal quotes except maybe the apostrophe in "Team's". In translated we may have apostrophes; need to escape them as \' or use double quotes? The JSON uses double quotes for strings, so we need to escape any double quotes inside. Our translated strings likely have no double quotes. Apostrophes are fine as they are not double quotes. However we have em dash — which is Unicode; we can keep as is.
+
+Now produce final HTML.
+
+Let's construct.
+
+First, head section translations.
+
+<title>Инструмент пересечения рабочего времени — Найдите общие часы вашей команды | World Time Sync</title>
+
+<meta name="title" content="Инструмент пересечения рабочего времени — Найдите общие часы вашей команды | World Time Sync">
+
+<meta name="description" content="Найдите пересечение рабочего времени между городами, такими как Лондон, Нью-Йорк, Дубай и Сингапур.">
+
+<meta name="keywords" content="инструмент пересечения рабочего времени, лучшее время для звонка в Лондон, часы пересечения команды, рабочие часы между странами, звонок в лондонское время">
+
+<meta name="author" content="World Time Sync"> unchanged.
+
+<meta property="og:title" content="Инструмент пересечения рабочего времени — Найдите общие часы вашей команды | World Time Sync">
+
+<meta property="og:description" content="Найдите пересечение рабочего времени между городами, такими как Лондон, Нью-Йорк, Дубай и Сингапур.">
+
+<meta name="twitter:title" content="Инструмент пересечения рабочего времени — Найдите общие часы вашей команды | World Time Sync">
+
+Now JSON-LD Article:
+
+We need to produce the script block with translated values.
+
+Let's craft:
+
+{"@context": "https://schema.org", "@type": "Article", "headline": "Инструмент пересечения рабочего времени — Найдите общие часы вашей команды | World Time Sync", "description": "Найдите пересечение рабочего времени между городами, такими как Лондон, Нью-Йорк, Дубай и Сингапур.", "articleSection": "Часовые пояса", "keywords": "инструмент пересечения рабочего времени, лучшее время для звонка в Лондон, часы пересечения команды, рабочие часы между странами, звонок в лондонское время", "wordCount": 193, "timeRequired": "PT6M", "inLanguage": "en", "author": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com"}, "publisher": {"@type": "Organization", "name": "World Time Sync", "url": "https://worldtimessync.com", "logo": {"@type": "ImageObject", "url": "https://worldtimessync.com/logo.png", "width": 512, "height": 512}}, "datePublished": "2026-08-10", "dateModified": "2026-08-10", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://worldtimessync.com/ru/blog/business-hours-overlap.html"}, "image": "https://worldtimessync.com/og-image.png"}
+
+Now BreadcrumbList:
+
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://worldtimessync.com/"}, {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://worldtimessync.com/#blog"}, {"@type": "ListItem", "position": 3, "name": "Инструмент пересечения рабочего времени — Найдите общие часы вашей команды", "item": "https://worldtimessync.com/ru/blog/business-hours-overlap.html"}]}
+
+Now FAQPage:
+
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Какое лучшее время для звонка в Лондон из США?", "acceptedAnswer": {"@type": "Answer", "text": "Восточное побережье: 9 AM–12 PM ET (2–5 PM London). Западное побережье: до 11:30 AM PT."}}, {"@type": "Question",
