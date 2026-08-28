@@ -164,7 +164,26 @@
       <p style="color: #666; font-size: 0.85rem;">© 2026 World Time Sync. Todos los derechos reservados.</p>
     </footer>
     
-    <script type="module" src="/assets/index-Dd7au40z.js" async></script>
+    <script>
+      (function () {
+        var loaded = false;
+        function loadApp() {
+          if (loaded) return;
+          loaded = true;
+          var s = document.createElement('script');
+          s.type = 'module';
+          s.src = '/assets/index-Dd7au40z.js';
+          document.body.appendChild(s);
+          window.removeEventListener('click', loadApp);
+          window.removeEventListener('keydown', loadApp);
+          window.removeEventListener('touchstart', loadApp);
+        }
+        window.addEventListener('click', loadApp);
+        window.addEventListener('keydown', loadApp);
+        window.addEventListener('touchstart', loadApp);
+        setTimeout(function () { if (!loaded) loadApp(); }, 4000);
+      })();
+    </script>
     <script>
     window.addEventListener('load',function(){
       var ahrefs=document.createElement('script');ahrefs.async=true;ahrefs.src='https://analytics.ahrefs.com/analytics.js';ahrefs.setAttribute('data-key','hB1VYWuwb1i/f1d8re7P2A');document.head.appendChild(ahrefs);

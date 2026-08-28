@@ -96,8 +96,6 @@
       @media(max-width:600px){.lang-bar{font-size:0.7rem;padding:4px 8px;gap:1px}.lang-bar a{padding:2px 5px}}
     </style>
     
-    <!-- Preload critical resources -->
-    <link rel="preload" href="./assets/index-Dd7au40z.js" as="script" crossorigin />
     
     <!-- Load main CSS async (non-render-blocking) -->
     <link rel="stylesheet" href="./assets/index-ufePLcBr.css" media="print" onload="this.media='all'" />
@@ -588,8 +586,26 @@
       </div>
     </div>
 
-    <!-- Load JS at the end with async for non-blocking -->
-    <script type="module" src="./assets/index-Dd7au40z.js" async></script>
+    <script>
+      (function () {
+        var loaded = false;
+        function loadApp() {
+          if (loaded) return;
+          loaded = true;
+          var s = document.createElement('script');
+          s.type = 'module';
+          s.src = '/assets/index-Dd7au40z.js';
+          document.body.appendChild(s);
+          window.removeEventListener('click', loadApp);
+          window.removeEventListener('keydown', loadApp);
+          window.removeEventListener('touchstart', loadApp);
+        }
+        window.addEventListener('click', loadApp);
+        window.addEventListener('keydown', loadApp);
+        window.addEventListener('touchstart', loadApp);
+        setTimeout(function () { if (!loaded) loadApp(); }, 4000);
+      })();
+    </script>
     <script>
       // DO NOT hide SEO content — Googlebot executes JS and needs to see the content.
       // The SPA renders inside #root, SEO content stays visible underneath.
