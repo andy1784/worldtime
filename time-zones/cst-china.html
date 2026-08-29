@@ -55,6 +55,7 @@
                 <span aria-current="page">CST-CHINA</span>
             </nav>
             <h1>China Standard Time (CST-CHINA) — Current Time Now</h1>
+            <p class="tz-intro">China Standard Time (CST) is <strong>UTC+8</strong> and is used across all of mainland China, so the entire country shares one clock. The live display shows the <strong>current time in CST right now</strong> for Beijing and Shanghai. Convert CST to your time zone below.</p>
             <div class="current-time-card" role="region" aria-label="Live clock for CST-CHINA">
                 <h2>Current Time in CST-CHINA</h2>
                 <p class="live-time" style="min-height:2.5rem" id="live-time" data-timezone="Asia/Shanghai" aria-live="polite">Loading...</p>
@@ -63,7 +64,181 @@
                     <span>East Asia</span>
                 </p>
             </div>
-            <section class="city-info" aria-label="About China Standard Time">
+                        <!-- Above-fold Time Zone Converter Widget -->
+            <section class="converter-widget" aria-label="Time zone converter for China Standard Time (CST)">
+                <h2>Convert China Standard Time (CST) to Your Time Zone</h2>
+                <div class="converter-form">
+                    <div class="form-row">
+                        <label for="tz-from">From</label>
+                        <select id="tz-from" aria-label="Source time zone">
+                            <option value="Asia/Shanghai" selected>China Standard Time (CST)</option>
+                            <option value="America/New_York">Eastern Time (ET)</option>
+                            <option value="America/Chicago">Central Time (CT)</option>
+                            <option value="America/Denver">Mountain Time (MT)</option>
+                            <option value="America/Los_Angeles">Pacific Time (PT)</option>
+                            <option value="Europe/London">London (GMT/BST)</option>
+                            <option value="Europe/Paris">Paris (CET/CEST)</option>
+                            <option value="Europe/Berlin">Berlin (CET/CEST)</option>
+                            <option value="Asia/Tokyo">Tokyo (JST)</option>
+                            <option value="Asia/Shanghai">Shanghai (CST)</option>
+                            <option value="Asia/Kolkata">Kolkata (IST)</option>
+                            <option value="Australia/Sydney">Sydney (AEDT/AEST)</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <label for="tz-to">To</label>
+                        <select id="tz-to" aria-label="Target time zone">
+                            <option value="Europe/London">London (GMT/BST)</option>
+                            <option value="Europe/Paris">Paris (CET/CEST)</option>
+                            <option value="Europe/Berlin">Berlin (CET/CEST)</option>
+                            <option value="Asia/Tokyo">Tokyo (JST)</option>
+                            <option value="Asia/Shanghai">Shanghai (CST)</option>
+                            <option value="Asia/Kolkata">Kolkata (IST)</option>
+                            <option value="Australia/Sydney">Sydney (AEDT/AEST)</option>
+                            <option value="America/Chicago">Central Time (CT)</option>
+                            <option value="America/Denver">Mountain Time (MT)</option>
+                            <option value="America/Los_Angeles">Pacific Time (PT)</option>
+                            <option value="Asia/Shanghai" selected>China Standard Time (CST)</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <label for="conv-time">Time</label>
+                        <input type="time" id="conv-time" value="12:00" aria-label="Time to convert">
+                    </div>
+                    <button type="button" id="convert-btn" class="convert-btn">Convert</button>
+                </div>
+                <div class="converter-result" id="converter-result" aria-live="polite" style="display:none;">
+                    <span id="result-time"></span> in <span id="result-zone"></span>
+                </div>
+            </section>
+
+            <style>
+                .converter-widget {
+                    background: linear-gradient(135deg, rgba(102,126,234,0.1) 0%, rgba(118,75,162,0.1) 100%);
+                    border: 1px solid rgba(102,126,234,0.2);
+                    border-radius: 12px;
+                    padding: 20px;
+                    margin: 20px 0;
+                }
+                .converter-widget h2 {
+                    margin: 0 0 16px;
+                    font-size: 1.1rem;
+                    color: #667eea;
+                }
+                .converter-form {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                    gap: 12px;
+                    align-items: end;
+                }
+                .form-row {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+                }
+                .form-row label {
+                    font-size: 0.75rem;
+                    color: #666;
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+                }
+                .form-row select, .form-row input {
+                    padding: 10px 12px;
+                    border: 1px solid #ddd;
+                    border-radius: 8px;
+                    font-size: 1rem;
+                    background: #fff;
+                }
+                .form-row select:focus, .form-row input:focus {
+                    outline: none;
+                    border-color: #667eea;
+                    box-shadow: 0 0 0 3px rgba(102,126,234,0.15);
+                }
+                .convert-btn {
+                    padding: 10px 20px;
+                    background: #667eea;
+                    color: #fff;
+                    border: none;
+                    border-radius: 8px;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: background 0.2s;
+                }
+                .convert-btn:hover {
+                    background: #5568d3;
+                }
+                .converter-result {
+                    margin-top: 16px;
+                    padding: 12px;
+                    background: #fff;
+                    border-radius: 8px;
+                    font-size: 1.1rem;
+                    font-weight: 600;
+                    color: #1a1a2e;
+                    text-align: center;
+                }
+                #result-time {
+                    color: #667eea;
+                }
+                @media (max-width: 600px) {
+                    .converter-form {
+                        grid-template-columns: 1fr;
+                    }
+                }
+            </style>
+
+            <script>
+            (function() {
+                var fromSelect = document.getElementById('tz-from');
+                var toSelect = document.getElementById('tz-to');
+                var timeInput = document.getElementById('conv-time');
+                var convertBtn = document.getElementById('convert-btn');
+                var resultDiv = document.getElementById('converter-result');
+                var resultTime = document.getElementById('result-time');
+                var resultZone = document.getElementById('result-zone');
+
+                function convert() {
+                    var fromTz = fromSelect.value;
+                    var toTz = toSelect.value;
+                    var timeVal = timeInput.value;
+
+                    if (!timeVal) return;
+
+                    var today = new Date();
+                    var dateStr = today.toISOString().split('T')[0];
+                    var dateTime = dateStr + 'T' + timeVal + ':00';
+
+                    try {
+                        var sourceDate = new Date(dateTime);
+                        var targetStr = new Intl.DateTimeFormat('en-US', {
+                            timeZone: toTz,
+                            hour: '2-digit',
+                            minute: '2-digit',
+                            hour12: true,
+                            timeZoneName: 'short'
+                        }).format(sourceDate);
+
+                        var zoneName = toSelect.options[toSelect.selectedIndex].text;
+                        resultTime.textContent = targetStr;
+                        resultZone.textContent = zoneName;
+                        resultDiv.style.display = 'block';
+                    } catch (e) {
+                        resultTime.textContent = 'Error';
+                        resultZone.textContent = '';
+                        resultDiv.style.display = 'block';
+                    }
+                }
+
+                convertBtn.addEventListener('click', convert);
+                timeInput.addEventListener('change', convert);
+
+                // Auto-convert on load
+                convert();
+            })();
+            </script>
+
+<section class="city-info" aria-label="About China Standard Time">
                 <h2>About China Standard Time (CST-CHINA)</h2>
                 <p>China Standard Time (CST-CHINA) is a time zone in East Asia with offset UTC+8. It serves approximately ~1.5 billion people across multiple countries and territories.</p>
                 <h3>UTC Offset &amp; DST</h3>
