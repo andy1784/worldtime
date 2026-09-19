@@ -37,7 +37,7 @@ ROOT_PAGES = [
     "time-difference.html", "gmt-vs-utc.html", "dst-2026-worldwide.html",
     "dst-countdown.html", "world-clock.html", "world-time-map.html",
     "sunrise-sunset.html", "time-zone-converter.html", "time-zone-map.html",
-    "search.html", "embed.html",
+    "search.html", "embed.html", "abbreviations.html",
     "wordpress.html", "how-it-works.html", "event.html",
     "time/index.html",  # city directory landing page (canonical /time)
     "time-zones/index.html",
@@ -62,7 +62,10 @@ ROOT_PAGES = [
     "time-zones/americas.html",
     "time-zones/asia.html",
     "time-zones/europe.html",
+    # Abbreviations glossary: hub + cards (EN only for now)
 ]
+
+ROOT_PAGES += ["abbreviations/" + f for f in sorted(os.listdir(os.path.join(ROOT, "abbreviations"))) if f.endswith(".html")]
 
 SKIP_DIRS = {"assets", "data", "i18n", "wp-plugin", "__pycache__", ".git", "node_modules", "tools"}
 # bump dirs that are now ignored by Vercel (won't be deployed); do not list in sitemap
