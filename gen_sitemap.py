@@ -62,6 +62,7 @@ ROOT_PAGES = [
     "time-zones/americas.html",
     "time-zones/asia.html",
     "time-zones/europe.html",
+    "time-zones/time-zones-explained.html",
     # Abbreviations glossary: hub + cards (EN only for now)
 ]
 

@@ -94,23 +94,24 @@ Placed BEFORE #root SPA so LCP happens from static HTML, not JS render --><div c
         setTimeout(function () { if (!loaded) loadApp(); }, 4000);
       })();
     </script>
-<!-- Load non-critical third-party scripts during idle time so they never block TBT/INP -->
-<script>
+<!-- Load ALL third-party scripts during idle time so they never block TBT/INP -->
+    <script>
       // DO NOT hide SEO content — Googlebot executes JS and needs to see the content.
       // The SPA renders inside #root, SEO content stays visible underneath.
       (function () {
-        // AdSense + GA load on window.load (NOT idle): ad slots are injected by the
-        // SPA right after, so the scripts must be ready early to reserve layout space
-        // and keep CLS at zero. They are async, so they don't block parsing.
-        function loadCriticalParties() {
-          // Google Analytics (gtag)
+        function loadAllParties() {
+          // Google Analytics (gtag) — dual GA4 properties
           var ga = document.createElement('script');
           ga.async = true;
           ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV';
           document.head.appendChild(ga);
           var ga2 = document.createElement('script');
-          ga2.textContent = 'window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-LBX0CDYSSV");gtag("config","G-XCBTT7YSPY");';
+          ga2.async = true;
+          ga2.src = 'https://www.googletagmanager.com/gtag/js?id=G-XCBTT7YSPY';
           document.head.appendChild(ga2);
+          var gaConfig = document.createElement('script');
+          gaConfig.textContent = 'window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-LBX0CDYSSV");gtag("config","G-XCBTT7YSPY");';
+          document.head.appendChild(gaConfig);
 
           // Google AdSense
           var ads = document.createElement('script');
@@ -118,15 +119,14 @@ Placed BEFORE #root SPA so LCP happens from static HTML, not JS render --><div c
           ads.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529';
           ads.crossOrigin = 'anonymous';
           document.head.appendChild(ads);
-        }
 
-        // Vercel + Ahrefs don't touch layout — load them during idle to spare TBT/INP.
-        function loadIdleParties() {
+          // Vercel Insights
           var vi = document.createElement('script');
           vi.defer = true;
           vi.src = 'https://cdn.vercel-insights.com/v1/script.js';
           document.head.appendChild(vi);
 
+          // Ahrefs Analytics
           var ah = document.createElement('script');
           ah.async = true;
           ah.src = 'https://analytics.ahrefs.com/analytics.js';
@@ -134,13 +134,9 @@ Placed BEFORE #root SPA so LCP happens from static HTML, not JS render --><div c
           document.head.appendChild(ah);
         }
 
-        if (document.readyState === 'complete') {
-          loadCriticalParties();
-        } else {
-          window.addEventListener('load', loadCriticalParties);
-        }
-        var ric = window.requestIdleCallback || function (cb) { return setTimeout(cb, 2000); };
-        ric(loadIdleParties);
+        // Use requestIdleCallback with a 3s fallback — runs after browser is idle
+        var ric = window.requestIdleCallback || function (cb) { return setTimeout(cb, 3000); };
+        ric(loadAllParties);
       })();
     </script>
 </body></html>

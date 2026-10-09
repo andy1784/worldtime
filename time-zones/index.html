@@ -61,19 +61,48 @@
             </section>
         </div>
         <footer class="seo-footer">
-            <nav aria-label="Footer navigation">
-                <a href="/privacy">Privacy Policy</a>
-                <a href="/about">About Us</a>
-                <a href="/">World Time Sync</a>
-            </nav>
-            <p>&copy; 2026 World Time Sync. All rights reserved.</p>
-        </footer>
-    </main>
-    <script>window.addEventListener('load',function(){
-        var ga=document.createElement('script');ga.async=true;ga.src='https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV';document.head.appendChild(ga);
-        var ga3=document.createElement('script');ga3.async=true;ga3.src='https://www.googletagmanager.com/gtag/js?id=G-XCBTT7YSPY';document.head.appendChild(ga3);
-        var ga2=document.createElement('script');ga2.textContent='window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-LBX0CDYSSV");gtag("config","G-XCBTT7YSPY");';document.head.appendChild(ga2);
-    });
-    </script>
-</body>
-</html>
+                    <nav aria-label="Footer navigation">
+                        <a href="/privacy">Privacy Policy</a>
+                        <a href="/about">About Us</a>
+                        <a href="/">World Time Sync</a>
+                    </nav>
+                    <p>&copy; 2026 World Time Sync. All rights reserved.</p>
+                </footer>
+            </main>
+
+            <!-- Load ALL third-party scripts during idle time so they never block TBT/INP -->
+            <script>
+              (function () {
+                function loadAllParties() {
+                  // Google Analytics (gtag) — dual GA4 properties
+                  var ga = document.createElement('script');
+                  ga.async = true;
+                  ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV';
+                  document.head.appendChild(ga);
+                  var ga2 = document.createElement('script');
+                  ga2.async = true;
+                  ga2.src = 'https://www.googletagmanager.com/gtag/js?id=G-XCBTT7YSPY';
+                  document.head.appendChild(ga2);
+                  var gaConfig = document.createElement('script');
+                  gaConfig.textContent = 'window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-LBX0CDYSSV");gtag("config","G-XCBTT7YSPY");';
+                  document.head.appendChild(gaConfig);
+
+                  // Vercel Insights
+                  var vi = document.createElement('script');
+                  vi.defer = true;
+                  vi.src = 'https://cdn.vercel-insights.com/v1/script.js';
+                  document.head.appendChild(vi);
+
+                  // Ahrefs Analytics
+                  var ah = document.createElement('script');
+                  ah.async = true;
+                  ah.src = 'https://analytics.ahrefs.com/analytics.js';
+                  ah.dataset.key = 'hB1VYWuwb1i/f1d8re7P2A';
+                  document.head.appendChild(ah);
+                }
+                var ric = window.requestIdleCallback || function (cb) { return setTimeout(cb, 3000); };
+                ric(loadAllParties);
+              })();
+            </script>
+        </body>
+        </html>

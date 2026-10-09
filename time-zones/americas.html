@@ -166,23 +166,47 @@
             <p>&copy; 2026 World Time Sync. All rights reserved.</p>
         </footer>
     </main>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XCBTT7YSPY"></script>
+
+    <!-- Load ALL third-party scripts during idle time so they never block TBT/INP -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-LBX0CDYSSV'); gtag('config', 'G-XCBTT7YSPY');
+      (function () {
+        function loadAllParties() {
+          // Google Analytics (gtag) — dual GA4 properties
+          var ga = document.createElement('script');
+          ga.async = true;
+          ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-LBX0CDYSSV';
+          document.head.appendChild(ga);
+          var ga2 = document.createElement('script');
+          ga2.async = true;
+          ga2.src = 'https://www.googletagmanager.com/gtag/js?id=G-XCBTT7YSPY';
+          document.head.appendChild(ga2);
+          var gaConfig = document.createElement('script');
+          gaConfig.textContent = 'window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-LBX0CDYSSV");gtag("config","G-XCBTT7YSPY");';
+          document.head.appendChild(gaConfig);
+
+          // Google AdSense
+          var ads = document.createElement('script');
+          ads.async = true;
+          ads.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529';
+          ads.crossOrigin = 'anonymous';
+          document.head.appendChild(ads);
+
+          // Vercel Insights
+          var vi = document.createElement('script');
+          vi.defer = true;
+          vi.src = 'https://cdn.vercel-insights.com/v1/script.js';
+          document.head.appendChild(vi);
+
+          // Ahrefs Analytics
+          var ah = document.createElement('script');
+          ah.async = true;
+          ah.src = 'https://analytics.ahrefs.com/analytics.js';
+          ah.dataset.key = 'hB1VYWuwb1i/f1d8re7P2A';
+          document.head.appendChild(ah);
+        }
+        var ric = window.requestIdleCallback || function (cb) { return setTimeout(cb, 3000); };
+        ric(loadAllParties);
+      })();
     </script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728257902981529" crossorigin="anonymous"></script>
-    <script>
-      window.addEventListener('load',function(){
-        var ahrefs=document.createElement('script');
-        ahrefs.async=true;
-        ahrefs.src='https://analytics.ahrefs.com/analytics.js';
-        ahrefs.setAttribute('data-key','hB1VYWuwb1i/f1d8re7P2A');
-        document.head.appendChild(ahrefs);
-      });
-    </script>
-  </body>
+</body>
 </html>

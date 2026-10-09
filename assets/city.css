@@ -57,6 +57,11 @@ a{color:#667eea}
 .lsi-block a{color:#667eea;text-decoration:none}
 .lsi-block a:hover{text-decoration:underline}
 
+.tz-table{width:100%;border-collapse:collapse;margin:16px 0}
+.tz-table th,.tz-table td{border:1px solid #ddd;padding:12px;text-align:left}
+.tz-table th{background:#f5f7fa;color:#1a1a2e}
+.tz-table tr:nth-child(even){background:#f9fafb}
+
 /* Mobile tap targets - ensure 48x48px minimum for accessibility */
 @media (max-width: 600px) {
     button, .convert-btn, input[type="submit"], input[type="button"] {
