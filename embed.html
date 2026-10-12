@@ -163,7 +163,7 @@
                         height: 160
                     };
                 </script>
-                <script async src="/embed.js"></script>
+                <script src="/embed.js"></script>
             </section>
 
             <!-- Method 1: Iframe Embed (Simplest) -->
@@ -261,7 +261,7 @@
                     
                     <div class="tab-panel active" role="tabpanel" id="js-basic">
                         <pre><code><div id="wts-clock"></div>
-<script async src="https://worldtimessync.com/embed.js"></script>
+<script src="https://worldtimessync.com/embed.js"></script>
 <script>
     WorldTimeSync.init({
         container: '#wts-clock',
@@ -296,7 +296,7 @@
                     
                     <div class="tab-panel" role="tabpanel" id="js-api">
                         <pre><code><div id="wts-clock"></div>
-<script async src="https://worldtimessync.com/embed.js"></script>
+<script src="https://worldtimessync.com/embed.js"></script>
 
 <!-- Later, anywhere in your JS -->
 <script>
@@ -450,7 +450,7 @@ export function WorldClock() {
 <div id="wts-clock"></div>
 
 <!-- Before closing </body> -->
-<script async src="https://worldtimessync.com/embed.js"></script>
+<script src="https://worldtimessync.com/embed.js"></script>
 <script>
     WorldTimeSync.init({ container: '#wts-clock' });
 </script></code></pre>
@@ -580,7 +580,6 @@ export function WorldClock() {
                     <div class="customizer-preview">
                         <h3>Preview</h3>
                         <div id="custom-preview" style="margin: 16px 0;"></div>
-                        <script async src="/embed.js"></script>
                     </div>
                     
                     <div class="customizer-code">
@@ -847,7 +846,7 @@ export function WorldClock() {
         document.getElementById('generated-iframe').querySelector('code').textContent = iframeCode;
 
         // Generate JS code
-        var jsCode = '<div id="wts-clock"></div>\n<script async src="https://worldtimessync.com/embed.js"></script>\n<script>\n    WorldTimeSync.init({\n        container: "#wts-clock",\n        cities: ' + JSON.stringify(cities) + ',\n        theme: "' + theme + '",\n        format: "' + format + '",\n        showSeconds: ' + (seconds === '1') + ',\n        showTimezone: ' + (tz === '1') + ',\n        height: ' + height + '\n    });\n</script>';
+        var jsCode = '<div id="wts-clock"></div>\n<script src="https://worldtimessync.com/embed.js"><\/script>\n<script>\n    WorldTimeSync.init({\n        container: "#wts-clock",\n        cities: ' + JSON.stringify(cities) + ',\n        theme: "' + theme + '",\n        format: "' + format + '",\n        showSeconds: ' + (seconds === '1') + ',\n        showTimezone: ' + (tz === '1') + ',\n        height: ' + height + '\n    });\n<\/script>';
         
         document.getElementById('generated-js').querySelector('code').textContent = jsCode;
     }

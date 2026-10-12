@@ -22,8 +22,8 @@
     'use strict';
 
     // Find the script tag that loaded this widget
-    var scripts = document.querySelectorAll('script[src*="worldtimessync.com/widget.js"]');
-    if (!scripts.length) {
+    var scripts = document.querySelectorAll('script[src*="widget.js"]');
+    if (!document.currentScript && !scripts.length) {
         console.error('[World Time Sync] Unable to find widget script tag');
         return;
     }
@@ -31,7 +31,7 @@
     var config = {};
     try {
         // Parse data attributes from the last script tag
-        var script = scripts[scripts.length - 1];
+        var script = document.currentScript || scripts[scripts.length - 1];
         config.timezone = script.getAttribute('data-timezone') || 'America/New_York';
         config.theme = script.getAttribute('data-theme') || 'dark';
         config.size = script.getAttribute('data-size') || 'medium';
@@ -75,7 +75,6 @@
         container = document.createElement('div');
         container.id = 'wts-widget-' + Math.random().toString(36).substr(2, 9);
         if (script && script.parentNode) {
-            document.currentScript = script;
             script.parentNode.insertBefore(container, script);
         } else {
             // Fallback: append to body

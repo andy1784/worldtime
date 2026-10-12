@@ -232,14 +232,11 @@
             preview.style.height = dims[1] + 'px';
             
             // Update code
-            var code = '<!-- World Time Sync Widget -->
-<div id="wts-widget"></div>
-<script src="https://worldtimessync.com/widget.js"' +
+            var code = '<!-- World Time Sync Widget -->\n<div id="wts-widget"></div>\n<script src="https://worldtimessync.com/widget.js"' +
     ' data-timezone="' + tz + '"' +
     ' data-theme="' + theme + '"' +
     ' data-size="' + size + '"' +
-    ' data-show-date="' + date + '">
-<\/script>';
+    ' data-show-date="' + date + '">\n<\/script>';
             codeOutput.textContent = code;
         }
         

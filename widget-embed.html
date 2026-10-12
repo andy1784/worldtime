@@ -25,12 +25,7 @@
     <link rel="preconnect" href="https://www.googletagmanager.com">
     <link rel="preconnect" href="https://pagead2.googlesyndication.com">
     <link rel="dns-prefetch" href="https://www.googlesyndication.com">
-</head>
-<body>
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#667eea">
     <meta name="google-site-verification" content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk" />
@@ -162,17 +157,74 @@
     (function() {
         // Parse URL params
         var params = new URLSearchParams(window.location.search);
-        var citiesParam = params.get('cities') || 'America/New_York,Europe/London,Asia/Tokyo,Europe/Paris';
-        var theme = params.get('theme') || 'light';
+        var tzParam = params.get('tz');
+        // widget.js and the WordPress plugin pass a single IANA zone as tz=...;
+        // embed.js passes cities=... and uses tz=0/1 to toggle the offset line.
+        var singleZone = tzParam && tzParam !== '0' && tzParam !== '1' ? tzParam : '';
+        var CITY_TIMEZONES = {
+            'new-york': 'America/New_York',
+            'los-angeles': 'America/Los_Angeles',
+            'chicago': 'America/Chicago',
+            'denver': 'America/Denver',
+            'toronto': 'America/Toronto',
+            'vancouver': 'America/Vancouver',
+            'mexico-city': 'America/Mexico_City',
+            'sao-paulo': 'America/Sao_Paulo',
+            'buenos-aires': 'America/Argentina/Buenos_Aires',
+            'london': 'Europe/London',
+            'paris': 'Europe/Paris',
+            'berlin': 'Europe/Berlin',
+            'rome': 'Europe/Rome',
+            'madrid': 'Europe/Madrid',
+            'amsterdam': 'Europe/Amsterdam',
+            'stockholm': 'Europe/Stockholm',
+            'warsaw': 'Europe/Warsaw',
+            'moscow': 'Europe/Moscow',
+            'kyiv': 'Europe/Kiev',
+            'istanbul': 'Europe/Istanbul',
+            'cairo': 'Africa/Cairo',
+            'johannesburg': 'Africa/Johannesburg',
+            'lagos': 'Africa/Lagos',
+            'dubai': 'Asia/Dubai',
+            'riyadh': 'Asia/Riyadh',
+            'tehran': 'Asia/Tehran',
+            'mumbai': 'Asia/Kolkata',
+            'delhi': 'Asia/Kolkata',
+            'dhaka': 'Asia/Dhaka',
+            'karachi': 'Asia/Karachi',
+            'shanghai': 'Asia/Shanghai',
+            'beijing': 'Asia/Shanghai',
+            'hong-kong': 'Asia/Hong_Kong',
+            'singapore': 'Asia/Singapore',
+            'tokyo': 'Asia/Tokyo',
+            'seoul': 'Asia/Seoul',
+            'bangkok': 'Asia/Bangkok',
+            'jakarta': 'Asia/Jakarta',
+            'manila': 'Asia/Manila',
+            'sydney': 'Australia/Sydney',
+            'melbourne': 'Australia/Melbourne',
+            'brisbane': 'Australia/Brisbane',
+            'perth': 'Australia/Perth',
+            'auckland': 'Pacific/Auckland',
+            'utc': 'UTC'
+        };
+        var citiesParam = params.get('cities') || singleZone || 'America/New_York,Europe/London,Asia/Tokyo,Europe/Paris';
+        var theme = params.get('theme') || (singleZone ? 'dark' : 'light');
         var format = params.get('format') || '24h';
         var showSeconds = params.get('seconds') !== '0';
-        var showTimezone = params.get('tz') !== '0';
+        var showTimezone = singleZone ? true : tzParam !== '0';
+        var showDate = params.get('date') !== '0';
+        var safeColor = /^(#[0-9a-fA-F]{3,8}|[a-zA-Z]+|rgba?\([\d.,\s%]+\))$/;
+        var bg = params.get('bg');
+        var text = params.get('text');
 
         // Apply theme
-        document.body.className = theme;
+        document.body.className = theme === 'dark' ? 'dark' : 'light';
+        if (bg && safeColor.test(bg)) document.body.style.background = bg;
+        if (text && safeColor.test(text)) document.body.style.color = text;
 
         // Parse cities (comma-separated timezones or city slugs)
-        var cities = citiesParam.split(',').map(function(c) { return c.trim(); }).filter(Boolean);
+        var cities = citiesParam.split(',').map(function(c) { c = c.trim(); return CITY_TIMEZONES[c.toLowerCase()] || c; }).filter(Boolean);
 
         var container = document.getElementById('container');
 
@@ -255,7 +307,7 @@
                         hour: '2-digit',
                         minute: '2-digit',
                         second: showSeconds ? '2-digit' : undefined,
-                        hour12: hour12
+                        hourCycle: hour12 ? 'h12' : 'h23'
                     }).format(now);
 
                     // Date
@@ -275,7 +327,7 @@
 
                     // Day/night
                     var hour = parseInt(new Intl.DateTimeFormat('en-US', {
-                        timeZone: tz, hour: 'numeric', hour12: false
+                        timeZone: tz, hour: 'numeric', hourCycle: 'h23'
                     }).format(now));
                     var isDay = hour >= 6 && hour < 18;
 
@@ -289,7 +341,9 @@
                         timeEl.innerHTML = '<span class="day-indicator ' + (isDay ? 'day' : 'night') + '"></span>' + parts[0] + ':' + parts[1];
                     }
 
-                    document.getElementById('date-' + index).textContent = dateStr;
+                    var dateEl = document.getElementById('date-' + index);
+                    dateEl.textContent = dateStr;
+                    dateEl.style.display = showDate ? '' : 'none';
                     if (showTimezone) {
                         document.getElementById('offset-' + index).textContent = offsetStr;
                     } else {

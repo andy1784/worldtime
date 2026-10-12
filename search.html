@@ -35,7 +35,7 @@
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"WebPage","name":"Search","description":"Search World Time Sync for time zones, cities, countries, and time conversion guides.","url":"https://worldtimessync.com/search"}
     </script>
-    <script type="application/ld+json>
+    <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"SearchAction","target":"https://worldtimessync.com/search?q={search_term_string}","query-input":"required name=search_term_string"}
     </script>
 
@@ -146,7 +146,7 @@
         </footer>
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
     
     <script>
     (function() {
@@ -176,6 +176,11 @@
                 });
                 searchInput.disabled = false;
                 searchInput.placeholder = 'Search for a city, country, time zone, or topic...';
+                var initialQuery = new URLSearchParams(window.location.search).get('q');
+                if (initialQuery) {
+                    searchInput.value = initialQuery;
+                    performSearch(initialQuery);
+                }
             })
             .catch(function(err) {
                 console.error('Failed to load search index:', err);
