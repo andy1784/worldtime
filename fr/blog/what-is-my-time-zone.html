@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded',function(){
  var sign=off>=0?'+':'−';
  var ah=Math.floor(Math.abs(off)/60),am=Math.abs(off)%60;
  document.getElementById('tz-off').textContent="UTC"+sign+ah+(am?":"+String(am).padStart(2,'0'):"");
- document.getElementById('tz-dst').textContent=(n.getTimezoneOffset()!==new Date(n.getFullYear(),0,1).getTimezoneOffset())?"Heure d'été : ACTIVE":"Heure d'été : non active");
+ document.getElementById('tz-dst').textContent=(n.getTimezoneOffset()!==new Date(n.getFullYear(),0,1).getTimezoneOffset())?"Heure d'été : ACTIVE":"Heure d'été : non active";
 });
 </script>
 

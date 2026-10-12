@@ -55,6 +55,31 @@ class World_Time_Sync_Clock {
      */
     public function init() {
         load_plugin_textdomain('world-time-sync', false, dirname(WTS_PLUGIN_BASENAME) . '/languages');
+
+        if (function_exists('register_block_type')) {
+            register_block_type('world-time-sync/clock', array(
+                'attributes' => array(
+                    'timezone' => array('type' => 'string', 'default' => get_option('wts_default_timezone', 'America/New_York')),
+                    'theme' => array('type' => 'string', 'default' => get_option('wts_default_theme', 'dark')),
+                    'size' => array('type' => 'string', 'default' => get_option('wts_default_size', 'medium')),
+                    'showDate' => array('type' => 'string', 'default' => 'true'),
+                ),
+                'render_callback' => array($this, 'render_block'),
+            ));
+        }
+    }
+
+    /**
+     * Server-side render for the dynamic Gutenberg block
+     */
+    public function render_block($attributes) {
+        $atts = array();
+        foreach (array('timezone' => 'timezone', 'theme' => 'theme', 'size' => 'size', 'showDate' => 'show_date') as $from => $to) {
+            if (isset($attributes[$from])) {
+                $atts[$to] = $attributes[$from];
+            }
+        }
+        return $this->render_clock($atts);
     }
 
     /**
@@ -291,6 +316,7 @@ class World_Time_Sync_Clock {
         $show_date = sanitize_text_field($atts['show_date']);
         
         // Validate
+        if (!in_array($tz, timezone_identifiers_list(), true)) $tz = 'America/New_York';
         if (!in_array($theme, array('dark', 'light'))) $theme = 'dark';
         if (!in_array($size, array('small', 'medium', 'large'))) $size = 'medium';
         
@@ -310,9 +336,10 @@ class World_Time_Sync_Clock {
         );
         $dims = $size_dims[$size];
         
-        $city_slug = strtolower(preg_replace('/[^a-z0-9]+/', '-', $tz));
-        $city_slug = trim($city_slug, '-');
-        $link_url = 'https://worldtimessync.com/time/' . $city_slug . '.html';
+        // City pages live at /time/<city-slug>, e.g. America/New_York -> /time/new-york
+        $parts = explode('/', $tz);
+        $city_slug = trim(preg_replace('/[^a-z0-9]+/', '-', strtolower(end($parts))), '-');
+        $link_url = $city_slug ? 'https://worldtimessync.com/time/' . $city_slug : 'https://worldtimessync.com/';
         
         ob_start();
         ?>
@@ -491,8 +518,6 @@ class WTS_Clock_Widget extends WP_Widget {
         $theme = !empty($instance['theme']) ? $instance['theme'] : 'dark';
         $size = !empty($instance['size']) ? $instance['size'] : 'medium';
         $show_date = !empty($instance['show_date']) ? $instance['show_date'] : 'true';
-        
-        $clock = World_Time_Sync_Clock::get_instance();
         ?>
         <p>
             <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php _e('Title (optional):', 'world-time-sync'); ?></label>
@@ -500,15 +525,7 @@ class WTS_Clock_Widget extends WP_Widget {
                    name="<?php echo esc_attr($this->get_field_name('title')); ?>" 
                    type="text" value="<?php echo esc_attr($title); ?>">
         </p>
-        <p>
-            <label for="<?php echo esc_attr($this->get_field_id('timezone')); ?>"><?php _e('Timezone:', 'world-time-sync'); ?></label>
-            <select class="widefat" id="<?php echo esc_attr($this->get_field_id('timezone')); ?>" 
-                    name="<?php echo esc_attr($this->get_field_name('timezone')); ?>">
-                <?php echo $clock->render_clock(array('timezone' => $timezone)); // Hack to get options ?>
-            </select>
-        </p>
         <?php
-        // Proper timezone select
         $zones = array(
             'America/New_York' => 'New York', 'America/Chicago' => 'Chicago',
             'America/Denver' => 'Denver', 'America/Los_Angeles' => 'Los Angeles',

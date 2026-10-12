@@ -5,7 +5,7 @@
  * 
  * Usage:
  *   <div id="wts-clock"></div>
- *   <script async src="https://worldtimessync.com/embed.js"></script>
+ *   <script src="https://worldtimessync.com/embed.js"></script>
  *   <script>
  *     WorldTimeSync.init({
  *       container: '#wts-clock',
@@ -31,7 +31,7 @@
 
     // Configuration
     var WIDGET_BASE = 'https://worldtimessync.com/widget-embed.html';
-    var SCRIPT_SELECTOR = 'script[src*="worldtimessync.com/embed.js"]';
+    var SCRIPT_SELECTOR = 'script[src*="embed.js"]';
     var DEFAULT_CITIES = ['new-york', 'london', 'tokyo'];
     var MAX_CITIES = 8;
 
@@ -86,11 +86,11 @@
 
     // Find our script tag
     var scripts = document.querySelectorAll(SCRIPT_SELECTOR);
-    if (!scripts.length) {
+    if (!document.currentScript && !scripts.length) {
         console.error('[WorldTimeSync] embed.js: Could not find script tag');
         return;
     }
-    var script = scripts[scripts.length - 1];
+    var script = document.currentScript || scripts[scripts.length - 1];
 
     // Parse config from data attributes
     var config = {
@@ -125,11 +125,13 @@
 
     // Find or create container
     var container = null;
+    var containerAutoCreated = false;
     if (config.container) {
         container = document.querySelector(config.container);
     }
     
     if (!container) {
+        containerAutoCreated = true;
         // Create container before script tag
         container = document.createElement('div');
         container.id = 'wts-widget-' + Math.random().toString(36).substr(2, 9);
@@ -214,11 +216,16 @@
                 params.set('seconds', config.showSeconds ? '1' : '0');
                 params.set('tz', config.showTimezone ? '1' : '0');
                 iframeSrc = WIDGET_BASE + '?' + params.toString();
-                iframe.src = iframeSrc;
                 
                 // Re-find container
                 var newContainer = config.container ? document.querySelector(config.container) : container;
                 if (newContainer && newContainer !== container) {
+                    if (containerAutoCreated && container.parentNode) {
+                        container.parentNode.removeChild(container);
+                    } else {
+                        container.innerHTML = '';
+                    }
+                    containerAutoCreated = false;
                     newContainer.innerHTML = '';
                     newContainer.style.display = 'block';
                     newContainer.style.width = config.width;
