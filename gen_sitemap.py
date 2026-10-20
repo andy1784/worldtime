@@ -20,11 +20,12 @@ from xml.sax.saxutils import escape
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SITE = "https://worldtimessync.com"
-LANGS = ["en", "de", "es", "fr", "it", "ja", "ru", "uk", "zh"]
+LANGS = ["en", "de", "es", "fr", "it", "ja", "ru", "uk", "zh", "hi", "ar", "pt"]
 # Map folder name -> hreflang code (folder "uk" is Ukrainian, not "uk" english)
 FOLDER_TO_HREFLANG = {
     "de": "de", "es": "es", "fr": "fr", "it": "it",
     "ja": "ja", "ru": "ru", "uk": "uk", "zh": "zh",
+    "hi": "hi", "ar": "ar", "pt": "pt",
 }
 
 # Static root pages that exist as <page>.html (English) with localized <lang>/<page>.html
@@ -39,6 +40,7 @@ ROOT_PAGES = [
     "sunrise-sunset.html", "time-zone-converter.html", "time-zone-map.html",
     "search.html", "embed.html", "abbreviations.html",
     "wordpress.html", "how-it-works.html", "event.html",
+    "current-time-in.html",  # landing page for "current time in" queries
     "time/index.html",  # city directory landing page (canonical /time)
     "time-zones/index.html",
     "time-zones/est.html",
@@ -167,7 +169,7 @@ def collect_groups():
                     g[lang] = None
             groups[base] = g
 
-    # 3) Blog posts: blog/<slug>.html + blog/<slug>-<lang>.html
+    # 3) Blog posts: blog/<slug>.html + blog/<slug>-<lang>.html + <lang>/blog/<slug>-<lang>.html
     blog_dir = os.path.join(ROOT, "blog")
     if os.path.isdir(blog_dir):
         en_posts = {}
@@ -201,6 +203,26 @@ def collect_groups():
                 for lang in FOLDER_TO_HREFLANG:
                     if g.get(lang) is None:
                         g[lang] = None
+
+    # 3b) Localized blog posts in <lang>/blog/ directories (e.g., es/blog/check-current-time-any-city-es.html)
+    for lang in FOLDER_TO_HREFLANG:
+        lang_blog_dir = os.path.join(ROOT, lang, "blog")
+        if os.path.isdir(lang_blog_dir):
+            for fn in os.listdir(lang_blog_dir):
+                if not fn.endswith(".html"):
+                    continue
+                stem = fn[:-5]
+                # Expect pattern: <slug>-<lang>.html
+                if stem.endswith("-" + lang):
+                    base_slug = stem[: -(len(lang) + 1)]
+                    key = "blog/" + base_slug + ".html"
+                    p = os.path.join(lang_blog_dir, fn)
+                    if is_stub(p):
+                        continue
+                    groups.setdefault(key, {"en": None, "type": "blog"})
+                    # Only set if not already set (English blog/ takes precedence for canonical)
+                    if groups[key].get(lang) is None:
+                        groups[key][lang] = lang + "/blog/" + fn
 
     return groups
 

@@ -1,0 +1,3 @@
+# Recurrence: RRULE with Preset Library (rrule npm package)
+
+We use the `rrule` npm package for recurrence rules. UI exposes presets: Weekly, Biweekly, Monthly (1st/last Mon/Tue/Wed/Thu/Fri), plus a custom RRULE text field for power users. This avoids reimplementing the complex RRULE spec while giving flexibility. The library is a deliberate dependency — swapping it would require reimplementing RFC 5545.

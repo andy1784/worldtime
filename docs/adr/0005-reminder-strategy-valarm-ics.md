@@ -1,0 +1,3 @@
+# Reminder Strategy: Calendar-Native VALARM in .ics (No Email Backend)
+
+Generated `.ics` files include a `VALARM` component (trigger: 15 minutes before, action: DISPLAY + EMAIL). This works in Google Calendar, Outlook, Apple Calendar, and any iCalendar-compliant client. No email backend, no cron jobs, no user email storage. The reminder lives in the user's calendar — they own it, control it, and it works offline.

@@ -1,0 +1,3 @@
+# Data Strategy: Hybrid localStorage + Signed Shareable URLs (No Backend)
+
+User preferences and saved teams live in localStorage. Complete meeting plans (cities, recurrence, rotation policy, windows, title, duration, reminder emails) encode into a signed URL (`?plan=base64url(JSON)+HMAC`). No database, no auth, no backend. Tamper-evident via HMAC (HS256, secret in env). Recipients verify and "Save as my team" into their localStorage.

@@ -1,0 +1,3 @@
+# Rotation Algorithm: Preferred Windows + Intersection-Based Fair Rotation
+
+Each team member sets a preferred window (e.g., 07:00–22:00 local). The intersection of all members' windows (converted to UTC) defines the "fair zone." For each recurring occurrence, we rotate through UTC slots in the fair zone round-robin. This ensures no region consistently bears the burden. Burden score tracks off-window occurrences per member for transparency.

@@ -1,0 +1,3 @@
+# SEO Landing Pages: Hybrid Pre-generated Top 1k + ISR for Long Tail
+
+At build time, a script generates static HTML for the top ~1,000 city combinations (by analytics traffic) under `/planner/[slug]/`. An Astro hybrid route `/planner/[slug].astro` handles the long tail via ISR (24h cache). Both use the same `MeetingPlanner` island component. Covers 80%+ traffic statically; zero duplication; same component, two rendering modes.

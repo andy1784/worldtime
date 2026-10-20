@@ -23,12 +23,18 @@ import os
 
 SITE = "https://worldtimessync.com"
 # Canonical set of non-English languages used across the translation batches.
-LANG_LINK_ORDER = ("es", "zh", "ru", "it", "de", "ja", "fr", "uk")
+LANG_LINK_ORDER = ("es", "zh", "ru", "it", "de", "ja", "fr", "uk", "hi", "ar", "pt")
 
 
 def _file_exists(slug: str, lang: str) -> bool:
-    """True iff blog/<slug>-<lang>.html exists on disk."""
-    return os.path.exists(os.path.join("blog", f"{slug}-{lang}.html"))
+    """True iff blog/<slug>-<lang>.html or <lang>/blog/<slug>-<lang>.html exists on disk."""
+    # Check main blog directory
+    if os.path.exists(os.path.join("blog", f"{slug}-{lang}.html")):
+        return True
+    # Check localized blog directory
+    if os.path.exists(os.path.join(lang, "blog", f"{slug}-{lang}.html")):
+        return True
+    return False
 
 
 def render_hreflang(
@@ -41,7 +47,7 @@ def render_hreflang(
     Includes:
       * x-default and en  — always (an EN base post is implied)
       * `lang`            — the language currently being generated (always present)
-      * other languages   — only if their `blog/<slug>-<lang>.html` file exists
+      * other languages   — only if their translation file exists
                             on disk OR is in `present_langs` (this generation batch)
 
     `slug` is the English canonical slug (e.g. "world-clock-for-remote-teams").
@@ -64,5 +70,9 @@ def render_hreflang(
     ]
     for L in LANG_LINK_ORDER:
         if L in present:
-            links.append(f'<link rel="alternate" hreflang="{L}" href="{SITE}/blog/{slug}-{L}">')
+            # Use the correct URL format: <lang>/blog/<slug>-<lang> for non-English
+            if L == "en":
+                links.append(f'<link rel="alternate" hreflang="{L}" href="{SITE}/blog/{slug}">')
+            else:
+                links.append(f'<link rel="alternate" hreflang="{L}" href="{SITE}/{L}/blog/{slug}-{L}">')
     return "\n    ".join(links)

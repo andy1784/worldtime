@@ -47,6 +47,8 @@ def main() -> int:
     args = ap.parse_args()
 
     rewritten = 0
+    
+    # Process main blog directory
     for path in sorted(glob.glob('blog/*.html')):
         lang = relang_from_path(path)
         slug = slug_from_path(path)
@@ -72,6 +74,37 @@ def main() -> int:
                   f"(hreflang tags {len(tags)} -> 1 canonical block)")
             if not args.dry_run:
                 open(path, 'w', encoding='utf-8').write(new_text)
+    
+    # Process localized blog directories
+    for lang_dir in ["de", "es", "fr", "it", "ja", "ru", "uk", "zh", "hi", "ar", "pt"]:
+        lang_blog_dir = os.path.join(lang_dir, "blog")
+        if not os.path.isdir(lang_blog_dir):
+            continue
+        for path in sorted(glob.glob(os.path.join(lang_blog_dir, '*.html'))):
+            lang = relang_from_path(path)
+            slug = slug_from_path(path)
+            text = open(path, encoding='utf-8', errors='replace').read()
+
+            tags = TAG.findall(text)
+            if not tags:
+                continue
+
+            clean_block = render_hreflang(slug, lang) + '\n    '
+            state = {'done': False}
+
+            def repl(_m, _s=state):
+                if not _s['done']:
+                    _s['done'] = True
+                    return clean_block
+                return ''
+
+            new_text = TAG.sub(repl, text)
+            if new_text != text:
+                rewritten += 1
+                print(f"  [{'DRY' if args.dry_run else 'OK '}] {path} "
+                      f"(hreflang tags {len(tags)} -> 1 canonical block)")
+                if not args.dry_run:
+                    open(path, 'w', encoding='utf-8').write(new_text)
 
     print(f"\n[blog_hreflang] {'DRY-RUN ' if args.dry_run else ''}rewrote "
           f"{rewritten} blog file(s)")
