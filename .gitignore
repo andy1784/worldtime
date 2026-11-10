@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.env.local
+*.log
+.DS_Store
+lighthouse_reports/
+storage.sqlite*
+cities_data.json
+city_pairs_generated.json
+broken_links.tsv
+.vercel/
+.vercelignore

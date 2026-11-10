@@ -1,0 +1,7 @@
+{
+  "name": "World Time Sync",
+  "description": "World Time Sync is a sleek global clock and timezone converter. Track local times across 700+ cities, convert time zones, and find the time difference between any two locations. Real-time updates, easy-to-use interface, and more.",
+  "requestFramePermissions": [],
+  "category": "utility",
+  "tags": ["world clock", "timezone converter", "time difference", "global clock", "time zones"]
+}
