@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, follow">
+<title>World Time Sync Converter Embed</title>
+<link rel="canonical" href="https://worldtimessync.com/converter-embed">
+<link rel="icon" type="image/svg+xml" href="https://worldtimessync.com/favicon.svg">
+</head>
+<body>
+<div id="wts-embed"></div>
+<script type="module">
+  import {WTSConverter} from "/assets/converter-widget.mjs";
+  function getParam(n){const m=new URLSearchParams(location.search).get(n);return m||null;}
+  new WTSConverter(document.getElementById("wts-embed"),{from:getParam("from"),to:getParam("to")});
+</script>
+</body>
+</html>

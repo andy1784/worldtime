@@ -405,6 +405,14 @@
       "dest": "/embed.js"
     },
     {
+      "src": "/converter",
+      "dest": "/converter.html"
+    },
+    {
+      "src": "/converter-embed",
+      "dest": "/converter-embed.html"
+    },
+    {
       "src": "/blog/page/(.*)",
       "dest": "/blog/page/$1"
     },
@@ -521,6 +529,57 @@
         {
           "key": "Cache-Control",
           "value": "public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400"
+        }
+      ]
+    },
+    {
+      "source": "/converter",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "ALLOWALL"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: blob:; font-src 'self' https://fonts.gstatic.com; frame-ancestors *; connect-src 'self' https://pagead2.googlesyndication.com https://www.google-analytics.com https://adservice.google.com https://www.googletagmanager.com https://region1.google-analytics.com https://analytics.google.com https://analytics.ahrefs.com;"
+        }
+      ]
+    },
+    {
+      "source": "/converter-embed",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "ALLOWALL"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; frame-ancestors *; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self';"
+        }
+      ]
+    },
+    {
+      "source": "/assets/converter-widget.mjs",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/javascript; charset=utf-8"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
         }
       ]
     }

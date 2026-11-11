@@ -41,6 +41,7 @@ ROOT_PAGES = [
     "search.html", "embed.html", "abbreviations.html",
     "wordpress.html", "how-it-works.html", "event.html",
     "current-time-in.html",  # landing page for "current time in" queries
+    "converter.html",  # time zone converter tool (iframe embed ?from=&to=)
     "time/index.html",  # city directory landing page (canonical /time)
     "time-zones/index.html",
     "time-zones/est.html",
