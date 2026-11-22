@@ -181,6 +181,17 @@ def collect_groups():
             base = "current-time-in/" + fn
             groups[base] = {"en": base, "type": "current-time-in"}
 
+    # 2d) Time-zone history pages: time-zone-history/<city>.html (EN only for now)
+    tzh_dir = os.path.join(ROOT, "time-zone-history")
+    if os.path.isdir(tzh_dir):
+        for fn in os.listdir(tzh_dir):
+            if not fn.endswith(".html") or fn == "index.html":
+                continue
+            if is_stub(os.path.join(tzh_dir, fn)):
+                continue
+            base = "time-zone-history/" + fn
+            groups[base] = {"en": base, "type": "time-zone-history"}
+
     # 3) Blog posts: blog/<slug>.html + blog/<slug>-<lang>.html + <lang>/blog/<slug>-<lang>.html
     blog_dir = os.path.join(ROOT, "blog")
     if os.path.isdir(blog_dir):
@@ -273,6 +284,8 @@ def priority_for(g):
         return "0.7"
     if t == "current-time-in":
         return "0.8"
+    if t == "time-zone-history":
+        return "0.75"
     if t == "blog":
         return "0.6"
     return "0.5"
@@ -286,6 +299,8 @@ def changefreq_for(g):
         return "weekly"
     if t == "current-time-in":
         return "daily"
+    if t == "time-zone-history":
+        return "monthly"
     if t == "page":
         return "monthly"
     return "monthly"
