@@ -1,0 +1,228 @@
+---
+// meeting-planner.astro
+import '../styles/meeting-planner.css';
+import MeetingGrid from '../components/MeetingGrid';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0" name="viewport"/>
+<meta content="#667eea" name="theme-color"/>
+<!-- Primary Meta Tags -->
+<title>Meeting Planner: Find Best Time Across Time Zones | World Time Sync</title>
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "World Time Sync",
+  "url": "https://worldtimessync.com/",
+  "logo": "https://worldtimessync.com/favicon.svg",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "availableLanguage": "English"
+  }
+})} />
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "World Time Sync",
+  "url": "https://worldtimessync.com/",
+  "description": "Free online world clock showing current local time in 700+ cities worldwide",
+  "inLanguage": "en"
+})} />
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://worldtimessync.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Meeting Planner", "item": "https://worldtimessync.com/meeting-planner"}
+  ]
+})} />
+<meta content="Meeting Planner — Find Best Meeting Time" name="title"/>
+<meta content="Find the perfect meeting time across multiple time zones. Add cities, see overlapping business hours, and schedule calls confidently for remote teams. Free to use." name="description"/>
+<meta content="meeting planner, time zone meeting scheduler, best time to meet, cross timezone meeting, remote team scheduler, world clock meeting" name="keywords"/>
+<meta content="index, follow" name="robots"/>
+<!-- Open Graph -->
+<meta content="website" property="og:type"/>
+<meta content="https://worldtimessync.com/meeting-planner" property="og:url"/>
+<meta name="twitter:url" content="https://worldtimessync.com/meeting-planner"/>
+<meta name="twitter:creator" content="@worldtimesync"/>
+<meta name="twitter:site" content="@worldtimesync"/>
+<meta content="Meeting Planner: Find Best Meeting Time" property="og:title"/>
+<meta content="https://worldtimessync.com/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Find the perfect meeting time across time zones. Add cities and see overlapping business hours for your remote team. Free tool." property="og:description"/>
+<meta content="World Time Sync" property="og:site_name"/>
+<!-- Twitter -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Meeting Planner: Find Best Meeting Time" name="twitter:title"/>
+<meta content="Find the perfect meeting time across time zones. Free planner shows overlapping business hours." name="twitter:description"/>
+<!-- Canonical -->
+<link href="https://worldtimessync.com/meeting-planner" rel="canonical"/>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<!-- Structured Data -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Meeting Planner",
+  "description": "Find the best time for meetings across multiple time zones",
+  "url": "https://worldtimessync.com/meeting-planner",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
+})} />
+<!-- FAQ Schema -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I find the best time for a meeting across time zones?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Use our Meeting Planner tool. Add the cities where your team members are located, and the tool will show you overlapping business hours (9 AM - 5 PM local time) so you can find a time that works for everyone."}
+    },
+    {
+      "@type": "Question",
+      "name": "Is this meeting planner free?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes, our meeting planner is completely free to use with no registration required."}
+    },
+    {
+      "@type": "Question",
+      "name": "How many cities can I add to the meeting planner?",
+      "acceptedAnswer": {"@type": "Answer", "text": "You can add up to 8 cities to compare time zones simultaneously."}
+    }
+  ]
+})} />
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Meeting Planner: Find Best Time Across Time Zones | World Time Sync",
+  "description": "Information about meeting planner.",
+  "url": "https://worldtimessync.com/meeting-planner"
+})} />
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "World Time Sync Meeting Planner",
+  "description": "Free online meeting planner.",
+  "url": "https://worldtimessync.com/meeting-planner",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any (Web-based)",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock"}
+})} />
+<link rel="alternate" hreflang="x-default" href="https://worldtimessync.com/meeting-planner" />
+<link rel="alternate" hreflang="en" href="https://worldtimessync.com/meeting-planner" />
+<meta content="tNRYRY4K5ZdeEBPId3_g0GiclaIlooP5GhihYhXwknk" name="google-site-verification"/>
+<!-- Preconnect to external resources -->
+<link href="https://www.googletagmanager.com" rel="preconnect"/>
+<link href="https://pagead2.googlesyndication.com" rel="preconnect"/>
+<link href="https://www.googletagmanager.com" rel="dns-prefetch"/>
+<link href="https://pagead2.googlesyndication.com" rel="dns-prefetch"/>
+<link href="https://cdn.vercel-insights.com" rel="dns-prefetch"/>
+</head>
+<body>
+<div class="mp-container">
+<header class="mp-header">
+<h1>Meeting Planner</h1>
+<p>Add cities where your team members are located. The tool finds overlapping business hours so you can schedule meetings that work for everyone.</p>
+</header>
+<main class="mp-main">
+<!-- City Search -->
+<div class="mp-add-city">
+<div class="mp-search-wrap">
+<input autocomplete="off" class="mp-search" id="citySearch" placeholder="Search for a city..." type="text"/>
+<div class="mp-search-results" id="searchResults"></div>
+</div>
+<button class="mp-add-btn" disabled id="addSelectedBtn">Add City</button>
+</div>
+<!-- Selected Cities -->
+<div class="mp-selected-cities" id="selectedCities"></div>
+<!-- Time Grid -->
+<div class="mp-grid-wrap" id="gridWrap" style="display:none;">
+<div class="mp-grid-header" id="gridHeader">
+<div class="header-label">City</div>
+</div>
+<div class="mp-grid-body" id="gridBody"></div>
+</div>
+<!-- Legend -->
+<div class="mp-legend" id="legend" style="display:none;">
+<div class="mp-legend-item"><div class="mp-legend-color best"></div> Best overlap</div>
+<div class="mp-legend-item"><div class="mp-legend-color ok"></div> All working</div>
+<div class="mp-legend-item"><div class="mp-legend-color maybe"></div> Some working</div>
+<div class="mp-legend-item"><div class="mp-legend-color off"></div> Off hours</div>
+</div>
+<!-- Best Times -->
+<div class="mp-best-times" id="bestTimes" style="display:none;">
+<h2><span class="icon">⏰</span> Best Meeting Times</h2>
+<div id="bestTimesList"></div>
+</div>
+<!-- Empty State -->
+<div class="mp-empty" id="emptyState">
+<div class="icon">📅</div>
+<h3>Add at least 2 cities to get started</h3>
+<p>Search for cities above and add them to see overlapping business hours</p>
+</div>
+<!-- Share -->
+<div class="mp-share">
+<p>World Time Sync — Free tools for global teams</p>
+<a href="/">World Clock</a>
+<a href="/#converter">Time Zone Converter</a>
+<a href="/time/">City Time Pages</a>
+<a href="/about">About</a>
+</div>
+
+<aside class="related-articles" style="margin:24px 0;padding:16px;border:1px solid #333;border-radius:8px">
+<h3 style="margin:0 0 8px;font-size:1rem;color:#fff">Related articles</h3>
+<ul style="margin:0;padding:0;font-size:.875rem">
+<li><a href="/blog/best-time-to-schedule-meeting-across-time-zones" style="display:inline-block;min-height:44px;min-width:44px;padding:8px 6px;line-height:1.2">Best meeting times across zones</a></li>
+<li><a href="/blog/time-zone-meeting-etiquette-remote-teams" style="display:inline-block;min-height:44px;min-width:44px;padding:8px 6px;line-height:1.2">Remote meeting etiquette</a></li>
+<li><a href="/blog/cross-timezone-meeting-guide" style="display:inline-block;min-height:44px;min-width:44px;padding:8px 6px;line-height:1.2">Cross-timezone meeting guide</a></li>
+<li><a href="/blog/jet-lag-management-guide" style="display:inline-block;min-height:44px;min-width:44px;padding:8px 6px;line-height:1.2">Jet lag management</a></li>
+</ul>
+</aside>
+</main>
+</div>
+
+<!-- Calendar Modal -->
+<div class="mp-modal-overlay" id="calendarModal">
+<div class="mp-modal">
+<button aria-label="Close" class="btn-close" id="closeModal">×</button>
+<h2>📅 Schedule This Meeting</h2>
+<p class="modal-sub" id="modalTimeInfo"></p>
+<div class="city-summary" id="citySummary"></div>
+<label for="meetTitle">Meeting Title</label>
+<input id="meetTitle" placeholder="e.g. Weekly Standup" type="text" value="Team Meeting"/>
+<label for="meetDate">Date</label>
+<input id="meetDate" type="date"/>
+<label for="meetDuration">Duration</label>
+<select id="meetDuration">
+<option value="15">15 minutes</option>
+<option selected value="30">30 minutes</option>
+<option value="45">45 minutes</option>
+<option value="60">1 hour</option>
+<option value="90">1.5 hours</option>
+<option value="120">2 hours</option>
+</select>
+<div class="modal-actions">
+<a class="btn-primary" href="#" id="googleCalBtn" rel="noopener" target="_blank">📅 Google Calendar</a>
+<button class="btn-secondary" id="icsBtn">📥 Download .ics</button>
+</div>
+<div class="mp-lead">
+<label>🔔 Get a meeting reminder (free, no spam)</label>
+<div class="lead-row">
+<input id="reminderEmail" placeholder="your@email.com" type="email"/>
+<button class="lead-btn" id="setReminderBtn">Remind Me</button>
+</div>
+<p class="lead-note">We'll send one reminder 15 minutes before the meeting. Unsubscribe anytime.</p>
+<p class="lead-success" id="leadSuccess" style="display:none;">✅ Added! Check your email for a confirmation.</p>
+</div>
+</div>
+</div>
+
+<!-- React Island - will replace the static HTML with interactive version -->
+<MeetingGrid client:visible />
+</body>
+</html>

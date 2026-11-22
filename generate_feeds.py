@@ -95,27 +95,33 @@ def parse_blog_post(filepath: Path) -> dict:
         return None
 
 def get_blog_posts():
-    """Get all English blog posts (non-localized)."""
+    """Get all English blog posts (non-localized).
+
+    Localized variants use the suffix -<lang>.html (e.g. -es.html, -ru.html).
+    Only the 11 site languages are treated as localized; any other -XX.html
+    suffix is a legitimate English slug (e.g. what-time-zone-is-ukraine-in.html).
+    """
+    LOCALIZED_LANGS = {"de", "es", "fr", "it", "ja", "ru", "uk", "zh", "hi", "ar", "pt"}
     posts = []
     for filepath in BLOG_DIR.glob('*.html'):
-        # Skip localized versions (those with -xx.html suffix or xx- prefix)
-        if re.match(r'.+-[a-z]{2}\.html$', filepath.name):
+        name = filepath.name
+        stem = name[:-5]  # strip .html
+        # Skip localized versions (<slug>-<lang>.html)
+        if any(stem.endswith("-" + lang) for lang in LOCALIZED_LANGS):
             continue
-        if re.match(r'^[a-z]{2}-.+\.html$', filepath.name):
+        # Skip paginated index pages and language index files
+        if name == "index.html" or name.startswith("page") or re.match(r'index-[a-z]{2}\.html$', name):
             continue
-        # Skip paginated index pages
-        if filepath.name.startswith('page') or filepath.name == 'index.html':
+        # Skip helper / generator files
+        if name.startswith("_"):
             continue
-        # Skip language-specific index files
-        if re.match(r'index-[a-z]{2}\.html$', filepath.name):
-            continue
-            
+
         post = parse_blog_post(filepath)
         if post:
             posts.append(post)
-    
+
     # Sort by date published descending
-    posts.sort(key=lambda x: x['date_published'], reverse=True)
+    posts.sort(key=lambda x: x["date_published"], reverse=True)
     return posts
 
 def generate_rss(posts):
